@@ -9,6 +9,7 @@
     <%= f.input :password_confirmation, required: true %>
     <%= f.input :company %>
     <%= f.input :address %>
+    <%= f.input :radius %>
     <%= f.input :first_name %>
     <%= f.input :last_name %>
     <%= f.input :position %>
@@ -23,3 +24,7 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+<%= content_for(:after_js) do %>
+  <script src="https://maps.googleapis.com/maps/api/js?libraries=places&amp;key=AIzaSyC0J8yKgp1HNvXsiK1_H_PCAz2f-D9Zq4Y"></script>
+<% end %>
