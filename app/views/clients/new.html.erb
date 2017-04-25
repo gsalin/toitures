@@ -1,0 +1,13 @@
+<h1>Clients#new</h1>
+
+
+<%= simple_form_for(@client) do |f| %>
+  <%= f.input :address, placeholder: "Lieu des travaux" %>
+  <%= f.input :nettoyage_toiture, as: :boolean %>
+  <%= f.button :submit, "Rechercher des pros" %>
+<% end %>
+
+
+<%= content_for(:after_js) do %>
+  <script src="https://maps.googleapis.com/maps/api/js?libraries=places&amp;key=AIzaSyC0J8yKgp1HNvXsiK1_H_PCAz2f-D9Zq4Y"></script>
+<% end %>

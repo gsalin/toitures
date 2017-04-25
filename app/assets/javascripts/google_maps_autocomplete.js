@@ -11,7 +11,7 @@ $(document).ready(function() {
     });
   }
 
-    var works_address = $('#customer_works_address').get(0);
+    var works_address = $('#client_address').get(0);
 
   if (works_address) {
     var autocomplete = new google.maps.places.Autocomplete(works_address, { types: ['geocode'] });
