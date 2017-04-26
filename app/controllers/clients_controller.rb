@@ -1,5 +1,6 @@
 class ClientsController < ApplicationController
 
+  skip_before_action :authenticate_user!, only: [:new, :create, :show]
   before_action :set_client, only: [:show, :edit, :update]
 
   def new
