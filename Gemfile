@@ -17,6 +17,13 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
 
+
+
+#cloudinary & attachinary
+gem 'cloudinary'
+gem 'attachinary', github: 'assembler/attachinary'
+gem 'jquery-fileupload-rails'
+
 #googlemaps
 gem 'geocoder'
 gem "coffee-rails"

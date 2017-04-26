@@ -2,9 +2,14 @@
 <p>Find me in app/views/pages/home.html.erb</p>
 
 <%= link_to users_path, class: "main-cta" do %>
-  <span>Index</span>
+  <span>Liste des pros</span>
 <% end %>
-
-
-
+<br>
+<%= link_to edit_user_registration_path, class: "main-cta" do %>
+  <span>edit pro</span>
+<% end %>
+<br>
+<%= link_to new_client_path, class: "main-cta" do %>
+  <span>Rechercher des pros près de chez moi</span>
+<% end %>
 
