@@ -1,4 +1,4 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h2>Modifiez vos informations</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
@@ -10,9 +10,15 @@
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
 
-    <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
+    <%= f.input :password, autocomplete: "off", hint: "Ne pas remplir si vous ne soubaitez pas modifier vitre mot de passe", required: false %>
     <%= f.input :password_confirmation, required: false %>
-    <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
+    <%= f.input :current_password, hint: "Merci de taper votre mot de passe afin de confirmer les changements", required: true %>
+    <%= f.input :photo_company_logo, as: :attachinary %>
+    <%= f.input :photo_presentation, as: :attachinary %>
+    <%= f.input :photos_projet_1, as: :attachinary %>
+    <%= f.input :photos_projet_2, as: :attachinary %>
+    <%= f.input :photos_projet_3, as: :attachinary %>
+    <%= f.input :photos_projet_4, as: :attachinary %>
   </div>
 
   <div class="form-actions">
