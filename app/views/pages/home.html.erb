@@ -1,15 +1,34 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
 
-<%= link_to users_path, class: "main-cta" do %>
-  <span>Liste des pros</span>
-<% end %>
-<br>
-<%= link_to edit_user_registration_path, class: "main-cta" do %>
-  <span>edit pro</span>
-<% end %>
-<br>
-<%= link_to new_client_path, class: "main-cta" do %>
-  <span>Rechercher des pros près de chez moi</span>
+<h1 class="text-center">Bienvenue chez belles toitures</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3">
+
+      <%= simple_form_for(@client) do |f| %>
+        <%= f.input :address, placeholder: "Lieu des travaux" %>
+        <%= f.input :nettoyage_toiture, as: :check_boxes %>
+        <%= f.button :submit, "Rechercher des pros" %>
+      <% end %>
+
+
+      <%= link_to users_path, class: "main-cta" do %>
+        <span>Liste des pros</span>
+      <% end %>
+      <br>
+      <%= link_to edit_user_registration_path, class: "main-cta" do %>
+        <span>edit pro</span>
+      <% end %>
+      <br>
+      <%= link_to new_client_path, class: "main-cta" do %>
+        <span>Rechercher des pros près de chez moi</span>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+<%= content_for(:after_js) do %>
+  <script src="https://maps.googleapis.com/maps/api/js?libraries=places&amp;key=AIzaSyC0J8yKgp1HNvXsiK1_H_PCAz2f-D9Zq4Y"></script>
 <% end %>
 
