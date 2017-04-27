@@ -1,45 +1,15 @@
-<h1>client show</h1>
-
-<% @available_users.each do |user| %>
-
-<!--   <p>société : <%= user.company %></p>
-  <p>position : <%= user.position %></p>
-  <p>prénom : <%= user.last_name %></p>
-  <p>nom : <%= user.first_name %></p>
-  <p>portable : <%= user.mobile_phone %></p>
-  <p>fixe : <%= user.office_phone %></p>
-  <p>email : <%= user.email %></p>
-  <p>addresse : <%= user.address %></p>
-  <p>description : <%= user.description %></p> -->
+<h1 class="text-center"> Il y a <%= @available_users.count %> prestataires dans votre secteur</h1>
 
 
-<div class="container card_show_users_container">
+<div class="container">
   <div class="row">
+  <% @available_users.each do |user| %>
     <div class="col-xs-12">
-      <div class="card_show_users">
-        <div class="card_logo">
-          <% if user.photo_company_logo? %>
-            <%= cl_image_tag user.photo_company_logo.path, width: 100, height: 100%>
-            <% else %>
-            <%= user.company %>
-          <% end %>
-        </div>
-        <div class="card_photo_presentation">
-          <% if user.photo_presentation? %>
-            <%= cl_image_tag user.photo_presentation.path, width: 300, height: 200%>
-          <% else %>
-            <%= image_tag "construction_toit.jpg", width: 300, height: 200 %>
-          <% end %>
-        </div>
-        <div class="card_informations_user">
-          <h3><%= user.company %></h3>
-          <h5><%= user.address %></h5>
-
-        </div>
-      </div>
+    <%= render "users/card_users", user: user %>
     </div>
+    <% end %>
   </div>
 </div>
 
 
-<% end %>
+
