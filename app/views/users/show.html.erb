@@ -1,7 +1,7 @@
-<h3>show</h3>
 
 
-  <p>société : <%= @user.company %></p>
+
+<!--   <p>société : <%= @user.company %></p>
   <p>position : <%= @user.position %></p>
   <p>prénom : <%= @user.last_name %></p>
   <p>nom : <%= @user.first_name %></p>
@@ -9,6 +9,40 @@
   <p>fixe : <%= @user.office_phone %></p>
   <p>email : <%= @user.email %></p>
   <p>addresse : <%= @user.address %></p>
-  <p>description : <%= @user.description %></p>
+  <p>description : <%= @user.description %></p> -->
 
 
+<div class="wrapper wrapper_users_show">
+  <div class="banner">
+    <% if @user.photo_presentation? %>
+      <%= cl_image_tag @user.photo_presentation.path%>
+    <% else %>
+      <%= image_tag "construction_toit.jpg" %>
+    <% end %>
+  </div>
+  <div class="form-container">
+    <ul class="nav nav-tabs ul-position text-center" role="tablist">
+      <li role="presentation" class="inactif"><a href="#phone" aria-controls="phone" role="tab" data-toggle="tab"><i class="fa fa-phone" aria-hidden="true"> Téléphone</i></a></li>
+      <li role="presentation" class="active inactif"><a href="#message" aria-controls="message" role="tab" data-toggle="tab"><i class="fa fa-envelope" aria-hidden="true"> Contacter</i></a></li>
+    </ul>
+    <div class="tab-content">
+      <div role="tabpanel" class="tab-pane" id="phone">
+        <p>
+          <p class="text-center"><%= @user.office_phone %></p>
+        </p>
+      </div>
+      <div role="tabpanel" class="tab-pane active" id="message">
+        <div id="form-message">
+          <h5 class="text-center">Envoyez nous un email</h5>
+          <%= simple_form_for(@client) do |f| %>
+            <%= f.input :message, as: :text, placeholder: "Posez nous vos questions", label: false %>
+            <%= f.input :last_name, placeholder: "Votre nom", label: false %>
+            <%= f.input :email, placeholder: "Votre email", label: false %>
+            <%= f.input :phone_number, placeholder: "Votre téléphone", label: false %>
+            <%= f.button :submit, "Envoyer", :class => "button-message" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

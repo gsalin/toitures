@@ -5,7 +5,7 @@
   <div class="row">
   <% @available_users.each do |user| %>
     <div class="col-xs-12">
-    <%= render "users/card_users", user: user %>
+    <%= render "shared/card_users", user: user %>
     </div>
     <% end %>
   </div>
