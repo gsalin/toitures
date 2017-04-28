@@ -22,14 +22,13 @@
   </div>
   <div class="form-container">
     <ul class="nav nav-tabs ul-position text-center" role="tablist">
-      <li role="presentation" class="inactif"><a href="#phone" aria-controls="phone" role="tab" data-toggle="tab"><i class="fa fa-phone" aria-hidden="true"> Téléphone</i></a></li>
-      <li role="presentation" class="active inactif"><a href="#message" aria-controls="message" role="tab" data-toggle="tab"><i class="fa fa-envelope" aria-hidden="true"> Contacter</i></a></li>
+      <li role="presentation" class="inactif"><a href="#phone" aria-controls="phone" role="tab" data-toggle="tab"><i class="fa fa-phone" aria-hidden="true"></i><i class="fa-text"> Téléphone</i></a></li>
+      <li role="presentation" class="active inactif"><a href="#message" aria-controls="message" role="tab" data-toggle="tab"><i class="fa fa-envelope" aria-hidden="true"></i><i class="fa-text"> Contacter</i></a></li>
     </ul>
     <div class="tab-content">
       <div role="tabpanel" class="tab-pane" id="phone">
-        <p>
-          <p class="text-center"><%= @user.office_phone %></p>
-        </p>
+          <h4 class="text-center"><%= @user.office_phone %></h4>
+          <p class="text-center">Je souhaite être rappelé</p>
       </div>
       <div role="tabpanel" class="tab-pane active" id="message">
         <div id="form-message">
