@@ -17,13 +17,14 @@
     <% if @user.photo_presentation? %>
       <%= cl_image_tag @user.photo_presentation.path%>
     <% else %>
-      <%= image_tag "construction_toit.jpg" %>
+      <%= image_tag "user_base_pic.png" %>
     <% end %>
   </div>
+  <div class="user-company"><h3><%= @user.company %></h3></div>
   <div class="form-container">
     <ul class="nav nav-tabs ul-position text-center" role="tablist">
       <li role="presentation" class="inactif"><a href="#phone" aria-controls="phone" role="tab" data-toggle="tab"><i class="fa fa-phone" aria-hidden="true"></i><i class="fa-text"> Téléphone</i></a></li>
-      <li role="presentation" class="active inactif"><a href="#message" aria-controls="message" role="tab" data-toggle="tab"><i class="fa fa-envelope" aria-hidden="true"></i><i class="fa-text"> Contacter</i></a></li>
+      <li role="presentation" class="active inactif"><a href="#message" aria-controls="message" role="tab" data-toggle="tab"><i class="fa fa-envelope" aria-hidden="true"></i><i class="fa-text"> Email</i></a></li>
     </ul>
     <div class="tab-content">
       <div role="tabpanel" class="tab-pane" id="phone">
@@ -45,3 +46,18 @@
     </div>
   </div>
 </div>
+<div class="user-description">
+  <p><%= @user.description %></p>
+  <h3><%= @user.address %></h3>
+</div>
+
+
+
+
+
+
+
+
+
+
+
