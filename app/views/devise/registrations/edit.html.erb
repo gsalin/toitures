@@ -1,33 +1,106 @@
-<h2>Modifiez vos informations</h2>
+<div class="container">
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= f.error_notification %>
+  <!-- <h2>Edit <%= resource_name.to_s.humanize %></h2> -->
 
-  <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
+  <h2 class="text-center" >Modifier mes informations</h2>
 
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
-    <% end %>
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= f.error_notification %>
 
-    <%= f.input :password, autocomplete: "off", hint: "Ne pas remplir si vous ne soubaitez pas modifier vitre mot de passe", required: false %>
-    <%= f.input :password_confirmation, required: false %>
-    <%= f.input :current_password, hint: "Merci de taper votre mot de passe afin de confirmer les changements", required: true %>
-    <%= f.input :photo_company_logo, as: :attachinary %>
-    <%= f.input :photo_presentation, as: :attachinary %>
-    <%= f.input :photos_projet_1, as: :attachinary %>
-    <%= f.input :photos_projet_2, as: :attachinary %>
-    <%= f.input :photos_projet_3, as: :attachinary %>
-    <%= f.input :photos_projet_4, as: :attachinary %>
+  <div class="row">
+    <!-- Card infos personnnelles -->
+    <div class="col-xs-12 col-md-6">
+      <h1 class="title-lv1 border-bottom margin-bottom">Informations personnelles</h1>
+      <div class="profile-form-container form-inline">
+            <%= f.input :first_name, label_html: {class: "label-profile-form"}, input_html: {class: "input-profile-form"}, label: "Prénom" %>
+            <%= f.input :last_name, label_html: {class: "label-profile-form"}, input_html: {class: "input-profile-form"}, label: "Nom" %>
+            <%= f.input :position, label_html: {class: "label-profile-form"}, input_html: {class: "input-profile-form"}, label: "Position" %>
+
+            <%= f.input :email, label_html: {class: "label-profile-form"}, input_html: {class: "input-profile-form"}, required: true, autofocus: true %>
+
+            <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+              <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+             <% end %>
+
+            <%= f.input :office_phone, label_html: {class: "label-profile-form"}, input_html: {class: "input-profile-form"}, label: "Tel bureau" %>
+            <%= f.input :mobile_phone, label_html: {class: "label-profile-form"}, input_html: {class: "input-profile-form"}, label: "Portable" %>
+
+      </div>
+    </div>
+
+    <!-- Card infos de la société -->
+    <div class="col-xs-12 col-md-6">
+      <h1 class="title-lv1 border-bottom margin-bottom">Informations de la société</h1>
+      <div class="profile-form-container form-inline">
+         <%= f.input :company, label_html: {class: "label-profile-form"}, input_html: {class: "input-profile-form"}, label: "société" %>
+          <%= f.input :address, label_html: {class: "label-profile-form"}, input_html: {class: "input-profile-form"}, label: "adresse" %>
+          <%= f.input :radius, label_html: {class: "label-profile-form"}, input_html: {class: "input-profile-form"}, label: "rayon d'activité (km)" %>
+
+          <%= f.input :description, label_html: {class: "label-profile-form"}, input_html: {class: "description-input-profile-form"}, label: "description" %>
+      </div>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Update" %>
+  <div class="row">
+    <!-- Card Photos -->
+    <div class="col-xs-12 col-md-6">
+      <h1 class="title-lv1 border-bottom margin-bottom">Photos société et chantiers</h1>
+      <div class="profile-form-container form-inline">
+      <%= f.input :photo_company_logo, as: :attachinary, label_html: {class: "attachinary_container"}, input_html: {class: "input-profile-form"}, label: "logo de la société" %>
+      <%= f.input :photo_presentation, as: :attachinary, label_html: {class: "attachinary_container"}, input_html: {class: "input-profile-form"}, label: "bannière de présentation" %>
+      <%#= f.input :photos_projet_1, as: :attachinary, label_html: {class: "attachinary_container"}, input_html: {class: "input-profile-form"}, label: "photos chantiers société" %>
+      <%#= f.input :photos_projet_2, as: :attachinary, label_html: {class: "attachinary_container"}, input_html: {class: "input-profile-form"}, label: "photos chantiers société" %>
+      <%#= f.input :photos_projet_3, as: :attachinary, label_html: {class: "attachinary_container"}, input_html: {class: "input-profile-form"}, label: "photos chantiers société" %>
+      <%#= f.input :photos_projet_4, as: :attachinary, label_html: {class: "attachinary_container"}, input_html: {class: "input-profile-form"}, label: "photos chantiers société" %>
+      </div>
+    </div>
+
+    <!--   Enregistrer mes modifications -->
+    <div class="col-xs-12 col-md-6">
+      <h1 class="title-lv1 border-bottom margin-bottom">Enregistrer mes modifications</h1>
+      <div class="profile-form-container form-inline">
+        <p>Merci de recomposer votre mot de passe afin de sauvegarder vos modifications</p>
+        <br>
+        <%= f.input :current_password, required: true, label_html: {class: "label-profile-form"}, input_html: {class: "input-profile-form"}, label: "mdp a retaper" %>
+        <div class="form-actions text-center">
+          <%= f.button :submit, "Mettre à jour", class: "main-cta" %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+
+    <!-- Changer mon mot de passe -->
+    <div class="col-xs-12 col-md-6">
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= f.error_notification %>
+      <h1 class="title-lv1 border-bottom margin-bottom">Changer mon mot de passe</h1>
+      <div class="profile-form-container form-inline">
+        <%= f.input :current_password, required: true, label_html: {class: "label-profile-form"}, input_html: {class: "input-profile-form"}, label: "ancien mot de passe" %>
+        <%= f.input :password, autocomplete: "off", required: false, label_html: {class: "label-profile-form"}, input_html: {class: "input-profile-form"}, label: "nouveau mot de passe" %>
+        <%= f.input :password_confirmation, required: false, label_html: {class: "label-profile-form"}, input_html: {class: "input-profile-form"}, label: "confirmation du nouveau mdp"%>
+        <div class="form-actions text-center">
+          <%= f.button :submit, "Mettre à jour" %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+
+   <!--  Fermer mon compte -->
+    <div class="col-xs-12 col-md-6">
+      <h1 class="title-lv1 border-bottom margin-bottom">Fermer mon compte</h1>
+      <div class="profile-form-container form-inline">
+        <p>Mécontent? </p>
+        <p><%= link_to "Fermer mon compte", registration_path(resource_name), data: { confirm: "Etes-vous sur?" }, method: :delete %></p>
+        <%= link_to "Retourner à l'accueil", :back %>
+      </div>
+    </div>
+
+
+
   </div>
+</div>
+
+<!-- JS Autocomplete -->
+<%= content_for(:after_js) do %>
+  <script src="https://maps.googleapis.com/maps/api/js?libraries=places&amp;key=AIzaSyC0J8yKgp1HNvXsiK1_H_PCAz2f-D9Zq4Y"></script>
 <% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>

@@ -1,0 +1,22 @@
+.skills {
+  h4 {
+  font-weight: bolder;
+  margin-top: 30px;
+  }
+}
+
+
+
+.li-position {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  list-style-type : none;
+  .skill-pic {
+  width: 30px;
+  }
+  span {
+    font-weight: lighter;
+    font-size: 0.9em;
+    margin-left: 10px;
+  }
+}
