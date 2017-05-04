@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_user, only: [:show, :edit, :update]
 
+
   def index
     @client = Client.new
 
@@ -33,16 +34,16 @@ class UsersController < ApplicationController
   # end
 
 
-  def edit
-     @user = User.find(params[:id])
-  end
+  # def edit
+  #    @user = User.find(params[:id])
+  # end
 
-  def update
-    @user = User.find(params[:id])
-    @user.update(user_params)
+  # def update
+  #   @user = User.find(params[:id])
+  #   @user.update(user_params)
 
-    redirect_to user_path(@user)
-  end
+  #   redirect_to user_path(@user)
+  # end
 
 
   private
@@ -54,5 +55,6 @@ class UsersController < ApplicationController
   def set_user
     @user = User.find(params[:id])
   end
+end
 
 end

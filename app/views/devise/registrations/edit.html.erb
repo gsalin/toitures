@@ -100,6 +100,11 @@
   </div>
 </div>
 
+<%= link_to new_project_path(current_user), class: "main-cta" do %>
+  <span>Gérer mes projets</span>
+<% end %>
+
+
 <!-- JS Autocomplete -->
 <%= content_for(:after_js) do %>
   <script src="https://maps.googleapis.com/maps/api/js?libraries=places&amp;key=AIzaSyC0J8yKgp1HNvXsiK1_H_PCAz2f-D9Zq4Y"></script>

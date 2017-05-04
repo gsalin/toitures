@@ -1,0 +1,36 @@
+<h1>Nouveau projet de la société <%= current_user.id %></h1>
+
+<% if @projects.count < 3 %>
+  <%= simple_form_for(@project) do |f| %>
+    <%= f.input :title, placeholder: "Titre du projet" %>
+    <%= f.input :description, placeholder: "Décrivez ce projet"   %>
+    <%= f.input :cost, placeholder: "Indiquez le cout d'un tel projet" %>
+    <%= f.input :address, placeholder: "Ou a été réalisé ce projet"   %>
+    <%= f.input :date, placeholder: "Quant a été réalisé ce projet"   %>
+    <%= f.button :submit, "Créer un projet" %>
+  <% end %>
+<% end %>
+
+
+
+
+
+
+<% @projects.each do |project| %>
+  <br>
+  <%= project.user_id %>
+  <%= project.id %>
+  <%= project.title %>
+  <%= link_to edit_project_path(project), class: "main-cta" do %>
+  <span>Modifier ce projet |</span>
+  <%= link_to "Supprimer", project_path(project),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
+<% end %>
+  <br>
+<% end %>
+
+<%= link_to edit_user_registration_path, class: "main-cta" do %>
+  <span>Retourner à mon profil</span>
+<% end %>
+<br>

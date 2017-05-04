@@ -1,0 +1,9 @@
+<h1>index projet</h1>
+
+<% @projects.each do |project| %>
+  <br>
+  <%= project.user_id %>
+  <%= project.id %>
+  <%= project.title %>
+  <br>
+<% end %>
