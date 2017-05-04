@@ -1,0 +1,17 @@
+<h1>edit projects</h1>
+
+<%= @project.id %>
+<%= @project.user_id %>
+
+
+
+<%= simple_form_for(@project) do |f| %>
+  <%= f.input :title, placeholder: "Titre du projet" %>
+  <%= f.input :description, placeholder: "Décrivez ce projet"   %>
+  <%= f.input :cost, placeholder: "Indiquez le cout d'un tel projet" %>
+  <%= f.input :address, placeholder: "Ou a été réalisé ce projet"   %>
+  <%= f.input :date, placeholder: "Quant a été réalisé ce projet"   %>
+  <%= f.button :submit, "Mettre à jour" %>
+<% end %>
+
+

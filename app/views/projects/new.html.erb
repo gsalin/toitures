@@ -1,0 +1,52 @@
+<% if @projects.count == 0 %>
+  <h1 class="text-center">Nouveau projet de la société <%= current_user.company %></h1>
+<% else %>
+  <h1 class="text-center">Créez ou modifiez vos projets</h1>
+<% end %>
+
+<% if @projects.count < 4 %>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3">
+        <% if @projects.count < 4 %>
+          <%= simple_form_for(@project) do |f| %>
+            <%= f.input :title, placeholder: "Titre du projet" %>
+            <%= f.input :description, placeholder: "Décrivez ce projet"   %>
+            <%= f.input :cost, placeholder: "Indiquez le cout d'un tel projet" %>
+            <%= f.input :address, placeholder: "Ou a été réalisé ce projet"   %>
+            <%= f.input :date, placeholder: "Quant a été réalisé ce projet"   %>
+            <%= f.input :project_photos, as: :attachinary %>
+            <%= f.button :submit, "Créer un projet" %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <% else %>
+  <p class="text-center">Vous avez déja créé 4 projets, vous pouvez modifier ou supprimer les projets ci-dessous :</p>
+<% end %>
+
+
+<div class="container">
+  <div class="row">
+    <% @projects.each do |project| %>
+    <div class="col-sm-3">
+      <%= project.title %>
+      <br>
+      <%= link_to edit_project_path(project), class: "main-cta" do %>
+      <span>Modifier |</span>
+      <%= link_to "Supprimer", project_path(project),
+          method: :delete,
+          data: { confirm: "Etes vous sur?" } %>
+      <% end %>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="text-center">
+  <%= link_to edit_user_registration_path, class: "main-cta" do %>
+    <span>Retourner à mon profil</span>
+  <% end %>
+</div>
+

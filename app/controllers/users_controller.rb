@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_user, only: [:show, :edit, :update]
 
+
   def index
     @client = Client.new
 
@@ -33,26 +34,27 @@ class UsersController < ApplicationController
   # end
 
 
-  def edit
-     @user = User.find(params[:id])
-  end
+  # def edit
+  #    @user = User.find(params[:id])
+  # end
 
-  def update
-    @user = User.find(params[:id])
-    @user.update(user_params)
+  # def update
+  #   @user = User.find(params[:id])
+  #   @user.update(user_params)
 
-    redirect_to user_path(@user)
-  end
+  #   redirect_to user_path(@user)
+  # end
 
 
   private
 
   def user_params
-    params.require(:user).permit(:company, :first_name, :last_name, :position, :mobile_phone, :office_phone, :email, :address, :description, :radius, :nettoyage_toiture, :photo_company_logo, :photo_presentation, photos_projet_1: [], photos_projet_2: [], photos_projet_3: [], photos_projet_4: [])
+    params.require(:user).permit(:company, :first_name, :last_name, :position, :mobile_phone, :office_phone, :email, :address, :description, :radius, :nettoyage_toiture, :photo_company_logo, :photo_presentation)
   end
 
   def set_user
     @user = User.find(params[:id])
   end
+end
 
 end
