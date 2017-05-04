@@ -3,41 +3,41 @@
   margin-top: 20px;
   margin-bottom: 20px;
   position: relative;
-  height: 350px;
+  height: 450px;
   border: 1px solid red;
-}
 
-.card_logo {
-  position: absolute;
-  top: 20px;
-  left: 150px;
-}
+  .card_logo {
+    position: absolute;
+    top: 20px;
+    left: 150px;
+  }
 
-.card_photo_presentation {
-  position: absolute;
-  bottom: 15px;
-  left: 50px;
-  border-radius: 4px;
-}
+  .card_photo_presentation {
+    position: absolute;
+    bottom: 15px;
+    left: 50px;
+    border-radius: 4px;
+  }
 
-.card_informations_user {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  text-align: right;
-}
+  .card_informations_user {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    text-align: right;
+  }
 
-.card-link {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  z-index:2;
-  background: #D0D0D0;
-  opacity: 0;
-}
+  .card-link {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    z-index:2;
+    background: #D0D0D0;
+    opacity: 0;
+  }
 
-.card-link:hover{
-  opacity: 0.2;
+  .card-link:hover{
+    opacity: 0.2;
+  }
 }
