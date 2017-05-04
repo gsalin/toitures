@@ -7,7 +7,8 @@
 
       <%= simple_form_for(@client) do |f| %>
         <%= f.input :address, placeholder: "Lieu des travaux" %>
-        <%= f.input :nettoyage_toiture, as: :check_boxes %>
+        <%= f.input :nettoyage_toiture, :label => 'nettoyage toiture', :input_html => { :checked => true } %>
+
         <%= f.button :submit, "Rechercher des pros" %>
       <% end %>
 
