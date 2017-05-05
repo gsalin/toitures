@@ -1,0 +1,116 @@
+<div class="col-md-3 hidden-xs nopadding ">
+  <div class= "left-navigation-container">
+    <div class="all-categories-articles">
+
+      <%= link_to "Guides", guides_path, class: "left-navigation-title" %>
+
+      <div class= "left-navigation-category-link">
+        <%= link_to "La fosse septique", root_path, class: "yellow-link" %>
+        </div>
+      <ul>
+        <li><%= link_to "Une obligation juridique", root_path, class: "small-link" %></li>
+        <li><%= link_to "Schéma d'une installation", root_path, class: "small-link" %></li>
+        <li><%= link_to "Le fonctionnement", root_path, class: "small-link" %></li>
+        <li><%= link_to "Le coût d'une installation", root_path, class: "small-link" %></li>
+        <li><%= link_to "Les contraintes", root_path, class: "small-link" %></li>
+        <li><%= link_to "L'épandage", root_path, class: "small-link" %></li>
+      </ul>
+
+
+
+
+      <div class= "left-navigation-category-link">
+      <%= link_to "Les procédés", root_path, class: "yellow-link" %>
+      </div>
+      <ul>
+        <li><%= link_to "La fosse 'toutes eaux'", root_path, class: "small-link" %></li>
+        <li><%= link_to "La micro-station", root_path, class: "small-link" %></li>
+        <li><%= link_to "Le filtre compact", root_path, class: "small-link" %></li>
+        <li><%= link_to "Les filtres naturels", root_path, class: "small-link" %></li>
+        <li><%= link_to "Un peu d'écologie", root_path, class: "small-link" %></li>
+      </ul>
+
+
+
+
+
+      <div class= "left-navigation-category-link">
+      <%= link_to "Les acteurs", root_path, class: "yellow-link" %>
+      </div>
+      <ul>
+        <li><%= link_to "Les collectivités locales", root_path, class: "small-link" %></li>
+        <li><%= link_to "Les SPANC", root_path, class: "small-link" %></li>
+        <li><%= link_to "Les agences de l'eau", root_path, class: "small-link" %></li>
+        <li><%= link_to "Les bureaux d'études", root_path, class: "small-link" %></li>
+        <li><%= link_to "Les entreprises d'installation", root_path, class: "small-link" %></li>
+        <li><%= link_to "Les vendeurs d'installation", root_path, class: "small-link" %></li>
+      </ul>
+
+      <div class= "left-navigation-category-link">
+      <%= link_to "Les aides", root_path, class: "yellow-link" %>
+      </div>
+      <ul>
+        <li><%= link_to "Les aides nationales", root_path, class: "small-link" %></li>
+        <li><%= link_to "Les aides locales", root_path, class: "small-link" %></li>
+        <li><%= link_to "Les prêts bancaires", root_path, class: "small-link" %></li>
+      </ul>
+
+
+      <div class= "left-navigation-category-link">
+      <%= link_to "La législation", root_path, class: "yellow-link" %>
+      </div>
+      <ul>
+        <li><%= link_to "La législation française", root_path, class: "small-link" %></li>
+        <li><%= link_to "Les directives communataires", root_path, class: "small-link" %></li>
+        <li><%= link_to "Faire valoir mes droits", root_path, class: "small-link" %></li>
+      </ul>
+
+
+
+      <div class="left-navigation-call-to-action">
+        <%= link_to "Services", root_path, class: "left-navigation-title" %>
+        <div class= "left-navigation-category-link">
+          <%= link_to "Annuaire", root_path, class: "yellow-link" %>
+        </div>
+          <p>Trouvez les principaux acteurs près de chez vous </p>
+
+        <%= simple_form_for(@client) do |f| %>
+          <%= f.input :address, placeholder: "1, rue des champs 69900", label: "Entrez votre adresse"  %>
+          <div class= "left-navigation-button-call-to-action">
+            <%= f.button :submit, "Annuaire", class: "main-cta" %>
+          </div>
+         <% end %>
+
+        <br>
+
+        <div class= "left-navigation-category-link">
+          <%= link_to "Simulateur", root_path, class: "yellow-link" %>
+        </div>
+        <p>Simulateur d'aide à la décision : définissez vos besoins et choisissez parmi les solutions les plus adéquates</p>
+        <div class= "left-navigation-button-call-to-action">
+          <%= link_to "Simulateur", root_path, class: "main-cta"%>
+        </div>
+      </div>
+
+      <div class="left-navigation-call-to-action">
+        <%= link_to "Magazine", root_path, class: "left-navigation-title" %>
+        <div class= "left-navigation-category-link">
+          <%= link_to "Magazine", root_path, class: "yellow-link" %>
+        </div>
+        <ul>
+          <li><%= link_to "Actualités juridiques", root_path, class: "small-link" %></li>
+          <li><%= link_to "Environnement", root_path, class: "small-link" %></li>
+          <li><%= link_to "Innovation", root_path, class: "small-link" %></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- JS Autocomplete -->
+<%= content_for(:after_js) do %>
+  <script src="https://maps.googleapis.com/maps/api/js?libraries=places&amp;key=AIzaSyC0J8yKgp1HNvXsiK1_H_PCAz2f-D9Zq4Y"></script>
+<% end %>
+<!--  -->

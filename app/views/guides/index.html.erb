@@ -1,0 +1,85 @@
+<%= render 'shared/guides_top_banner' %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-9">
+      <div class='article-page'>
+
+        <h2 class="text-center">Tous les guides</h2>
+        <br><br>
+
+         <!-- Essai -->
+        <div class="col-md-6 col-sm-6">
+          <div class="article-card">
+            <%= link_to root_path do %>
+              <h6 class="text-center"> La toiture</h6>
+              <div class="article-content">
+                <%= image_tag "charpente.svg", class: "img-card" %>
+                <p>L'essentiel à savoir sur la charpente </p>
+                <%= link_to "Accéder au guide", root_path, class: "yellow-link"%>
+              </div>
+            <% end %>
+          </div>
+        </div>
+
+          <!-- Essai -->
+        <div class="col-md-6 col-sm-6">
+          <div class="article-card">
+            <%= link_to root_path do %>
+              <h6 class="text-center"> La toiture</h6>
+              <div class="article-content">
+                <%= image_tag "charpente.svg", class: "img-card" %>
+                <p>L'essentiel à savoir sur la charpente </p>
+                <%= link_to "Accéder au guide", root_path, class: "yellow-link"%>
+              </div>
+            <% end %>
+          </div>
+        </div>
+          <!-- Essai -->
+        <div class="col-md-6 col-sm-6">
+          <div class="article-card">
+            <%= link_to root_path do %>
+              <h6 class="text-center"> La toiture</h6>
+              <div class="article-content">
+                <%= image_tag "charpente.svg", class: "img-card" %>
+                <p>L'essentiel à savoir sur la charpente </p>
+                <%= link_to "Accéder au guide", root_path, class: "yellow-link"%>
+              </div>
+            <% end %>
+          </div>
+        </div>
+          <!-- Essai -->
+        <div class="col-md-6 col-sm-6">
+          <div class="article-card">
+            <%= link_to root_path do %>
+              <h6 class="text-center"> La toiture</h6>
+              <div class="article-content">
+                <%= image_tag "charpente.svg", class: "img-card" %>
+                <p>L'essentiel à savoir sur la charpente </p>
+                <%= link_to "Accéder au guide", root_path, class: "yellow-link"%>
+              </div>
+            <% end %>
+          </div>
+        </div>
+
+
+
+
+        <div class="col-xs-12 col-md-12">
+          <p>Vous pouvez également chercher des informations en accédant :</p>
+
+          <ul>
+            <li><%= link_to "au forum", root_path  %> afin de faire une recherche précise auprès de la communauté.</li>
+            <li><%= link_to "au simulateur", root_path  %> afin de déterminez les options possibles.</li>
+            <li><%= link_to "au magazine", root_path  %> en recherchant par rubriques.</li>
+            <li><%= link_to "par mots-clés", root_path  %> dans notre barre de recherche.</li>
+          </ul>
+        </div>
+
+        <br><br>
+
+      </div>
+    </div>
+    <%= render 'shared/article_left_navigation' %>
+  </div>
+</div>

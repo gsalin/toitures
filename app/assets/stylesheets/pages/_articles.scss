@@ -1,0 +1,250 @@
+// CSS Linkks
+
+.small-link {
+  color: $dark-grey;
+  font-size: 13px;
+
+}
+
+.small-link:hover {
+  color: $medium-grey;
+}
+
+.yellow-link {
+  color: $yellow;
+}
+
+.yellow-link:hover {
+  color: $medium-grey;
+}
+
+
+
+
+// CSS de la partielle "magazine_top_banner"
+
+.wrapper-magazine-top-banner {
+  background-color: $light-grey;
+  height: 30vh;
+}
+
+.content-container {
+  padding: 1.875rem 5% 1.875rem 12.7%;
+  text-align: right;
+
+  h1 {
+    color: $dark-grey;
+    text-align: center;
+    font-style: bold;
+    padding: 20px;
+  }
+
+  span {
+
+  }
+
+}
+// CSS de la partielle "article_left_navigation"
+
+.left-navigation-container {
+  border: solid 1px $light-grey;
+  border-radius: 5px;
+  padding: 5px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-size: 15px;
+  line-height: 1.2;
+  color: $dark-grey;
+  background-color: white;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.left-navigation-title {
+  color: $dark-grey;
+  display: inline-block;
+  font-size: 1em;
+  text-transform: uppercase;
+  width: 100%;
+  font-size: 28px;
+  margin-bottom: -10px;
+}
+
+.left-navigation-title:hover {
+  color: $medium-grey;
+  text-decoration: none;
+}
+
+.all-categories-articles {
+  margin-left: 10px;
+  line-height: 2;
+  margin-bottom: 40px;
+
+  li {
+    list-style-type: none;
+    line-height: 1.5em;
+    margin-left: -30px;
+  }
+
+}
+
+.left-navigation-category-link {
+  margin-left: 0px;
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: -5px;
+}
+
+.left-navigation-call-to-action {
+  border-top: 1px solid $medium-grey;
+  padding-bottom: 20px;
+  padding-top: 10px;
+
+  p {
+    // text-align: justify;
+    margin-top: 2px;
+    font-size: 13px;
+    line-height: 1.5em;
+    margin-bottom: 2px;
+  }
+}
+
+.left-navigation-button-call-to-action {
+  margin-top: 10px;
+  padding: -20px;
+
+  input {
+    padding: 0px;
+    margin: 0px;
+    // margin-left: 20px;
+    // margin-right: 20px;
+    padding-left: 42px;
+    padding-right: 42px;
+  }
+}
+
+
+//
+//
+// CSS de la partie Article
+
+.article-page {
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+  h1 {
+    color: $dark-grey;
+    margin-top: 35px;
+  }
+
+  h3 {
+    color: $dark-grey;
+    margin-top: 35px;
+  }
+
+  h4 {
+    text-align: left;
+    color: $dark-grey;
+    margin-top: 35px;
+  }
+
+  span {
+    color: $medium-grey;
+  }
+
+  p {
+    text-align: justify;
+    color: $black;
+    font-size: 1em;
+    line-height: 1.6em;
+    margin-top: 30px;
+   }
+
+   li {
+    line-height: 1.6em;
+    padding-top: 8px;
+   }
+
+  .italic {
+    font-style: italic;
+  }
+
+  .img-responsive {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: block;
+    width: 100% \9;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.container-extract-article {
+  background-color: $yellow;
+  border: 1px solid $medium-grey;
+  border-radius: 5px;
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-bottom: 10px;
+  margin-top: 15px;
+  margin-bottom: 25px;
+  margin-left: 60px;
+  margin-right: 60px;
+
+  p  {
+    font-size: 0.9em;
+    line-height: 1.9em;
+  }
+}
+
+// css de la partie navigation du bas
+
+.article_bottom_navigation {
+  border-top: 1px solid $medium-grey;
+  padding: 0 0 50px;
+
+  h2 {
+   color: $yellow;
+   margin: 20px;
+  }
+
+}
+
+.article-card {
+  background: $light-grey;
+  width: 100%;
+  padding: 20px;
+  margin-bottom: 30px;
+
+  h6 {
+    text-align: center;
+    color: $dark-grey;
+    font-size: 1em;
+    line-height: 1.6em;
+    margin-bottom: 10px;
+    margin-top: 0px;
+  }
+}
+
+.article-card:hover {
+  background: $medium-grey;
+  text-decoration: none;
+  color: white;
+}
+
+.article-content {
+
+  .img-card {
+    width: 100%;
+    background: transparent;
+    color: $yellow;
+    text-decoration: none;
+    vertical-align: middle;
+  }
+
+  p {
+    color: $black;
+    font-size: 0.8em;
+    margin: 15px 0 5px;
+    text-align: justify;
+  }
+}
