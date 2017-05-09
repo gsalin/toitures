@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170503091111) do
+ActiveRecord::Schema.define(version: 20170509073321) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,12 +52,12 @@ ActiveRecord::Schema.define(version: 20170503091111) do
     t.string   "email"
     t.float    "latitude"
     t.float    "longitude"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
-    t.boolean  "nettoyage_toiture"
-    t.boolean  "renovation_charpente"
-    t.boolean  "renovation_toiture"
-    t.boolean  "construction_toiture"
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
+    t.boolean  "nettoyage_toiture",    default: false
+    t.boolean  "renovation_charpente", default: false
+    t.boolean  "renovation_toiture",   default: false
+    t.boolean  "construction_toiture", default: false
     t.text     "message"
   end
 
@@ -95,7 +95,7 @@ ActiveRecord::Schema.define(version: 20170503091111) do
     t.text     "description"
     t.float    "latitude"
     t.float    "longitude"
-    t.integer  "radius",                 default: 50,    null: false
+    t.integer  "radius",                 default: 50
     t.boolean  "admin",                  default: false, null: false
     t.boolean  "construction",           default: false, null: false
     t.boolean  "renovation",             default: false, null: false

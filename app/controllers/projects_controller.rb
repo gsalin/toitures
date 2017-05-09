@@ -51,7 +51,7 @@ def set_project
 end
 
 def project_params
-  params.require(:project).permit(:title, :description, :cost, :address, :date, photos_projet_1: [], photos_projet_2: [], photos_projet_3: [], photos_projet_4: [])
+  params.require(:project).permit(:title, :description, :cost, :address, :date, project_photos: [])
 end
 
 end
