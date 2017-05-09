@@ -11,7 +11,7 @@
   <p>addresse : <%= @user.address %></p>
   <p>description : <%= @user.description %></p> -->
 
-
+<!-- wrapper photo form -->
 <div class="wrapper wrapper_users_show">
   <div class="banner">
     <% if @user.photo_presentation? %>
@@ -30,6 +30,12 @@
       <div role="tabpanel" class="tab-pane" id="phone">
           <h4 class="text-center"><%= @user.office_phone %></h4>
           <p class="text-center">Je souhaite être rappelé</p>
+          <%= simple_form_for(@client) do |f| %>
+            <%= f.input :last_name, placeholder: "Votre nom", label: false %>
+            <%= f.input :email, placeholder: "Votre email", label: false %>
+            <%= f.input :phone_number, placeholder: "Votre téléphone", label: false %>
+            <%= f.button :submit, "Envoyer", :class => "button-message" %>
+          <% end %>
       </div>
       <div role="tabpanel" class="tab-pane active" id="message">
         <div id="form-message">
@@ -46,99 +52,178 @@
     </div>
   </div>
 </div>
-<div class="user-description">
-  <p><%= @user.description %></p>
-  <h3><%= @user.address %></h3>
+
+
+<div class="container description-container">
+
+<!-- description, fiche et skills -->
+  <div class="row description-row">
+    <div class="col-xs-12 col-sm-8">
+      <div class="user-description">
+        <p><%= @user.description %></p>
+        <h3><%= @user.address %></h3>
+        <% if @user.photo_company_logo %>
+          <%= cl_image_tag @user.photo_company_logo.path%>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-3 col-sm-offset-1">
+      <ul class="skills">
+
+        <h4>Type de biens</h4>
+
+        <li class="li-position">
+          <% if @user.maison == true %>
+            <%= image_tag 'maison.svg', class:"skill-pic" %>
+            <span>Maisons individuelles</span>
+          <% end %>
+        </li>
+
+        <li class="li-position">
+          <% if @user.immeuble == true %>
+            <%= image_tag 'immeuble.svg', class:"skill-pic" %>
+            <span>Immeubles</span>
+          <% end %>
+        </li>
+        <li class="li-position">
+          <% if @user.chateau == true %>
+            <%= image_tag 'chateau.svg', class:"skill-pic" %>
+            <span>Chateaux</span>
+          <% end %>
+        </li>
+        <li class="li-position">
+          <% if @user.monument_historique == true %>
+            <%= image_tag 'monument-historique.svg', class:"skill-pic" %>
+            <span>Monuments historiques</span>
+          <% end %>
+        </li>
+
+        <h4>Travaux</h4>
+
+        <li class="li-position">
+          <% if @user.construction == true %>
+            <%= image_tag 'reparation2.svg', class:"skill-pic" %>
+            <span>Construction</span>
+          <% end %>
+        </li>
+        <li class="li-position">
+          <% if @user.renovation == true %>
+            <%= image_tag 'reparation.svg', class:"skill-pic" %>
+            <span>Rénovation</span>
+          <% end %>
+        </li>
+        <li class="li-position">
+          <% if @user.entretien == true %>
+            <%= image_tag 'nettoyage2.svg', class:"skill-pic" %>
+            <span>Entretien</span>
+          <% end %>
+        </li>
+
+        <h4>Spécialités</h4>
+
+        <li class="li-position">
+          <% if @user.charpente == true %>
+            <%= image_tag 'charpente.svg', class:"skill-pic" %>
+            <span>Charpente</span>
+          <% end %>
+        </li>
+        <li class="li-position">
+          <% if @user.couverture == true %>
+            <%= image_tag 'couverture.svg', class:"skill-pic" %>
+            <span>Couverture</span>
+          <% end %>
+        </li>
+        <li class="li-position">
+          <% if @user.ouverture == true %>
+            <%= image_tag 'ouverture.svg', class:"skill-pic" %>
+            <span>Ouvertures / Vérandas</span>
+          <% end %>
+        </li>
+        <li class="li-position">
+          <% if @user.terrasse == true %>
+            <%= image_tag 'balcon.svg', class:"skill-pic" %>
+            <span>Balcons / Terrasses</span>
+          <% end %>
+        </li>
+        <li class="li-position">
+          <% if @user.plomberie == true %>
+            <%= image_tag 'gouttiere.svg', class:"skill-pic" %>
+            <span>Gouttières / Eaux de pluie</span>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+<!-- cards projets -->
+  <h1 class="text-center">Nos réalisations</h1>
+  <% @projects.each do |project| %>
+  <div class="row project-card">
+    <!-- carousel -->
+    <div class="col-xs-12 col-sm-5">
+      <% if project.project_photos? %>
+      <!-- carousel de 3 photos par projet-->
+      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+          <div class="item active">
+            <%= cl_image_tag @photos[0].path, width: 500, height: 333, crop: :fill  %>
+            <div class="carousel-caption">
+            </div>
+          </div>
+          <div class="item">
+            <%= cl_image_tag @photos[1].path, width: 500, height: 333, crop: :fill  %>
+            <div class="carousel-caption">
+            </div>
+          </div>
+          <div class="item">
+            <%= cl_image_tag @photos[2].path, width: 500, height: 333, crop: :fill  %>
+            <div class="carousel-caption">
+            </div>
+          </div>
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+      <% else %>
+        <%= image_tag "user_base_pic.png", width: 500, height: 333, crop: :fill  %>
+      <% end %>
+    </div>
+    <!-- description projet -->
+    <div class="col-xs-12 col-sm-7">
+      <h3 class="text-center"><%= project.title %></h3>
+      <p id="desc-projet"><%= project.description %></p>
+      <p><i class="fa fa-eur" aria-hidden="true"></i>  <%= project.cost %></p>
+      <p><i class="fa fa-map-marker" aria-hidden="true"></i>  <%= project.address %></p>
+      <p><i class="fa fa-calendar" aria-hidden="true"></i><%= project.date %></p>
+    </div>
+  </div>
+  <% end %>
 </div>
 
+
+
 <br>
 <br>
 <br>
+<br>
 
-<ul class="skills">
 
-  <h4>Type de biens</h4>
-
-  <li class="li-position">
-    <% if @user.maison == true %>
-      <%= image_tag 'maison.svg', class:"skill-pic" %>
-      <span>Maisons individuelles</span>
-    <% end %>
-  </li>
-
-  <li class="li-position">
-    <% if @user.immeuble == true %>
-      <%= image_tag 'immeuble.svg', class:"skill-pic" %>
-      <span>Immeubles</span>
-    <% end %>
-  </li>
-  <li class="li-position">
-    <% if @user.chateau == true %>
-      <%= image_tag 'chateau.svg', class:"skill-pic" %>
-      <span>Chateaux</span>
-    <% end %>
-  </li>
-  <li class="li-position">
-    <% if @user.monument_historique == true %>
-      <%= image_tag 'monument-historique.svg', class:"skill-pic" %>
-      <span>Agréé monuments historiques</span>
-    <% end %>
-  </li>
-
-  <h4>Travaux</h4>
-
-  <li class="li-position">
-    <% if @user.construction == true %>
-      <%= image_tag 'construction.svg', class:"skill-pic" %>
-      <span>Construction</span>
-    <% end %>
-  </li>
-  <li class="li-position">
-    <% if @user.renovation == true %>
-      <%= image_tag 'reparation.svg', class:"skill-pic" %>
-      <span>Rénovation</span>
-    <% end %>
-  </li>
-  <li class="li-position">
-    <% if @user.entretien == true %>
-      <%= image_tag 'nettoyage.svg', class:"skill-pic" %>
-      <span>Entretien</span>
-    <% end %>
-  </li>
-
-  <h4>Spécialités</h4>
-
-  <li class="li-position">
-    <% if @user.charpente == true %>
-      <%= image_tag 'charpente.svg', class:"skill-pic" %>
-      <span>Charpente</span>
-    <% end %>
-  </li>
-  <li class="li-position">
-    <% if @user.couverture == true %>
-      <%= image_tag 'couverture.svg', class:"skill-pic" %>
-      <span>Couverture</span>
-    <% end %>
-  </li>
-  <li class="li-position">
-    <% if @user.ouverture == true %>
-      <%= image_tag 'ouverture.svg', class:"skill-pic" %>
-      <span>Ouvertures / Vérandas</span>
-    <% end %>
-  </li>
-  <li class="li-position">
-    <% if @user.terrasse == true %>
-      <%= image_tag 'balcon.svg', class:"skill-pic" %>
-      <span>Balcons / Terrasses</span>
-    <% end %>
-  </li>
-  <li class="li-position">
-    <% if @user.plomberie == true %>
-      <%= image_tag 'gouttiere.svg', class:"skill-pic" %>
-      <span>Gouttières / Eaux de pluie</span>
-    <% end %>
-  </li>
-</ul>
 
 <br>
 <br>

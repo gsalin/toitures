@@ -20,6 +20,15 @@ class UsersController < ApplicationController
   def show
     @client = Client.new
     @user = User.find(params[:id])
+    @projects = Project.where(user_id: @user)
+    @photos = []
+    @projects.each do |project|
+      if project.project_photos?
+        project.project_photos.each do |photo|
+          @photos << photo
+        end
+      end
+    end
   end
 
   # def new
@@ -49,7 +58,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:company, :first_name, :last_name, :position, :mobile_phone, :office_phone, :email, :address, :description, :radius, :nettoyage_toiture, :photo_company_logo, :photo_presentation)
+    params.require(:user).permit(:company, :first_name, :last_name, :position, :mobile_phone, :office_phone, :email, :address, :description, :radius, :nettoyage_toiture, :photo_company_logo, :photo_presentation, :nettoyage_toiture)
   end
 
   def set_user

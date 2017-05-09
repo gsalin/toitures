@@ -20,9 +20,9 @@
     top: 60px;
     right: 90px;
     background-color: white;
-    height: 600px;
+    height: 546px;
+    max-height: calc(100vh - 120px);
     width: 320px;
-    border-radius: 4px;
     z-index: 2;
 
     .ul-position {
@@ -88,20 +88,25 @@
       width: inherit;
     }
   }
+
+  .fa-text {
+    font-weight: lighter;
+    font-size: smaller;
+    margin-left: 6px;
+  }
 }
 
 .user-description {
   text-align: justify;
   margin-top: 30px;
-  width: 900px;
-  margin-left: 30px;
+
 }
 
 
 .user-company {
   opacity: 0.65;
   position: absolute;
-  top: 440px;
+  bottom: 0px;
   left: 0px;
   z-index: 1;
   height: 22%;
@@ -117,7 +122,38 @@
   }
 }
 
+.description-container {
+  width: 90%;
+  padding: 30px;
 
+  h1 {
+    font-weight: bolder;
+    margin-bottom: 100px;
+  }
+}
+
+.description-row {
+  margin-top: 20px;
+  margin-bottom: 100px;
+}
+
+.project-card{
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+  h3 {
+    padding: 15px;
+  }
+
+  #desc-projet {
+    text-align: justify;
+    margin-bottom: 20px;
+  }
+
+  .fa {
+    margin-right: 10px;
+  }
+}
 
 
 

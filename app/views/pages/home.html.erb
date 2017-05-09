@@ -3,12 +3,18 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3">
+    <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
 
       <%= simple_form_for(@client) do |f| %>
         <%= f.input :address, placeholder: "Lieu des travaux" %>
-        <%= f.input :nettoyage_toiture, :label => 'nettoyage toiture', :input_html => { :checked => true } %>
-
+        <span>Nettoyage toiture</span>
+        <%= f.check_box :nettoyage_toiture %>
+        <span>Renovation charpente</span>
+        <%= f.check_box :renovation_charpente %>
+        <span>Renovation toiture</span>
+        <%= f.check_box :renovation_toiture %>
+        <span>Construction toiture</span>
+        <%= f.check_box :construction_toiture %>
         <%= f.button :submit, "Rechercher des pros" %>
       <% end %>
 
