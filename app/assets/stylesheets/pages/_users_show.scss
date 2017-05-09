@@ -124,8 +124,35 @@
 .description-container {
   width: 90%;
   padding: 30px;
+
+  h1 {
+    font-weight: bolder;
+    margin-bottom: 100px;
+  }
 }
 
+.description-row {
+  margin-top: 20px;
+  margin-bottom: 100px;
+}
+
+.project-card{
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+  h3 {
+    padding: 15px;
+  }
+
+  #desc-projet {
+    text-align: justify;
+    margin-bottom: 20px;
+  }
+
+  .fa {
+    margin-right: 10px;
+  }
+}
 
 
 

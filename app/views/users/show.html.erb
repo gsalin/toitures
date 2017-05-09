@@ -47,10 +47,11 @@
   </div>
 </div>
 
-<!-- description, fiche et skills -->
 
 <div class="container description-container">
-  <div class="row">
+
+<!-- description, fiche et skills -->
+  <div class="row description-row">
     <div class="col-xs-12 col-sm-8">
       <div class="user-description">
         <p><%= @user.description %></p>
@@ -147,69 +148,68 @@
       </ul>
     </div>
   </div>
-</div>
 
-<div class="container">
-  <div class="row">
-    <% @projects.each do |project| %>
-      <div class="col-xs-12">
-      <h3><%= project.title %></h3>
-      <p><%= project.description %></p>
-      <p><%= project.cost %></p>
-      <p><%= project.address %></p>
-      <p><%= project.date %></p>
+<!-- cards projets -->
+  <h1 class="text-center">Nos réalisations</h1>
+  <% @projects.each do |project| %>
+  <div class="row project-card">
+    <!-- carousel -->
+    <div class="col-xs-12 col-sm-5">
       <% if project.project_photos? %>
       <!-- carousel de 3 photos par projet-->
-        <div class="container">
-          <div class="row">
-            <div class="col-xs-12 col-sm-4">
-              <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                <!-- Indicators -->
-                <ol class="carousel-indicators">
-                  <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                  <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                  <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                </ol>
+      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        </ol>
 
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner" role="listbox">
-                  <div class="item active">
-                    <%= cl_image_tag @photos[0].path, width: 400, height: 266, crop: :fill  %>
-                    <div class="carousel-caption">
-                    </div>
-                  </div>
-                  <div class="item">
-                    <%= cl_image_tag @photos[1].path, width: 400, height: 266, crop: :fill  %>
-                    <div class="carousel-caption">
-                    </div>
-                  </div>
-                  <div class="item">
-                    <%= cl_image_tag @photos[2].path, width: 400, height: 266, crop: :fill  %>
-                    <div class="carousel-caption">
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Controls -->
-                <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-                  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                  <span class="sr-only">Previous</span>
-                </a>
-                <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-                  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                  <span class="sr-only">Next</span>
-                </a>
-              </div>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+          <div class="item active">
+            <%= cl_image_tag @photos[0].path, width: 500, height: 333, crop: :fill  %>
+            <div class="carousel-caption">
+            </div>
+          </div>
+          <div class="item">
+            <%= cl_image_tag @photos[1].path, width: 500, height: 333, crop: :fill  %>
+            <div class="carousel-caption">
+            </div>
+          </div>
+          <div class="item">
+            <%= cl_image_tag @photos[2].path, width: 500, height: 333, crop: :fill  %>
+            <div class="carousel-caption">
             </div>
           </div>
         </div>
-      <% else %>
-        <%= image_tag "user_base_pic.png", width: 400, height: 266, crop: :fill  %>
-      <% end %>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
       </div>
-    <% end %>
+      <% else %>
+        <%= image_tag "user_base_pic.png", width: 500, height: 333, crop: :fill  %>
+      <% end %>
+    </div>
+    <!-- description projet -->
+    <div class="col-xs-12 col-sm-7">
+      <h3 class="text-center"><%= project.title %></h3>
+      <p id="desc-projet"><%= project.description %></p>
+      <p><i class="fa fa-eur" aria-hidden="true"></i>  <%= project.cost %></p>
+      <p><i class="fa fa-map-marker" aria-hidden="true"></i>  <%= project.address %></p>
+      <p><i class="fa fa-calendar" aria-hidden="true"></i><%= project.date %></p>
+    </div>
   </div>
+  <% end %>
 </div>
+
 
 
 <br>
