@@ -55,7 +55,6 @@
 
 
 <div class="container description-container">
-
 <!-- description, fiche et skills -->
   <div class="row description-row">
     <div class="col-xs-12 col-sm-8">
@@ -156,6 +155,7 @@
   </div>
 
 <!-- cards projets -->
+<% if @projects != [] %>
   <h1 class="text-center">Nos réalisations</h1>
   <% @projects.each do |project| %>
   <div class="row project-card">
@@ -214,6 +214,7 @@
     </div>
   </div>
   <% end %>
+<% end %>
 </div>
 
 
