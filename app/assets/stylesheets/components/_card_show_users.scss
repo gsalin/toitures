@@ -1,29 +1,81 @@
 
 .card_show_users {
-  margin-top: 20px;
+  margin-top: 40px;
   margin-bottom: 20px;
+  height: 250px;
+  border: 1px solid $medium-grey;
   position: relative;
-  height: 450px;
-  border: 1px solid red;
 
-  .card_logo {
-    position: absolute;
-    top: 20px;
-    left: 150px;
+  .card_infos {
+    padding-top: 20px;
+    height: inherit;
+
+    img {
+      border-radius: 50%;
+      margin-right: 15px;
+    }
+
+    span {
+      font-size: 1.3em;
+    }
+
+    p {
+      text-align: justify;
+      max-width: 500px;
+      font-weight: lighter;
+      font-size: 90%;
+      margin-top: 25px;
+      position: absolute;
+
+      span {
+      font-size: inherit;
+      color: $yellow;
+      }
+
+      i {
+        font-size: smaller;
+        color: $yellow;
+      }
+    }
+
+    h5 {
+      position: absolute;
+      bottom: 10px;
+      left: 330px;
+      color: $medium-grey;
+      font-weight: lighter;
+
+    }
+
+    .fa-phone {
+      position: absolute;
+      bottom: 15px;
+      left: 15px;
+      color: $yellow;
+      font-size: 2.4em;
+      padding: 5px;
+      padding-left: 40px;
+      padding-right: 40px;
+      border: solid 2px $yellow;
+      border-radius: 3px;
+    }
+
+    .fa-envelope-o {
+      position: absolute;
+      bottom: 15px;
+      left: 150px;
+      color: $yellow;
+      font-size: 2.4em;
+      padding: 5px;
+      padding-left: 40px;
+      padding-right: 40px;
+      border: solid 2px $yellow;
+      border-radius: 3px;
+    }
   }
 
   .card_photo_presentation {
-    position: absolute;
-    bottom: 15px;
-    left: 50px;
-    border-radius: 4px;
-  }
 
-  .card_informations_user {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    text-align: right;
   }
 }
 
