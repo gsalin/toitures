@@ -3,8 +3,21 @@
   margin-top: 40px;
   margin-bottom: 20px;
   height: 250px;
-  border: 1px solid $medium-grey;
   position: relative;
+
+  .line {
+    height: 0px;
+    border-top: solid 1px #4A4A4A;
+    width: 875px;
+    position: absolute;
+    top: -20px;
+    left: 210px;
+
+  }
+
+  .card_photo_presentation {
+    padding-left: 0px;
+  }
 
   .card_infos {
     padding-top: 20px;
@@ -72,10 +85,6 @@
       border: solid 2px $yellow;
       border-radius: 3px;
     }
-  }
-
-  .card_photo_presentation {
-
   }
 }
 
