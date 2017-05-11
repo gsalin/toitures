@@ -7,14 +7,37 @@
 
       <%= simple_form_for(@client) do |f| %>
         <%= f.input :address, placeholder: "Lieu des travaux" %>
-        <span>Nettoyage toiture</span>
-        <%= f.check_box :nettoyage_toiture %>
-        <span>Renovation charpente</span>
-        <%= f.check_box :renovation_charpente %>
-        <span>Renovation toiture</span>
-        <%= f.check_box :renovation_toiture %>
-        <span>Construction toiture</span>
-        <%= f.check_box :construction_toiture %>
+
+        <h3>Type de travaux</h3>
+        <span>Construction</span>
+        <%= f.check_box :construction %>
+        <span>Renovation</span>
+        <%= f.check_box :renovation %>
+        <span>Entretien</span>
+        <%= f.check_box :entretien %>
+
+        <h3>Spécialités</h3>
+        <span>Couverture</span>
+        <%= f.check_box :couverture %>
+        <span>Ouverture</span>
+        <%= f.check_box :ouverture %>
+        <span>Terrasse</span>
+        <%= f.check_box :terrasse %>
+        <span>Plomberie</span>
+        <%= f.check_box :plomberie %>
+        <span>Charpente</span>
+        <%= f.check_box :charpente %>
+
+        <h3>Type de bien</h3>
+        <span>Maison</span>
+        <%= f.check_box :maison %>
+        <span>Chateau</span>
+        <%= f.check_box :chateau %>
+        <span>Immeuble</span>
+        <%= f.check_box :immeuble %>
+        <span>Monument historique</span>
+        <%= f.check_box :monument_historique %>
+        <br>
         <%= f.button :submit, "Rechercher des pros" %>
       <% end %>
 

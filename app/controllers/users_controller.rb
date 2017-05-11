@@ -14,7 +14,6 @@ class UsersController < ApplicationController
       marker.lat user.latitude
       marker.lng user.longitude
     end
-
   end
 
   def show
@@ -58,7 +57,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:company, :first_name, :last_name, :position, :mobile_phone, :office_phone, :email, :address, :description, :radius, :nettoyage_toiture, :photo_company_logo, :photo_presentation, :nettoyage_toiture)
+    params.require(:user).permit(:company, :first_name, :last_name, :position, :mobile_phone, :office_phone, :email, :address, :description, :radius, :photo_company_logo, :photo_presentation)
   end
 
   def set_user

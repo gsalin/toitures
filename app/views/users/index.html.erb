@@ -1,5 +1,10 @@
 <h1 class="text-center">Annuaire de tous les professionnels</h1>
 
+<%= simple_form_for(@client) do |f| %>
+  <%= f.input :address, placeholder: "Lieu des travaux" %>
+  <%= f.button :submit, "Rechercher des pros" %>
+<% end %>
+
 
 <div class="container">
   <div class="row">
