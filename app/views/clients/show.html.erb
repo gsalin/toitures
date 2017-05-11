@@ -1,13 +1,24 @@
-<h1 class="text-center"> Il y a <%= @available_users.count %> prestataires dans votre secteur</h1>
-
+<% if @available_users != [] %>
+  <h1 class="text-center"> Il y a <%= @available_users.count %> prestataires qui correspondent à vos besoins</h1>
+<% else %>
+  <h1 class="text-center"> Il y a <%= @radius_users.count %> prestataires dans votre secteur, affinez votre recherche ci-dessous</h1>
+<% end %>
 
 <div class="container">
   <div class="row">
-  <% @available_users.each do |user| %>
-    <div class="col-xs-12">
-    <%= render "shared/card_users", user: user %>
-    </div>
+  <% if @available_users != [] %>
+    <% @available_users.each do |user| %>
+      <div class="col-xs-12">
+      <%= render "shared/card_users", user: user %>
+      </div>
     <% end %>
+  <% else %>
+    <% @radius_users.each do |user| %>
+      <div class="col-xs-12">
+      <%= render "shared/card_users", user: user %>
+      </div>
+    <% end %>
+  <% end %>
   </div>
 </div>
 

@@ -52,6 +52,35 @@
       <%#= f.input :photos_projet_2, as: :attachinary, label_html: {class: "attachinary_container"}, input_html: {class: "input-profile-form"}, label: "photos chantiers société" %>
       <%#= f.input :photos_projet_3, as: :attachinary, label_html: {class: "attachinary_container"}, input_html: {class: "input-profile-form"}, label: "photos chantiers société" %>
       <%#= f.input :photos_projet_4, as: :attachinary, label_html: {class: "attachinary_container"}, input_html: {class: "input-profile-form"}, label: "photos chantiers société" %>
+        <h3>Type de travaux</h3>
+        <span>Construction</span>
+        <%= f.check_box :construction %>
+        <span>Renovation</span>
+        <%= f.check_box :renovation %>
+        <span>Entretien</span>
+        <%= f.check_box :entretien %>
+
+        <h3>Spécialités</h3>
+        <span>Couverture</span>
+        <%= f.check_box :couverture %>
+        <span>Ouverture</span>
+        <%= f.check_box :ouverture %>
+        <span>Terrasse</span>
+        <%= f.check_box :terrasse %>
+        <span>Plomberie</span>
+        <%= f.check_box :plomberie %>
+        <span>Charpente</span>
+        <%= f.check_box :charpente %>
+
+        <h3>Type de bien</h3>
+        <span>Maison</span>
+        <%= f.check_box :maison %>
+        <span>Chateau</span>
+        <%= f.check_box :chateau %>
+        <span>Immeuble</span>
+        <%= f.check_box :immeuble %>
+        <span>Monument historique</span>
+        <%= f.check_box :monument_historique %>
       </div>
     </div>
 

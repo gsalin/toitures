@@ -11,7 +11,6 @@
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
       <%= simple_form_for(@client) do |f| %>
         <%= f.input :address, placeholder: "Lieu des travaux" %>
-        <%= f.input :nettoyage_toiture, as: :check_boxes %>
         <%= f.button :submit, "Rechercher des pros" %>
       <% end %>
     </div>
