@@ -2,23 +2,31 @@
 
 <%= simple_form_for(@client) do |f| %>
   <%= f.input :address, placeholder: "Lieu des travaux" %>
-  <%#= f.input :nettoyage_toiture, as: :check_boxes %>
   <%= f.button :submit, "Rechercher des pros" %>
 <% end %>
 
+
 <div class="container">
   <div class="row">
-  <% @users.each do |user| %>
-    <div class="col-xs-12">
-    <%= render "shared/card_users", user: user %>
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <%= simple_form_for(@client) do |f| %>
+        <%= f.input :address, placeholder: "Lieu des travaux" %>
+        <%= f.input :nettoyage_toiture, as: :check_boxes %>
+        <%= f.button :submit, "Rechercher des pros" %>
+      <% end %>
     </div>
-  <% end %>
   </div>
+</div>
+
+<div class="container">
+  <% @users.each do |user| %>
+    <%= render "shared/card_users", user: user %>
+  <% end %>
 </div>
 
 
 
-<div id="map" style="width: 100%; height: 600px;"></div>
+<div id="map" class="banner-map" style="width: 100%; height: 600px;"></div>
 
 <% content_for(:after_js) do %>
   <%= javascript_tag do %>
