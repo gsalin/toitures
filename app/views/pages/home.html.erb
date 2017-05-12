@@ -6,7 +6,7 @@
     <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
 
       <%= simple_form_for(@client) do |f| %>
-        <%= f.input :address, placeholder: "Lieu des travaux" %>
+        <%= f.input :address, placeholder: "Lieu des travaux", autofocus: true %>
 
         <h3>Type de travaux</h3>
         <span>Construction</span>
