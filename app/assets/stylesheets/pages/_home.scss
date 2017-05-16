@@ -2,3 +2,52 @@
  * CSS code specific to home page
  * (margin/padding adjustments)
  * ------------------------------------- */
+
+.banner {
+  height: calc(100vh - 150px);
+  background-size: cover !important;
+  position: relative;
+  margin-bottom: 200px;
+
+  .carousel {
+  background: #F09819; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #F09819 , #EDDE5D); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #F09819 , #EDDE5D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  opacity: 0.7;
+  }
+  .home_container {
+    position: absolute;
+    top: 75px;
+    left: 75px;
+    background-color: white;
+    height: 565px;
+    max-height: calc(100vh - 120px);
+    width: 500px;
+    z-index: 2;
+    border: solid $medium-grey 1px;
+    padding: 20px;
+    padding-top: 5px;
+    span {
+      font-weight: lighter;
+    }
+
+    #client_address {
+      margin-bottom: 10px;
+    }
+
+    .flexbox {
+      display: flex;
+      flex-wrap: wrap;
+      border-top: solid $medium-grey 1px;
+      padding-bottom: 4px;
+      margin-top: -3px;
+      div {
+        margin: 8px;
+
+      }
+    }
+    .home-submit {
+
+    }
+  }
+}
