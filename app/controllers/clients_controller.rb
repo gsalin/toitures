@@ -11,7 +11,11 @@ class ClientsController < ApplicationController
     @client = Client.new(client_params)
     @client.save
 
-    redirect_to client_path(@client)
+    if @client.address == ""
+      redirect_to users_path
+    else
+      redirect_to client_path(@client)
+    end
   end
 
   def show

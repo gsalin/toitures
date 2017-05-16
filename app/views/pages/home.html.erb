@@ -1,61 +1,109 @@
 
-<h1 class="text-center">Bienvenue chez belles toitures</h1>
+<div class="banner">
+  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    </ol>
 
-<div class="container">
-  <div class="row">
-    <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
-
-      <%= simple_form_for(@client) do |f| %>
-        <%= f.input :address, placeholder: "Lieu des travaux", autofocus: true %>
-
-        <h3>Type de travaux</h3>
-        <span>Construction</span>
-        <%= f.check_box :construction %>
-        <span>Renovation</span>
-        <%= f.check_box :renovation %>
-        <span>Entretien</span>
-        <%= f.check_box :entretien %>
-
-        <h3>Spécialités</h3>
-        <span>Couverture</span>
-        <%= f.check_box :couverture %>
-        <span>Ouverture</span>
-        <%= f.check_box :ouverture %>
-        <span>Terrasse</span>
-        <%= f.check_box :terrasse %>
-        <span>Plomberie</span>
-        <%= f.check_box :plomberie %>
-        <span>Charpente</span>
-        <%= f.check_box :charpente %>
-
-        <h3>Type de bien</h3>
-        <span>Maison</span>
-        <%= f.check_box :maison %>
-        <span>Chateau</span>
-        <%= f.check_box :chateau %>
-        <span>Immeuble</span>
-        <%= f.check_box :immeuble %>
-        <span>Monument historique</span>
-        <%= f.check_box :monument_historique %>
-        <br>
-        <%= f.button :submit, "Rechercher des pros" %>
-      <% end %>
-
-
-      <%= link_to users_path, class: "main-cta" do %>
-        <span>Liste des pros</span>
-      <% end %>
-      <br>
-      <%= link_to edit_user_registration_path, class: "main-cta" do %>
-        <span>edit pro</span>
-      <% end %>
-      <br>
-      <%= link_to new_client_path, class: "main-cta" do %>
-        <span>Rechercher des pros près de chez moi</span>
-      <% end %>
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <%= image_tag 'user_base_pic.png' %>
+        <div class="carousel-caption">
+        </div>
+      </div>
+      <div class="item">
+        <%= image_tag 'user_base_pic.png' %>
+        <div class="carousel-caption">
+        </div>
+      </div>
     </div>
   </div>
+  <div class="home_container">
+    <h3>Belle toiture</h3>
+    <p>Pour vous, nous référencons les meilleurs professionnels de la toiture en France</p>
+    <%= simple_form_for(@client) do |f| %>
+      <%= f.input :address, placeholder: "Lieu des travaux", autofocus: true, label:false %>
+          <h5>Travaux</h5>
+          <div class="flexbox">
+            <div><%= f.check_box :couverture %> <span>couverture</span></div>
+            <div>
+            <%= f.check_box :charpente %>
+            <span>charpente</span>
+            </div>
+            <div><%= f.check_box :ouverture %> <span>fenêtre / ouverture</span></div>
+            <div>
+            <%= f.check_box :terrasse %>
+            <span>terrasse</span>
+            </div>
+            <div>
+            <%= f.check_box :plomberie %>
+            <span>eaux de pluies / zinguerie</span>
+            </div>
+          </div>
+          <h5>Type de bien</h5>
+          <div class=flexbox>
+            <div>
+            <%= f.check_box :maison %>
+            <span>maison</span>
+            </div>
+            <div>
+            <%= f.check_box :immeuble %>
+            <span>immeuble</span>
+            </div>
+            <div>
+            <%= f.check_box :chateau %>
+            <span>chateau</span>
+            </div>
+            <div>
+            <%= f.check_box :monument_historique %>
+            <span>classé monument historique</span>
+            </div>
+          </div>
+
+          <h5>Besoin</h5>
+          <div class="flexbox">
+            <div>
+            <%= f.check_box :construction %>
+            <span>construction</span>
+            </div>
+            <div>
+            <%= f.check_box :renovation %>
+            <span>rénovation</span>
+            </div>
+            <div>
+            <%= f.check_box :entretien %>
+            <span>entretien</span>
+            </div>
+          </div>
+          <div class="text-center">
+      <%= f.submit  "Rechercher des pros", class: "navbar-wagon-button" %>
+          </div>
+    <% end %>
+  </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+          <%= link_to users_path, class: "main-cta" do %>
+            <span>Liste des pros</span>
+          <% end %>
+          <br>
+          <%= link_to edit_user_registration_path, class: "main-cta" do %>
+            <span>edit pro</span>
+          <% end %>
+          <br>
+          <%= link_to new_client_path, class: "main-cta" do %>
+            <span>Rechercher des pros près de chez moi</span>
+          <% end %>
 
 
       <!-- Media -->
@@ -92,4 +140,7 @@
 <%= content_for(:after_js) do %>
   <script src="https://maps.googleapis.com/maps/api/js?libraries=places&amp;key=AIzaSyC0J8yKgp1HNvXsiK1_H_PCAz2f-D9Zq4Y"></script>
 <% end %>
+
+
+
 
