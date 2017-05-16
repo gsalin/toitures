@@ -1,3 +1,5 @@
+<%= render "shared/form", client: @client %>
+
 <% if @available_users != [] %>
   <h1 class="text-center"> Il y a <%= @available_users.count %> prestataires qui correspondent à vos besoins</h1>
 <% else %>

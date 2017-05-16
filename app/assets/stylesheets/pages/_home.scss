@@ -9,6 +9,17 @@
   position: relative;
   margin-bottom: 200px;
 
+  h2 {
+    position: absolute;
+    top: 220px;
+    right: 83px;
+    z-index: 2;
+    color: white;
+    max-width: 700px;
+    text-align: center;
+    font-weight: darker;
+  }
+
   .carousel {
   background: #F09819; /* fallback for old browsers */
   background: -webkit-linear-gradient(to left, #F09819 , #EDDE5D); /* Chrome 10-25, Safari 5.1-6 */

@@ -1,5 +1,6 @@
 
 <div class="banner">
+  <h2>Nous référencons les meilleurs professionnels de la toiture</h2>
   <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
       <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
@@ -22,7 +23,6 @@
   </div>
   <div class="home_container">
     <h3>Belle toiture</h3>
-    <p>Pour vous, nous référencons les meilleurs professionnels de la toiture en France</p>
     <%= simple_form_for(@client) do |f| %>
       <%= f.input :address, placeholder: "Lieu des travaux", autofocus: true, label:false %>
           <h5>Travaux</h5>
@@ -43,7 +43,7 @@
             </div>
           </div>
           <h5>Type de bien</h5>
-          <div class=flexbox>
+          <div class="flexbox">
             <div>
             <%= f.check_box :maison %>
             <span>maison</span>
@@ -78,7 +78,7 @@
             </div>
           </div>
           <div class="text-center">
-      <%= f.submit  "Rechercher des pros", class: "navbar-wagon-button" %>
+      <%= f.submit  "Rechercher des pros", class: "navbar-wagon-button in_page" %>
           </div>
     <% end %>
   </div>
