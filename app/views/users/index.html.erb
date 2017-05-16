@@ -1,15 +1,6 @@
 <h1 class="text-center">Annuaire de tous les professionnels</h1>
 
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-      <%= simple_form_for(@client) do |f| %>
-        <%= f.input :address, placeholder: "Lieu des travaux" %>
-        <%= f.button :submit, "Rechercher des pros" %>
-      <% end %>
-    </div>
-  </div>
-</div>
+<%= render "shared/form", client: @client %>
 
 <div class="container">
   <% @users.each do |user| %>

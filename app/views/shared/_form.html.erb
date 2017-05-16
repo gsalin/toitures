@@ -1,0 +1,71 @@
+<div class="container shared_form">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <%= simple_form_for(client) do |f| %>
+        <%= f.input :address, placeholder: "Lieu des travaux", autofocus: true, label:false %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-3 col-sm-offset-2">
+      <h5>Travaux</h5>
+      <div class="index_form">
+        <div><%= f.check_box :couverture %> <span>couverture</span></div>
+        <div>
+        <%= f.check_box :charpente %>
+        <span>charpente</span>
+        </div>
+        <div><%= f.check_box :ouverture %> <span>fenêtre / ouverture</span></div>
+        <div>
+        <%= f.check_box :terrasse %>
+        <span>terrasse</span>
+        </div>
+        <div>
+        <%= f.check_box :plomberie %>
+        <span>eaux de pluies / zinguerie</span>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-3">
+      <h5>Type de bien</h5>
+      <div class="flexbox">
+        <div>
+        <%= f.check_box :maison %>
+        <span>maison</span>
+        </div>
+        <div>
+        <%= f.check_box :immeuble %>
+        <span>immeuble</span>
+        </div>
+        <div>
+        <%= f.check_box :chateau %>
+        <span>chateau</span>
+        </div>
+        <div>
+        <%= f.check_box :monument_historique %>
+        <span>classé monument historique</span>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-3">
+      <h5>Besoin</h5>
+      <div class="flexbox">
+        <div>
+        <%= f.check_box :construction %>
+        <span>construction</span>
+        </div>
+        <div>
+        <%= f.check_box :renovation %>
+        <span>rénovation</span>
+        </div>
+        <div>
+        <%= f.check_box :entretien %>
+        <span>entretien</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="text-center">
+      <%= f.submit  "Rechercher des pros", class: "navbar-wagon-button in_page" %>
+    <% end %>
+  </div>
+</div>
