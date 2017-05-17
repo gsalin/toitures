@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 
 
   def index
+    @radius_users = []
     @client = Client.new
 
     @users = User.all

@@ -1,6 +1,6 @@
 class ClientsController < ApplicationController
 
-  skip_before_action :authenticate_user!, only: [:new, :create, :show]
+  skip_before_action :authenticate_user!, only: [:new, :create, :show, :edit, :update]
   before_action :set_client, only: [:show, :edit, :update]
 
   def new
@@ -66,6 +66,17 @@ class ClientsController < ApplicationController
         @available_users << skills_user
       end
     end
+  end
+
+  def edit
+    @client = Client.find(params[:id])
+  end
+
+  def update
+    @client = Client.find(params[:id])
+    @client.update(client_params)
+
+    redirect_to client_path(@client)
   end
 
   private
