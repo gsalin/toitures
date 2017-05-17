@@ -1,85 +1,95 @@
 
-<div class="row card_show_users">
-  <div class="line"></div>
-  <div class="col-xs-12 col-sm-4 col-sm-offset-2 card_photo_presentation">
-  <%= link_to user_path(user), class: "link_pic" do %>
-    <% if user.photo_presentation? %>
-      <%= cl_image_tag user.photo_presentation.path, width: 378, height: 248 %>
-    <% else %>
-      <%= image_tag "construction_toit.jpg", width: 378, height: 248 %>
+<div class="row row_show_users">
+
+  <!-- 1ere col avec photos -->
+  <div class="col-xs-12 col-sm-4 card_photo_presentation">
+    <%= link_to user_path(user), class: "link_pic" do %>
+      <% if user.photo_presentation? %>
+        <%= cl_image_tag user.photo_presentation.path, width: 378, height: 248 %>
+      <% else %>
+        <%= image_tag "construction_toit.jpg", width: 378, height: 248 %>
+      <% end %>
     <% end %>
-  <% end %>
   </div>
-  <div class="col-xs-12 col-sm-6 card_infos">
-  <%= link_to user_path(user), class: "link_show" do %>
-    <% if user.photo_company_logo? %>
-          <%= cl_image_tag user.photo_company_logo.path, width: 60, height: 60, crop: :fill %>
+
+  <!-- 2eme col avec logo, nom et description -->
+  <div class="col-xs-12 col-sm-4 card_infos">
+    <%= link_to user_path(user), class: "link_show" do %>
+      <% if user.photo_company_logo? %>
+            <%= cl_image_tag user.photo_company_logo.path, width: 60, height: 60, crop: :fill %>
+      <% end %>
+      <span><%= user.company %></span>
     <% end %>
-    <span><%= user.company %></span>
-  <% end %>
-    <p><%= user.description.truncate_words(25) %>
+    <p><%= user.description.truncate_words(32) %>
       <%= link_to user_path(user), class: "link_show" do %>
         <span><strong>En savoir plus</strong></span>  <i class="fa fa-chevron-right" aria-hidden="true"></i>
       <% end %>
     </p>
-
-
-
-    <!-- Modals -->
-    <button type="button" class="fa fa-phone " data-toggle="modal" data-target="#myModalphone<%= user.id %> "></button>
-    <!-- Modal telephone -->
-    <div class="modal fade" id="myModalphone<%= user.id %>" role="dialog">
-      <div class="modal-dialog">
-        <!-- Modal content-->
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">Téléphone de la société <%= user.company %></h4>
-          </div>
-          <div class="modal-body">
-            Bureau : <%= user.office_phone %>
-            <% if user.mobile_phone != nil %>
-            | Mobile : <%= user.mobile_phone %>
-            <% end %>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <button type="button" class="fa fa-envelope-o " data-toggle="modal" data-target="#myModalmail<%= user.id %>"></button>
-    <!-- Modal email -->
-    <div class="modal fade" id="myModalmail<%= user.id %>" role="dialog">
-      <div class="modal-dialog">
-        <!-- Modal content-->
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">Contact email de la société <%= user.company %></h4>
-          </div>
-          <div class="modal-body">
-            <%= user.email %>
-          </div>
-
-        </div>
-      </div>
-    </div>
-
-
-
-    <!-- marker distance -->
-    <h5><i class="fa fa-map-marker" aria-hidden="true"></i>
-    <% if @radius_users != [] %>
-      <% range = @client.distance_to(user.address).to_i  %>
-      <% if range < 1 %>
-        à moins de 1 km
-      <% elsif %>
-        à <%= range %> km
-      <% end %>
-    <% elsif %>
-      <% if user.city != nil || user.zip_code != nil  %>
-        <%= user.zip_code %> <%= user.city %>
-      <% end %>
-    <% end %>
-    </h5>
   </div>
+
+  <!-- 3eme col avec boutons et skills -->
+  <div class="col-xs-12 col-sm-4 card_skills">
+    <div class="modals_position">
+      <!-- Modal Phone -->
+      <div class="modal_phone">
+        <button type="button" class="fa fa-phone" data-toggle="modal" data-target="#myModalphone<%= user.id %> "></button>
+        <!-- Modal telephone -->
+        <div class="modal fade" id="myModalphone<%= user.id %>" role="dialog">
+          <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Téléphone de la société <%= user.company %></h4>
+              </div>
+              <div class="modal-body">
+                Bureau : <%= user.office_phone %>
+                <% if user.mobile_phone != nil %>
+                | Mobile : <%= user.mobile_phone %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Modal Email -->
+      <div class="modal_email">
+        <button type="button" class="fa fa-envelope-o" data-toggle="modal" data-target="#myModalmail<%= user.id %>"></button>
+        <!-- Modal email -->
+        <div class="modal fade" id="myModalmail<%= user.id %>" role="dialog">
+          <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Contact email de la société <%= user.company %></h4>
+              </div>
+              <div class="modal-body">
+                <%= user.email %>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- marker distance -->
+    <div class="distance_marker">
+      <h5><i class="fa fa-map-marker" aria-hidden="true"></i>
+      <% if @radius_users != [] %>
+        <% range = @client.distance_to(user.address).to_i  %>
+        <% if range < 1 %>
+          à moins de 1 km
+        <% elsif %>
+          à <%= range %> km
+        <% end %>
+      <% elsif %>
+        <% if user.city != nil || user.zip_code != nil  %>
+          <%= user.zip_code %> <%= user.city %>
+        <% end %>
+      <% end %>
+      </h5>
+    </div>
+  </div>
+
 </div>

@@ -1,13 +1,12 @@
 <%= render "shared/form", client: @client %>
 
 <% if @available_users != [] %>
-  <h1 class="text-center"> Il y a <%= @available_users.count %> prestataires qui correspondent à vos besoins</h1>
+  <h3 class="text-center"> Il y a <%= @available_users.count %> prestataires qui près de chez vous</h3>
 <% else %>
-  <h1 class="text-center"> Il y a <%= @radius_users.count %> prestataires dans votre secteur, affinez votre recherche ci-dessous</h1>
+  <h3 class="text-center"> Il y a <%= @radius_users.count %> prestataires dans votre secteur, affinez votre recherche ci-dessus</h3>
 <% end %>
 
 <div class="container">
-  <div class="row">
   <% if @available_users != [] %>
     <% @available_users.each do |user| %>
       <div class="col-xs-12">
@@ -21,7 +20,6 @@
       </div>
     <% end %>
   <% end %>
-  </div>
 </div>
 
 

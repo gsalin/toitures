@@ -1,27 +1,19 @@
 
-.card_show_users {
-  margin-top: 40px;
-  margin-bottom: 20px;
-  height: 250px;
-  position: relative;
+.row_show_users {
+  padding: 20px 0px 20px 0px;
+  border-top: solid black 1px;
 
-  .line {
-    height: 0px;
-    border-top: solid 1px #4A4A4A;
-    width: 875px;
-    position: absolute;
-    top: -20px;
-    left: 210px;
-
-  }
 
   .card_photo_presentation {
     padding-left: 0px;
+
+    .link_pic:hover {
+      opacity: 0.7;
+    }
   }
 
   .card_infos {
-    padding-top: 20px;
-    height: inherit;
+    padding: 16px 20px 20px 45px;
 
     img {
       border-radius: 50%;
@@ -38,7 +30,6 @@
       font-weight: lighter;
       font-size: 90%;
       margin-top: 25px;
-      position: absolute;
 
       span {
       font-size: inherit;
@@ -50,14 +41,23 @@
         color: $yellow;
       }
     }
+  }
+
+  .card_skills {
+    padding-top: 20px;
+
+    .modals_position {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: baseline;
+      align-content: stretch;
+    }
 
     h5 {
-      position: absolute;
-      bottom: 10px;
-      left: 330px;
-      color: $medium-grey;
+      color: #C5C7C0;
       font-weight: lighter;
-
     }
 
     button:hover, button:visited, button:link, button:active {
@@ -66,14 +66,12 @@
 
     .fa {
       background-color: white;
+      margin: 0px 7px 5px 7px;
     }
 
     .fa-phone {
-      position: absolute;
-      bottom: 15px;
-      left: 15px;
       color: $yellow;
-      font-size: 2.4em;
+      font-size: 1.8em;
       padding: 5px;
       padding-left: 40px;
       padding-right: 40px;
@@ -87,11 +85,8 @@
     }
 
     .fa-envelope-o {
-      position: absolute;
-      bottom: 15px;
-      left: 150px;
       color: $yellow;
-      font-size: 2.4em;
+      font-size: 1.8em;
       padding: 5px;
       padding-left: 40px;
       padding-right: 40px;
@@ -103,36 +98,17 @@
         opacity: 0.5;
       }
     }
-  }
 
-  .link_show {
+    .link_show {
     span {
       text-decoration: none;
       color: initial;
       }
+    }
+
+    .link_show:hover {
+      text-decoration: none;
+      opacity: 0.5;
+    }
   }
-
-  .link_show:hover {
-    text-decoration: none;
-    opacity: 0.5;
-  }
-
-  .link_pic:hover {
-    opacity: 0.7;
-  }
-}
-
-.card-link {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  z-index:2;
-  background: #D0D0D0;
-  opacity: 0;
-}
-
-  .card-link:hover{
-  opacity: 0.2;
 }
