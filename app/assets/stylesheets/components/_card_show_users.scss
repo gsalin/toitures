@@ -1,11 +1,11 @@
 
 .row_show_users {
-  padding: 20px 0px 20px 0px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   border-top: solid black 1px;
 
 
   .card_photo_presentation {
-    padding-left: 0px;
 
     .link_pic:hover {
       opacity: 0.7;
@@ -48,6 +48,15 @@
 
     .modals_position {
       display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: baseline;
+      align-content: stretch;
+    }
+
+    .distance_marker {
+        display: flex;
       flex-direction: row;
       flex-wrap: nowrap;
       justify-content: center;

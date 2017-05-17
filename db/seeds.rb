@@ -16,6 +16,8 @@ puts 'Creating fake users...'
   user = User.new(
     email:    Faker::Internet.email,
     address: "Paris, France",
+    city: "Paris",
+    zip_code: "75001",
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     position: Faker::Job.title,
@@ -47,6 +49,8 @@ end
   user = User.new(
     email:    Faker::Internet.email,
     address: "Bordeaux, France",
+    city: "Bordeaux",
+    zip_code: "33000",
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     position: Faker::Job.title,
@@ -77,6 +81,8 @@ end
 user = User.new(
   email:   "gsalin@gmail.com",
   address: "Paris, France",
+  city: "Paris",
+  zip_code: "75001",
   first_name: Faker::Name.first_name,
   last_name: Faker::Name.last_name,
   position: Faker::Job.title,
@@ -106,6 +112,8 @@ user.save!
 user = User.new(
   email:   "monu@histo.com",
   address: "Paris, France",
+  city: "Paris",
+  zip_code: "75001",
   first_name: Faker::Name.first_name,
   last_name: Faker::Name.last_name,
   position: Faker::Job.title,

@@ -9,15 +9,11 @@
 <div class="container">
   <% if @available_users != [] %>
     <% @available_users.each do |user| %>
-      <div class="col-xs-12">
       <%= render "shared/card_users", user: user %>
-      </div>
     <% end %>
   <% else %>
     <% @radius_users.each do |user| %>
-      <div class="col-xs-12">
       <%= render "shared/card_users", user: user %>
-      </div>
     <% end %>
   <% end %>
 </div>

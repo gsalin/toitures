@@ -75,8 +75,8 @@
     </div>
     <!-- marker distance -->
     <div class="distance_marker">
-      <h5><i class="fa fa-map-marker" aria-hidden="true"></i>
       <% if @radius_users != [] %>
+        <h5><i class="fa fa-map-marker" aria-hidden="true"></i>
         <% range = @client.distance_to(user.address).to_i  %>
         <% if range < 1 %>
           à moins de 1 km
