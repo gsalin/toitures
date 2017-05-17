@@ -22,19 +22,6 @@ $(document).ready(function() {
       }
     });
   }
-
-    var pro_address = $('#pro_address').get(0);
-
-  if (pro_address) {
-    var autocomplete = new google.maps.places.Autocomplete(pro_address, { types: ['geocode'] });
-    google.maps.event.addListener(autocomplete, 'place_changed', onPlaceChanged);
-    google.maps.event.addDomListener(works_address, 'keydown', function(e) {
-      if (e.keyCode == 13) {
-        e.preventDefault(); // Do not submit the form on Enter.
-      }
-    });
-  }
-
 });
 
 function onPlaceChanged() {
@@ -42,8 +29,8 @@ function onPlaceChanged() {
   var components = getAddressComponents(place);
 
   $('#office_address').trigger('blur').val(components.address);
-  $('#office_zip_code').val(components.zip_code);
-  $('#office_city').val(components.city);
+  $('#user_zip_code').val(components.zip_code);
+  $('#user_city').val(components.city);
   if (components.country_code) {
     $('#office_country').val(components.country_code);
   }
@@ -78,6 +65,8 @@ function getAddressComponents(place) {
   }
 
   return {
-    office_address: street_number + ' ' + route + ' ' + zip_code + ' ' + city + ' ' + country_code
+    office_address: street_number + ' ' + route + ' ' + zip_code + ' ' + city + ' ' + country_code,
+    zip_code: zip_code,
+    city: city,
   };
 }

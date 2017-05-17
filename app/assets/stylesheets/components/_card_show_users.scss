@@ -105,6 +105,13 @@
     }
   }
 
+  .link_show {
+    span {
+      text-decoration: none;
+      color: initial;
+      }
+  }
+
   .link_show:hover {
     text-decoration: none;
     opacity: 0.5;
