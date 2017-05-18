@@ -1,4 +1,4 @@
-<h2 class="text-center">Inscription</h2>
+<h2 class="text-center"><%= t(".sign_up") %></h2>
 
 
 <div class="container">
@@ -33,13 +33,15 @@
 </div>
 
   <div class="form-actions text-center">
-    <%= f.button :submit, "Inscription" %>
+    <%= f.button :submit, t(".sign_up") %>
   </div>
       <% end %>
 <div class="text-center">
   <%= render "devise/shared/links" %>
 </div>
+
+
+
 <%= content_for(:after_js) do %>
   <script src="https://maps.googleapis.com/maps/api/js?libraries=places&amp;key=AIzaSyC0J8yKgp1HNvXsiK1_H_PCAz2f-D9Zq4Y"></script>
 <% end %>
-
