@@ -21,6 +21,13 @@ fr:
         position: Poste dans la société
         photo_company_logo: Logo de la société
         photo_presentation: Photo de présentation
+      project:
+        title: Titre du projet
+        description: Description
+        cost: Coût
+        address: Commune
+        date: Date
+        project_photos: Photos du projet
     models:
       user: Utilisateur
   devise:
