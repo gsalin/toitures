@@ -29,6 +29,12 @@ gem 'cloudinary'
 gem 'attachinary', github: 'assembler/attachinary'
 gem 'jquery-fileupload-rails'
 
+#traduction i18n
+gem 'devise-i18n'
+
+#i18 n rails
+gem 'rails-i18n', '5.0.3'
+
 #googlemaps
 gem 'geocoder'
 gem "coffee-rails"

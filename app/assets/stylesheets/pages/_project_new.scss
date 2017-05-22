@@ -1,0 +1,30 @@
+.project_preview {
+  padding: 20px;
+  background-color: $light-grey;
+  margin-top: 15px;
+
+  p {
+    font-weight: bolder;
+  }
+
+  img {
+    border-radius: 5px;
+  }
+
+  a {
+    margin-left: 10px;
+  }
+}
+
+#project_description {
+  height: 300px;
+}
+
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
