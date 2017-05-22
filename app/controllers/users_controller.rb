@@ -22,8 +22,8 @@ class UsersController < ApplicationController
     @client = Client.new
     @user = User.find(params[:id])
     @projects = Project.where(user_id: @user)
-    @photos = []
     @projects.each do |project|
+      @photos = []
       if project.project_photos?
         project.project_photos.each do |photo|
           @photos << photo
