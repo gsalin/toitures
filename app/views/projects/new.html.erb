@@ -7,14 +7,14 @@
 <% if @projects == nil || @projects.count < 4 %>
   <div class="container">
     <div class="row">
-      <div class="col-xs-10 col-xs-offset-1 col-sm-4 ">
+      <div class="col-xs-10 col-xs-offset-1 col-sm-5 ">
         <% if @projects == nil || @projects.count < 4 %>
           <%= simple_form_for(@project) do |f| %>
             <%= f.input :title, placeholder: "Titre du projet" %>
-            <%= f.input :description, placeholder: "Décrivez ce projet"   %>
+            <%= f.input :description, as: :text,  placeholder: "Décrivez ce projet"   %>
             <%= f.input :cost, placeholder: "Indiquez le cout d'un tel projet" %>
             <%= f.input :address, placeholder: "Ou a été réalisé ce projet"   %>
-            <%= f.input :date, placeholder: "Quant a été réalisé ce projet", input_html: {type: "text" , class: "datepicker datepicker-color"}, html5: true %>
+            <%= f.input :date, discard_day: true %>
             <%= f.input :project_photos, as: :attachinary %>
             <%= f.button :submit, "Créer un projet", class: "navbar-wagon-button" %>
           <% end %>
@@ -26,8 +26,8 @@
 
 <% if @projects != nil%>
     <% @projects.each do |project| %>
-    <div class="col-xs-10 col-xs-offset-1 col-sm-4 project_preview">
-      <p class="text-center"> <%= project.title %> </p>
+    <div class="col-xs-10 col-xs-offset-1 col-sm-5 project_preview">
+      <p> <%= project.title %> </p>
       <span> <%= cl_image_tag project.project_photos[0].path, width: 100, height: 66, crop: :fill   %> </span>
       <%= link_to "Modifier", edit_project_path(project), class: "btn btn-success" %>
       <%= link_to "Supprimer", project_path(project), class: "btn btn-danger",
@@ -45,3 +45,6 @@
   <% end %>
 </div>
 
+<%= content_for(:after_js) do %>
+  <script src="https://maps.googleapis.com/maps/api/js?libraries=places&amp;key=AIzaSyC0J8yKgp1HNvXsiK1_H_PCAz2f-D9Zq4Y"></script>
+<% end %>

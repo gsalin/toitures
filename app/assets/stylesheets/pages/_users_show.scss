@@ -143,16 +143,28 @@
 
   h3 {
     padding: 15px;
+    padding-top: 5px;
   }
 
   #desc-projet {
     text-align: justify;
     margin-bottom: 20px;
+    font-size :smaller;
   }
 
   .fa {
     margin-right: 10px;
   }
+}
+
+.project-infos {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
 }
 
 

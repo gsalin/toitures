@@ -7,4 +7,5 @@ class Project < ApplicationRecord
   validates :cost, presence: true
   validates :address, presence: true
   validates :project_photos, presence: true
+  validates :date, presence: true
 end
