@@ -2,7 +2,7 @@
 
   <!-- <h2><%= t(".title", resource: resource_class.model_name.human) %></h2> -->
 
-  <h2 class="text-center" >Profil de la société <%= current_user.company %></h2>
+  <h2 class="text-center profile-title" >Profil de la société <strong><%= current_user.company %></strong></h2>
 
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= f.error_notification %>
@@ -78,7 +78,8 @@
           Monument historique
         </span>
       </div>
-      <%= f.input :description %>
+      <%= f.input :description%>
+      <span id="description-count"><strong></strong></span><span> sur 900 lettres  </span>
     </div>
   </div>
 
@@ -98,23 +99,20 @@
     </div>
 
     <!--   Enregistrer mes modifications -->
-    <div class="col-xs-12 col-md-6 col-md-offset-1 col-profile-style">
-      <%= f.input :current_password, required: true, label: "Mot de passe", hint: "Le mot de passe est necessaire pour valider les changements"%>
-      <%= f.button :submit, "Mettre à jour" %>
+    <div class="col-xs-12 col-md-6 col-md-offset-1 col-profile-style col-profile-submit list-inline">
+      <%= f.input :current_password, required: true %>
+      <%= f.button :submit, "Mettre à jour mon profil", class: "btn btn-success profile-submit-btn" %>
+      <p class= "help-block-custom text-center">Le mot de passe est obligatoire pour valider les changements</p>
       <% end %>
-    </div>
-
-   <!--  Fermer mon compte -->
-    <div class="col-xs-12 col-md-6 col-md-offset-1">
-      <p><%= link_to t(".cancel_my_account"), registration_path(resource_name), data: { confirm: t(".are_you_sure") }, method: :delete %></p>
+      <%= link_to new_project_path(current_user), class: "navbar-wagon-button btn" do %>
+        <span>Accéder mes projets</span>
+      <% end %>
+      <%= link_to t(".cancel_my_account"), registration_path(resource_name), data: { confirm: t(".are_you_sure") }, method: :delete %>
       <%= link_to t("devise.shared.links.back"), :back %>
     </div>
   </div>
 </div>
 
-<%= link_to new_project_path(current_user) do %>
-  <span>Gérer mes projets</span>
-<% end %>
 
 
 <!-- JS Autocomplete -->

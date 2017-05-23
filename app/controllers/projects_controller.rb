@@ -9,8 +9,8 @@ end
 
 def new
   @project = Project.new
-  id = current_user.id
-  @projects = Project.where(user_id: id)
+  this_id = current_user.id
+  @projects = Project.where(user_id: this_id)
 end
 
 def create
@@ -24,9 +24,10 @@ def create
 end
 
 def edit
-  id = current_user.id
   @project = Project.find(params[:id])
-  if @project.user_id != id
+  @user = current_user
+  this_id = current_user.id
+  if @project.user_id != this_id
     redirect_to new_project_path(current_user)
   end
 end
@@ -35,7 +36,7 @@ def update
   @project = Project.find(params[:id])
   @project.update(project_params)
 
-  redirect_to new_project_path(current_user)
+  redirect_to new_project_path(@project)
 end
 
   def destroy

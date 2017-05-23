@@ -1,3 +1,7 @@
+.profile-title {
+  padding: 10px;
+}
+
 .profile-container {
 
   .profile-first-row {
@@ -20,10 +24,6 @@
   .form-control {
     width: 90%;
 
-  }
-
-  .password {
-    width: 50%;
   }
 
   .text {
@@ -52,8 +52,6 @@
   }
 }
 
-
-
 .col-profile-infos {
   padding-top: 30px;
 }
@@ -61,5 +59,32 @@
 .col-profile-style {
   background-color: $light-grey;
   border: solid $medium-grey 1px;
-  border-radius: 3pxx
+  border-radius: 3px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.col-profile-submit {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: stretch;
+
+  .profile-submit-btn {
+    margin-top: 10px;
+  }
+
+
+  .help-block-custom {
+    color: orangered;
+    opacity: 0.6;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: solid $medium-grey 1px;
+  }
 }
