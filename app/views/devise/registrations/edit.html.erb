@@ -1,136 +1,118 @@
-<div class="container">
+<div class="container profile-container">
 
   <!-- <h2><%= t(".title", resource: resource_class.model_name.human) %></h2> -->
 
-  <h2 class="text-center" >Modifiez votre profil</h2>
+  <h2 class="text-center" >Profil de la société <%= current_user.company %></h2>
 
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= f.error_notification %>
 
-  <div class="row">
-    <!-- Card infos personnnelles -->
-    <div class="col-xs-12 col-md-6">
-      <h1 class="title-lv1 border-bottom margin-bottom">Informations personnelles</h1>
-      <div class="profile-form-container form-inline">
-            <%= f.input :first_name, label_html: {class: "label-profile-form"}, input_html: {class: "input-profile-form"} %>
-            <%= f.input :last_name, label_html: {class: "label-profile-form"}, input_html: {class: "input-profile-form"} %>
-            <%= f.input :position, label_html: {class: "label-profile-form"}, input_html: {class: "input-profile-form"} %>
-
-            <%= f.input :email, label_html: {class: "label-profile-form"}, input_html: {class: "input-profile-form"}, required: true %>
-
-            <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-              <p><%= t(".currently_waiting_confirmation_for_email", email: resource.unconfirmed_email) %></p>
-            <% end %>
-
-            <%= f.input :office_phone, label_html: {class: "label-profile-form"}, input_html: {class: "input-profile-form"} %>
-            <%= f.input :mobile_phone, label_html: {class: "label-profile-form"}, input_html: {class: "input-profile-form"} %>
-
-      </div>
-    </div>
-
+  <div class="row profile-first-row">
     <!-- Card infos de la société -->
-    <div class="col-xs-12 col-md-6">
-      <h1 class="title-lv1 border-bottom margin-bottom">Informations de la société</h1>
-      <div class="profile-form-container form-inline">
-         <%= f.input :company, label_html: {class: "label-profile-form"}, input_html: {class: "input-profile-form"} %>
-          <%= f.input :address, label_html: {class: "label-profile-form"}, input_html: {class: "input-profile-form"} %>
-          <%= f.input :city, label_html: {class: "label-profile-form"}, input_html: {class: "input-profile-form"} %>
-          <%= f.input :zip_code, label_html: {class: "label-profile-form"}, input_html: {class: "input-profile-form"} %>
-          <%= f.input :radius, label_html: {class: "label-profile-form"}, input_html: {class: "input-profile-form"} %>
-
-          <%= f.input :description, label_html: {class: "label-profile-form"}, input_html: {class: "description-input-profile-form"} %>
+    <div class="col-xs-12 col-md-4 col-md-offset-1 col-profile-infos col-profile-style">
+      <%= f.input :company %>
+      <%= f.input :address %>
+      <%= f.input :city %>
+      <%= f.input :zip_code %>
+      <%= f.input :radius %>
+      <%= f.input :photo_company_logo, as: :attachinary %>
+      <%= f.input :photo_presentation, as: :attachinary %>
+    </div>
+    <!-- card skills et description -->
+    <div class="col-xs-12 col-md-6 col-md-offset-1 col-profile-style">
+      <p>Type de travaux</p>
+      <div class="checkbox_form">
+        <span>
+          <%= f.check_box :construction %>
+          Construction
+        </span>
+        <span>
+          <%= f.check_box :renovation  %>
+          Renovation
+        </span>
+        <span>
+          <%= f.check_box :entretien  %>
+          Entretien
+        </span>
       </div>
+
+      <p>Spécialités</p>
+      <div class="checkbox_form">
+        <span>
+          <%= f.check_box :couverture  %>
+          Couverture
+        </span>
+        <span>
+          <%= f.check_box :ouverture  %>
+          Ouverture
+        </span>
+        <span>
+          <%= f.check_box :terrasse  %>
+          Terrasse
+        </span>
+        <span>
+          <%= f.check_box :plomberie  %>
+          Plomberie
+        </span>
+        <span>
+          <%= f.check_box :charpente  %>
+          Charpente
+        </span>
+      </div>
+      <p>Type de bien</p>
+      <div class="checkbox_form">
+        <span>
+          <%= f.check_box :maison  %>
+          Maison
+        </span>
+        <span>
+          <%= f.check_box :chateau  %>
+          Chateau
+        </span>
+        <span>
+          <%= f.check_box :immeuble  %>
+          Immeuble
+        </span>
+        <span>
+          <%= f.check_box :monument_historique  %>
+          Monument historique
+        </span>
+      </div>
+      <%= f.input :description %>
     </div>
   </div>
 
   <div class="row">
-    <!-- Card Photos -->
-    <div class="col-xs-12 col-md-6">
-      <h1 class="title-lv1 border-bottom margin-bottom">Photos société et chantiers</h1>
-      <div class="profile-form-container form-inline">
-      <%= f.input :photo_company_logo, as: :attachinary, label_html: {class: "attachinary_container"}, input_html: {class: "input-profile-form"} %>
-      <%= f.input :photo_presentation, as: :attachinary, label_html: {class: "attachinary_container"}, input_html: {class: "input-profile-form"} %>
 
-        <h3>Type de travaux</h3>
-        <span>Construction</span>
-        <%= f.check_box :construction %>
-        <span>Renovation</span>
-        <%= f.check_box :renovation %>
-        <span>Entretien</span>
-        <%= f.check_box :entretien %>
-
-        <h3>Spécialités</h3>
-        <span>Couverture</span>
-        <%= f.check_box :couverture %>
-        <span>Ouverture</span>
-        <%= f.check_box :ouverture %>
-        <span>Terrasse</span>
-        <%= f.check_box :terrasse %>
-        <span>Plomberie</span>
-        <%= f.check_box :plomberie %>
-        <span>Charpente</span>
-        <%= f.check_box :charpente %>
-
-        <h3>Type de bien</h3>
-        <span>Maison</span>
-        <%= f.check_box :maison %>
-        <span>Chateau</span>
-        <%= f.check_box :chateau %>
-        <span>Immeuble</span>
-        <%= f.check_box :immeuble %>
-        <span>Monument historique</span>
-        <%= f.check_box :monument_historique %>
-      </div>
+    <div class="col-xs-12 col-md-4 col-md-offset-1 col-profile-style">
+      <h4>Contact</h4>
+      <%= f.input :first_name %>
+      <%= f.input :last_name %>
+      <%= f.input :position %>
+      <%= f.input :email %>
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <p><%= t(".currently_waiting_confirmation_for_email", email: resource.unconfirmed_email) %></p>
+      <% end %>
+      <%= f.input :office_phone %>
+      <%= f.input :mobile_phone %>
     </div>
 
     <!--   Enregistrer mes modifications -->
-    <div class="col-xs-12 col-md-6">
-      <h1 class="title-lv1 border-bottom margin-bottom">Enregistrer mes modifications</h1>
-      <div class="profile-form-container form-inline">
-        <p>Merci de recomposer votre mot de passe afin de sauvegarder vos modifications</p>
-        <br>
-        <%= f.input :current_password, required: true, label_html: {class: "label-profile-form"}, input_html: {class: "input-profile-form"} %>
-        <div class="form-actions text-center">
-          <%= f.button :submit, "Mettre à jour", class: "main-cta" %>
-        </div>
-        <% end %>
-      </div>
-    </div>
-
-    <!-- Changer mon mot de passe -->
-    <div class="col-xs-12 col-md-6">
-      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-      <%= f.error_notification %>
-      <h1 class="title-lv1 border-bottom margin-bottom">Changer mon mot de passe</h1>
-      <div class="profile-form-container form-inline">
-        <%= f.input :current_password, required: true, hint: t(".we_need_your_current_password_to_confirm_your_changes"), label_html: {class: "label-profile-form"}, input_html: {class: "input-profile-form"} %>
-        <%= f.input :password, autocomplete: "off", hint: t(".leave_blank_if_you_don_t_want_to_change_it"), required: false, label_html: {class: "label-profile-form"}, input_html: {class: "input-profile-form"} %>
-        <%= f.input :password_confirmation, required: false, label_html: {class: "label-profile-form"}, input_html: {class: "input-profile-form"} %>
-        <div class="form-actions text-center">
-          <%= f.button :submit, t(".update") %>
-        </div>
-        <% end %>
-      </div>
+    <div class="col-xs-12 col-md-6 col-md-offset-1 col-profile-style">
+      <%= f.input :current_password, required: true, label: "Mot de passe", hint: "Le mot de passe est necessaire pour valider les changements"%>
+      <%= f.button :submit, "Mettre à jour" %>
+      <% end %>
     </div>
 
    <!--  Fermer mon compte -->
-    <div class="col-xs-12 col-md-6">
-      <h1 class="title-lv1 border-bottom margin-bottom">Fermer mon compte</h1>
-      <div class="profile-form-container form-inline">
-        <h3><%= t(".cancel_my_account") %></h3>
-
-        <p><%= t(".unhappy") %> <%= link_to t(".cancel_my_account"), registration_path(resource_name), data: { confirm: t(".are_you_sure") }, method: :delete %></p>
-
-        <%= link_to t("devise.shared.links.back"), :back %>
-      </div>
+    <div class="col-xs-12 col-md-6 col-md-offset-1">
+      <p><%= link_to t(".cancel_my_account"), registration_path(resource_name), data: { confirm: t(".are_you_sure") }, method: :delete %></p>
+      <%= link_to t("devise.shared.links.back"), :back %>
     </div>
-
-
-
   </div>
 </div>
 
-<%= link_to new_project_path(current_user), class: "main-cta" do %>
+<%= link_to new_project_path(current_user) do %>
   <span>Gérer mes projets</span>
 <% end %>
 
