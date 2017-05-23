@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'magazines/index'
 
   ActiveAdmin.routes(self)
   devise_for :users
@@ -11,16 +10,17 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   # partie magazine
+  get 'magazines/index'
   resources :magazine, only: [ :index ] do
     get 'energie', on: :collection, controller: "energies", action: "index"
     get 'energie/photovoltaique_2017', on: :collection, controller: "energies", action: "photovoltaique_2017"
   end
 
-
   # Partie guides
   get 'guides', to: 'guides#index'
 
-
+  #partie pages statiques avec high-voltage
+  get "/*id" => 'pages#show', as: :page, format: false
 end
 
 
