@@ -1,24 +1,7 @@
-<h1>edit projects</h1>
+<h1 class="text-center title_project_new">edition de projet</h1>
 
-<%= @project.id %>
-<%= @project.user_id %>
-<%= cl_image_path @project.project_photos %>
 
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-      <%= simple_form_for @project do |f| %>
-        <%= f.input :title, placeholder: "Titre du projet" %>
-        <%= f.input :description, placeholder: "Décrivez ce projet"   %>
-        <%= f.input :cost, placeholder: "Indiquez le cout d'un tel projet" %>
-        <%= f.input :address, placeholder: "Ou a été réalisé ce projet"   %>
-        <%= f.input :date, discard_day: true %>
-        <%= f.input :project_photos, as: :attachinary %>
-        <%= f.button :submit, "Mettre à jour" %>
-      <% end %>
-    </div>
-  </div>
-</div>
+<%= render "shared/form_project", project: @project %>
 
 
 <%= content_for(:after_js) do %>

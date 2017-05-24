@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   has_attachment :photo_presentation
   has_attachment  :photo_company_logo
-  has_many :projects, dependent: :nullify
+  has_many :projects, dependent: :destroy
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,

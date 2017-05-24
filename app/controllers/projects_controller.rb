@@ -30,13 +30,17 @@ def edit
   if @project.user_id != this_id
     redirect_to new_project_path(current_user)
   end
+
 end
 
 def update
   @project = Project.find(params[:id])
-  @project.update(project_params)
 
-  redirect_to new_project_path(@project)
+  if @project.update(project_params)
+    redirect_to new_project_path(@project)
+  else
+    render :edit
+  end
 end
 
   def destroy
