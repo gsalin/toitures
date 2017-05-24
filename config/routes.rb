@@ -18,8 +18,31 @@ Rails.application.routes.draw do
 
   # Partie guides
   get 'guides', to: 'guides#index'
+  resources :guide, only: [ :index ] do
 
-  #partie pages statiques avec high-voltage
+    # guide de la toiture
+    get 'la-toiture', on: :collection, controller: "toitures", action: "index"
+    get 'la-toiture/element-essentiel-de-votre-maison', on: :collection, controller: "toitures", action: "introduction"
+    get 'la-toiture/composition', on: :collection, controller: "toitures", action: "composition"
+    get 'la-toiture/types-de-toit', on: :collection, controller: "toitures", action: "types_de_toit"
+    get 'la-toiture/achat', on: :collection, controller: "toitures", action: "achat"
+    get 'la-toiture/entretien', on: :collection, controller: "toitures", action: "entretien"
+    get 'la-toiture/renovation', on: :collection, controller: "toitures", action: "renovation"
+    get 'la-toiture/reglementation', on: :collection, controller: "toitures", action: "reglementation"
+    get 'la-toiture/professionnels', on: :collection, controller: "toitures", action: "professionnels"
+
+
+    # guide de la couverture
+    get 'la-couverture', on: :collection, controller: "couvertures", action: "index"
+    get 'la-couverture/introduction', on: :collection, controller: "couvertures", action: "introduction"
+
+    # guide de la toiture
+    get 'la-charpente', on: :collection, controller: "charpentes", action: "index"
+    get 'la-charpente/introduction', on: :collection, controller: "charpentes", action: "introduction"
+
+  end
+
+  #partie pages statiques charpentegh-voltage
   get "/*id" => 'pages#show', as: :page, format: false
 end
 
