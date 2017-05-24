@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-10 col-xs-offset-1 col-md-6 col-md-offset-3 ">
+      <%= simple_form_for(project) do |f| %>
+        <%= f.input :title, placeholder: "Rénovation de la charpente d'une ferme angevine" %>
+        <%= f.input :description, as: :text, hint: "entre 300 et 900 charactères :", placeholder: "Décrivez ce projet, la demande du client, le temps de travaux, racontez une anecdote..."   %>
+          <div class="text-right counter_style">
+          <span>charactères :</span>
+          <strong><span id="description-project-count"></strong></span>
+          </div>
+        <%= f.input :cost, placeholder: "20 000" %>
+        <%= f.input :address, placeholder: "Angers"   %>
+        <%= f.input :date, discard_day: true %>
+        <%= f.input :project_photos, as: :attachinary %>
+        <div id="position_btn_project">
+        <%= f.button :submit, "Créer un projet", class: "navbar-wagon-button" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+

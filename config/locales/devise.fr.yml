@@ -2,7 +2,7 @@ fr:
   activerecord:
     attributes:
       user:
-        current_password: Mot de passe actuel
+        current_password: Mot de passe
         email: Email
         password: Mot de passe
         password_confirmation: Confirmation du mot de passe

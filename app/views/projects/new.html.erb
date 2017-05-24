@@ -1,38 +1,39 @@
-<% if @projects == nil || @projects.count == 0 %>
-  <h1 class="text-center">Nouveau projet de la société <%= current_user.company %></h1>
-<% else %>
-  <h1 class="text-center">Créez ou modifiez vos projets</h1>
-<% end %>
+<h1 class="text-center title_project_new">Edition de projets</h1>
 
+<!-- formulaire de création -->
 <% if @projects == nil || @projects.count < 4 %>
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-10 col-xs-offset-1 col-sm-5 ">
-        <% if @projects == nil || @projects.count < 4 %>
-          <%= simple_form_for(@project) do |f| %>
-            <%= f.input :title, placeholder: "Titre du projet" %>
-            <%= f.input :description, as: :text,  placeholder: "Décrivez ce projet"   %>
-            <%= f.input :cost, placeholder: "Indiquez le cout d'un tel projet" %>
-            <%= f.input :address, placeholder: "Ou a été réalisé ce projet"   %>
-            <%= f.input :date, discard_day: true %>
-            <%= f.input :project_photos, as: :attachinary %>
-            <%= f.button :submit, "Créer un projet", class: "navbar-wagon-button" %>
-          <% end %>
-        <% end %>
-      </div>
-  <% else %>
-  <p class="text-center">Vous avez déja créé 4 projets, vous pouvez modifier ou supprimer les projets ci-dessous :</p>
+
+<h3 class="text-center">Nouveau projet</h3>
+<%= render "shared/form_project", project: @project %>
+
+<% else %>
+
+<p class="text-center">Vous avez déja créé 4 projets</p>
+
 <% end %>
 
-<% if @projects != nil%>
+
+
+
+
+<% if @projects != nil %>
+  <% if @projects.count == 0 %>
+    <h3 class="text-center">Vous n'avez aucun projet, crééz en!</h3>
+  <% elsif @projects.count < 4 %>
+    <h3 class="text-center">Vous avez créé <%= @projects.count %> projet(s) sur 4 disponibles</h3>
+  <% end %>
+
+
+<div class="container">
+  <div class="row row_project_preview">
     <% @projects.each do |project| %>
-    <div class="col-xs-10 col-xs-offset-1 col-sm-5 project_preview">
-      <p> <%= project.title %> </p>
+    <div class="col-xs-12 col-md-3 project_preview">
+      <p class="text-center"> <%= project.title %> </p>
       <span> <%= cl_image_tag project.project_photos[0].path, width: 100, height: 66, crop: :fill   %> </span>
       <%= link_to "Modifier", edit_project_path(project), class: "btn btn-success" %>
       <%= link_to "Supprimer", project_path(project), class: "btn btn-danger",
-          method: :delete,
-          data: { confirm: "Etes vous sur?" } %>
+            method: :delete,
+            data: { confirm: "Etes vous sur?" } %>
     </div>
     <% end %>
   </div>
