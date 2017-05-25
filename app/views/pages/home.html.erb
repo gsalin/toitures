@@ -117,7 +117,7 @@
       <br>
        <%= link_to 'toitures index', la_toiture_guide_index_path %>
       <br>
-      <%= link_to 'toiture intro', la_toiture_element_essentiel_de_votre_maison_guide_index_path %>
+      <%= link_to 'financement', la_toiture_financement_guide_index_path %>
       <br>
       <%= link_to 'composition', la_toiture_composition_guide_index_path %>
       <br>
@@ -186,6 +186,66 @@
   <script src="https://maps.googleapis.com/maps/api/js?libraries=places&amp;key=AIzaSyC0J8yKgp1HNvXsiK1_H_PCAz2f-D9Zq4Y"></script>
 <% end %>
 
+<!--   <div class="home_container">
+    <h3>Belle toiture</h3>
+    <%= simple_form_for(@client) do |f| %>
+      <%= f.input :address, placeholder: "Lieu des travaux", autofocus: true, label:false %>
+          <h5>Travaux</h5>
+          <div class="flexbox">
+            <div><%= f.check_box :couverture %> <span>couverture</span></div>
+            <div>
+            <%= f.check_box :charpente %>
+            <span>charpente</span>
+            </div>
+            <div><%= f.check_box :ouverture %> <span>fenêtre / ouverture</span></div>
+            <div>
+            <%= f.check_box :terrasse %>
+            <span>terrasse</span>
+            </div>
+            <div>
+            <%= f.check_box :plomberie %>
+            <span>eaux de pluies / zinguerie</span>
+            </div>
+          </div>
+          <h5>Type de bien</h5>
+          <div class="flexbox">
+            <div>
+            <%= f.check_box :maison %>
+            <span>maison</span>
+            </div>
+            <div>
+            <%= f.check_box :immeuble %>
+            <span>immeuble</span>
+            </div>
+            <div>
+            <%= f.check_box :chateau %>
+            <span>chateau</span>
+            </div>
+            <div>
+            <%= f.check_box :monument_historique %>
+            <span>classé monument historique</span>
+            </div>
+          </div>
 
+          <h5>Besoin</h5>
+          <div class="flexbox">
+            <div>
+            <%= f.check_box :construction %>
+            <span>construction</span>
+            </div>
+            <div>
+            <%= f.check_box :renovation %>
+            <span>rénovation</span>
+            </div>
+            <div>
+            <%= f.check_box :entretien %>
+            <span>entretien</span>
+            </div>
+          </div>
+          <div class="text-center">
+      <%= f.submit  "Rechercher des pros", class: "navbar-wagon-button in_page" %>
+          </div>
+    <% end %>
+  </div>
 
-
+ -->

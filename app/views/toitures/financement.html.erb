@@ -1,0 +1,94 @@
+<%= render 'shared/guides_top_banner' %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-9">
+      <div class='article-page'>
+
+        <ol class="breadcrumb">
+          <li><a href="/">Accueil</a></li>
+          <li><%= link_to "Les guides", guides_path %></li>
+          <li><%= link_to "La toiture", la_toiture_guide_index_path %></li>
+          <li class="active">Les aides et les financements</li>
+        </ol>
+
+         <div class="share-links">
+            <a href="#" class="share-link bg-facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+            <a href="#" class="share-link bg-twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+            <a href="#" class="share-link bg-email">
+              <i class="fa fa-google"></i>
+            </a>
+            <a href="#" class="share-link bg-text">
+              <i class="fa fa-envelope-o"></i>
+            </a>
+        </div>
+
+        <header>
+          <h1 itemprop="headline" class="text-center">Les aides et les financements</h1>
+        </header>
+        <p class='italic'>Vos travaux de toiture peuvent être financés par votre banque dans le cadre de prêts immobiliers</p>
+            <p><strong>Financement</strong></p>
+        <p> de Multiples aides existent.Quelques sites qui en parle</p>
+        <ul>
+          <li> <%= link_to 'le site economie.gouv', 'https://www.economie.gouv.fr/particuliers/aides-renovation-energetique' %></li>
+          <li><%= link_to 'le site renovation-info-service', 'http://www.renovation-info-service.gouv.fr/mes-aides-financieres' %></li>
+          <li><%= link_to 'le site quelleenergie.fr', 'https://www.quelleenergie.fr' %></li>
+        </ul>
+
+      </div>
+    </div>
+    <%= render 'shared/guide_left_navigation' %>
+  </div>
+</div>
+
+
+<%= render 'shared/guides_top_banner' %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-9">
+      <div class='article-page'>
+        <ol class="breadcrumb">
+          <li><a href="#">Accueil</a></li>
+          <li><a href="#">Guides</a></li>
+          <li class="active">La toiture</li>
+        </ol>
+
+         <div class="share-links">
+
+           <h6 class="left-navigation-title">PARTAGER CETTE PAGE</h6>
+
+            <a href="#" class="share-link bg-facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+            <a href="#" class="share-link bg-twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+            <a href="#" class="share-link bg-email">
+              <i class="fa fa-google"></i>
+            </a>
+            <a href="#" class="share-link bg-text">
+              <i class="fa fa-envelope-o"></i>
+            </a>
+        </div>
+        <header>
+        <h1 class="text-center">Toiture introduction</h1>
+        <p class="italic">La toiture est un  élément essentiel de votre logement pour plusieurs raisons :</p>
+        <ul>
+          <li>elle vous abrite du froid, de l’humidité, de la pluie, etc.</li>
+          <li>C’est une zone de vie avec les terrasses, les combles qui peuvent être aménagés.</li>
+          <li>C’est une zone d’énergie avec des panneaux solaires.</li>
+          <li>C’est un perchoir potentiel pour admirer le paysage.</li>
+        </ul>
+      </div>
+    </div>
+    <%= render 'shared/guide_left_navigation' %>
+  </div>
+
+</div>
+
+
