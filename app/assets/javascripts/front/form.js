@@ -24,6 +24,10 @@ $(document).ready(function() {
       var ville = villes[Math.floor(Math.random()*villes.length)];
       $("#project_address").attr("placeholder", ville);
     }, 2000);
+
+      $('body').on("click", ".dropdown-menu", function (e) {
+        $(this).parent().is(".open") && e.stopPropagation();
+    });
   });
 });
 

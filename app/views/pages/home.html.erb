@@ -1,6 +1,8 @@
 
 <div class="home-banner">
-  <h2>Nous référencons les meilleurs professionnels de la toiture</h2>
+  <h3>surmatete.fr</h3>
+  <h2>L'annuaire des professionnels de la toiture</h2>
+  <!-- carousel -->
   <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
       <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
@@ -15,74 +17,81 @@
         </div>
       </div>
       <div class="item">
-        <%= image_tag 'user_base_pic.png' %>
+        <%= image_tag 'toit_ancien.jpg' %>
         <div class="carousel-caption">
         </div>
       </div>
     </div>
   </div>
-  <div class="home_container">
-    <h3>Belle toiture</h3>
-    <%= simple_form_for(@client) do |f| %>
-      <%= f.input :address, placeholder: "Lieu des travaux", autofocus: true, label:false %>
-          <h5>Travaux</h5>
-          <div class="flexbox">
-            <div><%= f.check_box :couverture %> <span>couverture</span></div>
-            <div>
-            <%= f.check_box :charpente %>
-            <span>charpente</span>
-            </div>
-            <div><%= f.check_box :ouverture %> <span>fenêtre / ouverture</span></div>
-            <div>
-            <%= f.check_box :terrasse %>
-            <span>terrasse</span>
-            </div>
-            <div>
-            <%= f.check_box :plomberie %>
-            <span>eaux de pluies / zinguerie</span>
-            </div>
-          </div>
-          <h5>Type de bien</h5>
-          <div class="flexbox">
-            <div>
-            <%= f.check_box :maison %>
-            <span>maison</span>
-            </div>
-            <div>
-            <%= f.check_box :immeuble %>
-            <span>immeuble</span>
-            </div>
-            <div>
-            <%= f.check_box :chateau %>
-            <span>chateau</span>
-            </div>
-            <div>
-            <%= f.check_box :monument_historique %>
-            <span>classé monument historique</span>
-            </div>
-          </div>
-
-          <h5>Besoin</h5>
-          <div class="flexbox">
-            <div>
-            <%= f.check_box :construction %>
-            <span>construction</span>
-            </div>
-            <div>
-            <%= f.check_box :renovation %>
-            <span>rénovation</span>
-            </div>
-            <div>
-            <%= f.check_box :entretien %>
-            <span>entretien</span>
-            </div>
-          </div>
-          <div class="text-center">
-      <%= f.submit  "Rechercher des pros", class: "navbar-wagon-button in_page" %>
-          </div>
-    <% end %>
+  <!-- form -->
+  <div class="form_home">
+  <%= simple_form_for(@client) do |f| %>
+    <div class="home_container">
+      <div class="main-form-stuffs">
+      <%= f.input :address, placeholder: 'Ville, CP, Adresse', autofocus: true, label:false %>
+      </div>
+      <div class="dropdown main-form-stuffs">
+        <button class="btn btn-default custom-drop-down-btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          Type de travaux
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <li><label><%= f.check_box :construction %><span> construction</span></label></li>
+          <li><label><%= f.check_box :renovation %><span> rénovation</span></label></li>
+          <li><label><%= f.check_box :entretien %><span> entretien</span></label></li>
+        </ul>
+      </div>
+      <div class="dropdown main-form-stuffs">
+        <button class="btn btn-default custom-drop-down-btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          Spécialité
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu dropdown-size-custom" aria-labelledby="dropdownMenu1">
+          <li><label><%= f.check_box :couverture %> <span> couverture</span></label></li>
+          <li><label><%= f.check_box :charpente %><span> charpente</span></label></li>
+          <li><label><%= f.check_box :ouverture %> <span> fenêtre / ouverture</span></label></li>
+          <li><label><%= f.check_box :terrasse %><span> terrasse</span></label></li>
+          <li><label><%= f.check_box :plomberie %><span> eaux de pluies / zinguerie</span></label></li>
+        </ul>
+      </div>
+      <div class="dropdown main-form-stuffs">
+        <button class="btn btn-default custom-drop-down-btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          Type de bien
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu dropdown-size-custom" aria-labelledby="dropdownMenu1">
+          <li><label><%= f.check_box :maison %><span> maison</span></label></li>
+          <li><label><%= f.check_box :immeuble %><span> immeuble</span></label></li>
+          <li><label><%= f.check_box :chateau %><span> chateau</span></label></li>
+          <li><label><%= f.check_box :monument_historique %><span> monument historique</span></label></li>
+        </ul>
+      </div>
+      <div class="main-form-stuffs">
+        <%= button_tag type: 'submit', class: "search-button" do %>
+        <i class="fa fa-search" aria-hidden="true"></i>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
   </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

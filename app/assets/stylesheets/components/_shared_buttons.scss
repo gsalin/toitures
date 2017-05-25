@@ -1,0 +1,21 @@
+.search-button {
+  margin-left: 10px;
+  border-radius: 3px;
+  background-color: #F4E04D;
+  color: white;
+  font-size: 1.5em;
+  border: none;
+  font-weight: lighter;
+  width: 45px;
+  height: 45px;
+  opacity: 1;
+}
+
+
+.search-button:hover {
+  color: $dark-grey;
+  background: darker;
+}
+
+
+
