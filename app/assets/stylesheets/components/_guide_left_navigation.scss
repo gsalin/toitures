@@ -1,0 +1,113 @@
+// CSS de la partielle "article_left_navigation"
+
+
+
+
+
+//CSS partie social media
+
+.share-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.share-link {
+  flex: 0 0 24%;
+  color: white;
+  font-size: 18px;
+  padding: 10px 0;
+  text-align: center;
+  border-radius: 2px;
+  cursor: pointer;
+  &:hover {
+    color: white;
+  }
+}
+.bg-text {
+  background: #4a4a4a;
+}
+.bg-email {
+  background: #aeaeae;
+}
+.bg-twitter {
+  background: #00a3e1;
+}
+.bg-facebook {
+  background: #3b5998;
+}
+
+.left-navigation-container {
+  border: solid 1px $light-grey;
+  border-radius: 5px;
+  padding: 5px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-size: 15px;
+  line-height: 1.2;
+  color: $dark-grey;
+  background-color: white;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.left-navigation-title {
+  color: $dark-grey;
+  display: inline-block;
+  font-size: 1em;
+  text-transform: uppercase;
+  width: 100%;
+  font-size: 28px;
+  margin-bottom: -10px;
+}
+
+.left-navigation-title:hover {
+  color: $medium-grey;
+  text-decoration: none;
+}
+
+.all-categories-articles {
+  margin-left: 10px;
+  line-height: 2;
+  margin-bottom: 40px;
+
+  li {
+    list-style-type: none;
+    line-height: 1.5em;
+    margin-left: -30px;
+  }
+
+}
+
+.left-navigation-category-link {
+  margin-left: 0px;
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: -5px;
+}
+
+.left-navigation-call-to-action {
+  border-top: 1px solid $medium-grey;
+  padding-bottom: 20px;
+  padding-top: 10px;
+
+  p {
+    // text-align: justify;
+    margin-top: 2px;
+    font-size: 13px;
+    line-height: 1.5em;
+    margin-bottom: 2px;
+  }
+}
+
+.left-navigation-button-call-to-action {
+  margin-top: 10px;
+  padding: -20px;
+
+  input {
+    padding: 0px;
+    margin: 0px;
+    // margin-left: 20px;
+    // margin-right: 20px;
+    padding-left: 42px;
+    padding-right: 42px;
+  }
+}

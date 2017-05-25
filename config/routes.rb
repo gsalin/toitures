@@ -23,7 +23,7 @@ Rails.application.routes.draw do
 
     # guide de la toiture
     get 'la-toiture', on: :collection, controller: "toitures", action: "index"
-    get 'la-toiture/element-essentiel-de-votre-maison', on: :collection, controller: "toitures", action: "introduction"
+    get 'la-toiture/financement', on: :collection, controller: "toitures", action: "financement"
     get 'la-toiture/composition', on: :collection, controller: "toitures", action: "composition"
     get 'la-toiture/types-de-toit', on: :collection, controller: "toitures", action: "types_de_toit"
     get 'la-toiture/achat', on: :collection, controller: "toitures", action: "achat"

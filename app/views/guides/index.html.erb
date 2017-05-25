@@ -5,81 +5,81 @@
     <div class="col-xs-12 col-md-9">
       <div class='article-page'>
 
-        <h2 class="text-center">Tous les guides</h2>
-        <br><br>
+        <ol class="breadcrumb">
+          <li><a href="/">Accueil</a></li>
+          <li class="active">Les guides</li>
+        </ol>
 
-         <!-- Essai -->
-        <div class="col-md-6 col-sm-6">
+         <div class="share-links">
+            <a href="#" class="share-link bg-facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+            <a href="#" class="share-link bg-twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+            <a href="#" class="share-link bg-email">
+              <i class="fa fa-google"></i>
+            </a>
+            <a href="#" class="share-link bg-text">
+              <i class="fa fa-envelope-o"></i>
+            </a>
+        </div>
+        <header>
+          <h1 itemprop="headline" class="text-center">Les guides</h1>
+        </header>
+        <p class="italic">Cette collection de trois guides dédiés à la toiture, à la couverture et à la charpente a été conçus avec le soin de donner les bonnes informations sans aller trop dans le détail. L'idée : partir avec les bonnes bases. </p>
+
+        <div class="col-xs-12 col-md-12">
           <div class="article-card">
-            <%= link_to root_path do %>
-              <h6 class="text-center"> La toiture</h6>
+            <%= link_to la_toiture_guide_index_path do %>
+              <h6 class="text-center">Le guide de la toiture</h6>
               <div class="article-content">
-                <%= image_tag "charpente.svg", class: "img-card" %>
-                <p>L'essentiel à savoir sur la charpente </p>
-                <%= link_to "Accéder au guide", root_path, class: "yellow-link"%>
+                <%= image_tag "chaumiere.jpg", class: "img-card" %>
+                <p>L'essentiel pour bien comprendre l'ensemble de senjeux quand il vous vient à devoir vous occuper de votre toiture</p>
+                <%= link_to "Accéder au guide", la_toiture_guide_index_path, class: "yellow-link"%>
               </div>
             <% end %>
           </div>
         </div>
 
-          <!-- Essai -->
-        <div class="col-md-6 col-sm-6">
+        <div class="col-xs-12 col-sm-6">
           <div class="article-card">
-            <%= link_to root_path do %>
-              <h6 class="text-center"> La toiture</h6>
+            <%= link_to la_couverture_guide_index_path do %>
+              <h6 class="text-center">Le guide de la couverture</h6>
               <div class="article-content">
-                <%= image_tag "charpente.svg", class: "img-card" %>
-                <p>L'essentiel à savoir sur la charpente </p>
-                <%= link_to "Accéder au guide", root_path, class: "yellow-link"%>
-              </div>
-            <% end %>
-          </div>
-        </div>
-          <!-- Essai -->
-        <div class="col-md-6 col-sm-6">
-          <div class="article-card">
-            <%= link_to root_path do %>
-              <h6 class="text-center"> La toiture</h6>
-              <div class="article-content">
-                <%= image_tag "charpente.svg", class: "img-card" %>
-                <p>L'essentiel à savoir sur la charpente </p>
-                <%= link_to "Accéder au guide", root_path, class: "yellow-link"%>
-              </div>
-            <% end %>
-          </div>
-        </div>
-          <!-- Essai -->
-        <div class="col-md-6 col-sm-6">
-          <div class="article-card">
-            <%= link_to root_path do %>
-              <h6 class="text-center"> La toiture</h6>
-              <div class="article-content">
-                <%= image_tag "charpente.svg", class: "img-card" %>
-                <p>L'essentiel à savoir sur la charpente </p>
-                <%= link_to "Accéder au guide", root_path, class: "yellow-link"%>
+                <%= image_tag "lauze.jpg", class: "img-card" %>
+                <p>Choisir sa couverture sera votre principal choix : entre tuiles ou ardoises, quelles ouvertures, apnneaux solaires... revue des possibilités</p>
+                <%= link_to "Accéder au guide", la_couverture_guide_index_path, class: "yellow-link"%>
               </div>
             <% end %>
           </div>
         </div>
 
-
-
+        <div class="col-xs-12 col-sm-6">
+          <div class="article-card">
+            <%= link_to la_charpente_guide_index_path do %>
+              <h6 class="text-center">Le guide de la charpente</h6>
+              <div class="article-content">
+                <%= image_tag "construction_toit.jpg", class: "img-card" %>
+                <p>Le choix de la charente aura un impact sur votre maison et doit durer au moins 50 ans, tour d'horizon des solutions existantes</p>
+                <%= link_to "Accéder au guide", la_charpente_guide_index_path, class: "yellow-link"%>
+              </div>
+            <% end %>
+          </div>
+        </div>
 
         <div class="col-xs-12 col-md-12">
           <p>Vous pouvez également chercher des informations en accédant :</p>
 
           <ul>
-            <li><%= link_to "au forum", root_path  %> afin de faire une recherche précise auprès de la communauté.</li>
-            <li><%= link_to "au simulateur", root_path  %> afin de déterminez les options possibles.</li>
             <li><%= link_to "au magazine", root_path  %> en recherchant par rubriques.</li>
             <li><%= link_to "par mots-clés", root_path  %> dans notre barre de recherche.</li>
           </ul>
         </div>
 
-        <br><br>
 
       </div>
     </div>
-    <%= render 'shared/article_left_navigation' %>
+    <%= render 'shared/guide_left_navigation' %>
   </div>
 </div>

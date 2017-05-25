@@ -1,16 +1,38 @@
-<h1>Types de toit</h1>
-
 <%= render 'shared/guides_top_banner' %>
 
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-md-12">
+    <div class="col-xs-12 col-md-9">
       <div class='article-page'>
-        <h1 class="text-center">Les différents types de toits</h1>
+
+        <ol class="breadcrumb">
+          <li><a href="/">Accueil</a></li>
+          <li><%= link_to "Les guides", guides_path %></li>
+          <li><%= link_to "La toiture", la_toiture_guide_index_path %></li>
+          <li class="active">Les différents types de toits</li>
+        </ol>
+
+         <div class="share-links">
+            <a href="#" class="share-link bg-facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+            <a href="#" class="share-link bg-twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+            <a href="#" class="share-link bg-email">
+              <i class="fa fa-google"></i>
+            </a>
+            <a href="#" class="share-link bg-text">
+              <i class="fa fa-envelope-o"></i>
+            </a>
+        </div>
+        <header>
+          <h1 itemprop="headline" class="text-center">Les différents types de toits</h1>
+        </header>
         <p>Il existe deux grandes familles de toits.</p>
         <ul>
           <li>Le toit traditionnel</li>
-          <li>Le toit plat ou toit-terrasse</li>
+          <li>Le toit plat ou toit terrasse</li>
         </ul>
 
         <h2 class="text-center">Le toit traditionnel</h2>
@@ -26,7 +48,7 @@
           <li>Une inspection décennale (ou pluri-décennale) de la charpente et de la couverture pour vérifier le bon vieillisement du toit.</li>
         </ul>
 
-        <h2 class="text-center">Le toit moderne en béton</h2>
+        <h2 class="text-center">Le toit plat ou toit terrasse</h2>
         <p  class="italic">Le toit en béton plat des maison modernes est consituté d’une armature en métal dans lequel on a coulé une dalle en béton : le béton armé. Le toit en béton présente un premier intérêt qui est celui de la capacité à transformer ce toit en terrasse si le lieu s’y prête : vue, solarium, possibilité de créer un terrasse et un lieu de verdure si la surface du terrain au sol est faible.
         L’autre intérêt du toit moderne en béton est la possibilité de créer des verrières pour créer des puis de lumière dans la maison. La réalisation d’un revêtement végétal est un excellent moyen d’isoler votre toit est de conserver la chaleur.</p>
 
@@ -37,6 +59,7 @@
         <p>Depuis 20 ans, le béton est devenu un produit hautement technologique et les réalisations actuelles ne demandent que de faibles coûts d’entretiens. La durée de vie des bétons actuels semble impressionnante. Selon l'emplacement climatique du logement, on peut choisir d'isoler le béton des aggressions de la météo (gel , pluie, humidité...) ce qui augmentera sa durée de vie mais aussi ses propriétés isolantes.</p>
       </div>
     </div>
+    <%= render 'shared/guide_left_navigation' %>
   </div>
 </div>
 

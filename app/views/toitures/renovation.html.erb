@@ -2,13 +2,40 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-md-12">
+    <div class="col-xs-12 col-md-9">
       <div class='article-page'>
-        <h1 class="text-center">Rénovation</h1>
+
+        <ol class="breadcrumb">
+          <li><a href="/">Accueil</a></li>
+          <li><%= link_to "Les guides", guides_path %></li>
+          <li><%= link_to "La toiture", la_toiture_guide_index_path %></li>
+          <li class="active">rénover sa toiture</li>
+        </ol>
+
+         <div class="share-links">
+            <a href="#" class="share-link bg-facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+            <a href="#" class="share-link bg-twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+            <a href="#" class="share-link bg-email">
+              <i class="fa fa-google"></i>
+            </a>
+            <a href="#" class="share-link bg-text">
+              <i class="fa fa-envelope-o"></i>
+            </a>
+        </div>
+        <header>
+          <h1 itemprop="headline" class="text-center">Les clés pour réussir la rénovation de son toit</h1>
+        </header>
         <p class="italic">La rénovation de la toiture fait partie du cyle de vie d’une maison traditionnelle. Les murs ont une durée de vie plus élevée ! La rénovation intervient au moment où la toiture ne joue plus son rôle et qu’une simple réparation ne réglera pas le problème. Pour cela, il faut savoir être magnanime mais aussi opportuniste face à ce nouveau cycle de vie de la maison.</p>
 
-        <h3>Etablir un schéma des besoins </h3>
+        <h3>Etablissez un schéma des besoins </h3>
         <p>Combien de temps envisagez-vous d’habiter sous ce toit ? Avez-vous les moyens d’entamer cette rénovation maintenant ? Quelle est votre capacité de crédit ? La rénovation du toit est-elle urgente ou est-ce  moyen de transformer votre habitation pour la rendre plus agréable, gagner des mètres carrés ou créer de nouveaux espaces de vie… En France, l’âge moyen des propriétaires qui refons leur toiture est de 49 ans alors que l’âge moyen d’un propriétaire d’une maison est de 69 ans.  Plus on est âgé, moins on veut s’embarquer dans ce type d’aventure et laisser cela au prochain maître des lieux.</p>
+
+        <h3>Définissez le périmètre des travaux </h3>
+        <p>Faut-il rénover ou construire une nouvelle toiture ? La charpente peut être en bon état et il faut donc juste refaire la couverture. On peut alors en profiter pour poser une isolation ou faire des ouvertures... A l'inverse, il n'y aura sans doute pas d'intérêt à rénover une structure trop affaiblie : le coût pourrait égaler ou même dépasser celui d'une toiture neuve. Vos échanges avec vos potentiels prestataires devraient vous donner la bonne slution.</p>
 
         <h3>Une opportunité réelle</h3>
         <p>La rénovation de la toiture est aussi une opportunité réelle pour améliorer votre maison car c’est devenu un espace de vie à part entière. Longtemps cantonner à l’usage de grenier, de débarras… Le toit est devenu un des nouveaux eldorados de la maison à l’heure de la hausse des prix de l’immobilier et de la chasse aux mètres carrés.</p>
@@ -20,44 +47,35 @@
           <li>L’aménagement d’ouverture</li>
           <li>La terrasse</li>
         </ul>
-        <p><strong>L’aménagement des combles</strong></p>
-        <p>L’aménagement des combles est une façon simple de gagner de la place ; par exemple pour créer des chambres pour les enfants. Le premier élément à prendre en compte est la qualité de l’isolation du toit (il risque d’y faire plus froid en hiver et plus chaud en été que dans le reste de la maison). Pour cela, il faudra peut être repenser à faire une isolation prévue à cette effet</p>
 
-        <p><strong>L’aménagement d’ouverture</strong></p>
-        <p>L’aménagement d’ouverture de toits est un bon moyen de rendre l’espace situé sous le toit plus agréable à vivre. Cette solution, qui peut être à la fois relativement économique avec l’installation de petites fenêtres de toit de type Vélux, ou plutôt dispendieuse mais à l’effet impressionnant avec l’installation de grandes verrières qui feront de cet endroit le nouvel emplacement de choix de la maison. Le prix de l’immobilier dans votre quartier aura un impact non négligeable sur la valeur de votre bien et de l’installation d’ouvertures.</p>
+        <p><strong>L’aménagement des combles</strong> est une façon simple de gagner de la place ; par exemple pour créer des chambres pour les enfants. Le premier élément à prendre en compte est la qualité de l’isolation du toit (il risque d’y faire plus froid en hiver et plus chaud en été que dans le reste de la maison). Pour cela, il faudra peut être repenser à faire une isolation prévue à cette effet</p>
 
-        <p><strong>La terrasse</strong></p>
-        <p>La terrasse est aussi un nouvel eldorado pour les maisons urbaines qui veulent profiter de l’extéireur ou quand le jardin est petit ou enclavé. Créer un espace pour déjeuner en extérieur ou installer un petit jardin suspendu, les options ne manquent pas.</p>
+        <p><strong>L’aménagement d’ouvertures</strong> de toits est un bon moyen de rendre l’espace situé sous le toit plus agréable à vivre. Cette solution, qui peut être à la fois relativement économique avec l’installation de petites fenêtres de toit de type Vélux, ou plutôt dispendieuse mais à l’effet impressionnant avec l’installation de grandes verrières qui feront de cet endroit le nouvel emplacement de choix de la maison. Le prix de l’immobilier dans votre quartier aura un impact non négligeable sur la valeur de votre bien et de l’installation d’ouvertures.</p>
+
+        <p><strong>La terrasse</strong> est aussi un nouvel eldorado pour les maisons urbaines qui veulent profiter de l’extéireur ou quand le jardin est petit ou enclavé. Créer un espace pour déjeuner en extérieur ou installer un petit jardin suspendu, les options ne manquent pas.</p>
 
         <h3>La surélévation</h3>
         <p>La surélévation s’adresse aux logements situés dans des zones urbaines où la pression démographique est forte et la surface disponible faible. Lourde d’investissement, elle peut être une opération rentable en gagnant un nouvel étage de vie. Comme pour toute construction, il vaut mieux se faire accompagner par un architecte et/ou par une entreprise spécialité (il en existe maintenatn des spécialistes de la surélévation) afin d’en faire un succès.</p>
 
         <h3>S’inscrire dans la transition énergétique</h3>
-        <p>Le toit est devenu un acteur de poids dans la transition énergétique.</p>
+        <p>Le toit est devenu un acteur de poids dans la transition énergétique. Vous pouvez mener plusieurs actions :</p>
 
-        <p><strong>L’isolation</strong></p>
-        <p>L'isolation du toit permet de préserver son portefeuille mais aussi la planète. L’engagement constant des pouvoirs publics permet de bénéficier d'une multitude d'aides qui va jusqu'à l’isolation pour 1 euro symbolique. </p>
-
-        <p><strong>Les panneaux photovoltaïques</strong></p>
-        <p>L’autre vecteur est la pose de panneaux photovoltaique qui permet à chaque logement de devenir producteur d’électricité. Le choix de poser des panneaux photovoltaique est une affaire économique à long terme (le site quellenergie.fr) propose une simulation pour voire si cela est intéressant.</p>
-
-
-        <p><strong>Les chauffes eau solaires</strong></p>
-        <p>Un autre moyen, moins lourd en investissement et pourtant très efficace dans les régions du sud et bénéficiant d’un fort ensoleillement sont les chauffes eau solaires qui permettent de chauffer l’eau des logements. Doté d’une efficience énergétique bien meilleure que les pannaux photovoltaïque (les cellules convertissent l’énergie en chaleur et non en électricité), ces installations permettent des économies substantielles d’éléctricité pour un coût modique au prix d’une installation un peu visible.</p>
-
-
-        <p><strong>Les terrasses plantées</strong></p>
-        <p>Les terrasses plantées et recouvertes pour cela d’une surface de terres offrent un bilan énergétique beaucoup plus intéressant que les revêtements classiques. L’inertie thermique de la terre permet de faire des économies de chauffages tandis que la verdure permet de redonner à des espaces urbains des airs de jardins.</p>
-
-        <p><strong>Financement</strong></p>
-        <p> de Multiples aides existent.Quelques sites qui en parlent ?</p>
         <ul>
-          <li> <%= link_to 'le site economie.gouv', 'https://www.economie.gouv.fr/particuliers/aides-renovation-energetique' %></li>
-          <li><%= link_to 'le site renovation-info-service', 'http://www.renovation-info-service.gouv.fr/mes-aides-financieres' %></li>
-          <li><%= link_to 'le site quelleenergie.fr', 'https://www.quelleenergie.fr' %></li>
+          <li>L’isolation</li>
+          <li>Les panneaux photovoltaïques</li>
+          <li>Les chauffe-eaux solaires</li>
+          <li>Les terrasses plantées</li>
         </ul>
 
+        <p><strong>L'isolation</strong> du toit permet de préserver son portefeuille mais aussi la planète. L’engagement constant des pouvoirs publics permet de bénéficier d'une multitude d'aides qui va jusqu'à l’isolation pour 1 euro symbolique. </p>
+
+        <p>L’autre vecteur est la pose de <strong>panneaux photovoltaique</strong> qui permettent à chaque logement de devenir producteur d’électricité. Le choix de poser des panneaux photovoltaique est une affaire économique à long terme (le site quellenergie.fr) propose une simulation pour voire si cela est intéressant.</p>
+
+        <p>Un autre moyen, moins lourd en investissement et pourtant très efficace dans les régions du sud et bénéficiant d’un fort ensoleillement, les <strong>chauffes eau solaires</strong> ou panneaux thermiques permettent de chauffer l’eau des logements. Doté d’une efficience énergétique bien meilleure que les pannaux photovoltaïque (les cellules convertissent l’énergie en chaleur et non en électricité), ces installations permettent des économies substantielles d’éléctricité pour un coût modique au prix d’une installation un peu visible.</p>
+
+        <p><strong>Les terrasses plantées</strong> et recouvertes pour cela d’une surface de terres offrent un bilan énergétique beaucoup plus intéressant que les revêtements classiques. L’inertie thermique de la terre permet de faire des économies de chauffages tandis que la verdure permet de redonner à des espaces urbains des airs de jardins.</p>
       </div>
     </div>
+    <%= render 'shared/guide_left_navigation' %>
   </div>
 </div>

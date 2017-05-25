@@ -2,10 +2,34 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-md-12">
+    <div class="col-xs-12 col-md-9">
       <div class='article-page'>
-        <h1 class="text-center">Entretien et réparations</h1>
-        <p  class="italic">Correctement entretenir votre toiture, la réparer quand cela est nécessaire, permet d’allonger la durée de vie de celle-ci.</p>
+
+        <ol class="breadcrumb">
+          <li><a href="/">Accueil</a></li>
+          <li><%= link_to "Les guides", guides_path %></li>
+          <li><%= link_to "La toiture", la_toiture_guide_index_path %></li>
+          <li class="active">Entretien et réparations</li>
+        </ol>
+
+         <div class="share-links">
+            <a href="#" class="share-link bg-facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+            <a href="#" class="share-link bg-twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+            <a href="#" class="share-link bg-email">
+              <i class="fa fa-google"></i>
+            </a>
+            <a href="#" class="share-link bg-text">
+              <i class="fa fa-envelope-o"></i>
+            </a>
+        </div>
+        <header>
+          <h1 itemprop="headline" class="text-center">Entretien et réparations</h1>
+        </header>
+         <p  class="italic">Correctement entretenir votre toiture, la réparer quand cela est nécessaire, permet d’allonger la durée de vie de celle-ci.</p>
 
         <h3>Quelques régles générales</h3>
 
@@ -14,14 +38,10 @@
         <p><strong>Une inspection décennale au bout de 20 ans</strong></p> <p>Faire vérifier votre toiture par un professionnel agréé au bout de 20 ans est une sage décision car celui-ci peut déceler un problème à venir ou une usure prématurée. Anticiper ce problème peut vous permettre d’économiser de l’argent et des soucis.</p>
 
         <h3>Les réparations : savoir être rapide sans se précipiter</h3>
-        <p>Si votre toiture a été endommagé, n’hésitez pas à intervenir le plus rapidement possible en contactant votre assureur habitation. Faites établir plusieurs diagnostics auprès de différents profesionnels pour vous assurer de la cohérence des mesures à mettre en œuvre. Selon la mesure des réparations à effectuer, n’oubliez pas de respecter un usage temps / qualité de la pose et des matériaux. Consultez notre guide de l’assurance si vous êtes dans ce cas pour voir ce qui peut être couvert par votre assurance et ce qu’il vous faudra débourser de votre poche.</p>
-        <h3>Spécificités d'entretiens selon la couverture / charpente</h3>
-        <ul>
-          <li>couverture ardoise </li>
-          <li>couverture tuile</li>
-          <li>couverture bois</li>
-        </ul>
+        <p>Procéder comme pour une rénovation</p>
       </div>
     </div>
+    <%= render 'shared/guide_left_navigation' %>
   </div>
 </div>
+

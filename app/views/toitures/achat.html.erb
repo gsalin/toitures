@@ -2,45 +2,83 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-md-12">
+    <div class="col-xs-12 col-md-9">
       <div class='article-page'>
 
-        <h1 class="text-center">Construction, achat ou rénovation d’une maison : Les conseils lors du choix de la toiture</h1>
+        <ol class="breadcrumb">
+          <li><a href="/">Accueil</a></li>
+          <li><%= link_to "Les guides", guides_path %></li>
+          <li><%= link_to "La toiture", la_toiture_guide_index_path %></li>
+          <li class="active">Achat et construction</li>
+        </ol>
 
-       <p class="italic">La toiture étant un élément essentiel de votre maison. Elle doit être prise en compte dans la décision d'achat. C'est à la fois une source d'espace qui peut être valorisé (surtout pour les maisons anciennes) mais aussi une source d'incomfort important si le chantier est mal fait et/ou ne correspond à la réalité géographique de l'endroit où elle est construite. C'est enfin un poste d'investissements importants lors d'une décision immobilière qui va affecter la valeur du bien mais qui peut être intéressant avec un amortissement des factures de chauffage. Voici nos conseils :</p>
+         <div class="share-links">
+            <a href="#" class="share-link bg-facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+            <a href="#" class="share-link bg-twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+            <a href="#" class="share-link bg-email">
+              <i class="fa fa-google"></i>
+            </a>
+            <a href="#" class="share-link bg-text">
+              <i class="fa fa-envelope-o"></i>
+            </a>
+        </div>
+         <header>
+          <h1 itemprop="headline" class="text-center">Achat & Construction : conseils lors du choix de la toiture</h1>
+        </header>
 
-       <h3>Anticipez vos travaux... et l'avenir !</h3>
-       <p>Premier conseil, prenez vous y à l'avance ! Plus un projet muri, meilleur il est. Parlez en au tour de vous ! Sachez aussi que les artisans les plus qualifiés ont souvent leurs carnets de commandes remplis plusieurs mois à l'avance. Plus vous avez de temps devant vous, plus les options sont ouvertes.</p>
-       <p>Il vous faut définr vos besoins actuels mais aussi anticiper ceux à venir. L’isolation est elle essentielle au confort de votre maison (ce n’est pas la même chose si on habite dans le sud ou dans le nord de la France) ? La famille va t'elle s'agrandir ou non (une occupation future des combles)? </p>
+         <p class="italic">La toiture étant un élément essentiel de votre maison. Elle doit être prise en compte dans la décision d'achat. C'est à la fois une source d'espace qui peut être valorisé (surtout pour les maisons anciennes) mais aussi une source d'inconfort important si le chantier est mal fait et/ou ne correspond à la réalité géographique de l'endroit où elle est construite. C'est enfin un poste d'investissements importants lors d'une décision immobilière qui va affecter la valeur du bien mais qui peut être intéressant avec un amortissement des factures de chauffage. Voici nos conseils :</p>
 
-       <h3>Considérez votre toiture comme un investissement immobilier</h3>
-       <p>L'ADEME considère que 30 % des déperditions énergétiques d'une maison passe par le toit. La bonne isolation du toit peut entraîner une réduction de 25 % de la facture d'éléctricité et impacte l'amortissement d'une toiture. De même, l'investissement dans une nouvelle toiture aura un impact sur la valeur de votre bien immobilier...</p>
-        <p>Le financement d'une toiture s'apparente fortement à un investissement immobilier et votre banquier vous proposera surement des conditions avantageuses, sachez en profiter ! La première question est d’anticiper tous les usages potentiels de la rénovation, vous devez avoir en esprit les différentes possibilités d’aménagement de votre toiture (terrasses, ouverture, isolation avant de vous lancer). Cela vous permettra de voir quelle est la capacité pour le professionnel de vous challenger et d’être force de proposition sur ces points.</p>
+        <section aria-label="Travaux de toiture">
+           <h3>Anticipez vos travaux... et l'avenir !</h3>
+           <p>Premier conseil, prenez vous y à l'avance ! Plus un projet muri, meilleur il est. Parlez en au tour de vous ! Sachez aussi que les artisans les plus qualifiés ont souvent leurs carnets de commandes remplis plusieurs mois à l'avance. Plus vous avez de temps devant vous, plus les options sont ouvertes.</p>
+           <p>Il vous faut définr vos besoins actuels mais aussi anticiper ceux à venir. L’isolation est elle essentielle au confort de votre maison (ce n’est pas la même chose si on habite dans le sud ou dans le nord de la France) ? La famille va t'elle s'agrandir ou non (une occupation future des combles)? </p>
+         </section>
 
-        <h3>Trouver et évaluer les prestataires</h3>
-        <p>Bien choisir son pro est une étape cruciale dans la réussite de votre projet immobilier. La difficulté particulière liée au marché de la toiture est l’absence d’informations du maître d’oeuvre, c’est-à-dire le propriétaire, qui n’est confronté à ce problème que très rarement. N'oubliez pas le bouche à oreille pour vos projets et parlez en autour de vous, cela reste une méthode des plus efficaces. Quoi qu'il arrive, faites faire plusieurs devis par les prestataires retenus. En multipliant les devis qui  peuvent être gratuits ou payants, pe nsez à le demander avant, vous aurez une meilleure idée de vos besoins et de l’arbitrage  à faire entre les contraintes  éventuelles (temps du chantier, prix, qualité des matériaux utilisés, …). Sur le papier, les devis doivent être clairs et concis avec le détail du coût des matériaux et celui du coût de la main d'oeuvre et du nombre d'heures de travail.</p>
+        <section aria-label="Financement toiture">
+         <h3>Considérez votre toiture comme un investissement immobilier</h3>
+         <p>L'ADEME considère que 30 % des déperditions énergétiques d'une maison passe par le toit. La bonne isolation du toit peut entraîner une réduction de 25 % de la facture d'éléctricité et impacte l'amortissement d'une toiture. De même, l'investissement dans une nouvelle toiture aura un impact sur la valeur de votre bien immobilier...</p>
+          <p>Le financement d'une toiture s'apparente fortement à un investissement immobilier et votre banquier vous proposera surement des conditions avantageuses, sachez en profiter ! La première question est d’anticiper tous les usages potentiels de la rénovation, vous devez avoir en esprit les différentes possibilités d’aménagement de votre toiture (terrasses, ouverture, isolation avant de vous lancer). Cela vous permettra de voir quelle est la capacité pour le professionnel de vous challenger et d’être force de proposition sur ces points.</p>
+        </section>
 
-        <h3>Soyez force de proposition !</h3>
-        <p>La première question est d’anticiper tous les usages potentiels de la rénovation, vous devez avoir en esprit les différentes possibilités d’aménagement de votre toiture (terrasses, ouverture, isolation avant de vous lancer). Cela vous permettra de voir quelle est la capacité pour le professionnel de vous challenger et d’être force de proposition sur ces points. Regardez autour de vous. Le terroir, la position géographique et les habitations autour de chez vous sont des inspirations réelles pour votre toit comme pour votre maison. Ce site est également dédié pour vous afin de trouver l’inspiration.</p>
 
-        <h3>Favorisez la qualité</h3>
-        <p>Certains matériaux proposés sont intéressants d'un point de vue financier... à court terme! Si vous en avez les moyens, privilégiez des matériaux de qualité, ce sera moins d’entretien pour la suite et c’est également votre bien immobilier que vous valorisez ! Les prestataires peuvent avoir intérêts à vous proposer des prestations, et donc des matériaux, moins chers car les marges pour eux sont plus importantes (rapportées aux taux horaires).</p>
-        <h3>Vérifiez vos devis !</h3>
-        <p>Vous devez y trouver :</p>
-        <ul>
-          <li>Le nom et le numéro de siren du professionnel</li>
-          <li>Votre nom et votre adresse</li>
-          <li>L’ensemble des matériaux posés ou installés (quantité, références, marque, etc.)</li>
-          <li>Une description détaillée des travaux et des équipements utilisés à ces fins (nature de chaque type d’intervention et taux horaire correspondant). Notamment les coûts d’échaffaudages et les coûts de débarassement des remblais </li>
-          <li>La durée de réalisation des travaux et les clauses de non respect des  délais</li>
-          <li>Les prix en HT et en TTC + la TVA pour les matériaux</li>
-          <li>Les conditions de paiement</li>
-          <li>La clause de révision des prix</li>
-          <li>Les frais de déplacement.</li>
-        </ul>
-        <p>Signé par les deux parties, le devis aura valeur de contrat passé le délai légal de retractation de 7 jours.</p>
+        <section aria-label="Evaluation prestataire toiture">
+          <h3>Trouver et évaluer les prestataires</h3>
+          <p>Bien choisir son pro est une étape cruciale dans la réussite de votre projet immobilier. La difficulté particulière liée au marché de la toiture est l’absence d’informations du maître d’oeuvre, c’est-à-dire le propriétaire, qui n’est confronté à ce problème que très rarement. N'oubliez pas le bouche à oreille pour vos projets et parlez en autour de vous, cela reste une méthode des plus efficaces. Quoi qu'il arrive, faites faire plusieurs devis par les prestataires retenus. En multipliant les devis qui  peuvent être gratuits ou payants, pe nsez à le demander avant, vous aurez une meilleure idée de vos besoins et de l’arbitrage  à faire entre les contraintes  éventuelles (temps du chantier, prix, qualité des matériaux utilisés, …). Sur le papier, les devis doivent être clairs et concis avec le détail du coût des matériaux et celui du coût de la main d'oeuvre et du nombre d'heures de travail.</p>
+        </section>
+
+        </section>
+          <h3>Soyez force de proposition !</h3>
+          <p>La première question est d’anticiper tous les usages potentiels de la rénovation, vous devez avoir en esprit les différentes possibilités d’aménagement de votre toiture (terrasses, ouverture, isolation avant de vous lancer). Cela vous permettra de voir quelle est la capacité pour le professionnel de vous challenger et d’être force de proposition sur ces points. Regardez autour de vous. Le terroir, la position géographique et les habitations autour de chez vous sont des inspirations réelles pour votre toit comme pour votre maison. Ce site est également dédié pour vous afin de trouver l’inspiration.</p>
+        </section>
+
+        <section aria-label="QUALITÉ">
+          <h3>Favorisez la qualité</h3>
+          <p>Certains matériaux proposés sont intéressants d'un point de vue financier... à court terme! Si vous en avez les moyens, privilégiez des matériaux de qualité, ce sera moins d’entretien pour la suite et c’est également votre bien immobilier que vous valorisez ! Les prestataires peuvent avoir intérêts à vous proposer des prestations, et donc des matériaux, moins chers car les marges pour eux sont plus importantes (rapportées aux taux horaires).</p>
+        </section>
+
+          <h3>Vérifiez vos devis !</h3>
+          <p>Vous devez y trouver :</p>
+          <ul>
+            <li>Le nom et le numéro de siren du professionnel</li>
+            <li>Votre nom et votre adresse</li>
+            <li>L’ensemble des matériaux posés ou installés (quantité, références, marque, etc.)</li>
+            <li>Une description détaillée des travaux et des équipements utilisés à ces fins (nature de chaque type d’intervention et taux horaire correspondant). Notamment les coûts d’échaffaudages et les coûts de débarassement des remblais </li>
+            <li>La durée de réalisation des travaux et les clauses de non respect des  délais</li>
+            <li>Les prix en HT et en TTC + la TVA pour les matériaux</li>
+            <li>Les conditions de paiement</li>
+            <li>La clause de révision des prix</li>
+            <li>Les frais de déplacement.</li>
+          </ul>
+          <p>Signé par les deux parties, le devis aura valeur de contrat passé le délai légal de retractation de 7 jours.</p>
+
+        </article>
+
       </div>
     </div>
+    <%= render 'shared/guide_left_navigation' %>
   </div>
 </div>
-

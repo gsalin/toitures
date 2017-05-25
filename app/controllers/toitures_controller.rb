@@ -5,9 +5,6 @@ class ToituresController < ApplicationController
   def index
   end
 
-  def introduction
-  end
-
   private
 
   def new_client
