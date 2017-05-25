@@ -10,55 +10,86 @@
   margin-bottom: 200px;
 
   h2 {
-    position: absolute;
-    top: 220px;
-    right: 83px;
     z-index: 2;
     color: white;
-    max-width: 700px;
     text-align: center;
-    font-weight: darker;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    font-size: 2em;
+  }
+
+  .home_container {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px;
+    left: 20%;
+    right: 20%;
+    top: 50%;
+    background-color: white;
+    background: rgba(255, 255, 255, 0.7);
+    z-index: 2;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+
+    .main-form-stuffs {
+      margin-left: -40px;
+      margin-right: -40px;
+
+      .custom-drop-down-btn {
+        z-index:3;
+        width: 160px;
+        height: 45px;
+        background-color:white;
+        opacity: 1;
+        font-size: 0.9em;
+      }
+
+      .dropdown-size-custom {
+        min-width:230px;
+      }
+
+      label {
+        font-weight: lighter;
+      }
+
+      ul {
+        padding: 10px;
+        min-width: 160px;
+      }
+
+      li {
+        padding: 5px;
+        font-size: 0.9em;
+      }
+    }
+
+    .form-group {
+      margin-bottom: 0px;
+
+      .form-control {
+        width: 250px;
+        height: 45px;
+        opacity: 1;
+        font-size: 0.9em;
+      }
+    }
   }
 
   .carousel {
   background: #F09819; /* fallback for old browsers */
   background: -webkit-linear-gradient(to left, #F09819 , #EDDE5D); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to left, #F09819 , #EDDE5D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  opacity: 0.7;
-  }
-  .home_container {
-    position: absolute;
-    top: 75px;
-    left: 75px;
-    background-color: white;
-    height: 565px;
-    max-height: calc(100vh - 120px);
-    width: 500px;
-    z-index: 2;
-    border: solid $medium-grey 1px;
-    padding: 20px;
-    padding-top: 5px;
-    span {
-      font-weight: lighter;
-    }
-
-    #client_address {
-      margin-bottom: 10px;
-    }
-
-    .flexbox {
-      display: flex;
-      flex-wrap: wrap;
-      border-top: solid $medium-grey 1px;
-      padding-bottom: 4px;
-      margin-top: -3px;
-      div {
-        margin: 8px;
-
-      }
-    }
-    .home-submit {
-
-    }
+  opacity: 0.9;
+  z-index:1;
   }
 }
+
