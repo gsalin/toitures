@@ -2,9 +2,33 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-md-12">
+    <div class="col-xs-12 col-md-9">
       <div class='article-page'>
-        <h1 class="text-center">Composition d'une toiture</h1>
+
+        <ol class="breadcrumb">
+          <li><a href="/">Accueil</a></li>
+          <li><%= link_to "Les guides", guides_path %></li>
+          <li><%= link_to "La toiture", la_toiture_guide_index_path %></li>
+          <li class="active">Comprendre la structure d'une toiture</li>
+        </ol>
+
+         <div class="share-links">
+            <a href="#" class="share-link bg-facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+            <a href="#" class="share-link bg-twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+            <a href="#" class="share-link bg-email">
+              <i class="fa fa-google"></i>
+            </a>
+            <a href="#" class="share-link bg-text">
+              <i class="fa fa-envelope-o"></i>
+            </a>
+        </div>
+        <header>
+          <h1 itemprop="headline" class="text-center">Comprendre la structure d'une toiture</h1>
+        </header>
         <p class="italic">La toiture regroupe plusieurs éléments : la charpente, la couverture, les ouvertures, les ornements, la zinguerie et les évacuations d’eau, les cheminées, .... réunies en deux grandes familles</p>
 
         <h2>La charpente</h2>
@@ -28,9 +52,8 @@
           <li>Les matériaux de couverture (tuiles, ardoises...)</li>
           <li>la zinguerie</li>
         </ul>
-
       </div>
     </div>
+    <%= render 'shared/guide_left_navigation' %>
   </div>
 </div>
-

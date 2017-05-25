@@ -1,1 +1,70 @@
-<h1>Index charpentes</h1>
+<%= render 'shared/guides_top_banner' %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-9">
+      <div class='article-page'>
+
+        <ol class="breadcrumb">
+          <li><a href="/">Accueil</a></li>
+          <li><%= link_to "Les guides", guides_path %></li>
+          <li class="active">La charpente</li>
+        </ol>
+
+         <div class="share-links">
+            <a href="#" class="share-link bg-facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+            <a href="#" class="share-link bg-twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+            <a href="#" class="share-link bg-email">
+              <i class="fa fa-google"></i>
+            </a>
+            <a href="#" class="share-link bg-text">
+              <i class="fa fa-envelope-o"></i>
+            </a>
+        </div>
+        <header>
+          <h1 itemprop="headline" class="text-center">Guide de la charpente</h1>
+        </header>
+        <p class="italic">La charpente est l'ossature du toit. Voici les solutions possibles.</p>
+
+        <p>Nous avons divisé ce guide en 3 catégories afin de faciliter la compréhension.</p>
+
+        <h3 class='text-center'>Comprendre la charpente</h3>
+
+        <div class="col-xs-12 col-md-6">
+          <div class="article-card">
+            <%= link_to root_path do %>
+              <h6 class="text-center">composition</h6>
+              <div class="article-content">
+                <%= image_tag "renovatio_toit.jpg", class: "img-card" %>
+                <p>Derrière la notion Lorem ipsum se cahceh une facond e mettre du texte sans se tromper  </p>
+                <%= link_to "Lire", root_path, class: "yellow-link"%>
+              </div>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-md-6">
+          <div class="article-card">
+            <%= link_to root_path do %>
+              <h6 class="text-center">composition</h6>
+              <div class="article-content">
+                <%= image_tag "renovatio_toit.jpg", class: "img-card" %>
+                <p>Derrière la notion Lorem ipsum se cahceh une facond e mettre du texte sans se tromper  </p>
+                <%= link_to "Lire", root_path, class: "yellow-link"%>
+              </div>
+            <% end %>
+          </div>
+        </div>
+
+
+        <h3 class='text-center'>Les démarches à effectuer</h3>
+
+      </div>
+    </div>
+    <%= render 'shared/guide_left_navigation' %>
+  </div>
+</div>

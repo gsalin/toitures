@@ -2,34 +2,31 @@
   <div class= "left-navigation-container">
     <div class="all-categories-articles">
 
-      <%= link_to "Guides", guides_path, class: "left-navigation-title" %>
+
+      <%= link_to "Les Guides", guides_path, class: "left-navigation-title" %>
 
       <div class= "left-navigation-category-link">
-        <%= link_to "La toiture", root_path, class: "yellow-link" %>
+        <%= link_to "La toiture", la_toiture_guide_index_path, class: "yellow-link" %>
         </div>
       <ul>
-        <li><%= link_to "un élément essentiel de votre logement", root_path, class: "small-link" %></li>
-        <li><%= link_to "De quoi se compose une toiture ?", root_path, class: "small-link" %></li>
-        <li><%= link_to "Les différents types de toit", root_path, class: "small-link" %></li>
-        <li><%= link_to "Le toit traditionnel", root_path, class: "small-link" %></li>
-        <li><%= link_to "Le toit terrasse", root_path, class: "small-link" %></li>
-        <li><%= link_to "Le toit végétal", root_path, class: "small-link" %></li>
-        <li><%= link_to "Les aides", root_path, class: "small-link" %></li>
-        <li><%= link_to "La législation", root_path, class: "small-link" %></li>
-
-
-
-
+        <li><%= link_to "La structure du toit", la_toiture_composition_guide_index_path, class: "small-link" %></li>
+        <li><%= link_to "Les différents types de toit", la_toiture_types_de_toit_guide_index_path, class: "small-link" %></li>
+        <li><%= link_to "La construction", la_toiture_achat_guide_index_path, class: "small-link" %></li>
+        <li><%= link_to "La rénovation", la_toiture_renovation_guide_index_path, class: "small-link" %></li>
+        <li><%= link_to "Entretien et réparations", la_toiture_entretien_guide_index_path, class: "small-link" %></li>
+        <li><%= link_to "Les professionnels", la_toiture_professionnels_guide_index_path, class: "small-link" %></li>
+        <li><%= link_to "La réglementation", la_toiture_reglementation_guide_index_path, class: "small-link" %></li>
+        <li><%= link_to "Le financement et les aides", la_toiture_financement_guide_index_path, class: "small-link" %></li>
       </ul>
 
 
 
 
       <div class= "left-navigation-category-link">
-      <%= link_to "La couveture", root_path, class: "yellow-link" %>
+      <%= link_to "La couverture", la_couverture_guide_index_path, class: "yellow-link" %>
       </div>
       <ul>
-        <li><%= link_to "introduction", root_path, class: "small-link" %></li>
+        <li><%= link_to "introduction", la_couverture_introduction_guide_index_path, class: "small-link" %></li>
         <li><%= link_to "Les matériaux naturels", root_path, class: "small-link" %></li>
         <li><%= link_to "L'ardoise", root_path, class: "small-link" %></li>
         <li><%= link_to "tableau comparateur", root_path, class: "small-link" %></li>
@@ -47,10 +44,10 @@
 
 
       <div class= "left-navigation-category-link">
-      <%= link_to "La charpente", root_path, class: "yellow-link" %>
+      <%= link_to "La charpente", la_charpente_guide_index_path, class: "yellow-link" %>
       </div>
       <ul>
-        <li><%= link_to "introduction", root_path, class: "small-link" %></li>
+        <li><%= link_to "introduction", la_charpente_introduction_guide_index_path, class: "small-link" %></li>
         <li><%= link_to "La charpente traditionnelle", root_path, class: "small-link" %></li>
         <li><%= link_to "La charpente à fermettes industrielles", root_path, class: "small-link" %></li>
         <li><%= link_to "La charpente métallique", root_path, class: "small-link" %></li>
@@ -60,7 +57,7 @@
 
 
       <div class="left-navigation-call-to-action">
-        <%= link_to "Services InfoToitures", root_path, class: "left-navigation-title" %>
+        <%= link_to "Services", root_path, class: "left-navigation-title" %>
         <div class= "left-navigation-category-link">
           <%= link_to "Annuaire", root_path, class: "yellow-link" %>
         </div>
