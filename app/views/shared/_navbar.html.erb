@@ -7,18 +7,67 @@
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
+  <%= link_to t(".top_call_to_action", default: "Annuaire"), users_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
     <!-- Search form -->
-    <form action="" class="navbar-wagon-search">
+<!--     <form action="" class="navbar-wagon-search">
       <input type="text" class="navbar-wagon-search-input" placeholder="Search something">
       <button type="submit" class="navbar-wagon-search-btn">
         <i class="fa fa-search"></i>
       </button>
-    </form>
+    </form> -->
 
     <!-- Nav links -->
-    <%= link_to "Guides", guides_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
-    <%= link_to "Magazine", magazine_index_path, class: "navbar-wagon-item navbar-wagon-link" %>
+
+      <div class="navbar-wagon-item">
+        <div class="dropdown">
+          <a class="navbar-wagon-link dropdown-toggle" id="navbar-wagon-menu", data-toggle ="dropdown">Guides</a>
+          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+            <li class="dropdown-media-container ">
+              <ul class="list-unstyled">
+              <!-- NE PAS TOUCHER AU DESSUS -->
+                <li>
+                  <%= link_to "Guides", guides_path, class: "" %>
+                </li>
+                 <li role="separator" class="divider"></li>
+                <li>
+                  test 2
+                </li>
+              </ul>
+              <ul class="list-unstyled">
+                <li>
+                  test
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="navbar-wagon-item">
+        <div class="dropdown">
+          <a class="navbar-wagon-link dropdown-toggle" id="navbar-wagon-menu", data-toggle ="dropdown">Magazines</a>
+          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+            <li class="dropdown-media-container ">
+              <ul class="list-unstyled">
+              <!-- NE PAS TOUCHER AU DESSUS -->
+                <li>
+                <%= link_to "Magazine", magazine_index_path, class: "navbar-wagon-item navbar-wagon-link" %>
+                </li>
+                <li>
+                  test 2
+                </li>
+              </ul>
+              <ul class="list-unstyled">
+                <li>
+                  test
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+
 
 
 
@@ -65,7 +114,6 @@
     <% end %>
 
     <!-- Button (call-to-action) -->
-    <%= link_to t(".top_call_to_action", default: "Annuaire"), users_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
   </div>
 
   <!-- Dropdown list appearing on mobile only -->
