@@ -40,8 +40,8 @@ gem 'geocoder'
 gem "coffee-rails"
 gem "gmaps4rails"
 
-#high-voltage
-gem 'high_voltage', '~> 3.0.0'
+# #high-voltage
+# gem 'high_voltage', '~> 3.0.0'
 
 
 source 'https://rails-assets.org' do
