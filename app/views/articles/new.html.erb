@@ -2,12 +2,9 @@
 <p>Find me in app/views/articles/new.html.erb</p>
 
 
-<form action="/articles" method="post">
-  <label for="title">Titre: </label>
-  <input type="string" name="article[title]" id="title">
+<%= simple_form_for @article do |f| %>
+  <%= f.input :title %>
+  <%= f.input :body %>
 
-  <label for="body">Corps de texte: </label>
-  <input type="text" name="article[body]" id="body">
-
-  <input type="submit">
-</form>
+  <%= f.submit "add an article", class: "btn btn-primary" %>
+<% end %>

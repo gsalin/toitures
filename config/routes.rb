@@ -1,17 +1,12 @@
 Rails.application.routes.draw do
 
-  get 'articles/index'
-
-  get 'articles/show'
-
-  get 'articles/new'
-
   ActiveAdmin.routes(self)
   devise_for :users
   root to: 'pages#home'
   resources :users
   resources :projects
   resources :clients, only: [:new, :create, :show, :edit, :update]
+  resources :articles, only: [:index, :new, :create, :show]
 
   mount Attachinary::Engine => "/attachinary"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
@@ -49,7 +44,7 @@ Rails.application.routes.draw do
 
   end
 
-  #partie pages statiques charpentegh-voltage
+  #partie pages statiques high-voltage
   get "/*id" => 'pages#show', as: :page, format: false
 end
 
