@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'articles/index'
+
+  get 'articles/show'
+
+  get 'articles/new'
+
   ActiveAdmin.routes(self)
   devise_for :users
   root to: 'pages#home'
