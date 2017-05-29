@@ -20,8 +20,29 @@
 }
 
 /* Navbar logo */
-.navbar-wagon-brand img {
-  width: 50px;
+.navbar-wagon-brand {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+
+  p {
+    max-width: 100px;
+    margin-left: 10px;
+    margin-bottom: 0px;
+    font-size: smaller;
+    font-weight: lighter;
+  }
+
+  img {
+    width: 50px;
+    margin-left: -20px;
+  }
 }
 
 /* Navbar right section (with form, links, button) */
@@ -144,3 +165,22 @@
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
 }
+
+.dropdown-medias {
+  margin-top: 24px;
+  border: none;
+  border-radius: 0px;
+  /* background-color: initial; */
+  width: 100vh;
+}
+
+
+
+
+
+
+
+
+
+
+
