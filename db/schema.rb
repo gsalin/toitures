@@ -118,7 +118,7 @@ ActiveRecord::Schema.define(version: 20170526100227) do
     t.text     "description"
     t.float    "latitude"
     t.float    "longitude"
-    t.integer  "radius",                 default: 50,    null: false
+    t.integer  "radius",                 default: 50
     t.boolean  "admin",                  default: false, null: false
     t.boolean  "construction",           default: false, null: false
     t.boolean  "renovation",             default: false, null: false
