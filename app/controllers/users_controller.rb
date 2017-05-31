@@ -20,7 +20,6 @@ class UsersController < ApplicationController
 
   def show
     @client = Client.new
-    @user = User.find(params[:id])
     @projects = Project.where(user_id: @user)
   end
 

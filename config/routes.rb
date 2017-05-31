@@ -45,7 +45,7 @@ Rails.application.routes.draw do
   end
 
   #partie pages statiques high-voltage
-  get "/*id" => 'pages#show', as: :page, format: false
+  # get "/*id" => 'pages#show', as: :page, format: false
 end
 
 
