@@ -1,5 +1,6 @@
 
 
+
 <div class="home-banner";">
 
   <h3>surmatete.fr</h3>
@@ -15,17 +16,6 @@
       <div class="dropdown main-form-stuffs">
         <button class="btn btn-default custom-drop-down-btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
           Type de travaux
-          <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-          <li><label><%= f.check_box :construction %><span> construction</span></label></li>
-          <li><label><%= f.check_box :renovation %><span> rénovation</span></label></li>
-          <li><label><%= f.check_box :entretien %><span> entretien</span></label></li>
-        </ul>
-      </div>
-      <div class="dropdown main-form-stuffs">
-        <button class="btn btn-default custom-drop-down-btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-          Spécialité
           <span class="caret"></span>
         </button>
         <ul class="dropdown-menu dropdown-size-custom" aria-labelledby="dropdownMenu1">
@@ -46,6 +36,17 @@
           <li><label><%= f.check_box :immeuble %><span> immeuble</span></label></li>
           <li><label><%= f.check_box :chateau %><span> chateau</span></label></li>
           <li><label><%= f.check_box :monument_historique %><span> monument historique</span></label></li>
+        </ul>
+      </div>
+      <div class="dropdown main-form-stuffs">
+        <button class="btn btn-default custom-drop-down-btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          Besoin
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <li><label><%= f.check_box :construction %><span> construction</span></label></li>
+          <li><label><%= f.check_box :renovation %><span> rénovation</span></label></li>
+          <li><label><%= f.check_box :entretien %><span> entretien</span></label></li>
         </ul>
       </div>
       <div class="main-form-stuffs">

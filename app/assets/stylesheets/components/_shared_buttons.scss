@@ -17,5 +17,31 @@
   background: darker;
 }
 
+.fix-cta {
+  position: fixed;
+  top: 200px;
+  left: 0px;
+  z-index: 30;
+  background-color: #F4E04D;
+  height: 255px;
+  width: 40px;
+  color: white;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
 
+  .fix-cta-rotate {
+  transform: rotate(270deg);
+  -webkit-transform: rotate(270deg);
+  -moz-transform:rotate(270deg);
+  }
 
+  .fa-ul {
+    position: absolute;
+    left: -231px;
+    top: -11px;
+  }
+
+  span {
+    white-space:nowrap;
+  }
+}
