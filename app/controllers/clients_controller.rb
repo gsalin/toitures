@@ -10,7 +10,6 @@ class ClientsController < ApplicationController
   def create
     @client = Client.new(client_params)
     @client.save
-
     if @client.address == ""
       redirect_to users_path
     else
@@ -82,7 +81,7 @@ class ClientsController < ApplicationController
   private
 
   def client_params
-    params.require(:client).permit(:first_name, :last_name, :phone_number, :email, :address, :construction, :renovation, :entretien, :charpente, :couverture, :ouverture, :terrasse, :plomberie, :maison, :chateau, :immeuble, :monument_historique)
+    params.require(:client).permit(:first_name, :last_name, :phone_number, :email, :address, :construction, :renovation, :entretien, :charpente, :couverture, :ouverture, :terrasse, :plomberie, :maison, :chateau, :immeuble, :monument_historique, :message)
   end
 
   def set_client

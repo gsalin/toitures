@@ -1,6 +1,10 @@
 fr:
   activerecord:
     attributes:
+      client:
+        last_name: Nom
+        first_name: Prénom
+        phone_number: Téléphone
       user:
         current_password: Mot de passe
         email: Email
