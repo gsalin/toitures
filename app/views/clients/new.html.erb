@@ -1,13 +1,92 @@
-<h1>Clients#new</h1>
 
-
-<%= simple_form_for(@client) do |f| %>
-  <%= f.input :address, placeholder: "Lieu des travaux" %>
-  <%= f.input :nettoyage_toiture, as: :check_boxes %>
-  <%= f.button :submit, "Rechercher des pros" %>
-<% end %>
+<div class="container emergency-form">
+  <div class="row">
+    <div class="col-xs-10 col-xs-offset-1">
+      <p class="text-center" style="color:orange;">- Ce service est gratuit -</p>
+      <p>Cette demande sera immédiatement envoyée aux professionnels qui vous répondront dans les meilleurs délais.</p>
+      <p>Respect de la vie Privée - Les données recueillies ne seront transmises qu'aux professionnels correspondant à votre demande.</p>
+      <div class="shared_form">
+        <%= simple_form_for(@client) do |f| %>
+          <%= f.input :address, placeholder: "Lieu des travaux", autofocus: true, label:false %>
+        <div class="row row-emergency-check-box-form">
+          <div class="col-xs-12 col-sm-4">
+            <p>Type de travaux</p>
+            <label><div><%= f.check_box :couverture %> <span>couverture</span></label></div>
+            <div>
+            <label><%= f.check_box :charpente %>
+            <span>charpente</span></label>
+            </div>
+            <div><label><%= f.check_box :ouverture %> <span>fenêtre / ouverture</span></label></div>
+            <div>
+            <label><%= f.check_box :terrasse %>
+            <span>terrasse</span></label>
+            </div>
+            <div>
+            <label><%= f.check_box :plomberie %>
+            <span>eaux de pluies / zinguerie</span></label>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-4">
+            <p>Type de bien</p>
+            <div>
+            <label><%= f.check_box :maison %>
+            <span>maison</span></label>
+            </div>
+            <div>
+            <label><%= f.check_box :immeuble %>
+            <span>immeuble</span></label>
+            </div>
+            <div>
+            <label><%= f.check_box :chateau %>
+            <span>chateau</span></label>
+            </div>
+            <div>
+            <label><%= f.check_box :monument_historique %>
+            <span>classé monument historique</span></label>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-4">
+            <p>Besoin</p>
+            <div>
+            <label><%= f.check_box :construction %>
+            <span>construction</span></label>
+            </div>
+            <div>
+            <label><%= f.check_box :renovation %>
+            <span>rénovation</span></label>
+            </div>
+            <div>
+            <label><%= f.check_box :entretien %>
+            <span>entretien</span></label>
+            </div>
+          </div>
+        </div>
+          <%= f.input :message, placeholder: "N'hésitez pas à détailler votre demande. Plus celle-ci sera précise plus il sera facile pour les professionnels de vous répondre." %>
+          <div class="row">
+            <div class="col-xs-12 col-sm-3">
+              <%= f.input :first_name %>
+            </div>
+            <div class="col-xs-12 col-sm-3">
+              <%= f.input :last_name, required: true %>
+            </div>
+            <div class="col-xs-12 col-sm-3">
+              <%= f.input :phone_number, required: true %>
+            </div>
+            <div class="col-xs-12 col-sm-3">
+              <%= f.input :email, required: true %>
+            </div>
+          </div>
+        <div class="text-center">
+          <%= f.submit "ENVOYEZ VOTRE DEMANDE", class: "navbar-wagon-button in_page" %>
+        <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 <%= content_for(:after_js) do %>
   <script src="https://maps.googleapis.com/maps/api/js?libraries=places&amp;key=AIzaSyC0J8yKgp1HNvXsiK1_H_PCAz2f-D9Zq4Y"></script>
 <% end %>
+

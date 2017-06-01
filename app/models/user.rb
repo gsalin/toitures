@@ -14,7 +14,6 @@ class User < ApplicationRecord
   validates :company, presence: true, uniqueness: true
   validates :first_name, presence: true
   validates :last_name, presence: true
-  # validates :position
   validates :office_phone, presence: true, uniqueness: true
   validates :mobile_phone, presence: true, uniqueness: true
   validates :address, presence: true
