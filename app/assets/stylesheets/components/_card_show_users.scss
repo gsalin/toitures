@@ -73,12 +73,9 @@
       text-decoration: none;
     }
 
-    .fa {
+    .fa-phone-custom {
       background-color: white;
       margin: 0px 7px 5px 7px;
-    }
-
-    .fa-phone {
       color: $yellow;
       font-size: 1.8em;
       padding: 5px;
@@ -93,7 +90,9 @@
       }
     }
 
-    .fa-envelope-o {
+    .fa-envelope-o-custom {
+      background-color: white;
+      margin: 0px 7px 5px 7px;
       color: $yellow;
       font-size: 1.8em;
       padding: 5px;
@@ -120,4 +119,13 @@
       opacity: 0.5;
     }
   }
+}
+
+.large-fa {
+  font-size: larger;
+  padding: 10px;
+}
+
+.large-fa:nth-child(2n) {
+  border-left: solid black 1px;
 }

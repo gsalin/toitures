@@ -61,58 +61,49 @@
 
 
 
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+    <!-- Media -->
+    <h1>Partie Media</h1>
 
-          <%= link_to users_path, class: "main-cta" do %>
-            <span>Liste des pros</span>
-          <% end %>
-          <br>
-          <%= link_to edit_user_registration_path, class: "main-cta" do %>
-            <span>edit pro</span>
-          <% end %>
-          <br>
-          <%= link_to new_client_path, class: "main-cta" do %>
-            <span>Rechercher des pros près de chez moi</span>
-          <% end %>
+    <br>
+    <br>
 
 
-      <!-- Media -->
-      <h1>Partie Media</h1>
-
-      <br>
+      <%= link_to new_article_path, class: "main-cta" do %>
+        <span>New article</span>
+      <% end %>
       <br>
 
+      <%= link_to articles_path, class: "main-cta" do %>
+        <span>Article Index</span>
+      <% end %>
 
-        <%= link_to new_article_path, class: "main-cta" do %>
-          <span>New article</span>
-        <% end %>
-        <br>
+    <h3>Index articles </h3>
 
-        <%= link_to articles_path, class: "main-cta" do %>
-          <span>Article Index</span>
-        <% end %>
-
-      <h3>Index articles </h3>
-
-      <h3>Index Magazine</h3>
-        <%= link_to magazine_index_path, class: "main-cta" do %>
-          <span>Index Magazine</span>
-        <% end %>
-        <br>
+    <h3>Index Magazine</h3>
+      <%= link_to magazine_index_path, class: "main-cta" do %>
+        <span>Index Magazine</span>
+      <% end %>
       <br>
-      <h3>Catégorie énergie</h3>
-        <%= link_to energie_magazine_index_path, class: "main-cta" do %>
-          <span>Catégorie énergie</span>
-        <% end %>
-        <br>
-
-        <br>
-      <h3>Article</h3>
-        <%= link_to energie_photovoltaique_2017_magazine_index_path, class: "main-cta" do %>
-          <span>Catégorie énergie</span>
-        <% end %>
-        <br>
+    <br>
+    <h3>Catégorie énergie</h3>
+      <%= link_to energie_magazine_index_path, class: "main-cta" do %>
+        <span>Catégorie énergie</span>
+      <% end %>
+      <br>
 
       <br>
+    <h3>Article</h3>
+      <%= link_to energie_photovoltaique_2017_magazine_index_path, class: "main-cta" do %>
+        <span>Catégorie énergie</span>
+      <% end %>
+      <br>
+
+    </div>
+  </div>
+</div>
 
 
 <%= content_for(:after_js) do %>
