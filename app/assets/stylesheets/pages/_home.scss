@@ -10,6 +10,14 @@
   opacity: 0.9;
   z-index:1;
   position: absolute;
+
+  .carousel-control {
+    opacity: 0.9;
+  }
+
+  .carousel-indicators {
+    color: $yellow !important;
+  }
 }
 
 .home-banner {
