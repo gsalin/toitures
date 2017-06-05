@@ -7,7 +7,7 @@
 <div class="wrapper wrapper_users_show">
   <div class="banner-show banner">
     <% if @user.photo_presentation? %>
-      <%= cl_image_tag @user.photo_presentation.path%>
+      <%= cl_image_tag @user.photo_presentation.path, width: 1440, height: 607, crop: :fill %>
     <% else %>
       <%= image_tag "user_base_pic.png" %>
     <% end %>
