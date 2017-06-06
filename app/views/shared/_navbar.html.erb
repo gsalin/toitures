@@ -4,6 +4,7 @@
     <%= image_tag "logo.png" %>
     <p>L'annuaire des professionnels de la toiture</p>
   <% end %>
+  <%= link_to('Retour', :back) %>
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
@@ -20,54 +21,52 @@
     <!-- Nav links -->
 
 
-      <div class="navbar-wagon-item">
-        <div class="dropdown">
-          <a class="navbar-wagon-link dropdown-toggle" id="navbar-wagon-menu", data-toggle ="dropdown">Guides</a>
-          <ul class="dropdown-menu dropdown-menu-right dropdown-medias">
-            <li class="dropdown-media-container ">
-              <ul class="list-unstyled">
-              <!-- NE PAS TOUCHER AU DESSUS -->
-                <li>
-                  <%= link_to "Guides", guides_path, class: "" %>
-                </li>
-                 <li role="separator" class="divider"></li>
-                <li>
-                  test 2
-                </li>
-              </ul>
-              <ul class="list-unstyled">
-                <li>
-                  test
-                </li>
-              </ul>
+  <div class="navbar-wagon-item">
+    <div class="dropdown">
+      <a class="navbar-wagon-link dropdown-toggle" id="navbar-wagon-menu", data-toggle ="dropdown">Guides</a>
+      <ul class="dropdown-menu dropdown-menu-right dropdown-medias">
+        <li class="dropdown-media-container ">
+          <ul class="list-unstyled">
+            <li>
+              <%= link_to "Guides", guides_path, class: "" %>
+            </li>
+             <li role="separator" class="divider"></li>
+            <li>
+              test 2
             </li>
           </ul>
-        </div>
-      </div>
+          <ul class="list-unstyled">
+            <li>
+              test
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
 
-      <div class="navbar-wagon-item">
-        <div class="dropdown">
-          <a class="navbar-wagon-link dropdown-toggle" id="navbar-wagon-menu", data-toggle ="dropdown">Magazines</a>
-          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-            <li class="dropdown-media-container ">
-              <ul class="list-unstyled">
-              <!-- NE PAS TOUCHER AU DESSUS -->
-                <li>
-                <%= link_to "Magazine", magazine_index_path, class: "navbar-wagon-item navbar-wagon-link" %>
-                </li>
-                <li>
-                  test 2
-                </li>
-              </ul>
-              <ul class="list-unstyled">
-                <li>
-                  test
-                </li>
-              </ul>
+  <div class="navbar-wagon-item">
+    <div class="dropdown">
+      <a class="navbar-wagon-link dropdown-toggle" id="navbar-wagon-menu", data-toggle ="dropdown">Magazines</a>
+      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+        <li class="dropdown-media-container ">
+          <ul class="list-unstyled">
+            <li>
+            <%= link_to "Magazine", magazine_index_path, class: "navbar-wagon-item navbar-wagon-link" %>
+            </li>
+            <li>
+              test 2
             </li>
           </ul>
-        </div>
-      </div>
+          <ul class="list-unstyled">
+            <li>
+              test
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
 
 
 
@@ -86,20 +85,16 @@
       <!-- Profile picture and dropdown -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
-        <% if current_user.photo_company_logo != [] %>
-          <%= cl_image_tag current_user.photo_company_logo.path, width: 40, height: 40, crop: :fill, class: "avatar-navbar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown"%>
-        <% else %>
-          <span class="avatar dropdown-toggle", id="navbar-wagon-menu", data-toggle="dropdown" >Mon compte</span>
-        <% end %>
+          <%= image_tag "http://placehold.it/30x30", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-            <li>
-              <%= link_to edit_user_registration_path do %>
-                <i class="fa fa-user"></i> <%= t(".profile", default: "Mon profil") %>
-              <% end %>
-            </li>
             <li>
               <%= link_to destroy_user_session_path, method: :delete do %>
                 <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Me déconnecter") %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to edit_user_registration_path do %>
+                <i class="fa fa-user"></i> <%= t(".profile", default: "Mon profil") %>
               <% end %>
             </li>
           </ul>
@@ -107,13 +102,10 @@
       </div>
 
     <% else %>
-
       <!-- Login text link -->
       <%= link_to t(".sign_in", default: "Professionnels"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
-
     <% end %>
 
-    <!-- Button (call-to-action) -->
   </div>
 
   <!-- Dropdown list appearing on mobile only -->
