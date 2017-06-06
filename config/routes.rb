@@ -43,9 +43,6 @@ Rails.application.routes.draw do
     get 'la-charpente/introduction', on: :collection, controller: "charpentes", action: "introduction"
 
   end
-
-  #partie pages statiques high-voltage
-  # get "/*id" => 'pages#show', as: :page, format: false
 end
 
 

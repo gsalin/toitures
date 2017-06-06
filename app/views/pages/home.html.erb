@@ -1,6 +1,11 @@
 
 
 
+<%= link_to destroy_user_session_path, method: :delete do %>
+                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Me déconnecter") %>
+              <% end %>
+<%= link_to t(".sign_in", default: "Professionnels"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+
 <div class="home-banner";">
 
   <h3>surmatete.fr</h3>
