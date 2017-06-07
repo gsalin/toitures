@@ -47,6 +47,7 @@
                 <% if user.mobile_phone != nil %>
                 <i class="fa fa-mobile large-fa" aria-hidden="true"></i> <%= user.mobile_phone %>
                 <% end %>
+                <%= render "devise/sessions/new_modal", resource: resource, resource_name: resource_name, resource_class: User %>
               </div>
             </div>
           </div>
