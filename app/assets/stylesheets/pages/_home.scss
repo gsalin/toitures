@@ -3,23 +3,6 @@
  * (margin/padding adjustments)
  * ------------------------------------- */
 
-.carousel {
-  background: #F09819; /* fallback for old browsers */
-  background: -webkit-linear-gradient(to left, #F09819 , #EDDE5D); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to left, #F09819 , #EDDE5D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  opacity: 0.9;
-  z-index:1;
-  position: absolute;
-
-  .carousel-control {
-    opacity: 0.9;
-  }
-
-  .carousel-indicators {
-    color: $yellow !important;
-  }
-}
-
 .home-banner {
   color: white;
   text-align: center;
@@ -35,8 +18,9 @@
   -ms-flex-pack: center;
   justify-content: center;
   flex-direction: column;
-    background-image: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 50%),
+  background-image: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 50%),
               url('user_base_pic.png');
+  margin-bottom: 50px;
 }
 
 .form_home {
@@ -113,6 +97,123 @@
       opacity: 1;
       font-size: 0.9em;
     }
+  }
+}
+
+
+.card-home-guide{
+  height: 200px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  color: white;
+  border-radius: 5px;
+  margin-top:20px;
+  position: relative;
+
+  h2 {
+    font-size: 25px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top:60px;
+    bottom:0;
+    margin: auto;
+  }
+  p {
+    font-size: 14px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 120px;
+    bottom: 0;
+    margin: auto;
+  }
+}
+.card-link-home-guide {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index:2;
+  background: black;
+  opacity: 0;
+}
+.card-link-home-guide:hover{
+  opacity: 0.1;
+}
+
+#border-presentation-site-home {
+
+  text-align: justify;
+}
+.presentation-site-home {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: space-around;
+  min-height: 650px;
+  h3 {
+    font-size: 22px;
+  }
+  .home-icones {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: space-around;
+    i {
+      height: 90px;
+      width: 90px;
+      background-color: white;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: center;
+      align-content: space-around;
+    }
+    p {
+      margin-top: 8px;
+      margin-bottom: 10px;
+      max-width: 270px;
+      font-weight:lighter;
+      span {
+        color: $yellow;
+        font-weight:bolder;
+      }
+    }
+  }
+}
+
+.small-link-home {
+  color: $yellow;
+  font-size: 13px;
+  text-transform: uppercase;
+
+}
+
+.small-link-home:hover {
+  color: $medium-grey;
+  text-decoration: none;
+}
+
+.annuaire-card-home {
+  margin-top:20px;
+  margin-bottom:20px;
+  h2 {
+    font-size: 22px;
+    margin-left: 40px;
+  }
+  ul {
+    list-style-type: none;
+  }
+  li {
+    padding: 2px;
   }
 }
 

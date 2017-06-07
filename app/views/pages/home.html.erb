@@ -1,15 +1,8 @@
 
-
-
-<%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Me déconnecter") %>
-              <% end %>
-<%= link_to t(".sign_in", default: "Professionnels"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
-
 <div class="home-banner";">
 
   <h3>surmatete.fr</h3>
-  <h2>L'annuaire des professionnels de la toiture</h2>
+  <h2>L'annuaire des professionnels de la toiture, mais pas que...</h2>
 
   <!-- form -->
   <div class="form_home">
@@ -65,6 +58,102 @@
 </div>
 
 
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 col-sm-offset-1 presentation-site-home" id="border-presentation-site-home">
+      <h3>Trouvez en quelques clics le professionnel correspondant à vos besoins et à vos critères</h3>
+      <p>Le site www.loremipsum.fr est un <strong> vrai guide gratuit</strong> d'informations et de conseils pour <strong>bien faire rénover sa toiture ou sa terrasse</strong>.</p>
+      <p>En fonction de vos besoins, construction,réparation,  en type d'hébergement (accueil de jour, Alzheimer, Snoezelen ..., sans oublier les résidences services, les résidences autonomie) et de l'urgence éventuelle (places disponibles) trouvez et comparez en quelques clics.</p>
+      <p>Portail clair et aéré, le site regorge d'informations essentielles concernant entre autres les aides ou allocations, les tarifs et la tarification en maison de retraite, d'adresses utiles et de liens indispensables. Il vous conseille pour bien choisir la maison de retraite ou l'Ehpad et vous informe des démarches à suivre pour l'entrée en maison de retraite.</p>
+    </div>
+    <div class="col-xs-12 col-sm-5 col-sm-offset-1 text-center presentation-site-home">
+      <div class="home-icones">
+        <i class="fa fa-address-card-o fa-3x" aria-hidden="true"></i>
+        <p>Un <span>Annuaire</span> avec les fiches complètes des professionnels</p>
+        <%= link_to "Consulter l'annuaire", users_path, class: "small-link-home" %>
+      </div>
+      <div class="home-icones">
+        <i class="fa fa-file-text-o fa-3x" aria-hidden="true"></i>
+        <p>Comprenez tout sur la toiture grace aux <span>guides</span></p>
+        <%= link_to "Voir les guides", guides_path, class: "small-link-home" %>
+      </div>
+      <div class="home-icones">
+        <i class="fa fa-newspaper-o fa-3x" aria-hidden="true"></i>
+        <p>Découvrez l'actualité et les tendances dans le <span>magazine</span></p>
+        <%= link_to "Voir le magazine", magazine_index_path, class: "small-link-home" %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- cards explicatives -->
+
+
+
+
+<!-- Card ANNUAIRE -->
+<div class="container annuaire-card-home">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+      <h2>Des professionnels de qualité</h2>
+      <ul>
+        <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Structure juridique de plus de 2 ans</li>
+        <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Assurance de responsabilité décennale</li>
+        <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Assurance de responsabilité civile professionnelle</li>
+        <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Coordonnées complètes</li>
+        <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Présentation des projets réalisés</li>
+      </ul>
+    </div>
+    <div class="col-xs-12 col-sm-6">
+
+    </div>
+  </div>
+</div>
+
+<!-- guides -->
+<div class="container">
+  <div class="row">
+  <h1 class="text-center" style="font-size: 27px;">Pour mieux comprendre votre toit, consultez nos guides...</h1>
+    <div class="col-xs-12 col-sm-4">
+      <div class="card-home-guide" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.1)), url(<%= asset_path 'toit_ancien.jpg' %>);">
+        <div class="card-home-text">
+          <h2 class="text-center">La toiture</h2>
+          <p class="text-center">Lorem ipsum Lorem ipsum Lorem ipsum </p>
+        </div>
+        <%= link_to la_toiture_guide_index_path, class: "card-link-home-guide" do %>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <div class="card-home-guide" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.1)), url(<%= asset_path 'toit_ancien.jpg' %>);">
+        <div class="card-home-text">
+          <h2 class="text-center">La couverture</h2>
+          <p class="text-center">Lorem ipsum Lorem ipsum Lorem ipsum </p>
+        </div>
+        <%= link_to la_couverture_guide_index_path, class: "card-link-home-guide" do %>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <div class="card-home-guide" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.1)), url(<%= asset_path 'toit_ancien.jpg' %>);">
+        <div class="card-home-text">
+          <h2 class="text-center">La charpente</h2>
+          <p class="text-center">Lorem ipsum Lorem ipsum Lorem ipsum </p>
+        </div>
+        <%= link_to la_charpente_guide_index_path, class: "card-link-home-guide" do %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
 
 <div class="container">
   <div class="row">
@@ -109,8 +198,3 @@
     </div>
   </div>
 </div>
-
-
-<%= content_for(:after_js) do %>
-  <script src="https://maps.googleapis.com/maps/api/js?libraries=places&amp;key=AIzaSyC0J8yKgp1HNvXsiK1_H_PCAz2f-D9Zq4Y"></script>
-<% end %>
