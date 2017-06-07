@@ -45,3 +45,23 @@
     white-space:nowrap;
   }
 }
+
+.small-link {
+  color: $dark-grey;
+  font-size: 13px;
+
+}
+
+.small-link:hover {
+  color: $medium-grey;
+  text-decoration: none;
+}
+
+.yellow-link {
+  color: $yellow;
+}
+
+.yellow-link:hover {
+  color: $medium-grey;
+  text-decoration: none;
+}

@@ -26,7 +26,7 @@ $(document).ready(function() {
     }, 2000);
 
       $('body').on("click", ".dropdown-menu", function (e) {
-        $(this).parent().is(".open") && e.stopPropagation();
+        $(this).parent().is(".open");
     });
   });
 
