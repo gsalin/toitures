@@ -35,7 +35,7 @@
   -ms-flex-pack: center;
   justify-content: center;
   flex-direction: column;
-    background-image: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 50%),
+  background-image: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 50%),
               url('user_base_pic.png');
 }
 
@@ -115,5 +115,49 @@
     }
   }
 }
+
+
+.card-home-guide{
+  height: 200px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  color: white;
+  border-radius: 5px;
+  margin-top:20px;
+  position: relative;
+
+  h2 {
+    font-size: 25px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top:60px;
+    bottom:0;
+    margin: auto;
+  }
+  p {
+    font-size: 14px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top:120px;
+    bottom:0;
+    margin: auto;
+  }
+}
+.card-link-home-guide {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index:2;
+  background: black;
+  opacity: 0;
+}
+.card-link-home-guide:hover{
+  opacity: 0.1;
+}
+
 
 

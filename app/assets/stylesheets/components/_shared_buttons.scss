@@ -1,7 +1,7 @@
 .search-button {
   margin-left: 10px;
   border-radius: 3px;
-  background-color: #F4E04D;
+  background-color: $yellow;
   color: white;
   font-size: 1.5em;
   border: none;
@@ -22,7 +22,7 @@
   top: 200px;
   left: 0px;
   z-index: 30;
-  background-color: #F4E04D;
+  background-color: $yellow;
   height: 290px;
   width: 40px;
   color: white;
