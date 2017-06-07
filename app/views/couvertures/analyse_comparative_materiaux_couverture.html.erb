@@ -1,0 +1,361 @@
+<%= render 'shared/guides_top_banner' %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-12  ">
+      <div class='article-page'>
+
+        <ol class="breadcrumb">
+          <li><a href="/">Accueil</a></li>
+          <li><%= link_to "Les guides", guides_path %></li>
+          <li><%= link_to "La couverture", la_couverture_guide_index_path %></li>
+          <li class="active">Analyse comparative des matériaux de couverture</li>
+        </ol>
+
+         <div class="share-links">
+            <a href="#" class="share-link bg-facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+            <a href="#" class="share-link bg-twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+            <a href="#" class="share-link bg-email">
+              <i class="fa fa-google"></i>
+            </a>
+            <a href="#" class="share-link bg-text">
+              <i class="fa fa-envelope-o"></i>
+            </a>
+        </div>
+        <header>
+          <h1 itemprop="headline" class="text-center">Analyse comparative <br>des différents matériaux de couverture</h1>
+        </header>
+        <p class='italic'>Ces différents tableaux synthétiques sont un outils afin de déterminer quels types de revêtements répond l meiux à vos besoins, contraintes et envies :</p>
+
+
+        <div class="table-responsive">
+          <table class="table table-hover">
+            <caption class='text-center'>Les matériaux en chiffres</caption>
+            <thead>
+              <tr>
+                <th></th>
+                <th>prix à l'achat <br>ttc</th>
+                <th>durée</th>
+                <th>entretien</th>
+                <th>esthétisme</th>
+                <th>poids <br> kg/m2</th>
+                <th>pente du toit</th>
+                <th>charpente adaptée</th>
+                <th>écologie</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">ardoises naturelles</th>
+                <td>70-150 €</td>
+                <td>50-300 ans </td>
+                <td>décennal</td>
+                <td>++++</td>
+                <td>30 kg</td>
+                <td>min 20 %</td>
+                <td>forte</td>
+                <td>+++</td>
+              </tr>
+               <tr>
+                <th scope="row">tuiles en terre cuite</th>
+                <td>20-40 €</td>
+                <td>30-50 ans </td>
+                <td>quinquennal</td>
+                <td>+++</td>
+                <td>30-60 kg</td>
+                <td>min 25 %</td>
+                <td>légère</td>
+                <td>++</td>
+              </tr>
+               <tr>
+                <th scope="row">chaume</th>
+                <td>120-150 €</td>
+                <td>30-50 ans </td>
+                <td>tous les 3 ans</td>
+                <td>++++</td>
+                <td>30 kg</td>
+                <td>min 25 %</td>
+                <td>légère</td>
+                <td>++++</td>
+              </tr>
+               <tr>
+                <th scope="row">zinc</th>
+                <td>100-150 €</td>
+                <td>70-100 ans </td>
+                <td>nul</td>
+                <td>++++</td>
+                <td>5 kg</td>
+                <td>min 5 %</td>
+                <td>très légère</td>
+                <td>++</td>
+              </tr>
+               <tr>
+                <th scope="row">lauze</th>
+                <td>100-200 €</td>
+                <td>70-100 ans </td>
+                <td>régulier</td>
+                <td>++++</td>
+                <td>100 kg</td>
+                <td>min 15 %</td>
+                <td>très forte</td>
+                <td>+++</td>
+              </tr>
+               <tr>
+                <th scope="row">bardeaux de bois</th>
+                <td>100-150 €</td>
+                <td>30-50 ans </td>
+                <td>décennal</td>
+                <td>++++</td>
+                <td>30 kg</td>
+                <td>min 35 %</td>
+                <td>normale</td>
+                <td>++++</td>
+              </tr>
+               <tr>
+                <th scope="row">ardoises synthétiques</th>
+                <td>30 €</td>
+                <td>20-50 ans </td>
+                <td>quinquénnal</td>
+                <td>+++</td>
+                <td>20 kg</td>
+                <td>min 17 %</td>
+                <td>normale</td>
+                <td>+</td>
+              </tr>
+               <tr>
+                <th scope="row">bardeaux bitumineux</th>
+                <td>20 €</td>
+                <td>20-50 ans </td>
+                <td>régulier</td>
+                <td>+</td>
+                <td>10 kg</td>
+                <td>min 17 %</td>
+                <td>très légère</td>
+                <td>+</td>
+              </tr>
+              <tr>
+                <th scope="row">tuiles métalliques</th>
+                <td>20 €</td>
+                <td>50-80 ans </td>
+                <td>nul</td>
+                <td>++</td>
+                <td>5 kg</td>
+                <td>min 8 %</td>
+                <td>très légère</td>
+                <td>++</td>
+              </tr>
+               <tr>
+                <th scope="row">tuiles en ciment</th>
+                <td>30 €</td>
+                <td>50 ans </td>
+                <td>quinquénnal</td>
+                <td>+++</td>
+                <td>50 kg</td>
+                <td>min 17 %</td>
+                <td>forte</td>
+                <td>++</td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+
+        <div class="table-responsive">
+          <table class="table table-hover">
+            <caption class='text-center'>Principaux avantages et inconvénients de chaque matériau </caption>
+            <thead>
+              <tr>
+                <th></th>
+                <th>points forts</th>
+                <th>inconvénients</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">ardoises naturelles</th>
+                <td>
+                  <ul>
+                    <li>+ esthétisme</li>
+                    <li>+ durée de vie </li>
+                    <li>+ chic</li>
+                  </ul>
+                </td>
+                <td>
+                  <ul>
+                    <li>- prix à l'achat</li>
+                    <li>- entretien à faire par des professionnels</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">tuiles en terres cuites</th>
+                <td>
+                  <ul>
+                    <li>+ typicité</li>
+                    <li>+ pose faciles</li>
+                    <li>+ réparations simples</li>
+                  </ul>
+                </td>
+                <td>
+                  <ul>
+                    <li>- concurrencées par les tuiles en métal et en ciment</li>
+                    <li>- ne conviennent pas à toutes les régions</li>
+                    <li></li>
+                  </ul>
+                </td>
+              </tr>
+
+              <tr>
+                <th scope="row">chaume</th>
+                <td>
+                  <ul>
+                    <li>+ fait vivre un patrimoine vivant & traditionnel</li>
+                    <li>+ revêtement le plus écologique</li>
+                    <li>+ esthétique naturelle</li>
+                    <li>+ excellent isolant</li>
+                    <li>+ convient à une charpente légère</li>
+                  </ul>
+                </td>
+                <td>
+                  <ul>
+                    <li>- nécessite un entretien régulier afin que la couverture ne se détériore pas</li>
+                    <li>- coût important</li>
+                  </ul>
+                </td>
+              </tr>
+
+              <tr>
+                <th scope="row">zinc</th>
+                <td>
+                  <ul>
+                    <li>+ esthétique moderne</li>
+                    <li>+ souplesse d'utilisation permettant des projets architecturaux ambitieux</li>
+                    <li>+ pas d'entretien</li>
+                  </ul>
+                </td>
+                <td>
+                  <ul>
+                    <li>- sensible à la pollution de l'air</li>
+                    <li>- ne convient pas aux régions de bord de mer</li>
+                    <li>- conducteur phonique et thermique</li>
+                    <li>- nécessite une main d'oeuvre spécialisée</li>
+                    <li>- coût</li>
+                  </ul>
+                </td>
+              </tr>
+
+               <tr>
+                <th scope="row">lauze</th>
+                <td>
+                  <ul>
+                    <li>+ toit traditionnel des régions de montagne</li>
+                    <li>+ beauté du toit en pierre</li>
+                    <li>+ solidité de l'édifice</li>
+                  </ul>
+                </td>
+                <td>
+                  <ul>
+                    <li>- contrôle et entretien régulier des pierres</li>
+                    <li>- offre limitée par le nombre faible d'artisans qualifiés </li>
+                    <li>- coût d'achat et d'installation très élevé</li>
+                  </ul>
+                </td>
+              </tr>
+
+              <tr>
+                <th scope="row">les ardoises synthétiques</th>
+                <td>
+                  <ul>
+                    <li>+ le prix 50 % moins élevé que celui de l’ardoise naturelle (entre 50 € et 80 € le m2)</li>
+                    <li>+ la résistance (propriété mécanique proche de l’ardoise ou de la tuile)</li>
+                  </ul>
+                </td>
+                <td>
+                  <ul>
+                    <li>- la durée de vie (50 ans max) 50 % moins élevé que l’ardoise naturelle mais égale à  celle d’une tuile.</li>
+                    <li>- l’entretien (plus régulier qu’avec de l’ardoise naturelle)</li>
+                    <li>- une couleur qui peut se dégrader après une quinzaine d’année</li>
+                    <li>- l’impact écologique avec l’utilisation de produits chimiques</li>
+                  </ul>
+                </td>
+              </tr>
+
+               <tr>
+                <th scope="row">les bardeaux bitumineux </th>
+                <td>
+                  <ul>
+                    <li>+ le prix très attractif</li>
+                    <li>+ l’esthétique (proche de l’ardoise ou de la tuile plate selon la couleur)</li>
+                    <li>+ la facilité de pause (possible pour un particulier)</li>
+                    <li>+ matériau non gélif (résiste au gel donc intéressant dans les zones montagneuses)</li>
+                    <li>+ son adaptabilité aux architectures complexes</li>
+                  </ul>
+                </td>
+                <td>
+                  <ul>
+                    <li>- la durée de vie faible (25 ans)</li>
+                    <li>- l’aspect environnemental (produit pétrolier) et recyclage</li>
+                    <li>- la résistance faible aux évènements climatiques violents</li>
+                  </ul>
+                </td>
+              </tr>
+
+              <tr>
+                <th scope="row">les tuiles métalliques </th>
+                <td>
+                  <ul>
+                    <li>+ résistance aux intempéries et au vent</li>
+                    <li>+ légéreté et facilité de pose (charpente légère)</li>
+                    <li>+ le prix</li>
+                    <li>+ l'absence d’entretien</li>
+                  </ul>
+                </td>
+                <td>
+                  <ul>
+                    <li>- demande une isolation phonique adaptée</li>
+                </td>
+              </tr>
+
+                 <tr>
+                <th scope="row">les tuiles en ciment </th>
+                <td>
+                  <ul>
+                     <li>+ résistance aux chocs et à la pollution</li>
+                     <li>+ étanchéité et homogéinité des tuiles</li>
+                     <li>+ durabilité dans des environnements rudes (ingélive)</li>
+                     <li>+ esthétique proche des styles imités</li>
+                  </ul>
+                </td>
+                <td>
+                  <ul>
+                    <li>- poids élevé ( 50 kg /m²) nécessitant une charpente adaptée</li>
+                    <li>- détérioration de la coloration possible après un certain temps</li>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Nos classements</h3>
+        <span>Meilleur rapport résistance/prix</span>
+        <ol>
+          <li>tuile en ciment</li>
+          <li>tuile en métal</li>
+        </ol>
+
+        <span>Meilleur impact écologique</span>
+        <ol>
+          <li>toit en chaume</li>
+          <li>toit en bardeaux de bois</li>
+          <li>toit en tuile de terre cuite et en ardoises naturelles</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+

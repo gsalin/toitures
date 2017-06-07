@@ -8,6 +8,9 @@ class CouverturesController < ApplicationController
   def introduction
   end
 
+  def analyse_comparative_materiaux_couverture
+  end
+
   private
 
   def new_client
