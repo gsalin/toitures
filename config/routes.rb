@@ -37,6 +37,7 @@ Rails.application.routes.draw do
     # guide de la couverture
     get 'la-couverture', on: :collection, controller: "couvertures", action: "index"
     get 'la-couverture/bien-choisir-sa-couverture', on: :collection, controller: "couvertures", action: "bien_choisir_sa_couverture"
+    get 'la-couverture/tableau-comparatif-materiaux-couverture', on: :collection, controller: "couvertures", action: "tableau_comparatif_materiaux_couverture"
 
     # guide de la toiture
     get 'la-charpente', on: :collection, controller: "charpentes", action: "index"
