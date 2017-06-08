@@ -38,6 +38,7 @@
     get 'la-couverture', on: :collection, controller: "couvertures", action: "index"
     get 'la-couverture/bien-choisir-sa-couverture', on: :collection, controller: "couvertures", action: "bien_choisir_sa_couverture"
     get 'la-couverture/analyse-comparative-materiaux-couverture', on: :collection, controller: "couvertures", action: "analyse_comparative_materiaux_couverture"
+    get 'la-couverture/les-tuiles-en-terre-cuite', on: :collection, controller: "couvertures", action: "les_tuiles_en_terre_cuite"
 
     # guide de la toiture
     get 'la-charpente', on: :collection, controller: "charpentes", action: "index"
