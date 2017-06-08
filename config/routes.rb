@@ -38,7 +38,11 @@
     get 'la-couverture', on: :collection, controller: "couvertures", action: "index"
     get 'la-couverture/bien-choisir-sa-couverture', on: :collection, controller: "couvertures", action: "bien_choisir_sa_couverture"
     get 'la-couverture/analyse-comparative-materiaux-couverture', on: :collection, controller: "couvertures", action: "analyse_comparative_materiaux_couverture"
-
+    get 'la-couverture/les-tuiles-en-terre-cuite', on: :collection, controller: "couvertures", action: "les_tuiles_en_terre_cuite"
+    get 'la-couverture/les-ardoises-naturelles', on: :collection, controller: "couvertures", action: "les_ardoises_naturelles"
+    get 'la-couverture/les-bardeaux-de-bois', on: :collection, controller: "couvertures", action: "les_bardeaux_de_bois"
+    get 'la-couverture/le-toit-de-chaume', on: :collection, controller: "couvertures", action: "le_toit_de_chaume"
+        get 'la-couverture/le-toit-en-zinc', on: :collection, controller: "couvertures", action: "le_toit_en_zinc"
     # guide de la toiture
     get 'la-charpente', on: :collection, controller: "charpentes", action: "index"
     get 'la-charpente/introduction', on: :collection, controller: "charpentes", action: "introduction"

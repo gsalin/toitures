@@ -1,0 +1,74 @@
+<%= render 'shared/guides_top_banner' %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-9">
+      <div class='article-page'>
+
+        <ol class="breadcrumb">
+          <li><a href="/">Accueil</a></li>
+          <li><%= link_to "Les guides", guides_path %></li>
+          <li><%= link_to "La couverture", la_couverture_guide_index_path %></li>
+          <li class="active">Le toit en zinc</li>
+        </ol>
+
+         <div class="share-links">
+            <a href="#" class="share-link bg-facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+            <a href="#" class="share-link bg-twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+            <a href="#" class="share-link bg-email">
+              <i class="fa fa-google"></i>
+            </a>
+            <a href="#" class="share-link bg-text">
+              <i class="fa fa-envelope-o"></i>
+            </a>
+        </div>
+        <header>
+          <h1 itemprop="headline" class="text-center">Le toit en zinc</h1>
+        </header>
+        <p class="italic">La couverture en zinc est célèbre pour avoir donner à la ville de Paris son identité visuelle. Elle revient en force, notamment pour les maisons d’architectes, à ossatures bois, etc. Utilisée comme couverture principale ou pour couvrir des détails architecturaux. Le zinc a sa place dans les projets modernes et traditionnels.</p>
+
+        <figure class="figure-article">
+          <%= image_tag "chaumiere_normande.jpg" %>
+          <figcaption>Une chaumière normande, crédit photo Gérard Janot</figcaption>
+        </figure>
+
+        <h2>Présentation</h2>
+        <p>Le zinc connaît un renouveau dans la maison individuelle grâce à ses propriétés praticulières. Léger et malléable, il permet d’oser toutes les formes et s’adapte en particulier aux toits peu pentus et permet l’optimisation des volumes de comble.</p>
+
+        <h2>Un matériau idéal pour les ornements</h2>
+        <p>Le zinc se prête particulièrement à l’intégration de fenêtres de toits, de lucarnes et autre oeil de beuf. La girouette constitue également un élément décoratif prisé. </p>
+
+        <h2>Avantages / inconvénients</h2>
+
+        <h3>Avantages</h3>
+        <ul>
+          <li>+ esthétique et créativité</li>
+          <li>+ naturel</li>
+          <li>+ absence d’entretien</li>
+          <li>+ matériau léger qui permet une charpente légère</li>
+          <li>+ résistant </li>
+        </ul>
+
+        <h3>Inconvénients</h3>
+        <ul>
+          <li>- conducteur thermique et phonique nécessitant une isolation spécifique</li>
+          <li>- pose technique et main d’oeuvre qualifié limitée</li>
+          <li>- prix</li>
+          <li>- sensible à la pollution atmosphérique (oxydation)</li>
+        </ul>
+
+        <h3>Coût</h3>
+        <p>Un toit en zinc coûte environ le mètre carré, pose comprise.</p>
+
+        <h3>Entretien</h3>
+        <p>La couverture en zinc ne demande pas d’entretien, une couche d’oxydation apparaît naturellement à sa surface et va faire écran protecteur tout comme l’alumine avec l’aluminium. La composition chimique du zinc fait qu’il est utilisé dans les antifongiques et autres remèdes pour se débarasser des végétaux et champignons.</p>
+
+      </div>
+    </div>
+    <%= render 'shared/guide_left_navigation' %>
+  </div>
+</div>

@@ -1,0 +1,164 @@
+<%= render 'shared/guides_top_banner' %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-9">
+      <div class='article-page'>
+
+        <ol class="breadcrumb">
+          <li><a href="/">Accueil</a></li>
+          <li><%= link_to "Les guides", guides_path %></li>
+          <li><%= link_to "La couverture", la_couverture_guide_index_path %></li>
+          <li class="active">Les ardoises naturelles</li>
+        </ol>
+
+         <div class="share-links">
+            <a href="#" class="share-link bg-facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+            <a href="#" class="share-link bg-twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+            <a href="#" class="share-link bg-email">
+              <i class="fa fa-google"></i>
+            </a>
+            <a href="#" class="share-link bg-text">
+              <i class="fa fa-envelope-o"></i>
+            </a>
+        </div>
+        <header>
+          <h1 itemprop="headline" class="text-center">Les ardoises naturelles</h1>
+        </header>
+        <p class="italic">Autrefois symbole de richesse et réservée aux demeures aisées, l’ardoise s’est démocratisée au XIX° siècle et fait aujourd’hui partie du patrimoine culturel de nombreuses régions. Esthétiques, résistantes et écologiques, les ardoises couvrent aujourd’hui près 8 % des toits héxagonaux et 14 % des toits en pente (source : fédération des proffessionnels de l’ardoise naturelle).</p>
+
+        <figure class="figure-article">
+          <%= image_tag "hostel_Dieu_Beaune.jpg" %>
+          <figcaption>Légende ardoise</figcaption>
+        </figure>
+
+        <h2>Avantages / inconvénients</h2>
+
+        <h3>Avantages</h3>
+        <ul>
+          <li>+ Résistance au temps (entre 70 et 300 ans)</li>
+          <li>+ Esthétique</li>
+          <li>+ Etanche</li>
+          <li>+ Naturelle et écologique</li>
+          <li>+ résistante au gel et aux intempéries</li>
+          <li>+ Entretien faible</li>
+        </ul>
+
+        <h3>Inconvénients</h3>
+        <ul>
+          <li>- Le surcoût par rapport à d'autres revetements disposants de propriétés équivalentes (à mettre en relation avec un amortissement sur une période plus longue).</li>
+          <li>- La pose et la rénovation doit être faite par un professionnel spécialisé dans l’ardoise naturelle</li>
+        </ul>
+
+        <h3>Ardoise naturelle et ardoise synthétique</h3>
+        <p>Le glossaire désigne deux types d’ardoises : les ardoises naturelle et les ardoises synthétiques. Faites de matériaux différentes, elles n’ont donc pas les mêmes propriétés. Nous parlons dans cette page des ardoises naturelles, (cliquez ici pour voir notre dossier sur les ardoises synthétiques).</p>
+
+        <h3>Un peu d’histoire et de géologie</h3>
+        <p>L’ardoise appartient à la famille des schistes et se distingue par son aspect lisse due à la finesse de son grain et par son caractère fissible. Elle est composée de silice mais aussi de métaux et de minéraux.</p>
+
+        <p>L’ardoise a été exploitée en France jusqu’à très récemment et a employé jusqu’a 2000 personnes pour un production de 175 000 tonnes au début du XX°siècle. Le dernier site français a fermé en 2014 et l’ardoise est donc importé, principalement d’espagne et du Canada.</p>
+        <p>En lien, un reportage sur un ancien site minier d’ardoise en Ardennes.</p>
+        <p>http://tchorski.morkitu.org/3/gf-01.htm</p>
+
+        <h3>Les différentes qualités d’ardoise</h3>
+        <p>La qualité des ardoises varie selon leur composition chimique, la façon dont elles ont été taillées, leur épaisseur... Selon ces paramètres, leur durée de vie oscille entre 70 ans et 300 ans, si bien qu’il faut changer les crochets de métal et les voliges (partie de la charpente sur lesquelles sont fixés les ardoises) avant les ardoises haut de gamme.</p>
+
+        <p>Des normes françaises et européennes ont été édifiées pour classer les ardoises selon leur qualité ce qui permet au particulier de choisir en toute confiance la gamme d’ardoise qui convient à ses goûts et à son portefeuille.</p>
+
+        <p>30% des références d’ardoises commercialisées en France sont couvertes par la norme NF selon le Laboratoire national de métrologie et d'essais (LNE), celle-ci étant plus restrictive que les normes européennes.</p>
+
+        <div class="table-responsive">
+          <table class="table table-hover">
+            <caption class='text-center'>COMPARATIF DES SEUILS DE PERFORMANCES DE LA NORME ET DE LA MARQUE NF </caption>
+            <thead>
+              <tr>
+                <th>Type d'essai</th>
+                <th>Norme européenne NF EN 12326</th>
+                <th>Marque NF</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Cycle thermique</th>
+                <td>
+                  <ul>
+                    <li>T1 : pas de changement d'aspect, oxydation des minéraux métalliques acceptée à l'exception des coulures de rouille</li>
+                    <li>T2 : changement d'aspect et oxydation admis</li>
+                    <li>T3 : oxydation avec risque de formation de trous admis</li>
+                  </ul>
+                </td>
+                <td>
+                  <ul>
+                    <li>T1 retenu (pas de changement d'aspect, mais oxydation de surface admise)</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Exposition au SO2</th>
+                <td>
+                  <ul>
+                    <li>S1 : pas de changement d'aspect, pas de ramollissement</li>
+                    <li>S2 : ramollissement avec obligation de majorer l'épaisseur de 5 %</li>
+                    <li>S3 : ramollissement avec obligation d'épaisseur < 8 mm</li>
+                  </ul>
+                </td>
+                <td>
+                  <ul>
+                    <li>S1 retenu (pas de changement d'aspect, pas de ramollissement)</li>
+                  </ul>
+                </td>
+              </tr>
+
+              <tr>
+                <th scope="row">Taux d'absorption d'eau</th>
+                <td>
+                  <ul>
+                    <li>A1 :≤ 0,60%</li>
+                    <li>A2 : > 0,60%</li>
+                    <li>S3 : ramollissement avec obligation d'épaisseur < 8 mm</li>
+                  </ul>
+                </td>
+                <td>
+                  <ul>
+                    <li>≤ 0,40%</li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <figcaption>Source : UNCP</figcaption>
+        </div>
+
+        <h3>Prix</h3>
+        <p>Le prix d'une couverture en ardoises naturelles varie de 70 € à 130 € le mètre carré selon la qualité des ardoises, pose comprise.</p>
+
+        <h3>Entretien</h3>
+        <p>L’ardoise ne nécessite aucun entretien. On peut la démousser avec un simple nettoyeur haute pression si elle vraiment très encrassée. Pas besoin de produits chimiques.</p>
+
+        <h3>Rénovation</h3>
+        <p>La rénovation de l’ardoise est une entreprise bien plus risquée et bien plus hasardeuse que celle d’un toit en tuile. En effet, si l’ardoise est résistante, elle est facilement cassable et une rénovation sauvage risque de faire plus de dégâts que de bien… pour finir par appeler une entreprise spécialisée.</p>
+
+        <p>La rénovation peut porter sur les crochets en inox qui servent à fixer les ardoises. Résistants à la corrosion atmosphérique, ils ont pourtant un durée de vie moins longue que les ardoises de bonne qulité. A moins de savoir exactement ce que vous faîtes, faite appel à un professionnel pour votre couverture en ardoise, vous vous éviterez bien des déboires.</p>
+
+        <p>Attention, l’ardoise ne demande aucun traitement chimique particulier. Si vous l’on propose de peindre ou d’appliquer un traitement sur votre toit en ardoise, méfiez-vous !</p>
+
+        <h3>Remplacer une ardoise</h3>
+        <p>Pour les téméraires ou ceux qui ont un stock d’ardoise chez eux, voici un tutoriel plutôt bien réalisé par Min’ardoise.
+https://www.youtube.com/watch?v=RJ5hozOvJXI</p>
+
+        <h3>Les professionnels de l’ardoise </h3>
+        <p>Longtemps exploité en France, l’ardoise n’est malheureusement aujourd’hui plus qu’importer en France. Voici une liste (non exhaustive) d’importateurs de confiance fournie par la fédération françaises des producteurs d’ardoise naturelle. Min’ardoise (http://www.minardoises.fr/)</p>
+        <p>https://www.quelleenergie.fr/economies-energie/isolation-toiture/ardoise</p>
+        <p>http://www.ailleurs-est-ici.fr/vacances-cantal/visiter-le-cantal/article/les-toits-du-cantal</p>
+
+
+
+      </div>
+    </div>
+    <%= render 'shared/guide_left_navigation' %>
+  </div>
+</div>

@@ -1,0 +1,78 @@
+<%= render 'shared/guides_top_banner' %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-9">
+      <div class='article-page'>
+
+        <ol class="breadcrumb">
+          <li><a href="/">Accueil</a></li>
+          <li><%= link_to "Les guides", guides_path %></li>
+          <li><%= link_to "La couverture", la_couverture_guide_index_path %></li>
+          <li class="active">Le toit de chaume</li>
+        </ol>
+
+         <div class="share-links">
+            <a href="#" class="share-link bg-facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+            <a href="#" class="share-link bg-twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+            <a href="#" class="share-link bg-email">
+              <i class="fa fa-google"></i>
+            </a>
+            <a href="#" class="share-link bg-text">
+              <i class="fa fa-envelope-o"></i>
+            </a>
+        </div>
+        <header>
+          <h1 itemprop="headline" class="text-center">Le toit de chaume</h1>
+        </header>
+        <p class="italic">Le toit de chaume était le plus répandu dans les campagnes jusqu’à l’ancien régime. Bien qu’économique et efficace, il a presque disparu avec la mécanisation des techniques de fauchages du blé.  Le chaume connaît ajourd'hui un réel renouveau en Normandie et dans les régions productrices de roseaux (marais poitevin, brière, camargue).</p>
+
+        <figure class="figure-article">
+          <%= image_tag "chaumiere_normande.jpg" %>
+          <figcaption>Une chaumière normande, crédit photo Gérard Janot</figcaption>
+        </figure>
+
+        <h2>Présentation</h2>
+        <p>Le chaume est un toit végétal constitué de roseaux ou de paille de blé. Le chaume offre chaleur en hiver et fraîcheur en été et s’avère plus étanche qu’un toit en brique s’il est bien confectionné. L’épaisseur d’une couverture en chaume est d’environ 30 centimètres. Léger, avec un poids compris entre 25 et 35kg au m², le chaume ne nécessite pas une forte charpente. Un toit en chaume a une durée de vie comprise entre 30 et 50 ans.</p>
+
+        <h2>Avantages / inconvénients</h2>
+
+        <h3>Avantages</h3>
+        <ul>
+          <li>+ Ecologique</li>
+          <li>+ Excellent isolant</li>
+          <li>+ Convient à une charpente légère</li>
+          <li>+ Esthétique</li>
+          <li>+ fait vivre un patrimoine vivant & traditionnel</li>
+        </ul>
+
+        <h3>Inconvénients</h3>
+        <ul>
+          <li>- Demande un entretien régulier</li>
+          <li>- Le coût important</li>
+        </ul>
+
+        <h3>Coût</h3>
+        <p>Un toit en chaume coûte entre 130 € à 150 € par plan carré.</p>
+
+        <h3>Entretien</h3>
+        <p>Il est recommandé de nettoyer un toit en chaume tous les 3 ans en faisant appel à un spécialiste. Celui-ci vérifiera l’étanchéité de la structure et veillera à effectuera les éventuelles réparations (rebouchage des trous, …). </p>
+
+        <h3>Le renouveau du toit de chaume</h3>
+        <p>Le toit de chaume connaît un renouveau grâce à ses bonnes propriétés d’isolant thermique et accoustique. Ecologique car issu d’une ressource renouvelable, le toit de chaume est aussi particulièrement esthétique avec un faîtage qui peut être végétalisé avec un mélange de végétaux et de terre argileuse sur lequel pousse des iris (cf photo). L’apport des techniques modernes de compression des tiges végétales  fait que le toit de chaume ne craint plus le feu ni les rongeurs et peut durer jusqu’à 50 ans.</p>
+
+        <h3>Faire appel à un couvreur chaumier agréé</h3>
+        <p>Afin de préserver et de transmettre leurs savoirs-faires, les acteurs de la filière chaume se sont regroupées au sein de l’Association Nationale des couvreurs Chaumiers (ANCC). Celle-ci délivre une formation spécifique de couvreur chaumier qui est validé par un certification de qualification professionnelle « Ouvrier Professionnel Couvreur Chaumier ».</p>
+        <p>Plus d’informations sur l’ANCC : http://www.chaumiers.com/
+Retrouvez les couvreurs chaumiers par l’ANCC agréés près des chez vous  </p>
+
+
+      </div>
+    </div>
+    <%= render 'shared/guide_left_navigation' %>
+  </div>
+</div>

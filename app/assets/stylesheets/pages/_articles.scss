@@ -2,8 +2,8 @@
 // CSS de la partielle "magazine_top_banner"
 
 .wrapper-magazine-top-banner {
-  background-color: $light-grey;
-  height: 30vh;
+  background-color: $dark-grey;
+  height: 25vh;
 }
 
 .content-container {
@@ -11,14 +11,14 @@
   text-align: right;
 
   h1 {
-    color: $dark-grey;
+    color: white;
     text-align: center;
     font-style: bold;
-    padding: 20px;
+    padding: 5px;
   }
 
   span {
-
+    color: white;
   }
 
 }
@@ -29,7 +29,7 @@
 // CSS de la partie Article
 
 .article-page {
-  margin-top: 50px;
+  margin-top: 10px;
   margin-bottom: 50px;
 
   h1 {
@@ -167,4 +167,10 @@
     list-style-type: none;
   }
 
+}
+
+// CSS Des figures
+
+.figure-article {
+  text-align: center;
 }
