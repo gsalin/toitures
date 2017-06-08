@@ -1,0 +1,69 @@
+<%= render 'shared/guides_top_banner' %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-9">
+      <div class='article-page'>
+
+        <ol class="breadcrumb">
+          <li><a href="/">Accueil</a></li>
+          <li><%= link_to "Les guides", guides_path %></li>
+          <li><%= link_to "La couverture", la_couverture_guide_index_path %></li>
+          <li class="active">Les bardeaux de bois</li>
+        </ol>
+
+         <div class="share-links">
+            <a href="#" class="share-link bg-facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+            <a href="#" class="share-link bg-twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+            <a href="#" class="share-link bg-email">
+              <i class="fa fa-google"></i>
+            </a>
+            <a href="#" class="share-link bg-text">
+              <i class="fa fa-envelope-o"></i>
+            </a>
+        </div>
+        <header>
+          <h1 itemprop="headline" class="text-center">Les bardeaux de bois</h1>
+        </header>
+        <p class="italic">Les bardeaux sont des planchettes de bois utilisées comme revêtement depuis le moyen-âge. Cette technique, commune autrefois maispresque disparue au XX°siècle en France, connaît un regain d’intérêt en tant qu’héritage technique et culturel depuis les années 1970. Les toits en bois fleurissent de nouveau dans certaines régions des Alpes, du Jura ou encore en Normandie comme au mont Saint-Michel. </p>
+
+        <figure class="figure-article">
+          <%= image_tag "bardeau_bois.jpg" %>
+          <figcaption>Un toit en bardeaux de bois</figcaption>
+        </figure>
+
+        <h2>Présentation</h2>
+        <p>Les bardeaux de bois, aussi appelés tavaillons ou tavillons, sont des planches de bois que l’on utilise pour couvrir les toits et les murs des  maisons et chalets.</p>
+        <p>En Normandie, elles sont appelées Essentes et ont la forme d’ardoise. La technique de fabrication du tavillon reste encore aujourd’hui entièrement artisanale ce qui ajoute à l’attrait de ce procédé. L’artisan qui fabrique le tavillon s’appelle le « tavillonneur ».</p>
+        <p>A épaisseur égale, le bois est plus de 10 fois plus isolant que la terre cuite ou l’ardoise. La durée de vie du bardeau dépend de l’essence d’arbre utilisée (25 ans pour le sapin, 40 ans pour le pin, 80 ans pour le mélèze et jusqu’à 100 ans pour le chataigner et le chêne</p>
+
+        http://www.lebendigetraditionen.ch/traditionen/00113/index.html?lang=fr
+
+        <h2>Avantages / inconvénients</h2>
+
+        <h3>Avantages</h3>
+        <ul>
+          <li>+ Confort plus grand que les autres revêtements (isolation thermique, hygrométrique et acoustique). </li>
+          <li>+ Préservation d’un patrimoine local et d’un métier</li>
+          <li>+ Revêtement écologique</li>
+        </ul>
+
+        <h3>Inconvénients</h3>
+        <ul>
+          <li>- coût</li>
+          <li>- disponibilité</li>
+        </ul>
+
+        <h3>Structuration de la filière</h3>
+        <p>Encore établi de manière artisanale il y a peu, les artisans spécialistes de la couverture en bois se sont associés au sein d’une fédération afin de protéger et faire reconnaître leurs savoir-faire. L’utilisation du tavaillon est désormais régie par un cahier des charges et est reconnue par les assurances et par les bureaux de contrôle.</p>
+
+
+      </div>
+    </div>
+    <%= render 'shared/guide_left_navigation' %>
+  </div>
+</div>
