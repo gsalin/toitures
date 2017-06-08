@@ -26,8 +26,9 @@
   height: 290px;
   width: 40px;
   color: white;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  font-weight: lighter;
 
   .fix-cta-rotate {
   transform: rotate(270deg);
@@ -64,4 +65,20 @@
 .yellow-link:hover {
   color: $medium-grey;
   text-decoration: none;
+}
+
+.small-yellow-link {
+  color: $yellow;
+  font-size: 15px;
+}
+
+.small-yellow-link:hover {
+  color: $medium-grey;
+  text-decoration: none;
+}
+
+#connect-btn-navbar {
+  border: none;
+  margin-left: 15px;
+  background: transparent;
 }

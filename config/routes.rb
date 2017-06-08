@@ -1,4 +1,5 @@
   Rails.application.routes.draw do
+  mount Attachinary::Engine => "/attachinary"
 
   ActiveAdmin.routes(self)
   devise_for :users
@@ -8,7 +9,6 @@
   resources :clients, only: [:new, :create, :show, :edit, :update]
   resources :articles, only: [:index, :new, :create, :show]
 
-  mount Attachinary::Engine => "/attachinary"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   # partie magazine
