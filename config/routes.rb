@@ -42,7 +42,14 @@
     get 'la-couverture/les-ardoises-naturelles', on: :collection, controller: "couvertures", action: "les_ardoises_naturelles"
     get 'la-couverture/les-bardeaux-de-bois', on: :collection, controller: "couvertures", action: "les_bardeaux_de_bois"
     get 'la-couverture/le-toit-de-chaume', on: :collection, controller: "couvertures", action: "le_toit_de_chaume"
-        get 'la-couverture/le-toit-en-zinc', on: :collection, controller: "couvertures", action: "le_toit_en_zinc"
+    get 'la-couverture/le-toit-en-zinc', on: :collection, controller: "couvertures", action: "le_toit_en_zinc"
+    get 'la-couverture/le-toit-en-lauze', on: :collection, controller: "couvertures", action: "le_toit_en_lauze"
+
+    get 'la-couverture/les-ardoises-synthetiques', on: :collection, controller: "couvertures", action: "les_ardoises_synthetiques"
+    get 'la-couverture/les-tuiles-metalliques', on: :collection, controller: "couvertures", action: "les_tuiles_metalliques"
+    get 'la-couverture/les-tuiles-en-beton', on: :collection, controller: "couvertures", action: "les_tuiles_en_beton"
+    get 'la-couverture/les-bardeaux-bitumineux', on: :collection, controller: "couvertures", action: "les_bardeaux_bitumineux"
+
     # guide de la toiture
     get 'la-charpente', on: :collection, controller: "charpentes", action: "index"
     get 'la-charpente/introduction', on: :collection, controller: "charpentes", action: "introduction"
