@@ -191,49 +191,41 @@
   }
 }
 
-.small-link-home {
-  color: $yellow;
-  font-size: 13px;
-  text-transform: uppercase;
-
-}
-
-.small-link-home:hover {
-  color: $medium-grey;
-  text-decoration: none;
-  transition: color 0.5s ease;
-}
-
-
 .annuaire-card-home {
-  margin-top:20px;
-  margin-bottom:20px;
+  margin-top:40px;
+  margin-bottom:40px;
+  padding: 20px;
+  border: solid $dark-grey 1px;
+  background-color: white;
+  border-radius: 2px;
   h1 {
     font-size: 29px;
     color:$yellow;
     text-align: center;
   }
-  h2 {
-    font-size: 22px;
-    margin-left: 40px;
-  }
-  ul {
-    list-style-type: none;
-  }
-  li {
-    padding: 2px;
-  }
   .row-annuaire-card-home {
-    padding: 16px 5px 16px 0;
-    border: solid $dark-grey 1px;
-    background-color: white;
-    border-radius: 2px;
-    .prez_show_user {
-      background-size: cover;
-      height:255px;
-      background-image: url('prez_show_user.png');
-      border-radius: 2px;
+    h2 {
+      font-size: 22px;
+      margin-left: 40px;
     }
+    ul {
+      list-style-type: none;
+    }
+    li {
+      padding: 2px;
+    }
+  }
+  .prez_show_user_annuaire {
+    background-size: cover;
+    height:255px;
+    background-image: url('prez_show_user.png');
+    border-radius: 2px;
+  }
+  .prez_show_user_magazine {
+    background-size: cover;
+    height:255px;
+    background-image: url('prez_show_user.png');
+    border-radius: 2px;
   }
 }
 
