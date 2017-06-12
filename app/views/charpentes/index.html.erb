@@ -29,20 +29,18 @@
         <header>
           <h1 itemprop="headline" class="text-center">Guide de la charpente</h1>
         </header>
-        <p class="italic">La charpente est l'ossature du toit. Voici les solutions possibles.</p>
+        <p class="italic">La charpente est, avec la couverture, un deux élément essentiel à la solidité et à la pérennité du bâtiment. Son choix influencera également l'esthétique de la toiture mais aussi l'habitabilité des pièces situées sous le toit.</p>
 
-        <p>Nous avons divisé ce guide en 3 catégories afin de faciliter la compréhension.</p>
-
-        <h3 class='text-center'>Comprendre la charpente</h3>
+        <h3 class='text-center'>L'essentiel à savoir</h3>
 
         <div class="col-xs-12 col-md-6">
           <div class="article-card">
-            <%= link_to root_path do %>
-              <h6 class="text-center">composition</h6>
+            <%= link_to la_charpente_choisir_sa_charpente_guide_index_path do %>
+              <h6 class="text-center">Choisir sa charpente</h6>
               <div class="article-content">
-                <%= image_tag "renovatio_toit.jpg", class: "img-card" %>
-                <p>Derrière la notion Lorem ipsum se cahceh une facond e mettre du texte sans se tromper  </p>
-                <%= link_to "Lire", root_path, class: "yellow-link"%>
+                <%= image_tag "schema_charpente.png", class: "img-card" %>
+                <p>Quelle type de charpente choisir selon les charactéristiques de votre bien !</p>
+                <%= link_to "Lire", la_charpente_choisir_sa_charpente_guide_index_path, class: "yellow-link"%>
               </div>
             <% end %>
           </div>
@@ -50,19 +48,77 @@
 
         <div class="col-xs-12 col-md-6">
           <div class="article-card">
-            <%= link_to root_path do %>
-              <h6 class="text-center">composition</h6>
+            <%= link_to la_charpente_les_bois_de_charpente_guide_index_path do %>
+              <h6 class="text-center">Les bois de charpente</h6>
               <div class="article-content">
-                <%= image_tag "renovatio_toit.jpg", class: "img-card" %>
-                <p>Derrière la notion Lorem ipsum se cahceh une facond e mettre du texte sans se tromper  </p>
-                <%= link_to "Lire", root_path, class: "yellow-link"%>
+                <%= image_tag "bois.jpg", class: "img-card" %>
+                <p>Présentation des principales essences de bois utilisées : chêne, chataîgner, épicéa... </p>
+                <%= link_to "Lire", la_charpente_les_bois_de_charpente_guide_index_path, class: "yellow-link"%>
               </div>
             <% end %>
           </div>
         </div>
 
 
-        <h3 class='text-center'>Les démarches à effectuer</h3>
+        <h3 class='text-center'>Les charpentes en bois</h3>
+
+         <div class="col-xs-12 col-md-6">
+          <div class="article-card">
+            <%= link_to la_charpente_la_charpente_traditionnelle_guide_index_path do %>
+              <h6 class="text-center">La charpente  traditionnelle</h6>
+              <div class="article-content">
+                <%= image_tag "charpente_tradi.jpg", class: "img-card" %>
+                <p>Aussi esthétique que solide, la charpente traditionnelle est à privilégier pour les bâtis anciens et prestigieux.</p>
+                <%= link_to "Lire", la_charpente_la_charpente_traditionnelle_guide_index_path, class: "yellow-link"%>
+              </div>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-md-6">
+          <div class="article-card">
+            <%= link_to la_charpente_la_charpente_a_fermettes_industrielles_guide_index_path do %>
+              <h6 class="text-center">La charpente industrielle</h6>
+              <div class="article-content">
+                <%= image_tag "construction_toit.jpg", class: "img-card" %>
+                <p>Légère, économique et facile à installer, la charpente à fermettes industrielles représente 70 % des installations. </p>
+                <%= link_to "Lire", la_charpente_la_charpente_a_fermettes_industrielles_guide_index_path, class: "yellow-link"%>
+              </div>
+            <% end %>
+          </div>
+        </div>
+
+
+        <h3 class='text-center'>Les charpentes en béton et en acier</h3>
+
+         <div class="col-xs-12 col-md-6">
+          <div class="article-card">
+            <%= link_to la_charpente_la_charpente_en_beton_guide_index_path do %>
+              <h6 class="text-center">La charpente en béton</h6>
+              <div class="article-content">
+                <%= image_tag "charpente_beton.jpg", class: "img-card" %>
+                <p>La résistance exceptionnelle du béton est l'option idéale pour créer une charpente pouvant accueillir un toit-terrasse.</p>
+                <%= link_to "Lire", la_charpente_la_charpente_en_beton_guide_index_path, class: "yellow-link"%>
+              </div>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-md-6">
+          <div class="article-card">
+            <%= link_to la_charpente_la_charpente_metallique_guide_index_path do %>
+              <h6 class="text-center">La charpente métallique</h6>
+              <div class="article-content">
+                <%= image_tag "schonbrunn.jpg", class: "img-card" %>
+                <p>Les propriétés de résistance de l'acier permettent de réaliser les projets architecturaux les ambitieux.</p>
+                <%= link_to "Lire", la_charpente_la_charpente_metallique_guide_index_path, class: "yellow-link"%>
+              </div>
+            <% end %>
+          </div>
+        </div>
+
+
+
 
       </div>
     </div>

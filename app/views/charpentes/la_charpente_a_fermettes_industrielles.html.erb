@@ -1,0 +1,70 @@
+<%= render 'shared/guides_top_banner' %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-9">
+      <div class='article-page'>
+
+        <ol class="breadcrumb">
+          <li><a href="/">Accueil</a></li>
+          <li><%= link_to "Les guides", guides_path %></li>
+          <li><%= link_to "La charpente", la_charpente_guide_index_path %></li>
+          <li class="active">La charpente à fermettes industrielles</li>
+        </ol>
+
+         <div class="share-links">
+            <a href="#" class="share-link bg-facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+            <a href="#" class="share-link bg-twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+            <a href="#" class="share-link bg-email">
+              <i class="fa fa-google"></i>
+            </a>
+            <a href="#" class="share-link bg-text">
+              <i class="fa fa-envelope-o"></i>
+            </a>
+        </div>
+        <header>
+          <h1 itemprop="headline" class="text-center">La charpente à fermettes industrielles</h1>
+        </header>
+        <p class="italic">La charpente à fermettes industrielles ou charpente fermette est de loin la plus utilisée aujourd’hui pour les nouvelles constructions de maison et représente 70 % du marché de la charpente. Plébiscitée par son prix attractif, sa facilité de pose et sa fiabilité, la charpente fermette peut aussi accueillir des combles aménagés.</p>
+
+        <figure class="figure-article">
+          <%= image_tag "construction_toit.jpg" %>
+          <figcaption></figcaption>
+        </figure>
+
+        <h2>Structure</h2>
+        <p>La structure principale de la charpente (la ferme) est assemblée à partir de pièces légères.</p>
+
+
+        <h2>Avantages/inconvénients</h2>
+
+        <h3>Avantages</h3>
+
+        <ul>
+          <li>+ Prix</li>
+          <li>+ fiabilité</li>
+          <li>+ excellent rapport résistance/légereté</li>
+        </ul>
+
+        <h3>Inconvénients</h3>
+        <ul>
+          <li>- Portée comprise entre 8 et 15 mètres</li>
+          <li>- Ne convient pas à tous les projets</li>
+          <li>- Perte d'espace dans les combles</li>
+        </ul>
+
+        <h3>Prix à l’achat</h3>
+        <p>Le coût d’une charpente industrielle est compris entre 50 € et 70 € le mètre carré. Cela dépend de la couverture choisie, du type d’isolation choisie, etc. Le coût du bois est compris entre 30 et 50 € le mètre carré et la main d’oeuvre tourne autour de 20€ de l’heure.</p>
+
+        <h3>Entretien et rénovation</h3>
+        <p>Les mêmes que pour une charpente traditionnelle</p>
+
+      </div>
+    </div>
+    <%= render 'shared/guide_left_navigation' %>
+ </div>
+</div>

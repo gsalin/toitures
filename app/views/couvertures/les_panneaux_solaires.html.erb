@@ -1,0 +1,94 @@
+<%= render 'shared/guides_top_banner' %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-9">
+      <div class='article-page'>
+
+        <ol class="breadcrumb">
+          <li><a href="/">Accueil</a></li>
+          <li><%= link_to "Les guides", guides_path %></li>
+          <li><%= link_to "La couverture", la_couverture_guide_index_path %></li>
+          <li class="active">Les panneaux solaires</li>
+        </ol>
+
+         <div class="share-links">
+            <a href="#" class="share-link bg-facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+            <a href="#" class="share-link bg-twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+            <a href="#" class="share-link bg-email">
+              <i class="fa fa-google"></i>
+            </a>
+            <a href="#" class="share-link bg-text">
+              <i class="fa fa-envelope-o"></i>
+            </a>
+        </div>
+        <header>
+          <h1 itemprop="headline" class="text-center">Les panneaux solaires</h1>
+        </header>
+        <p class="italic">Le plan « Soleil » lancé par l’ADEME en 2000 a permis l’essor des  panneaux solaires dans notre pays par une politique de subvention incitative. Les régions en bord de mer et les régions du sud de la France qui disposent d’un fort ensoleillement sont particulièrement indiquées. Une rénovation peut être l’occasion d’intégrer un panneau solaire dans la toiture ou de le poser sur celle-ci. La revente à EDF du surplus d’électricité à un prix avantageux garantie sur 20 ans en fait un investissement intéressant sur le long-terme.</p>
+
+        <figure class="figure-article">
+          <%= image_tag "toit_solaire.jpg" %>
+          <figcaption>  </figcaption>
+        </figure>
+
+        <h2>3 types de panneaux solaires :</h2>
+
+        <h3>Les panneaux solaires thermiques </h3>
+        <p>Les panneaux solaires thermiques transfèrent la chaleur du rayonnement solaires soit grâce à un fluide caloporteur pour produire de l’eau chaude  soit grâce à l’air réchauffé qui va permettre de chauffer l’air d’un bâtiment.</p>
+
+        <h3>Les panneaux solaires photovoltaïques</h3>
+        <p>Les panneaux solaires photovoltaïques qui convertissent les rayons solaires en électricité (rendement d’environ 15%).</p>
+
+        <h3>Les panneaux hybrides</h3>
+        <p>Les panneaux hybrides combinent les deux technologies</p>
+
+        <h2>Avantages/inconvenients</h2>
+
+        <h3>Avantages</h3>
+
+        <ul>
+          <li>+ efficace dans les région ensoleillées</li>
+          <li>+ intérêt des subventions qui permettent d’amortir les panneaux solaires photovoltaïques.</li>
+          <li>+ démarche écologique</li>
+        </ul>
+
+        <h3>Inconvénients</h3>
+
+        <ul>
+          <li>- dépend de l’ensoleillement</li>
+          <li>- dépend de l’orientation géographique et de la pente du toit et de sa capacité à accueillir une structure solaire</li>
+          <li>- investissement coûteux à l’origine</li>
+        </ul>
+
+        <h2>Les différents types d’intégration :</h2>
+
+        <h3>panneau posé sur le toit</h3>
+        <p>Méthode classique</p>
+
+        <h3>panneau intégré dans le bâti (tuile solaire)</h3>
+        <p>Variante du panneau thermique, directement intégrée à la toiture et donc très discrète. La tuile thermique permet d’améliorer l’impact environnemental de votre maison sans en altérer l’esthétisme.</p>
+
+        <figure class="figure-article">
+          <%= image_tag "tuile_solaire.jpg" %>
+          <figcaption>  Crédit photo Imerys</figcaption>
+        </figure>
+
+        <h2>Considérations écologiques</h2>
+        <p>La construction des panneaux solaires est consommatrice de matières et d’énergies et on considère que la neutralité écologique intervient au bout de 4 ans d’exploitation.</p>
+        <p>Afin d’augmenter la portée écologique du procédé, l’état met en œuvre des réglementations de plus en plus restrictives auprès des producteurs afin d’encourager le recyclage des panneaux qui restent encore faible (des enquêtes de l’UE ont montré que 2/3 des panneaux n’étaient pas recyclés malgré un potentiel de reprise de 95 % des composants). On peut ésperer que la structuration d’une filière de recyclage permettra encore d’améliorer l’impact environnemental de ce procédé de production énergétique.</p>
+
+        <h2>Coût</h2>
+        <p>Une installation photovoltaïque est un investissement onéreux mais rentable s’il est bien réalisé. Entre 10 000 et 12 000 € pour un panneau de 3 kilowattheures en 2017. Ce prix comprend l’achat des panneaux,  l’installation du système de régulation (l’onduleur) et le raccordement au réseau EDF. Le disposif est amorti en moins de 15 ans pour une installation qui devrait durer 20 années. Nota Bene, l’augmentation régulière prévue des prix de l’électricité dans les années qui viennent vont rendre l’auto-consommation de plus en plus avantageuse.</p>
+
+        <h2>Entretien</h2>
+        <p>Les panneaux solaires sont résistants mais doivent faire l’objet d’une révision et/ou d’un nettoyage tous les 3 à 5 ans afin de vérifier leur bon fonctionnement et conserver un rendement optimal (révision de l’ensemble du dispositif: panneau, onduleur...).</p>
+
+      </div>
+    </div>
+    <%= render 'shared/guide_left_navigation' %>
+  </den beton

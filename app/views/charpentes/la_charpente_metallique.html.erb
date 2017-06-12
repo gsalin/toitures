@@ -1,0 +1,69 @@
+<%= render 'shared/guides_top_banner' %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-9">
+      <div class='article-page'>
+
+        <ol class="breadcrumb">
+          <li><a href="/">Accueil</a></li>
+          <li><%= link_to "Les guides", guides_path %></li>
+          <li><%= link_to "La charpente", la_charpente_guide_index_path %></li>
+          <li class="active">La charpente métallique</li>
+        </ol>
+
+         <div class="share-links">
+            <a href="#" class="share-link bg-facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+            <a href="#" class="share-link bg-twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+            <a href="#" class="share-link bg-email">
+              <i class="fa fa-google"></i>
+            </a>
+            <a href="#" class="share-link bg-text">
+              <i class="fa fa-envelope-o"></i>
+            </a>
+        </div>
+        <header>
+          <h1 itemprop="headline" class="text-center">La charpente métallique</h1>
+        </header>
+        <p class="italic">Issue de la construction industrielle, la charpente métallique s’invite dans nos maisons par son bon rapport qualité/prix mais  aussi par ses grandes qualités d’adaptation qui répondent aux architectures modernes plus complexes. Elles disposent de propriétés qui les rendent intéressantes pour la création de verrières ou de toits terrasses, en concurrence directe avec les charpentes en béton.</p>
+
+        <figure class="figure-article">
+          <%= image_tag "schonbrunn.jpg" %>
+          <figcaption>La serre du chateau de Schonbrunn, Autriche</figcaption>
+        </figure>
+
+        <h2>Structure</h2>
+        <p>La charpente métallique a une structure proche de la charpente traditionnelle (fermes, pannes..). Elle est faite d’acier laminé. Les poutrelles peuvent en U (UPE ou UPN), en I (IPN) ou en H (HEA ou HEB). Celles-ci sont traitées à la corrosion et au feu grâce à des revêtements spéciaux.</p>
+
+
+        <h2>Avantages/inconvénients</h2>
+
+        <h3>Avantages</h3>
+
+        <ul>
+          <li>+ grande souplesse d’utilisation pour des projets complexes</li>
+          <li>+ optimisation des volumes intérieurs</li>
+          <li>+ pas besoin de traitements particuliers</li>
+          <li>+ résistance</li>
+        </ul>
+
+        <h3>Inconvénients</h3>
+        <ul>
+          <li>- peut enlever son charme à un bâtiment ancien</li>
+        </ul>
+
+        <h3>Prix à l’achat</h3>
+        <p>Le prix d’une charpente métallique en kit est moins élevée que celui d’une charpente traditionnelle et s’établit en moyenne à 50 € le m² pose comprise. En revanche, une charpente métallique sur mesure est plus chère avec un coût d'environ 100 € le mètre carré. Les qualités intrinsèques du métal telles que son ratio résistance/légéreté permettent de mener des projets architecturaux plus grands ou plus complexes qu’une charpente traditionnelle.</p>
+
+        <h3>Entretien</h3>
+        <p>Il faut penser à contrôler les revêtements anti-corrosion et intumescent d’une charpente métallique tous les 10 ans. Une charpente en métal est moins résistante au feu qu’une charpente en bois car ses propriétés mécaniques changent rapidement tandis que la partie non consumée d’une charpente en bois conserve ses qualités.</p>
+
+      </div>
+    </div>
+    <%= render 'shared/guide_left_navigation' %>
+ </div>
+</div>

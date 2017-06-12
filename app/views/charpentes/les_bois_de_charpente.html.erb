@@ -1,0 +1,69 @@
+<%= render 'shared/guides_top_banner' %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-9">
+      <div class='article-page'>
+
+        <ol class="breadcrumb">
+          <li><a href="/">Accueil</a></li>
+          <li><%= link_to "Les guides", guides_path %></li>
+          <li><%= link_to "La charpente", la_charpente_guide_index_path %></li>
+          <li class="active">Les bois de charpente</li>
+        </ol>
+
+         <div class="share-links">
+            <a href="#" class="share-link bg-facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+            <a href="#" class="share-link bg-twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+            <a href="#" class="share-link bg-email">
+              <i class="fa fa-google"></i>
+            </a>
+            <a href="#" class="share-link bg-text">
+              <i class="fa fa-envelope-o"></i>
+            </a>
+        </div>
+        <header>
+          <h1 itemprop="headline" class="text-center">Les bois de charpente</h1>
+        </header>
+        <p class="italic">Pour l’utilisation en intérieur, les essences les plus utilisées et recommandées sont les bois résineux, Épicéa et Douglas. Pour des structures de prestige ou exposées aux intempéries, des bois durs comme le chêne sont particulièrement adaptés.</p>
+
+        <figure class="figure-article">
+          <%= image_tag "bois.jpg" %>
+          <figcaption></figcaption>
+        </figure>
+
+        <h2>Les essences de bois</h2>
+
+        <h3>Les résineux ou bois tendres</h3>
+
+        <ul>
+          <li>Le douglas</li>
+          <li>Le pin sylvestre</li>
+          <li>Le pin maritime</li>
+          <li>L’épicéa</li>
+        </ul>
+
+        <h4>Les caducs ou bois durs</h4>
+        <li>Le chêne</li>
+        <li>Le chataîgnier</li>
+        <li>Les autres essences (orme, peuplier)</li>
+
+        <h2>Les différentes techniques</h2>
+
+        <h3>La charpente en bois massif</h3>
+        <p>Technique traditionnelle utilisant des pièces en bois massif</p>
+
+        <h3>La charpente en bois lamellé-collé</h3>
+        <p>Le bois reconstitué, tel le lamellé collé, dispose de propriétés mécaniques exceptionnelles qui permettent d'étendre le champ des possibilités d'utilisation d'une charpente traditionnelle en autorisant une portée plus longue,</p>
+
+
+      </div>
+    </div>
+    <%= render 'shared/guide_left_navigation' %>
+ </div>
+</div>
+

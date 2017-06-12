@@ -54,9 +54,19 @@
     get 'la-couverture/ventilation-toiture', on: :collection, controller: "couvertures", action: "ventilation_toiture"
     get 'la-couverture/ecran-de-sous-toiture', on: :collection, controller: "couvertures", action: "ecran_de_sous_toiture"
     get 'la-couverture/la-zinguerie', on: :collection, controller: "couvertures", action: "la_zinguerie"
+
+    get 'la-couverture/les-ouvertures-de-toit', on: :collection, controller: "couvertures", action: "les_ouvertures_de_toit"
+    get 'la-couverture/les-ornements', on: :collection, controller: "couvertures", action: "les_ornements"
+    get 'la-couverture/les-panneaux-solaires', on: :collection, controller: "couvertures", action: "les_panneaux_solaires"
+
     # guide de la toiture
     get 'la-charpente', on: :collection, controller: "charpentes", action: "index"
-    get 'la-charpente/introduction', on: :collection, controller: "charpentes", action: "introduction"
+    get 'la-charpente/choisir-sa-charpente', on: :collection, controller: "charpentes", action: "choisir_sa_charpente"
+    get 'la-charpente/les-bois-de-charpente', on: :collection, controller: "charpentes", action: "les_bois_de_charpente"
+    get 'la-charpente/la-charpente-traditionnelle', on: :collection, controller: "charpentes", action: "la_charpente_traditionnelle"
+    get 'la-charpente/la-charpente-a-fermettes-industrielles', on: :collection, controller: "charpentes", action: "la_charpente_a_fermettes_industrielles"
+    get 'la-charpente/la-charpente-en-beton', on: :collection, controller: "charpentes", action: "la_charpente_en_beton"
+    get 'la-charpente/la-charpente-metallique', on: :collection, controller: "charpentes", action: "la_charpente_metallique"
 
   end
 end
