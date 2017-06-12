@@ -1,0 +1,64 @@
+<%= render 'shared/guides_top_banner' %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-9">
+      <div class='article-page'>
+
+        <ol class="breadcrumb">
+          <li><a href="/">Accueil</a></li>
+          <li><%= link_to "Les guides", guides_path %></li>
+          <li><%= link_to "La couverture", la_couverture_guide_index_path %></li>
+          <li class="active">Les ardoises synthétiques</li>
+        </ol>
+
+         <div class="share-links">
+            <a href="#" class="share-link bg-facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+            <a href="#" class="share-link bg-twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+            <a href="#" class="share-link bg-email">
+              <i class="fa fa-google"></i>
+            </a>
+            <a href="#" class="share-link bg-text">
+              <i class="fa fa-envelope-o"></i>
+            </a>
+        </div>
+        <header>
+          <h1 itemprop="headline" class="text-center">Les ardoises synthétiques</h1>
+        </header>
+        <p class="italic">L’ardoise synthétique est une solution économique pour disposer d’un toit dont l’esthétisme est très proche d’un toit en ardoise naturelle. Bien plus qu’une solution low-cost, c’est un revêtement d’excellente qualité qui mérite d’être étudié si vos contraintes financières ne peut vous faire envisager l’option d’un toit en ardoise naturelle.</p>
+
+        <figure class="figure-article">
+          <%= image_tag "ardoise_synthetique.jpg" %>
+          <figcaption>Un toit en ardoises synthétiques de la marque Kergoat © Eternit </figcaption>
+        </figure>
+
+        <h2>Composition</h2>
+        <p>L’ardoise synthétique est constitué d’un corps en fibro-ciment (qui ne contient plus d’amiante depuis 1997) et d’une coloration acrylique qui lui donne son aspect d’ardoise. Disposant d’un revêtement anti-mousse et d’un revêtement étanche, l’ardoise synthétique est un produit industriel de haute technologie lui conférant des propriétés de bonnes  résistances.</p>
+
+        <h2>Avantages / inconvénients</h2>
+
+        <h3>Avantages</h3>
+        <ul>
+          <li>+ le prix 50 % moins élevé que celui de l’ardoise naturelle (entre 50 € et 80 € le m2)</li>
+          <li>+ la résistance (propriété mécanique proche de l’ardoise ou de la tuile)</li>
+        </ul>
+
+        <h3>Inconvénients</h3>
+        <ul>
+          <li>- moins résistantes dans la durée que les ardoises naturelles</li>
+          <li>- entretien plus important et peu écologique</li>
+        </ul>
+
+        <h3>Entretien</h3>
+        <p>L’ardoise synthétique est un alliage composite et demande un entretien régulier pour ne pas se détériorer prématurément. La surveillance et le nettoyage des couches extérieures qui protègent les ardoises est une des contraintes de ce matériau. Un nettoyage et l’application d’un revêtement anti-mousse doit s’effectuer de manière régulière afin de conserver les propriétés du matériau.</p>
+
+
+      </div>
+    </div>
+    <%= render 'shared/guide_left_navigation' %>
+  </div>
+</div>

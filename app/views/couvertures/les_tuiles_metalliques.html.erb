@@ -1,0 +1,66 @@
+<%= render 'shared/guides_top_banner' %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-9">
+      <div class='article-page'>
+
+        <ol class="breadcrumb">
+          <li><a href="/">Accueil</a></li>
+          <li><%= link_to "Les guides", guides_path %></li>
+          <li><%= link_to "La couverture", la_couverture_guide_index_path %></li>
+          <li class="active">Les tuiles métalliques</li>
+        </ol>
+
+         <div class="share-links">
+            <a href="#" class="share-link bg-facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+            <a href="#" class="share-link bg-twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+            <a href="#" class="share-link bg-email">
+              <i class="fa fa-google"></i>
+            </a>
+            <a href="#" class="share-link bg-text">
+              <i class="fa fa-envelope-o"></i>
+            </a>
+        </div>
+        <header>
+          <h1 itemprop="headline" class="text-center">Les tuiles métalliques</h1>
+        </header>
+        <p class="italic">La tuile métallique a l’avantage d’être très résistante, légère, esthétique et bon marché. En revanche, elle demande une isolation phonique adéquate.</p>
+
+        <figure class="figure-article">
+          <%= image_tag "tuile_metallique.jpg" %>
+          <figcaption>Tuiles métalliques Decra Elegance © Polytuil </figcaption>
+        </figure>
+
+        <h2>Présentation</h2>
+        <p>Les tuiles métalliques sont généralement faites en acier galvanisé dôté d'un revêtement en polyester ou autre. Les différents revêtements dipsonibles leur permettent de ressembler aux matériaux naturels (ardoise, tuile en terre cuite, lauze).</p>
+        <p>Légères (environ 5 kg au m²) et économiques, elles s'avèrent être un excellent choix pour les charpentes légères avec un rapport qualité/résistance/prix très intéressant.</p>
+
+        <h2>Avantages / inconvénients</h2>
+
+        <h3>Avantages</h3>
+        <ul>
+          <li>+ résistance aux intempéries et au vent </li>
+          <li>+ légéreté et facilité de pose (charpente légère)</li>
+          <li>+ le prix</li>
+          <li>+ absence d’entretien</li>
+        </ul>
+
+        <h3>Inconvénient</h3>
+        <ul>
+          <li>- demande une isolation phonique adaptée</li>
+        </ul>
+
+        <h2>Entretien</h2>
+        <p>La tuile métallique ne nécessite pas d’entretien</p>
+
+
+      </div>
+    </div>
+    <%= render 'shared/guide_left_navigation' %>
+  </div>
+</div>

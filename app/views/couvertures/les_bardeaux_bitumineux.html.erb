@@ -1,0 +1,68 @@
+<%= render 'shared/guides_top_banner' %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-9">
+      <div class='article-page'>
+
+        <ol class="breadcrumb">
+          <li><a href="/">Accueil</a></li>
+          <li><%= link_to "Les guides", guides_path %></li>
+          <li><%= link_to "La couverture", la_couverture_guide_index_path %></li>
+          <li class="active">Les bardeaux bitumineux</li>
+        </ol>
+
+         <div class="share-links">
+            <a href="#" class="share-link bg-facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+            <a href="#" class="share-link bg-twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+            <a href="#" class="share-link bg-email">
+              <i class="fa fa-google"></i>
+            </a>
+            <a href="#" class="share-link bg-text">
+              <i class="fa fa-envelope-o"></i>
+            </a>
+        </div>
+        <header>
+          <h1 itemprop="headline" class="text-center">Les bardeaux bitumineux</h1>
+        </header>
+        <p class="italic">Apparu aux Etats-Unis au XIX°, le bardeau en bitume est de loin le matériau de couverture le plus utilisé aux Etats-Unis où on le nomme « Asphalt Shingle ». Cette technique se développe en Europe et en France de par son prix très attractif et par sa simplicité d’installation.</p>
+
+        <figure class="figure-article">
+          <%= image_tag "bardeaux_bitumeux.jpg" %>
+          <figcaption>Installation d'une couverture de toit en bardeaux bitumineux dans le cadre d’une action sociale aux Etats-Unis. Crédit @US Navy </figcaption>
+        </figure>
+
+        <h2>Composition :</h2>
+        <p>Le bardeaux bitumineux sont constitués d’une armature en fibre de verre recouverte d’une couche de bitume. Un surfaçage par granulats minéraux (ardoise…) donne au bardeau son aspect naturel. Les bardeaux bitumineux se posent sur des panneaux de particules continus par cloutage après avoir déposé une sous couche de rouleau bitume.</p>
+
+
+        <h2>Avantages / inconvénients</h2>
+
+        <h3>Avantages</h3>
+        <ul>
+          <li>+ le prix très attractif</li>
+          <li>+ l’esthétique (proche de l’ardoise ou de la tuile plate selon la couleur)</li>
+          <li>+ la facilité de pause</li>
+          <li>+ matériau non gélif (résiste au gel donc intéressant dans les zones montagneuses)</li>
+          <li>+ son adaptabilité aux architectures complexes</li>
+        </ul>
+
+        <h3>Inconvénients</h3>
+        <ul>
+          <li>- la durée de vie faible (25 ans)</li>
+          <li>- l’aspect environnemental (produit pétrolier, recyclage)</li>
+        </ul>
+
+        <h3>Prix et entretien</h3>
+        <p>Les bardeaux de bitume sont bon marchés (à partir de 20 € le mètre carré) et leur entretien simple et accessible au non-professionnels (enlever les détritus à la main, ne pas passer de nettoyeur haute pression).  </p>
+
+
+      </div>
+    </div>
+    <%= render 'shared/guide_left_navigation' %>
+  </div>
+</div>

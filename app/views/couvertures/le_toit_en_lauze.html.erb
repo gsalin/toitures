@@ -1,0 +1,87 @@
+<%= render 'shared/guides_top_banner' %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-9">
+      <div class='article-page'>
+
+        <ol class="breadcrumb">
+          <li><a href="/">Accueil</a></li>
+          <li><%= link_to "Les guides", guides_path %></li>
+          <li><%= link_to "La couverture", la_couverture_guide_index_path %></li>
+          <li class="active">Le toit en lauze</li>
+        </ol>
+
+         <div class="share-links">
+            <a href="#" class="share-link bg-facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+            <a href="#" class="share-link bg-twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+            <a href="#" class="share-link bg-email">
+              <i class="fa fa-google"></i>
+            </a>
+            <a href="#" class="share-link bg-text">
+              <i class="fa fa-envelope-o"></i>
+            </a>
+        </div>
+        <header>
+          <h1 itemprop="headline" class="text-center">Le toit en lauze</h1>
+        </header>
+        <p class="italic">Le toit en lauze est un toit en pierres taillées. C’est un héritage en péril et certains ont décidé de le sauvegarder. Revêtement des régions montagneuses où les intempéries sont les plus fortes, le toit en pierres peut durer plus d'un siècle s'il est entretenu.</p>
+
+        <figure class="figure-article">
+          <%= image_tag "lauze.jpg" %>
+          <figcaption>Crédit photo : Association Valdotaine Lauzeur</figcaption>
+        </figure>
+
+        <h2>Les régions de la lauze</h2>
+        <ul>
+          <li>les Alpes : pierre épaisse et brute</li>
+          <li>le Massif Central</li>
+          <li>la Corse : le lauze y est constitué de pierres finement taillées en forme d’écailles</li>
+          <li>les Pyrénées</li>
+        </ul>
+
+        <h2>La sauvegarde d'un héritage</h2>
+        <p>Il ne se construit quasiment plus de toit en lauze mais il est possible de rénover les couvertures existantes. Il est possible de bénéficier d'aides de la part des acteurs locaux qui s'engagent aujourd'ui pour la préservation de ce patrimoine architectural local.</p>
+
+        <h2>Avantages / inconvénients</h2>
+
+        <h3>Avantages</h3>
+        <ul>
+          <li>+ esthétique rustique et naturelle</li>
+          <li>+ résistance et perennité de la pierre</li>
+
+        </ul>
+
+        <h3>Inconvénients</h3>
+        <ul>
+          <li>- Difficulté de la pose</li>
+          <li>- Prix très élevé</li>
+          <li>- Main d’oeuvre qualifiée peu nombreuse et concentrée en certains points</li>
+          <li>- nécessite une charpente adaptée et forte</li>
+          <li>- entretien régulier nécessaire</li>
+        </ul>
+
+        <h3>Prix</h3>
+        <p>Entre 70  et 100 € du m² pose comprise. Il est possible de trouver des lots de lauze d’occasion.</p>
+
+        <h3>Entretien</h3>
+        <p>L’entretien de la lause doit se faire régulièrement et consiste à démousser et nettoyer d’une part, et surtout à recaler les pierres qui ne sont pas tenues par du mortier.</p>
+
+        <h3>Rénovation</h3>
+        <p>En raison des contraintes fortes qu’imposent un toit en lause, il est possible de remplacer un toit en pierre par de l’ardoise ou des tuiles en ciment. En cas de rénovation, il peut être judicieux de procéder à une isolation qui améliorera les performance énergétiques et l’étanchéité du toit. Il faudra faire une vérification de la charpente qui doit pouvoir encore soutenir ce nouveau toit pour un siècle. Certaines régions peuvent offrir des subventions pour restaurer les toits en lauze.</p>
+
+        <h3>A qui s’adresser ?</h3>
+        <p>Dans le val d’aoste, l’association franco-italienne Valdotaine Lauzeurs protège ce patrimoine et pourra vous aider dans votre démarche. Dans tous les cas, il est crucial de passer par un lauzeur (couvreur spécialisé dans la pose de lauze) car cette technique demande une grande expérience et ne peut être entreprise par un entrepreneur non spécialisé. <%= link_to "lien vers l'association", "http://www.lauzeur.com/" %></p>
+
+
+        <p>Un formation est également enseignée au centre de formation des apprentis de Haute-corse à Bastia. </p>
+
+      </div>
+    </div>
+    <%= render 'shared/guide_left_navigation' %>
+  </div>
+</div>
