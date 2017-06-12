@@ -3,39 +3,39 @@
   padding-top: 20px;
   padding-bottom: 20px;
   border-top: solid black 1px;
+  min-height: 290px;
 
 
   .card_photo_presentation {
-
     .link_pic:hover {
       opacity: 0.7;
     }
   }
 
   .card_infos {
+    .link_show {
+    }
     padding: 16px 20px 20px 45px;
-
+    a {
+      color: $dark-grey
+    }
     img {
       border-radius: 50%;
       margin-right: 15px;
     }
-
     span {
-      font-size: 1.3em;
+      font-size: 1.1em;
     }
-
     p {
       text-align: justify;
       max-width: 500px;
       font-weight: lighter;
       font-size: 90%;
       margin-top: 25px;
-
       span {
       font-size: inherit;
       color: $yellow;
       }
-
       i {
         font-size: smaller;
         color: $yellow;
@@ -44,7 +44,13 @@
   }
 
   .card_skills {
-    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: stretch;
+    min-height: 250px;
 
     .modals_position {
       display: flex;
@@ -64,6 +70,15 @@
       align-content: stretch;
     }
 
+    .project-count {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: baseline;
+      align-content: stretch;
+    }
+
     h5 {
       color: #C5C7C0;
       font-weight: lighter;
@@ -74,50 +89,41 @@
     }
 
     .fa-phone-custom {
-      background-color: white;
+      background-color: $yellow;
       margin: 0px 7px 5px 7px;
-      color: $yellow;
+      color: white;
       font-size: 1.8em;
       padding: 5px;
       padding-left: 40px;
       padding-right: 40px;
-      border: solid 2px $yellow;
+      border: none;
       border-radius: 3px;
       &:hover {
-        background-color: $yellow;
-        color: white;
+        background-color: white;
+        color: $yellow;
         opacity: 0.5;
+        border: solid 2px $yellow;
       }
     }
 
     .fa-envelope-o-custom {
-      background-color: white;
+      background-color: $yellow;
       margin: 0px 7px 5px 7px;
-      color: $yellow;
+      color: white;
       font-size: 1.8em;
       padding: 5px;
       padding-left: 40px;
       padding-right: 40px;
-      border: solid 2px $yellow;
+      border: none;
       border-radius: 3px;
       &:hover {
-        background-color: $yellow;
-        color: white;
+        background-color: white;
+        color: $yellow;
         opacity: 0.5;
+        border: solid 2px $yellow;
       }
     }
 
-    .link_show {
-    span {
-      text-decoration: none;
-      color: initial;
-      }
-    }
-
-    .link_show:hover {
-      text-decoration: none;
-      opacity: 0.5;
-    }
   }
 }
 
@@ -128,4 +134,16 @@
 
 .large-fa:nth-child(2n) {
   border-left: solid black 1px;
+}
+
+.link_show {
+  color:$yellow;
+span {
+  text-decoration: none;
+  }
+}
+
+.link_show:hover {
+  text-decoration: none;
+  color: $yellow;
 }

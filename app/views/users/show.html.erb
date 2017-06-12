@@ -52,16 +52,20 @@
 <div class="container description-container">
 <!-- description, fiche et skills -->
   <div class="row description-row">
-    <div class="col-xs-12 col-sm-8">
+    <div class="col-xs-12 col-sm-9">
       <div class="user-description">
+      <h2>Informations générales</h2>
         <p><%= @user.description %></p>
-        <h3><%= @user.address %></h3>
-        <% if @user.photo_company_logo %>
-          <%= cl_image_tag @user.photo_company_logo.path, width: 300, height: 200, crop: :fill %>
-        <% end %>
+        <%= @user.email %>
+        <div id="flex-pic-address">
+          <% if @user.photo_company_logo  %>
+            <%= cl_image_tag @user.photo_company_logo.path, width: 300, height: 200, crop: :fill %>
+          <% end %>
+          <h3><%= @user.address %></h3>
+        </div>
       </div>
     </div>
-    <div class="col-xs-12 col-sm-3 col-sm-offset-1">
+    <div class="col-xs-12 col-sm-3 skills-column">
       <ul class="skills">
 
         <h4>Type de biens</h4>

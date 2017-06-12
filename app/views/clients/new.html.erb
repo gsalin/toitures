@@ -5,29 +5,29 @@
     <div class="col-xs-10 col-xs-offset-1">
       <p class="text-center" style="color:orange;">- Ce service est gratuit -</p>
       <p>Cette demande sera immédiatement envoyée aux professionnels qui vous répondront dans les meilleurs délais.</p>
-      <p>Respect de la vie Privée - Les données recueillies ne seront transmises qu'aux professionnels correspondant à votre demande.</p>
-      <div class="shared_form">
+      <p style="font-weight: lighter; font-size: 0.8em;">Respect de la vie Privée - Les données recueillies ne seront transmises qu'aux professionnels aptes à répondre à votre demande.</p>
+      <div class="emergency_form">
         <%= simple_form_for(@client) do |f| %>
           <%= f.input :address, placeholder: "Lieu des travaux", autofocus: true, label:false %>
         <div class="row row-emergency-check-box-form">
-          <div class="col-xs-12 col-sm-4">
+          <div class="col-xs-12 col-sm-3 col-sm-offset-1">
             <p>Type de travaux</p>
-            <label><div><%= f.check_box :couverture %> <span>couverture</span></label></div>
+            <label><%= f.check_box :couverture %> <span>couverture - étanchéité</span></label>
             <div>
             <label><%= f.check_box :charpente %>
-            <span>charpente</span></label>
+            <span>structure - charpente</span></label>
             </div>
-            <div><label><%= f.check_box :ouverture %> <span>fenêtre / ouverture</span></label></div>
+            <div><label><%= f.check_box :ouverture %> <span>fenêtre - ouverture</span></label></div>
             <div>
             <label><%= f.check_box :terrasse %>
-            <span>terrasse</span></label>
+            <span>balcon - terrasse</span></label>
             </div>
             <div>
             <label><%= f.check_box :plomberie %>
-            <span>eaux de pluies / zinguerie</span></label>
+            <span>zinguerie - descentes d'eaux</span></label>
             </div>
           </div>
-          <div class="col-xs-12 col-sm-4">
+          <div class="col-xs-12 col-sm-3 col-sm-offset-1">
             <p>Type de bien</p>
             <div>
             <label><%= f.check_box :maison %>
@@ -43,10 +43,10 @@
             </div>
             <div>
             <label><%= f.check_box :monument_historique %>
-            <span>classé monument historique</span></label>
+            <span>monument historique</span></label>
             </div>
           </div>
-          <div class="col-xs-12 col-sm-4">
+          <div class="col-xs-12 col-sm-3 col-sm-offset-1">
             <p>Besoin</p>
             <div>
             <label><%= f.check_box :construction %>
