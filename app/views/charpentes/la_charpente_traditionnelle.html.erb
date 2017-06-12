@@ -1,0 +1,84 @@
+<%= render 'shared/guides_top_banner' %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-9">
+      <div class='article-page'>
+
+        <ol class="breadcrumb">
+          <li><a href="/">Accueil</a></li>
+          <li><%= link_to "Les guides", guides_path %></li>
+          <li><%= link_to "La charpente", la_charpente_guide_index_path %></li>
+          <li class="active">La charpente traditionnelle </li>
+        </ol>
+
+         <div class="share-links">
+            <a href="#" class="share-link bg-facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+            <a href="#" class="share-link bg-twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+            <a href="#" class="share-link bg-email">
+              <i class="fa fa-google"></i>
+            </a>
+            <a href="#" class="share-link bg-text">
+              <i class="fa fa-envelope-o"></i>
+            </a>
+        </div>
+        <header>
+          <h1 itemprop="headline" class="text-center">La charpente traditionnelle</h1>
+        </header>
+        <p class="italic">La charpente traditionnelle est la plus courante dans les constructions anciennes. Constituée généralement en bois massif, elle est faite sur mesure par un charpentier. Très esthétique, elle mérite d’être laissée apparente. Elle peut s’adapter à tous les projets architecturaux de par sa souplesse de conception et ses propriétés de résistance et de solidité. La charpente en bois traditionnelle est également écologique car elle stocke le CO2 et la certification PEFC assure le particulier que le bois est issue de forêts gérées de manière durable.</p>
+
+        <figure class="figure-article">
+          <%= image_tag "charpente_tradi.jpg" %>
+          <figcaption></figcaption>
+        </figure>
+
+        <h2>Structure</h2>
+        <ul>
+          <li><strong>La ferme : </strong>constitue l’élément principal de la charpente. Elle transmet le poids général de la courbure aux murs porteurs verticaux. </li>
+          <li><strong>Les pannes :</strong> les éléments de liaison entre les fermes</li>
+          <li><strong>Les chevrons :</strong>répartissent le poids de la toiture sur les pannes</li>
+          <li><strong>Les liteaux ou le voligeage :</strong> sont posés sur les chevrons pour recevoir la couverture</li>
+        </ul>
+
+        <figure class="figure-article">
+          <%= image_tag "schema2_charpente.jpg" %>
+          <figcaption></figcaption>
+        </figure>
+
+        <h2>Avantages/inconvénients</h2>
+
+        <h3>Avantages</h3>
+
+        <ul>
+          <li>+ solidité et durée de vie</li>
+          <li>+ s’adapte à tous les projets</li>
+          <li>+ gain d’espace en permettant d’aménager les combles</li>
+          <li>+ l'esthétique de matériaux nobles et naturels</li>
+        </ul>
+
+        <h3>Inconvénients</h3>
+        <ul>
+          <li>- coût (main d'oeuvre très qualifiée + coût des matériaux)</li>
+          <li>- nécessite un environnement sain (humidité faible, barrières contre les insectes xylophages..) pour avoir une durée de vie optimale</li>
+          <li>- inspection et traitement décennal</li>
+        </ul>
+
+        <h3>Prix à l’achat</h3>
+        <p>Le coût d’une charpente traditionnelle est compris entre 80 € et 120 € le mètre carré. Cela dépend de la couverture choisie, du type d’isolation choisie, etc. Le coût du bois est compris entre 50 et 80 € le mètre carré et la main d’oeuvre est comprise entre 30 et 40 € de l’heure.</p>
+
+        <h3>Entretien</h3>
+        <p>Afin d’être des conditions optimales, le taux d’humidité d’une pièce où se trouve la charpente doit être être de 15 % sur celle-ci est chauffée, sinon 12 %. Traitement contre les insectes (malheureusement, pas de solution écologique pour l’instant)</p>
+
+        <h3>Rénovation</h3>
+        <p>La rénovation d’une charpente dépend de son état. Les principaux problèmes sont la fragilité du à l’âge mais surtout l’infestation du bois par des insectes xylophages (notamment les thermites).</p>
+
+      </div>
+    </div>
+    <%= render 'shared/guide_left_navigation' %>
+ </div>
+</div>
+

@@ -1,0 +1,86 @@
+<%= render 'shared/guides_top_banner' %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-9">
+      <div class='article-page'>
+
+        <ol class="breadcrumb">
+          <li><a href="/">Accueil</a></li>
+          <li><%= link_to "Les guides", guides_path %></li>
+          <li><%= link_to "La charpente", la_charpente_guide_index_path %></li>
+          <li class="active">Choisir sa charpente</li>
+        </ol>
+
+         <div class="share-links">
+            <a href="#" class="share-link bg-facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+            <a href="#" class="share-link bg-twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+            <a href="#" class="share-link bg-email">
+              <i class="fa fa-google"></i>
+            </a>
+            <a href="#" class="share-link bg-text">
+              <i class="fa fa-envelope-o"></i>
+            </a>
+        </div>
+        <header>
+          <h1 itemprop="headline" class="text-center">Choisir sa charpente</h1>
+        </header>
+        <p class="italic">La charpente est l’assemblage de pièces de bois, de métal ou de béton  qui sert à constituer l’ossature d’une toiture. C’est un élément essentiel à la solidité et à la pérennité du bâtiment mais aussi à son esthétisme et à son habitabilité.</p>
+
+        <h2>Composition</h2>
+
+        <figure class="figure-article">
+          <%= image_tag "schema_charpente.png" %>
+          <figcaption> Schéma des différents composants d'une charpente traditionnelle </figcaption>
+        </figure>
+
+        <h2>Choisir sa charpente</h2>
+        <p>Le choix de la charpente se fait selon plusieurs paramètres :</p>
+        <ul>
+          <li>Style du bâtiment (ancien, neuf,...)</li>
+          <li>Volonté d'utiliser les combles comme habitations</li>
+          <li>Type de couverture que l'on souhaite avoir sur sa toiture</li>
+        </ul>
+
+        <p>L'ensemble de ces points doit vous permettre de choisir parmi les 4 grands types de charpentes laquelles est à privilégier par rapport à vos attentes.</p>
+
+        <h2>Les différents types de charpentes</h2>
+        <ul>
+          <li>La charpente traditionnelle de toiture ou ferme traditionnelle</li>
+          <li>La charpente à fermettes industrielles</li>
+          <li>La charpente métallique</li>
+          <li>La charpente en béton</li>
+        </ul>
+
+        <h2>Choisir son charpentier</h2>
+        <p>La charpente est une affaire de spécialistes. Elle est soit concue par épure (dessin technique tridimensionnel utilisé par le charpentier) ou par conception assistée par ordinateur (CAO). </p>
+        <p>Lors de la sélection de votre charpentier pour une couverture en bois, soyez éxigeant sur le degré de séchage du bois destiné à former votre charpente. L'utilisation d'un bois vert (non séché) peut conduire à un déformement de la toiture et donc à une détérioration de la couverture. Le stockage ou le transport peut aussi entrâiner une humidification du bois et le professionnel doit prendre les mesures nécessaires pour éviter ce risque.</p>
+
+        <h2>Les points à surveiller</h2>
+
+        <h3>L'humidité</h3>
+
+        <p>Mis en œuvre dans une ambiance non chauffée, les bois doivent avoir un taux d’humidité voisin de 15% sans excéder 22%. Si les fermes doivent être apparentes dans un local chauffé, le taux d’humidité ne devra pas dépasser 12%.</p>
+
+        <h3>Les risques biologiques</h3>
+        <p>Bien abritée et ventilée, la charpente ne présente pas d'autres risques que ceux liés aux instectes. Mis en œuvre dans une ambiance non chauffée, les bois doivent avoir un taux d’humidité voisin de 15% sans excéder 22%. Si les fermes doivent être apparentes dans un local chauffé, le taux d’humidité ne devra pas dépasser 12%.</p>
+
+        <h3>Les risques liés à une mauvaise ventilation</h3>
+        <p>Une sous-toiture mal ventilée peut exposer les pannes de la charpente (partie supérieure sur lesquelles reposent directement ou indirectement la couverture) à des risques de condensation</p>
+
+        <h3>Les risques liés à la maçonnerie</h3>
+        <p>La partie de la charpente qui est noyée en maçonnerie (le bois n'est plus à l'air libre) sont plus sensibles à l'humidité et peuvent se dégrader si la maçonnerie révèle des infiltrations d'eau.</p>
+
+        <h3>Rénovation</h3>
+        <p>En cas de rénovation de votre charpente et si votre logement a plus de 2 ans, le taux de TVA peut être réduit à 10 % pour les travaux.</p>
+
+      </div>
+    </div>
+    <%= render 'shared/guide_left_navigation' %>
+ </div>
+</div>
+
