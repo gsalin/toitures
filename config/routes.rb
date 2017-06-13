@@ -1,4 +1,5 @@
   Rails.application.routes.draw do
+  devise_for :workers
   mount Attachinary::Engine => "/attachinary"
 
   ActiveAdmin.routes(self)
