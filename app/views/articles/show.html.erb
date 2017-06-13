@@ -29,7 +29,8 @@
         <header>
           <h1 itemprop="headline" class="text-center"><%=  @article.title %></h1>
         </header>
-        <p class="italic"><%= @article.body %></p>
+        <p class="italic"><%= @article.summary %></p>
+
 
         <figure class="figure-article">
           <% @article.photos.each do |photo| %>
@@ -37,6 +38,8 @@
           <% end %>
           <figcaption></figcaption>
         </figure>
+
+        <p><%= @article.body %></p>
 
       </div>
     </div>

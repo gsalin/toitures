@@ -4,8 +4,12 @@
       <h1>Créer un nouvel article</h1>
       <%= simple_form_for @article do |f| %>
         <%= f.input :title %>
+        <%= f.input :card_summary %>
+        <%= f.input :summary %>
         <%= f.input :photos, as: :attachinary %>
         <%= f.input :body %>
+        <%= f.input :category %>
+
 
         <%= f.submit "Soumettre un article", class: "btn btn-primary" %>
       <% end %>

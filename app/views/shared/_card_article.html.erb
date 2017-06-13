@@ -4,9 +4,12 @@
     <%= link_to article_path(article) do %>
       <h6 class="text-center"><%= article.title %></h6>
       <div class="article-content">
-        <%= image_tag "chaumiere.jpg", class: "img-card" %>
+        <% article.photos.each do |photo| %>
+            <%= cl_image_tag photo.path, class: "img-card" %>
+        <% end %>
+
         <span>Publié le <%= article.created_at %></span>
-        <p><%= article.body %></p>
+        <p><%= article.card_summary %></p>
         <%= link_to "Lire", article_path(article), class: "yellow-link"%>
       </div>
     <% end %>
