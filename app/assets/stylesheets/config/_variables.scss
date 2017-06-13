@@ -2,9 +2,9 @@
  * Fonts
  * ------------------------------------- */
 // Google fonts
-@import url('https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700,700i|Montserrat:300,300i,400,400i,500,500i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i');
-$base-font: 'Montserrat', "sans-serif";
-$header-font: 'Raleway', 'sans-serif';
+@import url('https://fonts.googleapis.com/css?family=Kanit:200,300,400,500|Roboto:100,300,400,500,700');
+$base-font: 'Roboto', 'sans-serif';
+$header-font: 'Kanit', 'sans-serif';
 
 // Local fonts (uncomment following lines)
 // @font-face {
@@ -37,5 +37,5 @@ $gray: #000000;
 $black: #000500;
 $dark-grey: #4A4A4A;
 $medium-grey: #C5C7C0;
-$light-grey: #F6F6F3;
+$light-grey: #F6F6F0;
 $yellow: #FEC919;

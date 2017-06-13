@@ -1,6 +1,14 @@
 .shared_form {
   padding-top: 20px;
   padding-bottom: 30px;
+  #cb-row {
+    margin-bottom: 30px;
+    margin-top: 20px;
+  }
+  label {
+    font-weight: lighter;
+    color: initial;
+  }
 }
 
 textarea:focus, input:focus{
@@ -20,3 +28,4 @@ textarea:focus, input:focus{
 .form-control {
   background-color: #fff !important;
 }
+

@@ -195,7 +195,6 @@
   margin-top:40px;
   margin-bottom:40px;
   padding: 20px;
-  border: solid $dark-grey 1px;
   background-color: white;
   border-radius: 2px;
   h1 {
@@ -233,8 +232,14 @@
   overflow-y: scroll;
   height:300px;
   width: 645px;
+  opacity: 0.8;
+  border-radius: 5px;
   .image-scroll-width {
     width: 645px;
   }
+  &:hover {
+    opacity: 1;
+  }
 }
+
 

@@ -1,46 +1,56 @@
+
+// banniere et formulaire
 .wrapper_users_show {
   position: relative;
 
 
-.banner-show {
-  text-align: center;
-  height: calc(100vh - 120px);
-  background: no-repeat center;
-  background-size: cover !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  background-color: rgba(0, 0, 0, 0.2);
-  position: relative;
-}
+  .banner-show {
+    text-align: center;
+    height: calc(100vh - 120px);
+    background: no-repeat center;
+    background-size: cover !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.2);
+    position: relative;
+  }
 
   .form-container {
     position: absolute;
-    top: 60px;
+    top: 50px;
     right: 90px;
     background-color: white;
     height: 546px;
-    max-height: calc(100vh - 120px);
+    max-height: calc(100vh - 170px);
     width: 320px;
     z-index: 2;
 
     .ul-position {
-        position: absolute;
-        top: 0px;
-        font-size: 20px;
-        width: 320px;
-        height: 60px;
-        border-bottom: 0px;
+      position: absolute;
+      top: 0px;
+      font-size: 20px;
+      width: 320px;
+      height: 60px;
+      border-bottom: 0px;
     }
 
-    .nav-tabs > li {
-      float: left;
-      margin-bottom: -1px;
-      width: 160px;
-      > a {
-      line-height: 1.4;
-      color: black;
+    .nav-tabs {
+      li {
+        width: 160px;
+      }
+      a {
+        line-height: 1.4em;
+        color: black;
+      }
+      li.inactif {
+        background-color: $medium-grey;
+      }
+      li:active {
+        border-right: 0px;
+        margin: 0px;
+        background-color: white !important;
       }
     }
 
@@ -56,30 +66,9 @@
       margin-left: 10px;
     }
 
-    .li.active {
-      border-right: 0px;
-      margin: 0px;
-      .a {
-        margin: 0px;
-      }
-    }
 
     .form-control.text.optional {
-     height: 180px;
-    }
-
-    .inactif {
-      background-color: $medium-grey;
-      color: white;
-      text-decoration: none;
-      .a {
-        &:hover {
-        }
-      }
-    }
-
-    .nav-tabs > li.active > a {
-      margin: 0px;
+      height: 180px;
     }
 
     .button-message {
@@ -96,10 +85,32 @@
   }
 }
 
+
 .user-description {
   text-align: justify;
-  margin-top: 30px;
-
+  background-color: white;
+  padding: 30px;
+  border-radius: 3px;
+  min-width: 332px;
+  #flex-pic-address {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: stretch;
+    img {
+      margin-right: 60px;
+    }
+  }
+  h2 {
+    margin-bottom: 30px;
+    font-size: 1.7em;
+    font-weight: lighter;
+  }
+  p {
+    margin-bottom:40px;
+  }
 }
 
 
@@ -122,20 +133,22 @@
   }
 }
 
+// cards description user
 .description-container {
   width: 90%;
   padding: 30px;
-
-  h1 {
-    font-weight: bolder;
+  .description-row {
     margin-bottom: 100px;
+  }
+  .skills-column {
+    background-color: white;
+    padding: 20px;
+    border-radius: 3px;
   }
 }
 
-.description-row {
-  margin-bottom: 100px;
-}
 
+// cards projet
 .project-card{
   padding-top: 50px;
   padding-bottom: 50px;
@@ -154,15 +167,14 @@
   .fa {
     margin-right: 10px;
   }
-}
-
-.project-infos {
-  padding-top: 10px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
-  align-content: center;
+  .project-infos {
+    padding-top: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+  }
 }
 
