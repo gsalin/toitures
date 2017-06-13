@@ -1,0 +1,17 @@
+
+<div class="col-xs-12 col-md-6">
+  <div class="article-card">
+    <%= link_to article_path(article) do %>
+      <h6 class="text-center"><%= article.title %></h6>
+      <div class="article-content">
+        <%= image_tag "chaumiere.jpg", class: "img-card" %>
+        <span>Publié le <%= article.created_at %></span>
+        <p><%= article.body %></p>
+        <%= link_to "Lire", article_path(article), class: "yellow-link"%>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+
