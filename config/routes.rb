@@ -9,6 +9,7 @@
   resources :clients, only: [:new, :create, :show, :edit, :update]
   resources :articles, only: [:index, :new, :create, :show]
 
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   # partie magazine en dur (pour l'instant non utilisée, remplacé par la partie articles)
