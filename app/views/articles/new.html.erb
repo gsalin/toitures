@@ -8,8 +8,7 @@
         <%= f.input :summary %>
         <%= f.input :photos, as: :attachinary %>
         <%= f.input :body %>
-        <%= f.input :category %>
-
+        <%= f.association :category %>
 
         <%= f.submit "Soumettre un article", class: "btn btn-primary" %>
       <% end %>
