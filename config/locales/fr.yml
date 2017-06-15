@@ -60,6 +60,7 @@ fr:
     - samedi
     formats:
       default: "%d/%m/%Y"
+      classical: "%l %b %Y"
       short: "%e %b"
       long: "%e %B %Y"
       month_year: "%B %Y"

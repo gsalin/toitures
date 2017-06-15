@@ -7,15 +7,16 @@
       <%= link_to "Le Magazine", articles_path, class: "left-navigation-title" %>
 
       <div class= "left-navigation-category-link">
-        <%= link_to "Catégories", root_path, class: "yellow-link" %>
+        <%= link_to "Catégories", articles_path, class: "yellow-link" %>
       </div>
 
       <ul>
-        <li><%= link_to "Energie", root_path, class: "small-link" %></li>
-        <li><%= link_to "Environnement", root_path, class: "small-link" %></li>
-        <li><%= link_to "Technique", root_path, class: "small-link" %></li>
-        <li><%= link_to "Style", root_path, class: "small-link" %></li>
-        <li><%= link_to "Patrimoine", root_path, class: "small-link" %></li>
+
+        <li><%= link_to "Energie", articles_path, class: "small-link" %></li>
+        <li><%= link_to "Environnement", articles_path, class: "small-link" %></li>
+        <li><%= link_to "Technique", articles_path, class: "small-link" %></li>
+        <li><%= link_to "Style", articles_path, class: "small-link" %></li>
+        <li><%= link_to "Patrimoine", articles_path, class: "small-link" %></li>
 
       </ul>
 
