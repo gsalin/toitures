@@ -1,4 +1,7 @@
 module ApplicationHelper
+
+
+
   def resource_name
     :user
   end
@@ -15,4 +18,20 @@ module ApplicationHelper
     return sanitize Kramdown::Document.new(text).to_html
   end
 
+
+
+
+
+  def resource_name_worker
+    :worker
+  end
+
+  def resource_worker
+    @resource ||= Worker.new
+  end
+
+  def devise_mapping_worker
+    @devise_mapping ||= Devise.mappings[:worker]
+  end
+  
 end
