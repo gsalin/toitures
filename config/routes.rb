@@ -7,7 +7,7 @@
   resources :users
   resources :projects
   resources :clients, only: [:new, :create, :show, :edit, :update]
-  resources :articles, only: [:index, :new, :create, :show]
+  resources :articles, only: [:index, :new, :create, :show, :edit]
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

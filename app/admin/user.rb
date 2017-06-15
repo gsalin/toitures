@@ -1,13 +1,14 @@
 ActiveAdmin.register User do
-  # index do
-  #   selectable_column
-  #   column :id
-  #   column :email
-  #   column :name
-  #   column :created_at
-  #   column :admin
-  #   actions
-  # end
+  index do
+    selectable_column
+    column :id
+    column :email
+    column :company
+    column :name
+    column :created_at
+    column :admin
+    actions
+  end
 
   form do |f|
     f.inputs "Identity" do
