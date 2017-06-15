@@ -1,12 +1,21 @@
-<%= render 'shared/fix_cta' %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1>Créer un nouvel article</h1>
+      <%= simple_form_for @article do |f| %>
+        <%= f.input :title %>
+        <%= f.input :card_summary %>
+        <%= f.input :summary %>
+        <%= f.input :photos, as: :attachinary %>
+        <%= f.input :body %>
+        <%= f.association :category %>
 
-<h1>Articles#new</h1>
-<p>Find me in app/views/articles/new.html.erb</p>
+        <%= f.submit "Soumettre un article", class: "btn btn-primary" %>
+      <% end %>
+
+    </div>
+  </div>
+</div>
 
 
-<%= simple_form_for @article do |f| %>
-  <%= f.input :title %>
-  <%= f.input :body %>
 
-  <%= f.submit "add an article", class: "btn btn-primary" %>
-<% end %>

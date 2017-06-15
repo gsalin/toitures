@@ -3,3 +3,4 @@ class AddArticleRefToCategories < ActiveRecord::Migration[5.0]
     add_reference :categories, :article, foreign_key: true
   end
 end
+

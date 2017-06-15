@@ -1,10 +1,50 @@
-<%= render 'shared/fix_cta' %>
+<%= render 'shared/magazine_top_banner' %>
 
-<h1>Articles#show</h1>
-<p>Find me in app/views/articles/show.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-9">
+      <div class='article-page'>
 
-<h1>Articles#show</h1>
-<p>Find me in app/views/articles/show.html.erb</p>
+        <ol class="breadcrumb">
+          <li><a href="/">Accueil</a></li>
+          <li><%= link_to "Magazine", articles_path %></li>
+          <li><%= link_to "Catégorie", root_path %></li>
+          <li class="active"><%= @article.title %></li>
+        </ol>
 
-<h2><%= @article.title %></h2>
-<p><%= @article.body %></p>
+         <div class="share-links">
+            <a href="#" class="share-link bg-facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+            <a href="#" class="share-link bg-twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+            <a href="#" class="share-link bg-email">
+              <i class="fa fa-google"></i>
+            </a>
+            <a href="#" class="share-link bg-text">
+              <i class="fa fa-envelope-o"></i>
+            </a>
+        </div>
+        <header>
+          <h1 itemprop="headline" class="text-center"><%=  @article.title %></h1>
+        </header>
+        <p class="italic"><%= @article.summary %></p>
+
+
+        <figure class="figure-article">
+          <% @article.photos.each do |photo| %>
+            <%= cl_image_tag photo.path, width: 300, height: 200, crop: :fill %>
+          <% end %>
+          <figcaption></figcaption>
+        </figure>
+
+        <p><%= @article.body %></p>
+
+      </div>
+    </div>
+    <%= render 'shared/article_left_navigation' %>
+ </div>
+</div>
+
+

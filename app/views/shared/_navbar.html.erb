@@ -48,33 +48,10 @@
   </div>
 
 <!-- dropdown magazines -->
+
   <div class="navbar-wagon-item">
-    <div class="dropdown">
-      <a class="navbar-wagon-link dropdown-toggle" id="navbar-wagon-menu", data-toggle ="dropdown">Magazine</a>
-      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li class="dropdown-media-container ">
-          <ul class="list-unstyled">
-            <li>
-              <%= link_to "Magazine", magazine_index_path, class: "navbar-wagon-item navbar-wagon-link" %>
-            </li>
-            <li>
-              <%= link_to "New article", new_article_path, class: "navbar-wagon-item navbar-wagon-link" %>
-            </li>
-            <li><%= link_to "Article Index", articles_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
-            <li><%= link_to "Magazine Index", magazine_index_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
-
-          </ul>
-          <ul class="list-unstyled">
-            <li>
-              <%= link_to "Catégorie énergie", energie_magazine_index_path, class: "navbar-wagon-item navbar-wagon-link" %>
-            </li>
-            <li><%= link_to "article énergie", energie_photovoltaique_2017_magazine_index_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
-          </ul>
-        </li>
-      </ul>
-    </div>
+    <%= link_to "Magazine", articles_path, class: "navbar-wagon-item navbar-wagon-link" %>
   </div>
-
 
 
 

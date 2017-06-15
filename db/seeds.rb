@@ -11,6 +11,15 @@ require 'faker'
 
 User.destroy_all
 Client.destroy_all
+Category.destroy_all
+
+puts 'Creating categories...'
+energie = Category.create!(name: 'Energie')
+environnement = Category.create!(name: 'Environnement')
+style = Category.create!(name: 'Style')
+technique = Category.create!(name: 'Technique')
+patrimoine = Category.create!(name: 'Patrimoine')
+
 puts 'Creating fake users...'
 5.times do
   user = User.new(
