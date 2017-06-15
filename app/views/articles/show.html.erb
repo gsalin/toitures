@@ -39,7 +39,7 @@
           <figcaption></figcaption>
         </figure>
 
-        <p><%= @article.body %></p>
+        <%= kramdown(@article.body) %>
 
       </div>
     </div>

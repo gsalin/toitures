@@ -10,4 +10,9 @@ module ApplicationHelper
   def devise_mapping
     @devise_mapping ||= Devise.mappings[:user]
   end
+
+  def kramdown(text)
+    return sanitize Kramdown::Document.new(text).to_html
+  end
+
 end
