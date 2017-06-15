@@ -2,6 +2,7 @@
   mount Attachinary::Engine => "/attachinary"
 
   ActiveAdmin.routes(self)
+  devise_for :workers
   devise_for :users
   root to: 'pages#home'
   resources :users
