@@ -1,5 +1,6 @@
 class GuidesController < ApplicationController
   skip_before_action :authenticate_user!
+  skip_before_action :authenticate_worker!
   before_action :new_client
 
   def index

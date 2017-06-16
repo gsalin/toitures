@@ -1,5 +1,7 @@
 class ArticlesController < ApplicationController
+  skip_before_action :authenticate_worker!
   skip_before_action :authenticate_user!, except: [:new, :create]
+
   def index
     @articles = Article.all
   end
