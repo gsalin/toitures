@@ -4,7 +4,7 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-md-9">
-      <div class='article-page'>
+      <div class='index_guides_page'>
 
         <ol class="breadcrumb">
           <li><a href="/">Accueil</a></li>
@@ -31,10 +31,10 @@
         <p class="italic">Cette collection de trois guides dédiés à la toiture, à la couverture et à la charpente a été conçus avec le soin de donner les bonnes informations sans aller trop dans le détail. L'idée : partir avec les bonnes bases. </p>
 
         <div class="col-xs-12 col-md-12">
-          <div class="article-card">
+          <div class="guide-card">
             <%= link_to la_toiture_guide_index_path do %>
               <h6 class="text-center">Le guide de la toiture</h6>
-              <div class="article-content">
+              <div class="guide-content">
                 <%= image_tag "chaumiere.jpg", class: "img-card" %>
                 <p>L'essentiel pour bien comprendre l'ensemble des enjeux quand il vous vient à devoir vous occuper de votre toiture</p>
                 <%= link_to "Accéder au guide", la_toiture_guide_index_path, class: "yellow-link"%>
@@ -44,10 +44,10 @@
         </div>
 
         <div class="col-xs-12 col-sm-6">
-          <div class="article-card">
+          <div class="guide-card">
             <%= link_to la_couverture_guide_index_path do %>
               <h6 class="text-center">Le guide de la couverture</h6>
-              <div class="article-content">
+              <div class="guide-content">
                 <%= image_tag "lauze.jpg", class: "img-card" %>
                 <p>Choisir sa couverture sera votre principal choix : entre tuiles ou ardoises, quelles ouvertures, apnneaux solaires... revue des possibilités</p>
                 <%= link_to "Accéder au guide", la_couverture_guide_index_path, class: "yellow-link"%>
@@ -57,10 +57,10 @@
         </div>
 
         <div class="col-xs-12 col-sm-6">
-          <div class="article-card">
+          <div class="guide-card">
             <%= link_to la_charpente_guide_index_path do %>
               <h6 class="text-center">Le guide de la charpente</h6>
-              <div class="article-content">
+              <div class="guide-content">
                 <%= image_tag "construction_toit.jpg", class: "img-card" %>
                 <p>Le choix de la charente aura un impact sur votre maison et doit durer au moins 50 ans, tour d'horizon des solutions existantes</p>
                 <%= link_to "Accéder au guide", la_charpente_guide_index_path, class: "yellow-link"%>
