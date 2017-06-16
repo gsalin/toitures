@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
   skip_before_action :authenticate_user!
+  skip_before_action :authenticate_worker!
   def index
     @articles = Article.all
   end

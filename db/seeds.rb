@@ -12,6 +12,7 @@ require 'faker'
 User.destroy_all
 Client.destroy_all
 Category.destroy_all
+Worker.destroy_all
 
 puts 'Creating categories...'
 energie = Category.create!(name: 'Energie')
@@ -149,4 +150,21 @@ user = User.new(
   )
 user.save!
 
+
+puts 'Creating fake workers...'
+url = "http://static.pexels.com/photos/91227/pexels-photo-91227.jpeg"
+15.times do
+  worker = Worker.new(
+    email: Faker::Internet.email,
+    address: "Paris, France",
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    phone_number: Faker::PhoneNumber.phone_number,
+    looking_for_job: true,
+    password: "azerty"
+  )
+  worker.save!
+  worker.photo_url = url
+  worker.cv_url = url
+end
 puts 'Finished!'

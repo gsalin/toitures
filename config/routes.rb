@@ -7,6 +7,7 @@
   root to: 'pages#home'
   resources :users
   resources :projects
+  resources :workers
   resources :clients, only: [:new, :create, :show, :edit, :update]
   resources :articles, only: [:index, :new, :create, :show]
 
