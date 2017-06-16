@@ -11,7 +11,9 @@ require 'faker'
 
 User.destroy_all
 Client.destroy_all
+Article.destroy_all
 Category.destroy_all
+Worker.destroy_all
 
 puts 'Creating categories...'
 energie = Category.create!(name: 'Energie')
@@ -19,6 +21,40 @@ environnement = Category.create!(name: 'Environnement')
 style = Category.create!(name: 'Style')
 technique = Category.create!(name: 'Technique')
 patrimoine = Category.create!(name: 'Patrimoine')
+
+puts 'Creating Administrator user'
+
+user = User.new(
+    email:    "ecastaignet@hotmail.com",
+    address: "Paris, France",
+    city: "Paris",
+    zip_code: "75001",
+    first_name: "Edouard",
+    last_name: "Castaignet",
+    position: "Rédacteur en chef",
+    office_phone: Faker::PhoneNumber.phone_number,
+    mobile_phone: Faker::PhoneNumber.phone_number,
+    latitude: 48.856614,
+    longitude: 2.3522219,
+    radius: 50,
+    company: "Toitures de France",
+    description: "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.",
+    password: "azerty",
+    construction:          true,
+    renovation:            true,
+    entretien:             true,
+    maison:                true,
+    chateau:               true,
+    immeuble:              true,
+    monument_historique:   true,
+    charpente:             true,
+    couverture:            true,
+    ouverture:             true,
+    terrasse:              true,
+    plomberie:             false,
+  )
+  user.save!
+
 
 puts 'Creating fake users...'
 5.times do
@@ -149,4 +185,21 @@ user = User.new(
   )
 user.save!
 
+
+puts 'Creating fake workers...'
+url = "http://static.pexels.com/photos/91227/pexels-photo-91227.jpeg"
+15.times do
+  worker = Worker.new(
+    email: Faker::Internet.email,
+    address: "Paris, France",
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    phone_number: Faker::PhoneNumber.phone_number,
+    looking_for_job: true,
+    password: "azerty"
+  )
+  worker.save!
+  worker.photo_url = url
+  worker.cv_url = url
+end
 puts 'Finished!'

@@ -40,6 +40,10 @@ gem 'geocoder'
 gem "coffee-rails"
 gem "gmaps4rails"
 
+# Kramdown pour le markdown (Edouard)
+gem 'kramdown'
+
+
 
 
 source 'https://rails-assets.org' do

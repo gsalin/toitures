@@ -5,10 +5,10 @@
       <h6 class="text-center"><%= article.title %></h6>
       <div class="article-content">
         <% article.photos.each do |photo| %>
-            <%= cl_image_tag photo.path, class: "img-card" %>
+            <%= cl_image_tag photo.path, class: "img-card", width: 250, height: 150, crop: :fill %>
         <% end %>
-
-        <span>Publié le <%= article.created_at %></span>
+        <p><%= article.category.name %></p>
+        <span>Publié le <%= (I18n.localize article.created_at.to_date, formats: :classical).capitalize %> par <%= article.user.first_name %> <%= article.user.last_name %>, <%= article.user.company %> </span>
         <p><%= article.card_summary %></p>
         <%= link_to "Lire", article_path(article), class: "yellow-link"%>
       </div>

@@ -1,4 +1,5 @@
 class Article < ApplicationRecord
   belongs_to :category
-  has_attachments :photos, maximum: 2
+  belongs_to :user
+  has_attachments :photos, maximum: 2, accept: [:jpg, :png, :gif]
 end
