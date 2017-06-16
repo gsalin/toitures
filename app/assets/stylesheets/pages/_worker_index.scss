@@ -1,0 +1,35 @@
+.worker_index_card {
+  height: 400px;
+  margin-top: 30px;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: stretch;
+  background-color: white;
+  border: $green-worker solid 2px;
+  .worker-avatar {
+    border-radius: 50%;
+  }
+  .fa {
+    background-color: transparent;
+  }
+  .fa-address-card {
+    background-color: $green-worker;
+    color: white;
+    font-size: 2.5em;
+    padding: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    border: none;
+    border-radius: 30px;
+    &:hover {
+      border: $green-worker solid 2px;
+      background-color: white;
+      color: $green-worker;
+    }
+  }
+}
