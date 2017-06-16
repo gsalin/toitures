@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
-  skip_before_action :authenticate_user!
   skip_before_action :authenticate_worker!
+  skip_before_action :authenticate_user!, except: [:new, :create]
+
   def index
     @articles = Article.all
   end
@@ -10,16 +11,22 @@ class ArticlesController < ApplicationController
   end
 
   def new
+    @user = current_user
     @article = Article.new
   end
 
   def create
     @article = Article.new(article_params)
+    @article.user = current_user
     if @article.save
       redirect_to article_path(@article)
     else
       render :new
     end
+  end
+
+  def edit
+    @article = Article.find(params[:id])
   end
 
   private

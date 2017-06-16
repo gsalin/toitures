@@ -10,6 +10,10 @@ $(document).ready(function() {
       var length = $(this).val().length;
       $("#description-project-count").html(length);
     });
+    $("#article_body").on("keyup", function(){
+      var length = $(this).val().length;
+      $("#body-article-count").html(length);
+    });
 
     var titres = ["Restauration d'une toiture ancienne", "Etanchéité et pose d'une terrasse", "Pose d'une véranda", "Restauration d'une église", "Création d'une fenêtre de toit"]
 

@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20170616085725) do
     t.string   "card_summary"
     t.text     "summary"
     t.integer  "category_id"
+    t.integer  "user_id"
     t.index ["category_id"], name: "index_articles_on_category_id", using: :btree
   end
 
