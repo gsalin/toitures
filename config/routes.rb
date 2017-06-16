@@ -10,6 +10,13 @@
   resources :clients, only: [:new, :create, :show, :edit, :update]
   resources :articles, only: [:index, :new, :create, :show, :edit]
 
+  #pages classiques
+  get 'qui-sommes-nous', to: 'pages#qui_sommes_nous'
+  get 'contact', to: 'pages#contact'
+  get "services-aux-particuliers", to: 'pages#services_aux_particuliers'
+  get "services-aux-professionnels", to: 'pages#services_aux_professionnels'
+  get "cgu", to: 'pages#cgu'
+  get "mentions-legales", to: 'pages#mentions_legales'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
