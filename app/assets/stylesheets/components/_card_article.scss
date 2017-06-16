@@ -1,0 +1,49 @@
+.article-card {
+  background: $light-grey;
+  width: 100%;
+  padding: 20px;
+  margin-bottom: 5px;
+
+  h6 {
+    text-align: center;
+    color: $dark-grey;
+    font-size: 1em;
+    line-height: 1.6em;
+    margin-bottom: 0px;
+    margin-top: 0px;
+  }
+
+  .article_category {
+    color: $dark-grey;
+    font-size: 0.7em;
+    text-align: right;
+  }
+
+  .article-card:hover {
+    background: $medium-grey;
+    text-decoration: none;
+    color: white;
+  }
+
+  .article-content {
+    .img-card {
+      width: 100%;
+      background: transparent;
+      color: $yellow;
+      text-decoration: none;
+      vertical-align: middle;
+    }
+    span {
+      color: $dark-grey;
+      font-size: 0.65em;
+    }
+    p {
+      color: $black;
+      font-size: 0.7em;
+      margin: 5px 0 5px;
+      text-align: justify;
+    }
+  }
+
+}
+

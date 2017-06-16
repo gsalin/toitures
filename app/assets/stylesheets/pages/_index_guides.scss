@@ -1,0 +1,88 @@
+
+
+.index_guides_page {
+  margin-top: 10px;
+  margin-bottom: 50px;
+
+  h1 {
+    color: $dark-grey;
+    margin-top: 35px;
+  }
+
+  h3 {
+    color: $dark-grey;
+    margin-top: 20px;
+  }
+
+  h4 {
+    text-align: left;
+    color: $dark-grey;
+    margin-top: 35px;
+  }
+
+  span {
+    color: $medium-grey;
+  }
+
+  p {
+    text-align: justify;
+    color: $black;
+    font-size: 1em;
+    line-height: 1.6em;
+    margin-top: 30px;
+   }
+
+  li {
+    line-height: 1.6em;
+    padding-top: 8px;
+   }
+
+  .italic {
+    font-style: italic;
+  }
+}
+
+// CSS de la card
+
+.guide-card {
+  background: $light-grey;
+  width: 100%;
+  padding: 20px;
+  margin-bottom: 5px;
+
+  h6 {
+    text-align: center;
+    color: $dark-grey;
+    font-size: 0.9em;
+    line-height: 1.6em;
+    margin-bottom: 10px;
+    margin-top: 0px;
+  }
+}
+
+.guide-card:hover {
+  background: $medium-grey;
+  text-decoration: none;
+  color: white;
+}
+
+.guide-content {
+  .img-card {
+    width: 100%;
+    background: transparent;
+    color: $yellow;
+    text-decoration: none;
+    vertical-align: middle;
+  }
+  p {
+    color: $black;
+    font-size: 0.8em;
+    margin: 5px 0 5px;
+    text-align: justify;
+  }
+}
+
+
+
+
+

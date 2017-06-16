@@ -3,12 +3,12 @@
   <div class="article-card">
     <%= link_to article_path(article) do %>
       <h6 class="text-center"><%= article.title %></h6>
+      <span class="article_category"><%= article.category.name %></span>
       <div class="article-content">
         <% article.photos.each do |photo| %>
             <%= cl_image_tag photo.path, class: "img-card", width: 250, height: 150, crop: :fill %>
         <% end %>
-        <p><%= article.category.name %></p>
-        <span>Publié le <%= (I18n.localize article.created_at.to_date, formats: :classical).capitalize %> par <%= article.user.first_name %> <%= article.user.last_name %>, <%= article.user.company %> </span>
+        <span>Publié le <%= (I18n.localize article.created_at.to_date, formats: :classical).capitalize %> par <%= article.user.first_name %>, <%= article.user.company %> </span>
         <p><%= article.card_summary %></p>
         <%= link_to "Lire", article_path(article), class: "yellow-link"%>
       </div>

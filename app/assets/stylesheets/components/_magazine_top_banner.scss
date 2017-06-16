@@ -1,6 +1,8 @@
+
+
 .wrapper-magazine-top-banner {
-  background-color: $light-grey;
-  height: 30vh;
+  background-color: $dark-grey;
+  height: 25vh;
 }
 
 .content-container {
@@ -8,14 +10,14 @@
   text-align: right;
 
   h1 {
-    color: $dark-grey;
+    color: white;
     text-align: center;
     font-style: bold;
-    padding: 20px;
+    padding: 5px;
   }
 
   span {
-
+    color: white;
   }
 
 }

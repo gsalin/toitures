@@ -1,0 +1,45 @@
+
+.index_articles_page {
+  margin-top: 10px;
+  margin-bottom: 50px;
+
+  h1 {
+    color: $dark-grey;
+    margin-top: 35px;
+  }
+
+  h3 {
+    color: $dark-grey;
+    margin-top: 20px;
+  }
+
+  h4 {
+    text-align: left;
+    color: $dark-grey;
+    margin-top: 35px;
+  }
+
+  span {
+    color: $medium-grey;
+  }
+
+  p {
+    text-align: justify;
+    color: $black;
+    font-size: 1em;
+    line-height: 1.6em;
+    margin-top: 30px;
+   }
+
+  li {
+    line-height: 1.6em;
+    padding-top: 8px;
+   }
+}
+
+
+
+
+
+
+
