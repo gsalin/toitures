@@ -29,13 +29,13 @@
         <header>
           <h1 itemprop="headline" class="text-center"><%=  @article.title %></h1>
         </header>
-        <span><%= @article.user.last_name %></span>
+        <span>Publié le <%= (I18n.localize @article.created_at.to_date, formats: :classical).capitalize %> par <%= @article.user.first_name %>, <%= @article.user.company %></span>
         <p class="italic"><%= @article.summary %></p>
 
 
         <figure class="figure-article">
           <% @article.photos.each do |photo| %>
-            <%= cl_image_tag photo.path, width: 300, height: 200, crop: :fill %>
+            <%= cl_image_tag photo.path %>
           <% end %>
           <figcaption></figcaption>
         </figure>
