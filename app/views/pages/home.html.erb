@@ -3,8 +3,8 @@
 <!-- banner et form -->
 <div class="home-banner";">
 
-  <h3>surmatete.fr</h3>
-  <h2>L'annuaire des professionnels de la toiture, mais pas que...</h2>
+  <h3>Lestoitures.fr</h3>
+  <h2>L'annuaire des professionnels de la toiture</h2>
 
   <!-- form -->
   <div class="form_home">
@@ -62,11 +62,21 @@
 <!-- card presentation -->
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-sm-4 col-sm-offset-1 presentation-site-home" id="border-presentation-site-home">
-      <h3>Trouvez en quelques clics le professionnel correspondant à vos besoins et à vos critères</h3>
-      <p>Le site www.loremipsum.fr est un <strong> vrai guide gratuit</strong> d'informations et de conseils pour <strong>bien faire rénover sa toiture ou sa terrasse</strong>.</p>
-      <p>En fonction de vos besoins, construction,réparation,  en type d'hébergement (accueil de jour, Alzheimer, Snoezelen ..., sans oublier les résidences services, les résidences autonomie) et de l'urgence éventuelle (places disponibles) trouvez et comparez en quelques clics.</p>
-      <p>Portail clair et aéré, le site regorge d'informations essentielles concernant entre autres les aides ou allocations, les tarifs et la tarification en maison de retraite, d'adresses utiles et de liens indispensables. Il vous conseille pour bien choisir la maison de retraite ou l'Ehpad et vous informe des démarches à suivre pour l'entrée en maison de retraite.</p>
+    <div class="col-xs-12 col-sm-5 col-sm-offset-1 presentation-site-home" id="border-presentation-site-home">
+      <h3>Le premier site spécialisé dans la toiture</h3>
+      <p>Le site www.lestoitures.fr combine :</p>
+      <ul>
+        <li>Un <%= link_to "Guide", guides_path, class: "small-link-home" %> d'informations et de conseils pour <strong>bien faire rénover sa toiture</strong>.</li>
+        <li>Un <%= link_to "Magazine", articles_path, class: "small-link-home" %> afin de se tenir au courant de l'actualité mais aussi pour dénicher les dernières tendances.</li>
+        <li>Un <%= link_to "Annuaire", users_path, class: "small-link-home" %> des professionnels spécialisés dans la toiture d'informations et de conseils pour <strong>bien faire rénover sa toiture</strong>.</li>
+      </ul>
+
+      <h4>Choisissez votre artisan selon vos critères</h4>
+      <p>Trouvez et contactez les acteurs de la toiture selon leurs spécialités : couvreurs, charpentiers... Vous pouvez consulter leurs projets et leurs articles afin de trouver celui qui correspond le mieux à votre projet dans notre <strong>annuaire</strong>.</p>
+
+      <h4>Ayez la bonne information pour bien décider</h4>
+      <p>A la fois synthétiques et clairs, nos <strong>guides</strong> synthétisent les informations essentielles afin de réussir votre projet de toiture : différentes options, points à surveiller, législation...</p>
+      <p>Pour ceux qui veulent en savoir plus sur certains points, trouver de l'inspiration, ou se renseigner sur des points d'actualités (législations, subventions,etc..), bienvenue dans notre <strong>magazine</strong>.</p>
     </div>
     <div class="col-xs-12 col-sm-5 col-sm-offset-1 text-center presentation-site-home">
       <div class="home-icones">
@@ -89,73 +99,37 @@
 </div>
 
 
-<!-- Card Annuaire -->
-<div class="container annuaire-card-home">
-  <div class="row row-annuaire-card-home">
-    <div class="col-xs-12 col-sm-5">
-      <h1>Annuaire</h1>
-      <h2>Des professionnels de qualité</h2>
-      <ul>
-        <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Structure juridique de plus de 2 ans</li>
-        <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Assurance de responsabilité décennale</li>
-        <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Assurance de responsabilité civile professionnelle</li>
-        <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Coordonnées complètes</li>
-        <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Présentation des projets réalisés</li>
-      </ul>
-    </div>
-    <div class="col-xs-12 col-sm-7">
-      <div class="prez_show_user_annuaire"></div>
-    </div>
-  </div>
-</div>
-
 <!-- Card guides -->
 <div class="container annuaire-card-home">
   <div class="row row-annuaire-card-home">
-    <div class="col-xs-12 col-sm-5">
-      <h1>Guides</h1>
-      <h2>Tout comprendre sur la toiture</h2>
-      <ul>
-        <li>lorem ipsum</li>
-        <li>lorem ipsum</li>
-        <li>lorem ipsum</li>
-        <li>lorem ipsum</li>
-        <li>lorem ipsum</li>
-        <li>lorem ipsum</li>
-      </ul>
+    <div class="col-xs-12 col-sm-12">
+      <h1>Les guides</h1>
     </div>
-    <div class="col-xs-12 col-sm-7">
-      <div class="print-screen-box">
-      <%= image_tag "print-screen-guide.png", class: "image-scroll-width" %>
-      </div>
-    </div>
-  </div>
-  <div class="row row-guides-card-home">
     <div class="col-xs-12 col-sm-4">
-      <div class="card-home-guide" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.1)), url(<%= asset_path 'toit_ancien.jpg' %>);">
+      <div class="card-home-guide" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(<%= asset_path 'chaumiere.jpg' %>);">
         <div class="card-home-text">
           <h2 class="text-center">La toiture</h2>
-          <p class="text-center">Lorem ipsum Lorem ipsum Lorem ipsum </p>
+          <p class="text-center">L'essentiel pour bien comprendre l'ensemble des enjeux à tous les stades de votre projet : plannings, gestion des devis...</p>
         </div>
         <%= link_to la_toiture_guide_index_path, class: "card-link-home-guide" do %>
         <% end %>
       </div>
     </div>
     <div class="col-xs-12 col-sm-4">
-      <div class="card-home-guide" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.1)), url(<%= asset_path 'toit_ancien.jpg' %>);">
+      <div class="card-home-guide" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(<%= asset_path 'lauze.jpg' %>);">
         <div class="card-home-text">
           <h2 class="text-center">La couverture</h2>
-          <p class="text-center">Lorem ipsum Lorem ipsum Lorem ipsum </p>
+          <p class="text-center">De nombreuses possibilité s'offrent à vous lors du choix de la couverture de votre maison : types de revêtements, création d'ouvertures...</p>
         </div>
         <%= link_to la_couverture_guide_index_path, class: "card-link-home-guide" do %>
         <% end %>
       </div>
     </div>
     <div class="col-xs-12 col-sm-4">
-      <div class="card-home-guide" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.1)), url(<%= asset_path 'toit_ancien.jpg' %>);">
+      <div class="card-home-guide" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(<%= asset_path 'construction_toit.jpg' %>);">
         <div class="card-home-text">
           <h2 class="text-center">La charpente</h2>
-          <p class="text-center">Lorem ipsum Lorem ipsum Lorem ipsum </p>
+          <p class="text-center">La charpente est l'ossature du toit, son choix dépend de l'usage du futur toit (terrasse, habitabilité des combles) et du style de couverture désiré</p>
         </div>
         <%= link_to la_charpente_guide_index_path, class: "card-link-home-guide" do %>
         <% end %>
@@ -164,23 +138,55 @@
   </div>
 </div>
 
+
+<!-- Card Annuaire -->
+<div class="container annuaire-card-home">
+  <div class="row row-annuaire-card-home">
+    <div class="col-xs-12">
+    <%= link_to users_path do %>
+      <h1>L'annuaire</h1>
+    <% end %>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <h2>Des professionnels de qualité</h2>
+      <ul>
+        <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Structure juridique de plus de 2 ans</li>
+        <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Assurance de responsabilité décennale</li>
+        <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Assurance de responsabilité civile professionnelle</li>
+      </ul>
+    </div>
+     <div class="col-xs-12 col-sm-4">
+      <h2>Répertoire par spécialités</h2>
+      <ul>
+        <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Filtre par types de prestation...</li>
+        <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Deux spécialités max par acteur</li>
+        <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Une mise en valeur des labels et des associations d'artisans</li>
+      </ul>
+    </div>
+     <div class="col-xs-12 col-sm-4">
+      <h2>Mise en valeur des projets</h2>
+      <ul>
+        <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Présentation des projets réalisés par les artisans</li>
+        <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Possibilité de publication d'articles</li>
+        <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Coordonnées complètes disponibles</li>
+      </ul>
+    </div>
+    <div class="col-xs-12 text-left">
+      <h2><%= link_to "Accéder à l'annuaire", users_path %></h2>
+    </div>
+  </div>
+</div>
+
 <!-- Card magazine -->
 <div class="container annuaire-card-home">
   <div class="row row-annuaire-card-home">
-    <div class="col-xs-12 col-sm-5">
-      <h1>Magazine</h1>
-      <h2>Les dernières infos et tendances</h2>
-      <ul>
-        <li>lorem ipsum</li>
-        <li>lorem ipsum</li>
-        <li>lorem ipsum</li>
-        <li>lorem ipsum</li>
-        <li>lorem ipsum</li>
-        <li>lorem ipsum</li>
-      </ul>
+    <div class="col-xs-12 col-sm-12">
+      <h1>Le magazine</h1>
     </div>
-    <div class="col-xs-12 col-sm-7">
-      <div class="prez_show_user_magazine"></div>
+    <div class="col-xs-12">
+      <% @articles.each do |article| %>
+         <%= render "shared/card_article", article: article %>
+      <% end %>
     </div>
   </div>
 </div>

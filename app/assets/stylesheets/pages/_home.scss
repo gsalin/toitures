@@ -20,7 +20,7 @@
   flex-direction: column;
   background-image: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 50%),
               url('user_base_pic.png');
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 
 .form_home {
@@ -83,7 +83,7 @@
     }
 
     li {
-      padding: 5px;
+      padding: 10px;
       font-size: 0.9em;
     }
   }
@@ -145,9 +145,19 @@
 }
 
 #border-presentation-site-home {
-
   text-align: justify;
+
+  li {
+  padding: 10px;
+  }
+
+  h4 {
+    margin-bottom: 7px;
+    text-align: left;
+  }
+
 }
+
 .presentation-site-home {
   display: flex;
   flex-direction: column;
@@ -159,6 +169,7 @@
   h3 {
     font-size: 22px;
   }
+
   .home-icones {
     display: flex;
     flex-direction: column;

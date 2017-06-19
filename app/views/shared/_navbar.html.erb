@@ -2,9 +2,9 @@
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand navbar-wagon-item navbar-wagon-link" do %>
     <%= image_tag "logo.png" %>
+    <span><strong>Lestoitures.fr</strong></span>
     <p>L'annuaire des professionnels de la toiture</p>
   <% end %>
-  <%= link_to('Retour', :back) %>
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
@@ -20,34 +20,19 @@
 
     <!-- Nav links -->
 
-<!-- dropdown guides -->
+
+  <!-- lien Accueil -->
   <div class="navbar-wagon-item">
-    <div class="dropdown">
-      <a class="navbar-wagon-link dropdown-toggle" id="navbar-wagon-menu", data-toggle ="dropdown">Guides</a>
-      <ul class="dropdown-menu dropdown-menu-right dropdown-medias">
-        <li class="dropdown-media-container ">
-          <ul class="list-unstyled">
-            <li>
-              <%= link_to "Les guides", guides_path, class: "" %>
-            </li>
-             <li role="separator" class="divider"></li>
-            <li>
-              <%= link_to "La toiture", la_couverture_guide_index_path, class: "" %>
-            </li>
-            <li>
-              <%= link_to "La couverture", la_couverture_guide_index_path, class: "" %>
-            </li>
-            <li><%= link_to "La charpente", la_charpente_guide_index_path, class: "" %></li>
-          </ul>
-          <ul class="list-unstyled">
-            <li><%= link_to "test colonne 2", la_charpente_guide_index_path, class: "" %></li>
-          </ul>
-        </li>
-      </ul>
-    </div>
+    <%= link_to 'Retour', :back, class: "navbar-wagon-item navbar-wagon-link" %>
   </div>
 
-<!-- dropdown magazines -->
+<!-- lien guide -->
+  <div class="navbar-wagon-item">
+    <%= link_to "Guides", guides_path, class: "navbar-wagon-item navbar-wagon-link" %>
+  </div>
+
+
+<!-- lien magazine -->
 
   <div class="navbar-wagon-item">
     <%= link_to "Magazine", articles_path, class: "navbar-wagon-item navbar-wagon-link" %>
