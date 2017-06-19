@@ -5,9 +5,10 @@
   devise_for :workers
   devise_for :users
   root to: 'pages#home'
-  resources :users
+  resources :users, only: [:index, :show]
   resources :projects
-  resources :workers
+  resources :needs, only: [:new, :create, :show, :edit, :update]
+  resources :workers, only: [:index, :edit, :update]
   resources :clients, only: [:new, :create, :show, :edit, :update]
   resources :articles, only: [:index, :new, :create, :show, :edit, :update]
 

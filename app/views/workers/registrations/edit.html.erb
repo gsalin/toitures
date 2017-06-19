@@ -6,7 +6,7 @@
   <div class="form-inputs">
     <%= f.input :email, required: true, autofocus: true %>
 
-    <% if devise_mapping.confirmable? && resource_worker.pending_reconfirmation? %>
+    <% if devise_mapping_worker.confirmable? && resource_worker.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource_worker.unconfirmed_email %></p>
     <% end %>
 

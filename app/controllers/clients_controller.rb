@@ -19,7 +19,6 @@ class ClientsController < ApplicationController
   end
 
   def show
-    @client = Client.find(params[:id])
     @radius_users = []
     User.all.each do |user|
       beta = @client.distance_to(user.address).to_i
@@ -69,11 +68,10 @@ class ClientsController < ApplicationController
   end
 
   def edit
-    @client = Client.find(params[:id])
+    # Ne pas suppr set_client ci dessous
   end
 
   def update
-    @client = Client.find(params[:id])
     @client.update(client_params)
 
     redirect_to client_path(@client)

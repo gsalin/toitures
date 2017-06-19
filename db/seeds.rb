@@ -187,13 +187,15 @@ user.save!
 
 puts 'Creating fake workers...'
 url = "http://static.pexels.com/photos/91227/pexels-photo-91227.jpeg"
-15.times do
+7.times do
   worker = Worker.new(
     email: Faker::Internet.email,
     address: "Paris, France",
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     phone_number: Faker::PhoneNumber.phone_number,
+    charpentier: false,
+    couvreur: true,
     looking_for_job: true,
     password: "azerty"
   )
@@ -201,4 +203,51 @@ url = "http://static.pexels.com/photos/91227/pexels-photo-91227.jpeg"
   worker.photo_url = url
   worker.cv_url = url
 end
+
+7.times do
+  worker = Worker.new(
+    email: Faker::Internet.email,
+    address: "Paris, France",
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    phone_number: Faker::PhoneNumber.phone_number,
+    charpentier: true,
+    couvreur: false,
+    looking_for_job: true,
+    password: "azerty"
+  )
+  worker.save!
+  worker.photo_url = url
+  worker.cv_url = url
+end
+
+worker = Worker.new(
+  email: "azerty@gmail.com",
+  address: "Paris, France",
+  first_name: "charpentier",
+  last_name: "Salin",
+  phone_number: "0663983171",
+  charpentier: true,
+  couvreur: false,
+  looking_for_job: true,
+  password: "azerty"
+)
+worker.save!
+worker.photo_url = url
+worker.cv_url = url
+
+worker = Worker.new(
+  email: "aze@gmail.com",
+  address: "Paris, France",
+  first_name: "couvreur",
+  last_name: "Salin",
+  phone_number: "0663983171",
+  charpentier: false,
+  couvreur: true,
+  looking_for_job: true,
+  password: "azerty"
+)
+worker.save!
+worker.photo_url = url
+worker.cv_url = url
 puts 'Finished!'

@@ -10,17 +10,17 @@
     color: initial;
   }
 }
-
 textarea:focus, input:focus{
   outline: none;
 }
+
 
 *:focus {
   outline: none;
 }
 
 .form-control:focus {
-  border-color: transparent;
+  border-color: $medium-grey;
   -webkit-box-shadow: none;
   box-shadow: none;
 }
