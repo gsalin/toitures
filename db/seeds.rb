@@ -11,7 +11,6 @@ require 'faker'
 
 User.destroy_all
 Client.destroy_all
-Article.destroy_all
 Category.destroy_all
 Worker.destroy_all
 

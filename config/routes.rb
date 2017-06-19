@@ -9,7 +9,7 @@
   resources :projects
   resources :workers
   resources :clients, only: [:new, :create, :show, :edit, :update]
-  resources :articles, only: [:index, :new, :create, :show, :edit]
+  resources :articles, only: [:index, :new, :create, :show, :edit, :update]
 
   #pages classiques
   get 'qui-sommes-nous', to: 'pages#qui_sommes_nous'

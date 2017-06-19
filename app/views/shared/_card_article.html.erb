@@ -6,7 +6,7 @@
       <span class="article_category"><%= article.category.name %></span>
       <div class="article-content">
         <% article.photos.each do |photo| %>
-            <%= cl_image_tag photo.path, class: "img-card", width: 250, height: 150, crop: :fill %>
+            <%= cl_image_tag photo.path, class: "img-card" %>
         <% end %>
         <span>Publié le <%= (I18n.localize article.created_at.to_date, formats: :classical).capitalize %> par <%= article.user.first_name %>, <%= article.user.company %> </span>
         <p><%= article.card_summary %></p>
