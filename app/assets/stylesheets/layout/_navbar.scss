@@ -176,7 +176,24 @@
   width: 100vh;
 }
 
+.workers-form-button {
+  margin-left: 10px;
+  padding: 0 20px;
+  border-radius: 5px;
+  line-height: 40px;
+  background-color: $green-worker;
+  color: white;
+  font-size: 1em;
+  border: none;
+  letter-spacing: 0.05em;
+  border: $green-worker solid 2px;
+}
 
+.workers-form-button:hover {
+  color: $green-worker;
+  background: white;
+  border: $green-worker solid 2px;
+}
 
 
 

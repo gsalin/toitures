@@ -1,3 +1,21 @@
+.container-form-needs{
+  margin-top: 30px;
+  margin-bottom: 30px;
+  span {
+    margin-left: 5px;
+  }
+  .flexcontent-needs-form {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: stretch;
+  }
+}
+
 .worker_index_card {
   height: 400px;
   margin-top: 30px;
@@ -20,16 +38,19 @@
   .fa-address-card {
     background-color: $green-worker;
     color: white;
-    font-size: 2.5em;
+    font-size: 2em;
     padding: 10px;
-    padding-left: 50px;
-    padding-right: 50px;
     border: none;
     border-radius: 30px;
+    border: $green-worker solid 2px;
     &:hover {
       border: $green-worker solid 2px;
       background-color: white;
       color: $green-worker;
     }
   }
+}
+
+#worker-modal-dialog {
+  width: 1033px;
 }
