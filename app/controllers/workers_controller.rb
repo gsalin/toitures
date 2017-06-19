@@ -1,15 +1,11 @@
 class WorkersController < ApplicationController
 
-  skip_before_action :authenticate_worker!, only: [:index, :show]
-  skip_before_action :authenticate_user!
+  skip_before_action :authenticate_user!, only: [:edit, :update, :index]
+  before_action :authenticate_any, only: [:index]
   before_action :set_worker, only: [:edit, :update]
 
   def index
     @workers = Worker.all
-  end
-
-  def show
-
   end
 
   def edit
@@ -20,7 +16,7 @@ class WorkersController < ApplicationController
     @worker = Worker.find(params[:id])
 
     if @worker.update(worker_params)
-      redirect_to worker_path(@worker)
+      redirect_to workers_path
     else
       render :edit
     end
@@ -34,6 +30,14 @@ class WorkersController < ApplicationController
 
   def worker_params
     params.require(:worker).permit(:email, :first_name, :last_name, :phone_number, :address, :cv, :photo)
+  end
+
+  def authenticate_any
+    if current_worker.present?
+      authenticate_worker!
+    elsif current_user.present?
+      authenticate_user!
+    end
   end
 
 end

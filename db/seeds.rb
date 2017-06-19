@@ -202,4 +202,17 @@ url = "http://static.pexels.com/photos/91227/pexels-photo-91227.jpeg"
   worker.photo_url = url
   worker.cv_url = url
 end
+
+worker = Worker.new(
+  email: "azerty@gmail.com",
+  address: "Paris, France",
+  first_name: "Guillaume",
+  last_name: "Salin",
+  phone_number: "0663983171",
+  looking_for_job: true,
+  password: "azerty"
+)
+worker.save!
+worker.photo_url = url
+worker.cv_url = url
 puts 'Finished!'

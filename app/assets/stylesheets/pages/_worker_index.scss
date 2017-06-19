@@ -20,10 +20,8 @@
   .fa-address-card {
     background-color: $green-worker;
     color: white;
-    font-size: 2.5em;
+    font-size: 2em;
     padding: 10px;
-    padding-left: 50px;
-    padding-right: 50px;
     border: none;
     border-radius: 30px;
     &:hover {
@@ -32,4 +30,8 @@
       color: $green-worker;
     }
   }
+}
+
+#worker-modal-dialog {
+  width: 1033px;
 }
