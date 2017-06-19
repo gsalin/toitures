@@ -1,10 +1,14 @@
 class WorkersController < ApplicationController
 
-  skip_before_action :authenticate_user!, only: [:edit, :update, :index]
-  before_action :authenticate_any, only: [:index]
+  skip_before_action :authenticate_user!, only: [:index]
+  skip_before_action :authenticate_worker!, only: [:index]
+  # before_action :authenticate_any!, only: [:index]
   before_action :set_worker, only: [:edit, :update]
 
   def index
+    @radius_workers = []
+    @need = Need.new
+
     @workers = Worker.all
   end
 
@@ -32,7 +36,7 @@ class WorkersController < ApplicationController
     params.require(:worker).permit(:email, :first_name, :last_name, :phone_number, :address, :cv, :photo)
   end
 
-  def authenticate_any
+  def authenticate_any!
     if current_worker.present?
       authenticate_worker!
     elsif current_user.present?
