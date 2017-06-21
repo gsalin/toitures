@@ -28,7 +28,16 @@
         <header>
           <h1 itemprop="headline" class="text-center">Les guides</h1>
         </header>
-        <p class="italic">Cette collection de trois guides dédiés à la toiture, à la couverture et à la charpente a été conçus avec le soin de donner les bonnes informations sans aller trop dans le détail. L'idée : partir avec les bonnes bases. </p>
+        <p class="italic">Ces trois guides ont été conçus dans l'optique de vous donner les principales informations et les enjeux relatifs à l'achat, l'entretien et la rénovation de votre toiture :</p>
+
+        <ul>
+          <li>Le "guide de la toiture" soulève les grands enjeux de la toiture,</li>
+          <li>Le "guide de la couverture" présente les différents matériaux disponibles et les options possibles,</li>
+          <li>Le "guide de la charpente" vous aidera à choisir votre charpente en fonction de votre projet.</li>
+        </ul>
+
+
+        <br>
 
         <div class="col-xs-12 col-md-12">
           <div class="guide-card">
@@ -61,24 +70,13 @@
             <%= link_to la_charpente_guide_index_path do %>
               <h6 class="text-center">Le guide de la charpente</h6>
               <div class="guide-content">
-                <%= image_tag "construction_toit.jpg", class: "img-card" %>
+                <%= image_tag "charpente_tradi.jpg", class: "img-card" %>
                 <p>La charpente est l'ossature du toit, son choix dépend de l'usage du futur toit (terrasse, habitabilité des combles) et du style de couverture désiré</p>
                 <%= link_to "Accéder au guide", la_charpente_guide_index_path, class: "yellow-link"%>
               </div>
             <% end %>
           </div>
         </div>
-
-        <div class="col-xs-12 col-md-12">
-          <p>Vous pouvez également chercher des informations en accédant :</p>
-
-          <ul>
-            <li><%= link_to "au magazine", root_path  %> en recherchant par rubriques.</li>
-            <li><%= link_to "par mots-clés", root_path  %> dans notre barre de recherche.</li>
-          </ul>
-        </div>
-
-
       </div>
     </div>
     <%= render 'shared/guide_left_navigation' %>
