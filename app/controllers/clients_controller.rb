@@ -22,7 +22,7 @@ class ClientsController < ApplicationController
     @radius_users = []
     User.all.each do |user|
       beta = @client.distance_to(user.address).to_i
-      if beta < user.radius
+      if beta <= user.radius
         @radius_users << user
       end
     end

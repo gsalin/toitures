@@ -1,0 +1,17 @@
+.container-edit-worker {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  .flexbox-form-edit-worker {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: baseline;
+    align-content: stretch;
+    span {
+      margin-left: 5px;
+    }
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
