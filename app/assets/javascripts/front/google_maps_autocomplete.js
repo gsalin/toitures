@@ -1,10 +1,10 @@
 $(document).ready(function() {
-  var office_address = $('#user_address').get(0);
+  var user_address = $('#user_address').get(0);
 
-  if (office_address) {
-    var autocomplete = new google.maps.places.Autocomplete(office_address, { types: ['geocode'] });
+  if (user_address) {
+    var autocomplete = new google.maps.places.Autocomplete(user_address, { types: ['geocode'] });
     google.maps.event.addListener(autocomplete, 'place_changed', onPlaceChanged);
-    google.maps.event.addDomListener(office_address, 'keydown', function(e) {
+    google.maps.event.addDomListener(user_address, 'keydown', function(e) {
       if (e.keyCode == 13) {
         e.preventDefault(); // Do not submit the form on Enter.
       }
@@ -16,7 +16,19 @@ $(document).ready(function() {
   if (need_address) {
     var autocomplete = new google.maps.places.Autocomplete(need_address, { types: ['geocode'] });
     google.maps.event.addListener(autocomplete, 'place_changed', onPlaceChanged);
-    google.maps.event.addDomListener(office_address, 'keydown', function(e) {
+    google.maps.event.addDomListener(need_address, 'keydown', function(e) {
+      if (e.keyCode == 13) {
+        e.preventDefault(); // Do not submit the form on Enter.
+      }
+    });
+  }
+
+  var worker_address = $('#worker_address').get(0);
+
+  if (worker_address) {
+    var autocomplete = new google.maps.places.Autocomplete(worker_address, { types: ['geocode'] });
+    google.maps.event.addListener(autocomplete, 'place_changed', onPlaceChanged);
+    google.maps.event.addDomListener(worker_address, 'keydown', function(e) {
       if (e.keyCode == 13) {
         e.preventDefault(); // Do not submit the form on Enter.
       }
@@ -46,7 +58,6 @@ $(document).ready(function() {
       }
     });
   }
-
 });
 
 function onPlaceChanged() {
