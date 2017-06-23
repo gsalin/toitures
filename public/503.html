@@ -215,23 +215,24 @@
   <body class="plain error-page-wrapper background-color background-image">
     <div class="content-container">
 	<div class="head-line secondary-text-color">
-		404
+		503
 	</div>
 	<div class="subheader primary-text-color">
-		Oups, la page demandee <br>
-		n'existe pas.
+		Le site semble subir <br>
+		un probleme de serveur.
 	</div>
-	<hr>
-	<div class="clearfix"></div>
-	<div class="context primary-text-color">
-		<!-- doesn't use context_content because it's ALWAYS the same thing -->
+    <hr>
+    <div class="clearfix"></div>
+    <div class="context primary-text-color">
+
     <p>
-      Vous pouvez revenir au site lestoitures.fr<br />
-      Si vous pensez que quelque chose ne va pas, contactez-nous !
+      Revenez a la page precedente et reessayez.
+      Si vous pensez que quelque chose ne marche pas, contactez-nous.
     </p>
-	</div>
+
+
+    </div>
 	<div class="buttons-container">
-		<a class="border-button" href="http://www.lestoitures." target="_blank">site lestoitures.fr</a>
 		<a class="border-button" href="mailto:contact@lestoitures." target="_blank">Nous contacter</a>
 	</div>
 </div>
@@ -340,7 +341,7 @@
        });
 
      };
-     var ep = new ErrorPage('body', "404", "plain");
+     var ep = new ErrorPage('body', "503", "plain");
      ep.initialize();
 
      // hack to make sure content stays centered >_<
