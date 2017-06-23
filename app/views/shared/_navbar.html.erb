@@ -65,8 +65,10 @@
               <%= link_to edit_user_registration_path do %>
                 <i class="fa fa-user"></i> <%= t(".profile", default: "Mon profil") %>
               <% end %>
+            </li>
+            <li>
               <%= link_to workers_path do %>
-                <i class="fa fa-users"></i> <%= t(".profile", default: "Recruter") %>
+                <i class="fa fa-users"></i> <%= t(".profile", default: "Index des candidats") %>
               <% end %>
             </li>
           </ul>
@@ -85,8 +87,13 @@
               <% end %>
             </li>
             <li>
-              <%= link_to edit_worker_registration_path do %>
+              <%= link_to edit_worker_path(current_worker) do %>
                 <i class="fa fa-user"></i> <%= t(".profile", default: "Mon profil") %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to workers_path do %>
+                <i class="fa fa-users"></i> <%= t(".profile", default: "Index des candidats") %>
               <% end %>
             </li>
           </ul>
