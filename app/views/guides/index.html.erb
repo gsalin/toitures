@@ -11,13 +11,31 @@
           <li class="active">Les guides</li>
         </ol>
 
-         <div class="share-links">
-            <a href="#" class="share-link bg-facebook">
+
+
+
+<div id="shareBtn" class="btn btn-success clearfix">Share</div>
+
+<script>
+document.getElementById('shareBtn').onclick = function() {
+  FB.ui({
+    method: 'share',
+    display: 'popup',
+    href: 'https://www.lestoitures.fr',
+  }, function(response){});
+}
+</script>
+
+          <div class="share-links">
+
+            <a href="https://www.lestoitures.fr/guides" id="shareBtn" class="share-link bg-facebook">
               <i class="fa fa-facebook"></i>
             </a>
-            <a href="#" class="share-link bg-twitter">
+
+            <a href="https://www.lestoitures.fr/guides" class="share-link bg-twitter">
               <i class="fa fa-twitter"></i>
             </a>
+
             <a href="#" class="share-link bg-email">
               <i class="fa fa-google"></i>
             </a>
