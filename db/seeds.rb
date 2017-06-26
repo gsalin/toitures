@@ -11,15 +11,15 @@ require 'faker'
 
 User.destroy_all
 Client.destroy_all
-Category.destroy_all
+# Category.destroy_all
 Worker.destroy_all
 
-puts 'Creating categories...'
-energie = Category.create!(name: 'Energie')
-environnement = Category.create!(name: 'Environnement')
-style = Category.create!(name: 'Style')
-technique = Category.create!(name: 'Technique')
-patrimoine = Category.create!(name: 'Patrimoine')
+# puts 'Creating categories...'
+# energie = Category.create!(name: 'Energie')
+# environnement = Category.create!(name: 'Environnement')
+# style = Category.create!(name: 'Style')
+# technique = Category.create!(name: 'Technique')
+# patrimoine = Category.create!(name: 'Patrimoine')
 
 puts 'Creating Administrator user'
 
