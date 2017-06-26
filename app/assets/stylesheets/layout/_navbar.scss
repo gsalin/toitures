@@ -1,4 +1,4 @@
-/* Main class */
+  /* Main class */
 .navbar-wagon {
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
   background: transparent;
@@ -40,8 +40,8 @@
   }
 
   img {
-    width: 50px;
-    margin-left: -20px;
+    width: 100px;
+    border-radius: 2px;
   }
 }
 
@@ -172,7 +172,6 @@
   margin-top: 24px;
   border: none;
   border-radius: 0px;
-  /* background-color: initial; */
   width: 100vh;
 }
 
@@ -194,10 +193,6 @@
   background: white;
   border: $green-worker solid 2px;
 }
-
-
-
-
 
 
 
