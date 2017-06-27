@@ -15,4 +15,9 @@ module MetaTagsHelper
     # avec une image dans vos assets ou une url absolue
     meta_image.starts_with?("http") ? meta_image : image_url(meta_image)
   end
+
+  def facebook_id
+    content_for?(:facebook_id) ? content_for(:facebook_id) : DEFAULT_META["facebook_id"]
+  end
+
 end
