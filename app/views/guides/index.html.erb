@@ -1,3 +1,8 @@
+
+<% content_for :meta_title, "Les guides du site #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, "3 guides sur la toiture en général, la charpente et la couverture pour réussir ses projets immobiliers de la toiture" %>
+<% content_for :meta_image, "lancieux_facebook.jpg" %>
+
 <%= render 'shared/guides_top_banner' %>
 <%= render 'shared/fix_cta' %>
 
@@ -14,17 +19,24 @@
       <div
   class="fb-like"
   data-share="true"
+  class="share-link bg-facebook"
   data-width="450"
   data-show-faces="true">
+  <i class="fa fa-facebook"></i>
 </div>
 
 
 
           <div class="share-links">
 
-            <a href="https://www.lestoitures.fr/guides" id="shareBtn" class="share-link bg-facebook">
+            <a href="https://www.lestoitures.fr/guides"  data-share="true" class="share-link bg-facebook" class="fb-like"
+  data-share="true"
+  data-width="450"
+  data-show-faces="true">
               <i class="fa fa-facebook"></i>
             </a>
+
+
 
             <a href="https://www.lestoitures.fr/guides" class="share-link bg-twitter">
               <i class="fa fa-twitter"></i>
