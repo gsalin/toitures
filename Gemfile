@@ -43,7 +43,8 @@ gem "gmaps4rails"
 # Kramdown pour le markdown (Edouard)
 gem 'kramdown'
 
-
+# friendly-id pour des url "human friendly"
+gem 'friendly_id', '~> 5.1.0'
 
 
 source 'https://rails-assets.org' do

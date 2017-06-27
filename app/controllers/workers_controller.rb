@@ -13,12 +13,9 @@ class WorkersController < ApplicationController
   end
 
   def edit
-    @worker = Worker.find(params[:id])
   end
 
   def update
-    @worker = Worker.find(params[:id])
-
     if @worker.update(worker_params)
       redirect_to workers_path
     else
@@ -29,7 +26,7 @@ class WorkersController < ApplicationController
   private
 
   def set_worker
-    @worker = Worker.find(params[:id])
+    @worker = Worker.friendly.find(params[:id])
   end
 
   def worker_params
