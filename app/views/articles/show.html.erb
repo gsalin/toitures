@@ -1,7 +1,7 @@
 <%= render 'shared/magazine_top_banner' %>
 
 
-<% content_for :meta_title, "Lisez l'article #{@article.title} sur #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_title, "#{@article.title} sur #{DEFAULT_META["meta_product_name"]}" %>
 <% content_for :meta_description, @article.card_summary %>
 <% content_for :meta_image, cloudinary_url(@article.photos) %>
 

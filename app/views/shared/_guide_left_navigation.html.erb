@@ -66,27 +66,8 @@
 
 
       <div class="left-navigation-call-to-action">
-        <%= link_to "Services", root_path, class: "left-navigation-title" %>
         <div class= "left-navigation-category-link">
-          <%= link_to "Annuaire", root_path, class: "yellow-link" %>
-        </div>
-          <p>Trouvez les principaux acteurs près de chez vous </p>
-
-        <%= simple_form_for(@client) do |f| %>
-          <%= f.input :address, placeholder: "1, rue des champs 69900", label: "Entrez votre adresse"  %>
-          <div class= "left-navigation-button-call-to-action">
-            <%= f.button :submit, "Annuaire", class: "main-cta" %>
-          </div>
-         <% end %>
-
-        <br>
-
-        <div class= "left-navigation-category-link">
-          <%= link_to "Simulateur", root_path, class: "yellow-link" %>
-        </div>
-        <p>Simulateur d'aide à la décision : définissez vos besoins et choisissez parmi les solutions les plus adéquates</p>
-        <div class= "left-navigation-button-call-to-action">
-          <%= link_to "Simulateur", root_path, class: "main-cta"%>
+          <%= link_to "Annuaire", users_path, class: "yellow-link" %>
         </div>
       </div>
 
