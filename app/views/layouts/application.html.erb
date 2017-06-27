@@ -12,6 +12,8 @@
     <meta property="og:image" content="<%= meta_image %>" />
     <meta property="og:description" content="<%= meta_description %>" />
     <meta property="og:site_name" content="<%= meta_title %>" />
+    <meta property="fb:app_id" content="<%= facebook_id %>" />
+
 
     <!-- Twitter Card data -->
     <meta name="twitter:card" content="summary_large_image">
@@ -57,24 +59,24 @@
 
     <!-- Facebook share SDK -->
     <script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId            : '1610742872283439',
-      autoLogAppEvents : true,
-      xfbml            : true,
-      version          : 'v2.9'
-    });
-    FB.AppEvents.longPageView();
-  };
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '1610742872283439',
+          xfbml      : true,
+          version    : 'v2.9'
+        });
+        FB.AppEvents.logPageView();
+      };
 
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <!-- End of Facebook share SDK -->
 
 
     <%= javascript_include_tag "https://maps.google.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>

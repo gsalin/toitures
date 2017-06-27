@@ -1,3 +1,11 @@
+
+
+
+<% content_for :meta_title, "Les guides du site #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, "3 guides sur la toiture en général, la charpente et la couverture pour réussir ses projets immobiliers de la toiture" %>
+<% content_for :meta_image, "lancieux_1200_630.jpg" %>
+
+
 <%= render 'shared/guides_top_banner' %>
 <%= render 'shared/fix_cta' %>
 
@@ -11,38 +19,17 @@
           <li class="active">Les guides</li>
         </ol>
 
-
-
-
-<div id="shareBtn" class="btn btn-success clearfix">Share</div>
-
-<script>
-document.getElementById('shareBtn').onclick = function() {
-  FB.ui({
-    method: 'share',
-    display: 'popup',
-    href: 'https://www.lestoitures.fr',
-  }, function(response){});
-}
-</script>
-
-          <div class="share-links">
-
-            <a href="https://www.lestoitures.fr/guides" id="shareBtn" class="share-link bg-facebook">
-              <i class="fa fa-facebook"></i>
-            </a>
-
-            <a href="https://www.lestoitures.fr/guides" class="share-link bg-twitter">
-              <i class="fa fa-twitter"></i>
-            </a>
-
-            <a href="#" class="share-link bg-email">
-              <i class="fa fa-google"></i>
-            </a>
-            <a href="#" class="share-link bg-text">
-              <i class="fa fa-envelope-o"></i>
-            </a>
+        <div class="share-links">
+          <div
+            class="fb-like"
+            data-share="true"
+            class="share-link bg-facebook"
+            data-width="450"
+            data-show-faces="true">
+          </div>
         </div>
+
+
         <header>
           <h1 itemprop="headline" class="text-center">Les guides</h1>
         </header>
@@ -100,3 +87,4 @@ document.getElementById('shareBtn').onclick = function() {
     <%= render 'shared/guide_left_navigation' %>
   </div>
 </div>
+
