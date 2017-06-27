@@ -3,7 +3,7 @@
 
 <% content_for :meta_title, "Lisez l'article #{@article.title} sur #{DEFAULT_META["meta_product_name"]}" %>
 <% content_for :meta_description, @article.card_summary %>
-<% content_for :meta_image, cloudinary_url(@article.photos) %>
+<% content_for :meta_image, cloudinary_url(@article.photo_presentation) %>
 
 <div class="container">
   <div class="row">
@@ -39,13 +39,17 @@
 
 
         <figure class="figure-article">
-          <% @article.photos.each do |photo| %>
-            <%= cl_image_tag photo.path %>
-          <% end %>
+            <%= cl_image_tag @article.photo_presentation.path, height: 567, width: 850, crop: :fill %>
           <figcaption></figcaption>
         </figure>
 
         <%= kramdown(@article.body) %>
+
+        <figure class="figure-article">
+            <%= cl_image_tag @article.second_photo.path, height: 567, width: 850, crop: :fill  %>
+          <figcaption></figcaption>
+        </figure>
+
 
       </div>
     </div>

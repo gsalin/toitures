@@ -87,12 +87,35 @@
   transition: color 0.5s ease;
 }
 
-#connect-btn-navbar {
-  border: none;
+.connect-btn-navbar {
+  border: black 2px solid;
   margin-left: 15px;
   background: transparent;
+  padding: 10px;
+  border-radius: 25px;
 }
 
+#pro-btn-navbar {
+  color: $yellow;
+  border-color: $yellow;
+  &:hover {
+    color:white;
+    border-color: white;
+    background-color: $yellow;
+    transition: none;
+  }
+}
+
+#worker-btn-navbar{
+  color: $green-worker;
+  border-color: $green-worker;
+  &:hover {
+    color:white;
+    border-color: white;
+    background-color: $green-worker;
+    transition: none;
+  }
+}
 .small-link-home {
   color: $yellow;
   font-size: 13px;

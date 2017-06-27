@@ -1,9 +1,17 @@
 <div class="navbar-wagon">
   <!-- Logo -->
+  <div class="navbar-wagon-brand">
   <%= link_to root_path, class: "navbar-wagon-brand navbar-wagon-item navbar-wagon-link" do %>
-    <%= image_tag "logo.png" %>
+    <%= image_tag "logonavbar2.png" %>
     <p>L'annuaire des professionnels de la toiture</p>
   <% end %>
+
+<!--     <div class="hidden-xs hidden-sm">
+      <div class="navbar-wagon-item">
+        <#%= link_to 'Retour', :back, class: "navbar-wagon-item navbar-wagon-link" %>
+      </div>
+    </div> -->
+  </div>
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
@@ -21,23 +29,18 @@
 
 
   <!-- lien Accueil -->
-  <div class="navbar-wagon-item">
-    <%= link_to 'Retour', :back, class: "navbar-wagon-item navbar-wagon-link" %>
-  </div>
+
 
 <!-- lien guide -->
   <div class="navbar-wagon-item">
     <%= link_to "Guides", guides_path, class: "navbar-wagon-item navbar-wagon-link" %>
   </div>
 
-
 <!-- lien magazine -->
 
   <div class="navbar-wagon-item">
     <%= link_to "Magazine", articles_path, class: "navbar-wagon-item navbar-wagon-link" %>
   </div>
-
-
 
     <!-- Different navigation if login or not -->
     <% if user_signed_in? %>
@@ -105,7 +108,7 @@
 
     <% else %>
       <!-- Login text link -->
-        <button type="button" class="navbar-wagon-item navbar-wagon-link" id="connect-btn-navbar" data-toggle="modal" data-target="#signin_modal ">Professionnel</button>
+        <button type="button" class="navbar-wagon-item navbar-wagon-link connect-btn-navbar" id="pro-btn-navbar" data-toggle="modal" data-target="#signin_modal ">Professionnel</button>
         <!-- Modal telephone -->
         <div class="modal fade" id="signin_modal" role="dialog">
           <div class="modal-dialog">
@@ -122,7 +125,7 @@
           </div>
         </div>
 
-        <button type="button" class="navbar-wagon-item navbar-wagon-link" id="connect-btn-navbar" data-toggle="modal" data-target="#signin_modal_worker ">Candidat</button>
+        <button type="button" class="navbar-wagon-item navbar-wagon-link connect-btn-navbar" id="worker-btn-navbar" data-toggle="modal" data-target="#signin_modal_worker ">Candidat</button>
         <!-- Modal telephone -->
         <div class="modal fade" id="signin_modal_worker" role="dialog">
           <div class="modal-dialog">

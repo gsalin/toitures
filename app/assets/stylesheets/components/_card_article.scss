@@ -44,6 +44,15 @@
       text-align: justify;
     }
   }
-
 }
 
+.mag-card {
+  max-width: 500px;
+  max-height: 300px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: baseline;
+  align-content: stretch;
+}
