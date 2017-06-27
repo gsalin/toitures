@@ -3,7 +3,7 @@
 
 <% content_for :meta_title, "#{@article.title} sur #{DEFAULT_META["meta_product_name"]}" %>
 <% content_for :meta_description, @article.card_summary %>
-<% content_for :meta_image, cloudinary_url(@article.photos.path) %>
+<% content_for :meta_image, cloudinary_url(@article.photos) %>
 
 <div class="container">
   <div class="row">
@@ -17,29 +17,28 @@
           <li class="active"><%= @article.title %></li>
         </ol>
 
-
-        <div
-          class="fb-like"
-          data-share="true"
-          class="share-link bg-facebook"
-          data-width="450"
-          data-show-faces="true">
+        <div class="share-links">
+          <div
+            class="fb-like"
+            data-layout="standard"
+            data-share="true"
+            data-action="like"
+            class="share-link bg-facebook"
+            data-width="450"
+            data-show-faces="true">
+          </div>
         </div>
 
-         <div class="share-links">
-            <a href="#" class="share-link bg-facebook">
-              <i class="fa fa-facebook"></i>
-            </a>
-            <a href="#" class="share-link bg-twitter">
-              <i class="fa fa-twitter"></i>
-            </a>
-            <a href="#" class="share-link bg-email">
-              <i class="fa fa-google"></i>
-            </a>
-            <a href="#" class="share-link bg-text">
-              <i class="fa fa-envelope-o"></i>
-            </a>
-        </div>
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v2.9&appId=280300842435044";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+        </script>
+
         <header>
           <h1 itemprop="headline" class="text-center"><%=  @article.title %></h1>
         </header>
