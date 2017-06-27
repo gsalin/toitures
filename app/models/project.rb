@@ -8,4 +8,7 @@ class Project < ApplicationRecord
   validates :address, presence: true
   validates :project_photos, presence: true
   validates :date, presence: true
+
+  include FriendlyId
+  friendly_id :title, :use => :slugged
 end

@@ -10,7 +10,7 @@
         <% end %>
         <span>Publié le <%= (I18n.localize article.created_at.to_date, formats: :classical).capitalize %> par <%= article.user.first_name %>, <%= article.user.company %> </span>
         <p><%= article.card_summary %></p>
-        <%= link_to "Lire", article_path(article), class: "yellow-link"%>
+        <%= link_to "Lire", article_path(article.title), class: "yellow-link"%>
       </div>
     <% end %>
   </div>

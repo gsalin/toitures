@@ -3,6 +3,10 @@ class User < ApplicationRecord
   has_attachment  :photo_company_logo
   has_many :projects, dependent: :destroy
   has_many :articles
+
+  include FriendlyId
+  friendly_id :company, :use => :slugged
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
