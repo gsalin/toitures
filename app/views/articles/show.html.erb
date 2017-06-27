@@ -4,6 +4,7 @@
 <% content_for :meta_title, "#{@article.title} sur #{DEFAULT_META["meta_product_name"]}" %>
 <% content_for :meta_description, @article.card_summary %>
 <% content_for :meta_image, cloudinary_url(@article.photos) %>
+<% content_for :facebook_id, 1610742872283439 %>
 
 <div class="container">
   <div class="row">
@@ -16,6 +17,15 @@
           <li><%= link_to @article.category.name, root_path %></li>
           <li class="active"><%= @article.title %></li>
         </ol>
+
+
+        <div
+          class="fb-like"
+          data-share="true"
+          class="share-link bg-facebook"
+          data-width="450"
+          data-show-faces="true">
+        </div>
 
          <div class="share-links">
             <a href="#" class="share-link bg-facebook">
