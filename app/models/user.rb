@@ -1,6 +1,9 @@
 class User < ApplicationRecord
+
+
   has_attachment :photo_presentation
-  has_attachment  :photo_company_logo
+  has_attachment :photo_company_logo
+
   has_many :projects, dependent: :destroy
   has_many :articles, dependent: :destroy
   # Include default devise modules. Others available are:
@@ -10,6 +13,7 @@ class User < ApplicationRecord
   #geocoder for google maps
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
+
 
   validates :email, uniqueness: true, presence: true
   validates :company, presence: true, uniqueness: true

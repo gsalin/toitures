@@ -1,9 +1,9 @@
-<%= render 'shared/fix_cta' %>
-
 <% content_for :meta_title, "#{@user.company} est sur #{DEFAULT_META["meta_product_name"]}" %>
 <% content_for :meta_description, @user.description %>
-<% content_for :meta_image, cloudinary_url(@user.photo.path) %>
+<% content_for :meta_image, cloudinary_url(@user.photo_presentation.path) %>
 
+
+<%= render 'shared/fix_cta' %>
 
 <!-- wrapper photo form -->
 <div class="wrapper wrapper_users_show">
