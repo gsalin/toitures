@@ -53,13 +53,12 @@
       <!-- Profile picture and dropdown -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
+        <% if current_user.photo_company_logo != nil %>
+          <%= cl_image_tag current_user.photo_company_logo.path, width: 50, height: 50, crop: :fill, class: "worker-avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown", style: "border-radius:50%;" %>
+        <% else %>
           <%= image_tag "http://placehold.it/30x30", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <% end %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-            <li>
-              <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Me déconnecter") %>
-              <% end %>
-            </li>
             <li>
               <%= link_to edit_user_registration_path do %>
                 <i class="fa fa-user"></i> <%= t(".profile", default: "Mon profil") %>
@@ -70,6 +69,11 @@
                 <i class="fa fa-users"></i> <%= t(".profile", default: "Index des candidats") %>
               <% end %>
             </li>
+            <li>
+              <%= link_to destroy_user_session_path, method: :delete do %>
+                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Me déconnecter") %>
+              <% end %>
+            </li>
           </ul>
         </div>
       </div>
@@ -78,13 +82,8 @@
 
       <div class="navbar-wagon-item">
         <div class="dropdown">
-          <%= cl_image_tag current_worker.photo.path, width: 60, height: 60, crop: :thumb, gravity: :face, class: "worker-avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown", style: "border-radius:50%;" %>
+          <%= cl_image_tag current_worker.photo.path, width: 50, height: 50, crop: :thumb, gravity: :face, class: "worker-avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown", style: "border-radius:50%;" %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-            <li>
-              <%= link_to destroy_worker_session_path, method: :delete do %>
-                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Me déconnecter") %>
-              <% end %>
-            </li>
             <li>
               <%= link_to edit_worker_path(current_worker) do %>
                 <i class="fa fa-user"></i> <%= t(".profile", default: "Mon profil") %>
@@ -93,6 +92,11 @@
             <li>
               <%= link_to workers_path do %>
                 <i class="fa fa-users"></i> <%= t(".profile", default: "Index des candidats") %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to destroy_worker_session_path, method: :delete do %>
+                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Me déconnecter") %>
               <% end %>
             </li>
           </ul>
