@@ -6,7 +6,8 @@
         <%= f.input :title, label: "Titre de l'article", input_html: { minlength: 20, maxlength: 80 }, placeholder: "Choisissez votre titre" %>
         <%= f.input :card_summary, label: "Présentation courte", hint: 'Entre 20 et 40 caractères', placeholder: "Donnez envie de lire l'article" %>
         <%= f.input :summary, label: "Chapeau du texte", placeholder: "Votre introduction entre 3 et 5 lignes" %>
-        <%= f.input :photos, as: :attachinary %>
+        <%= f.input :photo_presentation, as: :attachinary %>
+        <%= f.input :second_photo, as: :attachinary %>
         <%= f.input :body, :input_html => {:rows => 40}, placeholder: "Le corps de votre article", as: :text, hint: "entre 2000 et 6000 caractères :" %>
         <div class="text-right counter_style">
           <span>charactères :</span>

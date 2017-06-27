@@ -18,12 +18,11 @@ class User < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
 
-
   validates :email, uniqueness: true, presence: true
   validates :company, presence: true, uniqueness: true
   validates :first_name, presence: true
   validates :last_name, presence: true
-  validates :office_phone, presence: true, uniqueness: true
+  validates :office_phone, uniqueness: true
   validates :mobile_phone, presence: true, uniqueness: true
   validates :address, presence: true
   validates :description, presence: true, length: { minimum: 300, maximum: 900 }
