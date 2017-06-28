@@ -9,7 +9,7 @@ class Article < ApplicationRecord
   validates :title, presence: true,  length: { minimum: 20, maximum:60 }
   validates :body, presence: true, length: { minimum: 2000, maximum: 6000 }
   validates :card_summary, presence: true, length: { minimum: 150, maximum: 200}
-  validates :summary, presence: true, length: { minimum: 150, maximum: 200}
+  validates :summary, presence: true, length: { minimum: 150, maximum: 500}
   validates :category_id, presence: true
 
   include FriendlyId
