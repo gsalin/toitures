@@ -101,34 +101,7 @@
 }
 
 
-.card-home-guide{
-  height: 200px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-  background-size: cover !important;
-  color: white;
-  border-radius: 3px;
-  margin-top:20px;
-  position: relative;
 
-  h2 {
-    font-size: 25px;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top:60px;
-    bottom:0;
-    margin: auto;
-  }
-  p {
-    font-size: 14px;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 120px;
-    bottom: 0;
-    margin: auto;
-  }
-}
 .card-link-home-guide {
   position: absolute;
   top: 0;
@@ -138,10 +111,10 @@
   z-index:2;
   background: black;
   opacity: 0;
-}
-.card-link-home-guide:hover{
-  opacity: 0.1;
-  transition: color 0.5s ease;
+    &:hover {
+    opacity: 0.1;
+    transition: color 0.5s ease;
+  }
 }
 
 #border-presentation-site-home {
@@ -195,18 +168,66 @@
       max-width: 270px;
       font-weight:lighter;
       span {
-        color: $yellow;
-        font-weight:bolder;
+        font-weight: bolder;
+        color: $black;
       }
     }
   }
 }
 
-.annuaire-card-home {
-  margin-top:40px;
-  margin-bottom:40px;
-  padding: 20px;
+.guide-card-home {
+  padding-bottom: 40px;
   background-color: white;
+  border-radius: 2px;
+  h1 {
+    font-size: 29px;
+    color:$yellow;
+    text-align: center;
+  }
+  .row-guide-card-home {
+    h2 {
+      font-size: 22px;
+    }
+    ul {
+      list-style-type: none;
+    }
+    li {
+      padding: 2px;
+    }
+  }
+  .card-home-guide{
+    height: 200px;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+    background-size: cover !important;
+    color: white;
+    border-radius: 3px;
+    margin-top:20px;
+    position: relative;
+    h2 {
+      font-size: 25px;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top:60px;
+      bottom:0;
+      margin: auto;
+    }
+    p {
+      font-size: 14px;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 120px;
+      bottom: 0;
+      margin: auto;
+      padding: 10px;
+    }
+  }
+}
+
+.annuaire-card-home {
+  padding-top: 20px;
+  padding-bottom: 40px;
   border-radius: 2px;
   h1 {
     font-size: 29px;
@@ -224,18 +245,6 @@
     li {
       padding: 2px;
     }
-  }
-  .prez_show_user_annuaire {
-    background-size: cover;
-    height:255px;
-    background-image: url('prez_show_user.png');
-    border-radius: 2px;
-  }
-  .prez_show_user_magazine {
-    background-size: cover;
-    height:255px;
-    background-image: url('prez_show_user.png');
-    border-radius: 2px;
   }
 }
 
@@ -316,4 +325,17 @@
   0%   { opacity: 0; }
   30%  { opacity: 1; }
   100% { opacity: 1; }
+}
+
+.banner-guide {
+  background-color: white;
+}
+
+.banner-magazine {
+  background-color: white;
+}
+
+.card-presentation-container {
+  padding-bottom: 40px;
+  padding-top: 30px;
 }

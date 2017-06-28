@@ -5,7 +5,7 @@ skip_before_action :authenticate_worker!
 
   def home
     @client = Client.new
-    @articles = Article.last(4)
+    @articles = Article.last(2)
     @users = User.last(3)
   end
 
