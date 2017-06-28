@@ -21,7 +21,8 @@
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                   </div>
                   <div class="modal-body">
-                  <%= cl_image_tag worker.cv.path, width: 1000, height: 1000, :format => :png %>
+
+                 <embed <%= cl_image_tag worker.cv.path, width: 1000, height: 600 %> >
                   </div>
                 </div>
               </div>
