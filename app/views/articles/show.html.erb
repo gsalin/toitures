@@ -51,12 +51,12 @@
         </figure>
 
         <%= kramdown(@article.body) %>
-
+        <% if @article.second_photo != nil %>
         <figure class="figure-article">
             <%= cl_image_tag @article.second_photo.path, height: 567, width: 850, crop: :fill  %>
           <figcaption></figcaption>
         </figure>
-
+        <% end %>
 
       </div>
     </div>
