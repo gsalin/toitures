@@ -18,10 +18,9 @@
   -ms-flex-pack: center;
   justify-content: center;
   flex-direction: column;
-  // background-image: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 50%),
-  //             url('user_base_pic.png');
   margin-bottom: 20px;
 }
+
 
 .form_home {
   z-index:50;
@@ -40,7 +39,8 @@
   z-index: 2;
   color: white;
   text-align: center;
-  font-size: 2em;
+  font-size: 3em;
+  letter-spacing: 2px;
 }
 
 .home_container {
@@ -254,3 +254,66 @@
 }
 
 
+/* Banner home (slideshow) */
+#slideshow {
+  height: calc(100vh - 70px);
+  top: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  right: 0;
+
+  &, .slide {
+    position: absolute;
+    left: 0;
+    right: 0;
+    // width: 100%;
+  }
+
+  .slide {
+    background-position: center;
+    background-size: cover!important;
+    opacity: 0;
+    height: 100%;
+    top: 0;
+
+    &.previous {
+      z-index: 1;
+      opacity: 1;
+    }
+
+    &.current {
+      z-index: 2;
+      animation: fadein 5000ms linear both;
+    }
+  }
+
+  .slideshow-content {
+    z-index: 4;
+    // position: absolute;
+    color: white;
+
+    & h1 {
+      font-size: 50px;
+      font-weight: bold;
+    }
+
+    & p {
+      margin-bottom: 30px;
+      font-size: 20px;
+    }
+
+    & p.vanity-data {
+    font-size: 20px;
+    font-weight: bold;
+    }
+  }
+}
+
+@keyframes fadein {
+  0%   { opacity: 0; }
+  30%  { opacity: 1; }
+  100% { opacity: 1; }
+}
