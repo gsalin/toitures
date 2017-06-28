@@ -3,14 +3,11 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-md-9">
-      <div class='index_articles_page'>
-
+    <div class="col-xs-12 col-md-12">
         <ol class="breadcrumb">
           <li><a href="/">Accueil</a></li>
           <li class="active">Magazine</li>
         </ol>
-
          <div class="share-links">
             <a href="#" class="share-link bg-facebook">
               <i class="fa fa-facebook"></i>
@@ -25,13 +22,12 @@
               <i class="fa fa-envelope-o"></i>
             </a>
         </div>
-
-
+      </div>
+    <div class="col-xs-12 col-md-9">
+      <div class='index_articles_page'>
         <% @articles.each do |article| %>
          <%= render "shared/card_article", article: article %>
         <% end %>
-
-
       </div>
     </div>
     <%= render 'shared/article_left_navigation' %>
