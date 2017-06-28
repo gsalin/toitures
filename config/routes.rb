@@ -12,6 +12,9 @@
   resources :clients, only: [:new, :create, :show, :edit, :update]
   resources :articles, only: [:index, :new, :create, :show, :edit, :update]
 
+  #page robot (indexation google)
+  get '/robots.:format' => 'pages#robots'
+
   #pages classiques
   get 'qui-sommes-nous', to: 'pages#qui_sommes_nous'
   get 'contact', to: 'pages#contact'
