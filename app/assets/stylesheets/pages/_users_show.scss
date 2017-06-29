@@ -92,6 +92,7 @@
   padding: 30px;
   border-radius: 3px;
   min-width: 332px;
+  margin-top: 30px;
   #flex-pic-address {
     display: flex;
     flex-direction: row;
@@ -123,10 +124,26 @@
   height: 22%;
   width: 100%;
   background-color: $dark-grey;
+}
 
+.logoname {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  z-index: 2;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: stretch;
+  height: 22%;
+  width: 100%;
+  img {
+    margin-left: 50px;
+  }
   h3 {
-    margin-left: 90px;
-    margin-top: 35px;
+    margin-left: 40px;
     font-size: 2.2em;
     color: white;
     max-width: 600px;
@@ -135,8 +152,6 @@
 
 // cards description user
 .description-container {
-  width: 90%;
-  padding: 30px;
   .description-row {
     margin-bottom: 100px;
   }
@@ -144,18 +159,29 @@
     background-color: white;
     padding: 20px;
     border-radius: 3px;
+    margin-top: 30px;
   }
 }
 
 
 // cards projet
 .project-card{
-  padding-top: 50px;
-  padding-bottom: 50px;
-
+  min-height: 400px;
+  margin-bottom: 40px;
+  margin-top: 40px;
+  background-color: white;
+  padding: 20px;
   h3 {
     padding: 15px;
     padding-top: 5px;
+  }
+
+  #carousel-example-generic-1 {
+    max-width: 453px;
+  }
+
+  .carousel {
+    position: inherit;
   }
 
   #desc-projet {
