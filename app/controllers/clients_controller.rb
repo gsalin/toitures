@@ -1,4 +1,4 @@
-class ClientsController < ApplicationController
+ class ClientsController < ApplicationController
 
   skip_before_action :authenticate_user!, only: [:new, :create, :show, :edit, :update]
   skip_before_action :authenticate_worker!
@@ -60,8 +60,6 @@ class ClientsController < ApplicationController
       elsif @client.chateau == true && skills_user.chateau == true
         @available_users << skills_user
       elsif @client.immeuble == true && skills_user.immeuble == true
-        @available_users << skills_user
-      elsif @client.monument_historique == true && skills_user.monument_historique == true
         @available_users << skills_user
       end
     end
