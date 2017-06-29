@@ -27,6 +27,17 @@
         <span><strong>En savoir plus </strong></span><i class="fa fa-chevron-right" aria-hidden="true"></i>
       <% end %>
     </p>
+    <div class="labels">
+      <% if user.rge == true %>
+        <%= image_tag "rge.png" %>
+      <% end %>
+      <% if user.qualibat == true %>
+        <%= image_tag "qualibat.png" %>
+      <% end %>
+      <% if user.mh == true %>
+        <%= image_tag "mh.png" %>
+      <% end %>
+    </div>
   </div>
 
   <!-- 3eme col avec boutons et skills -->

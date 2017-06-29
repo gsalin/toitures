@@ -32,6 +32,8 @@
       font-weight: lighter;
       font-size: 90%;
       margin-top: 25px;
+      margin-top: 15px;
+      margin-bottom: 15px;
       span {
       font-size: inherit;
       color: $yellow;
@@ -147,3 +149,21 @@ span {
   text-decoration: none;
   color: $yellow;
 }
+
+.labels {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: stretch;
+  img {
+    width: 50px;
+    height: 50px;
+    border-radius: 3px !important;
+    margin-right: 0px !important;
+  }
+}
+
+
+
