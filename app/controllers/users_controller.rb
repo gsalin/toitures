@@ -42,15 +42,22 @@ class UsersController < ApplicationController
   def update
     @user = current_user
     @user.update(user_params)
-
-    redirect_to user_path(@user)
+    if @user.pro?
+      redirect_to user_path(@user)
+    else
+      redirect_to annuaire_des_candidats_users_path
+    end
   end
 
+  def annuaire_des_candidats
+    @need = Need.new
+    @users = User.where(status: 'worker')
+  end
 
   private
 
   def user_params
-    params.require(:user).permit(:company, :first_name, :last_name, :position, :mobile_phone, :office_phone, :email, :address, :description, :radius, :photo_company_logo, :photo_presentation, :construction, :renovation, :entretien, :charpente, :couverture, :ouverture, :terrasse, :plomberie, :maison, :chateau, :immeuble, :mh, :qualibat, :rge)
+    params.require(:user).permit(:company, :first_name, :last_name, :position, :mobile_phone, :office_phone, :email, :address, :description, :radius, :photo_company_logo, :photo_presentation, :construction, :renovation, :entretien, :charpente, :couverture, :ouverture, :terrasse, :plomberie, :maison, :chateau, :immeuble, :mh, :qualibat, :rge, :couvreur, :charpentier, :cv, :photo)
   end
 
   def set_user
