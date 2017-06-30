@@ -1,7 +1,6 @@
 class NeedsController < ApplicationController
 
   skip_before_action :authenticate_user!
-  skip_before_action :authenticate_worker!
 
   before_action :set_need, only: [:show, :edit, :update]
 

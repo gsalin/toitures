@@ -1,6 +1,5 @@
 class ProjectsController < ApplicationController
 
-  skip_before_action :authenticate_worker!
   before_action :set_project, only: [:edit, :update, :destroy]
 
   def index
