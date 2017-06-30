@@ -1,6 +1,6 @@
 class User < ApplicationRecord
 
-
+  enum status: [:pro, :worker]
   has_attachment :photo_presentation
   has_attachment :photo_company_logo
 
