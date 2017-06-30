@@ -8,8 +8,8 @@ class UsersController < ApplicationController
     @radius_users = []
     @client = Client.new
 
-    @users = User.all
-    @users = User.where.not(latitude: nil, longitude: nil)
+    pros = User.where(status:'pro')
+    @users = pros.where.not(latitude: nil, longitude: nil)
 
 
     @hash = Gmaps4rails.build_markers(@users) do |user, marker|
@@ -51,7 +51,7 @@ class UsersController < ApplicationController
 
   def annuaire_des_candidats
     @need = Need.new
-    @users = User.where(status: 'worker')
+    @users = User.where(status:'worker')
   end
 
   private
