@@ -22,23 +22,33 @@
         <div class="share-links">
           <div
             class="fb-like"
+            data-layout="standard"
             data-share="true"
+            data-action="like"
             class="share-link bg-facebook"
             data-width="450"
             data-show-faces="true">
           </div>
         </div>
 
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v2.9&appId=1610742872283439";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
 
         <header>
           <h1 itemprop="headline" class="text-center">Les guides</h1>
         </header>
-        <p class="italic">Ces trois guides ont été conçus dans l'optique de vous donner les principales informations et les enjeux relatifs à l'achat, l'entretien et la rénovation de votre toiture :</p>
+        <p class="italic">Cette collection de trois guides présente les principales informations à savoir (points essentiels, bonnes pratiques) avant de commencer vos travaux de toiture :</p>
 
         <ul>
-          <li>Le "guide de la toiture" soulève les grands enjeux de la toiture,</li>
-          <li>Le "guide de la couverture" présente les différents matériaux disponibles et les options possibles,</li>
-          <li>Le "guide de la charpente" vous aidera à choisir votre charpente en fonction de votre projet.</li>
+          <li>Parcourez "Le guide de la toiture" pour aborder votre projet avec de bonnes bases,</li>
+          <li>Découvrez les différents types de toits possibles (couverture en tuile, en ardoises, etc ) pour votre maison dans "Le guide de la couverture",</li>
+          <li>Déterminez la charpente correspondant à votre projet avec "Le guide de la charpente".</li>
         </ul>
 
 
