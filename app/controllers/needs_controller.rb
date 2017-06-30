@@ -12,7 +12,7 @@ class NeedsController < ApplicationController
     @need = Need.new(need_params)
     @need.save
     if @need.address == ""
-      redirect_to workers_path
+      redirect_to annuaire_des_candidats_users_path
     else
       redirect_to need_path(@need)
     end
@@ -20,7 +20,7 @@ class NeedsController < ApplicationController
 
   def show
     @radius_workers = []
-    Worker.all.each do |worker|
+    User.where(status:'worker').each do |worker|
       beta = @need.distance_to(worker.address).to_i
       if beta < 100
         @radius_workers << worker

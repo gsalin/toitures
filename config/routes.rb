@@ -9,7 +9,6 @@
   end
   resources :projects
   resources :needs, only: [:new, :create, :show, :edit, :update]
-  resources :workers, only: [:index, :edit, :update]
   resources :clients, only: [:new, :create, :show, :edit, :update]
   resources :articles, only: [:index, :new, :create, :show, :edit, :update]
 
