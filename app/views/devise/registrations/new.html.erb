@@ -1,32 +1,19 @@
 <h2 class="text-center"><%= t(".sign_up") %></h2>
 
-
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-sm-4 col-sm-offset-2">
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
 
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= f.error_notification %>
 
         <div class="form-inputs">
+          <%= f.input :first_name %>
+          <%= f.input :last_name %>
           <%= f.input :email, required: true, autofocus: true %>
           <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
           <%= f.input :password_confirmation, required: true %>
-          <%= f.input :company %>
-          <%= f.input :address %>
-          <%= f.input :city %>
-          <%= f.input :zip_code %>
-          <%= f.input :radius %>
-        </div>
-    </div>
-    <div class="col-xs-12 col-sm-4">
-        <div class="form-inputs">
-          <%= f.input :first_name %>
-          <%= f.input :last_name %>
-          <%= f.input :position %>
-          <%= f.input :office_phone %>
-          <%= f.input :mobile_phone %>
-          <%= f.input :description %>
+          <%= f.collection_check_boxes :status, [[0, 'Compte professionnel'] ,[1, 'Compte candidat']], :first, :last %>
         </div>
     </div>
   </div>
@@ -39,9 +26,3 @@
 <div class="text-center">
   <%= render "devise/shared/links" %>
 </div>
-
-
-
-<%= content_for(:after_js) do %>
-  <script src="https://maps.googleapis.com/maps/api/js?libraries=places&amp;key=AIzaSyC0J8yKgp1HNvXsiK1_H_PCAz2f-D9Zq4Y"></script>
-<% end %>

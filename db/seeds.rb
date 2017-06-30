@@ -74,6 +74,7 @@ user = User.new(
     terrasse:              true,
     plomberie:             false,
     admin:                 true,
+    status:                0,
     photo_company_logo: File.new("app/assets/images/logo.png")
   )
 
@@ -109,6 +110,7 @@ user = User.new(
       terrasse:              true,
       plomberie:             false,
       admin:                 true,
+      status:                0,
       photo_company_logo: File.new("app/assets/images/logo.png")
     )
 
@@ -117,7 +119,7 @@ user = User.new(
 
 
 
-puts 'Creating fake users...'
+puts 'Creating fake pros...'
 4.times do
   user = User.new(
     email:    Faker::Internet.email,
@@ -147,6 +149,7 @@ puts 'Creating fake users...'
     ouverture:             true,
     terrasse:              true,
     plomberie:             false,
+    status:                0,
     photo_company_logo: File.new("app/assets/images/logo.png")
   )
   user.save!
@@ -182,6 +185,7 @@ end
     ouverture:             true,
     terrasse:              true,
     plomberie:             true,
+    status:                0,
     photo_company_logo: File.new("app/assets/images/immeuble.svg")
   )
   user.save!
@@ -217,6 +221,7 @@ end
     ouverture:             true,
     terrasse:              true,
     plomberie:             true,
+    status:                0,
   )
   user.save!
   user.photo_company_logo_url = logo
@@ -252,6 +257,7 @@ end
     ouverture:             true,
     terrasse:              true,
     plomberie:             true,
+    status:                0,
     photo_company_logo: File.new("app/assets/images/logo.png")
   )
   user.save!
@@ -260,72 +266,72 @@ end
 
 
 
-puts 'Creating fake workers...'
-5.times do
-  worker = Worker.new(
-    email: Faker::Internet.email,
-    address: "Paris, France",
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
-    phone_number: Faker::PhoneNumber.phone_number,
-    charpentier: false,
-    couvreur: true,
-    looking_for_job: true,
-    password: "azerty",
-    cv: File.new("app/assets/images/testpdf.pdf")
-  )
-  worker.save!
-  worker.photo_url = url
-end
+# puts 'Creating fake workers...'
+# 5.times do
+#   worker = Worker.new(
+#     email: Faker::Internet.email,
+#     address: "Paris, France",
+#     first_name: Faker::Name.first_name,
+#     last_name: Faker::Name.last_name,
+#     phone_number: Faker::PhoneNumber.phone_number,
+#     charpentier: false,
+#     couvreur: true,
+#     looking_for_job: true,
+#     password: "azerty",
+#     cv: File.new("app/assets/images/testpdf.pdf")
+#   )
+#   worker.save!
+#   worker.photo_url = url
+# end
 
-4.times do
-  worker = Worker.new(
-    email: Faker::Internet.email,
-    address: "Paris, France",
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
-    phone_number: Faker::PhoneNumber.phone_number,
-    charpentier: true,
-    couvreur: false,
-    looking_for_job: true,
-    password: "azerty",
-    cv: File.new("app/assets/images/testpdf.pdf")
-  )
-  worker.save!
-  worker.photo_url = ouvrierportrait
-end
+# 4.times do
+#   worker = Worker.new(
+#     email: Faker::Internet.email,
+#     address: "Paris, France",
+#     first_name: Faker::Name.first_name,
+#     last_name: Faker::Name.last_name,
+#     phone_number: Faker::PhoneNumber.phone_number,
+#     charpentier: true,
+#     couvreur: false,
+#     looking_for_job: true,
+#     password: "azerty",
+#     cv: File.new("app/assets/images/testpdf.pdf")
+#   )
+#   worker.save!
+#   worker.photo_url = ouvrierportrait
+# end
 
-5.times do
-  worker = Worker.new(
-    email: Faker::Internet.email,
-    address: "Paris, France",
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
-    phone_number: Faker::PhoneNumber.phone_number,
-    charpentier: true,
-    couvreur: false,
-    looking_for_job: true,
-    password: "azerty",
-    cv: File.new("app/assets/images/testpdf.pdf")
-  )
-  worker.save!
-  worker.photo_url = workingman1
-end
+# 5.times do
+#   worker = Worker.new(
+#     email: Faker::Internet.email,
+#     address: "Paris, France",
+#     first_name: Faker::Name.first_name,
+#     last_name: Faker::Name.last_name,
+#     phone_number: Faker::PhoneNumber.phone_number,
+#     charpentier: true,
+#     couvreur: false,
+#     looking_for_job: true,
+#     password: "azerty",
+#     cv: File.new("app/assets/images/testpdf.pdf")
+#   )
+#   worker.save!
+#   worker.photo_url = workingman1
+# end
 
-worker = Worker.new(
-  email: "azerty@gmail.com",
-  address: "Paris, France",
-  first_name: "charpentier",
-  last_name: "Salin",
-  phone_number: "0663983171",
-  charpentier: true,
-  couvreur: false,
-  looking_for_job: true,
-  password: "azerty",
-  cv: File.new("app/assets/images/testpdf.pdf")
-)
-worker.save!
-worker.photo_url = url
+# worker = Worker.new(
+#   email: "azerty@gmail.com",
+#   address: "Paris, France",
+#   first_name: "charpentier",
+#   last_name: "Salin",
+#   phone_number: "0663983171",
+#   charpentier: true,
+#   couvreur: false,
+#   looking_for_job: true,
+#   password: "azerty",
+#   cv: File.new("app/assets/images/testpdf.pdf")
+# )
+# worker.save!
+# worker.photo_url = url
 
 
 

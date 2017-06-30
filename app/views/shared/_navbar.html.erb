@@ -17,18 +17,6 @@
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
   <%= link_to t(".top_call_to_action", default: "Annuaire"), users_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
-    <!-- Search form -->
-<!--     <form action="" class="navbar-wagon-search">
-      <input type="text" class="navbar-wagon-search-input" placeholder="Search something">
-      <button type="submit" class="navbar-wagon-search-btn">
-        <i class="fa fa-search"></i>
-      </button>
-    </form> -->
-
-    <!-- Nav links -->
-
-
-  <!-- lien Accueil -->
 
 
 <!-- lien guide -->
@@ -44,46 +32,40 @@
 
     <!-- Different navigation if login or not -->
     <% if user_signed_in? %>
+      <% if user.pro? %>
+        <div class="navbar-wagon-item">
+          <div class="dropdown">
+          <% if current_user.photo_company_logo != nil %>
+            <%= cl_image_tag current_user.photo_company_logo.path, width: 50, height: 50, crop: :fill, class: "worker-avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown", style: "border-radius:50%;" %>
+          <% else %>
+            <%= image_tag "http://placehold.it/30x30", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+            <% end %>
+            <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+              <li>
+                <%= link_to edit_user_registration_path do %>
+                  <i class="fa fa-user"></i> <%= t(".profile", default: "Mon profil") %>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to workers_path do %>
+                  <i class="fa fa-users"></i> <%= t(".profile", default: "Index des candidats") %>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to destroy_user_session_path, method: :delete do %>
+                  <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Me déconnecter") %>
+                <% end %>
+              </li>
+            </ul>
+          </div>
+        </div>
 
-      <!-- Notification -->
-      <%#= link_to "#", class: "navbar-wagon-item navbar-wagon-link" do %>
-<!--         <div class="badge-container">
-          <i class="fa fa-envelope-o"></i>
-          <div class="badge badge-blue">3</div>
-        </div> -->
-      <%# end %>
 
       <!-- Profile picture and dropdown -->
-      <div class="navbar-wagon-item">
-        <div class="dropdown">
-        <% if current_user.photo_company_logo != nil %>
-          <%= cl_image_tag current_user.photo_company_logo.path, width: 50, height: 50, crop: :fill, class: "worker-avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown", style: "border-radius:50%;" %>
-        <% else %>
-          <%= image_tag "http://placehold.it/30x30", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-          <% end %>
-          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-            <li>
-              <%= link_to edit_user_registration_path do %>
-                <i class="fa fa-user"></i> <%= t(".profile", default: "Mon profil") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to workers_path do %>
-                <i class="fa fa-users"></i> <%= t(".profile", default: "Index des candidats") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Me déconnecter") %>
-              <% end %>
-            </li>
-          </ul>
-        </div>
-      </div>
 
-<!--     <#% elsif worker_signed_in? %>
+      <% elsif user.worker? %>
 
-      <div class="navbar-wagon-item">
+<!--       <div class="navbar-wagon-item">
         <div class="dropdown">
         <#% if current_worker.photo != nil %>
           <#%= cl_image_tag current_worker.photo.path, width: 50, height: 50, crop: :thumb, gravity: :face, class: "worker-avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown", style: "border-radius:50%;" %>
@@ -109,10 +91,11 @@
           </ul>
         </div>
       </div> -->
-
+      <% end %>
     <% else %>
       <!-- Login text link -->
-        <button type="button" class="navbar-wagon-item navbar-wagon-link connect-btn-navbar" id="pro-btn-navbar" data-toggle="modal" data-target="#signin_modal ">Professionnel</button>
+      <%= link_to 'testparams', new_user_session_path(status: :pro) %>
+        <button type="button" class="navbar-wagon-item navbar-wagon-link connect-btn-navbar" id="pro-btn-navbar" data-toggle="modal" data-target="#signin_modal" data-id="0">Professionnel</button>
         <!-- Modal telephone -->
         <div class="modal fade" id="signin_modal" role="dialog">
           <div class="modal-dialog">
@@ -120,7 +103,7 @@
             <div class="modal-content">
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h3>Ravi de vous revoir</h3>
+                <h3>Connexion professionnel</h3>
               </div>
               <div class="modal-body">
               <%= render "devise/sessions/new_navbar" %>
@@ -129,7 +112,7 @@
           </div>
         </div>
 
-        <button type="button" class="navbar-wagon-item navbar-wagon-link connect-btn-navbar" id="worker-btn-navbar" data-toggle="modal" data-target="#signin_modal_worker ">Candidat</button>
+        <button type="button" class="navbar-wagon-item navbar-wagon-link connect-btn-navbar" id="worker-btn-navbar" data-toggle="modal" data-target="#signin_modal_worker">Candidat</button>
         <!-- Modal telephone -->
         <div class="modal fade" id="signin_modal_worker" role="dialog">
           <div class="modal-dialog">
@@ -137,10 +120,10 @@
             <div class="modal-content">
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h3>Ravi de vous revoir</h3>
+                <h3>Connexion candidat</h3>
               </div>
               <div class="modal-body">
-              <%#= render "workers/sessions/new_navbar_worker" %>
+              <%= render "devise/sessions/new_navbar" %>
               </div>
             </div>
           </div>
