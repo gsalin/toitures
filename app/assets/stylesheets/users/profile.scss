@@ -5,7 +5,8 @@
 .profile-container {
 
   .profile-first-row {
-    margin-bottom: 30px;
+    margin-bottom: 50px;
+    margin-top: 30px;
     p {
       font-weight: bolder;
       margin-top: 30px;
@@ -18,7 +19,7 @@
   }
 
   #user_description {
-    min-height: 356px;
+    min-height: 240px;
   }
 
   .form-control {
@@ -28,7 +29,6 @@
 
   .text {
     width: 100% !important;
-    margin-top: 15px;
   }
 
 
@@ -41,7 +41,7 @@
     align-content: stretch;
 
     span {
-      padding: 0px 10px 0px 0px;
+      padding: 0px 5px 0px 0px;
       font-weight: lighter;
     }
   }
@@ -52,32 +52,30 @@
   }
 }
 
-.col-profile-infos {
-  padding-top: 30px;
-}
-
 .col-profile-style {
-  background-color: $light-grey;
-  border: solid $medium-grey 1px;
-  border-radius: 3px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.col-profile-submit {
-  padding-top: 20px;
-  padding-bottom: 20px;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: column;
+  flex-wrap: nowrap;
   justify-content: space-around;
   align-items: center;
   align-content: stretch;
+  background-color: $light-grey;
+  border-radius: 3px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  min-height: 470px;
+}
 
-  .profile-submit-btn {
-    margin-top: 10px;
-  }
-
+.col-profile-submit {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: stretch;
+  min-height:100px;
+  margin-top: 50px;
+  margin-bottom: 50px;
 
   .help-block-custom {
     color: orangered;
@@ -87,4 +85,13 @@
     margin-bottom: 20px;
     border-bottom: solid $medium-grey 1px;
   }
+}
+
+#flebox-edit-user {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: stretch;
 }

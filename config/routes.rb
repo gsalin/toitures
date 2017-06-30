@@ -2,9 +2,9 @@
   mount Attachinary::Engine => "/attachinary"
 
   ActiveAdmin.routes(self)
-  devise_for :users
+  devise_for :users, :controllers => {:registrations => 'registrations'}
   root to: 'pages#home'
-  resources :users, only: [:index, :show]
+  resources :users, only: [:index, :show, :edit, :update]
   resources :projects
   resources :needs, only: [:new, :create, :show, :edit, :update]
   resources :workers, only: [:index, :edit, :update]

@@ -1,132 +1,39 @@
-<div class="container profile-container">
+<h2><%= t('.title', :resource => resource_class.model_name.human , :default => "Edit #{resource_name.to_s.humanize}") %></h2>
 
-  <!-- <h2><%= t(".title", resource: resource_class.model_name.human) %></h2> -->
-
-  <h2 class="text-center profile-title" >Profil de la société <strong><%= current_user.company %></strong></h2>
-
-  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-    <%= f.error_notification %>
-
-  <div class="row profile-first-row">
-    <!-- Card infos de la société -->
-    <div class="col-xs-12 col-md-4 col-md-offset-1 col-profile-infos col-profile-style">
-      <%= f.input :company %>
-      <%= f.input :address %>
-      <%= f.input :city %>
-      <%= f.input :zip_code %>
-      <%= f.input :radius %>
-      <%= f.input :photo_company_logo, as: :attachinary %>
-      <%= f.input :photo_presentation, as: :attachinary %>
-    </div>
-    <!-- card skills et description -->
-    <div class="col-xs-12 col-md-6 col-md-offset-1 col-profile-style">
-      <p>Type de travaux</p>
-      <div class="checkbox_form">
-        <span>
-          <%= f.check_box :construction %>
-          Construction
-        </span>
-        <span>
-          <%= f.check_box :renovation  %>
-          Renovation
-        </span>
-        <span>
-          <%= f.check_box :entretien  %>
-          Entretien
-        </span>
-      </div>
-
-      <p>Spécialités</p>
-      <div class="checkbox_form">
-        <span>
-          <%= f.check_box :couverture  %>
-          Couverture
-        </span>
-        <span>
-          <%= f.check_box :ouverture  %>
-          Ouverture
-        </span>
-        <span>
-          <%= f.check_box :terrasse  %>
-          Terrasse
-        </span>
-        <span>
-          <%= f.check_box :plomberie  %>
-          Plomberie
-        </span>
-        <span>
-          <%= f.check_box :charpente  %>
-          Charpente
-        </span>
-      </div>
-      <p>Type de bien</p>
-      <div class="checkbox_form">
-        <span>
-          <%= f.check_box :maison  %>
-          Maison
-        </span>
-        <span>
-          <%= f.check_box :chateau  %>
-          Chateau
-        </span>
-        <span>
-          <%= f.check_box :immeuble  %>
-          Immeuble
-        </span>
-      </div>
-      <p>Labels</p>
-      <div class="checkbox_form">
-        <span>
-          <%= f.check_box :rge  %>
-          RGE
-        </span>
-        <span>
-          <%= f.check_box :qualibat  %>
-          Qualibat
-        </span>
-        <span>
-          <%= f.check_box :mh  %>
-          Agrément Monuments Historiques
-        </span>
-      </div>
-      <%= f.input :description%>
-      <span id="description-count"><strong></strong></span><span> sur 900 lettres  </span>
-    </div>
-  </div>
-
+<div class="container">
   <div class="row">
+    <div class="col-xs-12">
 
-    <div class="col-xs-12 col-md-4 col-md-offset-1 col-profile-style">
-      <h4>Contact</h4>
-      <%= f.input :first_name %>
-      <%= f.input :last_name %>
-      <%= f.input :position %>
-      <%= f.input :email %>
-      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-        <p><%= t(".currently_waiting_confirmation_for_email", email: resource.unconfirmed_email) %></p>
-      <% end %>
-      <%= f.input :office_phone %>
-      <%= f.input :mobile_phone %>
-    </div>
+      <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+        <%= devise_error_messages! %>
 
-    <!--   Enregistrer mes modifications -->
-    <div class="col-xs-12 col-md-6 col-md-offset-1 col-profile-style col-profile-submit list-inline">
-      <%= f.input :current_password, required: true %>
-      <%= f.button :submit, "Mettre à jour mon profil", class: "btn btn-success profile-submit-btn" %>
-      <p class= "help-block-custom text-center">Le mot de passe est obligatoire pour valider les changements</p>
+        <div><%= f.label :email %><br />
+        <%= f.email_field :email %></div>
+
+        <%- if devise_mapping.confirmable? && resource.pending_reconfirmation? -%>
+          <p>
+            <%= t('.currently_waiting_confirmation_for_email', :email => resource.unconfirmed_email, :default => "Currently waiting confirmation for: %{email}") %>
+          </p>
+        <%- end -%>
+
+        <div><%= f.label :password %> <i>(<%= t('.leave_blank_if_you_don_t_want_to_change_it', :default => "leave blank if you don't want to change it") %>)</i><br />
+        <%= f.password_field :password, :autocomplete => "off" %></div>
+
+        <div><%= f.label :password_confirmation %><br />
+        <%= f.password_field :password_confirmation %></div>
+
+        <div><%= f.label :current_password %> <i>(<%= t('.we_need_your_current_password_to_confirm_your_changes', :default => 'we need your current password to confirm your changes') %>)</i><br />
+        <%= f.password_field :current_password %></div>
+
+        <div><%= f.submit t('.update', :default => "Update") %></div>
       <% end %>
-      <%= link_to new_project_path(current_user), class: "navbar-wagon-button btn" do %>
-        <span>Accéder mes projets</span>
-      <% end %>
-      <%= link_to t(".cancel_my_account"), registration_path(resource_name), data: { confirm: t(".are_you_sure") }, method: :delete %>
-      <%= link_to t("devise.shared.links.back"), :back %>
+
+      <h3><%= t('.cancel_my_account', :default => 'Cancel my account') %></h3>
+
+      <p><%= t('.unhappy', :default => 'Unhappy') %>? <%= link_to t('.cancel_my_account', :default => "Cancel my account"), registration_path(resource_name), :data => { :confirm => t('.are_you_sure', :default => "Are you sure?") }, :method => :delete %>.</p>
+
+      <%= link_to t('devise.shared.links.back', :default => "Back"), :back %>
     </div>
   </div>
 </div>
 
-
-
-<!-- JS Autocomplete -->
-<%= content_for(:after_js) do %>
-  <script src="https://maps.googleapis.com/maps/api/js?libraries=places&amp;key=AIzaSyC0J8yKgp1HNvXsiK1_H_PCAz2f-D9Zq4Y"></script>
-<% end %>
