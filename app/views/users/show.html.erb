@@ -1,6 +1,8 @@
 <% content_for :meta_title, "#{@user.company} est sur #{DEFAULT_META["meta_product_name"]}" %>
 <% content_for :meta_description, @user.description %>
-<% content_for :meta_image, cloudinary_url(@user.photo_presentation.path) %>
+<% if @user.pro? %>
+  <% content_for :meta_image, cloudinary_url(@user.photo_presentation.path) %>
+<% end %>
 
 
 

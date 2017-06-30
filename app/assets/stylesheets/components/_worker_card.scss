@@ -16,7 +16,7 @@
   }
 }
 
-.worker_index_card {
+.user_index_card {
   height: 400px;
   margin-top: 30px;
   padding: 10px;
@@ -29,7 +29,7 @@
   align-content: stretch;
   background-color: white;
   border: $green-worker solid 2px;
-  .worker-avatar {
+  .user-avatar {
     border-radius: 50%;
   }
   .fa {
@@ -51,6 +51,6 @@
   }
 }
 
-#worker-modal-dialog {
+#user-modal-dialog {
   width: 1033px;
 }

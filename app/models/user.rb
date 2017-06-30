@@ -3,6 +3,8 @@ class User < ApplicationRecord
   enum status: [:pro, :worker]
   has_attachment :photo_presentation
   has_attachment :photo_company_logo
+  has_attachment :photo
+  has_attachment :cv, accept: [:pdf]
 
   has_many :projects, dependent: :destroy
   has_many :articles
