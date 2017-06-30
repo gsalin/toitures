@@ -4,31 +4,19 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-md-9">
-      <div class='article-page'>
+      <div class='guide-page'>
 
         <ol class="breadcrumb">
           <li><a href="/">Accueil</a></li>
           <li><%= link_to "Les guides", guides_path %></li>
           <li><%= link_to "La toiture", la_toiture_guide_index_path %></li>
-          <li class="active">Comprendre la structure d'une toiture</li>
+          <li class="active">La structure du toit</li>
         </ol>
 
-         <div class="share-links">
-            <a href="#" class="share-link bg-facebook">
-              <i class="fa fa-facebook"></i>
-            </a>
-            <a href="#" class="share-link bg-twitter">
-              <i class="fa fa-twitter"></i>
-            </a>
-            <a href="#" class="share-link bg-email">
-              <i class="fa fa-google"></i>
-            </a>
-            <a href="#" class="share-link bg-text">
-              <i class="fa fa-envelope-o"></i>
-            </a>
-        </div>
+        <%= render 'shared/share_links' %>
+
         <header>
-          <h1 itemprop="headline" class="text-center">Comprendre la structure d'une toiture</h1>
+          <h1 itemprop="headline" class="text-center">La structure du toit</h1>
         </header>
         <p class="italic">La toiture regroupe plusieurs éléments : la charpente, la couverture, les ouvertures, les ornements, la zinguerie et les évacuations d’eau, les cheminées, .... réunies en deux grandes familles</p>
 
@@ -38,7 +26,7 @@
         Une charpente est faite pour durer pour durer au moins 50 ans. Certaines en bois ont plusieurs siècles.</p>
         <p>La charpente peut-être faite en plusieurs matériaux :</p>
         <ul>
-          <li>bois plein ou aggloméré(en chêne ou résineux)</li>
+          <li>bois plein ou aggloméré</li>
           <li>béton</li>
           <li>métal</li>
         </ul>
@@ -49,10 +37,13 @@
         <p>La couverture est constituée de différents éléments qui vont jouer chacun un rôle spécifique :</p>
 
         <ul>
-          <li>l’isolation, intérieure ou extérieure, permet d’isoler thermiquement la maison et d’éviter les pertes de chaleur (selon l’Ademe, 30 % des déperditions de chaleur des logements individuels se font par le toit).</li>
-          <li>Les matériaux de couverture (tuiles, ardoises...)</li>
-          <li>la zinguerie</li>
+          <li>l’isolation, intérieure ou extérieure, permet d’isoler thermiquement la maison et d’éviter les pertes de chaleur (selon l’Ademe, 30 % des déperditions de chaleur des logements individuels se font par le toit),</li>
+          <li>la sous-toiture qui complète l'isolation du toit en le rendant étanche tout en permettant l'isolation,</li>
+          <li>Les matériaux de couverture (tuiles, ardoises...) qui vont donner son apparence extérieure au toit,</li>
+          <li>la zinguerie permettant l'évacuation des pluies, </li>
+          <li>les ornements tels que les girouettes, etc </li>
         </ul>
+
       </div>
     </div>
     <%= render 'shared/guide_left_navigation' %>

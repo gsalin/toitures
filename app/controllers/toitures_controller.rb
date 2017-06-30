@@ -5,6 +5,12 @@ class ToituresController < ApplicationController
   def index
   end
 
+  def achat_nos_conseils_lors_du_choix_de_votre_toiture
+  end
+
+  def les_cles_pour_reussir_la_renovation_de_votre_toit
+  end
+
   private
 
   def new_client

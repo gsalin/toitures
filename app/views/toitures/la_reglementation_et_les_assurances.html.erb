@@ -4,31 +4,19 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-md-9">
-      <div class='article-page'>
+      <div class='guide-page'>
 
         <ol class="breadcrumb">
           <li><a href="/">Accueil</a></li>
           <li><%= link_to "Les guides", guides_path %></li>
           <li><%= link_to "La toiture", la_toiture_guide_index_path %></li>
-          <li class="active">La réglementation</li>
+          <li class="active">La réglementation et les assurances</li>
         </ol>
 
-         <div class="share-links">
-            <a href="#" class="share-link bg-facebook">
-              <i class="fa fa-facebook"></i>
-            </a>
-            <a href="#" class="share-link bg-twitter">
-              <i class="fa fa-twitter"></i>
-            </a>
-            <a href="#" class="share-link bg-email">
-              <i class="fa fa-google"></i>
-            </a>
-            <a href="#" class="share-link bg-text">
-              <i class="fa fa-envelope-o"></i>
-            </a>
-        </div>
+        <%= render 'shared/share_links' %>
+
         <header>
-          <h1 itemprop="headline" class="text-center">La réglementation</h1>
+          <h1 itemprop="headline" class="text-center">La réglementation et les assurances</h1>
         </header>
         <p class="italic">La toiture obéit à des règles européennes, nationales et locales. Les normes DTU obligent les professionnels à respecter un certain nombre de règle de qualité. La toiture étant un élément de sécurité du foyer, la législation favorise la protection du propriétaire en obligeant les professionnels à suivre un ensemble de normes qui permettent une qualité homogène des réalisations sur le territoire et une certaine confiance lors du transfert de propriété des biens immobiliers.</p>
 

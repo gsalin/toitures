@@ -1,3 +1,7 @@
+<% content_for :meta_title, "Le guide de la toiture est sur le site #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, "Quel est l'essentiel à savoir lors d'un projet de travaux concernant la toiture de son logement ? Ce guide présente les principaux points à savoir quel que soit votre situation : achat, rénovation, entretien." %>
+<% content_for :meta_image, "lancieux_1200_630.jpg" %>
+
 <%= render 'shared/fix_cta' %>
 <%= render 'shared/guides_top_banner' %>
 
@@ -12,37 +16,23 @@
           <li class="active">La toiture</li>
         </ol>
 
-         <div class="share-links">
-            <a href="#"" class="share-link bg-facebook">
-              <i class="fa fa-facebook"></i>
-            </a>
-            <a href="#" class="share-link bg-twitter">
-              <i class="fa fa-twitter"></i>
-            </a>
-            <a href="#" class="share-link bg-email">
-              <i class="fa fa-google"></i>
-            </a>
-            <a href="#" class="share-link bg-text">
-              <i class="fa fa-envelope-o"></i>
-            </a>
-        </div>
+        <%= render 'shared/share_links' %>
+
         <header>
           <h1 itemprop="headline" class="text-center">Guide de la toiture</h1>
         </header>
-        <p class="italic">Quel est l'essentiel à savoir lorsqu'on s'intéresse pour la première fois à sa toiture ? Que ce soit lors de l'achat d'un bien immobilier ou lors d'une rénovation de toiture, on peut être désarmé devant ce sujet essentiel mais peu abordé car il ne se pose souvent qu'une seule fois dans la vie d'un proprétaire. Ce guide vous permettra de comprendre les principaux enjeux quel que soit votre situation.</p>
+        <p class="italic">Quel est l'essentiel à savoir lors d'un projet de travaux concernant la toiture de son logement ? Ce guide présente les principaux points à savoir quel que soit votre situation : achat, rénovation, entretien.</p>
 
-        <p>Nous avons divisé ce guide en 3 catégories afin de faciliter la compréhension.</p>
-
-        <h3 class='text-center'>Comprendre la toiture</h3>
+        <h3 class='text-center'>L'essentiel à savoir</h3>
 
         <div class="col-xs-12 col-md-6">
           <div class="guide-card">
-            <%= link_to la_toiture_composition_guide_index_path do %>
+            <%= link_to la_toiture_la_structure_du_toit_guide_index_path do %>
               <h6 class="text-center">La structure du toit</h6>
               <div class="guide-content">
                 <%= image_tag "renovatio_toit.jpg", class: "img-card" %>
-                <p>Derrière la notion de toit se cache en fait différents éléments : la charpente, la couverture, l'isolation... Voici un rapide décryptage </p>
-                <%= link_to "Lire", la_toiture_composition_guide_index_path, class: "yellow-link"%>
+                <p>Glossaire des différentes composantes d'un toit : charpente, matériaux de couverture, isolation, ventilation... pour se familiariser avec les différentes notions.</p>
+                <%= link_to "Lire", la_toiture_la_structure_du_toit_guide_index_path, class: "yellow-link"%>
               </div>
             <% end %>
           </div>
@@ -50,12 +40,12 @@
 
         <div class="col-xs-12 col-sm-6">
           <div class="guide-card">
-            <%= link_to la_toiture_types_de_toit_guide_index_path do %>
+            <%= link_to la_toiture_les_differents_types_de_toit_guide_index_path do %>
               <h6 class="text-center">Les différents types de toit</h6>
               <div class="guide-content">
                 <%= image_tag "toit_vegetal.jpg", class: "img-card" %>
-                <p>Il existe plusieurs types de toitures : traditionnelle, en terrasse ou végétalisée... qui peuvent répondre à vos besoins et à vos envies</p>
-                <%= link_to "Lire", la_toiture_types_de_toit_guide_index_path, class: "yellow-link"%>
+                <p>Présentation des différents types de toitures. Toit traditionnel en pente, toit-terrasse ou toiture végétalisée, les options sont multiples...</p>
+                <%= link_to "Lire", la_toiture_les_differents_types_de_toit_guide_index_path, class: "yellow-link"%>
               </div>
             <% end %>
           </div>
@@ -65,12 +55,12 @@
 
         <div class="col-xs-12 col-sm-4">
           <div class="guide-card">
-            <%= link_to la_toiture_achat_guide_index_path do %>
+            <%= link_to la_toiture_achat_nos_conseils_lors_du_choix_de_votre_toiture_guide_index_path do %>
               <h6 class="text-center">Achat & construction</h6>
               <div class="guide-content">
                 <%= image_tag "construction_toit.jpg", class: "img-card" %>
-                <p>L'essentiel à savoir lors de la construction d'une nouvelle toiture</p>
-                <%= link_to "Lire", la_toiture_achat_guide_index_path, class: "yellow-link"%>
+                <p>Nos conseils lors de la construction ou l'achat d'une nouvelle toiture.</p>
+                <%= link_to "Lire", la_toiture_achat_nos_conseils_lors_du_choix_de_votre_toiture_guide_index_path, class: "yellow-link"%>
               </div>
             <% end %>
           </div>
@@ -78,12 +68,12 @@
 
         <div class="col-xs-12 col-sm-4">
           <div class="guide-card">
-            <%= link_to la_toiture_renovation_guide_index_path do %>
+            <%= link_to la_toiture_les_cles_pour_reussir_la_renovation_de_votre_toit_guide_index_path do %>
               <h6 class="text-center">La rénovation</h6>
               <div class="guide-content">
                 <%= image_tag "construction_toit2.jpg", class: "img-card" %>
-                <p>Les clés pour réussir la rénovation de votre toiture </p>
-                <%= link_to "Lire", la_toiture_renovation_guide_index_path, class: "yellow-link"%>
+                <p>Les clés pour réussir la rénovation de votre toit ! </p>
+                <%= link_to "Lire", la_toiture_les_cles_pour_reussir_la_renovation_de_votre_toit_guide_index_path, class: "yellow-link"%>
               </div>
             <% end %>
           </div>
@@ -91,27 +81,27 @@
 
         <div class="col-xs-12 col-sm-4">
           <div class="guide-card">
-            <%= link_to la_toiture_entretien_guide_index_path do %>
+            <%= link_to la_toiture_entretien_les_bons_reflexes_pour_entretenir_votre_toiture_guide_index_path do %>
               <h6 class="text-center">Entretien réparations</h6>
               <div class="guide-content">
                 <%= image_tag "couvreurs.jpg", class: "img-card" %>
-                <p>Ayez les bons réflexes pour allonger la durée de vie de votre toiture</p>
-                <%= link_to "Lire", la_toiture_entretien_guide_index_path, class: "yellow-link"%>
+                <p>Ayez les bons réflexes pour allonger la durée de vie de votre toiture.</p>
+                <%= link_to "Lire", la_toiture_entretien_les_bons_reflexes_pour_entretenir_votre_toiture_guide_index_path, class: "yellow-link"%>
               </div>
             <% end %>
           </div>
         </div>
 
-        <h3 class='text-center'>Les démarches à effectuer</h3>
+        <h3 class='text-center'>Ce que vous devez faire !</h3>
 
         <div class="col-xs-12 col-sm-4">
           <div class="guide-card">
-            <%= link_to la_toiture_professionnels_guide_index_path do %>
+            <%= link_to la_toiture_comment_bien_choisir_vos_prestataires_professionnels_guide_index_path do %>
               <h6 class="text-center">Les professionnels</h6>
               <div class="guide-content">
                 <%= image_tag "bardeaux_bitumeux.jpg", class: "img-card" %>
-                <p>Parce que la réussite d'un projet résulte souvent du bon choix de votre prestataire.</p>
-                <%= link_to "Lire", la_toiture_professionnels_guide_index_path, class: "yellow-link"%>
+                <p>Parce que la réussite de votre projet dépend du choix de votre prestataire et de vos engagements mutuels.</p>
+                <%= link_to "Lire", la_toiture_comment_bien_choisir_vos_prestataires_professionnels_guide_index_path, class: "yellow-link"%>
               </div>
             <% end %>
           </div>
@@ -119,12 +109,12 @@
 
         <div class="col-xs-12 col-sm-4">
           <div class="guide-card">
-            <%= link_to la_toiture_reglementation_guide_index_path do %>
+            <%= link_to la_toiture_la_reglementation_et_les_assurances_guide_index_path do %>
               <h6 class="text-center">La réglementation</h6>
               <div class="guide-content">
                 <%= image_tag "reglementation.jpg", class: "img-card" %>
-                <p>Les projets de rénovation peuvent être soumis à des règles spécifiques. Ce qu'il faut faire !</p>
-                <%= link_to "Lire", la_toiture_reglementation_guide_index_path, class: "yellow-link"%>
+                <p>Les projets de rénovation peuvent être soumis à des règles spécifiques et locales !</p>
+                <%= link_to "Lire", la_toiture_la_reglementation_et_les_assurances_guide_index_path, class: "yellow-link"%>
               </div>
             <% end %>
           </div>
@@ -132,12 +122,12 @@
 
         <div class="col-xs-12 col-sm-4">
           <div class="guide-card">
-            <%= link_to la_toiture_financement_guide_index_path do %>
+            <%= link_to la_toiture_les_aides_et_les_financements_pour_vos_travaux_de_toiture_guide_index_path do %>
               <h6 class="text-center">Le financement</h6>
               <div class="guide-content">
                 <%= image_tag "euros.jpg", class: "img-card" %>
-                <p>La rénovation et la construction est une vrai opération immobilière : sachez en profiter !</p>
-                <%= link_to "Lire", la_toiture_financement_guide_index_path, class: "yellow-link"%>
+                <p>Vous pouvez obtenir des aides et des facilités de financement pour vos travaux : revue des solutions !</p>
+                <%= link_to "Lire", la_toiture_les_aides_et_les_financements_pour_vos_travaux_de_toiture_guide_index_path, class: "yellow-link"%>
               </div>
             <% end %>
           </div>
