@@ -73,6 +73,7 @@ user = User.new(
     ouverture:             true,
     terrasse:              true,
     plomberie:             false,
+    admin:                 true,
     photo_company_logo: File.new("app/assets/images/logo.png")
   )
 
@@ -107,6 +108,7 @@ user = User.new(
       ouverture:             true,
       terrasse:              true,
       plomberie:             false,
+      admin:                 true,
       photo_company_logo: File.new("app/assets/images/logo.png")
     )
 
