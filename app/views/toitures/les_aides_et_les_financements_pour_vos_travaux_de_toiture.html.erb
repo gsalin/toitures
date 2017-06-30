@@ -4,7 +4,7 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-md-9">
-      <div class='article-page'>
+      <div class='guide-page'>
 
         <ol class="breadcrumb">
           <li><a href="/">Accueil</a></li>
@@ -13,20 +13,7 @@
           <li class="active">Les aides et les financements</li>
         </ol>
 
-         <div class="share-links">
-            <a href="#" class="share-link bg-facebook">
-              <i class="fa fa-facebook"></i>
-            </a>
-            <a href="#" class="share-link bg-twitter">
-              <i class="fa fa-twitter"></i>
-            </a>
-            <a href="#" class="share-link bg-email">
-              <i class="fa fa-google"></i>
-            </a>
-            <a href="#" class="share-link bg-text">
-              <i class="fa fa-envelope-o"></i>
-            </a>
-        </div>
+        <%= render 'shared/share_links' %>
 
         <header>
           <h1 itemprop="headline" class="text-center">Les aides et les financements</h1>
@@ -88,6 +75,7 @@
       </div>
     </div>
     <%= render 'shared/guide_left_navigation' %>
+    <%= render 'shared/article_left_navigation' %>
   </div>
 
 </div>

@@ -38,14 +38,14 @@
 
     # guide de la toiture
     get 'la-toiture', on: :collection, controller: "toitures", action: "index"
-    get 'la-toiture/financement', on: :collection, controller: "toitures", action: "financement"
-    get 'la-toiture/composition', on: :collection, controller: "toitures", action: "composition"
-    get 'la-toiture/types-de-toit', on: :collection, controller: "toitures", action: "types_de_toit"
-    get 'la-toiture/achat', on: :collection, controller: "toitures", action: "achat"
-    get 'la-toiture/entretien', on: :collection, controller: "toitures", action: "entretien"
-    get 'la-toiture/renovation', on: :collection, controller: "toitures", action: "renovation"
-    get 'la-toiture/reglementation', on: :collection, controller: "toitures", action: "reglementation"
-    get 'la-toiture/professionnels', on: :collection, controller: "toitures", action: "professionnels"
+    get 'la-toiture/les-aides-et-les-financements-pour-vos-travaux-de-toiture', on: :collection, controller: "toitures", action: "les_aides_et_les_financements_pour_vos_travaux_de_toiture"
+    get 'la-toiture/la-structure-du-toit', on: :collection, controller: "toitures", action: "la_structure_du_toit"
+    get 'la-toiture/les-differents-types-de-toit', on: :collection, controller: "toitures", action: "les_differents_types_de_toit"
+    get 'la-toiture/achat-nos-conseils-lors-du-choix-de-votre-toiture', on: :collection, controller: "toitures", action: "achat_nos_conseils_lors_du_choix_de_votre_toiture"
+    get 'la-toiture/entretien-les-bons-reflexes-pour-entretenir-votre-toiture', on: :collection, controller: "toitures", action: "entretien_les_bons_reflexes_pour_entretenir_votre_toiture"
+    get 'la-toiture/les-cles-pour-reussir-la-renovation-de-votre-toit', on: :collection, controller: "toitures", action: "les_cles_pour_reussir_la_renovation_de_votre_toit"
+    get 'la-toiture/la-reglementation-et-les-assurances', on: :collection, controller: "toitures", action: "la_reglementation_et_les_assurances"
+    get 'la-toiture/comment-bien-choisir-vos-prestataires-professionnels', on: :collection, controller: "toitures", action: "comment_bien_choisir_vos_prestataires_professionnels"
 
     # guide de la couverture
     get 'la-couverture', on: :collection, controller: "couvertures", action: "index"
