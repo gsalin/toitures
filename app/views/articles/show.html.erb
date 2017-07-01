@@ -1,10 +1,8 @@
-<%= render 'shared/magazine_top_banner' %>
-
-
 <% content_for :meta_title, "#{@article.title} sur #{DEFAULT_META["meta_product_name"]}" %>
 <% content_for :meta_description, @article.card_summary %>
 <% content_for :meta_image, cloudinary_url(@article.photo_presentation) %>
 
+<%= render 'shared/magazine_top_banner' %>
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-md-9">
@@ -17,26 +15,7 @@
           <li class="active"><%= @article.title %></li>
         </ol>
 
-        <div class="share-links">
-          <div
-            class="fb-like"
-            data-layout="standard"
-            data-share="true"
-            data-action="like"
-            class="share-link bg-facebook"
-            data-width="450"
-            data-show-faces="true">
-          </div>
-        </div>
-
-        <div id="fb-root"></div>
-        <script>(function(d, s, id) {
-          var js, fjs = d.getElementsByTagName(s)[0];
-          if (d.getElementById(id)) return;
-          js = d.createElement(s); js.id = id;
-          js.src = "//connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v2.9&appId=1610742872283439";
-          fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));</script>
+        <%= render 'shared/share_links' %>
 
         <header>
           <h1 itemprop="headline" class="text-center"><%=  @article.title %></h1>

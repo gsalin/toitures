@@ -8,21 +8,10 @@
           <li><a href="/">Accueil</a></li>
           <li class="active">Magazine</li>
         </ol>
-         <div class="share-links">
-            <a href="#" class="share-link bg-facebook">
-              <i class="fa fa-facebook"></i>
-            </a>
-            <a href="#" class="share-link bg-twitter">
-              <i class="fa fa-twitter"></i>
-            </a>
-            <a href="#" class="share-link bg-email">
-              <i class="fa fa-google"></i>
-            </a>
-            <a href="#" class="share-link bg-text">
-              <i class="fa fa-envelope-o"></i>
-            </a>
-        </div>
-      </div>
+    </div>
+
+    <%= render 'shared/share_links' %>
+
     <div class="col-xs-12 col-md-9">
       <div class='index_articles_page'>
         <% @articles.each do |article| %>
