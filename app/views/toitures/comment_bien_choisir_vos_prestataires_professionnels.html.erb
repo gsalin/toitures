@@ -1,3 +1,7 @@
+<% content_for :meta_title, "'Bien choisir vos prestatataires'  : lisez l'article sur #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, "Parce que la réussite de votre projet dépend du choix de votre prestataire et de vos engagements mutuels." %>
+<% content_for :meta_image, "bardeaux_bitumeux.jpg" %>
+
 <%= render 'shared/fix_cta' %>
 <%= render 'shared/guides_top_banner' %>
 
@@ -10,7 +14,7 @@
           <li><a href="/">Accueil</a></li>
           <li><%= link_to "Les guides", guides_path %></li>
           <li><%= link_to "La toiture", la_toiture_guide_index_path %></li>
-          <li class="active">Les professionnels</li>
+          <li class="active">Bien choisir vos prestataires</li>
         </ol>
 
         <%= render 'shared/share_links' %>
@@ -18,37 +22,51 @@
         <header>
           <h1 itemprop="headline" class="text-center">Bien choisir vos prestatataires</h1>
         </header>
-        <p  class="italic">Les corps de métiers qui interviennent dans les domaines de la toiture (charpente, couverture, isolation...) sont des spécialistes. Pour cette raison, 80 % des entreprises de toitures sont des entreprises de moins de 20 salariés et sont spécialisées dans certains types de travaux.</p>
+        <p  class="italic">La réussite de votre projet dépend du choix de votre prestataire, de la conception du projet et de vos engagements mutuels...</p>
+
+        <h2>Les différents corps de métier</h2>
+
+        <p>Les corps de métiers qui interviennent dans les domaines de la toiture (charpente, couverture, isolation...) sont des spécialistes. 80 % des entreprises de toitures sont des entreprises de moins de 20 salariés.</p>
 
         <ul>
           <li><strong>Les architectes.</strong> Tout bon projet commence avec un plan et c’est la que rentre en jeu l’architecte ou les cabinets d’ingéniérie qui allient l’esthétisme et les espaces de vie à la maîtrise des défis techniques et au respect des règes de sécurité et de pérennité de l’édifice.</li>
           <li><strong>Les charpentiers.</strong> Le charpentier va mettre en place la charpente, aidé d’un menuiser pour les petits ouvrages en bois (fenêtres, lucarnes).</li>
           <li><strong>Les couvreurs-zingueurs.</strong> Ce sont ceux qui vont couvrir le toit de tuile, d’ardoise, de zinc etc et aménager les gouttières.</li>
+          <figure>
+            <%= image_tag "bardeaux_bitumeux.jpg", class: "small-figure-article" %>
+            <figcaption></figcaption>
+          </figure>
           <li><strong>Les maçons et tailleurs de pierre.</strong> Il vont faire la maçonnerie et la taille de pierre permettant de faire les décorations mais aussi les supports sur lesquels établir la charpente.</li>
         </ul>
 
-        <h3>Bien vivre pendant les travaux</h3>
-        <p class="italic">Bravo, vous avez choisi votre professionnel, ils arrivent pour un mois chez vous. Vous avez prévu un mois de vacances chez votre tante adorée en ardèche, tant mieux. Sinon, vous allez cohabité avec une équipe du batîment pendant une période plus ou moins longue… Petit guide de la colocation !</p>
+        <h2>Comment choisir son pro ?</h3>
+        <p>Une fois votre idée de projet définie, confrontez votre projet à des entrepreneurs et à votre entourage. La difficulté particulière liée au marché de la toiture peut être l’absence de connaissances du maître d’oeuvre, c’est-à-dire le propriétaire, qui n’est confronté à cette démarche que très rarement. N'oubliez pas le bouche à oreille pour vos projets et parlez en autour de vous, cela reste une méthode des plus efficaces.</p>
 
-        <p><strong>Facilitez leur la tâche</strong></p>
+        <p>Etablissez plusieurs devis par les prestataires retenus. En multipliant les devis, qui peuvent être gratuits ou payants (pensez à le demander avant), vous aurez une meilleure idée de vos besoins et de vos contraintes (temps du chantier, prix, qualité des matériaux utilisés, …). Sur le papier, les devis doivent être clairs et concis avec le détail du coût des matériaux et celui du coût de la main d'oeuvre et du nombre d'heures de travail.<%= link_to "Comment bien lire un devis", root_path, class: "yellow-link"%></p>
+
+        <p>Soyez attentifs à l'attitude de vos interlocuteurs. La qualité de vos relations (réponse concise face à vos interrogations, contraintes exposées) est un indicateur important sur la qualité de votre éventuelle  future relation contractuelle.</p>
+
+        <h2>Bien vivre pendant les travaux</h3>
+        <p class="italic">Les travaux de toiture peuvent entraîner une cohabitation si vous devez rester chez vous pendant les travaux. Petit guide de la colocation !</p>
+
+        <h3>Facilitez leur la tâche</h3>
         <p>Demandez au chef de chantier ce dont il a besoin. Définissez un endroit pour les matéraiux. Préparer un endroit pour que les ouvriers puissent se restaurer et faire leurs poses. Proposez votre machine a café ! L’amabilité est un moteur si efficace !</p>
 
-        <p><strong>Définissez les créneaux de chacun</strong></p>
+        <h3>Définissez les créneaux de chacun</h3>
         <p>Les ouvriers se lèvent tôt et travaillent parfois tard. Définissez dès le départ leur timing d’intervention afin que vous puissiez profiter du calme renouvellé. Vous mettre d’accord sur les horaires d’interventions est un point important pour une bonne « colocation », surtout si vous résidez chez vous pendant les travaux.</p>
 
-        <p><strong>Filez un coup de main</strong></p>
+        <h3>Filez un coup de main</h3>
         <p>Travailler dehors est un travail difficile et même éprouvant lorsque les conditions météos ne sont pas favorables. Un café chaud et le moral (et l’ardeur) des troupes peut être fortement amélioré en proposant un repas chaud fait par vos soins un midi ou vous êtes présent ou toute autre attention qui peut être agréable ou utile aux équipes intervenants chez vous ! Pareil en cas de fortes chaleurs.</p>
 
-        <p><strong>Soyez courtois mais ferme en cas de problème</strong></p>
+        <h3>Soyez courtois mais ferme en cas de problème</h3>
         <p>En cas de dérapage sur les délais, ou de tout autre problème soyez réactif, courtois mais ferme sur le fond. IL est assez recommandé de faire un point en milieu de chantier pour vérifier avec le chef de chantier si tout est ok et que les engagements pris seront tenus. Si cela déborde sur votre planning, vous serez au moins prévenu !</p>
 
-        <h3>Rénovation : Favoriser le "Do It Yourself" ou passer par des pros ?</h3>
-        <p class='italic'>Cela dépend de la situation, de vos capacités, des matériaux utilisés, de la dangerosité du chantier... Pour les gros œuvres (pose de charpente, isolation, revêtements des matériaux de couverture) et dans une réalisation d’habitation, il est fortement conseillé de passer par des professionnels. Vous disposez alors d'un savoir faire précieux et d’une garantie décennale.</p>
+        <h2>Rénovation : Favoriser le "Do It Yourself" ou passer par des pros ?</h2>
+        <p> Cela dépend de la situation, de vos capacités, des matériaux utilisés, de la dangerosité du chantier... Pour les gros œuvres (pose de charpente, isolation, revêtements des matériaux de couverture) et dans une réalisation d’habitation, il est fortement conseillé de passer par des professionnels. Vous disposez alors d'un savoir faire précieux et d’une garantie décennale.</p>
         <p>Pour ce qui est de l’entretien, de la rénovation et de la réparation, cela dépend des matériaux utilisés et de la volonté du maître des lieux. Changer des tuiles est relativement simple tandis que l’ardoise demande un certain tour de main. Dans tous les cas, demandez un avis à un professionnel qui vous éclairera. Et soyez prudent ! </p>
-        <p>Pour les plus hardis, une bonne source d’inspiration est de passer par Youtube où il existe des tas de tutoriels pour faire à peu près tout... Pour ceux adeptent des projets collaboratifs et des projets plus originaux (maisons en bois, à l’ancienne, réfection d’une grange) avec un budget serré ou l’envie d’apprendre le métier par soi-même (ce qui peut être passionnant). Il existe des associations qui peuvent vous aider dans votre projet et qui vous offrent leur expérience.
-        L’association twizza réseaux est par exemple spécialisée dans des chantiers collaboratifs</p>
+        <p>Pour les plus hardis, une bonne source d’inspiration est de passer par Youtube où il existe des tas de tutoriels pour faire à peu près tout... Pour ceux adeptent des projets collaboratifs et des projets plus originaux (maisons en bois, à l’ancienne, réfection d’une grange) avec un budget serré ou l’envie d’apprendre le métier par soi-même (ce qui peut être passionnant). Il existe des associations qui peuvent vous aider dans votre projet et qui vous offrent leur expérience. L’association twizza réseaux est par exemple spécialisée dans des chantiers collaboratifs pour construire des logements écologiques.</p>
 
-        <h3>Les labels</h3>
+        <h2>Les labels</h2>
         <p class='italic'>Ils existent plusieurs labels qui peuvent vous aider à choisir un artisan</p>
         <ul>
           <li>Le label qualibat</li>

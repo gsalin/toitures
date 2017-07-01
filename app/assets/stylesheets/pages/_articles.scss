@@ -116,8 +116,16 @@
 
 }
 
-// CSS Des figures
+// CSS Des images
 
 .figure-article {
+  margin-bottom: 10px;
   text-align: center;
+  display: block;
+}
+
+.small-figure-article {
+  margin-bottom: 10px;
+  text-align: center;
+  max-width: 30%;
 }

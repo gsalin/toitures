@@ -1,3 +1,7 @@
+<% content_for :meta_title, "'La structure du toit' : lisez l'article sur #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, "Glossaire des différentes composantes d'un toit : charpente, matériaux de couverture, isolation, ventilation..." %>
+<% content_for :meta_image, "renovatio_toit.jpg" %>
+
 <%= render 'shared/fix_cta' %>
 <%= render 'shared/guides_top_banner' %>
 
@@ -24,6 +28,12 @@
 
         <p>La charpente est l’ossature d’une toiture traditionnelle : C’est sur la charpente qu’on va poser les éléments de couverture du toit, généralement incliné.
         Une charpente est faite pour durer pour durer au moins 50 ans. Certaines en bois ont plusieurs siècles.</p>
+
+        <figure class="figure-article">
+          <%= image_tag "schema2_charpente.jpg" %>
+          <figcaption></figcaption>
+        </figure>
+
         <p>La charpente peut-être faite en plusieurs matériaux :</p>
         <ul>
           <li>bois plein ou aggloméré</li>
@@ -31,17 +41,50 @@
           <li>métal</li>
         </ul>
 
-
         <h2>La couverture</h2>
+
         <p>La couverture est le revêtement du toit, c’est elle qui va isoler la maison des intempéries extérieures : froid, chaleur, précipitations, humidité, vent, etc. </p>
+
+        <figure class="figure-article">
+          <%= image_tag "fenetre.jpg" %>
+          <figcaption></figcaption>
+        </figure>
+
         <p>La couverture est constituée de différents éléments qui vont jouer chacun un rôle spécifique :</p>
 
         <ul>
           <li>l’isolation, intérieure ou extérieure, permet d’isoler thermiquement la maison et d’éviter les pertes de chaleur (selon l’Ademe, 30 % des déperditions de chaleur des logements individuels se font par le toit),</li>
+          <figure>
+            <%= image_tag "isolant.jpg", class: "small-figure-article"  %>
+            <figcaption></figcaption>
+          </figure>
+
           <li>la sous-toiture qui complète l'isolation du toit en le rendant étanche tout en permettant l'isolation,</li>
+          <figure>
+            <%= image_tag "ecran_sous_toiture_integra.jpg", class: "small-figure-article"  %>
+            <figcaption>écran sous toiture de la marque integra</figcaption>
+          </figure>
+
           <li>Les matériaux de couverture (tuiles, ardoises...) qui vont donner son apparence extérieure au toit,</li>
+          <figure>
+            <%= image_tag "ardoise.jpg", class: "small-figure-article"  %>
+            <figcaption>Un revêtement en ardoises</figcaption>
+          </figure>
+
           <li>la zinguerie permettant l'évacuation des pluies, </li>
+          <figure>
+            <%= image_tag "gouttiere.jpg", class: "small-figure-article"  %>
+            <figcaption></figcaption>
+          </figure>
+
+
           <li>les ornements tels que les girouettes, etc </li>
+          <figure>
+            <%= image_tag "girouette.jpg", class: "small-figure-article"  %>
+            <figcaption></figcaption>
+          </figure>
+
+
         </ul>
 
       </div>

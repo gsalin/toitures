@@ -1,4 +1,8 @@
-<%= render 'shared/fix_cta' %>
+<% content_for :meta_title, "'Les différents types de toits' : lisez l'article sur #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, "Toiture traditionnelle pentue, toit-terrasse ou toit végétal : à chacun son environnement privilégié" %>
+<% content_for :meta_image, "toit_vegetal.jpg" %>
+
+<%= render 'shared/fix_cta' %> !
 <%= render 'shared/guides_top_banner' %>
 
 <div class="container">
@@ -18,17 +22,22 @@
         <header>
           <h1 itemprop="headline" class="text-center">Les différents types de toits</h1>
         </header>
-        <p>Il existe deux grandes familles de toits.</p>
+        <p>Il existe plusieurs familles de toits.</p>
         <ul>
           <li>Le toit traditionnel</li>
           <li>Le toit plat ou toit terrasse</li>
+          <li>Le toit végétal</li>
         </ul>
 
         <h2 class="text-center">Le toit traditionnel</h2>
         <p  class="italic">Le toit traditionnel est le toit en pente classique d'une maison. Il est constitué d'une charpente traditionnelle ou à fermettes industrielles et d'une couverture. La diversité des matériaux possibles, les qualités esthétiques du toit et les nouvelles technologies ont clairement redorés l'usage du toit traditionnel en créant des espaces plus clairs, plus confortables.</p>
-        <h3>prix</h3>
+        <figure>
+          <%= image_tag "lancieux.jpg", class: "figure-article"  %>
+          <figcaption>Un toit classique en Bretagne</figcaption>
+        </figure>
+        <h3>Prix</h3>
         <p>Le coût d’un toit traditionnel varie dans de très larges proportions en fonction de la qualité des matériaux  utilisés, de la difficulté de réalisation choisie (un toit plus pentu est plus compliqué), de la qualité de la main d’oeuvre choisie, du délai demandé… Une réalisation simple revient à environ à 300 € le mètre carré mais la facture peut être multipliée par quatre pour certains projets. De manière générale et pour les logements indivuels, le toit est conçu dès le départ par l’architecte qui dispose de sa propre équipe. Cependant, vous pouvez faire des propositions d’aménagement en fonction de votre budget et de vos inspirations.</p>
-        <h3>entretien et durée de vie</h3>
+        <h3>Entretien et durée de vie</h3>
         <p>Bien réalisé, un toit n’entraîne que de faibles coûts d’entretien. Un toit traditionnel doit avoir une durée de vie de 50 ans et parfois bien plus selon la qualité des matériaux utilisés.</p>
         <p>Les dépenses sont limitées :</p>
         <ul>
@@ -38,14 +47,31 @@
         </ul>
 
         <h2 class="text-center">Le toit plat ou toit terrasse</h2>
-        <p  class="italic">Le toit en béton plat des maison modernes est consituté d’une armature en métal dans lequel on a coulé une dalle en béton : le béton armé. Le toit en béton présente un premier intérêt qui est celui de la capacité à transformer ce toit en terrasse si le lieu s’y prête : vue, solarium, possibilité de créer un terrasse et un lieu de verdure si la surface du terrain au sol est faible.
-        L’autre intérêt du toit moderne en béton est la possibilité de créer des verrières pour créer des puis de lumière dans la maison. La réalisation d’un revêtement végétal est un excellent moyen d’isoler votre toit est de conserver la chaleur.</p>
 
-        <h3>prix</h3>
+
+        <p  class="italic">Le toit en béton plat des maison modernes est consituté d’une armature en métal dans lequel on a coulé une dalle en béton : le béton armé.</p>
+        <figure>
+          <%= image_tag "rooftop_paris.jpg", class: "figure-article"  %>
+          <figcaption>Un toit-terasse à Paris</figcaption>
+        </figure>
+        <h3>Avantage</h3>
+        <p> Le toit en béton présente un premier intérêt qui est celui de la capacité à transformer ce toit en terrasse si le lieu s’y prête : vue, solarium, possibilité de créer un terrasse et un lieu de verdure si la surface du terrain au sol est faible. L’autre intérêt du toit moderne en béton est la possibilité de créer des verrières pour créer des puis de lumière dans la maison. La réalisation d’un revêtement végétal est un excellent moyen d’isoler votre toit est de conserver la chaleur. </p>
+
+        <h3>Prix</h3>
         <p>Le coût d’un toit en béton est intrinséquement lié à celui de la construction de la maison. Au contraire d’une maison classique ou la maçonnerie (la constitution des murs) et la charpente sont deux actions singulières disposant de leurs propres spécialités, la maison en béton est constituée d’un sol bloc et d’une seule même technologie. De ce fait, le coût du toit est plus faible (150 € du mètre carré) mais est à mettre en relation avec le reste de l'édifice qui peut être plus cher qu'une maçonnerie en brique par exemple. De ce fait, le coût global du projet reste proche de celui d'une maison de dimension moyenne avec une toiture traditionnel.</p>
 
-        <h3>entretien et durée de vie</h3>
+        <h3>Entretien et durée de vie</h3>
         <p>Depuis 20 ans, le béton est devenu un produit hautement technologique et les réalisations actuelles ne demandent que de faibles coûts d’entretiens. La durée de vie des bétons actuels semble impressionnante. Selon l'emplacement climatique du logement, on peut choisir d'isoler le béton des aggressions de la météo (gel , pluie, humidité...) ce qui augmentera sa durée de vie mais aussi ses propriétés isolantes.</p>
+
+        <h2 class="text-center">Le toit végétal</h2>
+        <p class="italic">Procédé traditionnel visant à recouvrir en partie l'habitation de terre pour y faire pousser une végétation. Le toit végétal connaît un certain essor en Europe du Nord.</p>
+         <figure>
+          <%= image_tag "toit_vegetal.jpg", class: "figure-article"  %>
+          <figcaption>Le toit végétal permet de fondre son habitation dans la nature</figcaption>
+        </figure>
+        <h3>Intérêts</h3>
+        <p>L'habitation dispose d'une excellente isolation par le substrat de terre et par la végétation qui la recouvre. Ce genre de toit convient parfaitement aux habitations en pleine nature. Il faut veiller à créer des puits de lumière afin que le logement puissent profiter d'une luminosité naturelle suffisante.</p>
+
       </div>
     </div>
     <%= render 'shared/guide_left_navigation' %>
