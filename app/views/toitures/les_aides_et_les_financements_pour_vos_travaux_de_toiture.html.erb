@@ -1,3 +1,7 @@
+<% content_for :meta_title, "'Les aides et les financements pour votre travaux de toiture' : lisez l'article sur #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, "Vous pouvez obtenir des aides et des facilités de financement pour vos travaux. Revue des solutions !" %>
+<% content_for :meta_image, "euros.jpg" %>
+
 <%= render 'shared/fix_cta' %>
 <%= render 'shared/guides_top_banner' %>
 
@@ -10,7 +14,7 @@
           <li><a href="/">Accueil</a></li>
           <li><%= link_to "Les guides", guides_path %></li>
           <li><%= link_to "La toiture", la_toiture_guide_index_path %></li>
-          <li class="active">Les aides et les financements</li>
+          <li class="active">Les aides et les financements pour vos travaux de toiture</li>
         </ol>
 
         <%= render 'shared/share_links' %>
@@ -18,13 +22,28 @@
         <header>
           <h1 itemprop="headline" class="text-center">Les aides et les financements</h1>
         </header>
-        <p class='italic'>Vos travaux de toiture peuvent être financés par votre banque dans le cadre de prêts immobiliers</p>
-            <p><strong>Financement</strong></p>
-        <p> de Multiples aides existent.Quelques sites qui en parle</p>
+        <p class='italic'>Vous pouvez obtenir des aides et des facilités de financement pour vos travaux. Revue des solutions :</p>
+
+        <h2>Financer ses travaux</h2>
+
+        <p>Le financement d'une toiture est un investissement immobilier et votre banquier peut vous octoyer les mêmes conditions avantageuses, sachez profiter des taux qui restent bas ! Une rénovation peut faire baisser les dépenses de chauffage de manière substantielle ce qui jouera dur votre qualité de crédit.<p>
+
+        <h2>Les aides à la rénovation</h2>
+
+        <h3>Les aides de l'Etat à la rénovation énergétique</h3>
+        <p>Dans le cadre de sa politique de transition énergétique, l'Etat subventionne les travaux visant à améliorer l'efficacité énergétique des logements. Le toit étant le premier poste pour améliorer l'efficience énergétique du logement, une multitude d'aide existent dont certaines reservées aux ménages ayant de faibles revenus.</p>
         <ul>
+          <li> <%= link_to "le site de l'ANAH", 'http://www.anah.fr/' %></li>
           <li> <%= link_to 'le site economie.gouv', 'https://www.economie.gouv.fr/particuliers/aides-renovation-energetique' %></li>
           <li><%= link_to 'le site renovation-info-service', 'http://www.renovation-info-service.gouv.fr/mes-aides-financieres' %></li>
           <li><%= link_to 'le site quelleenergie.fr', 'https://www.quelleenergie.fr' %></li>
+        </ul>
+
+        <h3>Les aides de l'Etat dans le cadre de la protection du patrimoine</h3>
+        <p>Les rénovations des bâtiments ayant un intérêt historique ou architectural peuvent être soutenues par la fondation du Patrimoine ou par les Monuments Historiques.  </p>
+        <ul>
+          <li> <%= link_to "le site de la fondation du patrimoine", 'https://www.fondation-patrimoine.org/' %></li>
+          <li> <%= link_to 'le site de la fondation pour les monuments historiques', 'http://fondationmh.fr/' %></li>
         </ul>
 
       </div>
