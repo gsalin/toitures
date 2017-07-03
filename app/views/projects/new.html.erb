@@ -1,14 +1,10 @@
 <h1 class="text-center title_project_new">Edition de projets</h1>
 
+<h5 class="text-center">Ici, vous pouvez présenter les projets que vous avez fait, ceux-ci apparaitront sur votre fiche et permettront à votre profil d'être plus consulté</h5>
 <!-- formulaire de création -->
 <% if @projects == nil || @projects.count < 4 %>
-
-<h3 class="text-center">Nouveau projet</h3>
+<h4 class="text-center" style="margin-top: 80px;margin-bottom: 40px;">Créer unouveau projet</h4>
 <%= render "shared/form_project", project: @project %>
-
-<% else %>
-
-<p class="text-center">Vous avez déja créé 4 projets</p>
 
 <% end %>
 
@@ -17,12 +13,9 @@
 
 
 <% if @projects != nil %>
-  <% if @projects.count == 0 %>
-    <h3 class="text-center">Vous n'avez aucun projet, crééz en!</h3>
-  <% elsif @projects.count < 4 %>
-    <h3 class="text-center">Vous avez créé <%= @projects.count %> projet(s) sur 4 disponibles</h3>
+  <% if @projects.count < 4 && @projects.count > 0 %>
+    <h3 class="text-center">Vous avez <%= @projects.count %> projet(s) sur 4 possibles</h3>
   <% end %>
-
 
 <div class="container">
   <div class="row row_project_preview">
