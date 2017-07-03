@@ -26,6 +26,7 @@
   z-index:50;
   width: 877px;
   margin-top: 30px;
+  box-shadow: 0 15px 35px rgba(50,50,93,0.1), 0 5px 15px rgba(0,0,0,0.07);
 }
 .home-banner h2 {
   z-index: 2;
@@ -150,6 +151,9 @@
     justify-content: space-around;
     align-items: center;
     align-content: space-around;
+    box-shadow: 0 15px 35px rgba(50,50,93,0.1), 0 5px 15px rgba(0,0,0,0.07);
+    border-radius: 5px;
+    padding: 10px;
     i {
       height: 90px;
       width: 90px;
@@ -201,7 +205,6 @@
     background-size: cover !important;
     color: white;
     border-radius: 3px;
-    margin-top:20px;
     position: relative;
     h2 {
       font-size: 25px;
@@ -329,13 +332,24 @@
 
 .banner-guide {
   background-color: white;
+  box-shadow: 0 15px 35px rgba(50,50,93,0.1), 0 5px 15px rgba(0,0,0,0.07);
 }
 
 .banner-magazine {
   background-color: white;
+  box-shadow: 0 15px 35px rgba(50,50,93,0.1), 0 5px 15px rgba(0,0,0,0.07);
 }
 
 .card-presentation-container {
   padding-bottom: 40px;
   padding-top: 30px;
+}
+
+#center-form-annuaire {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: stretch;
 }
