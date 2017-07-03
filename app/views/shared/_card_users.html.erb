@@ -1,7 +1,11 @@
 
 <div class="row row_show_users">
 
+
+
   <!-- 1ere col avec photos -->
+
+
   <div class="col-xs-12 col-sm-4 card_photo_presentation">
     <%= link_to user_path(user), class: "link_pic" do %>
       <% if user.photo_presentation? %>
@@ -12,7 +16,12 @@
     <% end %>
   </div>
 
+
+
   <!-- 2eme col avec logo, nom et description -->
+
+
+
   <div class="col-xs-12 col-sm-4 card_infos">
     <%= link_to user_path(user), class: "link_show" do %>
       <% if user.photo_company_logo? %>
@@ -40,7 +49,12 @@
     </div>
   </div>
 
+
+
   <!-- 3eme col avec boutons et skills -->
+
+
+
   <div class="col-xs-12 col-sm-4 card_skills">
     <div class="modals_position">
       <!-- Modal Phone -->
