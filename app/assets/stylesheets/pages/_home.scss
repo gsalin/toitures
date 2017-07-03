@@ -26,6 +26,7 @@
   z-index:50;
   width: 877px;
   margin-top: 30px;
+  box-shadow: 0 15px 35px rgba(50,50,93,0.1), 0 5px 15px rgba(0,0,0,0.07);
 }
 .home-banner h2 {
   z-index: 2;
@@ -100,23 +101,6 @@
   }
 }
 
-
-
-.card-link-home-guide {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  z-index:2;
-  background: black;
-  opacity: 0;
-    &:hover {
-    opacity: 0.1;
-    transition: color 0.5s ease;
-  }
-}
-
 #border-presentation-site-home {
   text-align: justify;
 
@@ -150,6 +134,10 @@
     justify-content: space-around;
     align-items: center;
     align-content: space-around;
+    box-shadow: 0 15px 35px rgba(50,50,93,0.1), 0 5px 15px rgba(0,0,0,0.07);
+    border-radius: 5px;
+    padding: 10px;
+    background-color: white;
     i {
       height: 90px;
       width: 90px;
@@ -197,12 +185,16 @@
   }
   .card-home-guide{
     height: 200px;
-    text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+    // text-shadow: 0 1px 3px rgba(0,0,0,0.6);
     background-size: cover !important;
     color: white;
     border-radius: 3px;
-    margin-top:20px;
     position: relative;
+    &:hover {
+    transform: translateY(-5px) translateZ(0);
+    color: $yellow;
+    background-color: $black;
+    }
     h2 {
       font-size: 25px;
       position: absolute;
@@ -224,6 +216,17 @@
     }
   }
 }
+
+.card-link-home-guide {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index:2;
+  opacity: 0;
+}
+
 
 .annuaire-card-home {
   padding-top: 20px;
@@ -329,13 +332,24 @@
 
 .banner-guide {
   background-color: white;
+  box-shadow: 0 15px 35px rgba(50,50,93,0.1), 0 5px 15px rgba(0,0,0,0.07);
 }
 
 .banner-magazine {
   background-color: white;
+  box-shadow: 0 15px 35px rgba(50,50,93,0.1), 0 5px 15px rgba(0,0,0,0.07);
 }
 
 .card-presentation-container {
   padding-bottom: 40px;
   padding-top: 30px;
+}
+
+#center-form-annuaire {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: stretch;
 }

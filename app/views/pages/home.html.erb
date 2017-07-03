@@ -67,6 +67,7 @@
     </div>
   <% end %>
   </div>
+
 </div>
 
 <!-- card presentation -->
@@ -114,7 +115,7 @@
   <div class="container guide-card-home">
     <div class="row row-guide-card-home">
       <div class="col-xs-12 col-sm-12">
-        <h1>Les guides</h1>
+        <h1 style="margin-bottom: 50px;">Les guides</h1>
       </div>
       <div class="col-xs-12 col-sm-4">
         <div class="card-home-guide" style="background: linear-gradient(155deg, rgba(5, 5, 5, 0.6) 10%, rgba(5, 5, 5, 0.2) 80%), url(<%= asset_path 'chaumiere.jpg' %>);">
@@ -154,7 +155,7 @@
   <div class="row row-annuaire-card-home">
     <div class="col-xs-12">
     <%= link_to users_path do %>
-      <h1>L'annuaire</h1>
+      <h1 style="margin-bottom: 40px;">L'annuaire</h1>
     <% end %>
     </div>
     <div class="col-xs-12 col-sm-4">
@@ -181,8 +182,57 @@
         <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Publication d'articles dans le magazine</li>
       </ul>
     </div>
-    <div class="col-xs-12 text-left">
-      <h2><%= link_to "Accéder à l'annuaire", users_path %></h2>
+    <div class="col-xs-12" id="center-form-annuaire">
+    <div class="form_home">
+    <%= simple_form_for(@client) do |f| %>
+      <div class="home_container">
+        <div class="main-form-stuffs">
+        <%= f.input :address, placeholder: 'Ville, CP, Adresse', autofocus: true, label:false, input_html: {id: "client_address_2nd_form"}  %>
+        </div>
+        <div class="dropdown main-form-stuffs">
+          <button class="btn btn-default custom-drop-down-btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            Type de travaux
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu dropdown-size-custom keep-open-on-click" aria-labelledby="dropdownMenu1">
+            <li><label><%= f.check_box :couverture %> <span> couverture</span></label></li>
+            <li><label><%= f.check_box :charpente %><span> charpente</span></label></li>
+            <li><label><%= f.check_box :ouverture %> <span> fenêtre / ouverture</span></label></li>
+            <li><label><%= f.check_box :terrasse %><span> terrasse</span></label></li>
+            <li><label><%= f.check_box :plomberie %><span> eaux de pluies / zinguerie</span></label></li>
+          </ul>
+        </div>
+        <div class="dropdown main-form-stuffs">
+          <button class="btn btn-default custom-drop-down-btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            Type de bien
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu dropdown-size-custom keep-open-on-click" aria-labelledby="dropdownMenu1">
+            <li><label><%= f.check_box :maison %><span> maison</span></label></li>
+            <li><label><%= f.check_box :immeuble %><span> immeuble</span></label></li>
+            <li><label><%= f.check_box :chateau %><span> chateau</span></label></li>
+          </ul>
+        </div>
+        <div class="dropdown main-form-stuffs">
+          <button class="btn btn-default custom-drop-down-btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            Besoin
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu keep-open-on-click" aria-labelledby="dropdownMenu1">
+            <li><label><%= f.check_box :construction %><span> construction</span></label></li>
+            <li><label><%= f.check_box :renovation %><span> rénovation</span></label></li>
+            <li><label><%= f.check_box :entretien %><span> entretien</span></label></li>
+          </ul>
+        </div>
+        <div class="main-form-stuffs">
+          <%= button_tag type: 'submit', class: "search-button" do %>
+          <i class="fa fa-search" aria-hidden="true"></i>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+    </div>
+
     </div>
   </div>
 </div>
@@ -192,7 +242,7 @@
   <div class="container annuaire-card-home">
     <div class="row row-annuaire-card-home">
       <div class="col-xs-12 col-md-12">
-        <h1>Le magazine</h1>
+        <h1 style="margin-bottom: 40px;">Le magazine</h1>
       </div>
       <div class="col-xs-12 col-md-10 col-md-offset-1">
         <% @articles.each do |article| %>

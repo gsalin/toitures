@@ -25,12 +25,9 @@ class User < ApplicationRecord
   validates :last_name, presence: true
   validates :status, presence: true
 
-  # validates :company, presence: true, uniqueness: true
-  # validates :office_phone, uniqueness: true
-  # validates :mobile_phone, presence: true, uniqueness: true
-  # validates :address, presence: true
-  # validates :description, presence: true, length: { minimum: 300, maximum: 900 }
-  # validates :radius, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 50 }
-  # validates :city, presence: true
-  # validates :zip_code, presence: true
+  validates :company, uniqueness: true
+  validates :office_phone, uniqueness: true
+  validates :mobile_phone, uniqueness: true
+  validates :description,length: { minimum: 300, maximum: 900 }
+  validates :radius, numericality: { only_integer: true, greater_than_or_equal_to: 50 }
 end

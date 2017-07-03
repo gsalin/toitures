@@ -35,7 +35,31 @@ $(document).ready(function() {
     });
   }
 
-    var works_address = $('#client_address').get(0);
+  var works_address = $('#client_address').get(0);
+
+  if (works_address) {
+    var autocomplete = new google.maps.places.Autocomplete(works_address, { types: ['geocode'] });
+    google.maps.event.addListener(autocomplete, 'place_changed', onPlaceChanged);
+    google.maps.event.addDomListener(works_address, 'keydown', function(e) {
+      if (e.keyCode == 13) {
+        e.preventDefault(); // Do not submit the form on Enter.
+      }
+    });
+  }
+
+  var works_address = $('#client_address_2nd_form').get(0);
+
+  if (works_address) {
+    var autocomplete = new google.maps.places.Autocomplete(works_address, { types: ['geocode'] });
+    google.maps.event.addListener(autocomplete, 'place_changed', onPlaceChanged);
+    google.maps.event.addDomListener(works_address, 'keydown', function(e) {
+      if (e.keyCode == 13) {
+        e.preventDefault(); // Do not submit the form on Enter.
+      }
+    });
+  }
+
+  var works_address = $('#user_city').get(0);
 
   if (works_address) {
     var autocomplete = new google.maps.places.Autocomplete(works_address, { types: ['geocode'] });
