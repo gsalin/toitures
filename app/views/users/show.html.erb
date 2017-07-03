@@ -63,20 +63,30 @@
 </div>
 
 <div class="container">
-<!-- description, fiche et skills -->
   <div class="description-container">
     <div class="row">
       <div class="description-row">
-        <div class="col-xs-12 col-md-9">
+        <div class="col-xs-12 col-md-8">
           <div class="user-description">
-          <h2>Informations générales</h2>
-            <p><%= @user.description %></p>
+          <h3><%= @user.company %></h3>
+          <p><%= @user.description %></p>
             <div id="flex-pic-address">
-              <h3><%= @user.address %></h3>
+              <h2><%= @user.address %></h2>
+              <div class="labels-show">
+              <% if @user.rge == true %>
+                <%= image_tag "rge.png" %>
+              <% end %>
+              <% if @user.qualibat == true %>
+                <%= image_tag "qualibat.png" %>
+              <% end %>
+              <% if @user.mh == true %>
+                <%= image_tag "mh.png" %>
+              <% end %>
+              </div>
             </div>
           </div>
         </div>
-        <div class="col-xs-12 col-md-3">
+        <div class="col-xs-12 col-md-3 col-md-offset-1">
           <div class="skills-column">
             <ul class="skills">
 
@@ -155,6 +165,7 @@
                   <span>Gouttières / Eaux de pluie</span>
                 <% end %>
               </li>
+              </div>
             </ul>
           </div>
         </div>
@@ -164,9 +175,9 @@
 </div>
 
 <!-- cards projets -->
+<% if @projects != [] %>
 <h1 class="text-center">Nos réalisations</h1>
 <div class="container project-card">
-<% if @projects != [] %>
   <% @projects.each do |project| %>
   <div class="row">
     <!-- carousel -->

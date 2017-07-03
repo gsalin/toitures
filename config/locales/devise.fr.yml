@@ -21,16 +21,16 @@ fr:
         mobile_phone: Téléphone portable
         city: Commune
         zip_code: Code Postal
-        radius: Rayon d'action (en km)
+        radius: Distance max des chantiers (en km)
         position: Poste dans la société
         photo_company_logo: Logo de la société
         photo_presentation: Photo de présentation
       project:
-        title: Titre du projet
+        title: Titre de présentation
         description: Description
-        cost: Coût
+        cost: Coût (en €)
         address: Commune
-        date: Date
+        date: Date de réalisation
         project_photos: Photos du projet
     models:
       user: Utilisateur

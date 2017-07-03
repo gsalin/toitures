@@ -8,14 +8,14 @@
 
   <div class="row profile-first-row">
     <!-- Card infos de la société -->
-    <div class="col-xs-12 col-md-3 col-profile-style">
+    <div class="col-xs-12 col-md-4 col-profile-style">
       <%= f.input :company %>
       <%= f.input :address %>
       <%= f.input :city %>
       <%= f.input :zip_code %>
-      <%= f.input :radius %>
+      <%= f.input :radius, placeholder:"périmètre d'action autour de votre adresse" %>
     </div>
-    <div class="col-xs-12 col-md-3 col-profile-style">
+    <div class="col-xs-12 col-md-4 col-profile-style">
       <%= f.input :first_name %>
       <%= f.input :last_name %>
       <%= f.input :position %>
@@ -23,87 +23,97 @@
       <%= f.input :office_phone %>
       <%= f.input :mobile_phone %>
     </div>
-    <!-- card skills et description -->
-    <div class="col-xs-12 col-md-6 col-profile-style">
-      <p>Type de travaux</p>
-      <div class="checkbox_form">
-        <span>
-          <%= f.check_box :construction %>
-          Construction
-        </span>
-        <span>
-          <%= f.check_box :renovation  %>
-          Renovation
-        </span>
-        <span>
-          <%= f.check_box :entretien  %>
-          Entretien
-        </span>
+    <div class="col-xs-12 col-md-4 col-profile-style-check-box">
+      <div>
+        <p>Type de travaux</p>
+        <div class="checkbox_form">
+          <span>
+            <%= f.check_box :construction %>
+            Construction
+          </span>
+          <span>
+            <%= f.check_box :renovation  %>
+            Renovation
+          </span>
+          <span>
+            <%= f.check_box :entretien  %>
+            Entretien
+          </span>
+        </div>
       </div>
-
-      <p>Spécialités</p>
-      <div class="checkbox_form">
-        <span>
-          <%= f.check_box :couverture  %>
-          Couverture
-        </span>
-        <span>
-          <%= f.check_box :ouverture  %>
-          Ouverture
-        </span>
-        <span>
-          <%= f.check_box :terrasse  %>
-          Terrasse
-        </span>
-        <span>
-          <%= f.check_box :plomberie  %>
-          Plomberie
-        </span>
-        <span>
-          <%= f.check_box :charpente  %>
-          Charpente
-        </span>
+      <div>
+        <p>Spécialités</p>
+        <div class="checkbox_form">
+          <span>
+            <%= f.check_box :couverture  %>
+            Couverture
+          </span>
+          <span>
+            <%= f.check_box :ouverture  %>
+            Ouverture
+          </span>
+          <span>
+            <%= f.check_box :terrasse  %>
+            Terrasse
+          </span>
+          <span>
+            <%= f.check_box :plomberie  %>
+            Plomberie
+          </span>
+          <span>
+            <%= f.check_box :charpente  %>
+            Charpente
+          </span>
+        </div>
       </div>
-      <p>Type de bien</p>
-      <div class="checkbox_form">
-        <span>
-          <%= f.check_box :maison  %>
-          Maison
-        </span>
-        <span>
-          <%= f.check_box :chateau  %>
-          Chateau
-        </span>
-        <span>
-          <%= f.check_box :immeuble  %>
-          Immeuble
-        </span>
+      <div>
+        <p>Type de bien</p>
+        <div class="checkbox_form">
+          <span>
+            <%= f.check_box :maison  %>
+            Maison
+          </span>
+          <span>
+            <%= f.check_box :chateau  %>
+            Chateau
+          </span>
+          <span>
+            <%= f.check_box :immeuble  %>
+            Immeuble
+          </span>
+        </div>
       </div>
-      <p>Labels</p>
-      <div class="checkbox_form">
-        <span>
-          <%= f.check_box :rge  %>
-          RGE
-        </span>
-        <span>
-          <%= f.check_box :qualibat  %>
-          Qualibat
-        </span>
-        <span>
-          <%= f.check_box :mh  %>
-          Agrément Monuments Historiques
-        </span>
+      <div>
+        <p>Labels</p>
+        <div class="checkbox_form">
+          <span>
+            <%= f.check_box :rge  %>
+            RGE
+          </span>
+          <span>
+            <%= f.check_box :qualibat  %>
+            Qualibat
+          </span>
+          <span>
+            <%= f.check_box :mh  %>
+            Agrément Monuments Historiques
+          </span>
+        </div>
       </div>
     </div>
+    <!-- card skills et description -->
   </div>
   <div class="row">
-    <div class="col-xs-12 col-md-8">
-      <%= f.input :description%>
+    <div class="col-xs-12 col-md-6 description-col">
+      <%= f.input :description, placeholder: "Décrivez votre société, depuis quand existe t'elle, sa taille, son CA, le nombre de salariés, qu'elles sont vos spécialités..." %>
       <span id="description-count"><strong></strong></span><span> sur 900 lettres  </span>
     </div>
-    <div class="col-xs-12 col-md-4 flebox-edit-user">
+    <div class="col-xs-12 col-md-5 col-md-offset-1 col-profile-style">
       <span> <%= f.input :photo_company_logo, as: :attachinary %> </span>
       <span> <%= f.input :photo_presentation, as: :attachinary %> </span>
+      <p>
+      <%= f.button :submit, "Mettre à jour mon profil", class: "btn btn-success" %>
+      <% end %></p>
     </div>
   </div>
 
@@ -111,17 +121,11 @@
 
     <!--   Enregistrer mes modifications -->
     <div class="col-xs-12 col-profile-submit">
-      <%= f.button :submit, "Mettre à jour mon profil", class: "btn btn-success" %>
-      <% end %>
-      <%= link_to t(".cancel_my_account"), registration_path(resource_name), data: { confirm: t(".are_you_sure") }, method: :delete %>
-      <%= link_to t("devise.shared.links.back"), :back %>
-    </div>
-    <div class="col-xs-12 col-profile-submit">
-      <%= link_to new_project_path(current_user), class: "navbar-wagon-button btn" do %>
-        <span>Accéder mes projets</span>
-      <% end %>
       <%= link_to user_path(current_user), class: "navbar-wagon-button btn" do %>
-        <span>Voir ma fiche complète</span>
+        <span>Voir mon profil</span>
+      <% end %>
+      <%= link_to new_project_path(current_user), class: "navbar-wagon-button btn" do %>
+        <span>Gérer mes projets</span>
       <% end %>
     </div>
   </div>

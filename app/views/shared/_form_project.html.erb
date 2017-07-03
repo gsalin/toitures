@@ -11,9 +11,9 @@
         <%= f.input :cost, placeholder: "20 000" %>
         <%= f.input :address, placeholder: "Angers"   %>
         <%= f.input :date, discard_day: true %>
-        <%= f.input :project_photos, as: :attachinary %>
-        <div id="position_btn_project">
-        <%= f.button :submit, "Créer un projet", class: "navbar-wagon-button" %>
+        <%= f.input :project_photos, as: :attachinary, hint:"3 photos maximum" %>
+        <div id="position_btn_project" class="text-center">
+        <%= f.button :submit, "Publier ce projet", class: "navbar-wagon-button" %>
         </div>
       <% end %>
     </div>
