@@ -1,8 +1,8 @@
+
+<h2 class="text-center profile-title" >Complétez votre profil</h2>
+
 <% if current_user.pro? %>
-
 <div class="container profile-container">
-
-  <h2 class="text-center profile-title" >Profil de la société <strong><%= current_user.company %></strong></h2>
 
   <%= simple_form_for(@user) do |f| %>
 
@@ -119,6 +119,9 @@
     <div class="col-xs-12 col-profile-submit">
       <%= link_to new_project_path(current_user), class: "navbar-wagon-button btn" do %>
         <span>Accéder mes projets</span>
+      <% end %>
+      <%= link_to user_path(current_user), class: "navbar-wagon-button btn" do %>
+        <span>Voir ma fiche complète</span>
       <% end %>
     </div>
   </div>
