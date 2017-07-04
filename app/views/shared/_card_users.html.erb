@@ -70,10 +70,12 @@
                 <h4 class="modal-title">Coordonnées de : <%= user.company %></h4>
               </div>
               <div class="modal-body">
+              <% if user.office_phone != "" %>
                 <i class="fa fa-phone large-fa" aria-hidden="true"></i> <%= user.office_phone %>
-                <% if user.mobile_phone != nil %>
+              <% end %>
+              <% if user.mobile_phone != "" %>
                 <i class="fa fa-mobile large-fa" aria-hidden="true"></i> <%= user.mobile_phone %>
-                <% end %>
+              <% end %>
               </div>
             </div>
           </div>
