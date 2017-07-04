@@ -1,9 +1,9 @@
 class User < ApplicationRecord
 
   enum status: [:pro, :worker]
-  has_attachment :photo_presentation
-  has_attachment :photo_company_logo
-  has_attachment :photo
+  has_attachment :photo_presentation, accept: [:jpg, :jpeg, :png]
+  has_attachment :photo_company_logo, accept: [:jpg, :jpeg, :png, :svg]
+  has_attachment :photo, accept: [:jpg, :jpeg, :png]
   has_attachment :cv, accept: [:pdf]
 
   has_many :projects, dependent: :destroy
@@ -24,10 +24,9 @@ class User < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :status, presence: true
-
   validates :company, uniqueness: true
-  validates :office_phone, uniqueness: true
-  validates :mobile_phone, uniqueness: true
-  validates :description,length: { minimum: 300, maximum: 900 }
+  validates :office_phone, uniqueness: true, format: {with: /((\+|00)33|0)[1-9](\D?\d\d){4}/}
+  validates :mobile_phone, uniqueness: true, format: {with: /((\+|00)33|0)[1-9](\D?\d\d){4}/}
+  validates :description, length: { minimum: 300, maximum: 900 }
   validates :radius, numericality: { only_integer: true, greater_than_or_equal_to: 50 }
 end
