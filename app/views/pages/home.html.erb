@@ -70,11 +70,13 @@
   </div>
 </div>
 
+<div class="home-banner-xs hidden-md hidden-lg" style="background: linear-gradient(155deg, rgba(5, 5, 5, 0.6) 10%, rgba(5, 5, 5, 0.2) 80%), url('<%= image_path "basque.png" %>');">
+  <h3 class="text-center">Lestoitures.fr</h3>
+  <h4 class="text-center">L'annuaire des professionnels de la toiture</h4>
+</div>
 <div class="container hidden-md hidden-lg form-xs">
   <div class="row">
     <div class="col-xs-12">
-    <h2 class="text-center">Lestoitures.fr</h2>
-    <h3 class="text-center">L'annuaire des professionnels de la toiture</h3>
       <%= simple_form_for(@client) do |f| %>
       <%= f.input :address, placeholder: 'Ville, CP, Adresse', autofocus: true, label:false, input_html: {id: "client_address_form-xs"}  %>
       <div class="dropdown main-form-stuffs">

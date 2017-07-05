@@ -19,7 +19,8 @@
 
   def show
     @radius_users = []
-    User.all.each do |user|
+    pros = User.where(status: "pro")
+    pros.each do |user|
       beta = @client.distance_to(user.address).to_i
       if beta <= user.radius
         @radius_users << user
