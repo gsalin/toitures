@@ -13,17 +13,16 @@
           <%= f.input :email, required: true, autofocus: true %>
           <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
           <%= f.input :password_confirmation, required: true %>
-          <%#= f.input :status, collection: User.statuses, label_method: :first, value_method: :first, include_blank: false %>
           <%= f.input :status, collection: User.statuses, label_method: :first, value_method: :first, as: :radio_buttons %>
         </div>
+        <div class="form-actions text-center">
+          <%= f.button :submit, t(".sign_up") %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
 
-  <div class="form-actions text-center">
-    <%= f.button :submit, t(".sign_up") %>
-  </div>
-      <% end %>
 <div class="text-center">
   <%= render "devise/shared/links" %>
 </div>

@@ -8,11 +8,20 @@
 
   <div class="col-xs-12 col-sm-4 card_photo_presentation">
     <%= link_to user_path(user), class: "link_pic" do %>
+    <div class="hidden-xs hidden-sm">
       <% if user.photo_presentation? %>
         <%= cl_image_tag user.photo_presentation.path, width: 378, height: 248 %>
       <% else %>
         <%= image_tag "construction_toit.jpg", width: 378, height: 248 %>
       <% end %>
+    </div>
+    <div class="hidden-md hidden-lg">
+      <% if user.photo_presentation? %>
+        <%= cl_image_tag user.photo_presentation.path, width: 345, height: 228 %>
+      <% else %>
+        <%= image_tag "construction_toit.jpg", width: 350, height: 230 %>
+      <% end %>
+    </div>
     <% end %>
   </div>
 
