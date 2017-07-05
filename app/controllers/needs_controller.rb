@@ -20,7 +20,8 @@ class NeedsController < ApplicationController
 
   def show
     @radius_workers = []
-    User.where(status:'worker').each do |worker|
+    users_with_address = User.where.not(address: nil)
+    users_with_address.where(status:'worker').each do |worker|
       beta = @need.distance_to(worker.address).to_i
       if beta < 100
         @radius_workers << worker
