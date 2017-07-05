@@ -185,11 +185,15 @@
   }
   .card-home-guide{
     height: 200px;
-    // text-shadow: 0 1px 3px rgba(0,0,0,0.6);
     background-size: cover !important;
     color: white;
     border-radius: 3px;
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: stretch;
     &:hover {
     transform: translateY(-5px) translateZ(0);
     color: $yellow;
@@ -197,21 +201,9 @@
     }
     h2 {
       font-size: 25px;
-      position: absolute;
-      left: 0;
-      right: 0;
-      top:60px;
-      bottom:0;
-      margin: auto;
     }
     p {
       font-size: 14px;
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 120px;
-      bottom: 0;
-      margin: auto;
       padding: 10px;
     }
   }
@@ -352,4 +344,27 @@
   justify-content: center;
   align-items: center;
   align-content: stretch;
+}
+
+.form-xs{
+  margin-top: 20px;
+  .dropdown-toggle {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+#search-button-form-xs {
+  margin-left:0px;
+  width: 100%;
+}
+
+.dropdown-form-home-xs {
+  width: 100%;
+  padding: 10px;
+}
+
+.card-guide {
+  margin-top: 5px;
+  margin-bottom: 5px;
 }

@@ -1,35 +1,88 @@
 <%= render 'shared/fix_cta' %>
 
-<div id="slideshow">
-  <div class="slide" style="background: linear-gradient(155deg, rgba(5, 5, 5, 0.6) 10%, rgba(5, 5, 5, 0.2) 80%), url('<%= image_path "tuiles.png" %>');">
+<div class="hidden-xs hidden-sm">
+<!-- banner et form -->
+  <div id="slideshow">
+    <div class="slide" style="background: linear-gradient(155deg, rgba(5, 5, 5, 0.6) 10%, rgba(5, 5, 5, 0.2) 80%), url('<%= image_path "tuiles.png" %>');">
+    </div>
+    <div class="slide" style="background: linear-gradient(155deg, rgba(5, 5, 5, 0.6) 10%, rgba(5, 5, 5, 0.2) 80%), url('<%= image_path "user_base_pic.png" %>');">
+    </div>
+    <div class="slide" style="background: linear-gradient(155deg, rgba(5, 5, 5, 0.6) 10%, rgba(5, 5, 5, 0.2) 80%), url('<%= image_path "tuileszoom.png" %>');">
+    </div>
   </div>
-  <div class="slide" style="background: linear-gradient(155deg, rgba(5, 5, 5, 0.6) 10%, rgba(5, 5, 5, 0.2) 80%), url('<%= image_path "user_base_pic.png" %>');">
-  </div>
-  <div class="slide" style="background: linear-gradient(155deg, rgba(5, 5, 5, 0.6) 10%, rgba(5, 5, 5, 0.2) 80%), url('<%= image_path "tuileszoom.png" %>');">
+  <div class="home-banner" style="background: linear-gradient(155deg, rgba(5, 5, 5, 0.6) 10%, rgba(5, 5, 5, 0.2) 80%), url('<%= image_path "basque.png" %>');">
+
+
+    <h3>Lestoitures.fr</h3>
+    <h2>L'annuaire des professionnels de la toiture</h2>
+
+    <!-- form -->
+    <div class="form_home">
+    <%= simple_form_for(@client) do |f| %>
+      <div class="home_container">
+        <div class="main-form-stuffs">
+        <%= f.input :address, placeholder: 'Ville, CP, Adresse', autofocus: true, label:false %>
+        </div>
+        <div class="dropdown main-form-stuffs">
+          <button class="btn btn-default custom-drop-down-btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            Type de travaux
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu dropdown-size-custom keep-open-on-click" aria-labelledby="dropdownMenu1">
+            <li><label><%= f.check_box :couverture %> <span> couverture</span></label></li>
+            <li><label><%= f.check_box :charpente %><span> charpente</span></label></li>
+            <li><label><%= f.check_box :ouverture %> <span> fenêtre / ouverture</span></label></li>
+            <li><label><%= f.check_box :terrasse %><span> terrasse</span></label></li>
+            <li><label><%= f.check_box :plomberie %><span> eaux de pluies / zinguerie</span></label></li>
+          </ul>
+        </div>
+        <div class="dropdown main-form-stuffs">
+          <button class="btn btn-default custom-drop-down-btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            Type de bien
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu dropdown-size-custom keep-open-on-click" aria-labelledby="dropdownMenu1">
+            <li><label><%= f.check_box :maison %><span> maison</span></label></li>
+            <li><label><%= f.check_box :immeuble %><span> immeuble</span></label></li>
+            <li><label><%= f.check_box :chateau %><span> chateau</span></label></li>
+          </ul>
+        </div>
+        <div class="dropdown main-form-stuffs">
+          <button class="btn btn-default custom-drop-down-btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            Besoin
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu keep-open-on-click" aria-labelledby="dropdownMenu1">
+            <li><label><%= f.check_box :construction %><span> construction</span></label></li>
+            <li><label><%= f.check_box :renovation %><span> rénovation</span></label></li>
+            <li><label><%= f.check_box :entretien %><span> entretien</span></label></li>
+          </ul>
+        </div>
+        <div class="main-form-stuffs">
+          <%= button_tag type: 'submit', class: "search-button" do %>
+          <i class="fa fa-search" aria-hidden="true"></i>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+    </div>
+
   </div>
 </div>
 
-<!-- banner et form -->
-
-<div class="home-banner" style="background: linear-gradient(155deg, rgba(5, 5, 5, 0.6) 10%, rgba(5, 5, 5, 0.2) 80%), url('<%= image_path "basque.png" %>');">
-
-
-  <h3>Lestoitures.fr</h3>
-  <h2>L'annuaire des professionnels de la toiture</h2>
-
-  <!-- form -->
-  <div class="form_home">
-  <%= simple_form_for(@client) do |f| %>
-    <div class="home_container">
-      <div class="main-form-stuffs">
-      <%= f.input :address, placeholder: 'Ville, CP, Adresse', autofocus: true, label:false %>
-      </div>
+<div class="container hidden-md hidden-lg form-xs">
+  <div class="row">
+    <div class="col-xs-12">
+    <h2 class="text-center">Lestoitures.fr</h2>
+    <h3 class="text-center">L'annuaire des professionnels de la toiture</h3>
+      <%= simple_form_for(@client) do |f| %>
+      <%= f.input :address, placeholder: 'Ville, CP, Adresse', autofocus: true, label:false, input_html: {id: "client_address_form-xs"}  %>
       <div class="dropdown main-form-stuffs">
         <button class="btn btn-default custom-drop-down-btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
           Type de travaux
           <span class="caret"></span>
         </button>
-        <ul class="dropdown-menu dropdown-size-custom keep-open-on-click" aria-labelledby="dropdownMenu1">
+        <ul class="dropdown-menu dropdown-size-custom dropdown-form-home-xs keep-open-on-click" aria-labelledby="dropdownMenu1">
           <li><label><%= f.check_box :couverture %> <span> couverture</span></label></li>
           <li><label><%= f.check_box :charpente %><span> charpente</span></label></li>
           <li><label><%= f.check_box :ouverture %> <span> fenêtre / ouverture</span></label></li>
@@ -42,7 +95,7 @@
           Type de bien
           <span class="caret"></span>
         </button>
-        <ul class="dropdown-menu dropdown-size-custom keep-open-on-click" aria-labelledby="dropdownMenu1">
+        <ul class="dropdown-menu dropdown-size-custom dropdown-form-home-xs keep-open-on-click" aria-labelledby="dropdownMenu1">
           <li><label><%= f.check_box :maison %><span> maison</span></label></li>
           <li><label><%= f.check_box :immeuble %><span> immeuble</span></label></li>
           <li><label><%= f.check_box :chateau %><span> chateau</span></label></li>
@@ -53,21 +106,18 @@
           Besoin
           <span class="caret"></span>
         </button>
-        <ul class="dropdown-menu keep-open-on-click" aria-labelledby="dropdownMenu1">
+        <ul class="dropdown-menu dropdown-form-home-xs keep-open-on-click" aria-labelledby="dropdownMenu1">
           <li><label><%= f.check_box :construction %><span> construction</span></label></li>
           <li><label><%= f.check_box :renovation %><span> rénovation</span></label></li>
           <li><label><%= f.check_box :entretien %><span> entretien</span></label></li>
         </ul>
       </div>
-      <div class="main-form-stuffs">
-        <%= button_tag type: 'submit', class: "search-button" do %>
-        <i class="fa fa-search" aria-hidden="true"></i>
+        <%= button_tag type: 'submit', class: "search-button", id: "search-button-form-xs" do %>
+        Rechercher
         <% end %>
-      </div>
+      <% end %>
     </div>
-  <% end %>
   </div>
-
 </div>
 
 <!-- card presentation -->
@@ -117,7 +167,7 @@
       <div class="col-xs-12 col-sm-12">
         <h1 style="margin-bottom: 50px;">Les guides</h1>
       </div>
-      <div class="col-xs-12 col-sm-4">
+      <div class="col-xs-12 col-sm-4 card-guide">
         <div class="card-home-guide" style="background: linear-gradient(155deg, rgba(5, 5, 5, 0.6) 10%, rgba(5, 5, 5, 0.2) 80%), url(<%= asset_path 'chaumiere.jpg' %>);">
             <h2 class="text-center">La toiture</h2>
             <p class="text-center">L'essentiel pour bien comprendre les enjeux à tous les stades de votre projet : plannings, gestion des devis...</p>
@@ -125,7 +175,7 @@
           <% end %>
         </div>
       </div>
-      <div class="col-xs-12 col-sm-4">
+      <div class="col-xs-12 col-sm-4 card-guide">
         <div class="card-home-guide" style="background: linear-gradient(155deg, rgba(5, 5, 5, 0.6) 10%, rgba(5, 5, 5, 0.2) 80%), url(<%= asset_path 'lauze.jpg' %>);">
           <div class="card-home-text">
             <h2 class="text-center">La couverture</h2>
@@ -135,7 +185,7 @@
           <% end %>
         </div>
       </div>
-      <div class="col-xs-12 col-sm-4">
+      <div class="col-xs-12 col-sm-4 card-guide">
         <div class="card-home-guide" style="background: linear-gradient(155deg, rgba(5, 5, 5, 0.6) 10%, rgba(5, 5, 5, 0.2) 80%), url(<%= asset_path 'construction_toit.jpg' %>);">
           <div class="card-home-text">
             <h2 class="text-center">La charpente</h2>
@@ -182,57 +232,56 @@
         <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Publication d'articles dans le magazine</li>
       </ul>
     </div>
-    <div class="col-xs-12" id="center-form-annuaire">
-    <div class="form_home">
-    <%= simple_form_for(@client) do |f| %>
-      <div class="home_container">
-        <div class="main-form-stuffs">
-        <%= f.input :address, placeholder: 'Ville, CP, Adresse', autofocus: true, label:false, input_html: {id: "client_address_2nd_form"}  %>
+    <div class="col-xs-12 hidden-xs hidden-sm" id="center-form-annuaire">
+      <div class="form_home">
+      <%= simple_form_for(@client) do |f| %>
+        <div class="home_container">
+          <div class="main-form-stuffs">
+          <%= f.input :address, placeholder: 'Ville, CP, Adresse', autofocus: true, label:false, input_html: {id: "client_address_2nd_form"}  %>
+          </div>
+          <div class="dropdown main-form-stuffs">
+            <button class="btn btn-default custom-drop-down-btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              Type de travaux
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu dropdown-size-custom keep-open-on-click" aria-labelledby="dropdownMenu1">
+              <li><label><%= f.check_box :couverture %> <span> couverture</span></label></li>
+              <li><label><%= f.check_box :charpente %><span> charpente</span></label></li>
+              <li><label><%= f.check_box :ouverture %> <span> fenêtre / ouverture</span></label></li>
+              <li><label><%= f.check_box :terrasse %><span> terrasse</span></label></li>
+              <li><label><%= f.check_box :plomberie %><span> eaux de pluies / zinguerie</span></label></li>
+            </ul>
+          </div>
+          <div class="dropdown main-form-stuffs">
+            <button class="btn btn-default custom-drop-down-btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              Type de bien
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu dropdown-size-custom keep-open-on-click" aria-labelledby="dropdownMenu1">
+              <li><label><%= f.check_box :maison %><span> maison</span></label></li>
+              <li><label><%= f.check_box :immeuble %><span> immeuble</span></label></li>
+              <li><label><%= f.check_box :chateau %><span> chateau</span></label></li>
+            </ul>
+          </div>
+          <div class="dropdown main-form-stuffs">
+            <button class="btn btn-default custom-drop-down-btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              Besoin
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu keep-open-on-click" aria-labelledby="dropdownMenu1">
+              <li><label><%= f.check_box :construction %><span> construction</span></label></li>
+              <li><label><%= f.check_box :renovation %><span> rénovation</span></label></li>
+              <li><label><%= f.check_box :entretien %><span> entretien</span></label></li>
+            </ul>
+          </div>
+          <div class="main-form-stuffs">
+            <%= button_tag type: 'submit', class: "search-button" do %>
+            <i class="fa fa-search" aria-hidden="true"></i>
+            <% end %>
+          </div>
         </div>
-        <div class="dropdown main-form-stuffs">
-          <button class="btn btn-default custom-drop-down-btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-            Type de travaux
-            <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu dropdown-size-custom keep-open-on-click" aria-labelledby="dropdownMenu1">
-            <li><label><%= f.check_box :couverture %> <span> couverture</span></label></li>
-            <li><label><%= f.check_box :charpente %><span> charpente</span></label></li>
-            <li><label><%= f.check_box :ouverture %> <span> fenêtre / ouverture</span></label></li>
-            <li><label><%= f.check_box :terrasse %><span> terrasse</span></label></li>
-            <li><label><%= f.check_box :plomberie %><span> eaux de pluies / zinguerie</span></label></li>
-          </ul>
-        </div>
-        <div class="dropdown main-form-stuffs">
-          <button class="btn btn-default custom-drop-down-btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-            Type de bien
-            <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu dropdown-size-custom keep-open-on-click" aria-labelledby="dropdownMenu1">
-            <li><label><%= f.check_box :maison %><span> maison</span></label></li>
-            <li><label><%= f.check_box :immeuble %><span> immeuble</span></label></li>
-            <li><label><%= f.check_box :chateau %><span> chateau</span></label></li>
-          </ul>
-        </div>
-        <div class="dropdown main-form-stuffs">
-          <button class="btn btn-default custom-drop-down-btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-            Besoin
-            <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu keep-open-on-click" aria-labelledby="dropdownMenu1">
-            <li><label><%= f.check_box :construction %><span> construction</span></label></li>
-            <li><label><%= f.check_box :renovation %><span> rénovation</span></label></li>
-            <li><label><%= f.check_box :entretien %><span> entretien</span></label></li>
-          </ul>
-        </div>
-        <div class="main-form-stuffs">
-          <%= button_tag type: 'submit', class: "search-button" do %>
-          <i class="fa fa-search" aria-hidden="true"></i>
-          <% end %>
-        </div>
+      <% end %>
       </div>
-    <% end %>
-    </div>
-
     </div>
   </div>
 </div>
