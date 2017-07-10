@@ -1,0 +1,25 @@
+<%= render 'shared/magazine_top_banner' %>
+<%= render 'shared/fix_cta' %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-12">
+        <ol class="breadcrumb">
+          <li><a href="/">Accueil</a></li>
+          <li class="active">Magazine</li>
+          <li class="active">Patrimoine</li>
+        </ol>
+    </div>
+
+    <%= render 'shared/share_links' %>
+
+    <div class="col-xs-12 col-md-9">
+      <div class='index_articles_page'>
+        <% @articles.each do |article| %>
+         <%= render "shared/card_article", article: article %>
+        <% end %>
+      </div>
+    </div>
+    <%= render 'shared/article_left_navigation' %>
+  </div>
+</div>

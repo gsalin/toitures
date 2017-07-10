@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     @radius_users = []
     @client = Client.new
 
-    pros = User.where(status:'pro')
+    pros = User.pro
     @users = pros.where.not(latitude: nil, longitude: nil)
 
 
@@ -54,7 +54,7 @@ class UsersController < ApplicationController
 
   def annuaire_des_candidats
     @need = Need.new
-    @users = User.where(status:'worker')
+    @users = User.worker
   end
 
   private

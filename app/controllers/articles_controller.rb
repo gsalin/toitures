@@ -40,9 +40,29 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def energie
+    @articles = Article.energie
+  end
+
+  def environnement
+    @articles = Article.environnement
+  end
+
+  def technique
+    @articles = Article.technique
+  end
+
+  def style
+    @articles = Article.style
+  end
+
+  def patrimoine
+    @articles = Article.patrimoine
+  end
+
   private
 
   def article_params
-    params.require(:article).permit(:title, :card_summary, :summary, :category_id, :body, :photo_presentation, :second_photo )
+    params.require(:article).permit(:title, :card_summary, :summary, :body, :photo_presentation, :second_photo, :category )
   end
 end

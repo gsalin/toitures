@@ -13,8 +13,7 @@
           <span>charactères :</span>
           <strong><span id="body-article-count"></strong></span>
           </div>
-        <%= f.association :category, label: "Catégorie de l'article" %>
-
+        <%= f.input :category, collection: Article.categories, label_method: :first, value_method: :first, as: :radio_buttons %>
         <%= f.submit "Soumettre votre article à nos équipes", class: "btn btn-primary" %>
       <% end %>
 
