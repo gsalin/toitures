@@ -3,7 +3,7 @@
   <div class="article-card">
     <%= link_to article_path(article) do %>
       <h6 class="text-center"><%= article.title %></h6>
-      <span class="article_category"><%= article.category.name %></span>
+      <span class="article_category"><%= article.category %></span>
       <div class="article-content">
         <%= cl_image_tag article.photo_presentation.path, class: "img-card" %>
         <span>Publié le <%= (I18n.localize article.created_at.to_date, formats: :classical).capitalize %> par <%= article.user.first_name %>, <%= article.user.company %> </span>

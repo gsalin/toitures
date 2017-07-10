@@ -11,7 +11,7 @@
         <ol class="breadcrumb">
           <li><a href="/">Accueil</a></li>
           <li><%= link_to "Magazine", articles_path %></li>
-          <li><%= link_to @article.category.name, root_path %></li>
+          <li><%= link_to @article.category, root_path %></li>
           <li class="active"><%= @article.title %></li>
         </ol>
 

@@ -10,8 +10,13 @@
   resources :projects
   resources :needs, only: [:new, :create, :show, :edit, :update]
   resources :clients, only: [:new, :create, :show, :edit, :update]
-  resources :articles, only: [:index, :new, :create, :show, :edit, :update]
-
+  resources :articles, only: [:index, :new, :create, :show, :edit, :update] do
+    get 'energie', on: :collection, controller: "articles", action: "energie"
+    get 'environnement', on: :collection, controller: "articles", action: "environnement"
+    get 'technique', on: :collection, controller: "articles", action: "technique"
+    get 'style', on: :collection, controller: "articles", action: "style"
+    get 'patrimoine', on: :collection, controller: "articles", action: "patrimoine"
+  end
   #page robot (indexation google)
   get '/robots.:format' => 'pages#robots'
 
