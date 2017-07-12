@@ -45,10 +45,10 @@ gem 'kramdown'
 
 # friendly-id pour des url "human friendly"
 gem 'friendly_id', '~> 5.1.0'
+gem 'postmark-rails'
 
 # gem letter opener from mail SMTP
 gem "letter_opener", group: :development
-gem 'postmark-rails'
 
 source 'https://rails-assets.org' do
   gem "rails-assets-underscore"
