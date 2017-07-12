@@ -6,7 +6,11 @@
       <span class="article_category"><%= article.category %></span>
       <div class="article-content">
         <%= cl_image_tag article.photo_presentation.path, class: "img-card" %>
-        <span>Publié le <%= (I18n.localize article.created_at.to_date, formats: :classical).capitalize %> par <%= article.user.first_name %>, <%= article.user.company %> </span>
+        <span>Publié le <%= (I18n.localize article.created_at.to_date, formats: :classical).capitalize %>
+        <% if article.user != nil %>
+        par <%= article.user.first_name %>, <%= article.user.company %>
+        <% end %>
+        </span>
         <p><%= article.card_summary %><span> <%= link_to "Lire l'article", article_path(article.title), class: "article-link"%></span></p>
       </div>
     <% end %>

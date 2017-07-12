@@ -36,7 +36,7 @@ class ArticlesController < ApplicationController
        @article.update(article_params)
       redirect_to article_path(@article)
     else
-      render :new
+      render :edit
     end
   end
 
@@ -63,6 +63,6 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:title, :card_summary, :summary, :body, :photo_presentation, :second_photo, :category )
+    params.require(:article).permit(:title, :card_summary, :summary, :body, :photo_presentation, :second_photo, :category)
   end
 end
