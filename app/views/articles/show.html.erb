@@ -20,7 +20,11 @@
         <header>
           <h1 itemprop="headline" class="text-center"><%=  @article.title %></h1>
         </header>
-        <span>Publié le <%= (I18n.localize @article.created_at.to_date, formats: :classical).capitalize %> par <%= @article.user.first_name %>, <%= @article.user.company %></span>
+        <span>Publié le <%= (I18n.localize @article.created_at.to_date, formats: :classical).capitalize %>
+        <% if @article.user != nil %>
+        par <%= @article.user.first_name %>, <%= @article.user.company %>
+        <% end %>
+        </span>
         <p class="italic"><%= @article.summary %></p>
 
 

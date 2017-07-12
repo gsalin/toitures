@@ -1,6 +1,7 @@
 class User < ApplicationRecord
 
   enum status: [:pro, :worker]
+  enum state: [:pending, :accepted, :declined]
   has_attachment :photo_presentation, accept: [:jpg, :jpeg, :png]
   has_attachment :photo_company_logo, accept: [:jpg, :jpeg, :png, :svg]
   has_attachment :photo, accept: [:jpg, :jpeg, :png]
@@ -25,7 +26,7 @@ class User < ApplicationRecord
   validates :last_name, presence: true
   validates :status, presence: true
 
-  # ATTENTION AUX VALIDATES DANS LE MODEL, ne pas faire les suivants ici minimumsi dans les forms!!!!
+  # ATTENTION AUX VALIDATES DANS LE MODEL, ne pas faire les suivants ici minimum si dans les forms!!!!
 
   # validates :company, uniqueness: true
   # validates :office_phone, uniqueness: true, format: {with: /((\+|00)33|0)[1-9](\D?\d\d){4}/}
