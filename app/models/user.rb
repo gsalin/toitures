@@ -1,7 +1,5 @@
 class User < ApplicationRecord
 
-  after_create :send_welcome_email
-
   enum status: [:pro, :worker]
   enum state: [:pending, :accepted, :declined]
   has_attachment :photo_presentation, accept: [:jpg, :jpeg, :png]
@@ -35,6 +33,8 @@ class User < ApplicationRecord
   # validates :mobile_phone, uniqueness: true, format: {with: /((\+|00)33|0)[1-9](\D?\d\d){4}/}
   # validates :description, length: { minimum: 300, maximum: 900 }
   validates :radius, numericality: { only_integer: true, greater_than_or_equal_to: 50 }
+
+  after_create :send_welcome_email
 
   private
 
