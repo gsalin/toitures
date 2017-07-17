@@ -26,7 +26,7 @@ class User < ApplicationRecord
   validates :last_name, presence: true
   validates :status, presence: true
 
-  # ATTENTION AUX VALIDATES DANS LE MODEL, ne pas faire les suivants ici minimum si dans les forms!!!!
+  # ATTENTION AUX VALIDATES DANS LE MODEL, ne pas faire les suivants ici mais dans les forms!!!!
 
   # validates :company, uniqueness: true
   # validates :office_phone, uniqueness: true, format: {with: /((\+|00)33|0)[1-9](\D?\d\d){4}/}
