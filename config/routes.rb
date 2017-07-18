@@ -16,6 +16,7 @@
     get 'technique', on: :collection, controller: "articles", action: "technique"
     get 'style', on: :collection, controller: "articles", action: "style"
     get 'patrimoine', on: :collection, controller: "articles", action: "patrimoine"
+    get 'mes_articles', on: :collection, controller: "articles", action: "mes_articles"
   end
   #page robot (indexation google)
   get '/robots.:format' => 'pages#robots'

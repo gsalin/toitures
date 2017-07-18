@@ -16,7 +16,11 @@
         </ol>
 
         <%= render 'shared/share_links' %>
-
+        <div style="margin-top: 40px;">
+          <% if @article.user_id == current_user.id %>
+            <%= link_to "Modifier mon article", edit_article_path(@article) %>
+          <% end %>
+        </div>
         <header>
           <h1 itemprop="headline" class="text-center"><%=  @article.title %></h1>
         </header>
