@@ -30,7 +30,6 @@ class ArticlesController < ApplicationController
     if @article.user_id != this_id
       redirect_to root_path
     end
-
   end
 
   def update
@@ -62,6 +61,11 @@ class ArticlesController < ApplicationController
 
   def patrimoine
     @articles = Article.patrimoine
+  end
+
+  def mes_articles
+    this_id = current_user.id
+    @articles = Article.where(user_id: this_id)
   end
 
   private
