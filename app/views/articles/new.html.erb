@@ -1,25 +1,6 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12">
-      <h1>Créer un nouvel article</h1>
-      <%= simple_form_for @article do |f| %>
-        <%= f.input :title, label: "Titre",placeholder: "Choisissez votre titre", hint: 'Entre 20 et 60 caractères' %>
-        <%= f.input :card_summary, label: "Résumé", hint: 'Entre 150 et 200 caractères', placeholder: "Donnez envie de lire votre article" %>
-        <%= f.input :summary, label: "Introduction", placeholder: "Introduisez le sujet dont vous allez parler", hint: 'Entre 150 et 200 caractères' %>
-        <%= f.input :photo_presentation, as: :attachinary %>
-        <%= f.input :second_photo, as: :attachinary %>
-        <%= f.input :body, label:'Rédigez votre article ci dessous', :input_html => {:rows => 40}, placeholder: "Le corps de votre article", as: :text, hint: "entre 2000 et 6000 caractères :" %>
-        <div class="text-right counter_style">
-          <span>charactères :</span>
-          <strong><span id="body-article-count"></strong></span>
-          </div>
-        <%= f.input :category, collection: Article.categories, label_method: :first, value_method: :first, as: :radio_buttons %>
-        <%= f.submit "Soumettre votre article à nos équipes", class: "btn btn-primary" %>
-      <% end %>
+<h1 class="text-center", style="margin-bottom: 40px;">Créer un nouvel article</h1>
 
-    </div>
-  </div>
-</div>
+<%= render 'shared/article_form' %>
 
 
 

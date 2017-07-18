@@ -26,11 +26,15 @@ class ArticlesController < ApplicationController
 
   def edit
     @article = Article.friendly.find(params[:id])
+    this_id = current_user.id
+    if @article.user_id != this_id
+      redirect_to root_path
+    end
+
   end
 
   def update
     @article = Article.friendly.find(params[:id])
-    @article.user = current_user
 
     if @article.save
        @article.update(article_params)
