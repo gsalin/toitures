@@ -22,7 +22,7 @@
     <% @projects.each do |project| %>
     <div class="col-xs-12 col-md-3 project_preview">
       <p class="text-center"> <%= project.title %> </p>
-      <span> <%= cl_image_tag project.project_photos[0].path, width: 100, height: 66, crop: :fill   %> </span>
+      <span> <%= cl_image_tag project.project_photos[0].path, width: 100, height: 66, crop: :fill %> </span>
       <%= link_to "Modifier", edit_project_path(project), class: "btn btn-success" %>
       <%= link_to "Supprimer", project_path(project), class: "btn btn-danger",
             method: :delete,

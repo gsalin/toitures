@@ -15,7 +15,9 @@
     <div class="col-xs-12 col-md-9">
       <div class='index_articles_page'>
         <% @articles.each do |article| %>
+        <div class="col-xs-12 col-md-6">
          <%= render "shared/card_article", article: article %>
+        </div>
         <% end %>
       </div>
     </div>

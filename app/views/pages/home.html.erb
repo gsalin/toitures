@@ -297,7 +297,9 @@
       </div>
       <div class="col-xs-12 col-md-10 col-md-offset-1">
         <% @articles.each do |article| %>
-           <%= render "shared/card_article", article: article %>
+        <div class="col-xs-12 col-md-6">
+          <%= render "shared/card_article", article: article %>
+        </div>
         <% end %>
       </div>
     </div>

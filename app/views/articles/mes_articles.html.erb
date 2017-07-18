@@ -1,15 +1,16 @@
 
 
-
 <div class="container">
   <div class="row">
-  <div class="text-center" style="margin-top: 20px; margin-bottom: 40px;">
-  <%= link_to new_article_path, class: "navbar-wagon-button btn" do %>
-    <span>Rédiger un nouvel article</span>
-  <% end %>
-  </div>
+    <div class="text-center" style="margin-top: 20px; margin-bottom: 40px;">
+    <%= link_to new_article_path, class: "navbar-wagon-button btn" do %>
+      <span>Rédiger un nouvel article</span>
+    <% end %>
+    </div>
     <% @articles.each do |article| %>
+    <div class="col-xs-12 col-md-4">
       <%= render "shared/card_article", article: article %>
+    </div>
     <% end %>
   </div>
 </div>
