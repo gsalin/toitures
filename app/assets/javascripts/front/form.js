@@ -14,6 +14,22 @@ $(document).ready(function() {
       var length = $(this).val().length;
       $("#body-article-count").html(length);
     });
+    $("#article_body").on("keyup", function(){
+      var length = $(this).val().length;
+      $("#body-article-count-2").html(length);
+    });
+    $("#article_title").on("keyup", function(){
+      var length = $(this).val().length;
+      $("#article-title-count").html(length);
+    });
+    $("#article_card_summary").on("keyup", function(){
+      var length = $(this).val().length;
+      $("#article-card-summary-count").html(length);
+    });
+    $("#article_summary").on("keyup", function(){
+      var length = $(this).val().length;
+      $("#article-summary-count").html(length);
+    });
 
     var titres = ["Restauration d'une toiture ancienne", "Etanchéité et pose d'une terrasse", "Pose d'une véranda", "Restauration d'une église", "Création d'une fenêtre de toit"]
 

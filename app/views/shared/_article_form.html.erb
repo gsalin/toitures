@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <%= simple_form_for @article do |f| %>
+        <%= f.input :title, label: "Titre de l'article",placeholder: "Choisissez votre titre", hint: 'Entre 20 et 60 caractères' %>
+        <div class="text-right counter_style">
+          <span>charactères :</span>
+          <strong><span id="article-title-count"></strong></span>
+        </div>
+        <%= f.input :card_summary, label: "Résumé", hint: 'Entre 150 et 200 caractères', placeholder: "Donnez envie de lire votre article, ce résumé apparaitra sur la vignette de présentation de l'article" %>
+        <div class="text-right counter_style">
+          <span>charactères :</span>
+          <strong><span id="article-card-summary-count"></strong></span>
+        </div>
+        <%= f.input :summary, label: "Introduction", placeholder: "Introduisez le sujet dont vous allez parler", hint: 'Entre 150 et 200 caractères' %>
+        <div class="text-right counter_style">
+          <span>charactères :</span>
+          <strong><span id="article-summary-count"></strong></span>
+        </div>
+        <%= f.input :photo_presentation, as: :attachinary, label: "Photo de présentation principale" %>
+        <%= f.input :second_photo, as: :attachinary, label: "photo secondaire" %>
+        <div class="text-right" id="body-count-1">
+          <span>charactères :</span>
+          <strong><span id="body-article-count-2"></strong></span>
+        </div>
+        <%= f.input :body, label:'Rédigez votre article ci dessous', :input_html => {:rows => 40}, placeholder: "Le corps de votre article", as: :text, hint: "entre 2000 et 6000 caractères :" %>
+        <div class="text-right counter_style">
+          <span>charactères :</span>
+          <strong><span id="body-article-count"></strong></span>
+        </div>
+        <%= f.input :category, label:"Catégorie de l'article", collection: Article.categories, label_method: :first, value_method: :first, as: :radio_buttons %>
+        <%= f.submit "Soumettre votre article à nos équipes", class: "btn btn-primary" %>
+      <% end %>
+
+    </div>
+  </div>
+</div>

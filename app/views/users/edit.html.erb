@@ -106,8 +106,8 @@
       <span id="description-count"><strong></strong></span><span> sur 900 charactères </span>
     </div>
     <div class="col-xs-12 col-md-5 col-md-offset-1 col-profile-style">
-      <span> <%= f.input :photo_company_logo, as: :attachinary %> </span>
-      <span> <%= f.input :photo_presentation, as: :attachinary %> </span>
+      <span> <%= f.input :photo_company_logo, required: true, as: :attachinary %> </span>
+      <span> <%= f.input :photo_presentation, required: true, as: :attachinary %> </span>
       <%= f.button :submit, "Mettre à jour mon profil", class: "btn btn-success" %>
     </div>
   </div>

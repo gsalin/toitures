@@ -1,26 +1,5 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12">
-      <h1>Edition d'un article</h1>
-      <%= simple_form_for @article do |f| %>
-        <%= f.input :title, label: "Titre de l'article", input_html: { minlength: 20, maxlength: 80 }, placeholder: "Choisissez votre titre" %>
-        <%= f.input :card_summary, label: "Présentation courte", hint: 'Entre 20 et 40 caractères', placeholder: "Donnez envie de lire l'article" %>
-        <%= f.input :summary, label: "Chapeau du texte", placeholder: "Votre introduction entre 3 et 5 lignes" %>
-        <%= f.input :photo_presentation, as: :attachinary %>
-        <%= f.input :second_photo, as: :attachinary %>
-        <%= f.input :body, :input_html => {:rows => 40}, placeholder: "Le corps de votre article", as: :text, hint: "entre 2000 et 6000 caractères :" %>
-        <div class="text-right counter_style">
-          <span>charactères :</span>
-          <strong><span id="body-article-count"></strong></span>
-          </div>
-        <%= f.association :category, label: "Catégorie" %>
+<h1 class="text-center", style="margin-bottom: 40px;">Edition d'article</h1>
 
-        <%= f.submit "Soumettre votre article", class: "btn btn-primary" %>
-      <% end %>
-
-    </div>
-  </div>
-</div>
-
+<%= render 'shared/article_form' %>
 
 

@@ -28,7 +28,6 @@ class ProjectsController < ApplicationController
     if @project.user_id != this_id
       redirect_to new_project_path(current_user)
     end
-
   end
 
   def update
