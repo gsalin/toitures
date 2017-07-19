@@ -41,7 +41,7 @@
           <% elsif current_user.photo_company_logo != nil %>
             <%= cl_image_tag current_user.photo_company_logo.path, width: 50, height: 50, crop: :fill, class: "worker-avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown", style: "border-radius:50%;" %>
           <% else %>
-            <%= image_tag "http://placehold.it/30x30", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+            <button type="button" class="navbar-wagon-item navbar-wagon-link connect-btn-navbar" id="worker-btn-navbar" data-toggle="dropdown">Mon compte</button>
             <% end %>
             <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
               <li>

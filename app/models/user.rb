@@ -26,13 +26,17 @@ class User < ApplicationRecord
   validates :last_name, presence: true
   validates :status, presence: true
 
-  # ATTENTION AUX VALIDATES DANS LE MODEL, ne pas faire les suivants ici mais dans les forms!!!!
+  # VALIDATES on UPDATE
 
-  # validates :company, uniqueness: true
-  # validates :office_phone, uniqueness: true, format: {with: /((\+|00)33|0)[1-9](\D?\d\d){4}/}
-  # validates :mobile_phone, uniqueness: true, format: {with: /((\+|00)33|0)[1-9](\D?\d\d){4}/}
-  # validates :description, length: { minimum: 300, maximum: 900 }
-  validates :radius, numericality: { only_integer: true, greater_than_or_equal_to: 50 }
+  validates :company, presence: true, on: :update
+  validates :address, presence: true, on: :update
+  validates :city, presence: true, on: :update
+  validates :zip_code, presence: true, on: :update
+  validates :mobile_phone, presence: true, format: {with: /((\+|00)33|0)[1-9](\D?\d\d){4}/}, on: :update
+  validates :description, presence: true, length: { minimum: 300, maximum: 900 }, on: :update
+  validates :photo_presentation, presence: true, on: :update
+  validates :photo_company_logo, presence: true, on: :update
+  validates :radius, numericality: { only_integer: true, greater_than_or_equal_to: 50 }, presence: true
 
   after_create :send_welcome_email
 
