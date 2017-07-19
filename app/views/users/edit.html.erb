@@ -7,18 +7,18 @@
   <div class="row profile-first-row">
     <!-- Card infos de la société -->
     <div class="col-xs-12 col-md-4 col-profile-style">
-      <%= f.input :company, required: true %>
-      <%= f.input :address, required: true %>
-      <%= f.input :city, required: true %>
-      <%= f.input :zip_code, required: true %>
-      <%= f.input :radius, placeholder:"périmètre d'action autour de votre adresse", required: true %>
+      <%= f.input :company %>
+      <%= f.input :address %>
+      <%= f.input :city %>
+      <%= f.input :zip_code %>
+      <%= f.input :radius, placeholder:"périmètre d'action autour de votre adresse" %>
     </div>
     <div class="col-xs-12 col-md-4 col-profile-style">
-      <%= f.input :first_name, required: true %>
-      <%= f.input :last_name, required: true %>
+      <%= f.input :first_name %>
+      <%= f.input :last_name %>
       <%#= f.input :position %>
-      <%= f.input :email, required: true %>
-      <%= f.input :office_phone, required: true %>
+      <%= f.input :email %>
+      <%= f.input :office_phone %>
       <%= f.input :mobile_phone %>
     </div>
     <div class="col-xs-12 col-md-4 col-profile-style-check-box">
@@ -106,8 +106,8 @@
       <span id="description-count"><strong></strong></span><span> sur 900 charactères </span>
     </div>
     <div class="col-xs-12 col-md-5 col-md-offset-1 col-profile-style">
-      <span> <%= f.input :photo_company_logo, required: true, as: :attachinary %> </span>
-      <span> <%= f.input :photo_presentation, required: true, as: :attachinary %> </span>
+      <span> <%= f.input :photo_company_logo, as: :attachinary %> </span>
+      <span> <%= f.input :photo_presentation, as: :attachinary %> </span>
       <%= f.button :submit, "Mettre à jour mon profil", class: "btn btn-success" %>
     </div>
   </div>
