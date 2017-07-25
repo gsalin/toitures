@@ -27,7 +27,7 @@ class User < ApplicationRecord
   validates :status, presence: true
 
   # VALIDATES on UPDATE
-
+  if User.pro
   validates :company, presence: true, on: :update
   validates :address, presence: true, on: :update
   validates :city, presence: true, on: :update
@@ -37,6 +37,7 @@ class User < ApplicationRecord
   validates :photo_presentation, presence: true, on: :update
   validates :photo_company_logo, presence: true, on: :update
   validates :radius, numericality: { only_integer: true, greater_than_or_equal_to: 50 }, presence: true
+  end
 
   after_create :send_welcome_email
 
