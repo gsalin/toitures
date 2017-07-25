@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 url = "http://static.pexels.com/photos/91227/pexels-photo-91227.jpeg"
 toit = "https://static.pexels.com/photos/209266/pexels-photo-209266.jpeg"
-tuiles = "https://static.pexels.com/photos/177632/pexels-photo-177632.jpeg"
+tuiles = "https://static.pexels.com/photos/36362/pexels-photo.jpg"
 herbe = "https://static.pexels.com/photos/314937/pexels-photo-314937.jpeg"
 terrasse = "https://static.pexels.com/photos/36362/pexels-photo.jpg"
 ouverture = "https://static.pexels.com/photos/323776/pexels-photo-323776.jpeg"
@@ -25,7 +25,7 @@ ouverturelucarne = "https://static.pexels.com/photos/289560/pexels-photo-289560.
 workingman1 = "https://static.pexels.com/photos/38600/construction-worker-concrete-hummer-vibrator-38600.jpeg"
 ouvrierstoitnuit = "https://static.pexels.com/photos/38293/workers-construction-site-hardhats-38293.jpeg"
 toitindustriel = "https://static.pexels.com/photos/221047/pexels-photo-221047.jpeg"
-ouvrierportrait = "https://static.pexels.com/photos/92033/pexels-photo-92033.jpeg"
+ouvrierportrait = "https://static.pexels.com/photos/38600/construction-worker-concrete-hummer-vibrator-38600.jpeg"
 logo = "https://static.pexels.com/photos/430205/pexels-photo-430205.jpeg"
 
 require 'faker'
