@@ -25,6 +25,8 @@ fr:
         position: Poste dans la société
         photo_company_logo: Logo de la société
         photo_presentation: Photo de présentation
+        cv: CV (au format PDF uniquement)
+        photo: Votre photo
       project:
         title: Titre de présentation
         description: Description
