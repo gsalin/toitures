@@ -6,6 +6,10 @@ $(document).ready(function() {
       var length = $(this).val().length;
       $("#description-count").html(length);
     });
+    $("#project_title").on("keyup", function(){
+      var length = $(this).val().length;
+      $("#title-project-count").html(length);
+    });
     $("#project_description").on("keyup", function(){
       var length = $(this).val().length;
       $("#description-project-count").html(length);

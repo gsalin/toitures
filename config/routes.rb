@@ -26,6 +26,7 @@
   get 'contact', to: 'pages#contact'
   get "services-aux-particuliers", to: 'pages#services_aux_particuliers'
   get "services-aux-professionnels", to: 'pages#services_aux_professionnels'
+  get "services-aux-candidats", to: 'pages#services_aux_candidats'
   get "cgu", to: 'pages#cgu'
   get "mentions-legales", to: 'pages#mentions_legales'
 
