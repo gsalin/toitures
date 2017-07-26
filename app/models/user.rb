@@ -25,19 +25,19 @@ class User < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :status, presence: true
+  validates :mobile_phone, format: {with: /((\+|00)33|0)[1-9](\D?\d\d){4}/}, on: :update
+  validates :description, length: { minimum: 300, maximum: 900 }, on: :update
 
   # VALIDATES on UPDATE
-  if User.pro
-  validates :company, presence: true, on: :update
-  validates :address, presence: true, on: :update
-  validates :city, presence: true, on: :update
-  validates :zip_code, presence: true, on: :update
-  validates :mobile_phone, presence: true, format: {with: /((\+|00)33|0)[1-9](\D?\d\d){4}/}, on: :update
-  validates :description, presence: true, length: { minimum: 300, maximum: 900 }, on: :update
-  validates :photo_presentation, presence: true, on: :update
-  validates :photo_company_logo, presence: true, on: :update
-  validates :radius, numericality: { only_integer: true, greater_than_or_equal_to: 50 }, presence: true
-  end
+  # if User.pro
+  # validates :company, presence: true, on: :update
+  # validates :address, presence: true, on: :update
+  # validates :city, presence: true, on: :update
+  # validates :zip_code, presence: true, on: :update
+  # validates :photo_presentation, presence: true, on: :update
+  # validates :photo_company_logo, presence: true, on: :update
+  # validates :radius, numericality: { only_integer: true, greater_than_or_equal_to: 50 }, presence: true
+  # end
 
   after_create :send_welcome_email
 
