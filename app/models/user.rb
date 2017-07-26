@@ -25,10 +25,13 @@ class User < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :status, presence: true
-  validates :mobile_phone, format: {with: /((\+|00)33|0)[1-9](\D?\d\d){4}/}, on: :update
-  validates :description, length: { minimum: 300, maximum: 900 }, on: :update
 
-  # VALIDATES on UPDATE
+
+  #METTRE DES VALIDATES ICI UNIQUEMENT SI DONNEE UNIVERSELLE
+
+  # validates :mobile_phone, format: {with: /((\+|00)33|0)[1-9](\D?\d\d){4}/}
+  # validates :description, length: { minimum: 300, maximum: 900 }
+
   # if User.pro
   # validates :company, presence: true, on: :update
   # validates :address, presence: true, on: :update
