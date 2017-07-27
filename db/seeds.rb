@@ -286,8 +286,8 @@ puts "Creating articles..."
   ",
 
     )
-  article.save!
   article.photo_presentation_url = chambretoit
+  article.save!
 end
 
 puts 'Finished!'
