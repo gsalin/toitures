@@ -8,8 +8,13 @@
   end
 
   def create
+    @destinataire = User.find(params[:client][:user_id])
     @client = Client.new(client_params)
     @client.save
+    if @destinataire.email != nil
+      UserMailer.contact_user(@destinataire, @client).deliver_now
+      UserMailer.contact_client(@destinataire, @client).deliver_now
+    end
     if @client.address == ""
       redirect_to users_path
     else
@@ -66,7 +71,7 @@
   end
 
   def edit
-    # Ne pas suppr set_client ci dessous
+    # Ne pas suppr => set_client ci dessous
   end
 
   def update
