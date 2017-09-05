@@ -35,6 +35,7 @@
             <h4 class="text-center"><%= @user.office_phone %></h4>
             <p class="text-center">Je souhaite être rappelé</p>
             <%= simple_form_for(@client) do |f| %>
+              <%= f.input :user_id, as: :hidden, input_html: { value: @user.id } %>
               <%= f.input :last_name, placeholder: "Votre nom", label: false %>
               <%= f.input :email, placeholder: "Votre email", label: false %>
               <%= f.input :phone_number, placeholder: "Votre téléphone", label: false %>

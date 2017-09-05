@@ -12,8 +12,8 @@
     @client = Client.new(client_params)
     @client.save
     if @destinataire.email != nil
-      UserMailer.contact_user(@destinataire, @client).deliver_now
-      UserMailer.contact_client(@destinataire, @client).deliver_now
+      ClientMailer.contact_user(@destinataire, @client).deliver_now
+      ClientMailer.contact_client(@destinataire, @client).deliver_now
     end
     if @client.address == ""
       redirect_to users_path
@@ -24,7 +24,7 @@
 
   def show
     @radius_users = []
-    pros = User.where(status: "pro") && User.where(admin: false)
+    pros = User.pro.where(admin: false)
     pros.each do |user|
       beta = @client.distance_to(user.address).to_i
       if beta <= user.radius
