@@ -1,4 +1,10 @@
 
-<h3>Bonjour et bienvenue sur lestoitures.fr</h3>
+<h3>Bienvenue <%= @user.first_name %> <%= @user.last_name %> sur lestoitures.fr</h3>
+
+<p>Votre profil est maintenant créé et vous pouvez y accéder dans votre espace privé</p>
+
+<p>Vous pouvez le compléter en ajoutant des projets que vous avez menez ou en écrivant des articles</p>
 
 <%= link_to "Revenir au site", root_url %>
+
+<p>Pour nous contacter : contact@lestoitures.fr</p>
