@@ -9,7 +9,8 @@ class UsersController < ApplicationController
     @client = Client.new
 
     pros = User.pro
-    @users = pros.where.not(latitude: nil, longitude: nil)
+    @users = pros.where.not(latitude: nil, longitude: nil) && pros.where.not(admin: true)
+    # si on veut filtrer l'annuaire par mail à la palce d'admin==> && pros.where.not(email: 'contact@lestoitures.fr')
 
 
     @hash = Gmaps4rails.build_markers(@users) do |user, marker|
