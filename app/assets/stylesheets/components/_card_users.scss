@@ -3,10 +3,11 @@
   padding-top: 20px;
   padding-bottom: 20px;
   min-height: 290px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
   box-shadow: 0 15px 35px rgba(50,50,93,0.1), 0 5px 15px rgba(0,0,0,0.07);
   background-color: white;
+  border: solid $medium-grey 1px;
 
 
   .card_photo_presentation {
@@ -56,6 +57,19 @@
     align-items: center;
     align-content: stretch;
     min-height: 250px;
+
+    .modal-header {
+      border-bottom: none;
+    }
+
+    #office_phone {
+      font-weight: bolder;
+      font-size:larger;
+    }
+
+    .form-title {
+      margin-bottom: 20px;
+    }
 
     .modals_position {
       display: flex;
@@ -153,6 +167,24 @@ span {
 .link_show:hover {
   text-decoration: none;
   color: $yellow;
+}
+
+.btn-societe {
+  border: solid 1px $dark-grey;
+  padding: 12px 30px;
+  border-radius: 3px;
+  background-color: $dark-grey;
+  color: white;
+  font-weight:lighter;
+  &:hover {
+    transition: color 0.8s ease;
+    font-weight: bolder;
+    background-color: white;
+    color: $dark-grey;
+    opacity: 0.5;
+    border: solid 2px $dark-grey;
+    text-decoration:none;
+  }
 }
 
 .labels {
