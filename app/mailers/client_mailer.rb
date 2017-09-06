@@ -5,7 +5,7 @@ class ClientMailer < ApplicationMailer
     @client = client
 
     mail(to: @destinataire.email,
-      subject: 'Vous avez une nouvelle demande'
+      subject: 'Vous avez une nouvelle demande sur lestoitures.fr'
       )
   end
 
@@ -14,7 +14,7 @@ class ClientMailer < ApplicationMailer
     @client = client
 
     mail(to: @client.email,
-      subject: "Coordonnées de la société #{@destinataire.company}"
+      subject: "Votre message à #{@destinataire.company} sur lestoitures.fr"
       )
   end
 end
