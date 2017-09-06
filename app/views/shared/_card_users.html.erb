@@ -63,6 +63,9 @@
   <!-- 3eme col avec boutons et skills -->
 
   <div class="col-xs-12 col-sm-3 card_skills">
+    <%= link_to user_path(user), class: "btn-societe text-center" do %>
+      <span>Découvrez notre société</span>
+    <% end %>
     <div class="modals_position">
       <!-- Modal Phone -->
       <div class="modal_phone">
@@ -126,6 +129,7 @@
       <% end %>
       </h5>
     </div>
+    <!-- Nombre de projets -->
     <div class="project-count">
       <% if user.projects.count > 0 %>
         <%= link_to user_path(user), class: "link_show" do %>

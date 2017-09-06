@@ -155,6 +155,24 @@ span {
   color: $yellow;
 }
 
+.btn-societe {
+  border: solid 1px $dark-grey;
+  padding: 12px 30px;
+  border-radius: 3px;
+  background-color: $dark-grey;
+  color: white;
+  font-weight:lighter;
+  &:hover {
+    transition: color 0.8s ease;
+    font-weight: bolder;
+    background-color: white;
+    color: $yellow;
+    opacity: 0.5;
+    border: solid 2px $yellow;
+    text-decoration:none;
+  }
+}
+
 .labels {
   display: flex;
   flex-direction: row;
