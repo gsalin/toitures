@@ -47,7 +47,11 @@ class User < ApplicationRecord
   private
 
   def send_welcome_email
-    UserMailer.welcome(self).deliver_now
+    if self.pro?
+      UserMailer.welcome(self).deliver_now
+    elsif self.worker?
+      UserMailer.welcome_worker(self).deliver_now
+    end
   end
 
 end
