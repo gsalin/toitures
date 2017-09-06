@@ -1,12 +1,38 @@
-<h1>Merci pour votre visite sur notre site LIEN</h1>
+<div class="wrapper" style="font-family: 'Roboto', 'sans-serif';">
+  <% if @client.last_name != nil %>
+    <h3>Bonjour <%= @client.last_name %>,</h3>
+  <% elsif %>
+    <h3>Bonjour,</h3>
+  <% end %>
 
-Suite à votre demande, la société BLABLA va vous rencontacter.
+    <h4>Vous venez de consulter le <%= link_to "profil", user_url(@destinataire) %> de <strong><%= @destinataire.company %></strong> sur <%= link_to "www.lestoitures.fr", root_url %> et vous lui avez envoyé un message afin qu'il vous recontacte.</h4>
 
-CLIQUEZ ICI si vous souhaitez accéder à nouveau à leur page de profil et leurs coordonnées
+    <p>Récapitulatif des éléments envoyés :</p>
 
+  <div class="container" style="border-color:grey;border-style: dashed;border-width: 1px;padding:10px;">
 
+    <% if @client.message != nil %>
+      <p style="color:#FEC919;font-weight:bold">Votre message :</p>
+      <%= @client.message %>
+    <% end %>
 
+    <% if @client.phone_number != nil %>
+      <p style="color:#FEC919;font-weight:bold">Votre numéro de téléphone : </p><%= @client.phone_number %>
+    <% end %>
 
+    <% if @client.email!= nil %>
+      <p style="color:#FEC919;font-weight:bold">Votre email : </p><%= @client.email %>
+    <% end %>
 
+  </div>
 
-<%= link_to "Revenir au site", root_url %>
+  <p><%= @destinataire.company %> a bien recu votre message et devrait vous contacter rapidement.</p>
+
+  <p>Nous vous souhaitons une excellente journée et n'hésitez pas à nous contacter par courriel (contact@lestoitures.fr) si vous avez des questions.</p>
+
+  <p style="font-style: italic">L'équipe lestoitures.fr</p>
+
+  <img src="https://www.lestoitures.fr/assets/logonavbar2-56b902cd2fdd49a418921e9949f00da74ee6955fe7d06dfecbcb05a09f751033.png"/>
+
+  </div>
+
