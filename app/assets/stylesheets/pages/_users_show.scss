@@ -43,14 +43,20 @@
       a {
         line-height: 1.4em;
         color: black;
+        border:none;
+        margin:none;
       }
       li.inactif {
         background-color: $medium-grey;
+        a {
+          background-color: $medium-grey;
+        }
       }
-      li:active {
-        border-right: 0px;
-        margin: 0px;
+      li.active {
         background-color: white !important;
+        a {
+          background-color:white;
+        }
       }
     }
 
@@ -221,5 +227,18 @@
     height: 50px;
     border-radius: 3px !important;
     margin-right: 0px !important;
+  }
+}
+
+.tab-content {
+  #office_phone{
+    font-weight: bolder;
+    margin: 10px 30px 10px 30px;
+    border-bottom: $medium-grey 2px solid;
+    padding-bottom: 15px;
+  }
+  .form-title {
+    margin-top: 15px;
+    margin-bottom: 15px;
   }
 }
