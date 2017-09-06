@@ -3,7 +3,12 @@
   <div class="navbar-wagon-brand">
   <%= link_to root_path, class: "navbar-wagon-brand navbar-wagon-item navbar-wagon-link" do %>
     <%= image_tag "logonavbar2.png" %>
-    <p>L'annuaire des professionnels de la toiture</p>
+    <p class="hidden-sm hidden-xs">L'annuaire des professionnels de la toiture</p>
+    <% if user_signed_in? == false %>
+    <div class="navbar-wagon-item hidden-md hidden-lg">
+      <%= link_to "Inscription", new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link inscription-btn" %>
+    </div>
+    <% end %>
   <% end %>
 
 <!--     <div class="hidden-xs hidden-sm">
@@ -63,6 +68,10 @@
           </div>
         </div>
     <% else %>
+
+    <div class="navbar-wagon-item">
+      <%= link_to "Inscription", new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link inscription-btn" %>
+    </div>
       <!-- Login text link -->
         <button type="button" class="navbar-wagon-item navbar-wagon-link connect-btn-navbar" id="pro-btn-navbar" data-toggle="modal" data-target="#signin_modal" data-id="0">Professionnel</button>
         <!-- Modal telephone -->
@@ -107,7 +116,7 @@
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
         <li>
-          <%= link_to "Annuaire", users_path, class: "navbar-wagon-item navbar-wagon-link yellow-btn-xs"%>
+          <%= link_to "Annuaire", users_path, class: "navbar-wagon-item navbar-wagon-link"%>
         </li>
         <li>
           <%= link_to "Guides", guides_path, class: "navbar-wagon-item navbar-wagon-link" %>
@@ -116,7 +125,7 @@
           <%= link_to "Magazine", articles_path, class: "navbar-wagon-item navbar-wagon-link" %>
         </li>
         <li>
-          <%= link_to "Retour à l'accueil", root_path, class: "navbar-wagon-item navbar-wagon-link" %>
+          <%= link_to "Accueil", root_path, class: "navbar-wagon-item navbar-wagon-link" %>
         </li>
         <% if user_signed_in? %>
         <li class="divider"></li>
