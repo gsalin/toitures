@@ -32,8 +32,8 @@
       </ul>
       <div class="tab-content">
         <div role="tabpanel" class="tab-pane" id="phone">
-            <h4 class="text-center"><%= @user.office_phone %></h4>
-            <p class="text-center">Je souhaite être rappelé</p>
+            <p class="text-center" id="office_phone"><%= @user.office_phone %></p>
+            <p class="text-center form-title">Désirez vous être rappelé(e)?</p>
             <%= simple_form_for(@client) do |f| %>
               <%= f.input :user_id, as: :hidden, input_html: { value: @user.id } %>
               <%= f.input :last_name, placeholder: "Votre nom", label: false %>
@@ -44,10 +44,10 @@
         </div>
         <div role="tabpanel" class="tab-pane active" id="message">
           <div id="form-message">
-            <h5 class="text-center">Envoyez nous un email</h5>
+            <p class="text-center form-title">Sollicitez nous par email</p>
             <%= simple_form_for(@client) do |f| %>
               <%= f.input :user_id, as: :hidden, input_html: { value: @user.id } %>
-              <%= f.input :message, as: :text, placeholder: "Posez nous vos questions", label: false %>
+              <%= f.input :message, as: :text, placeholder: "Décrivez votre besoin", label: false %>
               <%= f.input :last_name, placeholder: "Votre nom", label: false %>
               <%= f.input :email, placeholder: "Votre email", label: false %>
               <%= f.input :phone_number, placeholder: "Votre téléphone", label: false %>
