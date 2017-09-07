@@ -40,11 +40,13 @@
       <% end %>
       <span><%= user.company %></span>
     <% end %>
+    <% if user.description != nil %>
     <p><%= user.description.truncate_words(28) %>
       <%= link_to user_path(user), class: "link_show" do %>
         <span><strong>En savoir plus </strong></span><i class="fa fa-chevron-right" aria-hidden="true"></i>
       <% end %>
     </p>
+    <% end %>
     <div class="labels">
       <% if user.rge == true %>
         <%= image_tag "rge.png" %>
