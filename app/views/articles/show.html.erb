@@ -34,7 +34,7 @@
 
         <figure class="figure-article">
             <%= cl_image_tag @article.photo_presentation.path, height: 567, width: 850, crop: :fill %>
-          <figcaption></figcaption>
+          <figcaption><%= @article.caption %></figcaption>
         </figure>
 
         <%= kramdown(@article.body) %>
