@@ -1,6 +1,6 @@
 class User < ApplicationRecord
 
-  enum status: [:pro, :worker]
+  enum status: [:pro, :worker, :institution]
   enum state: [:pending, :accepted, :declined]
   has_attachment :photo_presentation, accept: [:jpg, :jpeg, :png]
   has_attachment :photo_company_logo, accept: [:jpg, :jpeg, :png, :svg]
