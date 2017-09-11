@@ -88,7 +88,8 @@
             </div>
           </div>
         </div>
-        <div class="col-xs-12 col-md-3 col-md-offset-1">
+        <% if @user.pro? %>
+          <div class="col-xs-12 col-md-3 col-md-offset-1">
           <div class="skills-column">
             <ul class="skills">
 
@@ -152,32 +153,13 @@
                   <span>Locaux industriels</span>
                 <% end %>
               </li>
-
-<!--               <h4>Travaux</h4>
-
-              <li class="li-position">
-                <#% if @user.construction == true %>
-                  <#%= image_tag 'reparation2.svg', class:"skill-pic" %>
-                  <span>Construction</span>
-                <#% end %>
-              </li>
-              <li class="li-position">
-                <#% if @user.renovation == true %>
-                  <#%= image_tag 'reparation.svg', class:"skill-pic" %>
-                  <span>Rénovation</span>
-                <#% end %>
-              </li>
-              <li class="li-position">
-                <#% if @user.entretien == true %>
-                  <#%= image_tag 'nettoyage2.svg', class:"skill-pic" %>
-                  <span>Entretien</span>
-                <#% end %>
-              </li> -->
-
               </div>
             </ul>
           </div>
-        </div>
+          </div>
+        <% else %>
+          <div class="col-xs-12 col-md-3 col-md-offset-1"></div>
+        <% end %>
       </div>
     </div>
   </div>
