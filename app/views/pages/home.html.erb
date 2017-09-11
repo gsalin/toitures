@@ -142,21 +142,27 @@
       <p>Pour ceux qui veulent en savoir plus sur certains points, trouver de l'inspiration, ou se renseigner sur des points d'actualités (législations, subventions,etc..), bienvenue dans notre <strong>magazine</strong>.</p>
     </div>
     <div class="col-xs-12 col-sm-5 col-sm-offset-1 text-center presentation-site-home">
-      <div class="home-icones">
-        <i class="fa fa-address-card-o fa-3x" aria-hidden="true"></i>
-        <p>Un <span>Annuaire</span> avec les fiches complètes des professionnels</p>
-        <%= link_to "Consulter l'annuaire", users_path, class: "small-link-home" %>
-      </div>
-      <div class="home-icones">
-        <i class="fa fa-file-text-o fa-3x" aria-hidden="true"></i>
-        <p>Comprenez tout sur la toiture grace aux <span>guides</span></p>
-        <%= link_to "Voir les guides", guides_path, class: "small-link-home" %>
-      </div>
-      <div class="home-icones">
-        <i class="fa fa-newspaper-o fa-3x" aria-hidden="true"></i>
-        <p>Découvrez l'actualité et les tendances dans le <span>magazine</span></p>
-        <%= link_to "Voir le magazine", articles_path, class: "small-link-home" %>
-      </div>
+      <%= link_to users_path, class: "card-link-home" do %>
+        <div class="home-icones">
+          <i class="fa fa-address-card-o fa-3x" aria-hidden="true"></i>
+          <p>Un <span>Annuaire</span> avec les fiches complètes des professionnels</p>
+          <%= link_to "Consulter l'annuaire", users_path, class: "small-link-home" %>
+        </div>
+      <% end %>
+      <%= link_to guides_path, class: "card-link-home" do %>
+        <div class="home-icones">
+          <i class="fa fa-file-text-o fa-3x" aria-hidden="true"></i>
+          <p>Comprenez tout sur la toiture grace aux <span>guides</span></p>
+          <%= link_to "Voir les guides", guides_path, class: "small-link-home" %>
+        </div>
+      <% end %>
+      <%= link_to articles_path, class: "card-link-home" do %>
+        <div class="home-icones">
+          <i class="fa fa-newspaper-o fa-3x" aria-hidden="true"></i>
+          <p>Découvrez l'actualité et les tendances dans le <span>magazine</span></p>
+          <%= link_to "Voir le magazine", articles_path, class: "small-link-home" %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
