@@ -43,7 +43,7 @@ class UsersController < ApplicationController
   def update
     @user = current_user
     if @user.update(user_params)
-      if @user.pro?
+      if @user.pro? || @user.institution?
         redirect_to user_path(@user)
       else
         redirect_to annuaire_des_candidats_users_path

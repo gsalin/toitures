@@ -3,6 +3,7 @@
 }
 
 .profile-container {
+  margin-top: 20px;
 
   .profile-first-row {
     margin-bottom: 50px;
@@ -88,9 +89,8 @@
   justify-content: space-around;
   align-items: center;
   align-content: stretch;
-  min-height:100px;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 
   .help-block-custom {
     color: orangered;
@@ -115,4 +115,13 @@
   #user_description {
     height: 405px;
   }
+}
+
+.banner-edit-profile {
+  background-color: white;
+  box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
+}
+
+.btn-edit-profil {
+  margin: 10px 0 10px 0;
 }
