@@ -119,9 +119,11 @@
 // CSS Des images
 
 .figure-article {
-  margin-bottom: 10px;
-  text-align: center;
+//   margin-bottom: 10px;
+//   text-align: center;
   display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 .small-figure-article {
