@@ -21,11 +21,11 @@
     <%= simple_form_for(@client) do |f| %>
       <div class="home_container">
         <div class="main-form-stuffs">
-        <%= f.input :address, placeholder: 'Ville, CP, Adresse', autofocus: true, label:false %>
+        <%= f.input :address, placeholder: 'Ville / Code Postal', autofocus: true, label:false %>
         </div>
         <div class="dropdown main-form-stuffs">
           <button class="btn btn-default custom-drop-down-btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-            Type de travaux
+            Nature des travaux
             <span class="caret"></span>
           </button>
           <ul class="dropdown-menu dropdown-size-custom keep-open-on-click" aria-labelledby="dropdownMenu1">
@@ -38,24 +38,13 @@
         </div>
         <div class="dropdown main-form-stuffs">
           <button class="btn btn-default custom-drop-down-btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-            Type de bien
+            Type de batiment
             <span class="caret"></span>
           </button>
           <ul class="dropdown-menu dropdown-size-custom keep-open-on-click" aria-labelledby="dropdownMenu1">
             <li><label><%= f.check_box :maison %><span> maison</span></label></li>
             <li><label><%= f.check_box :immeuble %><span> immeuble</span></label></li>
             <li><label><%= f.check_box :chateau %><span> chateau</span></label></li>
-          </ul>
-        </div>
-        <div class="dropdown main-form-stuffs">
-          <button class="btn btn-default custom-drop-down-btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-            Besoin
-            <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu keep-open-on-click" aria-labelledby="dropdownMenu1">
-            <li><label><%= f.check_box :construction %><span> construction</span></label></li>
-            <li><label><%= f.check_box :renovation %><span> rénovation</span></label></li>
-            <li><label><%= f.check_box :entretien %><span> entretien</span></label></li>
           </ul>
         </div>
         <div class="main-form-stuffs">
@@ -78,10 +67,10 @@
   <div class="row">
     <div class="col-xs-12">
       <%= simple_form_for(@client) do |f| %>
-      <%= f.input :address, placeholder: 'Ville, CP, Adresse', autofocus: true, label:false, input_html: {id: "client_address_form-xs"}  %>
+      <%= f.input :address, placeholder: 'Ville, Code Postal', autofocus: true, label:false, input_html: {id: "client_address_form-xs"}  %>
       <div class="dropdown main-form-stuffs">
         <button class="btn btn-default custom-drop-down-btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-          Type de travaux
+          Nature des travaux
           <span class="caret"></span>
         </button>
         <ul class="dropdown-menu dropdown-size-custom dropdown-form-home-xs keep-open-on-click" aria-labelledby="dropdownMenu1">
@@ -101,17 +90,6 @@
           <li><label><%= f.check_box :maison %><span> maison</span></label></li>
           <li><label><%= f.check_box :immeuble %><span> immeuble</span></label></li>
           <li><label><%= f.check_box :chateau %><span> chateau</span></label></li>
-        </ul>
-      </div>
-      <div class="dropdown main-form-stuffs">
-        <button class="btn btn-default custom-drop-down-btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-          Besoin
-          <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu dropdown-form-home-xs keep-open-on-click" aria-labelledby="dropdownMenu1">
-          <li><label><%= f.check_box :construction %><span> construction</span></label></li>
-          <li><label><%= f.check_box :renovation %><span> rénovation</span></label></li>
-          <li><label><%= f.check_box :entretien %><span> entretien</span></label></li>
         </ul>
       </div>
         <%= button_tag type: 'submit', class: "search-button", id: "search-button-form-xs" do %>
@@ -239,11 +217,11 @@
       <%= simple_form_for(@client) do |f| %>
         <div class="home_container">
           <div class="main-form-stuffs">
-          <%= f.input :address, placeholder: 'Ville, CP, Adresse', autofocus: true, label:false, input_html: {id: "client_address_2nd_form"}  %>
+          <%= f.input :address, placeholder: 'Ville, Code Postal', autofocus: true, label:false, input_html: {id: "client_address_2nd_form"}  %>
           </div>
           <div class="dropdown main-form-stuffs">
             <button class="btn btn-default custom-drop-down-btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-              Type de travaux
+              Nature des travaux
               <span class="caret"></span>
             </button>
             <ul class="dropdown-menu dropdown-size-custom keep-open-on-click" aria-labelledby="dropdownMenu1">
@@ -256,24 +234,13 @@
           </div>
           <div class="dropdown main-form-stuffs">
             <button class="btn btn-default custom-drop-down-btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-              Type de bien
+              <span> Type de batiment</span>
               <span class="caret"></span>
             </button>
             <ul class="dropdown-menu dropdown-size-custom keep-open-on-click" aria-labelledby="dropdownMenu1">
               <li><label><%= f.check_box :maison %><span> maison</span></label></li>
               <li><label><%= f.check_box :immeuble %><span> immeuble</span></label></li>
               <li><label><%= f.check_box :chateau %><span> chateau</span></label></li>
-            </ul>
-          </div>
-          <div class="dropdown main-form-stuffs">
-            <button class="btn btn-default custom-drop-down-btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-              Besoin
-              <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu keep-open-on-click" aria-labelledby="dropdownMenu1">
-              <li><label><%= f.check_box :construction %><span> construction</span></label></li>
-              <li><label><%= f.check_box :renovation %><span> rénovation</span></label></li>
-              <li><label><%= f.check_box :entretien %><span> entretien</span></label></li>
             </ul>
           </div>
           <div class="main-form-stuffs">
