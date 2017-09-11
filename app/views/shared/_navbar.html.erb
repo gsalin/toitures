@@ -67,30 +67,15 @@
             </ul>
           </div>
         </div>
+
     <% else %>
 
     <div class="navbar-wagon-item">
       <%= link_to "Inscription", new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link inscription-btn" %>
     </div>
       <!-- Login text link -->
-        <button type="button" class="navbar-wagon-item navbar-wagon-link connect-btn-navbar" id="pro-btn-navbar" data-toggle="modal" data-target="#signin_modal" data-id="0">Professionnel</button>
-        <!-- Modal telephone -->
-        <div class="modal fade" id="signin_modal" role="dialog">
-          <div class="modal-dialog">
-            <!-- Modal content-->
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h3>Connexion professionnel</h3>
-              </div>
-              <div class="modal-body">
-              <%= render "devise/sessions/new_navbar" %>
-              </div>
-            </div>
-          </div>
-        </div>
 
-        <button type="button" class="navbar-wagon-item navbar-wagon-link connect-btn-navbar" id="worker-btn-navbar" data-toggle="modal" data-target="#signin_modal_worker">Candidat</button>
+        <button type="button" class="navbar-wagon-item navbar-wagon-link connect-btn-navbar" id="worker-btn-navbar" data-toggle="modal" data-target="#signin_modal_worker">Connexion</button>
         <!-- Modal telephone -->
         <div class="modal fade" id="signin_modal_worker" role="dialog">
           <div class="modal-dialog">
@@ -98,7 +83,7 @@
             <div class="modal-content">
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h3>Connexion candidat</h3>
+                <h4>Connexion</h4>
               </div>
               <div class="modal-body">
               <%= render "devise/sessions/new_navbar" %>
