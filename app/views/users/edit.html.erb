@@ -1,26 +1,37 @@
 
-<h2 class="text-center profile-title" >Complétez votre profil</h2>
+<h2 class="text-center profile-title" >Modifier mon profil</h2>
 
-<% if current_user.pro? %>
-<div class="container profile-container">
-<%= simple_form_for(@user) do |f| %>
-  <div class="row profile-first-row">
-    <!-- Card infos de la société -->
-    <div class="col-xs-12 col-md-4 col-profile-style">
-      <%= f.input :company %>
-      <%= f.input :address %>
-      <%= f.input :city %>
-      <%= f.input :zip_code %>
-      <%= f.input :radius, placeholder:"périmètre d'action autour de votre adresse" %>
+<!-- edit pro ou institution-->
+<% if current_user.pro? ||  current_user.institution? %>
+<!-- boutons de navigation du profil -->
+  <div class="container profile-container">
+    <div class="row">
+      <div class="col-xs-12 col-profile-submit">
+        <%= link_to user_path(current_user), class: "navbar-wagon-button btn" do %>
+          <span>Voir votre profil public</span>
+        <% end %>
+        <%= link_to mes_articles_articles_path, class: "navbar-wagon-button btn" do %>
+          <span>Gérer vos articles</span>
+        <% end %>
+        <%= link_to new_project_path(current_user), class: "navbar-wagon-button btn" do %>
+          <span>Gérer vos projets</span>
+        <% end %>
+      </div>
     </div>
-    <div class="col-xs-12 col-md-4 col-profile-style">
-      <%= f.input :first_name %>
-      <%= f.input :last_name %>
-      <%#= f.input :position %>
-      <%= f.input :email %>
-      <%= f.input :office_phone %>
-      <%= f.input :mobile_phone %>
-    </div>
+
+    <h2 class="text-center profile-title" >Complétez votre profil</h2>
+
+    <%= simple_form_for(@user) do |f| %>
+      <div class="row profile-first-row">
+        <!-- Card infos de la société -->
+        <div class="col-xs-12 col-md-4 col-profile-style">
+          <%= f.input :company %>
+          <%= f.input :address %>
+          <%= f.input :city %>
+          <%= f.input :zip_code %>
+          <% if @user.pro? %>
+            <%= f.input :radius, placeholder:"périmètre d'action autour de votre adresse" %>
+          <% end %>
     <div class="col-xs-12 col-md-4 col-profile-style-check-box">
       <div>
         <p>Nature des travaux</p>
@@ -37,119 +48,135 @@
             <%= f.check_box :entretien  %>
             Entretien
           </span>
-        </div>
-      </div>
-      <div>
-        <p>Spécialités</p>
-        <div class="checkbox_form">
-          <span>
-            <%= f.check_box :couverture  %>
-            Couverture
-          </span>
-          <span>
-            <%= f.check_box :ouverture  %>
-            Ouverture
-          </span>
-          <span>
-            <%= f.check_box :terrasse  %>
-            Terrasse
-          </span>
-          <span>
-            <%= f.check_box :plomberie  %>
-            Plomberie
-          </span>
-          <span>
-            <%= f.check_box :charpente  %>
-            Charpente
-          </span>
-        </div>
-      </div>
-      <div>
-        <p>Type de bien</p>
-        <div class="checkbox_form">
-          <span>
-            <%= f.check_box :maison  %>
-            Maison
-          </span>
-          <span>
-            <%= f.check_box :chateau  %>
-            Chateau
-          </span>
-          <span>
-            <%= f.check_box :immeuble  %>
-            Immeuble
-          </span>
-        </div>
-      </div>
-      <div>
-        <p>Labels</p>
-        <div class="checkbox_form">
-          <span>
-            <%= f.check_box :rge  %>
-            RGE
-          </span>
-          <span>
-            <%= f.check_box :qualibat  %>
-            Qualibat
-          </span>
-          <span>
-            <%= f.check_box :mh  %>
-            Agrément Monuments Historiques
-          </span>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-12 col-md-6 description-col">
-      <%= f.input :description, placeholder: "Décrivez votre société, depuis quand existe t'elle, sa taille, son CA, le nombre de salariés, qu'elles sont vos spécialités...", required: true, hint:"Entre 300 et 900 charactères" %>
-      <span id="description-count"><strong></strong></span><span> sur 900 charactères </span>
-    </div>
-    <div class="col-xs-12 col-md-5 col-md-offset-1 col-profile-style">
-      <span> <%= f.input :photo_company_logo, as: :attachinary %> </span>
-      <span> <%= f.input :photo_presentation, as: :attachinary %> </span>
-      <%= f.button :submit, "Mettre à jour mon profil", class: "btn btn-success" %>
-    </div>
-  </div>
-<% end %>
 
-  <div class="row">
-    <div class="col-xs-12 col-profile-submit">
-      <%= link_to user_path(current_user), class: "navbar-wagon-button btn" do %>
-        <span>Voir ma page de profil</span>
-      <% end %>
-      <%= link_to mes_articles_articles_path, class: "navbar-wagon-button btn" do %>
-        <span>Gérer mes articles</span>
-      <% end %>
-      <%= link_to new_project_path(current_user), class: "navbar-wagon-button btn" do %>
-        <span>Gérer mes projets</span>
-      <% end %>
-    </div>
+        </div>
+        <div class="col-xs-12 col-md-4 col-profile-style">
+          <%= f.input :first_name %>
+          <%= f.input :last_name %>
+          <%#= f.input :position %>
+          <%= f.input :email %>
+          <%= f.input :office_phone %>
+          <%= f.input :mobile_phone %>
+        </div>
+        <% if @user.pro? %>
+          <div class="col-xs-12 col-md-4 col-profile-style-check-box">
+            <div>
+              <p>Type de travaux</p>
+              <div class="checkbox_form">
+                <span>
+                  <%= f.check_box :construction %>
+                  Construction
+                </span>
+                <span>
+                  <%= f.check_box :renovation  %>
+                  Renovation
+                </span>
+                <span>
+                  <%= f.check_box :entretien  %>
+                  Entretien
+                </span>
+              </div>
+            </div>
+            <div>
+              <p>Spécialités</p>
+              <div class="checkbox_form">
+                <span>
+                  <%= f.check_box :couverture  %>
+                  Couverture
+                </span>
+                <span>
+                  <%= f.check_box :ouverture  %>
+                  Ouverture
+                </span>
+                <span>
+                  <%= f.check_box :terrasse  %>
+                  Terrasse
+                </span>
+                <span>
+                  <%= f.check_box :plomberie  %>
+                  Plomberie
+                </span>
+                <span>
+                  <%= f.check_box :charpente  %>
+                  Charpente
+                </span>
+              </div>
+            </div>
+            <div>
+              <p>Type de bien</p>
+              <div class="checkbox_form">
+                <span>
+                  <%= f.check_box :maison  %>
+                  Maison
+                </span>
+                <span>
+                  <%= f.check_box :chateau  %>
+                  Chateau
+                </span>
+                <span>
+                  <%= f.check_box :immeuble  %>
+                  Immeuble
+                </span>
+              </div>
+            </div>
+            <div>
+              <p>Labels</p>
+              <div class="checkbox_form">
+                <span>
+                  <%= f.check_box :rge  %>
+                  RGE
+                </span>
+                <span>
+                  <%= f.check_box :qualibat  %>
+                  Qualibat
+                </span>
+                <span>
+                  <%= f.check_box :mh  %>
+                  Agrément Monuments Historiques
+                </span>
+              </div>
+            </div>
+          </div>
+        <% else %>
+          <div class="col-xs-12 col-md-4 col-profile-style-check-box"></div>
+        <% end %>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-md-6 description-col">
+          <%= f.input :description, placeholder: "Décrivez votre société, depuis quand existe t'elle, sa taille, son CA, le nombre de salariés, qu'elles sont vos spécialités...", required: true, hint:"Entre 300 et 900 charactères" %>
+          <span id="description-count"><strong></strong></span><span> sur 900 charactères </span>
+        </div>
+        <div class="col-xs-12 col-md-5 col-md-offset-1 col-profile-style">
+          <span> <%= f.input :photo_company_logo, as: :attachinary %> </span>
+          <span> <%= f.input :photo_presentation, as: :attachinary %> </span>
+          <%= f.button :submit, "Mettre à jour mon profil", class: "btn btn-success" %>
+        </div>
+      </div>
+    <% end %>
   </div>
-</div>
-
+<!-- edit worker -->
 <% else %>
 
-<div class="container container-edit-worker">
-  <div class="row">
-    <div class="col-xs-10 col-xs-offset-1 col-md-6 col-md-offset-3">
-      <%= simple_form_for(@user) do |f| %>
-        <%= f.input :email %>
-        <%= f.input :mobile_phone, required: true %>
-        <%= f.input :first_name %>
-        <%= f.input :last_name %>
-        <%= f.input :address %>
-        <div class="flexbox-form-edit-worker">
-          <label><%= f.check_box :couvreur %><span>couvreur</span></label>
-          <label><%= f.check_box :charpentier %><span>charpentier</span></label>
-        </div>
-        <%= f.input :cv, as: :attachinary, required: true %>
-        <%= f.input :photo, as: :attachinary, required: true %>
-        <%= f.button :submit, "Mettre à jour mes informations", class: "navbar-wagon-button" %>
-      <% end %>
+  <div class="container container-edit-worker">
+    <div class="row">
+      <div class="col-xs-10 col-xs-offset-1 col-md-6 col-md-offset-3">
+        <%= simple_form_for(@user) do |f| %>
+          <%= f.input :email %>
+          <%= f.input :mobile_phone, required: true %>
+          <%= f.input :first_name %>
+          <%= f.input :last_name %>
+          <%= f.input :address %>
+          <div class="flexbox-form-edit-worker">
+            <label><%= f.check_box :couvreur %><span>couvreur</span></label>
+            <label><%= f.check_box :charpentier %><span>charpentier</span></label>
+          </div>
+          <%= f.input :cv, as: :attachinary, required: true %>
+          <%= f.input :photo, as: :attachinary, required: true %>
+          <%= f.button :submit, "Mettre à jour mes informations", class: "navbar-wagon-button" %>
+        <% end %>
+      </div>
     </div>
   </div>
-</div>
 
 <% end %>
 
