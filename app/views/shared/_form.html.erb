@@ -9,19 +9,19 @@
     <div class="col-xs-12 col-sm-4 col-sm-offset-3">
       <h5>Travaux</h5>
       <div class="index_form">
-        <div><label><%= f.check_box :couverture %> <span>couverture - étanchéité</span></label></div>
+        <div><label><%= f.check_box :couverture %> <span>Couverture - Isolation</span></label></div>
+        <div><label><%= f.check_box :ouverture %> <span>Fenêtre - Ouverture</span></label></div>
         <div><label>
         <%= f.check_box :charpente %>
-        <span>structure - charpente</span>
+        <span>Charpente</span>
         </label></div>
-        <div><label><%= f.check_box :ouverture %> <span>fenêtre - ouverture</span></label></div>
         <div><label>
         <%= f.check_box :terrasse %>
-        <span>balcon - terrasse</span>
+        <span>Terrasse - Balcon</span>
         </label></div>
         <div><label>
         <%= f.check_box :plomberie %>
-        <span>zinguerie - descentes d'eaux</span>
+        <span>Fuite - Eaux usées</span>
         </label></div>
       </div>
     </div>
@@ -30,15 +30,19 @@
       <div class="flexbox">
         <div><label>
         <%= f.check_box :maison %>
-        <span>maison</span>
+        <span>Maison</span>
         </label></div>
         <div><label>
         <%= f.check_box :immeuble %>
-        <span>immeuble</span>
+        <span>Immeuble</span>
         </label></div>
         <div><label>
         <%= f.check_box :chateau %>
-        <span>chateau</span>
+        <span>Chateau</span>
+        </label></div>
+        <div><label>
+        <%= f.check_box :locaux_industriels %>
+        <span>Local industriel</span>
         </label></div>
       </div>
     </div>

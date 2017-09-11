@@ -2,7 +2,7 @@
 <%= render "shared/form", client: @client %>
 
 <% if @available_users != [] %>
-  <h3 class="text-center"> Il y a <%= @available_users.count %> prestataires qui près de chez vous</h3>
+  <h3 class="text-center"> Il y a <%= @available_users.count %> prestataires près de chez vous</h3>
 <% else %>
   <h3 class="text-center"> Il y a <%= @radius_users.count %> prestataires dans votre secteur, affinez votre recherche ci-dessus</h3>
 <% end %>

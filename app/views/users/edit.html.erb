@@ -23,40 +23,23 @@
     </div>
     <div class="col-xs-12 col-md-4 col-profile-style-check-box">
       <div>
-        <p>Nature des travaux</p>
-        <div class="checkbox_form">
-          <span>
-            <%= f.check_box :construction %>
-            Construction
-          </span>
-          <span>
-            <%= f.check_box :renovation  %>
-            Renovation
-          </span>
-          <span>
-            <%= f.check_box :entretien  %>
-            Entretien
-          </span>
-        </div>
-      </div>
-      <div>
         <p>Spécialités</p>
         <div class="checkbox_form">
           <span>
             <%= f.check_box :couverture  %>
-            Couverture
+            Couverture - Isolation
           </span>
           <span>
             <%= f.check_box :ouverture  %>
-            Ouverture
+            Fenêtre - Ouverture
           </span>
           <span>
             <%= f.check_box :terrasse  %>
-            Terrasse
+            Terrasse - Balcon
           </span>
           <span>
             <%= f.check_box :plomberie  %>
-            Plomberie
+            Fuites - Eaux usées
           </span>
           <span>
             <%= f.check_box :charpente  %>
@@ -65,19 +48,23 @@
         </div>
       </div>
       <div>
-        <p>Type de bien</p>
+        <p>Type de batiment</p>
         <div class="checkbox_form">
           <span>
             <%= f.check_box :maison  %>
-            Maison
+            Maisons
           </span>
           <span>
             <%= f.check_box :chateau  %>
-            Chateau
+            Chateaux
           </span>
           <span>
             <%= f.check_box :immeuble  %>
-            Immeuble
+            Immeubles
+          </span>
+          <span>
+            <%= f.check_box :locaux_industriels  %>
+            Locaux industriels
           </span>
         </div>
       </div>

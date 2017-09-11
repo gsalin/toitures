@@ -12,34 +12,37 @@
         <div class="row row-emergency-check-box-form">
           <div class="col-xs-12 col-sm-4 col-sm-offset-2">
             <p>Nature des travaux</p>
-            <label><%= f.check_box :couverture %> <span>couverture - étanchéité</span></label>
+            <label><%= f.check_box :couverture %> <span>Couverture - Isolation</span></label>
             <div>
             <label><%= f.check_box :charpente %>
-            <span>structure - charpente</span></label>
+            <span>Charpente</span></label>
             </div>
-            <div><label><%= f.check_box :ouverture %> <span>fenêtre - ouverture</span></label></div>
+            <div><label><%= f.check_box :ouverture %> <span>Fenêtre - Ouverture</span></label></div>
             <div>
             <label><%= f.check_box :terrasse %>
-            <span>balcon - terrasse</span></label>
+            <span>Terrasse - balcon</span></label>
             </div>
             <div>
             <label><%= f.check_box :plomberie %>
-            <span>zinguerie - descentes d'eaux</span></label>
+            <span>Fuites - Ecoulement</span></label>
             </div>
           </div>
           <div class="col-xs-12 col-sm-4 col-sm-offset-2">
             <p>Type de batiment</p>
             <div>
             <label><%= f.check_box :maison %>
-            <span>maison</span></label>
+            <span>Maison</span></label>
             </div>
             <div>
             <label><%= f.check_box :immeuble %>
-            <span>immeuble</span></label>
+            <span>Immeuble</span></label>
             </div>
             <div>
             <label><%= f.check_box :chateau %>
-            <span>chateau</span></label>
+            <span>Chateau</span></label>
+            </div>
+            <label><%= f.check_box :locaux_industriels %>
+            <span>Local industriel</span></label>
             </div>
           </div>
         </div>
