@@ -3,14 +3,32 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-md-9">
+    <div class="col-xs-12">
       <ol class="breadcrumb">
         <li><a href="/">Accueil</a></li>
         <li class="active">Magazine</li>
       </ol>
+    </div>
+    <div class="col-xs-12 hidden-xs">
       <%= render 'shared/share_links' %>
     </div>
 
+    <div class="col-xs-12 hidden-md hidden-lg hidden-xl">
+      <div class= "left-navigation-container">
+        <div class="all-categories-articles">
+          <div class= "left-navigation-category-link">
+            <%= link_to "Catégories", articles_path, class: "yellow-link" %>
+          </div>
+          <ul>
+            <li><%= link_to "Energie", energie_articles_path, class: "small-link" %></li>
+            <li><%= link_to "Environnement", environnement_articles_path, class: "small-link" %></li>
+            <li><%= link_to "Technique", technique_articles_path, class: "small-link" %></li>
+            <li><%= link_to "Style", style_articles_path, class: "small-link" %></li>
+            <li><%= link_to "Patrimoine", patrimoine_articles_path, class: "small-link" %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
     <div class="col-xs-12 col-md-9">
       <div class='index_articles_page'>

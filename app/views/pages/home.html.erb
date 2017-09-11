@@ -21,11 +21,11 @@
     <%= simple_form_for(@client) do |f| %>
       <div class="home_container">
         <div class="main-form-stuffs">
-        <%= f.input :address, placeholder: 'Ville, CP, Adresse', autofocus: true, label:false %>
+        <%= f.input :address, placeholder: 'Ville / Code Postal', autofocus: true, label:false %>
         </div>
         <div class="dropdown main-form-stuffs">
           <button class="btn btn-default custom-drop-down-btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-            Type de travaux
+            Nature des travaux
             <span class="caret"></span>
           </button>
           <ul class="dropdown-menu dropdown-size-custom keep-open-on-click" aria-labelledby="dropdownMenu1">
@@ -38,24 +38,13 @@
         </div>
         <div class="dropdown main-form-stuffs">
           <button class="btn btn-default custom-drop-down-btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-            Type de bien
+            Type de batiment
             <span class="caret"></span>
           </button>
           <ul class="dropdown-menu dropdown-size-custom keep-open-on-click" aria-labelledby="dropdownMenu1">
             <li><label><%= f.check_box :maison %><span> maison</span></label></li>
             <li><label><%= f.check_box :immeuble %><span> immeuble</span></label></li>
             <li><label><%= f.check_box :chateau %><span> chateau</span></label></li>
-          </ul>
-        </div>
-        <div class="dropdown main-form-stuffs">
-          <button class="btn btn-default custom-drop-down-btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-            Besoin
-            <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu keep-open-on-click" aria-labelledby="dropdownMenu1">
-            <li><label><%= f.check_box :construction %><span> construction</span></label></li>
-            <li><label><%= f.check_box :renovation %><span> rénovation</span></label></li>
-            <li><label><%= f.check_box :entretien %><span> entretien</span></label></li>
           </ul>
         </div>
         <div class="main-form-stuffs">
@@ -78,10 +67,10 @@
   <div class="row">
     <div class="col-xs-12">
       <%= simple_form_for(@client) do |f| %>
-      <%= f.input :address, placeholder: 'Ville, CP, Adresse', autofocus: true, label:false, input_html: {id: "client_address_form-xs"}  %>
+      <%= f.input :address, placeholder: 'Ville, Code Postal', autofocus: true, label:false, input_html: {id: "client_address_form-xs"}  %>
       <div class="dropdown main-form-stuffs">
         <button class="btn btn-default custom-drop-down-btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-          Type de travaux
+          Nature des travaux
           <span class="caret"></span>
         </button>
         <ul class="dropdown-menu dropdown-size-custom dropdown-form-home-xs keep-open-on-click" aria-labelledby="dropdownMenu1">
@@ -103,17 +92,6 @@
           <li><label><%= f.check_box :chateau %><span> chateau</span></label></li>
         </ul>
       </div>
-      <div class="dropdown main-form-stuffs">
-        <button class="btn btn-default custom-drop-down-btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-          Besoin
-          <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu dropdown-form-home-xs keep-open-on-click" aria-labelledby="dropdownMenu1">
-          <li><label><%= f.check_box :construction %><span> construction</span></label></li>
-          <li><label><%= f.check_box :renovation %><span> rénovation</span></label></li>
-          <li><label><%= f.check_box :entretien %><span> entretien</span></label></li>
-        </ul>
-      </div>
         <%= button_tag type: 'submit', class: "search-button", id: "search-button-form-xs" do %>
         Rechercher
         <% end %>
@@ -125,7 +103,7 @@
 <!-- card presentation -->
 <div class="container card-presentation-container">
   <div class="row">
-    <div class="col-xs-12 col-sm-5 col-sm-offset-1 presentation-site-home" id="border-presentation-site-home">
+    <div class="col-xs-12 hidden-xs hidden-md col-sm-5 col-sm-offset-1 presentation-site-home" id="border-presentation-site-home">
       <h3>Le premier site spécialisé dans la toiture</h3>
       <p>Le site www.lestoitures.fr combine :</p>
       <ul>
@@ -142,21 +120,27 @@
       <p>Pour ceux qui veulent en savoir plus sur certains points, trouver de l'inspiration, ou se renseigner sur des points d'actualités (législations, subventions,etc..), bienvenue dans notre <strong>magazine</strong>.</p>
     </div>
     <div class="col-xs-12 col-sm-5 col-sm-offset-1 text-center presentation-site-home">
-      <div class="home-icones">
-        <i class="fa fa-address-card-o fa-3x" aria-hidden="true"></i>
-        <p>Un <span>Annuaire</span> avec les fiches complètes des professionnels</p>
-        <%= link_to "Consulter l'annuaire", users_path, class: "small-link-home" %>
-      </div>
-      <div class="home-icones">
-        <i class="fa fa-file-text-o fa-3x" aria-hidden="true"></i>
-        <p>Comprenez tout sur la toiture grace aux <span>guides</span></p>
-        <%= link_to "Voir les guides", guides_path, class: "small-link-home" %>
-      </div>
-      <div class="home-icones">
-        <i class="fa fa-newspaper-o fa-3x" aria-hidden="true"></i>
-        <p>Découvrez l'actualité et les tendances dans le <span>magazine</span></p>
-        <%= link_to "Voir le magazine", articles_path, class: "small-link-home" %>
-      </div>
+      <%= link_to users_path, class: "card-link-home" do %>
+        <div class="home-icones">
+          <i class="fa fa-address-card-o fa-3x" aria-hidden="true"></i>
+          <p>Un <span>Annuaire</span> avec les fiches complètes des professionnels</p>
+          <%= link_to "Consulter l'annuaire", users_path, class: "small-link-home" %>
+        </div>
+      <% end %>
+      <%= link_to guides_path, class: "card-link-home" do %>
+        <div class="home-icones">
+          <i class="fa fa-file-text-o fa-3x" aria-hidden="true"></i>
+          <p>Comprenez tout sur la toiture grace aux <span>guides</span></p>
+          <%= link_to "Voir les guides", guides_path, class: "small-link-home" %>
+        </div>
+      <% end %>
+      <%= link_to articles_path, class: "card-link-home" do %>
+        <div class="home-icones">
+          <i class="fa fa-newspaper-o fa-3x" aria-hidden="true"></i>
+          <p>Découvrez l'actualité et les tendances dans le <span>magazine</span></p>
+          <%= link_to "Voir le magazine", articles_path, class: "small-link-home" %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
@@ -167,7 +151,9 @@
   <div class="container guide-card-home">
     <div class="row row-guide-card-home">
       <div class="col-xs-12 col-sm-12">
-        <h1 style="margin-bottom: 50px;">Les guides</h1>
+        <%= link_to guides_path do %>
+          <h1 style="margin-bottom: 50px;">Les guides</h1>
+        <% end %>
       </div>
       <div class="col-xs-12 col-sm-4 card-guide">
         <div class="card-home-guide" style="background: linear-gradient(155deg, rgba(5, 5, 5, 0.6) 10%, rgba(5, 5, 5, 0.2) 80%), url(<%= asset_path 'chaumiere.jpg' %>);">
@@ -211,19 +197,19 @@
     <% end %>
     </div>
     <div class="col-xs-12 col-sm-4">
-      <h2>Des professionnels de qualité</h2>
+      <h2>Référencement des acteurs</h2>
       <ul>
-        <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Structure juridique de plus de 2 ans</li>
-        <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Assurance de responsabilité décennale</li>
-        <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Assurance de responsabilité civile professionnelle</li>
+        <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Les entreprises et les artisans</li>
+        <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Les institutions</li>
+        <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Les associations de professionnels</li>
       </ul>
     </div>
      <div class="col-xs-12 col-sm-4">
-      <h2>Répertoire par spécialité</h2>
+      <h2>Un répertoire par spécialité</h2>
       <ul>
         <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Recherche par types de prestation</li>
         <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Coordonnées complètes des pros</li>
-        <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Recherche par labels (Qualibat, RGE, ...) et par association</li>
+        <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Recherche par labels (Qualibat, ...) et par association (MNH, ...)</li>
       </ul>
     </div>
      <div class="col-xs-12 col-sm-4">
@@ -231,7 +217,7 @@
       <ul>
         <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Présentation de l'entreprise</li>
         <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Présentation des projets réalisés</li>
-        <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Publication d'articles dans le magazine</li>
+        <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Présentation des articles publiés</li>
       </ul>
     </div>
     <div class="col-xs-12 hidden-xs hidden-sm" id="center-form-annuaire">
@@ -239,11 +225,11 @@
       <%= simple_form_for(@client) do |f| %>
         <div class="home_container">
           <div class="main-form-stuffs">
-          <%= f.input :address, placeholder: 'Ville, CP, Adresse', autofocus: true, label:false, input_html: {id: "client_address_2nd_form"}  %>
+          <%= f.input :address, placeholder: 'Ville, Code Postal', autofocus: true, label:false, input_html: {id: "client_address_2nd_form"}  %>
           </div>
           <div class="dropdown main-form-stuffs">
             <button class="btn btn-default custom-drop-down-btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-              Type de travaux
+              Nature des travaux
               <span class="caret"></span>
             </button>
             <ul class="dropdown-menu dropdown-size-custom keep-open-on-click" aria-labelledby="dropdownMenu1">
@@ -256,24 +242,13 @@
           </div>
           <div class="dropdown main-form-stuffs">
             <button class="btn btn-default custom-drop-down-btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-              Type de bien
+              <span> Type de batiment</span>
               <span class="caret"></span>
             </button>
             <ul class="dropdown-menu dropdown-size-custom keep-open-on-click" aria-labelledby="dropdownMenu1">
               <li><label><%= f.check_box :maison %><span> maison</span></label></li>
               <li><label><%= f.check_box :immeuble %><span> immeuble</span></label></li>
               <li><label><%= f.check_box :chateau %><span> chateau</span></label></li>
-            </ul>
-          </div>
-          <div class="dropdown main-form-stuffs">
-            <button class="btn btn-default custom-drop-down-btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-              Besoin
-              <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu keep-open-on-click" aria-labelledby="dropdownMenu1">
-              <li><label><%= f.check_box :construction %><span> construction</span></label></li>
-              <li><label><%= f.check_box :renovation %><span> rénovation</span></label></li>
-              <li><label><%= f.check_box :entretien %><span> entretien</span></label></li>
             </ul>
           </div>
           <div class="main-form-stuffs">
@@ -293,7 +268,9 @@
   <div class="container annuaire-card-home">
     <div class="row row-annuaire-card-home">
       <div class="col-xs-12 col-md-12">
-        <h1 style="margin-bottom: 40px;">Le magazine</h1>
+        <%= link_to articles_path do %>
+          <h1 style="margin-bottom: 40px;">Le magazine</h1>
+        <% end %>
       </div>
       <div class="col-xs-12 col-md-10 col-md-offset-1">
         <% @articles.each do |article| %>

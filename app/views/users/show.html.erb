@@ -93,49 +93,6 @@
           <div class="skills-column">
             <ul class="skills">
 
-              <h4>Type de biens</h4>
-
-              <li class="li-position">
-                <% if @user.maison == true %>
-                  <%= image_tag 'maison.svg', class:"skill-pic" %>
-                  <span>Maisons individuelles</span>
-                <% end %>
-              </li>
-
-              <li class="li-position">
-                <% if @user.immeuble == true %>
-                  <%= image_tag 'immeuble.svg', class:"skill-pic" %>
-                  <span>Immeubles</span>
-                <% end %>
-              </li>
-              <li class="li-position">
-                <% if @user.chateau == true %>
-                  <%= image_tag 'chateau.svg', class:"skill-pic" %>
-                  <span>Chateaux</span>
-                <% end %>
-              </li>
-
-              <h4>Travaux</h4>
-
-              <li class="li-position">
-                <% if @user.construction == true %>
-                  <%= image_tag 'reparation2.svg', class:"skill-pic" %>
-                  <span>Construction</span>
-                <% end %>
-              </li>
-              <li class="li-position">
-                <% if @user.renovation == true %>
-                  <%= image_tag 'reparation.svg', class:"skill-pic" %>
-                  <span>Rénovation</span>
-                <% end %>
-              </li>
-              <li class="li-position">
-                <% if @user.entretien == true %>
-                  <%= image_tag 'nettoyage2.svg', class:"skill-pic" %>
-                  <span>Entretien</span>
-                <% end %>
-              </li>
-
               <h4>Spécialités</h4>
 
               <li class="li-position">
@@ -168,6 +125,50 @@
                   <span>Gouttières / Eaux de pluie</span>
                 <% end %>
               </li>
+
+              <h4>Type de batiment</h4>
+
+              <li class="li-position">
+                <% if @user.maison == true %>
+                  <%= image_tag 'maison.svg', class:"skill-pic" %>
+                  <span>Maisons individuelles</span>
+                <% end %>
+              </li>
+
+              <li class="li-position">
+                <% if @user.immeuble == true %>
+                  <%= image_tag 'immeuble.svg', class:"skill-pic" %>
+                  <span>Immeubles</span>
+                <% end %>
+              </li>
+              <li class="li-position">
+                <% if @user.chateau == true %>
+                  <%= image_tag 'chateau.svg', class:"skill-pic" %>
+                  <span>Chateaux</span>
+                <% end %>
+              </li>
+
+<!--               <h4>Travaux</h4>
+
+              <li class="li-position">
+                <#% if @user.construction == true %>
+                  <#%= image_tag 'reparation2.svg', class:"skill-pic" %>
+                  <span>Construction</span>
+                <#% end %>
+              </li>
+              <li class="li-position">
+                <#% if @user.renovation == true %>
+                  <#%= image_tag 'reparation.svg', class:"skill-pic" %>
+                  <span>Rénovation</span>
+                <#% end %>
+              </li>
+              <li class="li-position">
+                <#% if @user.entretien == true %>
+                  <#%= image_tag 'nettoyage2.svg', class:"skill-pic" %>
+                  <span>Entretien</span>
+                <#% end %>
+              </li> -->
+
               </div>
             </ul>
           </div>

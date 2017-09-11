@@ -1,11 +1,10 @@
 
-<h1>Bonjour worker</h1>
-<!-- <h3>Bienvenue <%= @user.first_name %> <%= @user.last_name %> sur lestoitures.fr</h3>
+<h3>Bienvenue <strong style="font-style:italic;"><%= @user.first_name %></strong> <strong><%= @user.last_name %></strong> sur lestoitures.fr</h3>
 
-<p>Votre profil est maintenant créé et vous pouvez y accéder dans votre espace privé</p>
+<p>Merci de compléter votre profil soigneusement <strong><span style="background-color: yellow"><%= link_to "ici", edit_user_url(@user) %></span></strong></p> afin que votre profil soit référencé dans l'annuaire.
 
-<p>Vous pouvez le compléter en ajoutant des projets que vous avez menez ou en écrivant des articles</p>-->
+<p>Si vous avez des questions, vous pouvez nous contacter au courriel suivant : <strong>contact@lestoitures.fr</strong></p>
 
-<%= link_to "Revenir au site", root_url %>
+<p style="font-style: italic">L'équipe lestoitures.fr</p>
 
-<p>Pour nous contacter : contact@lestoitures.fr</p>
+<img src="https://www.lestoitures.fr/assets/logonavbar2-56b902cd2fdd49a418921e9949f00da74ee6955fe7d06dfecbcb05a09f751033.png"/>

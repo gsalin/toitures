@@ -32,6 +32,23 @@
           <% if @user.pro? %>
             <%= f.input :radius, placeholder:"périmètre d'action autour de votre adresse" %>
           <% end %>
+    <div class="col-xs-12 col-md-4 col-profile-style-check-box">
+      <div>
+        <p>Nature des travaux</p>
+        <div class="checkbox_form">
+          <span>
+            <%= f.check_box :construction %>
+            Construction
+          </span>
+          <span>
+            <%= f.check_box :renovation  %>
+            Renovation
+          </span>
+          <span>
+            <%= f.check_box :entretien  %>
+            Entretien
+          </span>
+
         </div>
         <div class="col-xs-12 col-md-4 col-profile-style">
           <%= f.input :first_name %>

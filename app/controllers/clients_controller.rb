@@ -32,19 +32,19 @@
       end
     end
 
-    works_users = []
-    @radius_users.each do |radius_user|
-      if @client.construction == true && radius_user.construction == true
-        works_users << radius_user
-      elsif @client.renovation == true && radius_user.renovation == true
-        works_users << radius_user
-      elsif @client.entretien == true && radius_user.entretien == true
-        works_users << radius_user
-      end
-    end
+    # works_users = []
+    # @radius_users.each do |radius_user|
+    #   if @client.construction == true && radius_user.construction == true
+    #     works_users << radius_user
+    #   elsif @client.renovation == true && radius_user.renovation == true
+    #     works_users << radius_user
+    #   elsif @client.entretien == true && radius_user.entretien == true
+    #     works_users << radius_user
+    #   end
+    # end
 
     skills_users = []
-    works_users.each do |works_user|
+    @radius_users.each do |works_user|
       if @client.charpente == true && works_user.charpente == true
         skills_users << works_user
       elsif @client.couverture == true && works_user.couverture == true
