@@ -125,7 +125,7 @@
 <!-- card presentation -->
 <div class="container card-presentation-container">
   <div class="row">
-    <div class="col-xs-12 col-sm-5 col-sm-offset-1 presentation-site-home" id="border-presentation-site-home">
+    <div class="col-xs-12 hidden-xs hidden-md col-sm-5 col-sm-offset-1 presentation-site-home" id="border-presentation-site-home">
       <h3>Le premier site spécialisé dans la toiture</h3>
       <p>Le site www.lestoitures.fr combine :</p>
       <ul>
@@ -167,7 +167,9 @@
   <div class="container guide-card-home">
     <div class="row row-guide-card-home">
       <div class="col-xs-12 col-sm-12">
-        <h1 style="margin-bottom: 50px;">Les guides</h1>
+        <%= link_to guides_path do %>
+          <h1 style="margin-bottom: 50px;">Les guides</h1>
+        <% end %>
       </div>
       <div class="col-xs-12 col-sm-4 card-guide">
         <div class="card-home-guide" style="background: linear-gradient(155deg, rgba(5, 5, 5, 0.6) 10%, rgba(5, 5, 5, 0.2) 80%), url(<%= asset_path 'chaumiere.jpg' %>);">
@@ -211,19 +213,19 @@
     <% end %>
     </div>
     <div class="col-xs-12 col-sm-4">
-      <h2>Des professionnels de qualité</h2>
+      <h2>Référencement des acteurs</h2>
       <ul>
-        <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Structure juridique de plus de 2 ans</li>
-        <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Assurance de responsabilité décennale</li>
-        <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Assurance de responsabilité civile professionnelle</li>
+        <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Les entreprises et les artisans</li>
+        <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Les institutions</li>
+        <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Les associations de professionnels</li>
       </ul>
     </div>
      <div class="col-xs-12 col-sm-4">
-      <h2>Répertoire par spécialité</h2>
+      <h2>Un répertoire par spécialité</h2>
       <ul>
         <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Recherche par types de prestation</li>
         <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Coordonnées complètes des pros</li>
-        <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Recherche par labels (Qualibat, RGE, ...) et par association</li>
+        <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Recherche par labels (Qualibat, ...) et par association (MNH, ...)</li>
       </ul>
     </div>
      <div class="col-xs-12 col-sm-4">
@@ -231,7 +233,7 @@
       <ul>
         <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Présentation de l'entreprise</li>
         <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Présentation des projets réalisés</li>
-        <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Publication d'articles dans le magazine</li>
+        <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Présentation des articles publiés</li>
       </ul>
     </div>
     <div class="col-xs-12 hidden-xs hidden-sm" id="center-form-annuaire">
@@ -293,7 +295,9 @@
   <div class="container annuaire-card-home">
     <div class="row row-annuaire-card-home">
       <div class="col-xs-12 col-md-12">
-        <h1 style="margin-bottom: 40px;">Le magazine</h1>
+        <%= link_to articles_path do %>
+          <h1 style="margin-bottom: 40px;">Le magazine</h1>
+        <% end %>
       </div>
       <div class="col-xs-12 col-md-10 col-md-offset-1">
         <% @articles.each do |article| %>
