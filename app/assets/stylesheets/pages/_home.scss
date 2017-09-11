@@ -147,6 +147,7 @@
   }
 
   .home-icones {
+    text-decoration: none;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -158,8 +159,10 @@
     padding: 10px;
     background-color: white;
     i {
+      text-decoration: none;
+      color: $black;
       height: 90px;
-      width: 90px;
+      // width: 90px;
       background-color: white;
       border-radius: 50%;
       display: flex;
@@ -170,10 +173,12 @@
       align-content: space-around;
     }
     p {
+      text-decoration: none;
       margin-top: 8px;
       margin-bottom: 10px;
       max-width: 270px;
       font-weight:lighter;
+      color: $black;
       span {
         font-weight: bolder;
         color: $black;
@@ -181,6 +186,17 @@
     }
   }
 }
+
+.card-link-home {
+  text-decoration: none;
+  transition: color 0.5s ease;
+  }
+
+.card-link-home:hover {
+  text-decoration: none;
+  transition: color 0.5s ease;
+  }
+
 
 .guide-card-home {
   padding-bottom: 40px;
