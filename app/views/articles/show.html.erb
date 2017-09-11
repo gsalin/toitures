@@ -16,7 +16,7 @@
         </ol>
 
         <%= render 'shared/share_links' %>
-        <div style="margin-top: 40px;">
+        <div style="margin-top: 20px;">
           <% if user_signed_in? && @article.user_id == current_user.id %>
             <%= link_to "Modifier mon article", edit_article_path(@article) %>
           <% end %>
@@ -33,14 +33,14 @@
 
 
         <figure class="figure-article">
-            <%= cl_image_tag @article.photo_presentation.path, height: 567, width: 850, crop: :fill %>
+            <%= cl_image_tag @article.photo_presentation.path, class:"img-responsive" %>
           <figcaption><%= @article.caption %></figcaption>
         </figure>
 
         <%= kramdown(@article.body) %>
         <% if @article.second_photo != nil %>
         <figure class="figure-article">
-            <%= cl_image_tag @article.second_photo.path, height: 567, width: 850, crop: :fill  %>
+            <%= cl_image_tag @article.second_photo.path, class:"img-responsive"  %>
           <figcaption></figcaption>
         </figure>
         <% end %>
