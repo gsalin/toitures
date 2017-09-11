@@ -29,11 +29,11 @@
             <span class="caret"></span>
           </button>
           <ul class="dropdown-menu dropdown-size-custom keep-open-on-click" aria-labelledby="dropdownMenu1">
-            <li><label><%= f.check_box :couverture %> <span> couverture</span></label></li>
-            <li><label><%= f.check_box :charpente %><span> charpente</span></label></li>
-            <li><label><%= f.check_box :ouverture %> <span> fenêtre / ouverture</span></label></li>
-            <li><label><%= f.check_box :terrasse %><span> terrasse</span></label></li>
-            <li><label><%= f.check_box :plomberie %><span> eaux de pluies / zinguerie</span></label></li>
+            <li><label><%= f.check_box :couverture %> <span>Couverture - Isolation</span></label></li>
+            <li><label><%= f.check_box :ouverture %> <span> Fenêtre - Ouverture</span></label></li>
+            <li><label><%= f.check_box :charpente %><span> Charpente</span></label></li>
+            <li><label><%= f.check_box :terrasse %><span> Terrasse</span></label></li>
+            <li><label><%= f.check_box :plomberie %><span> Fuite - Eaux usées</span></label></li>
           </ul>
         </div>
         <div class="dropdown main-form-stuffs">
@@ -42,9 +42,10 @@
             <span class="caret"></span>
           </button>
           <ul class="dropdown-menu dropdown-size-custom keep-open-on-click" aria-labelledby="dropdownMenu1">
-            <li><label><%= f.check_box :maison %><span> maison</span></label></li>
-            <li><label><%= f.check_box :immeuble %><span> immeuble</span></label></li>
-            <li><label><%= f.check_box :chateau %><span> chateau</span></label></li>
+            <li><label><%= f.check_box :maison %><span> Maison</span></label></li>
+            <li><label><%= f.check_box :immeuble %><span> Immeuble</span></label></li>
+            <li><label><%= f.check_box :chateau %><span> Chateau</span></label></li>
+            <li><label><%= f.check_box :locaux_industriels %><span> Local industriel</span></label></li>
           </ul>
         </div>
         <div class="main-form-stuffs">
@@ -74,11 +75,11 @@
           <span class="caret"></span>
         </button>
         <ul class="dropdown-menu dropdown-size-custom dropdown-form-home-xs keep-open-on-click" aria-labelledby="dropdownMenu1">
-          <li><label><%= f.check_box :couverture %> <span> couverture</span></label></li>
-          <li><label><%= f.check_box :charpente %><span> charpente</span></label></li>
-          <li><label><%= f.check_box :ouverture %> <span> fenêtre / ouverture</span></label></li>
-          <li><label><%= f.check_box :terrasse %><span> terrasse</span></label></li>
-          <li><label><%= f.check_box :plomberie %><span> eaux de pluies / zinguerie</span></label></li>
+          <li><label><%= f.check_box :couverture %> <span>Couverture - Isolation</span></label></li>
+          <li><label><%= f.check_box :ouverture %> <span> Fenêtre - Ouverture</span></label></li>
+          <li><label><%= f.check_box :charpente %><span> Charpente</span></label></li>
+          <li><label><%= f.check_box :terrasse %><span> Terrasse</span></label></li>
+          <li><label><%= f.check_box :plomberie %><span> Fuite - Eaux usées</span></label></li>
         </ul>
       </div>
       <div class="dropdown main-form-stuffs">
@@ -87,9 +88,10 @@
           <span class="caret"></span>
         </button>
         <ul class="dropdown-menu dropdown-size-custom dropdown-form-home-xs keep-open-on-click" aria-labelledby="dropdownMenu1">
-          <li><label><%= f.check_box :maison %><span> maison</span></label></li>
-          <li><label><%= f.check_box :immeuble %><span> immeuble</span></label></li>
-          <li><label><%= f.check_box :chateau %><span> chateau</span></label></li>
+          <li><label><%= f.check_box :maison %><span> Maison</span></label></li>
+          <li><label><%= f.check_box :immeuble %><span> Immeuble</span></label></li>
+          <li><label><%= f.check_box :chateau %><span> Chateau</span></label></li>
+          <li><label><%= f.check_box :locaux_industriels %><span> Local industriel</span></label></li>
         </ul>
       </div>
         <%= button_tag type: 'submit', class: "search-button", id: "search-button-form-xs" do %>
@@ -227,11 +229,11 @@
               <span class="caret"></span>
             </button>
             <ul class="dropdown-menu dropdown-size-custom keep-open-on-click" aria-labelledby="dropdownMenu1">
-              <li><label><%= f.check_box :couverture %> <span> couverture</span></label></li>
-              <li><label><%= f.check_box :charpente %><span> charpente</span></label></li>
-              <li><label><%= f.check_box :ouverture %> <span> fenêtre / ouverture</span></label></li>
-              <li><label><%= f.check_box :terrasse %><span> terrasse</span></label></li>
-              <li><label><%= f.check_box :plomberie %><span> eaux de pluies / zinguerie</span></label></li>
+              <li><label><%= f.check_box :couverture %> <span>Couverture - Isolation</span></label></li>
+              <li><label><%= f.check_box :ouverture %> <span> Fenêtre - Ouverture</span></label></li>
+              <li><label><%= f.check_box :charpente %><span> Charpente</span></label></li>
+              <li><label><%= f.check_box :terrasse %><span> Terrasse</span></label></li>
+              <li><label><%= f.check_box :plomberie %><span> Fuite - Eaux usées</span></label></li>
             </ul>
           </div>
           <div class="dropdown main-form-stuffs">
@@ -240,9 +242,10 @@
               <span class="caret"></span>
             </button>
             <ul class="dropdown-menu dropdown-size-custom keep-open-on-click" aria-labelledby="dropdownMenu1">
-              <li><label><%= f.check_box :maison %><span> maison</span></label></li>
-              <li><label><%= f.check_box :immeuble %><span> immeuble</span></label></li>
-              <li><label><%= f.check_box :chateau %><span> chateau</span></label></li>
+              <li><label><%= f.check_box :maison %><span> Maison</span></label></li>
+              <li><label><%= f.check_box :immeuble %><span> Immeuble</span></label></li>
+              <li><label><%= f.check_box :chateau %><span> Chateau</span></label></li>
+              <li><label><%= f.check_box :locaux_industriels %><span> Local industriel</span></label></li>
             </ul>
           </div>
           <div class="main-form-stuffs">

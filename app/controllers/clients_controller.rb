@@ -66,6 +66,8 @@
         @available_users << skills_user
       elsif @client.immeuble == true && skills_user.immeuble == true
         @available_users << skills_user
+      elsif @client.locaux_industriels == true && skills_user.locaux_industriels == true
+        @available_users << skills_user
       end
     end
   end
@@ -83,7 +85,7 @@
   private
 
   def client_params
-    params.require(:client).permit(:first_name, :last_name, :phone_number, :email, :address, :construction, :renovation, :entretien, :charpente, :couverture, :ouverture, :terrasse, :plomberie, :maison, :chateau, :immeuble, :monument_historique, :message)
+    params.require(:client).permit(:first_name, :last_name, :phone_number, :email, :address, :construction, :renovation, :entretien, :charpente, :couverture, :ouverture, :terrasse, :plomberie, :maison, :chateau, :immeuble, :monument_historique, :message, :locaux_industriels)
   end
 
   def set_client
