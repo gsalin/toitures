@@ -10,8 +10,8 @@
         <%= simple_form_for(@client) do |f| %>
           <%= f.input :address, placeholder: "Lieu des travaux", autofocus: true, label:false %>
         <div class="row row-emergency-check-box-form">
-          <div class="col-xs-12 col-sm-3 col-sm-offset-1">
-            <p>Type de travaux</p>
+          <div class="col-xs-12 col-sm-4 col-sm-offset-2">
+            <p>Nature des travaux</p>
             <label><%= f.check_box :couverture %> <span>couverture - étanchéité</span></label>
             <div>
             <label><%= f.check_box :charpente %>
@@ -27,8 +27,8 @@
             <span>zinguerie - descentes d'eaux</span></label>
             </div>
           </div>
-          <div class="col-xs-12 col-sm-3 col-sm-offset-1">
-            <p>Type de bien</p>
+          <div class="col-xs-12 col-sm-4 col-sm-offset-2">
+            <p>Type de batiment</p>
             <div>
             <label><%= f.check_box :maison %>
             <span>maison</span></label>
@@ -40,21 +40,6 @@
             <div>
             <label><%= f.check_box :chateau %>
             <span>chateau</span></label>
-            </div>
-          </div>
-          <div class="col-xs-12 col-sm-3 col-sm-offset-1">
-            <p>Besoin</p>
-            <div>
-            <label><%= f.check_box :construction %>
-            <span>construction</span></label>
-            </div>
-            <div>
-            <label><%= f.check_box :renovation %>
-            <span>rénovation</span></label>
-            </div>
-            <div>
-            <label><%= f.check_box :entretien %>
-            <span>entretien</span></label>
             </div>
           </div>
         </div>
