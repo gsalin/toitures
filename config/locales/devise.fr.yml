@@ -27,6 +27,7 @@ fr:
         photo_presentation: Photo de présentation
         cv: CV (au format PDF uniquement)
         photo: Votre photo
+        facebook: Adresse de votre page facebook
       project:
         title: Titre de présentation
         description: Description

@@ -45,6 +45,7 @@
         <%= f.input :email %>
         <%= f.input :office_phone %>
         <%= f.input :mobile_phone %>
+        <%= f.input :facebook, placeholder:"www.facebook.com/LesToitures/" %>
       </div>
       <% if @user.pro? %>
         <div class="col-xs-12 col-md-4 col-profile-style-check-box">
@@ -106,8 +107,12 @@
               Qualibat
             </span>
             <span>
+              <%= f.check_box :ffb  %>
+              Fédération Francaise du Batiment
+            </span>
+            <span>
               <%= f.check_box :mh  %>
-              Agrément Monuments Historiques
+              Groupement français des entreprises de restauration de monuments historiques
             </span>
           </div>
         </div>
