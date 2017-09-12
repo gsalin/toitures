@@ -21,10 +21,21 @@
     <div class="user-company"></div>
     <div class="logoname">
       <% if @user.photo_company_logo  %>
-        <%= cl_image_tag @user.photo_company_logo.path, height: 80, crop: :fill %>
+        <%= cl_image_tag @user.photo_company_logo.path, height: 80, width:80, crop: :fill %>
       <% end %>
       <h3><%= @user.company %></h3>
-      <div class="phone-mail-banner"><span>Contact : <%= @user.first_name %> <%= @user.last_name %></span><i class="fa fa-phone" aria-hidden="true"></i><%= @user.office_phone %> <i class="fa fa-envelope" aria-hidden="true"></i><%= mail_to @user.email %></div>
+      <span id="cpy-address"><%= @user.address %></span>
+      <div class="phone-mail-banner">
+        <div>
+          <span>Contact : <%= @user.first_name %> <%= @user.last_name %></span>
+        </div>
+        <div>
+          <i class="fa fa-phone" aria-hidden="true"></i><%= @user.office_phone %>
+        </div>
+        <div>
+          <i class="fa fa-envelope" aria-hidden="true"></i><%= mail_to @user.email %>
+        </div>
+      </div>
     </div>
     <div class="form-container">
       <ul class="nav nav-tabs ul-position text-center" role="tablist">
@@ -33,15 +44,15 @@
       </ul>
       <div class="tab-content">
         <div role="tabpanel" class="tab-pane" id="phone">
-            <p class="text-center" id="office_phone"><%= @user.office_phone %></p>
-            <p class="text-center form-title">Désirez vous être rappelé(e)?</p>
-            <%= simple_form_for(@client) do |f| %>
-              <%= f.input :user_id, as: :hidden, input_html: { value: @user.id } %>
-              <%= f.input :last_name, placeholder: "Votre nom", label: false %>
-              <%= f.input :email, placeholder: "Votre email", label: false %>
-              <%= f.input :phone_number, placeholder: "Votre téléphone", label: false %>
-              <%= f.button :submit, "Envoyer", :class => "button-message" %>
-            <% end %>
+          <p class="text-center" id="office_phone"><%= @user.office_phone %></p>
+          <p class="text-center form-title">Désirez vous être rappelé(e)?</p>
+          <%= simple_form_for(@client) do |f| %>
+            <%= f.input :user_id, as: :hidden, input_html: { value: @user.id } %>
+            <%= f.input :last_name, placeholder: "Votre nom", label: false %>
+            <%= f.input :email, placeholder: "Votre email", label: false %>
+            <%= f.input :phone_number, placeholder: "Votre téléphone", label: false %>
+            <%= f.button :submit, "Envoyer", :class => "button-message" %>
+          <% end %>
         </div>
         <div role="tabpanel" class="tab-pane active" id="message">
           <div id="form-message">
@@ -69,33 +80,33 @@
   <div class="description-container">
     <div class="row">
       <div class="description-row">
-        <div class="col-xs-12 col-md-8">
+        <div class="col-xs-12 col-md-7">
           <div class="user-description">
-            <h3><%= @user.company %></h3>
+            <h4>Notre société</h4>
             <%= kramdown(@user.description) %>
-            <div id="flex-pic-address">
-              <h2><%= @user.address %></h2>
-              <div class="labels-show">
+          </div>
+        </div>
+        <% if @user.pro? %>
+          <div class="col-xs-12 col-md-4 col-md-offset-1">
+          <div class="skills-column">
+
+            <div class="labels-show">
               <% if @user.rge == true %>
                 <%= image_tag "rge.png" %>
               <% end %>
               <% if @user.qualibat == true %>
                 <%= image_tag "qualibat.png" %>
               <% end %>
+              <% if @user.ffb == true %>
+                <%= image_tag "ffb.png" %>
+              <% end %>
               <% if @user.mh == true %>
                 <%= image_tag "mh.png" %>
               <% end %>
-              </div>
             </div>
-          </div>
-        </div>
-        <% if @user.pro? %>
-          <div class="col-xs-12 col-md-3 col-md-offset-1">
-          <div class="skills-column">
+
             <ul class="skills">
-
               <h4>Spécialités</h4>
-
               <li class="li-position">
                 <% if @user.charpente == true %>
                   <%= image_tag 'charpente.svg', class:"skill-pic" %>

@@ -19,13 +19,13 @@
 
   .form-container {
     position: absolute;
-    top: 50px;
-    right: 90px;
+    top: 37px;
+    left: 120px;
     background-color: white;
-    height: 515px;
-    // max-height: calc(100vh - 170px);
+    height: 495px;
     width: 320px;
     z-index: 2;
+    opacity: 0.96;
 
     .ul-position {
       position: absolute;
@@ -100,26 +100,16 @@
   min-width: 332px;
   margin-top: 30px;
   box-shadow: 0 15px 35px rgba(50,50,93,0.1), 0 5px 15px rgba(0,0,0,0.07);
-  #flex-pic-address {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    align-content: stretch;
-    img {
-      margin-right: 60px;
-    }
-  }
-  h3 {
-    margin-bottom: 20px;
+  h4 {
+    margin-bottom: 30px;
   }
   h2 {
     font-size: 1.2em;
     font-weight: lighter;
   }
   p {
-    margin-bottom:40px;
+    margin-bottom:30px;
+    font-size: 0.9em;
   }
 }
 
@@ -130,7 +120,7 @@
   bottom: 0px;
   left: 0px;
   z-index: 1;
-  height: 29%;
+  height: 180px;
   width: 100%;
   background-color: black;
 }
@@ -140,27 +130,40 @@
   bottom: 0px;
   left: 0px;
   z-index: 2;
-  height: 29%;
+  height: 180px;
   width: 100%;
   img {
     position: absolute;
-    bottom: 70px;
-    left: 20px;
+    bottom: 50px;
+    left: 500px;
+    border-radius: 50%;
   }
   h3 {
     font-size: 2.2em;
     color: white;
     max-width: 600px;
     position: absolute;
-    bottom: 80px;
-    left: 150px;
+    bottom: 75px;
+    left: 615px;
+  }
+  #cpy-address{
+    color: white;
+    position: absolute;
+    bottom: 60px;
+    left: 615px;
   }
   .phone-mail-banner {
     position: absolute;
-    bottom: 20px;
-    left: 20px;
+    right: 40px;
     color: white;
     font-size: 1.1em;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: stretch;
+    height: 100%;
     a {
       color: white;
       text-decoration: none;
@@ -172,7 +175,6 @@
   }
   .fa {
     margin-right: 10px;
-    margin-left: 40px
   }
 }
 
@@ -183,7 +185,7 @@
   }
   .skills-column {
     background-color: white;
-    padding: 15px 5px 15px 0px;
+    padding: 20px 5px 15px 5px;
     border-radius: 3px;
     margin-top: 30px;
     box-shadow: 0 15px 35px rgba(50,50,93,0.1), 0 5px 15px rgba(0,0,0,0.07);
@@ -239,6 +241,8 @@
   align-items: center;
   align-content: stretch;
   min-width: 210px;
+  margin-top: 10px;
+  margin-bottom: 40px;
   img {
     width: 50px;
     height: 50px;
