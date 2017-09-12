@@ -24,6 +24,7 @@
         <%= cl_image_tag @user.photo_company_logo.path, height: 80, crop: :fill %>
       <% end %>
       <h3><%= @user.company %></h3>
+      <div class="phone-mail-banner"><span>Contact : <%= @user.first_name %> <%= @user.last_name %></span><i class="fa fa-phone" aria-hidden="true"></i><%= @user.office_phone %> <i class="fa fa-envelope" aria-hidden="true"></i><%= mail_to @user.email %></div>
     </div>
     <div class="form-container">
       <ul class="nav nav-tabs ul-position text-center" role="tablist">
