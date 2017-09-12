@@ -2,13 +2,12 @@
 <% content_for :meta_description, "Les principales informations à savoir (points essentiels, bonnes pratiques) avant de commencer vos travaux de toiture." %>
 <% content_for :meta_image, "lancieux_1200_630.jpg" %>
 
-
 <%= render 'shared/guides_top_banner' %>
 <%= render 'shared/fix_cta' %>
 
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-md-12">
+    <div class="col-xs-12 col-md-9">
       <div class='index_guides_page'>
 
         <ol class="breadcrumb">
@@ -29,7 +28,6 @@
           <li>Déterminez la charpente correspondant à votre projet avec "Le guide de la charpente".</li>
         </ul>
 
-
         <br>
 
         <div class="col-xs-12 col-md-12">
@@ -45,7 +43,7 @@
           </div>
         </div>
 
-        <div class="col-xs-12 col-sm-6">
+        <div class="col-xs-12 col-md-6">
           <div class="guide-card">
             <%= link_to la_couverture_guide_index_path do %>
               <h6 class="text-center">Le guide de la couverture</h6>
@@ -59,7 +57,7 @@
           </div>
         </div>
 
-        <div class="col-xs-12 col-sm-6">
+        <div class="col-xs-12 col-md-6">
           <div class="guide-card">
             <%= link_to la_charpente_guide_index_path do %>
               <h6 class="text-center">Le guide de la charpente</h6>
@@ -71,6 +69,7 @@
             <% end %>
           </div>
         </div>
+
       </div>
     </div>
     <%= render 'shared/guide_left_navigation' %>
