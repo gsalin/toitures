@@ -36,7 +36,7 @@ Article.destroy_all
 
 puts 'Creating Administrator user'
 
-user = User.new(
+article_user = User.new(
     email:    "ecastaignet@hotmail.com",
     address: "Paris, France",
     city: "Paris",
@@ -69,8 +69,8 @@ user = User.new(
     photo_company_logo: File.new("app/assets/images/logo.png")
   )
 
-  user.save!
-  user.photo_presentation_url = ouvrierstoitnuit
+  article_user.save!
+  article_user.photo_presentation_url = ouvrierstoitnuit
 
   user = User.new(
       email:    "gsalin@gmail.com",
@@ -248,6 +248,7 @@ puts "Creating articles..."
       card_summary: "Témoins de l'occupation paysanne des monts de l'Aubrac et du Cantal, les burons du Massif Central retrouvent une nouvelle vie grâce à l'essor du tourisme vert.",
       summary: "Les burons sont de petites maisons en pierre au toit de lauze, édifiées à partir du milieu du XVIIIème siècle dans les monts du Cantal, du Cézallier et de l’Aubrac, où les bergers trouvaient refuge et fabriquaient le fromage pendant les estives. Emblèmes du patrimoine architectural et rural de leurs pays, les burons font l’objet de restaurations et retrouvent  de nouvelles activités économiques grâce au tourisme.",
       category: "patrimoine",
+      user: article_user,
       body: "Histoire
   Issu du vieux français « buiron » qui veut dire cabane, les premiers burons apparaissent vers 1760 pour remplacer les cabanes d’estives des pays du Cantal et de l’Aubrac, les tras (ce qui veut dire trou ou creu), construites sous terre et recouvertes de mottes de gazon. A la fin du XIXème, les burons sont devenus de solides constructions, parfois en partie enterrées, couvertes par toit de lauzes. Dans les années 1945, près d’un millier de buron étaient encore en activité. Le buron est habité par plusieurs buronniers dont les charges varient de la garde du cheptel à la confection des fromages, réservé au Cantalès, le patron-vacher du Buron. Ils furent progressivement abandonnés jusqu’aux débuts des années 2000 où les derniers buronniers arrêtèrent leur activité.
 

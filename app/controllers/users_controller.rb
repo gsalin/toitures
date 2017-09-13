@@ -8,13 +8,9 @@ class UsersController < ApplicationController
     @radius_users = []
     @client = Client.new(client_params)
 
-
-
-    # "address"=>"Paris, France", "couverture"=>"0", "ouverture"=>"1", "charpente"=>"0", "terrasse"=>"0", "plomberie"=>"0", "maison"=>"0", "immeuble"=>"1", "chateau"=>"0", "locaux_industriels"=>"0"
-
     pros = User.pro
     @users = pros.where.not(latitude: nil, longitude: nil).where.not(admin: true)
-    # si on veut filtrer l'annuaire par mail à la palce d'admin==> && pros.where.not(email: 'contact@lestoitures.fr')
+
     if params[:client]
       if params[:client][:address]
         @radius_users = []
@@ -30,9 +26,30 @@ class UsersController < ApplicationController
       if params[:client][:couverture] == "1"
         @users = @users.where(couverture: true)
       end
-
-      # a faire pour toutes infos
-
+      if params[:client][:ouverture] == "1"
+        @users = @users.where(ouverture: true)
+      end
+      if params[:client][:charpente] == "1"
+        @users = @users.where(charpente: true)
+      end
+      if params[:client][:terrasse] == "1"
+        @users = @users.where(terrasse: true)
+      end
+      if params[:client][:plomberie] == "1"
+        @users = @users.where(plomberie: true)
+      end
+      if params[:client][:maison] == "1"
+        @users = @users.where(maison: true)
+      end
+      if params[:client][:chateau] == "1"
+        @users = @users.where(chateau: true)
+      end
+      if params[:client][:immeuble] == "1"
+        @users = @users.where(immeuble: true)
+      end
+      if params[:client][:locaux_industriels] == "1"
+        @users = @users.where(locaux_industriels: true)
+      end
     end
 
     @hash = Gmaps4rails.build_markers(@users) do |user, marker|
