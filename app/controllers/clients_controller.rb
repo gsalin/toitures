@@ -15,11 +15,8 @@
       ClientMailer.contact_user(@destinataire, @client).deliver_now
       ClientMailer.contact_client(@destinataire, @client).deliver_now
     end
-    if @client.address == ""
-      redirect_to users_path
-    else
-      redirect_to client_path(@client)
-    end
+    flash[:notice] = "Votre demande a bien été prise en compte"
+    redirect_to user_path(@destinataire)
   end
 
   def show

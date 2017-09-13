@@ -6,12 +6,34 @@ class UsersController < ApplicationController
 
   def index
     @radius_users = []
-    @client = Client.new
+    @client = Client.new(client_params)
+
+
+
+    # "address"=>"Paris, France", "couverture"=>"0", "ouverture"=>"1", "charpente"=>"0", "terrasse"=>"0", "plomberie"=>"0", "maison"=>"0", "immeuble"=>"1", "chateau"=>"0", "locaux_industriels"=>"0"
 
     pros = User.pro
-    @users = pros.where.not(latitude: nil, longitude: nil) && pros.where.not(admin: true)
+    @users = pros.where.not(latitude: nil, longitude: nil).where.not(admin: true)
     # si on veut filtrer l'annuaire par mail à la palce d'admin==> && pros.where.not(email: 'contact@lestoitures.fr')
+    if params[:client]
+      if params[:client][:address]
+        @radius_users = []
+        @users.each do |user|
+          beta = @client.distance_to(user.address).to_i
+          if beta <= user.radius
+            @radius_users << user
+          end
+        end
+        @users = User.pro.where(id: @radius_users.map(&:id))
+      end
 
+      if params[:client][:couverture] == "1"
+        @users = @users.where(couverture: true)
+      end
+
+      # a faire pour toutes infos
+
+    end
 
     @hash = Gmaps4rails.build_markers(@users) do |user, marker|
       marker.lat user.latitude
@@ -27,18 +49,6 @@ class UsersController < ApplicationController
       @label = true
     end
   end
-
-  # def new
-  #   @user = User.new
-  # end
-
-  # def create
-  #   @user = User.new(user_params)
-  #   @user.save
-
-  #   redirect_to users_path
-  # end
-
 
   def edit
      @user = current_user
@@ -70,5 +80,9 @@ class UsersController < ApplicationController
 
   def set_user
     @user = User.friendly.find(params[:id])
+  end
+
+  def client_params
+    params.require(:client).permit(:first_name, :last_name, :phone_number, :email, :address, :construction, :renovation, :entretien, :charpente, :couverture, :ouverture, :terrasse, :plomberie, :maison, :chateau, :immeuble, :monument_historique, :message, :locaux_industriels)
   end
 end
