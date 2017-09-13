@@ -9,7 +9,7 @@
       par <%= article.user.first_name %>, <%= article.user.company %>
       <% end %>
       </span>
-      <p><%= article.card_summary %><span> <%= link_to "Lire l'article", article_path(article.title), class: "article-link"%></span></p>
+      <p><%= article.card_summary %><span> <%= link_to "Lire l'article", article_path(article), class: "article-link" %></span></p>
     </div>
   <% end %>
 </div>
