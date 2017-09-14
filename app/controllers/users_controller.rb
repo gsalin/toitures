@@ -62,6 +62,7 @@ class UsersController < ApplicationController
   def show
     @client = Client.new
     @projects = Project.where(user_id: @user)
+    @articles = Article.where(user_id: @user)
     @label = []
     if @user.rge == true || @user.qualibat == true || @user.ffb == true || @user.mh == true
       @label = true

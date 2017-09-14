@@ -17,8 +17,8 @@ fr:
         last_name: Nom
         company: Société
         address: Adresse
-        office_phone: Téléphone fixe
-        mobile_phone: Téléphone portable
+        office_phone: Téléphone principal
+        mobile_phone: Téléphone secondaire
         city: Commune
         zip_code: Code Postal
         radius: Distance max des chantiers (en km)
