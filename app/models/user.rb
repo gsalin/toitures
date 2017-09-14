@@ -29,15 +29,15 @@ class User < ApplicationRecord
 
   #METTRE DES VALIDATES ICI UNIQUEMENT SI DONNEE UNIVERSELLE
 
-  validates :mobile_phone, format: {with: /\A((\+|00)33|0)[1-9](\D?\d\d){4}\z/}, on: :update, if: :pro?, if: :institution?, if: :worker?
-  validates :office_phone, format: {with: /\A((\+|00)33|0)[1-9](\D?\d\d){4}\z/}, presence: true, on: :update, if: :pro?, if: :institution?
-  validates :description, length: { minimum: 300, maximum: 900 }, on: :update, presence: true, if: :pro?, if: :institution?
-  validates :company, presence: true, on: :update, if: :pro?, if: :institution?
-  validates :address, presence: true, on: :update, if: :pro?, if: :institution?, if: :worker?
-  validates :city, presence: true, on: :update, if: :pro?, if: :institution?
-  validates :zip_code, presence: true, on: :update, if: :pro?, if: :institution?
-  validates :photo_presentation, presence: true, on: :update, if: :pro?, if: :institution?
-  validates :photo_company_logo, presence: true, on: :update, if: :pro?, if: :institution?
+  validates :mobile_phone, format: {with: /\A((\+|00)33|0)[1-9](\D?\d\d){4}\z/}, on: :update
+  validates :office_phone, format: {with: /\A((\+|00)33|0)[1-9](\D?\d\d){4}\z/}, presence: true, on: :update, if: :pro_or_institution?
+  validates :description, length: { minimum: 300, maximum: 900 }, on: :update, presence: true, if: :pro_or_institution?
+  validates :company, presence: true, on: :update, if: :pro_or_institution?
+  validates :address, presence: true, on: :update
+  validates :city, presence: true, on: :update, if: :pro_or_institution?
+  validates :zip_code, presence: true, on: :update, if: :pro_or_institution?
+  validates :photo_presentation, presence: true, on: :update, if: :pro_or_institution?
+  validates :photo_company_logo, presence: true, on: :update, if: :pro_or_institution?
   validates :cv, presence: true, on: :update, if: :worker?
   validates :photo, presence: true, on: :update, if: :worker?
   validates :radius, numericality: { only_integer: true, greater_than_or_equal_to: 50 }, on: :update, presence: true, if: :pro?
@@ -74,6 +74,10 @@ class User < ApplicationRecord
     if couvreur == false && charpentier == false
       errors.add(:couvreur, :blank)
     end
+  end
+
+  def pro_or_institution?
+    pro? || institution?
   end
 
 end
