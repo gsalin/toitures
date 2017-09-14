@@ -3,7 +3,7 @@ class PagesController < ApplicationController
 skip_before_action :authenticate_user!
 
   def home
-    @city = request.location.city
+    @city = request.location
     @client = Client.new(address: @city)
     @articles = Article.last(2)
     @users = User.last(3)
