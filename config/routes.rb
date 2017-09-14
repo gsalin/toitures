@@ -4,7 +4,7 @@
   ActiveAdmin.routes(self)
   devise_for :users, :controllers => {:registrations => 'registrations'}
   root to: 'pages#home'
-  resources :users, only: [:index, :show, :edit, :update] do
+  resources :users, only: [:index, :show, :edit, :update], path: 'utilisateurs' do
     get 'annuaire-des-candidats', on: :collection, controller: "users", action: "annuaire_des_candidats"
   end
   resources :projects
