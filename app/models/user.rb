@@ -13,6 +13,11 @@ class User < ApplicationRecord
   include FriendlyId
   friendly_id :company, :use => :slugged
 
+  def should_generate_new_friendly_id?
+    company_changed?
+  end
+
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
