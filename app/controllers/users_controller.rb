@@ -100,6 +100,7 @@ class UsersController < ApplicationController
   end
 
   def client_params
+    return {} unless params[:client]
     params.require(:client).permit(:first_name, :last_name, :phone_number, :email, :address, :construction, :renovation, :entretien, :charpente, :couverture, :ouverture, :terrasse, :plomberie, :maison, :chateau, :immeuble, :monument_historique, :message, :locaux_industriels)
   end
 end
