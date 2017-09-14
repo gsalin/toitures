@@ -67,7 +67,7 @@
 <div class="container hidden-md hidden-lg form-xs">
   <div class="row">
     <div class="col-xs-12">
-      <%= simple_form_for(@client) do |f| %>
+      <%= simple_form_for(@client, url: users_path, method: :get) do |f| %>
       <%= f.input :address, placeholder: 'Ville, Code Postal', autofocus: true, label:false, input_html: {id: "client_address_form-xs"}  %>
       <div class="dropdown main-form-stuffs">
         <button class="btn btn-default custom-drop-down-btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
