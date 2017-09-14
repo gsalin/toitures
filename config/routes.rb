@@ -4,13 +4,13 @@
   ActiveAdmin.routes(self)
   devise_for :users, :controllers => {:registrations => 'registrations'}
   root to: 'pages#home'
-  resources :users, only: [:index, :show, :edit, :update], path: 'utilisateurs' do
+  resources :users, only: [:index, :show, :edit, :update], path: 'annuaire' do
     get 'annuaire-des-candidats', on: :collection, controller: "users", action: "annuaire_des_candidats"
   end
   resources :projects
   resources :needs, only: [:new, :create, :show, :edit, :update]
   resources :clients, only: [:new, :create, :show, :edit, :update]
-  resources :articles, only: [:index, :new, :create, :show, :edit, :update] do
+  resources :articles, only: [:index, :new, :create, :show, :edit, :update], path: 'magazine'  do
     get 'energie', on: :collection, controller: "articles", action: "energie"
     get 'environnement', on: :collection, controller: "articles", action: "environnement"
     get 'technique', on: :collection, controller: "articles", action: "technique"
