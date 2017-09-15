@@ -23,7 +23,7 @@
 </div>
 <% end %>
 
-<% if @projects == nil || @projects.count < 4 %>
+<% if @projects.count < 4 %>
 <h4 class="text-center" style="margin-top: 80px;margin-bottom: 40px;">Créer unouveau projet</h4>
 <%= render "shared/form_project", project: @project %>
 
@@ -37,5 +37,5 @@
 </div>
 
 <%= content_for(:after_js) do %>
-  <script src="https://maps.googleapis.com/maps/api/js?libraries=places&amp;key=AIzaSyC0J8yKgp1HNvXsiK1_H_PCAz2f-D9Zq4Y"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?libraries=places&amp;key=<%= ENV['GOOGLE_API_BROWSER_KEY'] %>"></script>
 <% end %>

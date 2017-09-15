@@ -6,7 +6,7 @@ skip_before_action :authenticate_user!
     @city = request.location
     @client = Client.new(address: @city)
     @articles = Article.last(2)
-    @users = User.last(3)
+    # @users = User.pro.last(3)
   end
 
   def robots
