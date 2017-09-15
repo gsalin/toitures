@@ -132,10 +132,12 @@
       <% if @radius_users != [] %>
         <h5><i class="fa fa-map-marker" aria-hidden="true"></i>
         <% range = @client.distance_to(user.address).to_i  %>
-        <% if range < 1 %>
-          à moins de 1 km
-        <% elsif %>
-          à <%= range %> km
+        <% if range > 0 && range <= 1 %>
+          à moins de 1 km: <%= user.city %>
+        <% elsif range > 1 %>
+          à <%= user.city %> ( <%= range %> km )
+        <% else %>
+          à <%= user.city %>
         <% end %>
       <% elsif %>
         <% if user.city != nil || user.zip_code != nil  %>

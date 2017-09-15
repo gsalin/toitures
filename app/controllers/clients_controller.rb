@@ -19,55 +19,55 @@
     redirect_to user_path(@destinataire)
   end
 
-  def show
-    @radius_users = []
-    pros = User.pro.where(admin: false)
-    pros.each do |user|
-      beta = @client.distance_to(user.address).to_i
-      if beta <= user.radius
-        @radius_users << user
-      end
-    end
+  # def show
+  #   @radius_users = []
+  #   pros = User.pro.where(admin: false)
+  #   pros.each do |user|
+  #     beta = @client.distance_to(user.address).to_i
+  #     if beta <= user.radius
+  #       @radius_users << user
+  #     end
+  #   end
 
-    # works_users = []
-    # @radius_users.each do |radius_user|
-    #   if @client.construction == true && radius_user.construction == true
-    #     works_users << radius_user
-    #   elsif @client.renovation == true && radius_user.renovation == true
-    #     works_users << radius_user
-    #   elsif @client.entretien == true && radius_user.entretien == true
-    #     works_users << radius_user
-    #   end
-    # end
+  #   # works_users = []
+  #   # @radius_users.each do |radius_user|
+  #   #   if @client.construction == true && radius_user.construction == true
+  #   #     works_users << radius_user
+  #   #   elsif @client.renovation == true && radius_user.renovation == true
+  #   #     works_users << radius_user
+  #   #   elsif @client.entretien == true && radius_user.entretien == true
+  #   #     works_users << radius_user
+  #   #   end
+  #   # end
 
-    skills_users = []
-    @radius_users.each do |works_user|
-      if @client.charpente == true && works_user.charpente == true
-        skills_users << works_user
-      elsif @client.couverture == true && works_user.couverture == true
-        skills_users << works_user
-      elsif @client.terrasse == true && works_user.terrasse == true
-        skills_users << works_user
-      elsif @client.plomberie == true && works_user.plomberie == true
-        skills_users << works_user
-      elsif @client.ouverture == true && works_user.ouverture == true
-        skills_users << works_user
-      end
-    end
+  #   skills_users = []
+  #   @radius_users.each do |works_user|
+  #     if @client.charpente == true && works_user.charpente == true
+  #       skills_users << works_user
+  #     elsif @client.couverture == true && works_user.couverture == true
+  #       skills_users << works_user
+  #     elsif @client.terrasse == true && works_user.terrasse == true
+  #       skills_users << works_user
+  #     elsif @client.plomberie == true && works_user.plomberie == true
+  #       skills_users << works_user
+  #     elsif @client.ouverture == true && works_user.ouverture == true
+  #       skills_users << works_user
+  #     end
+  #   end
 
-    @available_users = []
-    skills_users.each do |skills_user|
-      if @client.maison == true && skills_user.maison == true
-        @available_users << skills_user
-      elsif @client.chateau == true && skills_user.chateau == true
-        @available_users << skills_user
-      elsif @client.immeuble == true && skills_user.immeuble == true
-        @available_users << skills_user
-      elsif @client.locaux_industriels == true && skills_user.locaux_industriels == true
-        @available_users << skills_user
-      end
-    end
-  end
+  #   @available_users = []
+  #   skills_users.each do |skills_user|
+  #     if @client.maison == true && skills_user.maison == true
+  #       @available_users << skills_user
+  #     elsif @client.chateau == true && skills_user.chateau == true
+  #       @available_users << skills_user
+  #     elsif @client.immeuble == true && skills_user.immeuble == true
+  #       @available_users << skills_user
+  #     elsif @client.locaux_industriels == true && skills_user.locaux_industriels == true
+  #       @available_users << skills_user
+  #     end
+  #   end
+  # end
 
   def edit
     # Ne pas suppr => set_client ci dessous

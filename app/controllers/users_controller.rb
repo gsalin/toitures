@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     @client = Client.new(client_params)
 
     pros = User.pro
-    @users = pros.where.not(latitude: nil, longitude: nil).where.not(admin: true)
+    @users = pros.where.not(latitude: nil, longitude: nil).where.not(admin: true).where.not(office_phone: nil, description: nil, company: nil, address: nil, city: nil, zip_code: nil, radius: nil, first_name: nil, last_name: nil, email: nil)
 
     if params[:client]
       if params[:client][:address]
@@ -91,10 +91,50 @@ class UsersController < ApplicationController
     @users = User.worker
   end
 
+
+
+
   private
 
+
   def user_params
-    params.require(:user).permit(:company, :first_name, :last_name, :position, :mobile_phone, :office_phone, :email, :address, :description, :radius, :photo_company_logo, :photo_presentation, :construction, :renovation, :entretien, :charpente, :couverture, :ouverture, :terrasse, :plomberie, :maison, :chateau, :immeuble, :mh, :qualibat, :rge, :couvreur, :charpentier, :cv, :photo, :zip_code, :city, :locaux_industriels, :facebook, :ffb)
+    params.require(:user).permit(
+      :company,
+      :first_name,
+      :last_name,
+      :position,
+      :mobile_phone,
+      :office_phone,
+      :email,
+      :address,
+      :description,
+      :radius,
+      :photo_company_logo,
+      :photo_presentation,
+      :construction,
+      :renovation,
+      :entretien,
+      :charpente,
+      :couverture,
+      :ouverture,
+      :terrasse,
+      :plomberie,
+      :maison,
+      :chateau,
+      :immeuble,
+      :mh,
+      :qualibat,
+      :rge,
+      :couvreur,
+      :charpentier,
+      :cv,
+      :photo,
+      :zip_code,
+      :city,
+      :locaux_industriels,
+      :facebook,
+      :ffb,
+    )
   end
 
   def set_user
@@ -103,6 +143,20 @@ class UsersController < ApplicationController
 
   def client_params
     return {} unless params[:client]
-    params.require(:client).permit(:first_name, :last_name, :phone_number, :email, :address, :construction, :renovation, :entretien, :charpente, :couverture, :ouverture, :terrasse, :plomberie, :maison, :chateau, :immeuble, :monument_historique, :message, :locaux_industriels)
+    params.require(:client).permit(
+      # Lieu
+      :address,
+      # Travaux
+      :couverture,
+      :ouverture,
+      :charpente,
+      :terrasse,
+      :plomberie,
+      # Type de batiment
+      :maison,
+      :chateau,
+      :immeuble,
+      :locaux_industriels,
+    )
   end
 end

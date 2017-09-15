@@ -9,7 +9,7 @@
   end
   resources :projects
   resources :needs, only: [:new, :create, :show, :edit, :update]
-  resources :clients, only: [:new, :create, :show, :edit, :update]
+  resources :clients, only: [:new, :create, :edit, :update]
   resources :articles, only: [:index, :new, :create, :show, :edit, :update], path: 'magazine'  do
     get 'energie', on: :collection, controller: "articles", action: "energie"
     get 'environnement', on: :collection, controller: "articles", action: "environnement"
