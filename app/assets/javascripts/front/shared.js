@@ -3,6 +3,10 @@ $(document).ready(function() {
     interval: false,
     pause: null,
   });
+  $('#popoverRge').popover();
+  $('#popoverQualibat').popover();
+  $('#popoverGmh').popover();
+  $('#popoverFfb').popover();
 });
 
 $(document).on('click', '.dropdown-menu', function(e) {
