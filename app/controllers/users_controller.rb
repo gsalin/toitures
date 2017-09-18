@@ -134,6 +134,15 @@ class UsersController < ApplicationController
       :locaux_industriels,
       :facebook,
       :ffb,
+      :website,
+      :twitter,
+      :linkedin,
+      :press_link_1,
+      :press_link_title_1,
+      :press_link_2,
+      :press_link_title_2,
+      :press_link_3,
+      :press_link_title_3,
     )
   end
 
