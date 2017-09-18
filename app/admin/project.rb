@@ -12,9 +12,15 @@ ActiveAdmin.register Project do
   end
 
   form do |f|
-    f.semantic_errors # shows errors on :base
-    f.inputs          # builds an input field for every attribute
-    f.actions         # adds the 'Submit' and 'Cancel' buttons
+    f.inputs "Infos de base" do
+      f.input :user_id
+      f.input :title
+      f.input :cost
+      f.input :address
+      f.input :date
+      f.input :project_photos, as: :formtastic_attachinary ### THERE ####
+    end
+    actions
   end
 
   permit_params :title, :user_id, :cost, :address, :project_photos, :date
