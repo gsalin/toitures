@@ -1,10 +1,12 @@
-<h1 class="text-center title_project_new">Edition de projets</h1>
-
-<h5 class="text-center">Ici, vous pouvez présenter les projets que vous avez fait, ceux-ci apparaitront sur votre fiche et permettront à votre profil d'être plus consulté</h5>
+<div class="prez-projets">
+  <h5 class="text-center">Présentez les projets que vous avez fait, ceux-ci apparaitront sur votre page de profil et permettront à votre profil d'être plus consulté</h5>
+</div>
 <!-- formulaire de création -->
 <% if @projects != nil %>
   <% if @projects.count < 4 && @projects.count > 0 %>
-    <h3 class="text-center">Vous avez <%= @projects.count %> projet(s) sur 4 possibles</h3>
+    <div class="container underline-title-container">
+      <h4>Mes projets (<%= @projects.count %> / 4)</h4>
+    </div>
   <% end %>
 
 <div class="container">
@@ -24,17 +26,18 @@
 <% end %>
 
 <% if @projects.count < 4 %>
-<h4 class="text-center" style="margin-top: 80px;margin-bottom: 40px;">Créer unouveau projet</h4>
-<%= render "shared/form_project", project: @project %>
-
+  <div class="container underline-title-container">
+    <h4>Créer un nouveau projet</h4>
+  </div>
+  <%= render "shared/form_project", project: @project %>
 <% end %>
 
-
-<div class="text-center">
-  <%= link_to user_path(current_user), class: "btn btn-success" do %>
-    <span>Retourner à mon profil</span>
+<div class="container">
+  <%= link_to edit_user_path(current_user), class: "no-deco" do %>
+    <span class="yellow-link">Retourner à mon profil</span>
   <% end %>
 </div>
+
 
 <%= content_for(:after_js) do %>
   <script src="https://maps.googleapis.com/maps/api/js?libraries=places&amp;key=<%= ENV['GOOGLE_API_BROWSER_KEY'] %>"></script>
