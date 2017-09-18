@@ -21,7 +21,7 @@ fr:
         mobile_phone: Téléphone secondaire
         city: Commune
         zip_code: Code Postal
-        radius: Distance max des chantiers (en km)
+        radius: Distance max des chantiers (min 50 km)
         position: Poste dans la société
         photo_company_logo: Logo de la société
         photo_presentation: Photo de présentation

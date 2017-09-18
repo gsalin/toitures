@@ -2,7 +2,7 @@
   <div class="row">
     <%= simple_form_for(project) do |f| %>
       <div class="col-xs-10 col-md-6">
-        <%= f.input :title, hint: "entre 20 et 50 charactères :", placeholder: "Rénovation de la charpente d'une ferme angevine" %>
+        <%= f.input :title, hint: "entre 15 et 50 charactères :", placeholder: "Rénovation de la charpente d'une ferme angevine" %>
       <div class="text-right counter_style">
         <span>charactères :</span>
         <strong><span id="title-project-count"></strong></span>
@@ -13,7 +13,7 @@
         <%= f.input :project_photos, as: :attachinary, hint:"3 photos maximum" %>
       </div>
       <div class="col-xs-10 col-md-6">
-        <%= f.input :description, as: :text, hint: "entre 300 et 900 charactères :", placeholder: "Décrivez ce projet, la demande du client, le temps de travaux, racontez une anecdote..."   %>
+        <%= f.input :description, as: :text, hint: "entre 100 et 500 charactères :", placeholder: "Décrivez ce projet, la demande du client, le temps de travaux, racontez une anecdote..."   %>
         <div class="text-right counter_style">
           <span>charactères :</span>
           <strong><span id="description-project-count"></strong></span>
