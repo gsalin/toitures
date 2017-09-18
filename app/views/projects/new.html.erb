@@ -1,11 +1,11 @@
 <div class="prez-projets">
-  <h5 class="text-center">Présentez les projets que vous avez fait, ceux-ci apparaitront sur votre page de profil et permettront à votre profil d'être plus consulté</h5>
+  <h5 class="text-center">Présentez vos plus belles réalisations, celles-ci apparaitront sur votre page de profil et permettront à votre profil d'être plus consulté</h5>
 </div>
 <!-- formulaire de création -->
 <% if @projects != nil %>
   <% if @projects.count < 4 && @projects.count > 0 %>
     <div class="container underline-title-container">
-      <h4>Mes projets (<%= @projects.count %> / 4)</h4>
+      <h4>Nos réalisations (<%= @projects.count %> / 4)</h4>
     </div>
   <% end %>
 
@@ -27,7 +27,7 @@
 
 <% if @projects.count < 4 %>
   <div class="container underline-title-container">
-    <h4>Créer un nouveau projet</h4>
+    <h4>Publier une nouvelle réalisation</h4>
   </div>
   <%= render "shared/form_project", project: @project %>
 <% end %>

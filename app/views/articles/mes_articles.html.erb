@@ -10,7 +10,11 @@
     <% @articles.each do |article| %>
     <div class="col-xs-12 col-md-4">
       <%= render "shared/card_article", article: article %>
+      <%= link_to edit_article_path(article), class: "small-yellow-link" do %>
+        <span> Modifier cet article </span>
+      <% end %>
     </div>
+
     <% end %>
   </div>
 </div>
