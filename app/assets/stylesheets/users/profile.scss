@@ -1,66 +1,3 @@
-.profile-title {
-  padding: 10px;
-}
-
-.profile-container {
-  margin-top: 20px;
-
-  .profile-first-row {
-    margin-bottom: 50px;
-    margin-top: 30px;
-    p {
-      font-weight: bolder;
-      margin-top: 30px;
-    }
-    .form-control {
-      width: 290px;
-    }
-  }
-
-  h4 {
-    padding-bottom: 20px;
-    padding-top: 20px;
-  }
-
-  #user_description {
-    min-height: 240px;
-  }
-
-
-  .checkbox_form {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: center;
-    align-content: stretch;
-
-    span {
-      padding: 0px 5px 0px 0px;
-      font-weight: lighter;
-      margin-left: 5px;
-    }
-  }
-
-  h5 {
-    font-size: 1.2em;
-    font-weight: bolder;
-  }
-}
-
-.col-profile-style {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: space-around;
-  align-items: baseline;
-  align-content: stretch;
-  border-radius: 3px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  min-height: 470px;
-}
-
 .col-profile-style-check-box {
   display: flex;
   flex-direction: column;
@@ -71,7 +8,6 @@
   border-radius: 3px;
   margin-top: 10px;
   margin-bottom: 10px;
-  min-height: 470px;
   .checkbox_form {
     display: flex;
     flex-direction: column;
@@ -91,29 +27,11 @@
   align-content: stretch;
   margin-top: 20px;
   margin-bottom: 20px;
-
-  .help-block-custom {
-    color: orangered;
-    opacity: 0.6;
-    padding-top: 10px;
-    padding-bottom: 20px;
-    margin-bottom: 20px;
-    border-bottom: solid $medium-grey 1px;
-  }
-}
-
-#flebox-edit-user {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: space-around;
-  align-items: center;
-  align-content: stretch;
 }
 
 .description-col {
   #user_description {
-    height: 405px;
+    height: 250px;
   }
 }
 
@@ -124,4 +42,10 @@
 
 .btn-edit-profil {
   margin: 10px 0 10px 0;
+}
+
+.underline-title-container-edit-user {
+  border-bottom: solid 1px $dark-grey;
+  margin-bottom: 20px;
+  margin-top: 60px;
 }
