@@ -148,16 +148,29 @@
     </div>
     <!-- Nombre de projets -->
     <div class="project-count">
-      <% if user.projects.count > 0 %>
+      <% if user.projects.count == 1 %>
         <%= link_to user_path(user), class: "link_show" do %>
-          <span><strong><%= user.projects.count %></strong> projet à découvrir </span><i class="fa fa-chevron-right" aria-hidden="true"></i>
+          <span><strong><%= user.projects.count %></strong> réalisation à découvrir </span><i class="fa fa-chevron-right" aria-hidden="true"></i>
         <% end %>
       <% elsif user.projects.count > 1 %>
         <%= link_to user_path(user), class: "link_show" do %>
-          <span><strong><%= user.projects.count %></strong> projets à découvrir </span><i class="fa fa-chevron-right" aria-hidden="true"></i>
+          <span><strong><%= user.projects.count %></strong> réalisations à découvrir </span><i class="fa fa-chevron-right" aria-hidden="true"></i>
         <% end %>
       <% end %>
     </div>
-  </div>
 
+    <!-- Nombre d'articles -->
+    <div class="project-count">
+      <% if user.articles.count == 1 %>
+        <%= link_to user_path(user), class: "link_show" do %>
+          <span><strong><%= user.articles.count %></strong> article à lire </span><i class="fa fa-chevron-right" aria-hidden="true"></i>
+        <% end %>
+      <% elsif user.articles.count > 1 %>
+        <%= link_to user_path(user), class: "link_show" do %>
+          <span><strong><%= user.articles.count %></strong> articles à lire </span><i class="fa fa-chevron-right" aria-hidden="true"></i>
+        <% end %>
+      <% end %>
+    </div>
+
+  </div>
 </div>

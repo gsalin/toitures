@@ -77,99 +77,111 @@
 </div>
 
 <div class="container underline-title-container">
-  <h3>Notre société</h3>
+  <% if @user == current_user %>
+    <h3> Notre société
+      <%= link_to edit_user_path(current_user), class: "small-yellow-link" do %>
+        <span> Modifier les informations de la société</span>
+      <% end %>
+    </h3>
+  <% elsif %>
+    <h3>Notre société</h3>
+  <% end %>
 </div>
 <div class="container">
   <div class="description-container">
     <div class="row">
       <div class="description-row">
-        <div class="col-xs-12 col-md-7">
+        <div class="col-xs-12 col-md-6">
           <div class="user-description">
             <%= kramdown(@user.description) %>
           </div>
         </div>
         <% if @user.pro? %>
-          <div class="col-xs-12 col-md-4 col-md-offset-1">
-          <div class="skills-column">
+          <div class="col-xs-12 col-md-6">
+            <div class="skills-column">
 
-            <div class="labels-show">
-              <% if @user.rge == true %>
-                <%= image_tag "rge.png" %>
-              <% end %>
-              <% if @user.qualibat == true %>
-                <%= image_tag "qualibat.png" %>
-              <% end %>
-              <% if @user.ffb == true %>
-                <%= image_tag "ffb.png" %>
-              <% end %>
-              <% if @user.mh == true %>
-                <%= image_tag "mh.png" %>
-              <% end %>
-            </div>
-
-            <ul class="skills">
-              <h4>Spécialités</h4>
-              <li class="li-position">
-                <% if @user.charpente == true %>
-                  <%= image_tag 'charpente.svg', class:"skill-pic" %>
-                  <span>Charpente</span>
+              <div class="labels-show">
+                <% if @user.rge == true %>
+                  <%= image_tag "rge.png" %>
                 <% end %>
-              </li>
-              <li class="li-position">
-                <% if @user.couverture == true %>
-                  <%= image_tag 'couverture.svg', class:"skill-pic" %>
-                  <span>Couverture</span>
+                <% if @user.qualibat == true %>
+                  <%= image_tag "qualibat.png" %>
                 <% end %>
-              </li>
-              <li class="li-position">
-                <% if @user.ouverture == true %>
-                  <%= image_tag 'ouverture.svg', class:"skill-pic" %>
-                  <span>Ouvertures / Vérandas</span>
+                <% if @user.ffb == true %>
+                  <%= image_tag "ffb.png" %>
                 <% end %>
-              </li>
-              <li class="li-position">
-                <% if @user.terrasse == true %>
-                  <%= image_tag 'balcon.svg', class:"skill-pic" %>
-                  <span>Balcons / Terrasses</span>
+                <% if @user.mh == true %>
+                  <%= image_tag "gmh.png" %>
                 <% end %>
-              </li>
-              <li class="li-position">
-                <% if @user.plomberie == true %>
-                  <%= image_tag 'gouttiere.svg', class:"skill-pic" %>
-                  <span>Gouttières / Eaux de pluie</span>
-                <% end %>
-              </li>
-
-              <h4>Type de batiment</h4>
-
-              <li class="li-position">
-                <% if @user.maison == true %>
-                  <%= image_tag 'maison.svg', class:"skill-pic" %>
-                  <span>Maisons individuelles</span>
-                <% end %>
-              </li>
-
-              <li class="li-position">
-                <% if @user.immeuble == true %>
-                  <%= image_tag 'immeuble.svg', class:"skill-pic" %>
-                  <span>Immeubles</span>
-                <% end %>
-              </li>
-              <li class="li-position">
-                <% if @user.chateau == true %>
-                  <%= image_tag 'chateau.svg', class:"skill-pic" %>
-                  <span>Chateaux</span>
-                <% end %>
-              </li>
-              <li class="li-position">
-                <% if @user.locaux_industriels == true %>
-                  <%= image_tag 'factory.svg', class:"skill-pic" %>
-                  <span>Locaux industriels</span>
-                <% end %>
-              </li>
               </div>
-            </ul>
-          </div>
+
+              <div id="skills-flexbox">
+                <ul class="skills">
+                  <h4>Spécialités</h4>
+                  <li class="li-position">
+                    <% if @user.charpente == true %>
+                      <%= image_tag 'charpente.svg', class:"skill-pic" %>
+                      <span>Charpente</span>
+                    <% end %>
+                  </li>
+                  <li class="li-position">
+                    <% if @user.couverture == true %>
+                      <%= image_tag 'couverture.svg', class:"skill-pic" %>
+                      <span>Couverture</span>
+                    <% end %>
+                  </li>
+                  <li class="li-position">
+                    <% if @user.ouverture == true %>
+                      <%= image_tag 'ouverture.svg', class:"skill-pic" %>
+                      <span>Ouvertures / Vérandas</span>
+                    <% end %>
+                  </li>
+                  <li class="li-position">
+                    <% if @user.terrasse == true %>
+                      <%= image_tag 'balcon.svg', class:"skill-pic" %>
+                      <span>Balcons / Terrasses</span>
+                    <% end %>
+                  </li>
+                  <li class="li-position">
+                    <% if @user.plomberie == true %>
+                      <%= image_tag 'gouttiere.svg', class:"skill-pic" %>
+                      <span>Gouttières / Eaux de pluie</span>
+                    <% end %>
+                  </li>
+                </ul>
+                <ul class="skills">
+                  <h4>Type de batiment</h4>
+
+                  <li class="li-position">
+                    <% if @user.maison == true %>
+                      <%= image_tag 'maison.svg', class:"skill-pic" %>
+                      <span>Maisons individuelles</span>
+                    <% end %>
+                  </li>
+
+                  <li class="li-position">
+                    <% if @user.immeuble == true %>
+                      <%= image_tag 'immeuble.svg', class:"skill-pic" %>
+                      <span>Immeubles</span>
+                    <% end %>
+                  </li>
+                  <li class="li-position">
+                    <% if @user.chateau == true %>
+                      <%= image_tag 'chateau.svg', class:"skill-pic" %>
+                      <span>Chateaux</span>
+                    <% end %>
+                  </li>
+                  <li class="li-position">
+                    <% if @user.locaux_industriels == true %>
+                      <%= image_tag 'factory.svg', class:"skill-pic" %>
+                      <span>Locaux industriels</span>
+                    <% end %>
+                  </li>
+                  </div>
+                </ul>
+              </div>
+
+            </div>
           </div>
         <% else %>
           <div class="col-xs-12 col-md-3 col-md-offset-1"></div>
@@ -181,12 +193,20 @@
 
 <!-- cards projets -->
 <% if @projects != [] %>
-  <div class="container underline-title-container">
+<div class="container underline-title-container">
+  <% if @user == current_user %>
+    <h3> Nos réalisations
+      <%= link_to new_project_path(current_user), class: "small-yellow-link" do %>
+        <span> Ajouter ou modifier une réalisation </span>
+      <% end %>
+    </h3>
+  <% elsif %>
     <h3>Nos réalisations</h3>
-  </div>
+  <% end %>
+</div>
   <div class="container project-card">
     <% @projects.each do |project| %>
-    <div class="row">
+    <div class="row row-project-card">
       <!-- carousel -->
       <div class="col-xs-12 col-md-5">
         <% if project.project_photos != [] %>
@@ -242,7 +262,7 @@
       </div>
       <!-- description projet -->
       <div class="col-xs-12 col-md-7">
-        <h3 class="text-center"><%= project.title %></h3>
+        <h2 class="text-center"><%= project.title %></h2>
         <p id="desc-projet"> <%= kramdown(project.description) %></p>
         <div class="project-infos">
           <span><%= number_with_delimiter(project.cost, locale: :fr) %> <i class="fa fa-eur" aria-hidden="true"></i></span>
@@ -260,7 +280,15 @@
 
 <% if @articles != [] %>
   <div class="container underline-title-container">
-    <h3>Nos articles</h3>
+    <% if @user == current_user %>
+      <h3>Nos articles
+        <%= link_to mes_articles_articles_path, class: "small-yellow-link" do %>
+          <span> Créer ou modifier un article </span>
+        <% end %>
+      </h3>
+    <% elsif %>
+      <h3>Nos articles</h3>
+    <% end %>
   </div>
   <div class="container">
     <div class="row">
