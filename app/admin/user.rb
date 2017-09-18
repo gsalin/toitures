@@ -30,8 +30,8 @@ ActiveAdmin.register User do
     f.inputs "Spécialités" do
       f.input :description
       f.input :radius
-      f.input :photo_company_logo
-      f.input :photo_presentation
+      f.input :photo_company_logo, as: :formtastic_attachinary
+      f.input :photo_presentation, as: :formtastic_attachinary
       f.input :construction
       f.input :renovation
       f.input :entretien
