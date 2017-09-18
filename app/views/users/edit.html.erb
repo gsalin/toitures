@@ -36,7 +36,7 @@
         <%= f.input :city, required: true %>
         <%= f.input :zip_code, required: true %>
         <% if @user.pro? %>
-          <%= f.input :radius, placeholder:"périmètre d'action autour de votre adresse" %>
+          <%= f.input :radius, input_html: {value: '100'}, placeholder:"périmètre d'action autour de votre adresse" %>
         <% end %>
       </div>
       <div class="col-xs-12 col-md-4 col-profile-style">
