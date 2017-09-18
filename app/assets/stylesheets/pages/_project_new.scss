@@ -1,3 +1,7 @@
+.prez-projets {
+  padding:20px;
+}
+
 .title_project_new {
   margin-bottom: 30px;
 }
@@ -13,7 +17,7 @@
 
   .project_preview {
     padding: 10px;
-    background-color: $light-grey;
+    background-color: white;
     border: solid $medium-grey 1px;
     display: flex;
     flex-direction: column;
@@ -75,3 +79,6 @@
   height: 500px;
 }
 
+#margcontaiprojet {
+  margin-bottom:60px;
+}

@@ -34,15 +34,16 @@
 
         <figure class="figure-article">
             <%= cl_image_tag @article.photo_presentation.path, class:"img-responsive" %>
-          <figcaption><%= @article.caption %></figcaption>
+          <figcaption class="text-center"><%= @article.caption %></figcaption>
         </figure>
 
         <%= kramdown(@article.body) %>
+
         <% if @article.second_photo != nil %>
-        <figure class="figure-article">
-            <%= cl_image_tag @article.second_photo.path, class:"img-responsive"  %>
-          <figcaption></figcaption>
-        </figure>
+          <figure class="figure-article">
+              <%= cl_image_tag @article.second_photo.path, class:"img-responsive"  %>
+            <figcaption class="text-center"></figcaption>
+          </figure>
         <% end %>
 
       </div>

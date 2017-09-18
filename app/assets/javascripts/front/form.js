@@ -35,14 +35,14 @@ $(document).ready(function() {
       $("#article-summary-count").html(length);
     });
 
-    var titres = ["Restauration d'une toiture ancienne", "Etanchéité et pose d'une terrasse", "Pose d'une véranda", "Restauration d'une église", "Création d'une fenêtre de toit"]
+    var titres = ["Restauration d'une toiture ancienne à Tours", "Etanchéité et création d'une terrasse à Garches ", "Pose d'une véranda dans un pavillon", "Restauration d'une église en Charente", "Création d'une fenêtre de toit"]
 
     setInterval(function(){
       var titre = titres[Math.floor(Math.random()*titres.length)];
       $("#project_title").attr("placeholder", titre);
     }, 2000);
 
-    var villes = ["Bourg-en-Bresse", "Boulogne-Billancourt", "Saint-Malo", "Périgueux"]
+    var villes = ["Bourg-en-Bresse", "Boulogne-Billancourt", "Saint-Malo", "Périgueux","Rennes"]
 
     setInterval(function(){
       var ville = villes[Math.floor(Math.random()*villes.length)];
