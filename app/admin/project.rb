@@ -4,6 +4,7 @@ ActiveAdmin.register Project do
     selectable_column
     column :user_id
     column :title
+    column :description
     column :cost
     column :address
     column :project_photos
@@ -15,6 +16,7 @@ ActiveAdmin.register Project do
     f.inputs "Infos de base" do
       f.input :user_id
       f.input :title
+      f.input :description
       f.input :cost
       f.input :address
       f.input :date
