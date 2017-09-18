@@ -25,7 +25,7 @@ ActiveAdmin.register Project do
     actions
   end
 
-  permit_params :title, :user_id, :cost, :address, :project_photos, :date
+  permit_params :title, :user_id, :cost, :address, :date, :description, project_photos: []
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
