@@ -2,8 +2,8 @@ class Project < ApplicationRecord
   belongs_to :user
   has_attachments :project_photos, maximum: 3
 
-  validates :title, presence: true, length: { maximum: 50, minimum: 20 }
-  validates :description, presence: true, uniqueness: true, length: { minimum: 300, maximum: 900 }
+  validates :title, presence: true, length: { maximum: 50, minimum: 15 }
+  validates :description, presence: true, uniqueness: true, length: { minimum: 100, maximum: 500 }
   validates :cost, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 1, less_than_or_equal_to: 100000000 }
   validates :address, presence: true
   validates :project_photos, presence: true
