@@ -9,10 +9,17 @@ class ArticlesController < ApplicationController
     @article = Article.friendly.find(params[:id])
   end
 
+  def link_category
+    if @article.category == "style"
+      return style_articles_path
+    end
+  end
+
   def new
     @user = current_user
     @article = Article.new
   end
+
 
   def create
     @article = Article.new(article_params)
