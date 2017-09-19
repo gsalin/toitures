@@ -113,7 +113,9 @@
         <div class="row">
           <div class="col-xs-12 col-md-7 description-col">
             <%= f.input :description, placeholder: "Décrivez votre société, depuis quand existe t'elle, sa taille, son CA, le nombre de salariés, qu'elles sont vos spécialités...", required: true, hint:"Entre 200 et 600 charactères" %>
-            <span id="description-count"><strong></strong></span><span> charactères </span>
+            <div class="text-right counter-style">
+              <span id="description-count"><strong></strong></span><span> charactères </span>
+            </div>
           </div>
           <div class="col-xs-12 col-md-3 col-md-offset-1">
             <%= f.input :photo_company_logo, as: :attachinary %>
