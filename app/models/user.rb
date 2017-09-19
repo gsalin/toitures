@@ -50,6 +50,9 @@ class User < ApplicationRecord
   validate :has_at_least_one_speciality, on: :update, if: :pro?
   validate :has_at_least_one_place, on: :update, if: :pro?
   validate :has_at_least_one_job, on: :update, if: :worker?
+  validate :link_title_1_verif, on: :update, if: :pro_or_institution?
+  validate :link_title_2_verif, on: :update, if: :pro_or_institution?
+  validate :link_title_3_verif, on: :update, if: :pro_or_institution?
 
   after_create :send_welcome_email
 
@@ -83,6 +86,24 @@ class User < ApplicationRecord
 
   def pro_or_institution?
     pro? || institution?
+  end
+
+  def link_title_1_verif
+    if press_link_1.present? == true && press_link_title_1.present? == false
+      errors.add(:press_link_title_1, :blank)
+    end
+  end
+
+  def link_title_2_verif
+    if press_link_2.present? == true && press_link_title_2.present? == false
+      errors.add(:press_link_title_2, :blank)
+    end
+  end
+
+  def link_title_3_verif
+    if press_link_3.present? == true && press_link_title_3.present? == false
+      errors.add(:press_link_title_3, :blank)
+    end
   end
 
 end

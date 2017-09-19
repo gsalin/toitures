@@ -15,19 +15,29 @@ fr:
         unlock_token: Clé de déblocage
         first_name: Prénom
         last_name: Nom
-        company: Société
+        company: Nom de la société
         address: Adresse
         office_phone: Téléphone principal
         mobile_phone: Téléphone secondaire
         city: Commune
         zip_code: Code Postal
-        radius: Distance max des chantiers (min 50 km)
+        radius: Distance max des chantiers (mini 50 km)
         position: Poste dans la société
-        photo_company_logo: Logo de la société
+        photo_company_logo: Logo de votre société
         photo_presentation: Photo de présentation
         cv: CV (au format PDF uniquement)
         photo: Votre photo
         facebook: Adresse de votre page facebook
+        description: Parlez nous de votre société
+        website: Adresse de votre site internet
+        twitter: Adresse de votre compte twitter
+        linkedin: Adresse de votre compte linkedin
+        press_link_1: Adresse du lien presse n°1
+        press_link_title_1: Titre du lien presse n°1
+        press_link_2: Adresse du lien presse n°2
+        press_link_title_2: Titre du lien presse n°2
+        press_link_3: Adresse du lien presse n°3
+        press_link_title_3: Titre du lien presse n°3
       project:
         title: Titre de présentation
         description: Description

@@ -22,129 +22,172 @@
 
   <%= simple_form_for(@user) do |f| %>
 
-    <!-- infos générales -->
-    <div class="container underline-title-container-edit-user ">
-      <h3>Informations générales</h3>
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12 col-md-3">
-          <%= f.input :company, required: true %>
-          <%= f.input :first_name, required: true %>
-          <%= f.input :last_name, required: true %>
+    <% if @user.errors.present? %>
+        <div class="alert alert-warning alert-dismissible">
+          <p class="text-center">Merci de corriger les erreurs ci dessous</p>
         </div>
-        <div class="col-xs-12 col-md-3 col-md-offset-1">
-          <%= f.input :address, required: true %>
-          <%= f.input :city, required: true %>
-          <%= f.input :zip_code, required: true %>
-        </div>
-        <div class="col-xs-12 col-md-3 col-md-offset-1">
-          <%= f.input :email, required: true %>
-          <%= f.input :office_phone, required: true %>
-          <%= f.input :mobile_phone %>
-        </div>
-      </div>
-    </div>
+    <% end %>
 
-    <!-- spécialités -->
-    <% if @user.pro? %>
+    <div class="pro-instit-form">
+      <!-- infos générales -->
       <div class="container underline-title-container-edit-user ">
-        <h3>Spécialités de votre entreprise</h3>
+        <h3>Informations générales</h3>
       </div>
       <div class="container">
         <div class="row">
-          <div class="col-xs-12 col-md-3 col-profile-style-check-box">
-            <div>
-              <p>Métiers</p>
-              <% if @user.errors[:plomberie].present? %>
-                <p class="errors">Sélectionnez au moins 1 spécialité</p>
-              <% end %>
-              <div class="checkbox_form">
-                <span> <%= f.check_box :couverture  %> Couverture - Isolation </span>
-                <span> <%= f.check_box :ouverture  %> Fenêtre - Ouverture </span>
-                <span> <%= f.check_box :terrasse  %> Terrasse - Balcon </span>
-                <span> <%= f.check_box :plomberie  %> Fuites - Eaux usées </span>
-                <span> <%= f.check_box :charpente  %> Charpente </span>
+          <div class="col-xs-12 col-md-3">
+            <%= f.input :company, required: true %>
+            <%= f.input :first_name, required: true %>
+            <%= f.input :last_name, required: true %>
+          </div>
+          <div class="col-xs-12 col-md-3 col-md-offset-1">
+            <%= f.input :address, required: true %>
+            <%= f.input :city, required: true %>
+            <%= f.input :zip_code, required: true %>
+          </div>
+          <div class="col-xs-12 col-md-3 col-md-offset-1">
+            <%= f.input :email, required: true %>
+            <%= f.input :office_phone, required: true %>
+            <%= f.input :mobile_phone %>
+          </div>
+        </div>
+      </div>
+
+      <!-- spécialités -->
+      <% if @user.pro? %>
+        <div class="container underline-title-container-edit-user ">
+          <h3>Spécialités de votre entreprise</h3>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 col-md-3 col-profile-style-check-box">
+              <div>
+                <p class="form-title-custom">Métiers</p>
+                <% if @user.errors[:plomberie].present? %>
+                  <p class="errors">Sélectionnez au moins 1 spécialité</p>
+                <% end %>
+                <div class="checkbox_form">
+                  <span> <%= f.check_box :couverture  %> Couverture - Isolation </span>
+                  <span> <%= f.check_box :ouverture  %> Fenêtre - Ouverture </span>
+                  <span> <%= f.check_box :terrasse  %> Terrasse - Balcon </span>
+                  <span> <%= f.check_box :plomberie  %> Fuites - Eaux usées </span>
+                  <span> <%= f.check_box :charpente  %> Charpente </span>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="col-xs-12 col-md-3 col-md-offset-1 col-profile-style-check-box">
-            <p>Type de batiment</p>
-            <% if @user.errors[:maison].present? %>
-              <p class="errors">Sélectionnez au moins 1 type de batiment</p>
+            <div class="col-xs-12 col-md-3 col-md-offset-1 col-profile-style-check-box">
+              <p class="form-title-custom">Type de batiment</p>
+              <% if @user.errors[:maison].present? %>
+                <p class="errors">Sélectionnez au moins 1 type de batiment</p>
+              <% end %>
+              <div class="checkbox_form">
+                <span> <%= f.check_box :maison  %> Maisons </span>
+                <span> <%= f.check_box :chateau  %> Chateaux </span>
+                <span> <%= f.check_box :immeuble  %> Immeubles </span>
+                <span> <%= f.check_box :locaux_industriels  %> Locaux industriels </span>
+              </div>
+            </div>
+            <div class="col-xs-12 col-md-3 col-md-offset-1 col-profile-style-check-box">
+              <p class="form-title-custom">Vos labels</p>
+              <div class="checkbox_form">
+                <span> <%= f.check_box :rge  %> RGE </span>
+                <span> <%= f.check_box :qualibat  %> Qualibat </span>
+                <span> <%= f.check_box :ffb  %> Fédération Francaise du Batiment </span>
+                <span> <%= f.check_box :mh  %> Groupement français des entreprises de restauration de monuments historiques </span>
+              </div>
+            </div>
+            <% if @user.pro? %>
+              <div class="col-xs-12 col-md-4">
+                <%= f.input :radius, input_html: {value: '100'}, placeholder:"périmètre d'action autour de votre adresse" %>
+              </div>
             <% end %>
-            <div class="checkbox_form">
-              <span> <%= f.check_box :maison  %> Maisons </span>
-              <span> <%= f.check_box :chateau  %> Chateaux </span>
-              <span> <%= f.check_box :immeuble  %> Immeubles </span>
-              <span> <%= f.check_box :locaux_industriels  %> Locaux industriels </span>
+          </div>
+        </div>
+      <% end %>
+
+      <!-- description et photos -->
+      <div class="container underline-title-container-edit-user ">
+        <h3>Description et photos</h3>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-md-7 description-col">
+            <%= f.input :description, placeholder: "Décrivez votre société, depuis quand existe t'elle, sa taille, son CA, le nombre de salariés, qu'elles sont vos spécialités...", required: true, hint:"Entre 300 et 900 charactères" %>
+            <span id="description-count"><strong></strong></span><span> sur 900 charactères </span>
+          </div>
+          <div class="col-xs-12 col-md-3 col-md-offset-1">
+            <%= f.input :photo_company_logo, as: :attachinary %>
+          </div>
+          <div class="col-xs-12 col-md-3 col-md-offset-1">
+            <%= f.input :photo_presentation, as: :attachinary %>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- communication et réseaux -->
+      <div class="container underline-title-container-edit-user ">
+        <h3>Communication digitale</h3>
+      </div>
+      <div class="container container-communication">
+        <div class="row">
+          <div class="col-xs-12 col-md-4">
+            <%= f.input :website %>
+          </div>
+          <div class="col-xs-12 col-md-4">
+            <span>Votre page Facebook</span><i class="fa fa-facebook-official" aria-hidden="true"></i>
+            <%= f.input :facebook, label: false %>
+          </div>
+          <div class="col-xs-12 col-md-4">
+              <span>Votre profil Twitter</span><i class="fa fa-twitter" aria-hidden="true"></i>
+            <%= f.input :twitter, label: false %>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="container underline-title-container-edit-user ">
+        <h3>Revue de presse</h3>
+      </div>
+      <div class="container container-communication">
+        <div class="row">
+          <div class="col-xs-12 col-md-8 press-link-col">
+            <% if @user.errors[:press_link_title_1].present? %>
+              <div class="link-press-md">
+                <p class="errors">Un lien presse doit être accompagné d'un</p>
+              </div>
+            <% end %>
+            <div class="link-press-md">
+              <%= f.input :press_link_1 %>
+              <%= f.input :press_link_title_1 %>
+            </div>
+            <% if @user.errors[:press_link_title_2].present? %>
+              <div class="link-press-md">
+                <p class="errors">Un lien presse doit être accompagné d'un</p>
+              </div>
+            <% end %>
+            <div class="link-press-md">
+              <%= f.input :press_link_2 %>
+              <%= f.input :press_link_title_2 %>
+            </div>
+            <% if @user.errors[:press_link_title_3].present? %>
+              <div class="link-press-md">
+                <p class="errors">Un lien presse doit être accompagné d'un</p>
+              </div>
+            <% end %>
+            <div class="link-press-md">
+              <%= f.input :press_link_3 %>
+              <%= f.input :press_link_title_3 %>
             </div>
           </div>
-          <div class="col-xs-12 col-md-3 col-md-offset-1 col-profile-style-check-box">
-            <p>Vos labels</p>
-            <div class="checkbox_form">
-              <span> <%= f.check_box :rge  %> RGE </span>
-              <span> <%= f.check_box :qualibat  %> Qualibat </span>
-              <span> <%= f.check_box :ffb  %> Fédération Francaise du Batiment </span>
-              <span> <%= f.check_box :mh  %> Groupement français des entreprises de restauration de monuments historiques </span>
-            </div>
-          </div>
-          <% if @user.pro? %>
-            <div class="col-xs-12 col-md-4">
-              <%= f.input :radius, input_html: {value: '100'}, placeholder:"périmètre d'action autour de votre adresse" %>
-            </div>
-          <% end %>
         </div>
       </div>
-    <% end %>
 
-    <!-- description et photos -->
-    <div class="container underline-title-container-edit-user ">
-      <h3>Description et photos</h3>
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12 col-md-6 description-col">
-          <%= f.input :description, placeholder: "Décrivez votre société, depuis quand existe t'elle, sa taille, son CA, le nombre de salariés, qu'elles sont vos spécialités...", required: true, hint:"Entre 300 et 900 charactères" %>
-          <span id="description-count"><strong></strong></span><span> sur 900 charactères </span>
-        </div>
-        <div class="col-xs-12 col-md-3">
-          <%= f.input :photo_company_logo, as: :attachinary %>
-        </div>
-        <div class="col-xs-12 col-md-3">
-          <%= f.input :photo_presentation, as: :attachinary %>
-        </div>
+
+      <div class="container text-center">
+        <%= f.button :submit, "Mettre à jour mon profil", class: "btn btn-success" %>
       </div>
-    </div>
 
-
-    <!-- communication et réseaux -->
-    <div class="container underline-title-container-edit-user ">
-      <h3>Communication et réseaux</h3>
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12 col-md-3">
-          <%= f.input :website, placeholder:"www.lestoitures.fr" %>
-          <%= f.input :facebook, placeholder:"www.facebook.com/LesToitures/" %>
-          <%= f.input :twitter %>
-          <%= f.input :linkedin %>
-        </div>
-        <div class="col-xs-12 col-md-3 col-md-offset-2">
-          <%= f.input :press_link_1 %>
-          <%= f.input :press_link_2 %>
-          <%= f.input :press_link_3 %>
-        </div>
-        <div class="col-xs-12 col-md-3">
-          <%= f.input :press_link_title_1 %>
-          <%= f.input :press_link_title_2 %>
-          <%= f.input :press_link_title_3 %>
-        </div>
-      </div>
-    </div>
-
-    <div class="container text-center">
-      <%= f.button :submit, "Mettre à jour mon profil", class: "btn btn-success" %>
     </div>
   <% end %>
 
