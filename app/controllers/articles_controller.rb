@@ -2,17 +2,24 @@ class ArticlesController < ApplicationController
   skip_before_action :authenticate_user!, except: [:new, :create, :edit, :update]
 
   def index
-    @articles = Article.all
+    @articles = Article.all.order("created_at desc")
   end
 
   def show
     @article = Article.friendly.find(params[:id])
   end
 
+  def link_category
+    if @article.category == "style"
+      return style_articles_path
+    end
+  end
+
   def new
     @user = current_user
     @article = Article.new
   end
+
 
   def create
     @article = Article.new(article_params)
