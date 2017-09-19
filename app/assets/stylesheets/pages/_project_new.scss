@@ -60,9 +60,9 @@
   margin-bottom: 10px;
 }
 
-.counter_style {
+.counter-style {
   margin: -37px 10px 35px 0;
-  color: $blue
+  color: $blue;
 }
 
 #position_btn_project {
@@ -72,7 +72,7 @@
 
 #body-count-1 {
   margin: 40px 10px -20px 0px;
-  color: $blue
+  color: $blue;
 }
 
 #article_body {
@@ -81,4 +81,26 @@
 
 #margcontaiprojet {
   margin-bottom:60px;
+  li {
+    display: inline-block;
+    margin-top: 10px;
+    img {
+      margin-left: 10px;
+    }
+    a {
+      color:$blue;
+    }
+  }
+}
+
+.flexbox-project-form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: baseline;
+  align-content: flex-start;
+  .form-group:first-child {
+    margin-right: 50px;
+  }
 }

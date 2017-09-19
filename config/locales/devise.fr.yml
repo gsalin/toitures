@@ -41,7 +41,7 @@ fr:
       project:
         title: Titre de présentation
         description: Description
-        cost: Coût (en €)
+        cost: Coût en € - (facultatif)
         address: Commune
         date: Date de réalisation
         project_photos: Photos du projet

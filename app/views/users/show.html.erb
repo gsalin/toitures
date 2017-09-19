@@ -275,7 +275,9 @@
         <h2 class="text-center"><%= project.title %></h2>
         <p id="desc-projet"> <%= kramdown(project.description) %></p>
         <div class="project-infos">
-          <span><%= number_with_delimiter(project.cost, locale: :fr) %> <i class="fa fa-eur" aria-hidden="true"></i></span>
+          <% if project.cost.present? %>
+            <span><%= number_with_delimiter(project.cost, locale: :fr) %> <i class="fa fa-eur" aria-hidden="true"></i></span>
+          <% end %>
           <span><i class="fa fa-map-marker" aria-hidden="true"></i>  <%= project.address %></span>
           <span><i class="fa fa-calendar" aria-hidden="true"></i><%= (I18n.localize project.date, format: :month_year).capitalize %></span>
         </div>

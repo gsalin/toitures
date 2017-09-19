@@ -39,17 +39,12 @@
   }
 }
 
-.banner-edit-profile {
-  background-color: white;
-  box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
-}
-
 .btn-edit-profil {
   margin: 10px 0 10px 0;
 }
 
 .underline-title-container-edit-user {
-  border-bottom: solid 1px $dark-grey;
+  border-bottom: solid 2px $dark-grey;
   margin-bottom: 20px;
   margin-top: 60px;
 }
@@ -57,12 +52,12 @@
 .link-press-md {
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   justify-content: flex-start;
   align-items: baseline;
   align-content: stretch;
   input {
-    width: 250px;
+    min-width: 350px;
   }
 }
 
@@ -82,7 +77,7 @@
     margin-right: 50px;
   }
   input {
-    width: 400px;
+    min-width: 350px;
   }
 }
 
@@ -100,5 +95,8 @@
   }
   textarea {
     border-radius: 5px;
+  }
+  li {
+    margin-top: 10px;
   }
 }

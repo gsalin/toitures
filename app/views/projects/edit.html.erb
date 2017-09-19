@@ -1,8 +1,14 @@
-<h1 class="text-center title_project_new">edition de projet</h1>
+<h3 class="text-center title_project_new"> Modifier le projet : </h3>
+  <h4 class="text-center"><%= @project.title %></h4>
 
 
 <%= render "shared/form_project", project: @project %>
 
+<div class="container">
+  <%= link_to edit_user_path(current_user), class: "no-deco" do %>
+    <span class="yellow-link">Retourner à mon profil</span>
+  <% end %>
+</div>
 
 <%= content_for(:after_js) do %>
   <script src="https://maps.googleapis.com/maps/api/js?libraries=places&amp;key=<%= ENV['GOOGLE_API_BROWSER_KEY'] %>"></script>
