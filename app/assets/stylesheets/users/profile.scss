@@ -15,6 +15,10 @@
     justify-content: flex-start;
     align-items: stretch;
     align-content: stretch;
+    span {
+      padding: 5px;
+      font-weight: 300;
+    }
   }
 }
 
@@ -31,13 +35,8 @@
 
 .description-col {
   #user_description {
-    height: 250px;
+    height: 170px
   }
-}
-
-.banner-edit-profile {
-  background-color: white;
-  box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
 }
 
 .btn-edit-profil {
@@ -45,7 +44,59 @@
 }
 
 .underline-title-container-edit-user {
-  border-bottom: solid 1px $dark-grey;
+  border-bottom: solid 2px $dark-grey;
   margin-bottom: 20px;
   margin-top: 60px;
+}
+
+.link-press-md {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: baseline;
+  align-content: stretch;
+  input {
+    min-width: 350px;
+  }
+}
+
+.container-communication {
+  span {
+    margin-right: 10px;
+    font-weight: bold;
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+  }
+  margin-bottom: 40px;
+}
+
+.press-link-col {
+  .form-group {
+    margin-right: 50px;
+  }
+  input {
+    min-width: 350px;
+  }
+}
+
+.form-title-custom {
+  margin-right: 10px;
+  font-weight: bold;
+  display: inline-block;
+  max-width: 100%;
+  margin-bottom: 10px;
+}
+
+.pro-instit-form {
+  input {
+    border-radius: 5px;
+  }
+  textarea {
+    border-radius: 5px;
+  }
+  li {
+    margin-top: 10px;
+  }
 }

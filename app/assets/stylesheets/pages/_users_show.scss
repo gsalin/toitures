@@ -93,7 +93,13 @@
 
 
 .user-description {
-  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: stretch;
+  height: 310px;
   text-align: justify;
   background-color: white;
   padding: 30px;
@@ -102,7 +108,7 @@
   margin-top: 30px;
   box-shadow: 0 15px 35px rgba(50,50,93,0.1), 0 5px 15px rgba(0,0,0,0.07);
   p {
-    font-size: 0.9em;
+    font-size: 0.94em;
   }
 }
 
@@ -180,7 +186,7 @@
     margin-bottom: 100px;
   }
   .skills-column {
-    min-height: 280px;
+    height: 310px;
     background-color: white;
     padding: 20px 5px 15px 5px;
     border-radius: 3px;
@@ -249,7 +255,7 @@
   align-content: stretch;
   min-width: 210px;
   margin-top: 5px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   img {
     width: 40px;
     height: 40px;

@@ -3,18 +3,20 @@
     <%= simple_form_for(project) do |f| %>
       <div class="col-xs-10 col-md-6">
         <%= f.input :title, hint: "entre 15 et 50 charactères :", placeholder: "Rénovation de la charpente d'une ferme angevine" %>
-      <div class="text-right counter_style">
+      <div class="text-right counter-style">
         <span>charactères :</span>
         <strong><span id="title-project-count"></strong></span>
       </div>
-        <%= f.input :cost, placeholder: "20 000" %>
         <%= f.input :address, placeholder: "Angers"   %>
-        <%= f.input :date, discard_day: true %>
+        <div class="flexbox-project-form">
+          <%= f.input :date, discard_day: true %>
+          <%= f.input :cost %>
+        </div>
         <%= f.input :project_photos, as: :attachinary, hint:"3 photos maximum" %>
       </div>
       <div class="col-xs-10 col-md-6">
         <%= f.input :description, as: :text, hint: "entre 100 et 500 charactères :", placeholder: "Décrivez ce projet, la demande du client, le temps de travaux, racontez une anecdote..."   %>
-        <div class="text-right counter_style">
+        <div class="text-right counter-style">
           <span>charactères :</span>
           <strong><span id="description-project-count"></strong></span>
         </div>
@@ -25,5 +27,3 @@
     <% end %>
   </div>
 </div>
-
-
