@@ -4,18 +4,6 @@
   <% content_for :meta_image, cloudinary_url(@user.photo_presentation.path) %>
 <% end %>
 
-<!-- Facebook script sdk pour plugin facebook -->
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v2.10&appId=280300842435044";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-<!-- Fin du script facebook -->
-
-
 <!-- wrapper photo form -->
 <div class="wrapper hidden-xs">
   <div class="wrapper_users_show">
@@ -312,10 +300,6 @@
     </div>
   </div>
 <% end %>
-
-<!-- Facebook Social PlugIn -->
-
-<div class="fb-page" data-href="<%= @user.facebook %>" data-small-header="true" data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="true"><blockquote cite=" <%= @user.facebook %>" class="fb-xfbml-parse-ignore"><a href=" <%= @user.facebook %>"><%= @user.company %></a></blockquote></div>
 
 
 

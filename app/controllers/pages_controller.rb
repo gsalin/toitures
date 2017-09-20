@@ -5,7 +5,7 @@ skip_before_action :authenticate_user!
   def home
     @city = request.location
     @client = Client.new(address: @city)
-    @articles = Article.last(3)
+    @articles = Article.last(2)
     # @users = User.pro.last(3)
   end
 
