@@ -120,18 +120,13 @@
   }
 }
 
+.card-presentation-container {
+  padding-top: 5px;
+  padding-bottom: 40px;
+}
+
 #border-presentation-site-home {
-  text-align: justify;
-
-  li {
-  padding: 10px;
-  }
-
-  h4 {
-    margin-bottom: 7px;
-    text-align: left;
-  }
-
+ padding-bottom: 30px;
 }
 
 .presentation-site-home {
@@ -141,9 +136,10 @@
   justify-content: space-around;
   align-items: center;
   align-content: space-around;
-  min-height: 650px;
+  // min-height: 200px;
   h3 {
     font-size: 22px;
+    padding: 10px;
   }
 
   .home-icones {
@@ -157,6 +153,7 @@
     box-shadow: 0 15px 35px rgba(50,50,93,0.1), 0 5px 15px rgba(0,0,0,0.07);
     border-radius: 5px;
     padding: 10px;
+    margin-bottom: 15px;
     background-color: white;
     i {
       text-decoration: none;
@@ -368,11 +365,6 @@
 .banner-magazine {
   background-color: white;
   box-shadow: 0 15px 35px rgba(50,50,93,0.1), 0 5px 15px rgba(0,0,0,0.07);
-}
-
-.card-presentation-container {
-  padding-bottom: 40px;
-  padding-top: 30px;
 }
 
 #center-form-annuaire {

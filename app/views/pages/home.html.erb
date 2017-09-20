@@ -105,41 +105,32 @@
 <!-- card presentation -->
 <div class="container card-presentation-container">
   <div class="row">
-    <div class="col-xs-12 hidden-xs hidden-md col-sm-5 col-sm-offset-1 presentation-site-home" id="border-presentation-site-home">
-      <h3>Le premier site spécialisé dans la toiture</h3>
-      <p>Le site www.lestoitures.fr combine :</p>
-      <ul>
-        <li>Un <%= link_to "Guide", guides_path, class: "small-link-home" %> d'informations et de conseils pour <strong>bien faire rénover sa toiture</strong>.</li>
-        <li>Un <%= link_to "Magazine", articles_path, class: "small-link-home" %> afin de se tenir au courant de l'actualité mais aussi pour dénicher les dernières tendances.</li>
-        <li>Un <%= link_to "Annuaire", users_path, class: "small-link-home" %> des professionnels spécialisés dans la toiture d'informations et de conseils pour <strong>bien faire rénover sa toiture</strong>.</li>
-      </ul>
-
-      <h4>Choisissez votre artisan selon vos critères</h4>
-      <p>Trouvez et contactez les acteurs de la toiture selon leurs spécialités : couvreurs, charpentiers... Vous pouvez consulter leurs projets et leurs articles afin de trouver celui qui correspond le mieux à votre projet dans notre <strong>annuaire</strong>.</p>
-
-      <h4>Ayez la bonne information pour bien décider</h4>
-      <p>A la fois synthétiques et clairs, nos <strong>guides</strong> synthétisent les informations essentielles afin de réussir votre projet de toiture : différentes options, points à surveiller, législation...</p>
-      <p>Pour ceux qui veulent en savoir plus sur certains points, trouver de l'inspiration, ou se renseigner sur des points d'actualités (législations, subventions,etc..), bienvenue dans notre <strong>magazine</strong>.</p>
+    <div class="col-xs-12 hidden-xs hidden-md col-sm-12 presentation-site-home" id="border-presentation-site-home">
+      <h3>Le premier site spécialisé dans la toiture qui combine :</h3>
     </div>
-    <div class="col-xs-12 col-sm-5 col-sm-offset-1 text-center presentation-site-home">
+    <div class="col-xs-12 col-sm-4 text-center presentation-site-home">
       <%= link_to users_path, class: "card-link-home" do %>
         <div class="home-icones">
           <i class="fa fa-address-card-o fa-3x" aria-hidden="true"></i>
-          <p>Un <span>Annuaire</span> avec les fiches complètes des professionnels</p>
+          <p><span>Un Annuaire</span> avec les fiches complètes des professionnels</p>
           <%= link_to "Consulter l'annuaire", users_path, class: "small-link-home" %>
         </div>
       <% end %>
+    </div>
+    <div class="col-xs-12 col-sm-4 text-center presentation-site-home">
       <%= link_to guides_path, class: "card-link-home" do %>
         <div class="home-icones">
           <i class="fa fa-file-text-o fa-3x" aria-hidden="true"></i>
-          <p>Comprenez tout sur la toiture grace aux <span>guides</span></p>
+          <p><span>3 Guides</span> d'informations sur les travaux de toiture</p>
           <%= link_to "Voir les guides", guides_path, class: "small-link-home" %>
         </div>
       <% end %>
+    </div>
+    <div class="col-xs-12 col-sm-4 text-center presentation-site-home">
       <%= link_to articles_path, class: "card-link-home" do %>
         <div class="home-icones">
           <i class="fa fa-newspaper-o fa-3x" aria-hidden="true"></i>
-          <p>Découvrez l'actualité et les tendances dans le <span>magazine</span></p>
+          <p><span>Un Magazine</span> dédié à l'univers de la toiture</p>
           <%= link_to "Voir le magazine", articles_path, class: "small-link-home" %>
         </div>
       <% end %>
@@ -271,15 +262,18 @@
   <div class="container annuaire-card-home">
     <div class="row row-annuaire-card-home">
       <div class="col-xs-12 col-md-12">
-        <%= link_to articles_path do %>
-          <h1 style="margin-bottom: 40px;">Derniers articles parus</h1>
-        <% end %>
+        <h3 class="text-center" style="margin-bottom: 10px; font-size: 22px; padding: 10px;">Derniers articles parus</h3>
       </div>
       <div class="col-xs-12 col-md-10 col-md-offset-1">
         <% @articles.each do |article| %>
-        <div class="col-xs-12 col-md-6">
+        <div class="col-xs-12 col-md-4">
           <%= render "shared/card_article", article: article %>
         </div>
+        <% end %>
+      </div>
+      <div class="col-xs-12 col-md-12">
+        <%= link_to articles_path do %>
+          <h1 style="margin-bottom: 40px;">Accéder au Magazine</h1>
         <% end %>
       </div>
     </div>
