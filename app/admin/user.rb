@@ -25,7 +25,18 @@ ActiveAdmin.register User do
       f.input :mobile_phone
       f.input :office_phone
       f.input :created_at
+    end
+    f.inputs "Communication" do
+      f.input :website
       f.input :facebook
+      f.input :twitter
+      f.input :linkedin
+      f.input :press_link_1
+      f.input :press_link_title_1
+      f.input :press_link_2
+      f.input :press_link_title_2
+      f.input :press_link_3
+      f.input :press_link_title_3
     end
     f.inputs "Spécialités" do
       f.input :description
@@ -55,6 +66,6 @@ ActiveAdmin.register User do
     f.actions
   end
 
-  permit_params :company, :first_name, :last_name, :position, :mobile_phone, :office_phone, :email, :address, :description, :radius, :photo_company_logo, :photo_presentation, :construction, :renovation, :entretien, :charpente, :couverture, :ouverture, :terrasse, :plomberie, :maison, :chateau, :immeuble, :mh, :qualibat, :rge, :couvreur, :charpentier, :cv, :photo, :zip_code, :city, :locaux_industriels, :facebook, :ffb
+  permit_params :company, :first_name, :last_name, :position, :mobile_phone, :office_phone, :email, :address, :description, :radius, :photo_company_logo, :photo_presentation, :construction, :renovation, :entretien, :charpente, :couverture, :ouverture, :terrasse, :plomberie, :maison, :chateau, :immeuble, :mh, :qualibat, :rge, :couvreur, :charpentier, :cv, :photo, :zip_code, :city, :locaux_industriels, :facebook, :ffb, :website, :twitter, :linkedin, :press_link_1, :press_link_title_1, :press_link_2, :press_link_title_2, :press_link_3, :press_link_title_3
 
 end
