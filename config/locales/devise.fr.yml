@@ -38,6 +38,9 @@ fr:
         press_link_title_2: Titre du lien presse n°2
         press_link_3: Adresse du lien presse n°3
         press_link_title_3: Titre du lien presse n°3
+        specialite1: Spécialité 1
+        specialite2: Spécialité 2
+        specialite3: Spécialité 3
       project:
         title: Titre de présentation
         description: Description

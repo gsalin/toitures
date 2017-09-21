@@ -60,18 +60,20 @@
         </div>
         <div class="container">
           <div class="row">
-            <div class="col-xs-12 col-md-3 col-profile-style-check-box">
+            <div class="col-xs-12 col-md-4 col-profile-style-check-box">
               <div>
                 <p class="form-title-custom">Métiers</p>
                 <% if @user.errors[:plomberie].present? %>
-                  <p class="errors">Sélectionnez au moins 1 spécialité</p>
+                  <p class="errors">Sélectionnez au moins 1 métier</p>
                 <% end %>
                 <div class="checkbox_form">
-                  <span> <%= f.check_box :couverture  %> Couverture - Isolation </span>
+                  <span> <%= f.check_box :architecte  %> Architecte - Bureau d'études </span>
+                  <span> <%= f.check_box :couverture  %> Couverture </span>
+                  <span> <%= f.check_box :charpente  %> Charpente </span>
+                  <span> <%= f.check_box :isolation  %> Isolation </span>
                   <span> <%= f.check_box :plomberie  %> Zinguerie </span>
                   <span> <%= f.check_box :ouverture  %> Fenêtre - Ouverture </span>
-                  <span> <%= f.check_box :terrasse  %> Terrasse - Balcon </span>
-                  <span> <%= f.check_box :charpente  %> Charpente </span>
+                  <span> <%= f.check_box :terrasse  %> Terrasse - Vérandas </span>
                 </div>
               </div>
             </div>
@@ -94,6 +96,43 @@
                 <span> <%= f.check_box :qualibat  %> Qualibat </span>
                 <span> <%= f.check_box :ffb  %> Fédération Francaise du Batiment </span>
                 <span> <%= f.check_box :mh  %> Groupement français des entreprises de restauration de monuments historiques </span>
+                <span> <%= f.check_box :epv  %> Entreprise du Patrimoine Vivant </span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12 col-md-12 col-profile-style-check-box">
+              <div>
+                <p class="form-title-custom">Vous pouvez ajouter une ou plusieurs spécialités parmi celles présentes dans le choix déroulant</p>
+                <%# if @user.errors[:plomberie].present? %>
+                  <!-- <p class="errors">Sélectionnez au moins 1 métier</p> -->
+                <%# end %>
+              </div>
+              <div class="col-xs-12 col-md-4 col-profile-style-check-box">
+                <div class="checkbox_form">
+                  <%= f.input :specialite1, collection: [
+                    "Architecture en surélévation d'étage",
+                    "Architecture en charpente",
+                    "Architecture en création de toiture neuve",
+                    "Couverture en ardoise naturelle",
+                    "Couverture en ardoise naturelle et synthétique",
+                    "Couverture en tuile",
+                    "Couverture en tuile plate",
+                    "Couverture en tuile plate vernissée",
+                    "Couverture en tuile à emboitement",
+                    "Couverture en chaume",
+                    "Couverture en lauze",
+                    "Couverture en zinc",
+                    "Couverture en bardeau de bois",
+                    "Charpente en bois",
+                    "Charpente en métal",
+                    "Charpente industrielle",
+                    "Charpente en béton",
+                    "Isolation thermique par l'intérieur"
+                    ], prompt: "Sélectionnez une spécialité" %>
+                  <%= f.input :specialite2, collection: [ "Australia", "Brazil", "New Zealand"]  %>
+                  <%= f.input :specialite3, collection: [ "Australia", "Brazil", "New Zealand"]  %>
+                </div>
               </div>
             </div>
             <% if @user.pro? %>

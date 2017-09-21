@@ -60,6 +60,19 @@
       <% if user.ffb == true %>
       <a id="popoverFfb" data-content="Professionnel appartenant à la Fédaration Francaise du Batiment" rel="popover" data-placement="bottom" data-trigger="hover"><%= image_tag "ffb.png" %></a>
       <% end %>
+      <% if user.epv == true %>
+      <a id="popoverEpv" data-content="Entreprise du Patrimoine Vivant" rel="popover" data-placement="bottom" data-trigger="hover"><%= image_tag "epv.jpg" %></a>
+      <% end %>
+    </div>
+    <div class="specialites">
+      <% if user.specialite1 != nil && user.specialite2 != nil && user.specialite3 != nil%>
+        <p><strong>Spécialités : </strong></p>
+        <ul>
+          <li><%= user.specialite1 %></li>
+          <li><%= user.specialite2 %></li>
+          <li><%= user.specialite3 %></li>
+        </ul>
+      <% end %>
     </div>
   </div>
 
