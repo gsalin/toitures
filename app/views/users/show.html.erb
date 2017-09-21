@@ -219,8 +219,14 @@
       <div class="col-xs-12 col-md-12">
         <div class="link-col">
           <div class="link-style"><%= link_to "Notre site internet", @user.website, target: '_blank' %></div>
-          <div class="link-style"> Suivez nous sur twitter : <%= @user.twitter %></div>
-          <div class="link-style"> Suivez nous sur facebook : <%= @user.facebook %></div>
+          <div class="link-style">
+            <%= link_to @user.twitter, target: '_blank' do %>
+              <i class="fa fa-twitter" aria-hidden="true"></i>
+            <% end %>
+          </div>
+          <%= link_to @user.facebook, target: '_blank' do %>
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+          <% end %>
         </div>
       </div>
       <div class="col-xs-12 col-md-12">
