@@ -112,6 +112,9 @@
               <% if @user.epv == true %>
                 <%= image_tag "epv.jpg" %>
               <% end %>
+              <% if @user.epv == true %>
+                <%= image_tag "epv.jpg" %>
+              <% end %>
             </div>
           </div>
 
@@ -134,7 +137,6 @@
                 <% if @user.epv == true %>
                   <a id="popoverEpv" data-content="Entreprise du Patrimoine Vivant" rel="popover" data-placement="bottom" data-trigger="hover"><%= image_tag "epv.jpg" %></a>
                 <% end %>
-
               </div>
 
               <div id="skills-flexbox">
@@ -214,7 +216,7 @@
                   <li class="li-position">
                     <% if @user.batiment_agricole == true %>
                       <%= image_tag 'factory.svg', class:"skill-pic" %>
-                      <span>Batiment agricole</span>
+                      <span>Batiments agricoles</span>
                     <% end %>
                   </li>
                   </div>
