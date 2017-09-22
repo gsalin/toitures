@@ -221,19 +221,31 @@
           <div class="link-style"><%= link_to "Notre site internet", @user.website, target: '_blank' %></div>
           <div class="link-style">
             <%= link_to @user.twitter, target: '_blank' do %>
-              <i class="fa fa-twitter" aria-hidden="true"></i>
+              <i class="fa fa-twitter fa-2x twitter-color" aria-hidden="true"></i>
             <% end %>
           </div>
           <%= link_to @user.facebook, target: '_blank' do %>
-            <i class="fa fa-facebook" aria-hidden="true"></i>
+            <i class="fa fa-facebook-official fa-2x facebook-color" aria-hidden="true"></i>
           <% end %>
         </div>
       </div>
       <div class="col-xs-12 col-md-12">
         <div class="link-col">
-          <div class="link-style"> <%= @user.press_link_title_1 %></div>
-          <div class="link-style"> <%= @user.press_link_title_2 %></div>
-          <div class="link-style"> <%= @user.press_link_title_3 %></div>
+          <div class="link-style">
+            <%= link_to @user.press_link_1, target: '_blank' do %>
+              <%= @user.press_link_title_1 %>
+            <% end %>
+          </div>
+          <div class="link-style">
+            <%= link_to @user.press_link_2, target: '_blank' do %>
+              <%= @user.press_link_title_2 %>
+            <% end %>
+          </div>
+          <div class="link-style">
+            <%= link_to @user.press_link_3, target: '_blank' do %>
+              <%= @user.press_link_title_3 %>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
