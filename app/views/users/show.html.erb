@@ -98,16 +98,16 @@
           <div class="col-xs-12 visible-xs">
             <div class="labels-show">
               <% if @user.rge == true %>
-                <%= image_tag "rge.png" %>
+                <%= image_tag "rge.jpg" %>
               <% end %>
               <% if @user.qualibat == true %>
-                <%= image_tag "qualibat.png" %>
+                <%= image_tag "qualibat.jpg" %>
               <% end %>
               <% if @user.ffb == true %>
-                <%= image_tag "ffb.png" %>
+                <%= image_tag "ffb.jpg" %>
               <% end %>
               <% if @user.mh == true %>
-                <%= image_tag "gmh.png" %>
+                <%= image_tag "gmh.jpg" %>
               <% end %>
             </div>
           </div>
@@ -117,16 +117,16 @@
 
               <div class="labels-show hidden-xs">
                 <% if @user.rge == true %>
-                  <a id="popoverRge" data-content="Professionnel Reconnu Garant de l'Environnement" rel="popover" data-placement="bottom" data-trigger="hover"><%= image_tag "rge.png" %></a>
+                  <a id="popoverRge" data-content="Professionnel Reconnu Garant de l'Environnement" rel="popover" data-placement="bottom" data-trigger="hover"><%= image_tag "rge.jpg" %></a>
                 <% end %>
                 <% if @user.qualibat == true %>
-                  <a id="popoverQualibat" data-content="Professionnel certifié Qualibat" rel="popover" data-placement="bottom" data-trigger="hover"><%= image_tag "qualibat.png" %></a>
+                  <a id="popoverQualibat" data-content="Professionnel certifié Qualibat" rel="popover" data-placement="bottom" data-trigger="hover"><%= image_tag "qualibat.jpg" %></a>
                 <% end %>
                 <% if @user.ffb == true %>
-                  <a id="popoverFfb" data-content="Professionnel appartenant à la Fédaration Francaise du Batiment" rel="popover" data-placement="bottom" data-trigger="hover"><%= image_tag "ffb.png" %></a>
+                  <a id="popoverFfb" data-content="Professionnel appartenant à la Fédaration Francaise du Batiment" rel="popover" data-placement="bottom" data-trigger="hover"><%= image_tag "ffb.jpg" %></a>
                 <% end %>
                 <% if @user.mh == true %>
-                  <a id="popoverGmh" data-content="Professionnel appartenant au groupement francais des entreprises de Restauration de Monuments Historiques" rel="popover" data-placement="bottom" data-trigger="hover"><%= image_tag "gmh.png" %></a>
+                  <a id="popoverGmh" data-content="Professionnel appartenant au groupement francais des entreprises de Restauration de Monuments Historiques" rel="popover" data-placement="bottom" data-trigger="hover"><%= image_tag "gmh.jpg" %></a>
                 <% end %>
               </div>
 
@@ -244,13 +244,13 @@
 <% if @projects != [] %>
 <div class="container underline-title-container">
   <% if @user == current_user %>
-    <h3> Nos réalisations
+    <h3 id="scroll-to-projects"> Nos réalisations
       <%= link_to new_project_path(current_user), class: "small-yellow-link" do %>
         <span> Ajouter ou modifier une réalisation </span>
       <% end %>
     </h3>
   <% elsif %>
-    <h3>Nos réalisations</h3>
+    <h3 id="scroll-to-projects"> Nos réalisations </h3>
   <% end %>
 </div>
   <div class="container project-card">
@@ -332,13 +332,13 @@
 <% if @articles != [] %>
   <div class="container underline-title-container">
     <% if @user == current_user %>
-      <h3>Nos articles
+      <h3 id="scroll-to-articles"> Nos articles
         <%= link_to mes_articles_articles_path, class: "small-yellow-link" do %>
           <span> Créer ou modifier un article </span>
         <% end %>
       </h3>
     <% elsif %>
-      <h3>Nos articles</h3>
+      <h3 id="scroll-to-articles">Nos articles</h3>
     <% end %>
   </div>
   <div class="container">
