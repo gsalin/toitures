@@ -10,16 +10,16 @@
     <%= link_to user_path(user), class: "link_pic" do %>
     <div class="hidden-xs hidden-sm">
       <% if user.photo_presentation? %>
-        <%= cl_image_tag user.photo_presentation.path, width: 378, height: 248 %>
+        <%= cl_image_tag user.photo_presentation.path, width: 378, height: 278, crop: :fill %>
       <% else %>
-        <%= image_tag "construction_toit.jpg", width: 378, height: 248 %>
+        <%= image_tag "construction_toit.jpg", width: 378, height: 278, crop: :fill %>
       <% end %>
     </div>
     <div class="hidden-md hidden-lg">
       <% if user.photo_presentation? %>
-        <%= cl_image_tag user.photo_presentation.path, width: 345, height: 228 %>
+        <%= cl_image_tag user.photo_presentation.path, width: 345, height: 278, crop: :fill %>
       <% else %>
-        <%= image_tag "construction_toit.jpg", width: 350, height: 230 %>
+        <%= image_tag "construction_toit.jpg", width: 350, height: 278, crop: :fill %>
       <% end %>
     </div>
     <% end %>
@@ -34,46 +34,50 @@
   <div class="col-xs-12 col-sm-5 card_infos">
     <%= link_to user_path(user), class: "link_show" do %>
       <% if user.photo_company_logo? %>
-      <span>
-        <%= cl_image_tag user.photo_company_logo.path, width: 60, height: 60, crop: :fill %>
-      </span>
+        <span>
+          <%= cl_image_tag user.photo_company_logo.path, width: 60, height: 60, crop: :fill %>
+        </span>
       <% end %>
       <span><%= user.company %></span>
     <% end %>
     <% if user.description != nil %>
-    <p><%= user.description.truncate_words(28) %>
-      <%= link_to user_path(user), class: "link_show" do %>
+    <p><%= user.description.truncate_words(18) %>
+      <%= link_to user_path(user) do %>
         <span><strong>En savoir plus </strong></span><i class="fa fa-chevron-right" aria-hidden="true"></i>
       <% end %>
     </p>
     <% end %>
+
+    <div id="user-specialites">
+      <% if user.specialite1 != nil && user.specialite1 != "" %>
+        <h6><i class="fa fa-arrow-right" aria-hidden="true"></i> <%= user.specialite1 %> </h6>
+      <% end %>
+      <% if user.specialite2 != nil && user.specialite2 != "" %>
+        <h6><i class="fa fa-arrow-right" aria-hidden="true"></i> <%= user.specialite2 %> </h6>
+      <% end %>
+      <% if user.specialite3 != nil && user.specialite3 != "" %>
+        <h6><i class="fa fa-arrow-right" aria-hidden="true"></i> <%= user.specialite3 %> </h6>
+      <% end %>
+    </div>
+
     <div class="labels">
       <% if user.rge == true %>
-        <a id="popoverRge" data-content="Professionnel Reconnu Garant de l'Environnement" rel="popover" data-placement="bottom" data-trigger="hover"><%= image_tag "rge.png" %></a>
+        <a id="popoverRge" data-content="Professionnel Reconnu Garant de l'Environnement" rel="popover" data-placement="bottom" data-trigger="hover"><%= image_tag "rge.jpg" %></a>
       <% end %>
       <% if user.qualibat == true %>
-        <a id="popoverQualibat" data-content="Professionnel certifié Qualibat" rel="popover" data-placement="bottom" data-trigger="hover"><%= image_tag "qualibat.png" %></a>
+        <a id="popoverQualibat" data-content="Professionnel certifié Qualibat" rel="popover" data-placement="bottom" data-trigger="hover"><%= image_tag "qualibat.jpg" %></a>
       <% end %>
       <% if user.mh == true %>
-        <a id="popoverGmh" data-content="Professionnel appartenant au groupement francais des entreprises de Restauration de Monuments Historiques" rel="popover" data-placement="bottom" data-trigger="hover"><%= image_tag "gmh.png" %></a>
+        <a id="popoverGmh" data-content="Professionnel appartenant au groupement francais des entreprises de Restauration de Monuments Historiques" rel="popover" data-placement="bottom" data-trigger="hover"><%= image_tag "gmh.jpg" %></a>
       <% end %>
       <% if user.ffb == true %>
-      <a id="popoverFfb" data-content="Professionnel appartenant à la Fédaration Francaise du Batiment" rel="popover" data-placement="bottom" data-trigger="hover"><%= image_tag "ffb.png" %></a>
+      <a id="popoverFfb" data-content="Professionnel appartenant à la Fédaration Francaise du Batiment" rel="popover" data-placement="bottom" data-trigger="hover"><%= image_tag "ffb.jpg" %></a>
       <% end %>
       <% if user.epv == true %>
       <a id="popoverEpv" data-content="Entreprise du Patrimoine Vivant" rel="popover" data-placement="bottom" data-trigger="hover"><%= image_tag "epv.jpg" %></a>
       <% end %>
     </div>
-    <div class="specialites">
-      <% if user.specialite1 != nil && user.specialite2 != nil && user.specialite3 != nil%>
-        <p><strong>Spécialités : </strong></p>
-        <ul>
-          <li><%= user.specialite1 %></li>
-          <li><%= user.specialite2 %></li>
-          <li><%= user.specialite3 %></li>
-        </ul>
-      <% end %>
-    </div>
+
   </div>
 
 
@@ -162,11 +166,11 @@
     <!-- Nombre de projets -->
     <div class="project-count">
       <% if user.projects.count == 1 %>
-        <%= link_to user_path(user), class: "link_show" do %>
+        <%= link_to user_path(user, anchor: "scroll-to-projects"),  class: "link_show" do %>
           <span><strong><%= user.projects.count %></strong> réalisation à découvrir </span><i class="fa fa-chevron-right" aria-hidden="true"></i>
         <% end %>
       <% elsif user.projects.count > 1 %>
-        <%= link_to user_path(user), class: "link_show" do %>
+        <%= link_to user_path(user, anchor: "scroll-to-projects"), class: "link_show" do %>
           <span><strong><%= user.projects.count %></strong> réalisations à découvrir </span><i class="fa fa-chevron-right" aria-hidden="true"></i>
         <% end %>
       <% end %>
@@ -175,11 +179,11 @@
     <!-- Nombre d'articles -->
     <div class="project-count">
       <% if user.articles.count == 1 %>
-        <%= link_to user_path(user), class: "link_show" do %>
+        <%= link_to user_path(user, anchor: "scroll-to-articles"), class: "link_show" do %>
           <span><strong><%= user.articles.count %></strong> article à lire </span><i class="fa fa-chevron-right" aria-hidden="true"></i>
         <% end %>
       <% elsif user.articles.count > 1 %>
-        <%= link_to user_path(user), class: "link_show" do %>
+        <%= link_to user_path(user, anchor: "scroll-to-articles"), class: "link_show" do %>
           <span><strong><%= user.articles.count %></strong> articles à lire </span><i class="fa fa-chevron-right" aria-hidden="true"></i>
         <% end %>
       <% end %>
