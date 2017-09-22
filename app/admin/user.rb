@@ -26,6 +26,12 @@ ActiveAdmin.register User do
       f.input :office_phone
       f.input :created_at
     end
+    f.inputs "Entreprise" do
+      f.input :description
+      f.input :radius
+      f.input :photo_company_logo, as: :formtastic_attachinary
+      f.input :photo_presentation, as: :formtastic_attachinary
+    end
     f.inputs "Communication" do
       f.input :website
       f.input :facebook
@@ -38,11 +44,7 @@ ActiveAdmin.register User do
       f.input :press_link_3
       f.input :press_link_title_3
     end
-    f.inputs "Spécialités" do
-      f.input :description
-      f.input :radius
-      f.input :photo_company_logo, as: :formtastic_attachinary
-      f.input :photo_presentation, as: :formtastic_attachinary
+    f.inputs "Métier" do
       f.input :construction
       f.input :renovation
       f.input :entretien
@@ -56,11 +58,15 @@ ActiveAdmin.register User do
       f.input :specialite1
       f.input :specialite2
       f.input :specialite3
+    end
+    f.inputs "Type de batiments" do
       f.input :maison
       f.input :chateau
       f.input :immeuble
       f.input :locaux_industriels
       f.input :batiment_agricole
+    end
+    f.inputs "Labels" do
       f.input :mh
       f.input :qualibat
       f.input :rge
@@ -73,6 +79,6 @@ ActiveAdmin.register User do
     f.actions
   end
 
-  permit_params :company, :first_name, :last_name, :position, :mobile_phone, :office_phone, :email, :address, :description, :radius, :photo_company_logo, :photo_presentation, :construction, :renovation, :entretien, :charpente, :couverture, :ouverture, :terrasse, :plomberie, :architecte, :isolation, :specialite1, :specialite2, :specialite3, :maison, :chateau, :immeuble, :mh, :qualibat, :rge, :couvreur, :charpentier, :cv, :photo, :zip_code, :city, :locaux_industriels, :facebook, :ffb, :epv, :website, :twitter, :linkedin, :press_link_1, :press_link_title_1, :press_link_2, :press_link_title_2, :press_link_3, :press_link_title_3
+  permit_params :company, :first_name, :last_name, :position, :mobile_phone, :office_phone, :email, :address, :description, :radius, :photo_company_logo, :photo_presentation, :construction, :renovation, :entretien, :charpente, :couverture, :ouverture, :terrasse, :plomberie, :architecte, :isolation, :specialite1, :specialite2, :specialite3, :maison, :chateau, :immeuble, :mh, :qualibat, :rge, :couvreur, :charpentier, :cv, :photo, :zip_code, :city, :locaux_industriels, :facebook, :ffb, :epv, :website, :twitter, :linkedin, :press_link_1, :press_link_title_1, :press_link_2, :press_link_title_2, :press_link_3, :press_link_title_3, :batiment_agricole
 
 end

@@ -32,7 +32,7 @@ class User < ApplicationRecord
   validates :status, presence: true
 
 
-  #METTRE DES VALIDATES ICI UNIQUEMENT SI DONNEE UNIVERSELLE
+  #METTRE DES VALIDATES CI DESSUS UNIQUEMENT SI DONNEE UNIVERSELLE
 
   validates :mobile_phone, format: {with: /\A((\+|00)33|0)[1-9](\D?\d\d){4}\z/}, on: :update
   validates :office_phone, format: {with: /\A((\+|00)33|0)[1-9](\D?\d\d){4}\z/}, presence: true, on: :update, if: :pro_or_institution?
@@ -42,7 +42,7 @@ class User < ApplicationRecord
   validates :city, presence: true, on: :update, if: :pro_or_institution?
   validates :zip_code, presence: true, on: :update, if: :pro_or_institution?
   validates :photo_presentation, presence: true, on: :update, if: :pro_or_institution?
-  validates :photo_company_logo, presence: true, on: :update, if: :pro_or_institution?
+  validates :photo_company_logo, presence: true, on: :update, if: :institution?
   validates :cv, presence: true, on: :update, if: :worker?
   validates :photo, presence: true, on: :update, if: :worker?
   validates :radius, numericality: { only_integer: true, greater_than_or_equal_to: 50 }, on: :update, presence: true, if: :pro?
