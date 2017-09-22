@@ -149,9 +149,9 @@
     border-radius: 50%;
   }
   h3 {
-    font-size: 2.2em;
+    font-size: 1.9em;
     color: white;
-    max-width: 600px;
+    max-width: 500px;
     position: absolute;
     bottom: 75px;
     left: 615px;
@@ -161,6 +161,7 @@
     position: absolute;
     bottom: 60px;
     left: 615px;
+    font-weight: lighter;
   }
   .phone-mail-banner {
     position: absolute;
@@ -197,7 +198,6 @@
     margin-bottom: 100px;
   }
   .skills-column {
-    height: 310px;
     background-color: white;
     border-radius: 3px;
     margin-top: 30px;
