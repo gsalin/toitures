@@ -80,7 +80,7 @@ class User < ApplicationRecord
   end
 
   def has_at_least_one_place
-    if maison == false && chateau == false && immeuble == false && locaux_industriels == false
+    if maison == false && chateau == false && immeuble == false && locaux_industriels == false && batiment_agricole == false
       errors.add(:maison, :blank)
     end
   end

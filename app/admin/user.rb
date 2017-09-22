@@ -60,6 +60,7 @@ ActiveAdmin.register User do
       f.input :chateau
       f.input :immeuble
       f.input :locaux_industriels
+      f.input :batiment_agricole
       f.input :mh
       f.input :qualibat
       f.input :rge
