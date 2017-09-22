@@ -26,7 +26,7 @@ class User < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
 
-  validates :email, uniqueness: true, presence: true
+  validates :email, uniqueness: true, presence: true, format: {with: /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/}
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :status, presence: true
@@ -53,6 +53,13 @@ class User < ApplicationRecord
   validate :link_title_1_verif, on: :update, if: :pro_or_institution?
   validate :link_title_2_verif, on: :update, if: :pro_or_institution?
   validate :link_title_3_verif, on: :update, if: :pro_or_institution?
+  validates :website, format: {with: /https?:\/\/[\S]+/}, on: :update, if: :pro_or_institution?
+  validates :facebook, format: {with: /http(?:s)?:\/\/(?:www\.)?facebook.com\/(?:(?:\w)*#!\/)?(?:pages\/)?(?:[?\w\-]*\/)?(?:profile.php\?id=(?=\d.*))?([\w\-]*)?/}, on: :update, if: :pro_or_institution?
+  validates :twitter, format: {with: /http(?:s)?:\/\/(?:www\.)?twitter\.com\/([a-zA-Z0-9_]+)/}, on: :update, if: :pro_or_institution?
+  validates :press_link_1, format: {with: /https?:\/\/[\S]+/}, on: :update, if: :pro_or_institution?
+  validates :press_link_2, format: {with: /https?:\/\/[\S]+/}, on: :update, if: :pro_or_institution?
+  validates :press_link_3, format: {with: /https?:\/\/[\S]+/}, on: :update, if: :pro_or_institution?
+
 
   after_create :send_welcome_email
 

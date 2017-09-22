@@ -95,21 +95,38 @@
           </div>
         </div>
         <% if @user.pro? %>
+          <div class="col-xs-12 visible-xs">
+            <div class="labels-show">
+              <% if @user.rge == true %>
+                <%= image_tag "rge.png" %>
+              <% end %>
+              <% if @user.qualibat == true %>
+                <%= image_tag "qualibat.png" %>
+              <% end %>
+              <% if @user.ffb == true %>
+                <%= image_tag "ffb.png" %>
+              <% end %>
+              <% if @user.mh == true %>
+                <%= image_tag "gmh.png" %>
+              <% end %>
+            </div>
+          </div>
+
           <div class="col-xs-12 col-md-6">
             <div class="skills-column">
 
-              <div class="labels-show">
+              <div class="labels-show hidden-xs">
                 <% if @user.rge == true %>
-                  <%= image_tag "rge.png" %>
+                  <a id="popoverRge" data-content="Professionnel Reconnu Garant de l'Environnement" rel="popover" data-placement="bottom" data-trigger="hover"><%= image_tag "rge.png" %></a>
                 <% end %>
                 <% if @user.qualibat == true %>
-                  <%= image_tag "qualibat.png" %>
+                  <a id="popoverQualibat" data-content="Professionnel certifié Qualibat" rel="popover" data-placement="bottom" data-trigger="hover"><%= image_tag "qualibat.png" %></a>
                 <% end %>
                 <% if @user.ffb == true %>
-                  <%= image_tag "ffb.png" %>
+                  <a id="popoverFfb" data-content="Professionnel appartenant à la Fédaration Francaise du Batiment" rel="popover" data-placement="bottom" data-trigger="hover"><%= image_tag "ffb.png" %></a>
                 <% end %>
                 <% if @user.mh == true %>
-                  <%= image_tag "gmh.png" %>
+                  <a id="popoverGmh" data-content="Professionnel appartenant au groupement francais des entreprises de Restauration de Monuments Historiques" rel="popover" data-placement="bottom" data-trigger="hover"><%= image_tag "gmh.png" %></a>
                 <% end %>
               </div>
 
@@ -184,6 +201,40 @@
         <% else %>
           <div class="col-xs-12 col-md-3 col-md-offset-1"></div>
         <% end %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-md-12">
+        <div class="link-col">
+          <div class="link-style"><%= link_to "Notre site internet", @user.website, target: '_blank' %></div>
+          <div class="link-style">
+            <%= link_to @user.twitter, target: '_blank' do %>
+              <i class="fa fa-twitter fa-2x twitter-color" aria-hidden="true"></i>
+            <% end %>
+          </div>
+          <%= link_to @user.facebook, target: '_blank' do %>
+            <i class="fa fa-facebook-official fa-2x facebook-color" aria-hidden="true"></i>
+          <% end %>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-12">
+        <div class="link-col">
+          <div class="link-style">
+            <%= link_to @user.press_link_1, target: '_blank' do %>
+              <%= @user.press_link_title_1 %>
+            <% end %>
+          </div>
+          <div class="link-style">
+            <%= link_to @user.press_link_2, target: '_blank' do %>
+              <%= @user.press_link_title_2 %>
+            <% end %>
+          </div>
+          <div class="link-style">
+            <%= link_to @user.press_link_3, target: '_blank' do %>
+              <%= @user.press_link_title_3 %>
+            <% end %>
+          </div>
+        </div>
       </div>
     </div>
   </div>

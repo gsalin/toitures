@@ -173,15 +173,15 @@
       <div class="container container-communication">
         <div class="row">
           <div class="col-xs-12 col-md-4">
-            <%= f.input :website %>
+            <%= f.input :website, error: "Le lien doit commencer par http:// ou https://" %>
           </div>
           <div class="col-xs-12 col-md-4">
             <span>Votre page Facebook</span><i class="fa fa-facebook-official" aria-hidden="true"></i>
-            <%= f.input :facebook, label: false %>
+            <%= f.input :facebook, label: false, error: "Format demandé : https://www.facebook.com/..." %>
           </div>
           <div class="col-xs-12 col-md-4">
               <span>Votre profil Twitter</span><i class="fa fa-twitter" aria-hidden="true"></i>
-            <%= f.input :twitter, label: false %>
+            <%= f.input :twitter, label: false, error: "Le lien doit commencer par http:// ou https://" %>
           </div>
         </div>
       </div>
@@ -199,7 +199,7 @@
               </div>
             <% end %>
             <div class="link-press-md">
-              <%= f.input :press_link_1, placeholder: "http://www.ouest-france.fr/pays-de-la-loire/laval-53000/ils-se-lancent-dans-la-renovation-du-bati-ancien-3088381" %>
+              <%= f.input :press_link_1, placeholder: "http://www.ouest-france.fr/pays-de-la-loire/laval-53000/ils-se-lancent-dans-la-renovation-du-bati-ancien-3088381", error: "Le lien doit commencer par http:// ou https://" %>
               <%= f.input :press_link_title_1, placeholder: "Article OUEST FRANCE - histoire Art et Nov" %>
             </div>
             <% if @user.errors[:press_link_title_2].present? %>
@@ -208,7 +208,7 @@
               </div>
             <% end %>
             <div class="link-press-md">
-              <%= f.input :press_link_2 %>
+              <%= f.input :press_link_2, error: "Le lien doit commencer par http:// ou https://" %>
               <%= f.input :press_link_title_2 %>
             </div>
             <% if @user.errors[:press_link_title_3].present? %>
@@ -217,7 +217,7 @@
               </div>
             <% end %>
             <div class="link-press-md">
-              <%= f.input :press_link_3 %>
+              <%= f.input :press_link_3, error: "Le lien doit commencer par http:// ou https://" %>
               <%= f.input :press_link_title_3 %>
             </div>
           </div>
