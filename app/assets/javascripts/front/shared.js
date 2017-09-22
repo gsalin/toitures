@@ -7,6 +7,7 @@ $(document).ready(function() {
   $('#popoverQualibat').popover();
   $('#popoverGmh').popover();
   $('#popoverFfb').popover();
+  $('#popoverEpv').popover();
 });
 
 $(document).on('click', '.dropdown-menu', function(e) {
