@@ -1,4 +1,3 @@
-<%= render 'shared/fix_cta' %>
 
 <div class="hidden-xs hidden-sm">
 <!-- banner et form -->
@@ -48,6 +47,7 @@
             <li><label><%= f.check_box :immeuble %><span> Immeuble</span></label></li>
             <li><label><%= f.check_box :chateau %><span> Chateau</span></label></li>
             <li><label><%= f.check_box :locaux_industriels %><span> Local industriel</span></label></li>
+            <li><label><%= f.check_box :batiment_agricole %><span> Batiment agricole</span></label></li>
           </ul>
         </div>
         <div class="main-form-stuffs">
@@ -96,6 +96,8 @@
           <li><label><%= f.check_box :immeuble %><span> Immeuble</span></label></li>
           <li><label><%= f.check_box :chateau %><span> Chateau</span></label></li>
           <li><label><%= f.check_box :locaux_industriels %><span> Local industriel</span></label></li>
+          <li><label><%= f.check_box :batiment_agricole %><span> Batiment agricole</span></label></li>
+
         </ul>
       </div>
         <%= button_tag type: 'submit', class: "search-button", id: "search-button-form-xs" do %>
@@ -249,6 +251,7 @@
               <li><label><%= f.check_box :immeuble %><span> Immeuble</span></label></li>
               <li><label><%= f.check_box :chateau %><span> Chateau</span></label></li>
               <li><label><%= f.check_box :locaux_industriels %><span> Local industriel</span></label></li>
+              <li><label><%= f.check_box :batiment_agricole %><span> Batiment agricole</span></label></li>
             </ul>
           </div>
           <div class="main-form-stuffs">

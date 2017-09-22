@@ -109,6 +109,9 @@
               <% if @user.mh == true %>
                 <%= image_tag "gmh.png" %>
               <% end %>
+              <% if @user.epv == true %>
+                <%= image_tag "epv.jpg" %>
+              <% end %>
             </div>
           </div>
 
@@ -128,11 +131,21 @@
                 <% if @user.mh == true %>
                   <a id="popoverGmh" data-content="Professionnel appartenant au groupement francais des entreprises de Restauration de Monuments Historiques" rel="popover" data-placement="bottom" data-trigger="hover"><%= image_tag "gmh.png" %></a>
                 <% end %>
+                <% if @user.epv == true %>
+                  <a id="popoverEpv" data-content="Entreprise du Patrimoine Vivant" rel="popover" data-placement="bottom" data-trigger="hover"><%= image_tag "epv.jpg" %></a>
+                <% end %>
+
               </div>
 
               <div id="skills-flexbox">
                 <ul class="skills">
-                  <h4>Spécialités</h4>
+                  <h4>Métiers</h4>
+                  <li class="li-position">
+                    <% if @user.architecte == true %>
+                      <%= image_tag 'charpente.svg', class:"skill-pic" %>
+                      <span>Architecte</span>
+                    <% end %>
+                  </li>
                   <li class="li-position">
                     <% if @user.charpente == true %>
                       <%= image_tag 'charpente.svg', class:"skill-pic" %>
@@ -146,21 +159,27 @@
                     <% end %>
                   </li>
                   <li class="li-position">
+                    <% if @user.plomberie == true %>
+                      <%= image_tag 'gouttiere.svg', class:"skill-pic" %>
+                      <span> Zinguerie </span>
+                    <% end %>
+                  </li>
+                   <li class="li-position">
+                    <% if @user.isolation == true %>
+                      <%= image_tag 'charpente.svg', class:"skill-pic" %>
+                      <span>Isolation</span>
+                    <% end %>
+                  </li>
+                  <li class="li-position">
                     <% if @user.ouverture == true %>
                       <%= image_tag 'ouverture.svg', class:"skill-pic" %>
-                      <span>Ouvertures / Vérandas</span>
+                      <span>Fenêtres et ouvertures</span>
                     <% end %>
                   </li>
                   <li class="li-position">
                     <% if @user.terrasse == true %>
                       <%= image_tag 'balcon.svg', class:"skill-pic" %>
                       <span>Balcons / Terrasses</span>
-                    <% end %>
-                  </li>
-                  <li class="li-position">
-                    <% if @user.plomberie == true %>
-                      <%= image_tag 'gouttiere.svg', class:"skill-pic" %>
-                      <span>Gouttières / Eaux de pluie</span>
                     <% end %>
                   </li>
                 </ul>
@@ -190,6 +209,12 @@
                     <% if @user.locaux_industriels == true %>
                       <%= image_tag 'factory.svg', class:"skill-pic" %>
                       <span>Locaux industriels</span>
+                    <% end %>
+                  </li>
+                  <li class="li-position">
+                    <% if @user.batiment_agricole == true %>
+                      <%= image_tag 'factory.svg', class:"skill-pic" %>
+                      <span>Batiment agricole</span>
                     <% end %>
                   </li>
                   </div>
