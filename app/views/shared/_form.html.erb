@@ -7,21 +7,35 @@
   </div>
   <div class="row" id="cb-row">
     <div class="col-xs-12 col-sm-4 col-sm-offset-3">
-      <h5>Travaux</h5>
+      <h5>Type de Travaux</h5>
       <div class="index_form">
-        <div><label><%= f.check_box :couverture %> <span>Couverture - Isolation</span></label></div>
-        <div><label><%= f.check_box :ouverture %> <span>Fenêtre - Ouverture</span></label></div>
+        <div><label>
+        <%= f.check_box :architecte %>
+        <span>Architecte - Bureau d'études</span>
+        </label></div>
+        <div><label>
+        <%= f.check_box :couverture %>
+        <span>Couverture</span>
+        </label></div>
+        <div><label>
+        <%= f.check_box :plomberie %>
+        <span>Zinguerie</span>
+        </label></div>
         <div><label>
         <%= f.check_box :charpente %>
         <span>Charpente</span>
         </label></div>
         <div><label>
-        <%= f.check_box :terrasse %>
-        <span>Terrasse - Balcon</span>
+        <%= f.check_box :isolation %>
+        <span>Isolation</span>
         </label></div>
         <div><label>
-        <%= f.check_box :plomberie %>
-        <span>Fuite - Eaux usées</span>
+        <%= f.check_box :ouverture %>
+        <span>Fenêtres - Ouvertures</span>
+        </label></div>
+        <div><label>
+        <%= f.check_box :terrasse %>
+        <span>Terrasse - Vérandas</span>
         </label></div>
       </div>
     </div>

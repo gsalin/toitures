@@ -51,6 +51,11 @@ ActiveAdmin.register User do
       f.input :ouverture
       f.input :terrasse
       f.input :plomberie
+      f.input :architecte
+      f.input :isolation
+      f.input :specialite1
+      f.input :specialite2
+      f.input :specialite3
       f.input :maison
       f.input :chateau
       f.input :immeuble
@@ -59,6 +64,7 @@ ActiveAdmin.register User do
       f.input :qualibat
       f.input :rge
       f.input :ffb
+      f.input :epv
     end
     f.inputs "Admin" do
       f.input :admin
@@ -66,6 +72,6 @@ ActiveAdmin.register User do
     f.actions
   end
 
-  permit_params :company, :first_name, :last_name, :position, :mobile_phone, :office_phone, :email, :address, :description, :radius, :photo_company_logo, :photo_presentation, :construction, :renovation, :entretien, :charpente, :couverture, :ouverture, :terrasse, :plomberie, :maison, :chateau, :immeuble, :mh, :qualibat, :rge, :couvreur, :charpentier, :cv, :photo, :zip_code, :city, :locaux_industriels, :facebook, :ffb, :website, :twitter, :linkedin, :press_link_1, :press_link_title_1, :press_link_2, :press_link_title_2, :press_link_3, :press_link_title_3
+  permit_params :company, :first_name, :last_name, :position, :mobile_phone, :office_phone, :email, :address, :description, :radius, :photo_company_logo, :photo_presentation, :construction, :renovation, :entretien, :charpente, :couverture, :ouverture, :terrasse, :plomberie, :architecte, :isolation, :specialite1, :specialite2, :specialite3, :maison, :chateau, :immeuble, :mh, :qualibat, :rge, :couvreur, :charpentier, :cv, :photo, :zip_code, :city, :locaux_industriels, :facebook, :ffb, :epv, :website, :twitter, :linkedin, :press_link_1, :press_link_title_1, :press_link_2, :press_link_title_2, :press_link_3, :press_link_title_3
 
 end

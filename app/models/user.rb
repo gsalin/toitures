@@ -67,7 +67,7 @@ class User < ApplicationRecord
   end
 
   def has_at_least_one_speciality
-    if plomberie == false && couverture == false && charpente == false && ouverture == false && terrasse == false
+    if plomberie == false && couverture == false && charpente == false && ouverture == false && terrasse == false && architecte == false && isolation == false
       errors.add(:plomberie, :blank)
     end
   end

@@ -39,6 +39,12 @@ class UsersController < ApplicationController
       if params[:client][:plomberie] == "1"
         @users = @users.where(plomberie: true)
       end
+      if params[:client][:architecte] == "1"
+        @users = @users.where(architecte: true)
+      end
+      if params[:client][:isolation] == "1"
+        @users = @users.where(isolation: true)
+      end
       if params[:client][:maison] == "1"
         @users = @users.where(maison: true)
       end
@@ -119,12 +125,18 @@ class UsersController < ApplicationController
       :ouverture,
       :terrasse,
       :plomberie,
+      :architecte,
+      :isolation,
+      :specialite1,
+      :specialite2,
+      :specialite3,
       :maison,
       :chateau,
       :immeuble,
       :mh,
       :qualibat,
       :rge,
+      :epv,
       :couvreur,
       :charpentier,
       :cv,
@@ -161,6 +173,8 @@ class UsersController < ApplicationController
       :charpente,
       :terrasse,
       :plomberie,
+      :isolation,
+      :architecte,
       # Type de batiment
       :maison,
       :chateau,
