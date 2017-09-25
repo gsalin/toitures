@@ -20,6 +20,9 @@
     </div>
   </div>
 
+  <h4 class="text-center">Les champs marqués d'une * sont obligatoires.</h4>
+  <h5 class="text-center">Prenez les 5 minutes nécessaires pour remplir au mieux votre profil, plus celui-ci sera riche en contenu plus il sera visible sur internet.</h5>
+
   <%= simple_form_for(@user) do |f| %>
 
     <% if @user.errors.present? %>
@@ -51,6 +54,13 @@
             <%= f.input :mobile_phone %>
           </div>
         </div>
+        <div class="row specialites-form">
+          <% if @user.pro? %>
+            <div class="col-xs-12 col-md-4 col-md-offset-4" id="radius-input">
+              <%= f.input :radius, input_html: {value: '100'}, placeholder:"périmètre d'action autour de votre adresse" %>
+            </div>
+          <% end %>
+        </div>
       </div>
 
       <!-- spécialités -->
@@ -62,7 +72,7 @@
           <div class="row">
             <div class="col-xs-12 col-md-4 col-profile-style-check-box">
               <div>
-                <p class="form-title-custom">Métiers</p>
+                <p class="form-title-custom">* Métiers (au moins 1)</p>
                 <% if @user.errors[:plomberie].present? %>
                   <p class="errors">Sélectionnez au moins 1 métier</p>
                 <% end %>
@@ -78,7 +88,7 @@
               </div>
             </div>
             <div class="col-xs-12 col-md-3 col-md-offset-1 col-profile-style-check-box">
-              <p class="form-title-custom">Type de batiment</p>
+              <p class="form-title-custom">* Type de batiment (au  moins 1)</p>
               <% if @user.errors[:maison].present? %>
                 <p class="errors">Sélectionnez au moins 1 type de batiment</p>
               <% end %>
@@ -101,120 +111,115 @@
               </div>
             </div>
           </div>
-          <div class="row">
+
+          <div class="row specialites-form">
             <div class="col-xs-12 col-md-12 col-profile-style-check-box">
-              <div>
-                <p class="form-title-custom">Vous pouvez ajouter une ou plusieurs spécialités parmi celles présentes dans le choix déroulant</p>
-                <%# if @user.errors[:plomberie].present? %>
-                  <!-- <p class="errors">Sélectionnez au moins 1 métier</p> -->
-                <%# end %>
-              </div>
-              <div class="col-xs-12 col-md-4 col-profile-style-check-box">
-                <div class="checkbox_form">
-                  <%= f.input :specialite1, collection: [
-                    "Rénovation du bâti ancien",
-                    "Rénovation globale",
-                    "Travaux de zinguerie",
-                    "Couverture en ardoise naturelle",
-                    "Couverture en ardoise",
-                    "Couverture en tuile",
-                    "Couverture en tuile plate",
-                    "Couverture en tuile plate vernissée",
-                    "Couverture en tuile canal",
-                    "Couverture en tuile à emboitement",
-                    "Couverture en chaume",
-                    "Couverture en lauze",
-                    "Couverture en zinc",
-                    "Couverture en bardeau de bois",
-                    "Charpente traditionnelle en bois",
-                    "Charpente à fermettes industrielles",
-                    "Charpente en métal",
-                    "Charpente en béton",
-                    "Installateur Photovoltaïque",
-                    "Isolation des combles perdus",
-                    "Isolation des combles aménagés",
-                    "Isolation par l'extérieur - Sarking",
-                    "Architecte du patrimoine - Ecole Chaillot",
-                    "Architecte conseil des Parcs Naturels Régionaux",
-                    "Architecte conseil des Conseils d'architecture, d'urbanisme et d'environnement (CAU) ",
-                    "Architecte en chef des Monuments historiques",
-                    "Architecte des Bâtiments de France",
-                    "Architecte en surélévation",
-                    "Bureau d'études en charpente",
-                    "Bureau d'études rénovation construction toiture"
-                    ] %>
-                  <%= f.input :specialite2, collection: [
-                    "Rénovation du bâti ancien",
-                    "Rénovation globale",
-                    "Travaux de zinguerie",
-                    "Couverture en ardoise naturelle",
-                    "Couverture en ardoise",
-                    "Couverture en tuile",
-                    "Couverture en tuile plate",
-                    "Couverture en tuile plate vernissée",
-                    "Couverture en tuile canal",
-                    "Couverture en tuile à emboitement",
-                    "Couverture en chaume",
-                    "Couverture en lauze",
-                    "Couverture en zinc",
-                    "Couverture en bardeau de bois",
-                    "Charpente traditionnelle en bois",
-                    "Charpente à fermettes industrielles",
-                    "Charpente en métal",
-                    "Charpente en béton",
-                    "Installateur Photovoltaïque",
-                    "Isolation des combles perdus",
-                    "Isolation des combles aménagés",
-                    "Isolation par l'extérieur - Sarking",
-                    "Architecte du patrimoine - Ecole Chaillot",
-                    "Architecte conseil des Parcs Naturels Régionaux",
-                    "Architecte conseil des Conseils d'architecture, d'urbanisme et d'environnement (CAU) ",
-                    "Architecte en chef des Monuments historiques",
-                    "Architecte des Bâtiments de France",
-                    "Architecte en surélévation",
-                    "Bureau d'études en charpente",
-                    "Bureau d'études rénovation construction toiture"
-                    ]  %>
-                  <%= f.input :specialite3, collection: [
-                    "Rénovation du bâti ancien",
-                    "Rénovation globale",
-                    "Travaux de zinguerie",
-                    "Couverture en ardoise naturelle",
-                    "Couverture en ardoise",
-                    "Couverture en tuile",
-                    "Couverture en tuile plate",
-                    "Couverture en tuile plate vernissée",
-                    "Couverture en tuile canal",
-                    "Couverture en tuile à emboitement",
-                    "Couverture en chaume",
-                    "Couverture en lauze",
-                    "Couverture en zinc",
-                    "Couverture en bardeau de bois",
-                    "Charpente traditionnelle en bois",
-                    "Charpente à fermettes industrielles",
-                    "Charpente en métal",
-                    "Charpente en béton",
-                    "Installateur Photovoltaïque",
-                    "Isolation des combles perdus",
-                    "Isolation des combles aménagés",
-                    "Isolation par l'extérieur - Sarking",
-                    "Architecte du patrimoine - Ecole Chaillot",
-                    "Architecte conseil des Parcs Naturels Régionaux",
-                    "Architecte conseil des Conseils d'architecture, d'urbanisme et d'environnement (CAU) ",
-                    "Architecte en chef des Monuments historiques",
-                    "Architecte des Bâtiments de France",
-                    "Architecte en surélévation",
-                    "Bureau d'études en charpente",
-                    "Bureau d'études rénovation construction toiture"
-                    ]  %>
-                </div>
-              </div>
+              <p class="form-title-custom">Vous pouvez ajouter une ou plusieurs spécialités ci-dessous</p>
             </div>
-            <% if @user.pro? %>
-              <div class="col-xs-12 col-md-4">
-                <%= f.input :radius, input_html: {value: '100'}, placeholder:"périmètre d'action autour de votre adresse" %>
-              </div>
-            <% end %>
+          </div>
+          <div class="row">
+            <div class="col-xs-12 col-md-4">
+              <%= f.input :specialite1, collection: [
+                "Rénovation du bâti ancien",
+                "Rénovation globale",
+                "Travaux de zinguerie",
+                "Couverture en ardoise naturelle",
+                "Couverture en ardoise",
+                "Couverture en tuile",
+                "Couverture en tuile plate",
+                "Couverture en tuile plate vernissée",
+                "Couverture en tuile canal",
+                "Couverture en tuile à emboitement",
+                "Couverture en chaume",
+                "Couverture en lauze",
+                "Couverture en zinc",
+                "Couverture en bardeau de bois",
+                "Charpente traditionnelle en bois",
+                "Charpente à fermettes industrielles",
+                "Charpente en métal",
+                "Charpente en béton",
+                "Installateur Photovoltaïque",
+                "Isolation des combles perdus",
+                "Isolation des combles aménagés",
+                "Isolation par l'extérieur - Sarking",
+                "Architecte du patrimoine - Ecole Chaillot",
+                "Architecte conseil des Parcs Naturels Régionaux",
+                "Architecte conseil des Conseils d'architecture, d'urbanisme et d'environnement (CAU) ",
+                "Architecte en chef des Monuments historiques",
+                "Architecte des Bâtiments de France",
+                "Architecte en surélévation",
+                "Bureau d'études en charpente",
+                "Bureau d'études rénovation construction toiture"
+                ] %>
+            </div>
+            <div class="col-xs-12 col-md-4">
+              <%= f.input :specialite2, collection: [
+                "Rénovation du bâti ancien",
+                "Rénovation globale",
+                "Travaux de zinguerie",
+                "Couverture en ardoise naturelle",
+                "Couverture en ardoise",
+                "Couverture en tuile",
+                "Couverture en tuile plate",
+                "Couverture en tuile plate vernissée",
+                "Couverture en tuile canal",
+                "Couverture en tuile à emboitement",
+                "Couverture en chaume",
+                "Couverture en lauze",
+                "Couverture en zinc",
+                "Couverture en bardeau de bois",
+                "Charpente traditionnelle en bois",
+                "Charpente à fermettes industrielles",
+                "Charpente en métal",
+                "Charpente en béton",
+                "Installateur Photovoltaïque",
+                "Isolation des combles perdus",
+                "Isolation des combles aménagés",
+                "Isolation par l'extérieur - Sarking",
+                "Architecte du patrimoine - Ecole Chaillot",
+                "Architecte conseil des Parcs Naturels Régionaux",
+                "Architecte conseil des Conseils d'architecture, d'urbanisme et d'environnement (CAU) ",
+                "Architecte en chef des Monuments historiques",
+                "Architecte des Bâtiments de France",
+                "Architecte en surélévation",
+                "Bureau d'études en charpente",
+                "Bureau d'études rénovation construction toiture"
+                ]  %>
+            </div>
+            <div class="col-xs-12 col-md-4">
+              <%= f.input :specialite3, collection: [
+                "Rénovation du bâti ancien",
+                "Rénovation globale",
+                "Travaux de zinguerie",
+                "Couverture en ardoise naturelle",
+                "Couverture en ardoise",
+                "Couverture en tuile",
+                "Couverture en tuile plate",
+                "Couverture en tuile plate vernissée",
+                "Couverture en tuile canal",
+                "Couverture en tuile à emboitement",
+                "Couverture en chaume",
+                "Couverture en lauze",
+                "Couverture en zinc",
+                "Couverture en bardeau de bois",
+                "Charpente traditionnelle en bois",
+                "Charpente à fermettes industrielles",
+                "Charpente en métal",
+                "Charpente en béton",
+                "Installateur Photovoltaïque",
+                "Isolation des combles perdus",
+                "Isolation des combles aménagés",
+                "Isolation par l'extérieur - Sarking",
+                "Architecte du patrimoine - Ecole Chaillot",
+                "Architecte conseil des Parcs Naturels Régionaux",
+                "Architecte conseil des Conseils d'architecture, d'urbanisme et d'environnement (CAU) ",
+                "Architecte en chef des Monuments historiques",
+                "Architecte des Bâtiments de France",
+                "Architecte en surélévation",
+                "Bureau d'études en charpente",
+                "Bureau d'études rénovation construction toiture"
+                ]  %>
+            </div>
           </div>
         </div>
       <% end %>
@@ -226,16 +231,16 @@
       <div class="container">
         <div class="row">
           <div class="col-xs-12 col-md-7 description-col">
-            <%= f.input :description, placeholder: "Décrivez votre société, depuis quand existe t'elle, sa taille, son CA, le nombre de salariés, qu'elles sont vos spécialités...", required: true, hint:"Entre 200 et 600 charactères" %>
+            <%= f.input :description, placeholder: "Décrivez votre société, depuis quand existe t'elle, qu'elles sont vos spécialités, vos plus belles rélisations, le nombre de salariés etc...", required: true, hint:"Entre 200 et 600 charactères" %>
             <div class="text-right counter-style">
               <span id="description-count"><strong></strong></span><span> charactères </span>
             </div>
           </div>
           <div class="col-xs-12 col-md-3 col-md-offset-1">
-            <%= f.input :photo_company_logo, as: :attachinary %>
+            <%= f.input :photo_presentation, as: :attachinary, hint: "Une belle photo d'un chantier ou d'une réalisation" %>
           </div>
           <div class="col-xs-12 col-md-3 col-md-offset-1">
-            <%= f.input :photo_presentation, as: :attachinary %>
+            <%= f.input :photo_company_logo, as: :attachinary, hint: "Si vous n'avez pas de logo, vous pouvez aussi mettre votre photo" %>
           </div>
         </div>
       </div>
@@ -248,15 +253,15 @@
       <div class="container container-communication">
         <div class="row">
           <div class="col-xs-12 col-md-4">
-            <%= f.input :website, error: "Le lien doit commencer par http:// ou https://" %>
+            <%= f.input :website, error: "Le lien doit commencer par http:// ou https://", hint: "format : http://www..."  %>
           </div>
           <div class="col-xs-12 col-md-4">
             <span>Votre page Facebook</span><i class="fa fa-facebook-official" aria-hidden="true"></i>
-            <%= f.input :facebook, label: false, error: "Format demandé : https://www.facebook.com/..." %>
+            <%= f.input :facebook, label: false, error: "Format demandé : https://www.facebook.com/...", hint: "format : https://www.facebook.com/..." %>
           </div>
           <div class="col-xs-12 col-md-4">
               <span>Votre profil Twitter</span><i class="fa fa-twitter" aria-hidden="true"></i>
-            <%= f.input :twitter, label: false, error: "Le lien doit commencer par http:// ou https://" %>
+            <%= f.input :twitter, label: false, error: "Le lien doit commencer par http:// ou https://", hint: "format : https://www.twitter.com/..."  %>
           </div>
         </div>
       </div>
