@@ -90,10 +90,10 @@ ActiveRecord::Schema.define(version: 20170922082254) do
     t.boolean  "ouverture",           default: false, null: false
     t.boolean  "terrasse",            default: false, null: false
     t.boolean  "plomberie",           default: false, null: false
-    t.boolean  "locaux_industriels"
-    t.boolean  "architecte"
-    t.boolean  "isolation"
-    t.boolean  "batiment_agricole"
+    t.boolean  "locaux_industriels",  default: false, null: false
+    t.boolean  "architecte",          default: false, null: false
+    t.boolean  "isolation",           default: false, null: false
+    t.boolean  "batiment_agricole",   default: false, null: false
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
