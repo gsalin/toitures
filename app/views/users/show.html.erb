@@ -238,17 +238,17 @@
   </div>
 </div>
 
-<!-- Notre communication -->
+<!-- Internet et réseaux sociaux -->
 
 <div class="container underline-title-container">
   <% if @user == current_user %>
-    <h3> Notre commmunication
+    <h3> Internet et réseaux sociaux
       <%= link_to edit_user_path(current_user), class: "small-yellow-link" do %>
         <span> Modifier les informations de la société</span>
       <% end %>
     </h3>
   <% elsif %>
-    <h3>Notre communication</h3>
+    <h3>Internet et réseaux sociaux</h3>
   <% end %>
 </div>
 
@@ -256,50 +256,90 @@
   <div class="description-container">
     <div class="row">
       <div class="description-row">
-        <div class="col-xs-12 col-md-6">
+        <div class="col-xs-12 col-md-12">
           <div class="user-communication">
-            <h4>Site internet et réseaux sociaux</h4>
             <% if @user.website != "" %>
-              <div class="link-style"><%= link_to @user.website, target: '_blank' %></div>
-            <% end %>
-            <% if @user.twitter != "" %>
               <div class="link-style">
-                <%= link_to @user.twitter, target: '_blank' do %>
-                  <i class="fa fa-twitter fa-2x twitter-color" aria-hidden="true"></i>
-                <% end %>
+                <span>Notre site internet : <br><br> <%= link_to @user.website, target: '_blank' do %>
+                  <%= @user.website %>
+                <% end %></span>
               </div>
             <% end %>
             <% if @user.facebook != "" %>
-              <div class="link-style">
-                <%= link_to @user.facebook, target: '_blank' do %>
-                  <i class="fa fa-facebook-official fa-2x facebook-color" aria-hidden="true"></i>
-                <% end %>
+              <div class="fb-page"
+                data-href=" <%= @user.facebook %>"
+                data-width="340"
+                data-hide-cover="false"
+                data-show-facepile="true">
               </div>
+              <!-- <div class="link-style">
+                <#%= link_to @user.facebook, target: '_blank' do %>
+                  <i class="fa fa-facebook-official fa-2x facebook-color" aria-hidden="true"></i>
+                <#% end %>
+              </div> -->
+            <% end %>
+            <% if @user.twitter != "" %>
+              <a class="twitter-timeline" data-lang="fr" data-width="340" data-height="215" data-theme="light" data-link-color="#FAB81E" href=" <%= @user.twitter %> ">Tweets by TwitterDev</a>
+              <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+              <!-- <div class="link-style">
+                <#%= link_to @user.twitter, target: '_blank' do %>
+                  <i class="fa fa-twitter fa-2x twitter-color" aria-hidden="true"></i>
+                <#% end %>
+              </div> -->
             <% end %>
           </div>
         </div>
-        <div class="col-xs-12 col-md-6">
-          <div class="user-communication">
-            <h4>Revue de Presse</h4>
-            <div class="link-col">
-              <div class="link-style">
-                <%= link_to @user.press_link_1, target: '_blank' do %>
-                  <%= @user.press_link_title_1 %>
-                <% end %>
-              </div>
-              <div class="link-style">
-                <%= link_to @user.press_link_2, target: '_blank' do %>
-                  <%= @user.press_link_title_2 %>
-                <% end %>
-              </div>
-              <div class="link-style">
-                <%= link_to @user.press_link_3, target: '_blank' do %>
-                  <%= @user.press_link_title_3 %>
-                <% end %>
-              </div>
-            </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Revue de Presse -->
+
+<div class="container underline-title-container">
+  <% if @user == current_user %>
+    <h3> Revue de Presse
+      <%= link_to edit_user_path(current_user), class: "small-yellow-link" do %>
+        <span> Modifier les informations</span>
+      <% end %>
+    </h3>
+  <% elsif %>
+    <h3>Revue de Presse</h3>
+  <% end %>
+</div>
+
+<div class="container">
+  <div class="description-container">
+    <div class="row">
+      <div class="description-row">
+        <div class="col-xs-12 col-md-12">
+          <div class="user-revuedepresse">
+            <ul>
+              <li>
+                <div class="link-style">
+                  <%= link_to @user.press_link_1, target: '_blank' do %>
+                    <%= @user.press_link_title_1 %>
+                  <% end %>
+                </div>
+              </li>
+              <li>
+                <div class="link-style">
+                  <%= link_to @user.press_link_2, target: '_blank' do %>
+                    <%= @user.press_link_title_2 %>
+                  <% end %>
+                </div>
+              </li>
+              <li>
+                <div class="link-style">
+                  <%= link_to @user.press_link_3, target: '_blank' do %>
+                    <%= @user.press_link_title_3 %>
+                  <% end %>
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
+      </div>
     </div>
   </div>
 </div>
@@ -415,6 +455,39 @@
     </div>
   </div>
 <% end %>
+
+<!-- map -->
+
+
+<div class="container underline-title-container">
+  <h3 id="scroll-to-articles">Localisation</h3>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="description-row">
+      <div class="col-xs-12 col-md-12">
+        <div id="map" class="banner-map" style="width: 100%; height: 400px; margin-top: 30px;"></div>
+        <% content_for(:after_js) do %>
+          <%= javascript_tag do %>
+            $(document).ready(function() {
+              var handler = Gmaps.build('Google');
+              handler.buildMap({ provider: { scrollwheel: false }, internal: { id: 'map' } }, function() {
+                markers = handler.addMarkers(<%= raw @hash.to_json %>);
+                handler.bounds.extendWith(markers);
+                handler.fitMapToBounds();
+                if (markers.length == 0) {
+                  handler.getMap().setZoom(2);
+                } else if (markers.length == 1) {
+                  handler.getMap().setZoom(14);
+                }
+              });
+            });
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 
