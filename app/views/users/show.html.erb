@@ -56,6 +56,7 @@
           <div id="form-message">
             <p class="text-center form-title">Sollicitez nous par email</p>
             <%= simple_form_for(@client) do |f| %>
+
               <%= f.input :user_id, as: :hidden, input_html: { value: @user.id } %>
               <%= f.input :message, as: :text, placeholder: "Décrivez votre besoin", label: false %>
               <%= f.input :last_name, placeholder: "Votre nom", label: false %>
@@ -74,6 +75,8 @@
   <i class="fa fa-chevron-down fa-3x" aria-hidden="true"></i>
 </div>
 
+<!-- Notre société -->
+
 <div class="container underline-title-container">
   <% if @user == current_user %>
     <h3> Notre société
@@ -85,12 +88,14 @@
     <h3>Notre société</h3>
   <% end %>
 </div>
+
 <div class="container">
   <div class="description-container">
     <div class="row">
       <div class="description-row">
         <div class="col-xs-12 col-md-6">
           <div class="user-description">
+            <h4>Présentation</h4>
             <%= kramdown(@user.description) %>
           </div>
         </div>
@@ -230,47 +235,71 @@
         <% end %>
       </div>
     </div>
+  </div>
+</div>
+
+<!-- Notre communication -->
+
+<div class="container underline-title-container">
+  <% if @user == current_user %>
+    <h3> Notre commmunication
+      <%= link_to edit_user_path(current_user), class: "small-yellow-link" do %>
+        <span> Modifier les informations de la société</span>
+      <% end %>
+    </h3>
+  <% elsif %>
+    <h3>Notre communication</h3>
+  <% end %>
+</div>
+
+<div class="container">
+  <div class="description-container">
     <div class="row">
-      <div class="col-xs-12 col-md-12">
-        <div class="link-col">
-          <% if @user.website != "" %>
-            <div class="link-style"><%= link_to "Notre site internet", @user.website, target: '_blank' %></div>
-          <% end %>
-          <% if @user.twitter != "" %>
-            <div class="link-style">
-              <%= link_to @user.twitter, target: '_blank' do %>
-                <i class="fa fa-twitter fa-2x twitter-color" aria-hidden="true"></i>
-              <% end %>
-            </div>
-          <% end %>
-          <% if @user.facebook != "" %>
-            <div class="link-style">
-              <%= link_to @user.facebook, target: '_blank' do %>
-                <i class="fa fa-facebook-official fa-2x facebook-color" aria-hidden="true"></i>
-              <% end %>
-            </div>
-          <% end %>
-        </div>
-      </div>
-      <div class="col-xs-12 col-md-12">
-        <div class="link-col">
-          <div class="link-style">
-            <%= link_to @user.press_link_1, target: '_blank' do %>
-              <%= @user.press_link_title_1 %>
+      <div class="description-row">
+        <div class="col-xs-12 col-md-6">
+          <div class="user-communication">
+            <h4>Site internet et réseaux sociaux</h4>
+            <% if @user.website != "" %>
+              <div class="link-style"><%= link_to @user.website, target: '_blank' %></div>
             <% end %>
-          </div>
-          <div class="link-style">
-            <%= link_to @user.press_link_2, target: '_blank' do %>
-              <%= @user.press_link_title_2 %>
+            <% if @user.twitter != "" %>
+              <div class="link-style">
+                <%= link_to @user.twitter, target: '_blank' do %>
+                  <i class="fa fa-twitter fa-2x twitter-color" aria-hidden="true"></i>
+                <% end %>
+              </div>
             <% end %>
-          </div>
-          <div class="link-style">
-            <%= link_to @user.press_link_3, target: '_blank' do %>
-              <%= @user.press_link_title_3 %>
+            <% if @user.facebook != "" %>
+              <div class="link-style">
+                <%= link_to @user.facebook, target: '_blank' do %>
+                  <i class="fa fa-facebook-official fa-2x facebook-color" aria-hidden="true"></i>
+                <% end %>
+              </div>
             <% end %>
           </div>
         </div>
-      </div>
+        <div class="col-xs-12 col-md-6">
+          <div class="user-communication">
+            <h4>Revue de Presse</h4>
+            <div class="link-col">
+              <div class="link-style">
+                <%= link_to @user.press_link_1, target: '_blank' do %>
+                  <%= @user.press_link_title_1 %>
+                <% end %>
+              </div>
+              <div class="link-style">
+                <%= link_to @user.press_link_2, target: '_blank' do %>
+                  <%= @user.press_link_title_2 %>
+                <% end %>
+              </div>
+              <div class="link-style">
+                <%= link_to @user.press_link_3, target: '_blank' do %>
+                  <%= @user.press_link_title_3 %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
     </div>
   </div>
 </div>
