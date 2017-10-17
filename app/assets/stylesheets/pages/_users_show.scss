@@ -17,6 +17,144 @@
     position: relative;
   }
 
+
+.user-company {
+  opacity: 0.8;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  z-index: 1;
+  height: 180px;
+  width: 100%;
+  background-color: black;
+}
+
+.logoname {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  z-index: 2;
+  height: 180px;
+  width: 100%;
+  img {
+    position: absolute;
+    bottom: 50px;
+    left: 500px;
+    border-radius: 50%;
+  }
+  h3 {
+    font-size: 1.9em;
+    color: white;
+    max-width: 500px;
+    position: absolute;
+    bottom: 75px;
+    left: 615px;
+  }
+  #cpy-address{
+    color: white;
+    position: absolute;
+    bottom: 60px;
+    left: 615px;
+    font-weight: lighter;
+  }
+  .phone-mail-banner {
+    position: absolute;
+    right: 40px;
+    color: white;
+    font-size: 1.1em;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: stretch;
+    height: 100%;
+    a {
+      color: white;
+      text-decoration: none;
+      &:hover {
+        color: $yellow;
+        text-decoration: none;
+      }
+    }
+  }
+  .fa {
+    margin-right: 10px;
+  }
+}
+
+// Banner pour le format xs
+.banner-show-xs {
+    text-align: center;
+    height: calc(100vh - 120px);
+    background: no-repeat center;
+    background-size: cover !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.2);
+    position: relative;
+  }
+
+.logoname-xs {
+  position: absolute;
+  bottom: 200px;
+  left: 100px;
+  z-index: 2;
+  // height: 180px;
+  width: 100%;
+  img {
+    // position: absolute;
+    bottom: 50px;
+    left: 50px;
+    border-radius: 50%;
+  }
+  h3 {
+    font-size: 1.9em;
+    color: white;
+    // max-width: 500px;
+    position: absolute;
+    bottom: 75px;
+    // left: 615px;
+  }
+  #cpy-address{
+    color: white;
+    position: absolute;
+    // bottom: 60px;
+    // left: 615px;
+    font-weight: lighter;
+  }
+  .phone-mail-banner {
+    position: absolute;
+    right: 300px;
+    color: white;
+    font-size: 1.1em;
+    // display: flex;
+    // flex-direction: column;
+    // flex-wrap: nowrap;
+    // justify-content: space-around;
+    // align-items: center;
+    // align-content: stretch;
+    // height: 100%;
+    a {
+      color: white;
+      text-decoration: none;
+      &:hover {
+        color: $yellow;
+        text-decoration: none;
+      }
+    }
+  }
+  .fa {
+    margin-right: 10px;
+  }
+}
+
+
+
+  //formulaire
+
   .form-container {
     position: absolute;
     top: 37px;
@@ -119,7 +257,6 @@
   justify-content: space-around;
   align-items: center;
   align-content: flex-start;
-  height: 310px;
   text-align: justify;
   background-color: white;
   padding: 30px;
@@ -139,7 +276,6 @@
   justify-content: flex-start;
   align-items: stretch;
   align-content: stretch;
-  height: 130px;
   text-align: justify;
   background-color: white;
   padding: 30px;
@@ -164,70 +300,6 @@
   }
 }
 
-.user-company {
-  opacity: 0.8;
-  position: absolute;
-  bottom: 0px;
-  left: 0px;
-  z-index: 1;
-  height: 180px;
-  width: 100%;
-  background-color: black;
-}
-
-.logoname {
-  position: absolute;
-  bottom: 0px;
-  left: 0px;
-  z-index: 2;
-  height: 180px;
-  width: 100%;
-  img {
-    position: absolute;
-    bottom: 50px;
-    left: 500px;
-    border-radius: 50%;
-  }
-  h3 {
-    font-size: 1.9em;
-    color: white;
-    max-width: 500px;
-    position: absolute;
-    bottom: 75px;
-    left: 615px;
-  }
-  #cpy-address{
-    color: white;
-    position: absolute;
-    bottom: 60px;
-    left: 615px;
-    font-weight: lighter;
-  }
-  .phone-mail-banner {
-    position: absolute;
-    right: 40px;
-    color: white;
-    font-size: 1.1em;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-    align-items: center;
-    align-content: stretch;
-    height: 100%;
-    a {
-      color: white;
-      text-decoration: none;
-      &:hover {
-        color: $yellow;
-        text-decoration: none;
-      }
-    }
-  }
-  .fa {
-    margin-right: 10px;
-  }
-}
 
 // cards description user
 .description-container {

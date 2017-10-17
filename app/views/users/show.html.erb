@@ -5,7 +5,7 @@
 <% end %>
 
 <!-- wrapper photo form -->
-<div class="wrapper hidden-xs">
+<div class="wrapper hidden-xs ">
   <div class="wrapper_users_show">
     <div class="banner">
       <div class="banner-show">
@@ -71,7 +71,42 @@
   </div>
 </div>
 
-<div class="text-center hidden-xs">
+<div class="wrapper visible-xs hidden-md hidden-lg hidden-sm">
+  <div class="wrapper_users_show">
+    <div class="banner">
+      <div class="banner-show-xs">
+        <% if @user.photo_presentation? %>
+          <%= cl_image_tag @user.photo_presentation.path, crop: :fill %>
+        <% else %>
+          <%= image_tag "user_base_pic.png" %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="logoname-xs">
+      <% if @user.photo_company_logo  %>
+        <%= cl_image_tag @user.photo_company_logo.path, height: 40, width:80, crop: :fill %>
+      <% end %>
+
+      <div class="phone-mail-banner">
+        <div>
+          <h4><%= @user.company %></h4>
+          <span><%= @user.address %></span>
+          <br>
+          <span>Contact : <%= @user.first_name %> <%= @user.last_name %></span>
+        </div>
+        <div>
+          <i class="fa fa-phone" aria-hidden="true"></i><%= format_phone_number(@user.office_phone) %>
+        </div>
+        <div>
+          <i class="fa fa-envelope" aria-hidden="true"></i><%= mail_to @user.email %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="text-center ">
   <i class="fa fa-chevron-down fa-3x" aria-hidden="true"></i>
 </div>
 
@@ -95,7 +130,6 @@
       <div class="description-row">
         <div class="col-xs-12 col-md-6">
           <div class="user-description">
-            <h4>Présentation</h4>
             <%= kramdown(@user.description) %>
           </div>
         </div>
@@ -478,7 +512,7 @@
                 if (markers.length == 0) {
                   handler.getMap().setZoom(2);
                 } else if (markers.length == 1) {
-                  handler.getMap().setZoom(14);
+                  handler.getMap().setZoom(10);
                 }
               });
             });
