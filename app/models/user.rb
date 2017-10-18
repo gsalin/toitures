@@ -34,7 +34,7 @@ class User < ApplicationRecord
 
   #METTRE DES VALIDATES CI DESSUS UNIQUEMENT SI DONNEE UNIVERSELLE
 
-  validates :mobile_phone, format: {with: /\A((\+|00)33|0)[1-9](\D?\d\d){4}\z/}, on: :update
+  #validates :mobile_phone, format: {with: /\A((\+|00)33|0)[1-9](\D?\d\d){4}\z/}, on: :update
   validates :office_phone, format: {with: /\A((\+|00)33|0)[1-9](\D?\d\d){4}\z/}, presence: true, on: :update, if: :pro_or_institution?
   validates :description, length: { minimum: 200, maximum: 600 }, on: :update, presence: true, if: :pro_or_institution?
   validates :company, presence: true, on: :update, if: :pro_or_institution?

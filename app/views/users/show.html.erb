@@ -329,7 +329,6 @@
 </div>
 
 <!-- Revue de Presse -->
-
 <div class="container underline-title-container">
   <% if @user == current_user %>
     <h3> Revue de Presse
@@ -377,6 +376,7 @@
     </div>
   </div>
 </div>
+
 
 <!-- cards projets -->
 <% if @projects != [] %>
@@ -521,8 +521,9 @@
       </div>
     </div>
   </div>
+<!-- Liens partage sur facebook -->
+<%= render 'shared/share_links' %>
 </div>
-
 
 
 
