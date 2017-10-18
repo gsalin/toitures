@@ -229,6 +229,7 @@
   }
 }
 
+//Corps de la presentation
 
 .user-description {
   display: flex;
@@ -403,6 +404,9 @@
 
 .underline-title-container {
   border-bottom: solid 1px $dark-grey;
+  h3 {
+    margin-top: 0px;
+    }
 }
 
 #skills-flexbox {
