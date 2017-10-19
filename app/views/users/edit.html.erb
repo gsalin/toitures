@@ -237,10 +237,10 @@
             </div>
           </div>
           <div class="col-xs-12 col-md-3 col-md-offset-1">
-            <%= f.input :photo_presentation, as: :attachinary, hint: "Une belle photo d'un chantier ou d'une réalisation" %>
+            <%= f.input :photo_presentation, as: :attachinary, required: true, hint: "Une belle photo d'un chantier ou d'une réalisation" %>
           </div>
           <div class="col-xs-12 col-md-3 col-md-offset-1">
-            <%= f.input :photo_company_logo, as: :attachinary, hint: "Si vous n'avez pas de logo, vous pouvez aussi mettre votre photo" %>
+            <%= f.input :photo_company_logo, as: :attachinary, required: true, hint: "Si vous n'avez pas de logo, vous pouvez aussi mettre votre photo" %>
           </div>
         </div>
       </div>
