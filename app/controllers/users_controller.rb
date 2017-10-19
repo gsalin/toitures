@@ -8,8 +8,8 @@ class UsersController < ApplicationController
     @radius_users = []
     @client = Client.new(client_params)
 
-    pros = User.pro
-    @users = pros.where.not(latitude: nil, longitude: nil).where.not(admin: true).where.not(office_phone: nil, description: nil, company: nil, address: nil, city: nil, zip_code: nil, radius: nil, first_name: nil, last_name: nil, email: nil)
+    selected_users = User.pro
+    @users = selected_users.where.not(latitude: nil, longitude: nil).where.not(admin: true).where.not(office_phone: nil, description: nil, company: nil, address: nil, city: nil, zip_code: nil, first_name: nil, last_name: nil, email: nil).order("created_at desc")
 
     if params[:client]
       if params[:client][:address]
@@ -56,6 +56,9 @@ class UsersController < ApplicationController
       end
       if params[:client][:locaux_industriels] == "1"
         @users = @users.where(locaux_industriels: true)
+      end
+      if params[:client][:batiment_agricole] == "1"
+        @users = @users.where(batiment_agricole: true)
       end
     end
 
@@ -185,6 +188,7 @@ class UsersController < ApplicationController
       :chateau,
       :immeuble,
       :locaux_industriels,
+      :batiment_agricole,
     )
   end
 end

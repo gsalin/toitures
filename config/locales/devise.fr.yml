@@ -24,7 +24,7 @@ fr:
         radius: Distance max des chantiers (mini 50 km)
         position: Poste dans la société
         photo_company_logo: Logo de votre société ou votre photo
-        photo_presentation: " * Photo de présentation"
+        photo_presentation: Photo de présentation
         cv: CV (au format PDF uniquement)
         photo: Votre photo
         facebook: Adresse de votre page facebook
