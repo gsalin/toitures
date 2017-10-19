@@ -23,7 +23,7 @@
   <h4 class="text-center">Les champs marqués d'une * sont obligatoires.</h4>
   <h5 class="text-center">Prenez les 5 minutes nécessaires pour remplir au mieux votre profil, plus celui-ci sera riche en contenu plus il sera visible sur internet.</h5>
 
-  <%= simple_form_for(@user) do |f| %>
+  <%= simple_form_for(@user, url: user_path(@user.id)) do |f| %>
 
     <% if @user.errors.present? %>
         <div class="alert alert-warning alert-dismissible">
