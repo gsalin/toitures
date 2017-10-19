@@ -88,6 +88,7 @@ class UsersController < ApplicationController
 
   def update
     @user = current_user
+
     if @user.update(user_params)
       if @user.pro? || @user.institution?
         redirect_to user_path(@user)
@@ -95,6 +96,7 @@ class UsersController < ApplicationController
         redirect_to annuaire_des_candidats_users_path
       end
     else
+      cleanup_new_photo_ids
       render :edit
     end
   end
@@ -104,11 +106,17 @@ class UsersController < ApplicationController
     @users = User.worker
   end
 
-
-
-
   private
 
+  def cleanup_new_photo_ids
+    if @user.photo_presentation && @user.photo_presentation.new_record?
+      @user.photo_presentation.id = nil
+    end
+
+    if @user.photo_company_logo && @user.photo_company_logo.new_record?
+      @user.photo_company_logo.id = nil
+    end
+  end
 
   def user_params
     params.require(:user).permit(
