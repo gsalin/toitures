@@ -81,4 +81,9 @@ ActiveAdmin.register User do
 
   permit_params :company, :first_name, :last_name, :position, :mobile_phone, :office_phone, :email, :address, :description, :radius, :photo_company_logo, :photo_presentation, :construction, :renovation, :entretien, :charpente, :couverture, :ouverture, :terrasse, :plomberie, :architecte, :isolation, :specialite1, :specialite2, :specialite3, :maison, :chateau, :immeuble, :mh, :qualibat, :rge, :couvreur, :charpentier, :cv, :photo, :zip_code, :city, :locaux_industriels, :facebook, :ffb, :epv, :website, :twitter, :linkedin, :press_link_1, :press_link_title_1, :press_link_2, :press_link_title_2, :press_link_3, :press_link_title_3, :batiment_agricole
 
+  controller do
+    def find_resource
+      scoped_collection.friendly.find(params[:id])
+    end
+  end
 end
