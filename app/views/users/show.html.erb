@@ -329,54 +329,64 @@
 </div>
 
 <!-- Revue de Presse -->
-<div class="container underline-title-container">
-  <% if @user == current_user %>
-    <h3> Revue de Presse
-      <%= link_to edit_user_path(current_user), class: "small-yellow-link" do %>
-        <span> Modifier les informations</span>
-      <% end %>
-    </h3>
-  <% elsif %>
-    <h3>Revue de Presse</h3>
-  <% end %>
-</div>
 
-<div class="container">
-  <div class="description-container">
-    <div class="row">
-      <div class="description-row">
-        <div class="col-xs-12 col-md-12">
-          <div class="user-revuedepresse">
-            <ul>
-              <li>
-                <div class="link-style">
-                  <%= link_to @user.press_link_1, target: '_blank' do %>
-                    <%= @user.press_link_title_1 %>
-                  <% end %>
-                </div>
-              </li>
-              <li>
-                <div class="link-style">
-                  <%= link_to @user.press_link_2, target: '_blank' do %>
-                    <%= @user.press_link_title_2 %>
-                  <% end %>
-                </div>
-              </li>
-              <li>
-                <div class="link-style">
-                  <%= link_to @user.press_link_3, target: '_blank' do %>
-                    <%= @user.press_link_title_3 %>
-                  <% end %>
-                </div>
-              </li>
-            </ul>
+<% if @user.press_link_1 != "" || @user.press_link_2 != "" || @user.press_link_3 != "" %>
+
+  <div class="container underline-title-container">
+    <% if @user == current_user %>
+      <h3> Revue de Presse
+        <%= link_to edit_user_path(current_user), class: "small-yellow-link" do %>
+          <span> Modifier les informations</span>
+        <% end %>
+      </h3>
+    <% elsif %>
+      <h3>Revue de Presse</h3>
+    <% end %>
+  </div>
+
+  <div class="container">
+    <div class="description-container">
+      <div class="row">
+        <div class="description-row">
+          <div class="col-xs-12 col-md-12">
+            <div class="user-revuedepresse">
+              <ul>
+                <% if @user.press_link_1 != "" %>
+                  <li>
+                    <div class="link-style">
+                      <%= link_to @user.press_link_1, target: '_blank' do %>
+                        <%= @user.press_link_title_1 %>
+                      <% end %>
+                    </div>
+                  </li>
+                <% end %>
+                <% if @user.press_link_2 != "" %>
+                  <li>
+                    <div class="link-style">
+                      <%= link_to @user.press_link_2, target: '_blank' do %>
+                        <%= @user.press_link_title_2 %>
+                      <% end %>
+                    </div>
+                  </li>
+                <% end %>
+                <% if @user.press_link_3 != "" %>
+                  <li>
+                    <div class="link-style">
+                      <%= link_to @user.press_link_3, target: '_blank' do %>
+                        <%= @user.press_link_title_3 %>
+                      <% end %>
+                    </div>
+                  </li>
+                <% end %>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
+<% end %>
 
 <!-- cards projets -->
 <% if @projects != [] %>
