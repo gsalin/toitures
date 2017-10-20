@@ -2,12 +2,11 @@ ActiveAdmin.register User do
   index do
     selectable_column
     column :id
-    column :email
-    column :company
     column :first_name
     column :last_name
-    column :position
-    column :address
+    column :company
+    column :email
+    column :city
     column :created_at
     column :admin
     actions
@@ -19,6 +18,8 @@ ActiveAdmin.register User do
       f.input :email
       f.input :company
       f.input :address
+      f.input :zip_code
+      f.input :city
       f.input :first_name
       f.input :last_name
       f.input :position

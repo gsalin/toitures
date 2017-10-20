@@ -35,7 +35,7 @@
     <%= link_to user_path(user), class: "link_show" do %>
       <% if user.photo_company_logo? %>
         <span>
-          <%= cl_image_tag user.photo_company_logo.path, width: 60, height: 60, crop: :fill %>
+          <%= cl_image_tag user.photo_company_logo.path, width: 60, height: 60, crop: :fit %>
         </span>
       <% end %>
       <span><%= user.company %></span>
