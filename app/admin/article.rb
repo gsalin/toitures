@@ -22,11 +22,13 @@ ActiveAdmin.register Article do
       f.input :category_id
       f.input :photo_presentation, as: :formtastic_attachinary ### THERE #### https://stackoverflow.com/questions/44413120/how-to-add-attachinary-input-in-rails-active-admin
       f.input :second_photo, as: :formtastic_attachinary ### THERE ####
+      f.input :caption
+      f.input :caption2
     end
     actions
   end
 
-permit_params :title, :category_id, :summary, :card_summary, :body, :photo_presentation, :second_photo, :user_id
+permit_params :title, :category_id, :summary, :card_summary, :body, :photo_presentation, :second_photo, :user_id, :caption, :caption2
 #
 # or
 #
