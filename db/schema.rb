@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170922082254) do
+ActiveRecord::Schema.define(version: 20171021151742) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20170922082254) do
     t.string   "slug"
     t.integer  "category"
     t.string   "caption"
+    t.string   "caption2"
     t.index ["category"], name: "index_articles_on_category", using: :btree
     t.index ["category_id"], name: "index_articles_on_category_id", using: :btree
     t.index ["slug"], name: "index_articles_on_slug", unique: true, using: :btree
@@ -90,10 +91,10 @@ ActiveRecord::Schema.define(version: 20170922082254) do
     t.boolean  "ouverture",           default: false, null: false
     t.boolean  "terrasse",            default: false, null: false
     t.boolean  "plomberie",           default: false, null: false
-    t.boolean  "locaux_industriels",  default: false, null: false
-    t.boolean  "architecte",          default: false, null: false
-    t.boolean  "isolation",           default: false, null: false
-    t.boolean  "batiment_agricole",   default: false, null: false
+    t.boolean  "locaux_industriels"
+    t.boolean  "architecte"
+    t.boolean  "isolation"
+    t.boolean  "batiment_agricole"
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|

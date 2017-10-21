@@ -42,7 +42,7 @@
         <% if @article.second_photo != nil %>
           <figure class="figure-article">
               <%= cl_image_tag @article.second_photo.path, class:"img-responsive"  %>
-            <figcaption class="text-center"></figcaption>
+            <figcaption class="text-center"><%= @article.caption2 %></figcaption>
           </figure>
         <% end %>
 
