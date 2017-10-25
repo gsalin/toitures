@@ -154,6 +154,8 @@ class UsersController < ApplicationController
       :qualibat,
       :rge,
       :epv,
+      :capeb,
+      :rge_eco_artisan,
       :couvreur,
       :charpentier,
       :cv,

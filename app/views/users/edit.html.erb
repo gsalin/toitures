@@ -103,9 +103,12 @@
             <div class="col-xs-12 col-md-3 col-md-offset-1 col-profile-style-check-box">
               <p class="form-title-custom">Vos labels</p>
               <div class="checkbox_form">
-                <span> <%= f.check_box :rge  %> RGE </span>
-                <span> <%= f.check_box :qualibat  %> Qualibat </span>
                 <span> <%= f.check_box :ffb  %> Fédération Francaise du Batiment </span>
+                <span> <%= f.check_box :capeb  %> Capeb </span>
+                <span> <%= f.check_box :rge  %> RGE </span>
+                <span> <%= f.check_box :rge_eco_artisan  %> Rge Eco Artisan </span>
+                <span> <%= f.check_box :qualibat  %> Qualibat </span>
+
                 <span> <%= f.check_box :mh  %> Groupement français des entreprises de restauration de monuments historiques </span>
                 <span> <%= f.check_box :epv  %> Entreprise du Patrimoine Vivant </span>
               </div>
@@ -120,9 +123,20 @@
           <div class="row">
             <div class="col-xs-12 col-md-4">
               <%= f.input :specialite1, collection: [
-                "Rénovation du bâti ancien",
-                "Rénovation globale",
-                "Travaux de zinguerie",
+                "Architecte du patrimoine - Ecole Chaillot",
+                "Architecte conseil des Parcs Naturels Régionaux",
+                "Architecte conseil des Conseils d'architecture, d'urbanisme et d'environnement (CAU) ",
+                "Architecte en chef des Monuments historiques",
+                "Architecte des Bâtiments de France",
+                "Architecte en surélévation",
+                "Bureau d'études en charpente",
+                "Bureau d'études rénovation construction toiture",
+                "Charpente",
+                "Charpente traditionnelle en bois",
+                "Charpente à fermettes industrielles",
+                "Charpente en métal",
+                "Charpente en béton",
+                "Construction à pan de bois, colombage",
                 "Couverture en ardoise naturelle",
                 "Couverture en ardoise",
                 "Couverture en tuile",
@@ -134,30 +148,37 @@
                 "Couverture en lauze",
                 "Couverture en zinc",
                 "Couverture en bardeaux de bois",
-                "Production de bardeaux de bois",
-                "Charpente traditionnelle en bois",
-                "Charpente à fermettes industrielles",
-                "Charpente en métal",
-                "Charpente en béton",
+                "Fenêtre de toit",
                 "Installateur Photovoltaïque",
                 "Isolation des combles perdus",
                 "Isolation des combles aménagés",
                 "Isolation par l'extérieur - Sarking",
-                "Architecte du patrimoine - Ecole Chaillot",
-                "Architecte conseil des Parcs Naturels Régionaux",
-                "Architecte conseil des Conseils d'architecture, d'urbanisme et d'environnement (CAU) ",
-                "Architecte en chef des Monuments historiques",
-                "Architecte des Bâtiments de France",
-                "Architecte en surélévation",
-                "Bureau d'études en charpente",
-                "Bureau d'études rénovation construction toiture"
+                "Production de bardeaux de bois",
+                "Production de tuile, tuilerie",
+                "Production de tuile, tuilerie artisanale",
+                "Production d'ardoise, ardoisier",
+                "Ornemaniste Maître d'Art",
+                "Rénovation du bâti ancien",
+                "Rénovation globale",
+                "Travaux de zinguerie"
                 ] %>
             </div>
             <div class="col-xs-12 col-md-4">
               <%= f.input :specialite2, collection: [
-                "Rénovation du bâti ancien",
-                "Rénovation globale",
-                "Travaux de zinguerie",
+                "Architecte du patrimoine - Ecole Chaillot",
+                "Architecte conseil des Parcs Naturels Régionaux",
+                "Architecte conseil des Conseils d'architecture, d'urbanisme et d'environnement (CAU) ",
+                "Architecte en chef des Monuments historiques",
+                "Architecte des Bâtiments de France",
+                "Architecte en surélévation",
+                "Bureau d'études en charpente",
+                "Bureau d'études rénovation construction toiture",
+                "Charpente",
+                "Charpente traditionnelle en bois",
+                "Charpente à fermettes industrielles",
+                "Charpente en métal",
+                "Charpente en béton",
+                "Construction à pan de bois, colombage",
                 "Couverture en ardoise naturelle",
                 "Couverture en ardoise",
                 "Couverture en tuile",
@@ -169,30 +190,37 @@
                 "Couverture en lauze",
                 "Couverture en zinc",
                 "Couverture en bardeaux de bois",
-                "Production de bardeaux de bois",
-                "Charpente traditionnelle en bois",
-                "Charpente à fermettes industrielles",
-                "Charpente en métal",
-                "Charpente en béton",
+                "Fenêtre de toit",
                 "Installateur Photovoltaïque",
                 "Isolation des combles perdus",
                 "Isolation des combles aménagés",
                 "Isolation par l'extérieur - Sarking",
-                "Architecte du patrimoine - Ecole Chaillot",
-                "Architecte conseil des Parcs Naturels Régionaux",
-                "Architecte conseil des Conseils d'architecture, d'urbanisme et d'environnement (CAU) ",
-                "Architecte en chef des Monuments historiques",
-                "Architecte des Bâtiments de France",
-                "Architecte en surélévation",
-                "Bureau d'études en charpente",
-                "Bureau d'études rénovation construction toiture"
+                "Production de bardeaux de bois",
+                "Production de tuile, tuilerie",
+                "Production de tuile, tuilerie artisanale",
+                "Production d'ardoise, ardoisier",
+                "Ornemaniste Maître d'Art",
+                "Rénovation du bâti ancien",
+                "Rénovation globale",
+                "Travaux de zinguerie"
                 ]  %>
             </div>
             <div class="col-xs-12 col-md-4">
               <%= f.input :specialite3, collection: [
-                "Rénovation du bâti ancien",
-                "Rénovation globale",
-                "Travaux de zinguerie",
+                "Architecte du patrimoine - Ecole Chaillot",
+                "Architecte conseil des Parcs Naturels Régionaux",
+                "Architecte conseil des Conseils d'architecture, d'urbanisme et d'environnement (CAU) ",
+                "Architecte en chef des Monuments historiques",
+                "Architecte des Bâtiments de France",
+                "Architecte en surélévation",
+                "Bureau d'études en charpente",
+                "Bureau d'études rénovation construction toiture",
+                "Charpente",
+                "Charpente traditionnelle en bois",
+                "Charpente à fermettes industrielles",
+                "Charpente en métal",
+                "Charpente en béton",
+                "Construction à pan de bois, colombage",
                 "Couverture en ardoise naturelle",
                 "Couverture en ardoise",
                 "Couverture en tuile",
@@ -204,23 +232,19 @@
                 "Couverture en lauze",
                 "Couverture en zinc",
                 "Couverture en bardeaux de bois",
-                "Production de bardeaux de bois",
-                "Charpente traditionnelle en bois",
-                "Charpente à fermettes industrielles",
-                "Charpente en métal",
-                "Charpente en béton",
+                "Fenêtre de toit",
                 "Installateur Photovoltaïque",
                 "Isolation des combles perdus",
                 "Isolation des combles aménagés",
                 "Isolation par l'extérieur - Sarking",
-                "Architecte du patrimoine - Ecole Chaillot",
-                "Architecte conseil des Parcs Naturels Régionaux",
-                "Architecte conseil des Conseils d'architecture, d'urbanisme et d'environnement (CAU) ",
-                "Architecte en chef des Monuments historiques",
-                "Architecte des Bâtiments de France",
-                "Architecte en surélévation",
-                "Bureau d'études en charpente",
-                "Bureau d'études rénovation construction toiture"
+                "Production de bardeaux de bois",
+                "Production de tuile, tuilerie",
+                "Production de tuile, tuilerie artisanale",
+                "Production d'ardoise, ardoisier",
+                "Ornemaniste Maître d'Art",
+                "Rénovation du bâti ancien",
+                "Rénovation globale",
+                "Travaux de zinguerie"
                 ]  %>
             </div>
           </div>
