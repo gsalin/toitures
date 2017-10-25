@@ -82,7 +82,29 @@
   private
 
   def client_params
-    params.require(:client).permit(:first_name, :last_name, :phone_number, :email, :address, :construction, :renovation, :entretien, :charpente, :couverture, :ouverture, :terrasse, :plomberie, :architecte, :inovation, :maison, :chateau, :immeuble, :monument_historique, :message, :locaux_industriels, :batiment_agricole)
+    params.require(:client).permit(
+      :address,
+      :first_name,
+      :last_name,
+      :phone_number,
+      :email,
+      :message,
+      :construction,
+      :renovation,
+      :entretien,
+      :charpente,
+      :couverture,
+      :ouverture,
+      :terrasse,
+      :plomberie,
+      :architecte,
+      :maison,
+      :chateau,
+      :immeuble,
+      :monument_historique,
+      :locaux_industriels,
+      :batiment_agricole
+    )
   end
 
   def set_client

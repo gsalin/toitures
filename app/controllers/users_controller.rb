@@ -73,7 +73,7 @@ class UsersController < ApplicationController
     @projects = Project.where(user_id: @user)
     @articles = Article.where(user_id: @user)
     @label = []
-    if @user.rge == true || @user.qualibat == true || @user.ffb == true || @user.mh == true
+    if @user.rge == true || @user.qualibat == true || @user.ffb == true || @user.mh == true || @user.epv == true || @user.capeb == true || @user.rge_eco_artisan == true || @user.mof == true
       @label = true
     end
     @hash = Gmaps4rails.build_markers(@user) do |user, marker|
@@ -156,6 +156,7 @@ class UsersController < ApplicationController
       :epv,
       :capeb,
       :rge_eco_artisan,
+      :mof,
       :couvreur,
       :charpentier,
       :cv,
@@ -183,9 +184,7 @@ class UsersController < ApplicationController
   def client_params
     return {} unless params[:client]
     params.require(:client).permit(
-      # Lieu
       :address,
-      # Travaux
       :couverture,
       :ouverture,
       :charpente,
@@ -193,12 +192,11 @@ class UsersController < ApplicationController
       :plomberie,
       :isolation,
       :architecte,
-      # Type de batiment
       :maison,
       :chateau,
       :immeuble,
       :locaux_industriels,
-      :batiment_agricole,
+      :batiment_agricole
     )
   end
 end

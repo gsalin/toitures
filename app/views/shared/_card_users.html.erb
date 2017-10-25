@@ -68,19 +68,22 @@
         <a id="popoverQualibat" data-content="Professionnel certifié Qualibat" rel="popover" data-placement="bottom" data-trigger="hover"><%= image_tag "qualibat.jpg" %></a>
       <% end %>
       <% if user.mh == true %>
-        <a id="popoverGmh" data-content="Professionnel appartenant au groupement francais des entreprises de Restauration de Monuments Historiques" rel="popover" data-placement="bottom" data-trigger="hover"><%= image_tag "gmh.jpg" %></a>
+        <a id="popoverGmh" data-content="Professionnel membre du groupement francais des entreprises de Restauration de Monuments Historiques" rel="popover" data-placement="bottom" data-trigger="hover"><%= image_tag "gmh.jpg" %></a>
       <% end %>
       <% if user.ffb == true %>
-      <a id="popoverFfb" data-content="Professionnel appartenant à la Fédaration Francaise du Batiment" rel="popover" data-placement="bottom" data-trigger="hover"><%= image_tag "ffb.jpg" %></a>
+      <a id="popoverFfb" data-content="Professionnel membre de la Fédération Française du Batiment" rel="popover" data-placement="bottom" data-trigger="hover"><%= image_tag "ffb.jpg" %></a>
       <% end %>
       <% if user.capeb == true %>
-      <a id="popoverCapeb" data-content="Capeb" rel="popover" data-placement="bottom" data-trigger="hover"><%= image_tag "capeb.png" %></a>
+      <a id="popoverCapeb" data-content="Professionnel membre de la Confédération de l'Artisanat et des Petites Entreprises du Bâtiment (CAPEB)" rel="popover" data-placement="bottom" data-trigger="hover"><%= image_tag "capeb.png" %></a>
       <% end %>
       <% if user.epv == true %>
       <a id="popoverEpv" data-content="Entreprise du Patrimoine Vivant" rel="popover" data-placement="bottom" data-trigger="hover"><%= image_tag "epv.jpg" %></a>
       <% end %>
       <% if user.rge_eco_artisan == true %>
       <a id="popoverRge_eco_artisan" data-content="Rge Eco Artisan" rel="popover" data-placement="bottom" data-trigger="hover"><%= image_tag "rge_eco_artisan.jpg" %></a>
+      <% end %>
+      <% if user.mof == true %>
+      <a id="popoverMof" data-content="Meilleur Ouvrier de France" rel="popover" data-placement="bottom" data-trigger="hover"><%= image_tag "mof.jpg" %></a>
       <% end %>
 
     </div>
