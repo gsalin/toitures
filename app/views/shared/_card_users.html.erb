@@ -73,9 +73,16 @@
       <% if user.ffb == true %>
       <a id="popoverFfb" data-content="Professionnel appartenant à la Fédaration Francaise du Batiment" rel="popover" data-placement="bottom" data-trigger="hover"><%= image_tag "ffb.jpg" %></a>
       <% end %>
+      <% if user.capeb == true %>
+      <a id="popoverCapeb" data-content="Capeb" rel="popover" data-placement="bottom" data-trigger="hover"><%= image_tag "capeb.png" %></a>
+      <% end %>
       <% if user.epv == true %>
       <a id="popoverEpv" data-content="Entreprise du Patrimoine Vivant" rel="popover" data-placement="bottom" data-trigger="hover"><%= image_tag "epv.jpg" %></a>
       <% end %>
+      <% if user.rge_eco_artisan == true %>
+      <a id="popoverRge_eco_artisan" data-content="Rge Eco Artisan" rel="popover" data-placement="bottom" data-trigger="hover"><%= image_tag "rge_eco_artisan.jpg" %></a>
+      <% end %>
+
     </div>
 
   </div>

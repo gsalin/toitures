@@ -136,20 +136,23 @@
         <% if @user.pro? %>
           <div class="col-xs-12 visible-xs">
             <div class="labels-show">
+              <% if @user.ffb == true %>
+                <%= image_tag "ffb.jpg" %>
+              <% end %>
+              <% if @user.capeb == true %>
+                <%= image_tag "capeb.png" %>
+              <% end %>
               <% if @user.rge == true %>
                 <%= image_tag "rge.jpg" %>
+              <% end %>
+              <% if @user.rge_eco_artisan == true %>
+                <%= image_tag "rge_eco_artisan.jpg" %>
               <% end %>
               <% if @user.qualibat == true %>
                 <%= image_tag "qualibat.jpg" %>
               <% end %>
-              <% if @user.ffb == true %>
-                <%= image_tag "ffb.jpg" %>
-              <% end %>
               <% if @user.mh == true %>
                 <%= image_tag "gmh.jpg" %>
-              <% end %>
-              <% if @user.epv == true %>
-                <%= image_tag "epv.jpg" %>
               <% end %>
               <% if @user.epv == true %>
                 <%= image_tag "epv.jpg" %>
