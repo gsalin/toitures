@@ -8,6 +8,10 @@ $(document).ready(function() {
   $('#popoverGmh').popover();
   $('#popoverFfb').popover();
   $('#popoverEpv').popover();
+  $('#popoverRge_eco_artisan').popover();
+  $('#popoverCapeb').popover();
+  $('#popoverMof').popover();
+
 });
 
 $(document).on('click', '.dropdown-menu', function(e) {

@@ -157,6 +157,9 @@
               <% if @user.epv == true %>
                 <%= image_tag "epv.jpg" %>
               <% end %>
+              <% if @user.mof == true %>
+                <%= image_tag "mof.jpg" %>
+              <% end %>
             </div>
           </div>
 
@@ -171,7 +174,7 @@
                   <a id="popoverQualibat" data-content="Professionnel certifié Qualibat" rel="popover" data-placement="bottom" data-trigger="hover"><%= image_tag "qualibat.jpg" %></a>
                 <% end %>
                 <% if @user.ffb == true %>
-                  <a id="popoverFfb" data-content="Professionnel appartenant à la Fédaration Francaise du Batiment" rel="popover" data-placement="bottom" data-trigger="hover"><%= image_tag "ffb.jpg" %></a>
+                  <a id="popoverFfb" data-content="Professionnel appartenant à la Fédération Française du Bâtiment" rel="popover" data-placement="bottom" data-trigger="hover"><%= image_tag "ffb.jpg" %></a>
                 <% end %>
                 <% if @user.mh == true %>
                   <a id="popoverGmh" data-content="Professionnel appartenant au groupement francais des entreprises de Restauration de Monuments Historiques" rel="popover" data-placement="bottom" data-trigger="hover"><%= image_tag "gmh.jpg" %></a>
@@ -179,6 +182,16 @@
                 <% if @user.epv == true %>
                   <a id="popoverEpv" data-content="Entreprise du Patrimoine Vivant" rel="popover" data-placement="bottom" data-trigger="hover"><%= image_tag "epv.jpg" %></a>
                 <% end %>
+                <% if @user.capeb == true %>
+                  <a id="popoverCapeb" data-content="Professionnel appartenant à la CAPEB" rel="popover" data-placement="bottom" data-trigger="hover"><%= image_tag "capeb.png" %></a>
+                <% end %>
+                <% if @user.rge_eco_artisan == true %>
+                  <a id="popoverRge_eco_artisan" data-content="Professionnel Reconnu Garant de l'Environnement par la CAPEB" rel="popover" data-placement="bottom" data-trigger="hover"><%= image_tag "rge_eco_artisan.jpg" %></a>
+                <% end %>
+                <% if @user.mof == true %>
+                  <a id="popoverMof" data-content="Professionnel Meilleur Ouvrier de France" rel="popover" data-placement="bottom" data-trigger="hover"><%= image_tag "mof.jpg" %></a>
+                <% end %>
+
               </div>
 
               <div id="skills-flexbox">
