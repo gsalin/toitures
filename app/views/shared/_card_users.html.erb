@@ -85,9 +85,16 @@
       <% if user.mof == true %>
       <a id="popoverMof" data-content="Meilleur Ouvrier de France" rel="popover" data-placement="bottom" data-trigger="hover"><%= image_tag "mof.jpg" %></a>
       <% end %>
-
+      <% if user.artisan == true %>
+      <a id="popoverArtisan" data-content="Artisan" data-placement="bottom" data-trigger="hover"><%= image_tag "artisan.png" %></a>
+      <% end %>
+      <% if user.artisan_d_art == true %>
+      <a id="popoverArtisan_d_art" data-content="Artisan d'Art" data-placement="bottom" data-trigger="hover"><%= image_tag "artisan_d_art.png" %></a>
+      <% end %>
+      <% if user.maitre_artisan == true %>
+      <a id="popoverMaitre_artisan" data-content="Maître Artisan" data-placement="bottom" data-trigger="hover"><%= image_tag "maitre_artisan.png" %></a>
+      <% end %>
     </div>
-
   </div>
 
 
