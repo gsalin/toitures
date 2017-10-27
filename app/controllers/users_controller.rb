@@ -15,7 +15,7 @@ class UsersController < ApplicationController
         @radius_users = []
         @client.geocode
         @users.each do |user|
-          beta = @client.distance_to(user.address).to_i
+          beta = @client.distance_to(user.address)
           if beta <= user.radius
             @radius_users << user
           end
