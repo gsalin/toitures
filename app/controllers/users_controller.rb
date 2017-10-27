@@ -21,46 +21,53 @@ class UsersController < ApplicationController
             @radius_users << user
           end
         end
-        @users = User.pro.where(id: @radius_users.map(&:id))
-      end
 
-      if params[:client][:couverture] == "1"
-        @users = @users.where(couverture: true)
-      end
-      if params[:client][:ouverture] == "1"
-        @users = @users.where(ouverture: true)
-      end
-      if params[:client][:charpente] == "1"
-        @users = @users.where(charpente: true)
-      end
-      if params[:client][:terrasse] == "1"
-        @users = @users.where(terrasse: true)
-      end
-      if params[:client][:plomberie] == "1"
-        @users = @users.where(plomberie: true)
-      end
-      if params[:client][:architecte] == "1"
-        @users = @users.where(architecte: true)
-      end
-      if params[:client][:isolation] == "1"
-        @users = @users.where(isolation: true)
-      end
-      if params[:client][:maison] == "1"
-        @users = @users.where(maison: true)
-      end
-      if params[:client][:chateau] == "1"
-        @users = @users.where(chateau: true)
-      end
-      if params[:client][:immeuble] == "1"
-        @users = @users.where(immeuble: true)
-      end
-      if params[:client][:locaux_industriels] == "1"
-        @users = @users.where(locaux_industriels: true)
-      end
-      if params[:client][:batiment_agricole] == "1"
-        @users = @users.where(batiment_agricole: true)
-      end
+        if @radius_users.count >= 1
+          @final_users = User.pro.where(id: @radius_users.map(&:id))
+        else
+          @final_users = @users
+          @declaration = "Il n'y a pas encore de professionnels enregistrés dans votre région. Nous avons donc affiché l'ensemble des professionnels"
+        end
+        @final_users
+
+      # if params[:client][:couverture] == "1"
+      #   @users = @users.where(couverture: true)
+      # end
+      # if params[:client][:ouverture] == "1"
+      #   @users = @users.where(ouverture: true)
+      # end
+      # if params[:client][:charpente] == "1"
+      #   @users = @users.where(charpente: true)
+      # end
+      # if params[:client][:terrasse] == "1"
+      #   @users = @users.where(terrasse: true)
+      # end
+      # if params[:client][:plomberie] == "1"
+      #   @users = @users.where(plomberie: true)
+      # end
+      # if params[:client][:architecte] == "1"
+      #   @users = @users.where(architecte: true)
+      # end
+      # if params[:client][:isolation] == "1"
+      #   @users = @users.where(isolation: true)
+      # end
+      # if params[:client][:maison] == "1"
+      #   @users = @users.where(maison: true)
+      # end
+      # if params[:client][:chateau] == "1"
+      #   @users = @users.where(chateau: true)
+      # end
+      # if params[:client][:immeuble] == "1"
+      #   @users = @users.where(immeuble: true)
+      # end
+      # if params[:client][:locaux_industriels] == "1"
+      #   @users = @users.where(locaux_industriels: true)
+      # end
+      # if params[:client][:batiment_agricole] == "1"
+      #   @users = @users.where(batiment_agricole: true)
+      # end
     end
+  end
 
     @hash = Gmaps4rails.build_markers(@users) do |user, marker|
       marker.lat user.latitude
@@ -157,6 +164,9 @@ class UsersController < ApplicationController
       :capeb,
       :rge_eco_artisan,
       :mof,
+      :artisan,
+      :maitre_artisan,
+      :artisan_d_art,
       :couvreur,
       :charpentier,
       :cv,

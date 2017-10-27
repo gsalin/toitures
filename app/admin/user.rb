@@ -76,6 +76,9 @@ ActiveAdmin.register User do
       f.input :mh
       f.input :epv
       f.input :mof
+      f.input :artisan
+      f.input :artisan_d_art
+      f.input :maitre_artisan
     end
     f.inputs "Admin" do
       f.input :admin
@@ -131,6 +134,9 @@ ActiveAdmin.register User do
         :rge_eco_artisan,
         :capeb,
         :mof,
+        :artisan,
+        :artisan_d_art,
+        :maitre_artisan,
         :website,
         :twitter,
         :linkedin,

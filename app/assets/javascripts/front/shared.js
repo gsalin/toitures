@@ -11,6 +11,9 @@ $(document).ready(function() {
   $('#popoverRge_eco_artisan').popover();
   $('#popoverCapeb').popover();
   $('#popoverMof').popover();
+  $('#popoverArtisan').popover();
+  $('#popoverArtisan_d_art').popover();
+  $('#popoverMaitre_artisan').popover();
 
 });
 

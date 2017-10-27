@@ -160,6 +160,15 @@
               <% if @user.mof == true %>
                 <%= image_tag "mof.jpg" %>
               <% end %>
+              <% if @user.artisan == true %>
+                <%= image_tag "artisan.png" %>
+              <% end %>
+              <% if @user.maitre_artisan == true %>
+                <%= image_tag "maitre_artisan.png" %>
+              <% end %>
+              <% if @user.artisan_d_art == true %>
+                <%= image_tag "artisan_d_art.png" %>
+              <% end %>
             </div>
           </div>
 
@@ -191,7 +200,15 @@
                 <% if @user.mof == true %>
                   <a id="popoverMof" data-content="Professionnel Meilleur Ouvrier de France" rel="popover" data-placement="bottom" data-trigger="hover"><%= image_tag "mof.jpg" %></a>
                 <% end %>
-
+                <% if @user.artisan == true %>
+                  <a id="popoverArtisan" data-content="Artisan" rel="popover" data-placement="bottom" data-trigger="hover"><%= image_tag "artisan.png" %></a>
+                <% end %>
+                <% if @user.artisan_d_art == true %>
+                  <a id="popoverArtisan_d_art" data-content="Artisan d'Art" rel="popover" data-placement="bottom" data-trigger="hover"><%= image_tag "artisan_d_art.png" %></a>
+                <% end %>
+                <% if @user.maitre_artisan == true %>
+                  <a id="popoverMaitre_artisan" data-content="Maître Artisan" rel="popover" data-placement="bottom" data-trigger="hover"><%= image_tag "maitre_artisan.png" %></a>
+                <% end %>
               </div>
 
               <div id="skills-flexbox">
