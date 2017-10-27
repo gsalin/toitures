@@ -1,9 +1,12 @@
 
 
 <%= render "shared/form", client: @client %>
+<div class="container">
+  <%= @declaration %>
+</div>
 
 <div class="container">
-  <% @users.each do |user| %>
+  <% @final_users.each do |user| %>
       <%= render "shared/card_users", user: user %>
   <% end %>
 </div>
