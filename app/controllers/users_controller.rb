@@ -7,9 +7,8 @@ class UsersController < ApplicationController
   def index
     @radius_users = []
     @client = Client.new(client_params)
-
     selected_users = User.pro
-    @users = selected_users.where.not(latitude: nil, longitude: nil).where.not(admin: true).where.not(office_phone: nil, description: nil, company: nil, address: nil, city: nil, zip_code: nil, first_name: nil, last_name: nil, email: nil).order("created_at desc")
+    @users = selected_users.where.not(latitude: nil, longitude: nil).where.not(admin: true).where.not(office_phone: nil, description: nil, company: nil, address: nil, city: nil, zip_code: nil, first_name: nil, last_name: nil, email: nil)
 
     if params[:client]
       if params[:client][:address]
@@ -26,10 +25,22 @@ class UsersController < ApplicationController
           @final_users = User.pro.where(id: @radius_users.map(&:id))
         else
           @final_users = @users
-          @declaration = "Il n'y a pas encore de professionnels enregistrés dans votre région. Nous avons donc affiché l'ensemble des professionnels"
+          @declaration = "Il n'y a pas encore de professionnel enregistré sur LesToitures.fr dans votre région. Nous avons donc affiché l'ensemble des professionnels"
         end
         @final_users
+      end
+    else
+      @final_users = @users
+    end
 
+    @hash = Gmaps4rails.build_markers(@final_users) do |user, marker|
+      marker.lat user.latitude
+      marker.lng user.longitude
+    end
+
+  end
+
+      # Ancien Code
       # if params[:client][:couverture] == "1"
       #   @users = @users.where(couverture: true)
       # end
@@ -66,14 +77,8 @@ class UsersController < ApplicationController
       # if params[:client][:batiment_agricole] == "1"
       #   @users = @users.where(batiment_agricole: true)
       # end
-    end
-  end
 
-    @hash = Gmaps4rails.build_markers(@users) do |user, marker|
-      marker.lat user.latitude
-      marker.lng user.longitude
-    end
-  end
+
 
   def show
     @client = Client.new
