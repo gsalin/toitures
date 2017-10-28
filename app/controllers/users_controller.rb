@@ -29,6 +29,7 @@ class UsersController < ApplicationController
         end
         @final_users
       end
+
     else
       @final_users = @users
     end
@@ -40,7 +41,7 @@ class UsersController < ApplicationController
 
   end
 
-      # Ancien Code
+
       # if params[:client][:couverture] == "1"
       #   @users = @users.where(couverture: true)
       # end
