@@ -22,19 +22,19 @@
         <div class="main-form-stuffs">
         <%= f.input :address, placeholder: 'Ville / Code Postal', autofocus: true, label:false %>
         </div>
-       <!--  <div class="dropdown main-form-stuffs">
+        <div class="dropdown main-form-stuffs">
           <button class="btn btn-default custom-drop-down-btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
             Nature des travaux
             <span class="caret"></span>
           </button>
           <ul class="dropdown-menu dropdown-size-custom keep-open-on-click" aria-labelledby="dropdownMenu1">
-            <li><label><#%= f.check_box :architecte %><span> Architecte - Bureau d'études </span></label></li>
-            <li><label><#%= f.check_box :couverture %> <span> Couverture </span></label></li>
-            <li><label><#%= f.check_box :plomberie %><span> Zinguerie </span></label></li>
-            <li><label><#%= f.check_box :charpente %><span> Charpente</span></label></li>
-            <li><label><#%= f.check_box :isolation %><span> Isolation </span></label></li>
-            <li><label><#%= f.check_box :ouverture %> <span> Fenêtre - Ouverture</span></label></li>
-            <li><label><#%= f.check_box :terrasse %><span> Terrasse</span></label></li>
+            <li><label><%= f.check_box :architecte %><span> Architecte - Bureau d'études </span></label></li>
+            <li><label><%= f.check_box :couverture %> <span> Couverture </span></label></li>
+            <li><label><%= f.check_box :plomberie %><span> Zinguerie </span></label></li>
+            <li><label><%= f.check_box :charpente %><span> Charpente</span></label></li>
+            <li><label><%= f.check_box :isolation %><span> Isolation </span></label></li>
+            <li><label><%= f.check_box :ouverture %> <span> Fenêtre - Ouverture</span></label></li>
+            <li><label><%= f.check_box :terrasse %><span> Terrasse</span></label></li>
           </ul>
         </div>
         <div class="dropdown main-form-stuffs">
@@ -43,13 +43,13 @@
             <span class="caret"></span>
           </button>
           <ul class="dropdown-menu dropdown-size-custom keep-open-on-click" aria-labelledby="dropdownMenu1">
-            <li><label><#%= f.check_box :maison %><span> Maison</span></label></li>
-            <li><label><#%= f.check_box :immeuble %><span> Immeuble</span></label></li>
-            <li><label><#%= f.check_box :chateau %><span> Patrimoine ancien </span></label></li>
-            <li><label><#%= f.check_box :locaux_industriels %><span> Local industriel</span></label></li>
-            <li><label><#%= f.check_box :batiment_agricole %><span> Bâtiment agricole</span></label></li>
+            <li><label><%= f.check_box :maison %><span> Maison</span></label></li>
+            <li><label><%= f.check_box :immeuble %><span> Immeuble</span></label></li>
+            <li><label><%= f.check_box :chateau %><span> Patrimoine ancien </span></label></li>
+            <li><label><%= f.check_box :locaux_industriels %><span> Local industriel</span></label></li>
+            <li><label><%= f.check_box :batiment_agricole %><span> Bâtiment agricole</span></label></li>
           </ul>
-        </div> -->
+        </div>
         <div class="main-form-stuffs">
           <%= button_tag type: 'submit', class: "search-button" do %>
           <i class="fa fa-search" aria-hidden="true"></i>
