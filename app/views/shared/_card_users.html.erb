@@ -10,6 +10,9 @@
     <%= link_to user_path(user), class: "link_pic" do %>
     <div class="hidden-xs hidden-sm">
       <% if user.photo_presentation? %>
+        <!-- <div class="user_logo">
+          <#%= cl_image_tag user.photo_company_logo.path, crop: :fit %>
+        </div> -->
         <%= cl_image_tag user.photo_presentation.path, width: 378, height: 278, crop: :fill %>
       <% else %>
         <%= image_tag "construction_toit.jpg", width: 378, height: 278, crop: :fill %>

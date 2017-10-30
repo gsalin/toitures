@@ -14,12 +14,15 @@
         <% else %>
           <%= image_tag "user_base_pic.png" %>
         <% end %>
+        <!-- <div class="user-logo-banner">
+          <#%= cl_image_tag @user.photo_company_logo.path, crop: :fit %>
+        </div> -->
       </div>
     </div>
     <div class="user-company"></div>
     <div class="logoname">
       <% if @user.photo_company_logo  %>
-        <%= cl_image_tag @user.photo_company_logo.path, height: 80, width:80, crop: :fill %>
+        <%= cl_image_tag @user.photo_company_logo.path, height: 80, width:80, crop: :fit %>
       <% end %>
       <h3><%= @user.company %></h3>
       <span id="cpy-address"><%= @user.address %></span>
@@ -43,7 +46,7 @@
       <div class="tab-content">
         <div role="tabpanel" class="tab-pane" id="phone">
           <p class="text-center" id="office_phone"><%= @user.office_phone %></p>
-          <p class="text-center form-title">Désirez vous être rappelé(e)?</p>
+          <p class="text-center form-title">Etre rappelé(e) par <%= @user.company %>?</p>
           <%= simple_form_for(@client) do |f| %>
             <%= f.input :user_id, as: :hidden, input_html: { value: @user.id } %>
             <%= f.input :last_name, placeholder: "Votre nom", label: false %>
@@ -54,7 +57,7 @@
         </div>
         <div role="tabpanel" class="tab-pane active" id="message">
           <div id="form-message">
-            <p class="text-center form-title">Sollicitez nous par email</p>
+            <p class="text-center form-title">Envoyer un email à <%= @user.company %></p>
             <%= simple_form_for(@client) do |f| %>
 
               <%= f.input :user_id, as: :hidden, input_html: { value: @user.id } %>
@@ -85,7 +88,7 @@
 
     <div class="logoname-xs">
       <% if @user.photo_company_logo  %>
-        <%= cl_image_tag @user.photo_company_logo.path, height: 40, width:80, crop: :fill %>
+        <%= cl_image_tag @user.photo_company_logo.path, height: 100, width:100, crop: :fit %>
       <% end %>
 
       <div class="phone-mail-banner">
@@ -327,7 +330,7 @@
           <div class="user-communication">
             <% if @user.website != "" %>
               <div class="link-style">
-                <span>Notre site internet : <br><br> <%= link_to @user.website, target: '_blank' do %>
+                <span>Site internet : <br><br> <%= link_to @user.website, target: '_blank' do %>
                   <%= @user.website %>
                 <% end %></span>
               </div>
@@ -455,20 +458,20 @@
           <!-- Wrapper for slides -->
           <div class="carousel-inner" role="listbox">
             <div class="item active">
-              <%= cl_image_tag project.project_photos[0].path, width: 500, height: 333, crop: :fill  %>
+              <%= cl_image_tag project.project_photos[0].path, width: 500, height: 333, crop: :fit  %>
               <div class="carousel-caption">
               </div>
             </div>
             <% if project.project_photos.count >= 2 %>
             <div class="item">
-              <%= cl_image_tag project.project_photos[1].path, width: 500, height: 333, crop: :fill  %>
+              <%= cl_image_tag project.project_photos[1].path, width: 500, height: 333, crop: :fit  %>
               <div class="carousel-caption">
               </div>
             </div>
             <% end %>
             <% if project.project_photos.count >= 3 %>
             <div class="item">
-              <%= cl_image_tag project.project_photos[2].path, width: 500, height: 333, crop: :fill  %>
+              <%= cl_image_tag project.project_photos[2].path, width: 500, height: 333, crop: :fit  %>
               <div class="carousel-caption">
               </div>
             </div>

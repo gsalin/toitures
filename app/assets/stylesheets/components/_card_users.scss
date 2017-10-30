@@ -11,9 +11,22 @@
 
 
   .card_photo_presentation {
+    position: relative;
+
     .link_pic:hover {
       opacity: 0.7;
     }
+
+    // .user_logo {
+    //   position: absolute;
+    //   left: 40px;
+    //   top: 20px;
+    //   max-width: 300px;
+    //   img {
+    //     max-width: 300px;
+    //     max-height: 100px;
+    //   }
+    // }
   }
 
   .card_infos {
