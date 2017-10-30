@@ -36,7 +36,7 @@ class User < ApplicationRecord
 
   #validates :mobile_phone, format: {with: /\A((\+|00)33|0)[1-9](\D?\d\d){4}\z/}, on: :update
   validates :office_phone, format: {with: /\A((\+|00)[1-9][1-9]|0)[1-9](\D?\d\d){4}\z/}, presence: true, on: :update, if: :pro_or_institution?
-  validates :description, length: { minimum: 200, maximum: 600 }, on: :update, presence: true, if: :pro_or_institution?
+  validates :description, length: { minimum: 200, maximum: 1200 }, on: :update, presence: true, if: :pro_or_institution?
   validates :company, presence: true, on: :update, if: :pro_or_institution?
   validates :address, presence: true, on: :update
   validates :city, presence: true, on: :update, if: :pro_or_institution?

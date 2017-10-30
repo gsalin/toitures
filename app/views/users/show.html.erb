@@ -114,13 +114,13 @@
 
 <div class="container underline-title-container">
   <% if @user == current_user %>
-    <h3> Notre société
+    <h3> L'entreprise <%= @user.company %>
       <%= link_to edit_user_path(current_user), class: "small-yellow-link" do %>
         <span> Modifier les informations de la société</span>
       <% end %>
     </h3>
   <% elsif %>
-    <h3>Notre société</h3>
+    <h3>L'entreprise <%= @user.company %></h3>
   <% end %>
 </div>
 
@@ -425,7 +425,7 @@
 <% if @projects != [] %>
 <div class="container underline-title-container">
   <% if @user == current_user %>
-    <h3 id="scroll-to-projects"> Nos réalisations
+    <h3 id="scroll-to-projects"> Réalisations
       <%= link_to new_project_path(current_user), class: "small-yellow-link" do %>
         <span> Ajouter ou modifier une réalisation </span>
       <% end %>
