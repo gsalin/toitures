@@ -1,36 +1,45 @@
 <div class="container">
-  <div class="row hidden-xs hidden-sm row_show_users">
+  <div class="row row_show_users">
 
-    <!-- 1ere col avec photos -->
-
-    <div class="col-xs-12 col-sm-4 card_photo_presentation">
+    <!-- Bannière -->
+    <div class="col-xs-12 col-sm-4 hidden-xs hidden-sm card_photo_presentation">
       <%= link_to user_path(user), class: "link_pic" do %>
-      <div class="hidden-xs hidden-sm">
-        <% if user.photo_presentation? %>
-          <!-- <div class="user_logo">
-            <#%= cl_image_tag user.photo_company_logo.path, crop: :fit %>
-          </div> -->
-          <%= cl_image_tag user.photo_presentation.path, width: 378, height: 278, crop: :fill %>
-        <% else %>
-          <%= image_tag "construction_toit.jpg", width: 378, height: 278, crop: :fill %>
-        <% end %>
-      </div>
-      <div class="hidden-md hidden-lg">
-        <% if user.photo_presentation? %>
-          <%= cl_image_tag user.photo_presentation.path, width: 345, height: 278, crop: :fill %>
-        <% else %>
-          <%= image_tag "construction_toit.jpg", width: 350, height: 278, crop: :fill %>
-        <% end %>
-      </div>
+      <% if user.photo_presentation? %>
+        <!-- <div class="user_logo">
+          <#%= cl_image_tag user.photo_company_logo.path, crop: :fit %>
+        </div> -->
+        <%= cl_image_tag user.photo_presentation.path, width: 378, height: 278, crop: :fill %>
+      <% else %>
+        <%= image_tag "construction_toit.jpg", width: 378, height: 278, crop: :fill %>
+      <% end %>
+      <!--  <div class="hidden-md hidden-lg">
+        <#% if user.photo_presentation? %>
+          <#%= cl_image_tag user.photo_presentation.path, width: 345, height: 278, crop: :fill %>
+        <#% else %>
+          <#%= image_tag "construction_toit.jpg", width: 350, height: 278, crop: :fill %>
+        <#% end %>
+      </div> -->
       <% end %>
     </div>
+
+    <!-- Bannière xs -->
+    <div class="col-xs-12 hidden-md hidden-lg card_photo_presentation_xs">
+      <%= link_to user_path(user), class: "link_pic" do %>
+        <% if user.photo_presentation? %>
+          <%= cl_image_tag user.photo_presentation.path, width: 374, height: 100, crop: :fill %>
+        <% else %>
+          <%= image_tag "construction_toit.jpg", width: 374, height: 100, crop: :fill %>
+        <% end %>
+      <% end %>
+    </div>
+
 
     <!-- 2eme col avec logo, nom et description -->
     <div class="col-xs-12 col-sm-5 card_infos">
       <%= link_to user_path(user), class: "link_show" do %>
         <% if user.photo_company_logo? %>
           <span>
-            <%= cl_image_tag user.photo_company_logo.path, width: 60, height: 60, crop: :fit %>
+            <%= cl_image_tag user.photo_company_logo.path, width: 60, height: 60, crop: :fill %>
           </span>
         <% end %>
         <span><%= user.company %></span>
@@ -212,225 +221,4 @@
       </div>
     </div>
   </div>
-
-  <div class="row hidden-md hidden-lg row_show_users_xs">
-
-    <!-- Bannière + logo -->
-    <div class="col-xs-12 card_photo_presentation_xs">
-      <%= link_to user_path(user), class: "link_pic" do %>
-        <% if user.photo_presentation? %>
-          <%= cl_image_tag user.photo_presentation.path, width: 374, height: 100, crop: :fill %>
-        <% else %>
-          <%= image_tag "construction_toit.jpg", width: 374, height: 100, crop: :fill %>
-        <% end %>
-      <% end %>
-      <div class="user_logo_xs">
-        <%= link_to user_path(user), class: "link_show" do %>
-          <% if user.photo_company_logo? %>
-            <span>
-              <%= cl_image_tag user.photo_company_logo.path, width: 60, height: 60, crop: :fill %>
-            </span>
-          <% end %>
-      </div>
-    </div>
-
-    <!-- Nom, spécialités -->
-    <div class="col-xs-12 col-sm-12 card_infos_xs">
-      <span><%= user.company %></span>
-
-      <!-- marker distance -->
-
-      <div class="distance_marker_xs">
-        <h5><i class="fa fa-map-marker" aria-hidden="true"></i></h5>
-        <%= user.zip_code %> <%= user.city %>
-      </div>
-
-      <% end %>
-        <% if user.description != nil %>
-      <p><%= user.description.truncate_words(18) %>
-        <%= link_to user_path(user) do %>
-          <span><strong>En savoir plus </strong></span><i class="fa fa-chevron-right" aria-hidden="true"></i>
-        <% end %>
-      </p>
-      <% end %>
-    </div>
-
-    <div class="col-xs-6 user-specialites-xs">
-      <% if user.specialite1 != nil && user.specialite1 != "" %>
-        <h5>Spécialités</h5>
-        <h6><i class="fa fa-arrow-right" aria-hidden="true"></i> <%= user.specialite1 %> </h6>
-      <% end %>
-      <% if user.specialite2 != nil && user.specialite2 != "" %>
-        <h6><i class="fa fa-arrow-right" aria-hidden="true"></i> <%= user.specialite2 %> </h6>
-      <% end %>
-      <% if user.specialite3 != nil && user.specialite3 != "" %>
-        <h6><i class="fa fa-arrow-right" aria-hidden="true"></i> <%= user.specialite3 %> </h6>
-      <% end %>
-    </div>
-
-    <% if user.rge == true || user.qualibat == true || user.mh == true || user.ffb == true || user.capeb == true || user.epv == true || user.rge_eco_artisan == true || user.mof == true || user.artisan == true || user.artisan_d_art == true || user.maitre_artisan == true %>
-      <div class="col-xs-6 user-specialites-xs">
-        <h5>Labels</h5>
-      </div>
-    <% end %>
-
-    <% if user.rge == true %>
-      <div class="col-xs-3 labels-xs">
-        <a id="popoverRge" data-content="Professionnel Reconnu Garant de l'Environnement" rel="popover" data-placement="bottom" data-trigger="hover"><%= image_tag "rge.jpg" %></a>
-      </div>
-    <% end %>
-
-    <% if user.qualibat == true %>
-      <div class="col-xs-3 labels-xs">
-        <a id="popoverQualibat" data-content="Professionnel certifié Qualibat" rel="popover" data-placement="bottom" data-trigger="hover"><%= image_tag "qualibat.jpg" %></a>
-      </div>
-    <% end %>
-
-    <% if user.mh == true %>
-      <div class="col-xs-3 labels-xs">
-        <a id="popoverGmh" data-content="Professionnel membre du groupement francais des entreprises de Restauration de Monuments Historiques" rel="popover" data-placement="bottom" data-trigger="hover"><%= image_tag "gmh.jpg" %></a>
-      </div>
-    <% end %>
-
-    <% if user.ffb == true %>
-      <div class="col-xs-3 labels-xs">
-        <a id="popoverFfb" data-content="Professionnel membre de la Fédération Française du Batiment" rel="popover" data-placement="bottom" data-trigger="hover"><%= image_tag "ffb.jpg" %></a>
-      </div>
-    <% end %>
-
-    <% if user.capeb == true %>
-      <div class="col-xs-3 labels-xs">
-        <a id="popoverCapeb" data-content="Professionnel membre de la Confédération de l'Artisanat et des Petites Entreprises du Bâtiment (CAPEB)" rel="popover" data-placement="bottom" data-trigger="hover"><%= image_tag "capeb.png" %></a>
-      </div>
-    <% end %>
-
-    <% if user.epv == true %>
-      <div class="col-xs-3 labels-xs">
-        <a id="popoverEpv" data-content="Entreprise du Patrimoine Vivant" rel="popover" data-placement="bottom" data-trigger="hover"><%= image_tag "epv.jpg" %></a>
-      </div>
-    <% end %>
-
-    <% if user.rge_eco_artisan == true %>
-      <div class="col-xs-3 labels-xs">
-        <a id="popoverRge_eco_artisan" data-content="Rge Eco Artisan" rel="popover" data-placement="bottom" data-trigger="hover"><%= image_tag "rge_eco_artisan.jpg" %></a>
-      </div>
-    <% end %>
-
-    <% if user.mof == true %>
-      <div class="col-xs-3 labels-xs">
-        <a id="popoverMof" data-content="Meilleur Ouvrier de France" rel="popover" data-placement="bottom" data-trigger="hover"><%= image_tag "mof.jpg" %></a>
-      </div>
-    <% end %>
-
-    <% if user.artisan == true %>
-      <div class="col-xs-3 labels-xs">
-        <a id="popoverArtisan" data-content="Artisan" data-placement="bottom" data-trigger="hover"><%= image_tag "artisan.png" %></a>
-      </div>
-    <% end %>
-
-    <% if user.artisan_d_art == true %>
-      <div class="col-xs-3 labels-xs">
-        <a id="popoverArtisan_d_art" data-content="Artisan d'Art" data-placement="bottom" data-trigger="hover"><%= image_tag "artisan_d_art.png" %></a>
-      </div>
-    <% end %>
-
-    <% if user.maitre_artisan == true %>
-      <div class="col-xs-3 labels-xs">
-        <a id="popoverMaitre_artisan" data-content="Maître Artisan" data-placement="bottom" data-trigger="hover"><%= image_tag "maitre_artisan.png" %></a>
-      </div>
-    <% end %>
-
-
-    <!-- 3eme col avec boutons et skills -->
-
-    <div class="col-xs-12 col-sm-3 card_skills-xs">
-      <!-- btn découvre notre société -->
-      <%= link_to user_path(user), class: "col-xs-6 btn-societe-xs text-center" do %>
-        <span>Voire la société</span>
-      <% end %>
-      <div class="col-xs-6 modals_position">
-        <!-- Modal Phone -->
-        <div class="modal_phone">
-          <button type="button" class="fa fa-phone fa-phone-custom-xs" data-toggle="modal" data-target="#myModalphone<%= user.id %> "></button>
-          <!-- Modal telephone -->
-          <div class="modal fade" id="myModalphone<%= user.id %>" role="dialog">
-            <div class="modal-dialog">
-              <!-- Modal content-->
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body">
-                <p class="text-center" id="office_phone"><%= user.office_phone %></p>
-                <p class="text-center form-title">Désirez vous être rappelé(e) par la société <strong> <%= user.company %> </strong>?</p>
-                <%= simple_form_for(@client) do |f| %>
-                  <%= f.input :user_id, as: :hidden, input_html: { value: user.id } %>
-                  <%= f.input :last_name, placeholder: "Votre nom", label: false %>
-                  <%= f.input :email, placeholder: "Votre email", label: false %>
-                  <%= f.input :phone_number, placeholder: "Votre téléphone", label: false %>
-                  <%= f.button :submit, "Envoyer", :class => "button-message" %>
-                <% end %>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Modal Email -->
-        <div class="modal_email">
-          <button type="button" class="fa fa-envelope-o fa-envelope-o-custom-xs" data-toggle="modal" data-target="#myModalmail<%= user.id %>"></button>
-          <!-- Modal email -->
-          <div class="modal fade" id="myModalmail<%= user.id %>" role="dialog">
-            <div class="modal-dialog">
-              <!-- Modal content-->
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body">
-                  <p class="text-center form-title">Solliciter la société <strong> <%= user.company %> </strong> par email</p>
-                  <%= simple_form_for(@client) do |f| %>
-                    <%= f.input :user_id, as: :hidden, input_html: { value: user.id } %>
-                    <%= f.input :message, as: :text, placeholder: "Décrivez votre besoin", label: false %>
-                    <%= f.input :last_name, placeholder: "Votre nom", label: false %>
-                    <%= f.input :email, placeholder: "Votre email", label: false %>
-                    <%= f.input :phone_number, placeholder: "Votre téléphone", label: false %>
-                    <%= f.button :submit, "Envoyer", :class => "button-message" %>
-                  <% end %>
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Nombre de projets -->
-      <div class="project-count">
-        <% if user.projects.count == 1 %>
-          <%= link_to user_path(user, anchor: "scroll-to-projects"),  class: "link_show" do %>
-            <span><strong><%= user.projects.count %></strong> réalisation à découvrir </span><i class="fa fa-chevron-right" aria-hidden="true"></i>
-          <% end %>
-        <% elsif user.projects.count > 1 %>
-          <%= link_to user_path(user, anchor: "scroll-to-projects"), class: "link_show" do %>
-            <span><strong><%= user.projects.count %></strong> réalisations à découvrir </span><i class="fa fa-chevron-right" aria-hidden="true"></i>
-          <% end %>
-        <% end %>
-      </div>
-
-      <!-- Nombre d'articles -->
-      <div class="project-count">
-        <% if user.articles.count == 1 %>
-          <%= link_to user_path(user, anchor: "scroll-to-articles"), class: "link_show" do %>
-            <span><strong><%= user.articles.count %></strong> article à lire </span><i class="fa fa-chevron-right" aria-hidden="true"></i>
-          <% end %>
-        <% elsif user.articles.count > 1 %>
-          <%= link_to user_path(user, anchor: "scroll-to-articles"), class: "link_show" do %>
-            <span><strong><%= user.articles.count %></strong> articles à lire </span><i class="fa fa-chevron-right" aria-hidden="true"></i>
-          <% end %>
-        <% end %>
-      </div>
-    </div>
-  </div>
-
 </div>
