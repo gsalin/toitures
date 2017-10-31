@@ -102,7 +102,7 @@
 // Banner pour le format xs
 .banner-show-xs {
     text-align: center;
-    height: calc(100vh - 120px);
+    height: 200px;
     background: no-repeat center;
     background-size: cover !important;
     display: flex;
@@ -122,17 +122,17 @@
   width: 100%;
   img {
     position: absolute;
-    bottom: 50px;
-    left: 50px;
+    bottom: -145px;
+    left: 12px;
     border-radius: 50%;
   }
   h4 {
     font-size: 1.9em;
     color: white;
-    max-width: 300px;
+    min-width: 300px;
     position: absolute;
-    bottom: -33px;
-    left: 260px;
+    bottom: -122px;
+    left: 130px;
   }
   #cpy-address{
     color: white;
@@ -244,6 +244,26 @@
 
 
 //Corps de la presentation
+
+.user-information {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: stretch;
+  min-height: 100px;
+  text-align: justify;
+  background-color: white;
+  padding: 30px;
+  border-radius: 3px;
+  min-width: 332px;
+  margin-top: 20px;
+  box-shadow: 0 15px 35px rgba(50,50,93,0.1), 0 5px 15px rgba(0,0,0,0.07);
+  p {
+    font-size: 0.94em;
+  }
+}
 
 .user-description {
   display: flex;
