@@ -32,8 +32,8 @@ ActiveRecord::Schema.define(version: 20171027142423) do
   create_table "articles", force: :cascade do |t|
     t.string   "title"
     t.text     "body"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.string   "card_summary"
     t.text     "summary"
     t.integer  "category_id"
@@ -41,6 +41,8 @@ ActiveRecord::Schema.define(version: 20171027142423) do
     t.string   "slug"
     t.integer  "category"
     t.string   "caption"
+    t.string   "photo_presentation"
+    t.string   "second_photo"
     t.string   "caption2"
     t.index ["category"], name: "index_articles_on_category", using: :btree
     t.index ["category_id"], name: "index_articles_on_category_id", using: :btree
@@ -199,6 +201,10 @@ ActiveRecord::Schema.define(version: 20171027142423) do
     t.string   "specialite2"
     t.string   "specialite3"
     t.boolean  "batiment_agricole"
+    t.string   "photo_presentation"
+    t.string   "photo_company_logo"
+    t.string   "photo"
+    t.string   "cv"
     t.boolean  "capeb"
     t.boolean  "rge_eco_artisan"
     t.boolean  "mof"
