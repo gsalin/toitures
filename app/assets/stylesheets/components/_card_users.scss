@@ -1,6 +1,4 @@
 
-// hidden-xs hidden-sm
-
 
 .row_show_users {
   padding-top: 20px;
@@ -32,6 +30,24 @@
     // }
   }
 
+  .card_photo_presentation_xs {
+    position: relative;
+
+    .link_pic:hover {
+      opacity: 0.7;
+    }
+
+    .user_logo_xs {
+      position: absolute;
+      left: 40px;
+      top: 20px;
+      max-width: 300px;
+      img {
+        max-width: 300px;
+        max-height: 100px;
+      }
+    }
+  }
   .card_infos {
     padding: 10px 10px 10px 40px;
     .link_show {
@@ -231,262 +247,4 @@ span {
     font-size: 90%;
   }
 }
-
-// hidden-md hidden-lg
-
-.row_show_users_xs {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  min-height: 290px;
-  margin-top: 15px;
-  margin-bottom: 15px;
-  box-shadow: 0 15px 35px rgba(50,50,93,0.1), 0 5px 15px rgba(0,0,0,0.07);
-  background-color: white;
-  border: solid $medium-grey 1px;
-
-
-  .card_photo_presentation_xs {
-    position: relative;
-
-    .link_pic:hover {
-      opacity: 0.7;
-    }
-
-    .user_logo_xs {
-      position: absolute;
-      left: 40px;
-      top: 20px;
-      max-width: 300px;
-      img {
-        max-width: 300px;
-        max-height: 100px;
-      }
-    }
-  }
-
-  .card_infos_xs {
-    padding: 10px 10px 0px 15px;
-    position: relative;
-
-    span {
-      font-weight: bold;
-    }
-
-    .distance_marker_xs {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      justify-content: right;
-      align-items: baseline;
-      align-content: stretch;
-      position: absolute;
-      right: 15px;
-      top: 0px;
-    }
-
-    .link_show {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      justify-content: flex-start;
-      align-items: baseline;
-      align-content: stretch;
-    }
-
-
-    a {
-      color: $dark-grey
-    }
-    img {
-      border-radius: 50%;
-      margin-right: 15px;
-    }
-    span {
-      font-size: 0.9em;
-    }
-     p {
-       text-align: justify;
-       max-width: 500px;
-       font-weight: lighter;
-       font-size: 90%;
-       margin-top: 15px;
-       margin-bottom: 5px;
-       span {
-       font-size: inherit;
-       color: $yellow;
-       }
-       i {
-         font-size: smaller;
-         color: $yellow;
-       }
-     }
-  }
-
-  .user-specialites-xs {
-    h5 {
-      text-align: center;
-      max-width: 500px;
-      font-size: 90%;
-      font-weight: normal;
-    }
-    h6 {
-      text-align: justify;
-      max-width: 500px;
-      font-size: 83%;
-      font-weight: normal;
-      margin-left: 15px;
-    }
-  }
-
-  .labels-xs {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-    align-items: center;
-    align-content: stretch;
-    padding-top: 5px;
-
-    img {
-      width: 50px;
-      height: 50px;
-      border-radius: 3px !important;
-      margin-right: 0px !important;
-    }
-  }
-
-// 3eme partie (les boutons)
-
-
-  .card_skills-xs {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-    align-items: left;
-    align-content: stretch;
-
-    .btn-societe-xs {
-      border: solid 1px $dark-grey;
-      padding: 12px 30px;
-      border-radius: 3px;
-      background-color: $dark-grey;
-      color: white;
-      font-weight:lighter;
-      &:hover {
-        transition: color 0.8s ease;
-        font-weight: bolder;
-        background-color: white;
-        color: $dark-grey;
-        opacity: 0.5;
-        border: solid 2px $dark-grey;
-        text-decoration:none;
-      }
-    }
-
-    .modal-header {
-      border-bottom: none;
-    }
-
-    #office_phone {
-      font-weight: bolder;
-      font-size:larger;
-    }
-
-    .form-title {
-      margin-bottom: 20px;
-    }
-
-    .modals_position {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      justify-content: center;
-      align-items: baseline;
-      align-content: stretch;
-    }
-
-    .project-count {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      justify-content: center;
-      align-items: baseline;
-      align-content: stretch;
-    }
-
-    h5 {
-      color: #C5C7C0;
-      font-weight: lighter;
-    }
-
-    button:hover, button:visited, button:link, button:active {
-      text-decoration: none;
-    }
-
-    .fa-phone-custom-xs {
-      background-color: $yellow;
-      margin: 0px 7px 5px 7px;
-      color: white;
-      font-size: 1.8em;
-      padding: 5px;
-      padding-left: 20px;
-      padding-right: 20px;
-      border: none;
-      border-radius: 3px;
-      border: 1px solid transparent;
-      &:hover {
-        background-color: white;
-        color: $yellow;
-        opacity: 0.5;
-        border: solid 2px $yellow;
-      }
-    }
-
-    .fa-envelope-o-custom-xs {
-      background-color: $yellow;
-      margin: 0px 7px 5px 7px;
-      color: white;
-      font-size: 1.8em;
-      padding: 5px;
-      padding-left: 20px;
-      padding-right: 20px;
-      border: none;
-      border-radius: 3px;
-      border: 1px solid transparent;
-      &:hover {
-        background-color: white;
-        color: $yellow;
-        opacity: 0.5;
-        border: solid 2px $yellow;
-      }
-    }
-
-  }
-}
-
-.large-fa {
-  font-size: larger;
-  padding: 10px;
-}
-
-.large-fa:nth-child(2n) {
-  border-left: solid black 1px;
-}
-
-.link_show {
-  color:$yellow;
-span {
-  text-decoration: none;
-  }
-}
-
-.link_show:hover {
-  text-decoration: none;
-  color: $yellow;
-}
-
-
-
-
-
 
