@@ -6,79 +6,134 @@ class UsersController < ApplicationController
 
   def index
     @radius_users = []
+    @final_users = []
     @client = Client.new(client_params)
-    selected_users = User.pro
-    @users = selected_users.where.not(latitude: nil, longitude: nil).where.not(admin: true).where.not(office_phone: nil, description: nil, company: nil, address: nil, city: nil, zip_code: nil, first_name: nil, last_name: nil, email: nil)
+    pro_users = User.pro
+    users = pro_users.where.not(latitude: nil, longitude: nil).where.not(admin: true).where.not(office_phone: nil, description: nil, company: nil, address: nil, city: nil, zip_code: nil, first_name: nil, last_name: nil, email: nil)
+    # Cas ou le client ne renseigne rien dans le formulaire
 
-    if params[:client]
-      if params[:client][:address]
-        @radius_users = []
-        @client.geocode
-        @users.each do |user|
-          beta = @client.distance_to(user.address).to_i
-          if beta <= user.radius
-            @radius_users << user
+    if params[:client][:address] == nil || params[:client][:address] == ""
+      if params[:client][:couverture] == "0" && params[:client][:ouverture] == "0" && params[:client][:charpente] == "0" && params[:client][:terrasse] == "0" && params[:client][:plomberie] == "0" && params[:client][:architecte] == "0" && params[:client][:isolation] == "0" && params[:client][:maison] == "0" && params[:client][:chateau] == "0" && params[:client][:immeuble] == "0" && params[:client][:locaux_industriels] == "0" && params[:client][:batiment_agricole] == "0"
+        @final_users = users
+        @declaration = "Voici les professionnels référencés sur notre site, précisez un lieu et au moins 1 spécialité pour affiner votre recherche"
+      else
+        selection_of_users = []
+        users.each do |user|
+          if params[:client][:couverture] == "1"  && user.couverture == true && selection_of_users.include?(user) == false
+            selection_of_users << user
+          end
+          if params[:client][:ouverture] == "1" && user.ouverture == true && selection_of_users.include?(user) == false
+            selection_of_users << user
+          end
+          if params[:client][:charpente] == "1" && user.charpente == true && selection_of_users.include?(user) == false
+            selection_of_users << user
+          end
+          if params[:client][:terrasse] == "1" && user.terrasse == true && selection_of_users.include?(user) == false
+            selection_of_users << user
+          end
+          if params[:client][:plomberie] == "1" && user.plomberie == true && selection_of_users.include?(user) == false
+            selection_of_users << user
+          end
+          if params[:client][:architecte] == "1" && user.architecte == true && selection_of_users.include?(user) == false
+            selection_of_users << user
+          end
+          if params[:client][:isolation] == "1" && user.isolation == true && selection_of_users.include?(user) == false
+            selection_of_users << user
+          end
+          if params[:client][:maison] == "1" && user.maison == true && selection_of_users.include?(user) == false
+            selection_of_users << user
+          end
+          if params[:client][:chateau] == "1" && user.chateau == true && selection_of_users.include?(user) == false
+            selection_of_users << user
+          end
+          if params[:client][:immeuble] == "1" && user.immeuble == true && selection_of_users.include?(user) == false
+            selection_of_users << user
+          end
+          if params[:client][:locaux_industriels] == "1" && user.locaux_industriels == true && selection_of_users.include?(user) == false
+            selection_of_users << user
+          end
+          if params[:client][:batiment_agricole] == "1" && user.batiment_agricole == true && selection_of_users.include?(user) == false
+            selection_of_users << user
           end
         end
-
-        if @radius_users.count >= 1
-          @final_users = User.pro.where(id: @radius_users.map(&:id))
-        else
-          @final_users = @users
-          @declaration = "Il n'y a pas encore de professionnel enregistré sur LesToitures.fr dans votre région. Nous avons donc affiché l'ensemble des professionnels"
+        @final_users = selection_of_users
+        @declaration = "Voici les professionnels francais répondants à vos besoins, précisez l'adresse de vos travaux afin d'affiner votre recherche"
+      end
+    else
+      # Calcul de la distance entre le pro et le client
+      @radius_users = []
+      @client.geocode
+      users.each do |user|
+        beta = @client.distance_to(user.address).to_i
+        if beta <= user.radius
+          @radius_users << user
         end
-        @final_users
       end
 
-    else
-      @final_users = @users
+      if params[:client][:couverture] == "0" && params[:client][:ouverture] == "0" && params[:client][:charpente] == "0" && params[:client][:terrasse] == "0" && params[:client][:plomberie] == "0" && params[:client][:architecte] == "0" && params[:client][:isolation] == "0" && params[:client][:maison] == "0" && params[:client][:chateau] == "0" && params[:client][:immeuble] == "0" && params[:client][:locaux_industriels] == "0" && params[:client][:batiment_agricole] == "0"
+        if @radius_users.count >= 1
+          @final_users = User.pro.where(id: @radius_users.map(&:id))
+          @declaration = "Voici tous les professionnels près de chez vous, vous pouvez préciser votre recherche en completant le formulaire (autre champs que l'adresse)."
+        else
+          @final_users = users
+          @declaration = "Il n'y a pas encore de professionnel enregistré sur LesToitures.fr pouvant intervenir dans votre secteur."
+        end
+      else
+        if @radius_users.count >= 1
+          @final_users = User.pro.where(id: @radius_users.map(&:id))
+          selection_of_users = []
+          @final_users.each do |user|
+            if params[:client][:couverture] == "1"  && user.couverture == true && selection_of_users.include?(user) == false
+              selection_of_users << user
+            end
+            if params[:client][:ouverture] == "1" && user.ouverture == true && selection_of_users.include?(user) == false
+              selection_of_users << user
+            end
+            if params[:client][:charpente] == "1" && user.charpente == true && selection_of_users.include?(user) == false
+              selection_of_users << user
+            end
+            if params[:client][:terrasse] == "1" && user.terrasse == true && selection_of_users.include?(user) == false
+              selection_of_users << user
+            end
+            if params[:client][:plomberie] == "1" && user.plomberie == true && selection_of_users.include?(user) == false
+              selection_of_users << user
+            end
+            if params[:client][:architecte] == "1" && user.architecte == true && selection_of_users.include?(user) == false
+              selection_of_users << user
+            end
+            if params[:client][:isolation] == "1" && user.isolation == true && selection_of_users.include?(user) == false
+              selection_of_users << user
+            end
+            if params[:client][:maison] == "1" && user.maison == true && selection_of_users.include?(user) == false
+              selection_of_users << user
+            end
+            if params[:client][:chateau] == "1" && user.chateau == true && selection_of_users.include?(user) == false
+              selection_of_users << user
+            end
+            if params[:client][:immeuble] == "1" && user.immeuble == true && selection_of_users.include?(user) == false
+              selection_of_users << user
+            end
+            if params[:client][:locaux_industriels] == "1" && user.locaux_industriels == true && selection_of_users.include?(user) == false
+              selection_of_users << user
+            end
+            if params[:client][:batiment_agricole] == "1" && user.batiment_agricole == true && selection_of_users.include?(user) == false
+              selection_of_users << user
+            end
+          end
+          @final_users = selection_of_users
+          @declaration = "Voici tous les professionnels près de chez vous et répondant à vos besoins."
+        else
+          @final_users = users
+          @declaration = "Désolé, il n'y a pas encore de professionnel correspondant à vos besoins et pouvant intervenir dans votre secteur."
+        end
+      end
     end
 
     @hash = Gmaps4rails.build_markers(@final_users) do |user, marker|
       marker.lat user.latitude
       marker.lng user.longitude
     end
-
   end
-
-
-      # if params[:client][:couverture] == "1"
-      #   @users = @users.where(couverture: true)
-      # end
-      # if params[:client][:ouverture] == "1"
-      #   @users = @users.where(ouverture: true)
-      # end
-      # if params[:client][:charpente] == "1"
-      #   @users = @users.where(charpente: true)
-      # end
-      # if params[:client][:terrasse] == "1"
-      #   @users = @users.where(terrasse: true)
-      # end
-      # if params[:client][:plomberie] == "1"
-      #   @users = @users.where(plomberie: true)
-      # end
-      # if params[:client][:architecte] == "1"
-      #   @users = @users.where(architecte: true)
-      # end
-      # if params[:client][:isolation] == "1"
-      #   @users = @users.where(isolation: true)
-      # end
-      # if params[:client][:maison] == "1"
-      #   @users = @users.where(maison: true)
-      # end
-      # if params[:client][:chateau] == "1"
-      #   @users = @users.where(chateau: true)
-      # end
-      # if params[:client][:immeuble] == "1"
-      #   @users = @users.where(immeuble: true)
-      # end
-      # if params[:client][:locaux_industriels] == "1"
-      #   @users = @users.where(locaux_industriels: true)
-      # end
-      # if params[:client][:batiment_agricole] == "1"
-      #   @users = @users.where(batiment_agricole: true)
-      # end
-
 
 
   def show
