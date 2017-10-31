@@ -5,15 +5,17 @@ class UsersController < ApplicationController
 
 
   def index
+    @client = Client.new(client_params)
     @radius_users = []
     @final_users = []
-    @client = Client.new(client_params)
     pro_users = User.pro
     users = pro_users.where.not(latitude: nil, longitude: nil).where.not(admin: true).where.not(office_phone: nil, description: nil, company: nil, address: nil, city: nil, zip_code: nil, first_name: nil, last_name: nil, email: nil)
     # Cas ou le client ne renseigne rien dans le formulaire
 
-    if params[:client][:address] == nil || params[:client][:address] == ""
-      if params[:client][:couverture] == "0" && params[:client][:ouverture] == "0" && params[:client][:charpente] == "0" && params[:client][:terrasse] == "0" && params[:client][:plomberie] == "0" && params[:client][:architecte] == "0" && params[:client][:isolation] == "0" && params[:client][:maison] == "0" && params[:client][:chateau] == "0" && params[:client][:immeuble] == "0" && params[:client][:locaux_industriels] == "0" && params[:client][:batiment_agricole] == "0"
+    if params[:client] == nil || params[:client][:address] == nil || params[:client][:address] == ""
+      if params[:client] == nil
+        @final_users = users
+      elsif params[:client] != nil && params[:client][:couverture] == "0" && params[:client][:ouverture] == "0" && params[:client][:charpente] == "0" && params[:client][:terrasse] == "0" && params[:client][:plomberie] == "0" && params[:client][:architecte] == "0" && params[:client][:isolation] == "0" && params[:client][:maison] == "0" && params[:client][:chateau] == "0" && params[:client][:immeuble] == "0" && params[:client][:locaux_industriels] == "0" && params[:client][:batiment_agricole] == "0"
         @final_users = users
         @declaration = "Voici les professionnels référencés sur notre site, précisez un lieu et au moins 1 spécialité pour affiner votre recherche"
       else
