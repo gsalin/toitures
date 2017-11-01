@@ -1,5 +1,5 @@
 
-<h3>Bienvenue <strong style="font-style:italic;"><%= @user.first_name %></strong> <strong><%= @user.last_name %></strong> sur lestoitures.fr</h3>
+<h3>Bienvenue <strong style="font-style:italic;"><%= @user.first_name %></strong> <strong><%= @user.last_name %></strong>, <%= @user.company %> sur lestoitures.fr</h3>
 
 <p>Merci de compléter votre profil soigneusement <strong><span style="background-color: yellow"><%= link_to "ici", edit_user_url(@user) %></span></strong></p> afin que votre entreprise puisse être affichée dans l'annuaire.
 
