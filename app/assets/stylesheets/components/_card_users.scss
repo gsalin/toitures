@@ -31,23 +31,20 @@
   }
 
   .card_photo_presentation_xs {
-    position: relative;
 
     .link_pic:hover {
       opacity: 0.7;
     }
 
-    .user_logo_xs {
-      position: absolute;
-      left: 40px;
-      top: 20px;
-      max-width: 300px;
-      img {
-        max-width: 300px;
-        max-height: 100px;
-      }
+    .img-card {
+      width: 100%;
+      background: transparent;
+      color: $yellow;
+      text-decoration: none;
+      vertical-align: middle;
     }
   }
+
   .card_infos {
     padding: 10px 10px 10px 40px;
     .link_show {

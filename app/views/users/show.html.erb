@@ -4,7 +4,7 @@
   <% content_for :meta_image, cloudinary_url(@user.photo_presentation.path) %>
 <% end %>
 
-<!-- wrapper photo form -->
+<!-- Bannière et formulaire en view ordi -->
 <div class="wrapper hidden-xs ">
   <div class="wrapper_users_show">
     <div class="banner">
@@ -73,7 +73,7 @@
     </div>
   </div>
 </div>
-
+<!-- Bannière seule en view xs -->
 <div class="wrapper visible-xs hidden-md hidden-lg hidden-sm">
   <div class="wrapper_users_show">
     <div class="banner">
@@ -107,7 +107,7 @@
 <!-- Coordonnées visibles seulement en xs -->
 <div class="wrapper visible-xs hidden-md hidden-lg hidden-sm">
 
-  <div class="container visible underline-title-container">
+  <div class="container underline-title-container">
     <% if @user == current_user %>
       <h3> Coordonnées de <%= @user.company %>
         <%= link_to edit_user_path(current_user), class: "small-yellow-link" do %>
@@ -124,7 +124,7 @@
       <div class="row">
         <div class="description-row">
           <div class="col-xs-12">
-            <div class="user-information">
+            <div class="user-information-xs">
               <span id="cpy-address">Adresse : <%= @user.address %></span>
               <div class="phone-mail-banner">
                 <div>
@@ -370,7 +370,7 @@
             <% if @user.facebook != "" %>
               <div class="fb-page"
                 data-href=" <%= @user.facebook %>"
-                data-width="340"
+                data-width="300"
                 data-hide-cover="false"
                 data-show-facepile="true">
               </div>

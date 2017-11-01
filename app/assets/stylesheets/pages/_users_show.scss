@@ -1,5 +1,5 @@
 
-// banniere et formulaire
+// banniere en view ordi
 .wrapper_users_show {
   position: relative;
 
@@ -99,7 +99,84 @@
   }
 }
 
-// Banner pour le format xs
+//formulaire en view ordi (disparait en vue xs)
+
+.form-container {
+  position: absolute;
+  top: 37px;
+  left: 120px;
+  background-color: white;
+  height: 495px;
+  width: 320px;
+  z-index: 2;
+  opacity: 0.96;
+
+  .ul-position {
+    position: absolute;
+    top: 0px;
+    font-size: 20px;
+    width: 320px;
+    height: 60px;
+    border-bottom: 0px;
+  }
+
+  .nav-tabs {
+    li {
+      width: 160px;
+    }
+    a {
+      line-height: 1.4em;
+      color: black;
+      border:none;
+      margin:none;
+    }
+    li.inactif {
+      background-color: $medium-grey;
+      a {
+        background-color: $medium-grey;
+      }
+    }
+    li.active {
+      background-color: white !important;
+      a {
+        background-color:white;
+      }
+    }
+  }
+
+  .tab-pane.active {
+    position: absolute;
+    top: 48px;
+    width: 320px;
+    margin-top: 20px;
+  }
+
+  .simple_form.new_client {
+    width: 300px;
+    margin-left: 10px;
+  }
+
+
+  .form-control.text.optional {
+    height: 160px;
+  }
+
+  .button-message {
+    background-color: black;
+    color: white;
+    width: inherit;
+  }
+}
+
+.fa-text {
+  font-weight: lighter;
+  font-size: smaller;
+  margin-left: 6px;
+}
+
+
+
+// Bannière pour le format xs
 .banner-show-xs {
     text-align: center;
     height: 200px;
@@ -122,8 +199,8 @@
   width: 100%;
   img {
     position: absolute;
-    bottom: -145px;
-    left: 12px;
+    bottom: -115px;
+    left: 15px;
     border-radius: 50%;
   }
   h4 {
@@ -131,139 +208,40 @@
     color: white;
     min-width: 300px;
     position: absolute;
-    bottom: -122px;
-    left: 130px;
-  }
-  #cpy-address{
-    color: white;
-    position: absolute;
-    bottom: 60px;
-    // left: 615px;
-    font-weight: lighter;
-  }
-  .phone-mail-banner {
-    position: absolute;
-    //right: 300px;
-    color: white;
-    font-size: 1.1em;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-    align-items: center;
-    align-content: stretch;
-    height: 100%;
-    a {
-      color: white;
-      text-decoration: none;
-      &:hover {
-        color: $yellow;
-        text-decoration: none;
-      }
-    }
-  }
-  .fa {
-    margin-right: 10px;
+    bottom: -180px;
+    left: 15px;
   }
 }
-
-  //formulaire
-
-  .form-container {
-    position: absolute;
-    top: 37px;
-    left: 120px;
-    background-color: white;
-    height: 495px;
-    width: 320px;
-    z-index: 2;
-    opacity: 0.96;
-
-    .ul-position {
-      position: absolute;
-      top: 0px;
-      font-size: 20px;
-      width: 320px;
-      height: 60px;
-      border-bottom: 0px;
-    }
-
-    .nav-tabs {
-      li {
-        width: 160px;
-      }
-      a {
-        line-height: 1.4em;
-        color: black;
-        border:none;
-        margin:none;
-      }
-      li.inactif {
-        background-color: $medium-grey;
-        a {
-          background-color: $medium-grey;
-        }
-      }
-      li.active {
-        background-color: white !important;
-        a {
-          background-color:white;
-        }
-      }
-    }
-
-    .tab-pane.active {
-      position: absolute;
-      top: 48px;
-      width: 320px;
-      margin-top: 20px;
-    }
-
-    .simple_form.new_client {
-      width: 300px;
-      margin-left: 10px;
-    }
-
-
-    .form-control.text.optional {
-      height: 160px;
-    }
-
-    .button-message {
-      background-color: black;
-      color: white;
-      width: inherit;
-    }
-  }
-
-  .fa-text {
-    font-weight: lighter;
-    font-size: smaller;
-    margin-left: 6px;
-  }
 
 
 //Corps de la presentation
 
-.user-information {
+//user-information seulement valable en xs
+.user-information-xs {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: center;
-  align-items: center;
+  align-items: left;
   align-content: stretch;
   min-height: 100px;
   text-align: justify;
   background-color: white;
-  padding: 30px;
+  padding: 20px;
   border-radius: 3px;
   min-width: 332px;
   margin-top: 20px;
   box-shadow: 0 15px 35px rgba(50,50,93,0.1), 0 5px 15px rgba(0,0,0,0.07);
-  p {
-    font-size: 0.94em;
+  .fa-phone:before {
+    color: blue;
+    padding-right: 10px;
+  }
+  .fa-envelope:before {
+    color: blue;
+    padding-right: 10px;
   }
 }
+
 
 .user-description {
   display: flex;
