@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+
+      <h1 class="text-center">Bienvenue dans l'espace emploi.</h1>
+      <h5 class="text-center">Vous pouvez accéder à 3 services :</h5>
+      <ul>
+        <li>Accéder à la cvthèque pour trouver des employés / des freelances par type de métier</li>
+        <li>Créer une offre d'emploi qui sera visible sur le site</li>
+        <li>Déposer un cv / proposition d'emploi</li>
+      </ul>
+
+      <!-- Boutons -->
+      <% if current_user.pro? %>
+
+        <div class="banner">
+          <div class="container">
+            <div class="row">
+              <div class="col-xs-12 col-profile-submit">
+                <%= link_to annuaire_des_candidats_users_path, class: "navbar-wagon-button btn-edit-profil" do %>
+                  <span>Accéder à la cvthèque</span>
+                <% end %>
+                <%= link_to mes_articles_articles_path, class: "navbar-wagon-button btn-edit-profil" do %>
+                  <span>Créer une offre d'emploi</span>
+                <% end %>
+                <%= link_to new_project_path(current_user), class: "navbar-wagon-button btn-edit-profil" do %>
+                  <span>Déposer son cv</span>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

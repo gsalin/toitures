@@ -176,6 +176,9 @@ class UsersController < ApplicationController
     @users = User.worker
   end
 
+  def espace_emplois
+  end
+
   private
 
   def cleanup_new_photo_ids

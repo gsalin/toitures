@@ -6,6 +6,7 @@
   root to: 'pages#home'
   resources :users, only: [:index, :show, :edit, :update], path: 'annuaire' do
     get 'annuaire-des-candidats', on: :collection, controller: "users", action: "annuaire_des_candidats"
+    get 'espace-emplois', on: :collection, controller: "users", action: "espace_emplois"
   end
   resources :projects
   resources :needs, only: [:new, :create, :show, :edit, :update]
