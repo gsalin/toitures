@@ -5,11 +5,11 @@
   devise_for :users, :controllers => {:registrations => 'registrations'}
   root to: 'pages#home'
   resources :users, only: [:index, :show, :edit, :update], path: 'annuaire' do
-    get 'annuaire-des-candidats', on: :collection, controller: "users", action: "annuaire_des_candidats"
     get 'espace-emplois', on: :collection, controller: "users", action: "espace_emplois"
   end
   resources :projects
-  resources :needs, only: [:new, :create, :show, :edit, :update]
+  resources :job_ads, path: 'annonce-emplois'
+  resources :needs, only: [:new, :create, :show, :edit, :update], path: 'recherche-de-candidats'
   resources :clients, only: [:new, :create, :edit, :update]
   resources :articles, only: [:index, :new, :create, :show, :edit, :update], path: 'magazine'  do
     get 'energie', on: :collection, controller: "articles", action: "energie"

@@ -3,7 +3,6 @@ class CreateJobAds < ActiveRecord::Migration[5.0]
     create_table :job_ads do |t|
       t.integer :user_id
       t.string :title
-      t.string :string
       t.string :diploma
       t.text :description
       t.integer :experience

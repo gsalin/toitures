@@ -4,11 +4,11 @@ class User < ApplicationRecord
   enum state: [:pending, :accepted, :declined]
   has_attachment :photo_presentation, accept: [:jpg, :jpeg, :png]
   has_attachment :photo_company_logo, accept: [:jpg, :jpeg, :png, :svg]
-  has_attachment :photo, accept: [:jpg, :jpeg, :png]
-  has_attachment :cv, accept: [:pdf]
+  has_attachment :photo, accept: [:jpg, :jpeg, :png, :svg]
 
   has_many :projects, dependent: :destroy
   has_many :articles
+  has_one :job_ad, dependent: :destroy
 
   include FriendlyId
   friendly_id :company, :use => :slugged

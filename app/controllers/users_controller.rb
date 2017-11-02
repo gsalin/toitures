@@ -171,11 +171,6 @@ class UsersController < ApplicationController
     end
   end
 
-  def annuaire_des_candidats
-    @need = Need.new
-    @users = User.worker
-  end
-
   def espace_emplois
   end
 

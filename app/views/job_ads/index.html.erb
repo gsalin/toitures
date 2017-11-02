@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1 class="text-center">Annonces Emploi </h1>
+      <p class="text-center">Il ya actuellement <%= JobAd.count %> annonces d'emploi sur le site</p>
+      <%= render "shared/card_job_ad", users: @users %>
+       <h3 class="text-center">Je souhaite affiner ma recherche</h3>
+      <%= render "shared/form_needs", need: @need %>
+    </div>
+  </div>
+</div>
+
+

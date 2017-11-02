@@ -1,0 +1,90 @@
+
+.card-job-ad {
+  position: relative;
+  min-height: 400px;
+  margin-top: 30px;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: left;
+  align-content: stretch;
+  background-color: white;
+  border: $green-worker solid 0.5px;
+
+  .user-avatar {
+    border-radius: 50%;
+    margin-bottom: 25px;
+    margin-top: 25px;
+  }
+  .card-job-name {
+    position: absolute;
+    top: 15px;
+    left: 140px;
+  }
+  .card-job-title {
+    position: absolute;
+    top: 45px;
+    left: 140px;
+    .yellow-job-title {
+      color: $yellow;
+    }
+  }
+  .card-job-address {
+    position: absolute;
+    top: 95px;
+    left: 140px;
+    .blue-job-adress {
+      color: $blue;
+    }
+  }
+
+  .presentation {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    .card-job-description {
+      padding:5px;
+      margin-top: 5px;
+      border-radius: 3px;
+      align-items: left;
+      align-content: stretch;
+      background-color: $light-grey;
+      border: $green-worker solid 2px;
+      p {
+        font-size:0.9em;
+      }
+    }
+  }
+
+
+
+
+
+  .fa {
+    background-color: transparent;
+  }
+  .fa-address-card {
+    background-color: $green-worker;
+    color: white;
+    font-size: 2em;
+    padding: 10px;
+    border: none;
+    border-radius: 30px;
+    border: $green-worker solid 2px;
+     position: absolute;
+    top: -21px;
+    left: 324px;
+
+    &:hover {
+      border: $green-worker solid 2px;
+      background-color: white;
+      color: $green-worker;
+    }
+  }
+}
+
+#user-modal-dialog {
+  width: 1033px;
+}

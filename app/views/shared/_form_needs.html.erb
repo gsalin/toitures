@@ -1,7 +1,7 @@
 <div class="container container-form-needs">
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-      <%= simple_form_for(need) do |f| %>
+      <%= simple_form_for(@need) do |f| %>
       <%= f.input :address, placeholder: "Ville ou code postal", autofocus: true, label:"A proximité de" %>
       <div class="flexcontent-needs-form">
         <label><%= f.check_box :charpentier %><span>charpentier</span></label>
