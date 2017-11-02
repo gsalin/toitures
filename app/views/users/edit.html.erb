@@ -369,8 +369,6 @@
             <label><%= f.check_box :couvreur %><span>couvreur</span></label>
             <label><%= f.check_box :charpentier %><span>charpentier</span></label>
           </div>
-          <%= f.input :cv, as: :attachinary, required: true %>
-          <%= f.input :photo, as: :attachinary, required: true %>
           <%= f.button :submit, "Mettre à jour mes informations", class: "navbar-wagon-button" %>
         <% end %>
       </div>
