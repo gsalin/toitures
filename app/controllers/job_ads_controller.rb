@@ -16,6 +16,7 @@ class JobAdsController < ApplicationController
     @job_ad = JobAd.new(job_ad_params)
     @job_ad.user = current_user
     if @job_ad.save
+      # redirect_to job_ads_path
       redirect_to job_ads_path
     else
       render :new
@@ -24,19 +25,24 @@ class JobAdsController < ApplicationController
 
 
   def edit
-    if @job_ad.user != current_user
-      redirect_to root_path
-    end
+    @job_ad.user = current_user
   end
 
 
   def update
+    @user = current_user
+    # if @user.update
+    #   redirect_to espace_emplois_users_path(current_user)
+    # else
+    #   render :edit
+    # end
+
     if @job_ad.user != current_user
       redirect_to root_path
     end
 
     if @job_ad.update(job_ad_params)
-      redirect_to job_ads_path
+      redirect_to espace_emplois_users_path(current_user)
     else
       render :edit
     end

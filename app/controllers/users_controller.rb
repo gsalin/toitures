@@ -163,7 +163,7 @@ class UsersController < ApplicationController
       if @user.pro? || @user.institution?
         redirect_to user_path(@user)
       else
-        redirect_to annuaire_des_candidats_users_path
+        redirect_to espace_emplois_users_path(current_user)
       end
     else
       cleanup_new_photo_ids

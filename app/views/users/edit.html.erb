@@ -355,23 +355,41 @@
 
   <div class="container container-edit-worker">
     <div class="row">
-      <div class="col-xs-10 col-xs-offset-1 col-md-6 col-md-offset-3">
+       <div class="col-xs-12 col-md-6">
         <%= simple_form_for(@user) do |f| %>
-          <%= f.input :email, presence: true %>
-          <%= f.input :mobile_phone, presence: true %>
-          <%= f.input :first_name, presence: true %>
-          <%= f.input :last_name, presence: true %>
-          <%= f.input :address, presence: true %>
-          <div class="flexbox-form-edit-worker">
-            <% if @user.errors[:couvreur].present? %>
-              <p class="errors">Sélectionnez au moins 1 métier</p>
-            <% end %>
-            <label><%= f.check_box :couvreur %><span>couvreur</span></label>
-            <label><%= f.check_box :charpentier %><span>charpentier</span></label>
+          <h5>Mes informations personnelles</h5>
+          <%= f.input :first_name, autofocus: true %>
+          <%= f.input :last_name %>
+          <%= f.input :address %>
+          <%= f.input :city, required: true %>
+          <%= f.input :zip_code, required: true %>
+          <%= f.input :office_phone, required: true %>
+          <%= f.input :email, required: true %>
+          <%= f.hidden_field :company, :value => "Candidat" %>
+          <!--  <#%= f.input :company, label: "statut", hint: "freelance, diplomé, en recherche d'emploi", placeholder: "Jeune diplômé", required: true %> -->
+
+          <div id="position_btn_project" class="text-center">
+            <%= f.button :submit, "Mettre à jour mes informations", class: "navbar-wagon-button" %>
           </div>
-          <%= f.button :submit, "Mettre à jour mes informations", class: "navbar-wagon-button" %>
         <% end %>
       </div>
+      <!-- <div class="col-xs-10 col-xs-offset-1 col-md-6 col-md-offset-3">
+        <#%= simple_form_for(@user) do |f| %>
+          <#%= f.input :email, presence: true %>
+          <#%= f.input :mobile_phone, presence: true %>
+          <#%= f.input :first_name, presence: true %>
+          <#%= f.input :last_name, presence: true %>
+          <#%= f.input :address, presence: true %>
+          <div class="flexbox-form-edit-worker">
+            <#% if @user.errors[:couvreur].present? %>
+              <p class="errors">Sélectionnez au moins 1 métier</p>
+            <#% end %>
+            <label><#%= f.check_box :couvreur %><span>couvreur</span></label>
+            <label><#%= f.check_box :charpentier %><span>charpentier</span></label>
+          </div>
+          <#%= f.button :submit, "Mettre à jour mes informations", class: "navbar-wagon-button" %>
+        <#% end %>
+      </div> -->
     </div>
   </div>
 

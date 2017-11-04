@@ -1,0 +1,54 @@
+=> [32m#<Arel::Nodes::SelectStatement:0x0055dfccb262c0[0m
+ @cores[32m=[0m
+  [[32m#<Arel::Nodes::SelectCore:0x0055dfccb26298[0m
+    @groups[32m=[0m[],
+    @havings[32m=[0m[],
+    @projections[32m=[0m
+     [[32m#<struct Arel::Attributes::Attribute[0m
+       relation[32m=[0m
+        [32m#<Arel::Table:0x0055dfca3d89e8[0m
+         @columns[32m=[0m[1;36mnil[0m,
+         @name[32m=[0m[31m[1;31m"[0m[31musers[1;31m"[0m[31m[0m,
+         @table_alias[32m=[0m[1;36mnil[0m,
+         @type_caster[32m=[0m
+          [32m#<ActiveRecord::TypeCaster::Map:0x0055dfca3d8cb8[0m
+           @types[32m=[0m
+            User([35mid[0m: integer, [35memail[0m: string, [35mencrypted_password[0m: string, [35mreset_password_token[0m: string, [35mreset_password_sent_at[0m: datetime, [35mremember_created_at[0m: datetime, [35msign_in_count[0m: integer, [35mcurrent_sign_in_at[0m: datetime, [35mlast_sign_in_at[0m: datetime, [35mcurrent_sign_in_ip[0m: inet, [35mlast_sign_in_ip[0m: inet, [35mcreated_at[0m: datetime, [35mupdated_at[0m: datetime, [35mcompany[0m: string, [35mfirst_name[0m: string, [35mlast_name[0m: string, [35mposition[0m: string, [35moffice_phone[0m: string, [35mmobile_phone[0m: string, [35maddress[0m: string, [35mdescription[0m: text, [35mlatitude[0m: float, [35mlongitude[0m: float, [35mradius[0m: integer, [35madmin[0m: boolean, [35mconstruction[0m: boolean, [35mrenovation[0m: boolean, [35mentretien[0m: boolean, [35mmaison[0m: boolean, [35mchateau[0m: boolean, [35mimmeuble[0m: boolean, [35mmonument_historique[0m: boolean, [35mcharpente[0m: boolean, [35mcouverture[0m: boolean, [35mouverture[0m: boolean, [35mterrasse[0m: boolean, [35mplomberie[0m: boolean, [35mcity[0m: string, [35mzip_code[0m: string, [35mslug[0m: string, [35mqualibat[0m: boolean, [35mrge[0m: boolean, [35mmh[0m: boolean, [35mstatus[0m: integer, [35mlooking_for_job[0m: boolean, [35mcharpentier[0m: boolean, [35mcouvreur[0m: boolean, [35mstate[0m: integer, [35mlocaux_industriels[0m: boolean, [35mfacebook[0m: string, [35mffb[0m: boolean, [35mwebsite[0m: string, [35mtwitter[0m: string, [35mlinkedin[0m: string, [35mpress_link_1[0m: string, [35mpress_link_title_1[0m: string, [35mpress_link_2[0m: string, [35mpress_link_title_2[0m: string, [35mpress_link_3[0m: string, [35mpress_link_title_3[0m: string, [35marchitecte[0m: boolean, [35misolation[0m: boolean, [35mepv[0m: boolean, [35mspecialite1[0m: string, [35mspecialite2[0m: string, [35mspecialite3[0m: string, [35mbatiment_agricole[0m: boolean, [35mcapeb[0m: boolean, [35mrge_eco_artisan[0m: boolean, [35mmof[0m: boolean, [35martisan[0m: boolean, [35martisan_d_art[0m: boolean, [35mmaitre_artisan[0m: boolean)[32m>[0m[32m>[0m,
+       name[32m=[0m[31m[1;31m"[0m[31m*[1;31m"[0m[31m[0m[32m>[0m],
+    @set_quantifier[32m=[0m[1;36mnil[0m,
+    @source[32m=[0m
+     [32m#<Arel::Nodes::JoinSource:0x0055dfccb26270[0m
+      @left[32m=[0m
+       [32m#<Arel::Table:0x0055dfca3d89e8[0m
+        @columns[32m=[0m[1;36mnil[0m,
+        @name[32m=[0m[31m[1;31m"[0m[31musers[1;31m"[0m[31m[0m,
+        @table_alias[32m=[0m[1;36mnil[0m,
+        @type_caster[32m=[0m
+         [32m#<ActiveRecord::TypeCaster::Map:0x0055dfca3d8cb8[0m
+          @types[32m=[0m
+           User([35mid[0m: integer, [35memail[0m: string, [35mencrypted_password[0m: string, [35mreset_password_token[0m: string, [35mreset_password_sent_at[0m: datetime, [35mremember_created_at[0m: datetime, [35msign_in_count[0m: integer, [35mcurrent_sign_in_at[0m: datetime, [35mlast_sign_in_at[0m: datetime, [35mcurrent_sign_in_ip[0m: inet, [35mlast_sign_in_ip[0m: inet, [35mcreated_at[0m: datetime, [35mupdated_at[0m: datetime, [35mcompany[0m: string, [35mfirst_name[0m: string, [35mlast_name[0m: string, [35mposition[0m: string, [35moffice_phone[0m: string, [35mmobile_phone[0m: string, [35maddress[0m: string, [35mdescription[0m: text, [35mlatitude[0m: float, [35mlongitude[0m: float, [35mradius[0m: integer, [35madmin[0m: boolean, [35mconstruction[0m: boolean, [35mrenovation[0m: boolean, [35mentretien[0m: boolean, [35mmaison[0m: boolean, [35mchateau[0m: boolean, [35mimmeuble[0m: boolean, [35mmonument_historique[0m: boolean, [35mcharpente[0m: boolean, [35mcouverture[0m: boolean, [35mouverture[0m: boolean, [35mterrasse[0m: boolean, [35mplomberie[0m: boolean, [35mcity[0m: string, [35mzip_code[0m: string, [35mslug[0m: string, [35mqualibat[0m: boolean, [35mrge[0m: boolean, [35mmh[0m: boolean, [35mstatus[0m: integer, [35mlooking_for_job[0m: boolean, [35mcharpentier[0m: boolean, [35mcouvreur[0m: boolean, [35mstate[0m: integer, [35mlocaux_industriels[0m: boolean, [35mfacebook[0m: string, [35mffb[0m: boolean, [35mwebsite[0m: string, [35mtwitter[0m: string, [35mlinkedin[0m: string, [35mpress_link_1[0m: string, [35mpress_link_title_1[0m: string, [35mpress_link_2[0m: string, [35mpress_link_title_2[0m: string, [35mpress_link_3[0m: string, [35mpress_link_title_3[0m: string, [35marchitecte[0m: boolean, [35misolation[0m: boolean, [35mepv[0m: boolean, [35mspecialite1[0m: string, [35mspecialite2[0m: string, [35mspecialite3[0m: string, [35mbatiment_agricole[0m: boolean, [35mcapeb[0m: boolean, [35mrge_eco_artisan[0m: boolean, [35mmof[0m: boolean, [35martisan[0m: boolean, [35martisan_d_art[0m: boolean, [35mmaitre_artisan[0m: boolean)[32m>[0m[32m>[0m,
+      @right[32m=[0m[][32m>[0m,
+    @top[32m=[0m[1;36mnil[0m,
+    @wheres[32m=[0m
+     [[32m#<Arel::Nodes::And:0x0055dfccb25fc8[0m
+       @children[32m=[0m
+        [[32m#<Arel::Nodes::Equality:0x0055dfccb26540[0m
+          @left[32m=[0m
+           [32m#<struct Arel::Attributes::Attribute[0m
+            relation[32m=[0m
+             [32m#<Arel::Table:0x0055dfca3d89e8[0m
+              @columns[32m=[0m[1;36mnil[0m,
+              @name[32m=[0m[31m[1;31m"[0m[31musers[1;31m"[0m[31m[0m,
+              @table_alias[32m=[0m[1;36mnil[0m,
+              @type_caster[32m=[0m
+               [32m#<ActiveRecord::TypeCaster::Map:0x0055dfca3d8cb8[0m
+                @types[32m=[0m
+                 User([35mid[0m: integer, [35memail[0m: string, [35mencrypted_password[0m: string, [35mreset_password_token[0m: string, [35mreset_password_sent_at[0m: datetime, [35mremember_created_at[0m: datetime, [35msign_in_count[0m: integer, [35mcurrent_sign_in_at[0m: datetime, [35mlast_sign_in_at[0m: datetime, [35mcurrent_sign_in_ip[0m: inet, [35mlast_sign_in_ip[0m: inet, [35mcreated_at[0m: datetime, [35mupdated_at[0m: datetime, [35mcompany[0m: string, [35mfirst_name[0m: string, [35mlast_name[0m: string, [35mposition[0m: string, [35moffice_phone[0m: string, [35mmobile_phone[0m: string, [35maddress[0m: string, [35mdescription[0m: text, [35mlatitude[0m: float, [35mlongitude[0m: float, [35mradius[0m: integer, [35madmin[0m: boolean, [35mconstruction[0m: boolean, [35mrenovation[0m: boolean, [35mentretien[0m: boolean, [35mmaison[0m: boolean, [35mchateau[0m: boolean, [35mimmeuble[0m: boolean, [35mmonument_historique[0m: boolean, [35mcharpente[0m: boolean, [35mcouverture[0m: boolean, [35mouverture[0m: boolean, [35mterrasse[0m: boolean, [35mplomberie[0m: boolean, [35mcity[0m: string, [35mzip_code[0m: string, [35mslug[0m: string, [35mqualibat[0m: boolean, [35mrge[0m: boolean, [35mmh[0m: boolean, [35mstatus[0m: integer, [35mlooking_for_job[0m: boolean, [35mcharpentier[0m: boolean, [35mcouvreur[0m: boolean, [35mstate[0m: integer, [35mlocaux_industriels[0m: boolean, [35mfacebook[0m: string, [35mffb[0m: boolean, [35mwebsite[0m: string, [35mtwitter[0m: string, [35mlinkedin[0m: string, [35mpress_link_1[0m: string, [35mpress_link_title_1[0m: string, [35mpress_link_2[0m: string, [35mpress_link_title_2[0m: string, [35mpress_link_3[0m: string, [35mpress_link_title_3[0m: string, [35marchitecte[0m: boolean, [35misolation[0m: boolean, [35mepv[0m: boolean, [35mspecialite1[0m: string, [35mspecialite2[0m: string, [35mspecialite3[0m: string, [35mbatiment_agricole[0m: boolean, [35mcapeb[0m: boolean, [35mrge_eco_artisan[0m: boolean, [35mmof[0m: boolean, [35martisan[0m: boolean, [35martisan_d_art[0m: boolean, [35mmaitre_artisan[0m: boolean)[32m>[0m[32m>[0m,
+            name[32m=[0m[31m[1;31m"[0m[31mstatus[1;31m"[0m[31m[0m[32m>[0m,
+          @right[32m=[0m[32m#<Arel::Nodes::BindParam:0x0055dfccb26748[0m[32m>[0m[32m>[0m][32m>[0m],
+    @windows[32m=[0m[][32m>[0m],
+ @limit[32m=[0m[1;36mnil[0m,
+ @lock[32m=[0m[1;36mnil[0m,
+ @offset[32m=[0m[1;36mnil[0m,
+ @orders[32m=[0m[],
+ @with[32m=[0m[1;36mnil[0m[32m>[0m
