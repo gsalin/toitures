@@ -3,11 +3,9 @@
     <div class="col-xs-12">
       <h1 class="text-center">Annonces Emploi </h1>
       <p class="text-center">Il ya actuellement <%= JobAd.count %> annonces d'emploi sur le site</p>
-    </div>
       <% @job_ads.each do |job_ad| %>
         <%= render "shared/card_job_ad", job_ad: job_ad %>
       <% end %>
-    <div class="col-xs-12">
       <h3 class="text-center">Je souhaite affiner ma recherche</h3>
       <%= render "shared/form_needs", need: @need %>
     </div>
