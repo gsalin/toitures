@@ -8,11 +8,11 @@
         </div>
         <div class="col-xs-12 col-sm-6 col-profile-submit">
           <h3 class="text-center">Les annonces d'emploi</h3>
-          <% if @job_ad = nil %>
+         <!--  <#% if @job_ad = nil %>
             <p>Vous n'avez pas encore créé d'annonce de recherche d'emploi dans la cvthèque.</p>
-          <% else %>
+          <#% else %>
             <p>Vous avez déjà créé une annonce de recherche d'emploi dans la cvthèque. Vous pouvez la modifier ou la supprimer.</p>
-          <% end %>
+          <#% end %> -->
 
           <%= link_to job_ads_path, class: "navbar-wagon-button btn-edit-profil" do %>
             <span>Accéder à la cvthèque</span>
@@ -25,13 +25,13 @@
 
         <div class="col-xs-12 col-sm-6 col-profile-submit">
           <h3 class="text-center"> Les offres d'emploi</h3>
-          <% if @job_offers.count > 1 %>
+         <!--  <#% if @job_offers.count > 1 %>
             <p>Vous avez déjà créé <%= @job_offers.count %> offres d'emploi. Vous pouvez les modifier ou les supprimer.</p>
-          <% elsif @job_offers.count = 1 %> %>
+          <#% elsif @job_offers.count = 1 %> %>
             <p>Vous avez déjà créé une offre d'emploi. Vous pouvez la modifier, la supprimer et/ou en créer d'autres.</p>
-          <% else %>
+          <#% else %>
             <p>Vous n'avez pas encore créer d'offre d'emploi. Vous pouvez en créer une.</p>
-          <% end %>
+          <#% end %> -->
 
           <%= link_to job_offers_path, class: "navbar-wagon-button btn-edit-profil" do %>
             <span>Accéder aux offres d'emplois</span>
