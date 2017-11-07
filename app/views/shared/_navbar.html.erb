@@ -41,35 +41,55 @@
     <% if user_signed_in? %>
         <div class="navbar-wagon-item">
           <div class="dropdown">
-          <% if current_user.photo != nil %>
-            <%= cl_image_tag current_user.photo.path, width: 50, height: 50, crop: :fill, class: "worker-avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown", style: "border-radius:50%;" %>
-          <% elsif current_user.photo_company_logo != nil %>
-            <%= cl_image_tag current_user.photo_company_logo.path, width: 50, height: 50, crop: :fill, class: "worker-avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown", style: "border-radius:50%;" %>
-          <% else %>
-            <button type="button" class="navbar-wagon-item navbar-wagon-link connect-btn-navbar" id="worker-btn-navbar" data-toggle="dropdown">Mon compte</button>
+            <% if current_user.photo != nil %>
+              <%= cl_image_tag current_user.photo.path, width: 50, height: 50, crop: :fill, class: "worker-avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown", style: "border-radius:50%;" %>
+            <% elsif current_user.photo_company_logo != nil %>
+              <%= cl_image_tag current_user.photo_company_logo.path, width: 50, height: 50, crop: :fill, class: "worker-avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown", style: "border-radius:50%;" %>
+            <% elsif current_user.job_ad != nil && current_user.job_ad.profile_photo != nil %>
+              <%= cl_image_tag current_user.job_ad.profile_photo.path, width: 50, height: 50, crop: :fill, class: "worker-avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown", style: "border-radius:50%;" %>
+
+            <% else %>
+              <button type="button" class="navbar-wagon-item navbar-wagon-link connect-btn-navbar" id="worker-btn-navbar" data-toggle="dropdown">Mon compte</button>
             <% end %>
-            <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-              <li>
-                <%= link_to user_path(current_user) do %>
-                  <i class="fa fa-user"></i> <%= t(".profile", default: "Voir ma page de profil") %>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to edit_user_path(current_user) do %>
-                  <i class="fa fa-pencil"></i> <%= t(".profile", default: "Modifier mon profil") %>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to annuaire_des_candidats_users_path do %>
-                  <i class="fa fa-users"></i> <%= t(".profile", default: "Index des candidats") %>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to destroy_user_session_path, method: :delete do %>
-                  <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Me déconnecter") %>
-                <% end %>
-              </li>
-            </ul>
+            <% if current_user.status == "pro" || current_user.status == "institution" %>
+              <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+                <li>
+                  <%= link_to user_path(current_user) do %>
+                    <i class="fa fa-user"></i> <%= t(".profile", default: "Voir ma page de profil") %>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to edit_user_path(current_user) do %>
+                    <i class="fa fa-pencil"></i> <%= t(".profile", default: "Modifier mon profil") %>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to espace_emplois_users_path do %>
+                    <i class="fa fa-users"></i> <%= t(".profile", default: "Espace Emploi") %>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to destroy_user_session_path, method: :delete do %>
+                    <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Me déconnecter") %>
+                  <% end %>
+                </li>
+              </ul>
+            <% else %>
+              <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+                <li>
+                  <%= link_to espace_emplois_users_path do %>
+                    <i class="fa fa-users"></i> <%= t(".profile", default: "Espace Emploi Candidat") %>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to destroy_user_session_path, method: :delete do %>
+                    <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Me déconnecter") %>
+                  <% end %>
+                </li>
+              </ul>
+
+
+            <% end %>
           </div>
         </div>
 
@@ -138,8 +158,8 @@
           <% end %>
         </li>
         <li>
-          <%= link_to annuaire_des_candidats_users_path do %>
-            <i class="fa fa-users"></i> <%= t(".profile", default: "Index des candidats") %>
+          <%= link_to espace_emplois_users_path do %>
+            <i class="fa fa-users"></i> <%= t(".profile", default: "Espace Emplois") %>
           <% end %>
         </li>
         <li>

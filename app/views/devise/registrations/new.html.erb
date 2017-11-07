@@ -1,29 +1,71 @@
-<h2 class="text-center"><%= t(".sign_up") %></h2>
 
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-4 col-sm-offset-4">
 
-      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-        <%= f.error_notification %>
+      <% if request.query_parameters == {"status"=>"pro"} %>
+        <h3 class="text-center"><%= t(".sign_up") %> Professionnel</h3>
 
-        <div class="form-inputs">
-          <%= f.input :first_name, autofocus: true %>
-          <%= f.input :last_name %>
-          <%= f.input :company, required: true %>
-          <%= f.input :email, required: true %>
-          <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-          <%= f.input :password_confirmation, required: true %>
-          <%= hidden_field_tag "user[status]", resource.status.presence || params[:status] %>
-        </div>
-        <div class="form-actions text-center">
-          <%= f.button :submit, t(".sign_up") %>
-        </div>
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= f.error_notification %>
+            <div class="form-inputs">
+              <%= f.input :first_name, autofocus: true %>
+              <%= f.input :last_name %>
+              <%= f.input :company, required: true %>
+              <%= f.input :email, required: true %>
+              <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+              <%= f.input :password_confirmation, required: true %>
+              <%= hidden_field_tag "user[status]", resource.status.presence || params[:status] %>
+            </div>
+            <div class="form-actions text-center">
+              <%= f.button :submit, t(".sign_up") %>
+            </div>
+        <% end %>
+
+      <% elsif request.query_parameters == {"status"=>"institution"} %>
+
+        <h3 class="text-center"><%= t(".sign_up") %> Association</h3>
+
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+
+          <div class="form-inputs">
+            <%= f.input :first_name, autofocus: true %>
+            <%= f.input :last_name %>
+            <%= f.input :company, label: "Association", required: true %>
+            <%= f.input :email, required: true %>
+            <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+            <%= f.input :password_confirmation, required: true %>
+            <%= hidden_field_tag "user[status]", resource.status.presence || params[:status] %>
+          </div>
+          <div class="form-actions text-center">
+            <%= f.button :submit, t(".sign_up") %>
+          </div>
+        <% end %>
+
+      <% else %>
+        <h2 class="text-center"><%= t(".sign_up") %></h2>
+        <h3 class="text-center">Candidat</h3>
+
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <div class="form-inputs">
+            <%= f.input :first_name, autofocus: true %>
+            <%= f.input :last_name, required: true %>
+
+           <!--  <#%= f.input :company, label: "statut", hint: "freelance, diplomé, en recherche d'emploi", placeholder: "Jeune diplômé", required: true %> -->
+            <%= f.hidden_field :company, :value => "Candidat" %>
+            <%= f.input :email, required: true %>
+            <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+            <%= f.input :password_confirmation, required: true %>
+            <%= hidden_field_tag "user[status]", resource.status.presence || params[:status] %>
+          </div>
+          <div class="form-actions text-center">
+            <%= f.button :submit, t(".sign_up") %>
+          </div>
+        <% end %>
       <% end %>
+      <div class="text-center">
+        <%= render "devise/shared/links" %>
+      </div>
     </div>
   </div>
-</div>
-
-<div class="text-center">
-  <%= render "devise/shared/links" %>
 </div>

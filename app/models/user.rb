@@ -4,11 +4,11 @@ class User < ApplicationRecord
   enum state: [:pending, :accepted, :declined]
   has_attachment :photo_presentation, accept: [:jpg, :jpeg, :png]
   has_attachment :photo_company_logo, accept: [:jpg, :jpeg, :png, :svg]
-  has_attachment :photo, accept: [:jpg, :jpeg, :png]
-  has_attachment :cv, accept: [:pdf]
+  has_attachment :photo, accept: [:jpg, :jpeg, :png, :svg]
 
   has_many :projects, dependent: :destroy
   has_many :articles
+  has_one :job_ad, dependent: :destroy
 
   include FriendlyId
   friendly_id :company, :use => :slugged
@@ -43,8 +43,8 @@ class User < ApplicationRecord
   validates :zip_code, presence: true, on: :update, if: :pro_or_institution?
   validates :photo_presentation, presence: true, on: :update, if: :pro_or_institution?
   validates :photo_company_logo, presence: true, on: :update, if: :pro_or_institution?
-  validates :cv, presence: true, on: :update, if: :worker?
-  validates :photo, presence: true, on: :update, if: :worker?
+  # validates :cv, presence: true, on: :update, if: :worker?
+  # validates :photo, presence: true, on: :update, if: :worker?
   validates :radius, numericality: { only_integer: true, greater_than_or_equal_to: 50 }, on: :update, presence: true, if: :pro?
 
   validate :has_at_least_one_speciality, on: :update, if: :pro?

@@ -1,11 +1,12 @@
 $(document).ready(function() {
   $(function() {
 
-    // textarea count
+    // count pour description user
     $("#user_description").on("keyup", function(){
       var length = $(this).val().length;
       $("#description-count").html(length);
     });
+    // count pour les projets
     $("#project_title").on("keyup", function(){
       var length = $(this).val().length;
       $("#title-project-count").html(length);
@@ -14,6 +15,7 @@ $(document).ready(function() {
       var length = $(this).val().length;
       $("#description-project-count").html(length);
     });
+    // count pour les articles
     $("#article_body").on("keyup", function(){
       var length = $(this).val().length;
       $("#body-article-count").html(length);
@@ -34,6 +36,16 @@ $(document).ready(function() {
       var length = $(this).val().length;
       $("#article-summary-count").html(length);
     });
+    // count pour les job_ads
+     $("#job_ad_title").on("keyup", function(){
+      var length = $(this).val().length;
+      $("#title-job-ad-count").html(length);
+    });
+    $("#job_ad_description").on("keyup", function(){
+      var length = $(this).val().length;
+      $("#description-job-ad-count").html(length);
+    });
+
 
     var titres = ["Restauration d'une toiture ancienne à Tours", "Etanchéité et création d'une terrasse à Garches ", "Pose d'une véranda dans un pavillon", "Restauration d'une église en Charente", "Création d'une fenêtre de toit"]
 

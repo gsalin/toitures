@@ -1,0 +1,92 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <% if current_user.pro? %>
+        <br>
+        <h1 class="text-center">Bienvenue dans votre espace emploi <%= current_user.company %>.</h1>
+        <br>
+        <h5>Vous pouvez accéder actuellement à 2 services :</h5>
+        <br>
+        <ul>
+          <li>Accéder à la cvthèque pour trouver des employés / des freelances par type de métier</li>
+          <li>Déposer un cv / proposition d'emploi</li>
+        </ul>
+        <h5>Vous pourrez bientôt accéder à :</h5>
+        <br>
+        <ul>
+          <li>Créer une offre d'emploi qui sera visible sur le site</li>
+        </ul>
+        <!-- Boutons -->
+        <div class="banner">
+          <div class="container">
+            <div class="row">
+              <div class="col-xs-12 col-profile-submit">
+
+                <%= link_to job_ads_path, class: "navbar-wagon-button btn-edit-profil" do %>
+                  <span>Accéder à la cvthèque</span>
+                <% end %>
+
+                <% if current_user.job_ad != nil %>
+                  <%= link_to edit_job_ad_path(current_user), class: "navbar-wagon-button btn-edit-profil" do %>
+                   <span>éditer mon annonce d'emploi</span>
+                  <% end %>
+                <% else %>
+                  <%= link_to new_job_ad_path(current_user), class: "navbar-wagon-button btn-edit-profil" do %>
+                    <span>Créer une annonce d'emploi</span>
+                  <% end %>
+                <% end %>
+
+               <!--  <#%= link_to mes_articles_articles_path, class: "navbar-wagon-button btn-edit-profil" do %>
+                  <span>Créer une offre d'emploi</span>
+                <#% end %> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+      <% if current_user.worker? %>
+        <br>
+        <h1 class="text-center"> <%= current_user.first_name %>, bienvenue votre espace emploi.</h1>
+        <br>
+        <h5>Vous pouvez accéder actuellement à 2 services :</h5>
+        <br>
+        <ul>
+          <li>Accéder à la cvthèque pour regarder votre cv</li>
+          <li>Déposer un cv / proposition d'emploi</li>
+        </ul>
+
+        <!-- Boutons -->
+        <div class="banner">
+          <div class="container">
+            <div class="row">
+              <div class="col-xs-12 col-profile-submit">
+
+                <%= link_to job_ads_path, class: "navbar-wagon-button btn-edit-profil" do %>
+                  <span>Accéder à la cvthèque</span>
+                <% end %>
+
+                <%= link_to edit_user_path(current_user), class: "navbar-wagon-button btn-edit-profil" do %>
+                 <span>éditer mon profil</span>
+                <% end %>
+
+                <% if current_user.job_ad %>
+                  <%= link_to edit_job_ad_path(current_user), class: "navbar-wagon-button btn-edit-profil" do %>
+                    <span>éditer mon annonce d'emploi</span>
+                  <% end %>
+
+                <% else %>
+                  <%= link_to new_job_ad_path(current_user), class: "navbar-wagon-button btn-edit-profil" do %>
+                   <span>créer une annonce d'emploi</span>
+                  <% end %>
+
+                <% end %>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

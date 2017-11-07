@@ -1,0 +1,43 @@
+<h1>New job_ads</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1 class="text-center", style="margin-bottom: 40px;">Créer une nouvelle annonce en tant que candidat</h1>
+    </div>
+
+      <%= simple_form_for(@job_ad) do |f| %>
+
+        <div class="col-xs-12 col-md-6">
+          <%= f.input :title, label: "Titre de votre annonce", hint: "entre 15 et 50 charactères :", placeholder: "exemple : couvreur-zingueur, ornemaniste, charpentier" %>
+          <div class="text-right counter-style">
+            <span>charactères :</span>
+            <strong><span id="title-job-ad-count"></strong></span>
+          </div>
+          <%= f.input :diploma %>
+          <%= f.input :experience %>
+          <%= f.input :remuneration %>
+
+          <%= f.input :description, as: :text, hint: "entre 100 et 500 charactères :", placeholder: "Décrivez ce vous faites, les types de travaux que vous recherchez, vos expériences..."   %>
+          <div class="text-right counter-style">
+            <span>charactères :</span>
+            <strong><span id="description-job-ad-count"></strong></span>
+          </div>
+          <div class="col-xs-12 col-md-3 col-md-offset-1">
+            <%= f.input :profile_photo, as: :attachinary, hint: "Une photo de profil" %>
+          </div>
+          <div class="col-xs-12 col-md-3 col-md-offset-1">
+            <%= f.input :cv, as: :attachinary, hint: "Télécharger votre cv" %>
+          </div>
+
+          <div id="position_btn_project" class="text-center">
+            <%= f.button :submit, "Publier mon annonce", class: "navbar-wagon-button" %>
+          </div>
+        </div>
+      <% end %>
+
+  </div>
+</div>
+
+
+

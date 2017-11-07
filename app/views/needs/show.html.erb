@@ -1,4 +1,11 @@
 
+<h1>Recherche spécifique</h1>
+
 <%= render "shared/form_needs", need: @need %>
 
-<%= render "shared/workers_card", users: @selected_workers %>
+<% if @card_jobs != nil %>
+  <%= render "shared/card_job_card", users: @selected_workers %>
+<% else %>
+  <p>Votre recherche n'a pas abouti, il n 'y a aucun pro recherchant un job selon ces critères </p>
+<% end %>
+

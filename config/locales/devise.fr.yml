@@ -15,7 +15,7 @@ fr:
         unlock_token: Clé de déblocage
         first_name: Prénom
         last_name: Nom
-        company: Nom de la société
+        company: Société
         address: Adresse
         office_phone: Téléphone principal
         mobile_phone: Téléphone secondaire
