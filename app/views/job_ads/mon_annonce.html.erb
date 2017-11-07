@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1 class="text-center">Mon annonce d'emploi</h1>
+
+      <div class="text-center" style="margin-top: 20px; margin-bottom: 40px;">
+        <%= link_to new_job_ad_path, class: "navbar-wagon-button btn" do %>
+          <span>Créer une nouvelle annonce</span>
+        <% end %>
+        <%= link_to espace_emplois_users_path, class: "navbar-wagon-button btn" do %>
+          <span>Revenir à l'espace emploi</span>
+        <% end %>
+      </div>
+    </div>
+
+    <% @job_ads.each do |job_ad| %>
+      <%= render "shared/card_job_ad", job_ad: job_ad %>
+      <div class="col-xs-12 col-sm-4">
+        <%= link_to edit_job_ad_path(job_ad), class: "small-yellow-link" do %>
+          <span> Modifier mon annonce de recherche d'emploi </span>
+        <% end %>
+      </div>
+    <% end %>
+
+  </div>
+</div>

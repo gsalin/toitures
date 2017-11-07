@@ -6,6 +6,7 @@ $(document).ready(function() {
       var length = $(this).val().length;
       $("#description-count").html(length);
     });
+
     // count pour les projets
     $("#project_title").on("keyup", function(){
       var length = $(this).val().length;
@@ -15,6 +16,7 @@ $(document).ready(function() {
       var length = $(this).val().length;
       $("#description-project-count").html(length);
     });
+
     // count pour les articles
     $("#article_body").on("keyup", function(){
       var length = $(this).val().length;
@@ -36,6 +38,7 @@ $(document).ready(function() {
       var length = $(this).val().length;
       $("#article-summary-count").html(length);
     });
+
     // count pour les job_ads
      $("#job_ad_title").on("keyup", function(){
       var length = $(this).val().length;
@@ -45,6 +48,25 @@ $(document).ready(function() {
       var length = $(this).val().length;
       $("#description-job-ad-count").html(length);
     });
+
+    // count pour les job_offers
+     $("#job_offer_title").on("keyup", function(){
+      var length = $(this).val().length;
+      $("#title-job-offer-count").html(length);
+    });
+    $("#job_offer_description").on("keyup", function(){
+      var length = $(this).val().length;
+      $("#description-job-offer-count").html(length);
+    });
+    $("#job_offer_mission").on("keyup", function(){
+      var length = $(this).val().length;
+      $("#mission-job-offer-count").html(length);
+    });
+    $("#job_offer_profile").on("keyup", function(){
+      var length = $(this).val().length;
+      $("#profile-job-offer-count").html(length);
+    });
+
 
 
     var titres = ["Restauration d'une toiture ancienne à Tours", "Etanchéité et création d'une terrasse à Garches ", "Pose d'une véranda dans un pavillon", "Restauration d'une église en Charente", "Création d'une fenêtre de toit"]

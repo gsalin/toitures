@@ -172,6 +172,8 @@ class UsersController < ApplicationController
   end
 
   def espace_emplois
+    @job_ads = current_user.job_ads
+    @job_offers = current_user.job_offers
   end
 
   private

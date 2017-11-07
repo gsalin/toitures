@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1 class="text-center", style="margin-bottom: 40px;">Modifier mon offre d'emploi</h1>
+    </div>
+
+      <%= simple_form_for(@job_offer) do |f| %>
+
+        <div class="col-xs-12 col-md-6">
+          <%= f.input :title, label: "Dénomination du contrat", hint: "entre 15 et 50 charactères :", placeholder: "exemple : couvreur-zingueur, ornemaniste, charpentier" %>
+          <div class="text-right counter-style">
+            <span>charactères :</span>
+            <strong><span id="title-job-offer-count"></strong></span>
+          </div>
+          <%= f.input :job_type, label: "Type de contrat",  placeholder: "CDI, CDD, Freelance"  %>
+
+          <%= f.input :description, as: :text, hint: "entre 100 et 500 charactères :", placeholder: "Description du poste"   %>
+          <div class="text-right counter-style">
+            <span>charactères :</span>
+            <strong><span id="description-job-offer-count"></strong></span>
+          </div>
+
+          <%= f.input :mission, as: :text, hint: "entre 100 et 500 charactères :", placeholder: "Votre mission"   %>
+          <div class="text-right counter-style">
+            <span>charactères :</span>
+            <strong><span id="mission-job-offer-count"></strong></span>
+          </div>
+
+          <%= f.input :profile, as: :text, hint: "entre 100 et 500 charactères :", label: "profil", placeholder: "Votre profil : profil, connaissances requises"   %>
+          <div class="text-right counter-style">
+            <span>charactères :</span>
+            <strong><span id="profile-job-offer-count"></strong></span>
+          </div>
+
+          <%= f.input :diploma, label: "Formation, diplôme" %>
+          <%= f.input :experience %>
+          <%= f.input :remuneration %>
+          <%= f.input :remuneration %>
+          <%= f.input :contact_name %>
+          <%= f.input :contact_phone_number %>
+
+          <div id="position_btn_project" class="text-center">
+            <%= f.button :submit, "Publier mon offre d'emploi", class: "navbar-wagon-button" %>
+          </div>
+        </div>
+      <% end %>
+
+  </div>
+</div>
