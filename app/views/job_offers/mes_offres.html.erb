@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1 class="text-center">Mes offres d'emplois</h1>
+
+      <div class="text-center" style="margin-top: 20px; margin-bottom: 40px;">
+      <%= link_to new_job_offer_path, class: "navbar-wagon-button btn" do %>
+        <span>Créer une nouvelle offre</span>
+      <% end %>
+      <%= link_to espace_emplois_users_path, class: "navbar-wagon-button btn" do %>
+        <span>Revenir à l'espace emploi</span>
+      <% end %>
+      </div>
+    </div>
+
+    <% @job_offers.each do |job_offer| %>
+    <div class="col-xs-12 col-md-4">
+      <%= render "shared/card_job_offer", job_offer: job_offer %>
+      <%= link_to edit_job_offer_path(job_offer), class: "small-yellow-link" do %>
+        <span> Modifier cette offre d'emploi </span>
+      <% end %>
+    </div>
+
+    <% end %>
+  </div>
+</div>

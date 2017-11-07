@@ -1,0 +1,40 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1 class="text-center">Offre d'emploi</h1>
+      <h2 class="text-center"><%= @job_offer.title %> - <%= @job_offer.job_type %> - H/F</h2>
+
+      <p class="text-center">Détails de l'offre</p>
+      <div class="offer-company">
+        <h3>Recruteur : <%= @job_offer.user.company %></h3>
+        <h3>Contact : <%= @job_offer.contact_name %></h3>
+        <h3>Téléphone : <%= @job_offer.contact_phone_number %></h3>
+      </div>
+      <div class="offer-detail">
+        <p>Description du poste</p>
+        <p><%= kramdown(@job_offer.description) %></p>
+      </div>
+      <div class="offer-detail">
+        <p>Votre mission</p>
+        <p><%= kramdown(@job_offer.mission) %></p>
+      </div>
+      <div class="offer-detail">
+        <p>Votre profil</p>
+        <p><%= @job_offer.profile %></p>
+      </div>
+      <div class="offer-detail">
+        <p>Votre formation</p>
+        <p><%= @job_offer.diploma %></p>
+      </div>
+      <div class="offer-detail">
+        <p>Expérience en nombres d'années</p>
+        <p><%= @job_offer.experience %></p>
+      </div>
+      <div class="offer-detail">
+        <p>Rémunération brute</p>
+        <p><%= @job_offer.diploma %></p>
+      </div>
+    </div>
+  </div>
+</div>
