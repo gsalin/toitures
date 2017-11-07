@@ -1,5 +1,5 @@
 class JobAdsController < ApplicationController
-    before_action :set_job_ad, only: [:edit, :update]
+    before_action :set_job_ad, only: [:edit, :update, :destroy]
 
   def index
     @need = Need.new
@@ -50,8 +50,12 @@ class JobAdsController < ApplicationController
 
 
   def destroy
-    # @project.destroy
-    # redirect_to new_project_path(current_user)
+    @job_ad.destroy
+      redirect_to mon_annonce_job_ad_path(current_user)
+  end
+
+  def mon_annonce
+    @job_ads = current_user.job_ads
   end
 
 
@@ -61,7 +65,7 @@ class JobAdsController < ApplicationController
 
 
   def set_job_ad
-    @job_ad = current_user.job_ad
+    @job_ad = JobAd.find(params[:id])
   end
 
   def job_ad_params

@@ -8,7 +8,7 @@ class User < ApplicationRecord
 
   has_many :projects, dependent: :destroy
   has_many :articles
-  has_one :job_ad, dependent: :destroy
+  has_many :job_ads, dependent: :destroy
   has_many :job_offers, dependent: :destroy
 
   include FriendlyId

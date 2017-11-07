@@ -9,8 +9,10 @@
     get 'espace-emplois', on: :collection, controller: "users", action: "espace_emplois"
   end
   resources :projects
-  resources :job_ads, path: 'offre-emplois'
-  resources :job_offers, path: 'annonce-emplois' do
+  resources :job_ads, path: 'recherche-emploi' do
+    get 'mon_annonce', on: :collection, controller: "job_ads", action: "mon_annonce"
+  end
+  resources :job_offers, path: 'offre-emploi' do
     get 'mes_offres', on: :collection, controller: "job_offers", action: "mes_offres"
   end
   resources :needs, only: [:new, :create, :show, :edit, :update], path: 'recherche-de-candidats'
