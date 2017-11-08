@@ -1,14 +1,47 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
+      <%= link_to espace_emploi_users_path, class: "navbar-wagon-button btn" do %>
+        <span>Revenir à l'espace emploi</span>
+      <% end %>
       <h1 class="text-center">Annonces Emploi </h1>
       <p class="text-center">Il y a actuellement <%= JobAd.count %> annonces d'emploi sur le site</p>
     </div>
-      <% @job_ads.each do |job_ad| %>
-        <%= render "shared/card_job_ad", job_ad: job_ad %>
-      <% end %>
   </div>
 </div>
+
+<div class="container">
+  <div class="row">
+    <% @job_ads.each do |job_ad| %>
+      <%= render "shared/card_job_ad", job_ad: job_ad %>
+    <% end %>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+        <div class="col-xs-12">
+          <div id="map" class="banner-map" style="width: 100%; height: 600px;"></div>
+          <% content_for(:after_js) do %>
+            <%= javascript_tag do %>
+              $(document).ready(function() {
+                var handler = Gmaps.build('Google');
+                handler.buildMap({ provider: { scrollwheel: false }, internal: { id: 'map' } }, function() {
+                  markers = handler.addMarkers(<%= raw @hash.to_json %>);
+                  handler.bounds.extendWith(markers);
+                  handler.fitMapToBounds();
+                  if (markers.length == 0) {
+                    handler.getMap().setZoom(2);
+                  } else if (markers.length == 1) {
+                    handler.getMap().setZoom(14);
+                  }
+                });
+              });
+            <% end %>
+          <% end %>
+        </div>
+  </div>
+</div>
+
 <div class="container container-form-needs">
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">

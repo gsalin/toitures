@@ -1,57 +1,52 @@
 <div class="banner">
   <div class="container">
-    <div class="row">
-      <% if current_user.pro? %>
+    <% if current_user.pro? %>
+      <div class="row">
         <div class="col-xs-12">
           <h1 class="text-center">Bienvenue dans votre espace emploi</h1>
-
         </div>
-        <div class="col-xs-12 col-sm-6 col-profile-submit">
-          <h3 class="text-center">Les annonces d'emploi</h3>
-         <!--  <#% if @job_ad = nil %>
-            <p>Vous n'avez pas encore créé d'annonce de recherche d'emploi dans la cvthèque.</p>
-          <#% else %>
-            <p>Vous avez déjà créé une annonce de recherche d'emploi dans la cvthèque. Vous pouvez la modifier ou la supprimer.</p>
-          <#% end %> -->
-
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-offset-3 col-sm-6 col-profile-submit">
+          <h3 class="text-center">Les annonces de recherche d'emploi</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-offset-3 col-sm-6 col-profile-submit">
           <%= link_to job_ads_path, class: "navbar-wagon-button btn-edit-profil" do %>
             <span>Accéder à la cvthèque</span>
           <% end %>
 
           <%= link_to mon_annonce_job_ads_path(current_user), class: "navbar-wagon-button btn-edit-profil" do %>
-            <span>Gérer mon annonce de recherche d'emploi</span>
+            <span>Gérer mon annonce d'emploi</span>
           <% end %>
         </div>
+      </div>
 
-        <div class="col-xs-12 col-sm-6 col-profile-submit">
-          <h3 class="text-center"> Les offres d'emploi</h3>
-         <!--  <#% if @job_offers.count > 1 %>
-            <p>Vous avez déjà créé <%= @job_offers.count %> offres d'emploi. Vous pouvez les modifier ou les supprimer.</p>
-          <#% elsif @job_offers.count = 1 %> %>
-            <p>Vous avez déjà créé une offre d'emploi. Vous pouvez la modifier, la supprimer et/ou en créer d'autres.</p>
-          <#% else %>
-            <p>Vous n'avez pas encore créer d'offre d'emploi. Vous pouvez en créer une.</p>
-          <#% end %> -->
-
+      <div class="row">
+        <div class="col-xs-12 col-sm-offset-3 col-sm-6 col-profile-submit">
+          <h3 class="text-center">Les offres d'emploi</h3>
+           <!--  <#% if @job_offers.count > 1 %>
+              <p>Vous avez déjà créé <#%= @job_offers.count %> offres d'emploi. Vous pouvez les modifier ou les supprimer.</p>
+            <#% elsif @job_offers.count = 1 %> %>
+              <p>Vous avez déjà créé une offre d'emploi. Vous pouvez la modifier, la supprimer et/ou en créer d'autres.</p>
+            <#% else %>
+              <p>Vous n'avez pas encore créer d'offre d'emploi. Vous pouvez en créer une.</p>
+            <#% end %> -->
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-offset-3 col-sm-6 col-profile-submit">
           <%= link_to job_offers_path, class: "navbar-wagon-button btn-edit-profil" do %>
-            <span>Accéder aux offres d'emplois</span>
+            <span>Les offres d'emploi</span>
           <% end %>
 
           <%= link_to mes_offres_job_offers_path(current_user), class: "navbar-wagon-button btn-edit-profil" do %>
-            <span>Gérer mes offres d'emplois</span>
+            <span>Gérer mes offres d'emploi</span>
           <% end %>
         </div>
-
-        <!-- Boutons -->
-        <div class="banner">
-          <div class="container">
-            <div class="row">
-              <div class="col-xs-12 col-sm-6 col-profile-submit">
-              </div>
-            </div>
-          </div>
-        </div>
-      <% end %>
+      </div>
+    <% end %>
       <% if current_user.worker? %>
         <br>
         <h1 class="text-center"> <%= current_user.first_name %>, bienvenue votre espace emploi.</h1>

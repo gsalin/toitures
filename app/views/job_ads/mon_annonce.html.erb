@@ -7,7 +7,7 @@
         <%= link_to new_job_ad_path, class: "navbar-wagon-button btn" do %>
           <span>Créer une nouvelle annonce</span>
         <% end %>
-        <%= link_to espace_emplois_users_path, class: "navbar-wagon-button btn" do %>
+        <%= link_to espace_emploi_users_path, class: "navbar-wagon-button btn" do %>
           <span>Revenir à l'espace emploi</span>
         <% end %>
       </div>
@@ -16,10 +16,21 @@
     <% @job_ads.each do |job_ad| %>
       <%= render "shared/card_job_ad", job_ad: job_ad %>
       <div class="col-xs-12 col-sm-4">
+        <br>
+        <br>
+        <br>
         <%= link_to edit_job_ad_path(job_ad), class: "small-yellow-link" do %>
-          <span> Modifier mon annonce de recherche d'emploi </span>
+          <span style = "padding-left: 10px"> Modifier mon annonce de recherche d'emploi </span>
+        <% end %>
+
+        <%= link_to job_ad_path(job_ad),
+          method: :delete,
+          data: {confirm: "Etes vous sur de vouloir supprimer votre annonce de recherche d'emploi?"},
+          class: "small-yellow-link" do %>
+          <span style = "padding-left: 10px"  > Supprimer mon annonce de recherche d'emploi </span>
         <% end %>
       </div>
+
     <% end %>
 
   </div>

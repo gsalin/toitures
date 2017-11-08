@@ -17,7 +17,7 @@
     <div class="card-job-description">
       <p><%= kramdown(job_offer.description) %></p>
     </div>
-    <%= link_to job_offer_path(job_offer), class: "navbar-wagon-button btn-edit-profil" do %>
+    <%= link_to job_offer_path(job_offer), target: "_blank", class: "navbar-wagon-button btn-edit-profil" do %>
         <span>Consulter l'offre d'emploi</span>
       <% end %>
 

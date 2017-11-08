@@ -4,6 +4,10 @@ class JobAdsController < ApplicationController
   def index
     @need = Need.new
     @job_ads = JobAd.all
+    @hash = Gmaps4rails.build_markers(@job_ads) do |job_ad, marker|
+      marker.lat job_ad.user.latitude
+      marker.lng job_ad.user.longitude
+    end
   end
 
 
@@ -32,7 +36,7 @@ class JobAdsController < ApplicationController
   def update
     @user = current_user
     # if @user.update
-    #   redirect_to espace_emplois_users_path(current_user)
+    #   redirect_to espace_emploi_users_path(current_user)
     # else
     #   render :edit
     # end
@@ -42,7 +46,7 @@ class JobAdsController < ApplicationController
     end
 
     if @job_ad.update(job_ad_params)
-      redirect_to espace_emplois_users_path(current_user)
+      redirect_to espace_emploi_users_path(current_user)
     else
       render :edit
     end
@@ -51,7 +55,7 @@ class JobAdsController < ApplicationController
 
   def destroy
     @job_ad.destroy
-      redirect_to mon_annonce_job_ad_path(current_user)
+      redirect_to espace_emploi_users_path(current_user)
   end
 
   def mon_annonce
