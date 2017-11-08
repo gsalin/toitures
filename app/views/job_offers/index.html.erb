@@ -1,6 +1,9 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
+      <%= link_to espace_emploi_users_path, class: "navbar-wagon-button btn" do %>
+        <span>Revenir à l'espace emploi</span>
+      <% end %>
       <h1 class="text-center">Offres Emploi </h1>
       <p class="text-center">Il y a actuellement <%= JobOffer.count %> offres d'emploi sur le site</p>
     </div>

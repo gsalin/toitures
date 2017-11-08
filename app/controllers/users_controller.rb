@@ -163,7 +163,7 @@ class UsersController < ApplicationController
       if @user.pro? || @user.institution?
         redirect_to user_path(@user)
       else
-        redirect_to espace_emplois_users_path(current_user)
+        redirect_to espace_emploi_users_path(current_user)
       end
     else
       cleanup_new_photo_ids
@@ -171,7 +171,7 @@ class UsersController < ApplicationController
     end
   end
 
-  def espace_emplois
+  def espace_emploi
     @job_ads = current_user.job_ads
     @job_offers = current_user.job_offers
   end

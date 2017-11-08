@@ -1,5 +1,5 @@
 class JobOffersController < ApplicationController
-  before_action :set_job_offer, only: [:edit, :update]
+  before_action :set_job_offer, only: [:edit, :update, :destroy]
 
   def index
     @job_offers = JobOffer.all
@@ -36,7 +36,7 @@ class JobOffersController < ApplicationController
   def update
     @user = current_user
     # if @user.update
-    #   redirect_to espace_emplois_users_path(current_user)
+    #   redirect_to espace_emploi_users_path(current_user)
     # else
     #   render :edit
     # end
@@ -52,16 +52,14 @@ class JobOffersController < ApplicationController
     end
   end
 
+  def destroy
+    @job_offer.destroy
+      redirect_to espace_emploi_users_path(current_user)
+  end
+
   def mes_offres
     @job_offers = current_user.job_offers
   end
-
-
-  # def destroy
-  #   # @project.destroy
-  #   # redirect_to new_project_path(current_user)
-  # end
-
 
   private
 

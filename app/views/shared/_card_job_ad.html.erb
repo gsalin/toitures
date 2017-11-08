@@ -1,124 +1,66 @@
 
 <div class="col-xs-12 col-sm-4">
-  <% if job_ad.user.worker? %>
-    <div class="card-job-ad">
-      <% if job_ad.profile_photo? %>
-        <%= cl_image_tag job_ad.profile_photo.path, width: 100, height: 100,crop: :thumb, gravity: :face, class: "user-avatar" %>
-      <% end %>
-      <div class="card-job-name">
-        <strong><span><%= job_ad.user.first_name %> <%= job_ad.user.last_name %></span></strong>
-      </div>
-      <div class="card-job-title">
-        <span>Métier :
-          <div class="yellow-job-title">
-            <strong><%= job_ad.title %> </strong>
-          </div>
-        </span>
-      </div>
-      <div class="card-job-address">
-        <span>Localisation :
-          <div class="class blue-job-adress">
-            <strong><%= job_ad.user.zip_code %> <%= job_ad.user.city %></strong>
-          </div>
-        </span>
-      </div>
-      <span><em>Formation : </em><strong><%= job_ad.diploma %></strong></span>
-      <span><em>Expérience : </em><strong><%= job_ad.experience %> ans</strong></span>
-      <% if job_ad.remuneration %>
-      <span><em>Rémunération : </em><strong><%= job_ad.remuneration %> euros HT / journée</strong></span>
-      <% end %>
-      <div class="presentation">
-        <span><em>Présentation : </em></span>
-        <div class="card-job-description">
-          <p><%= job_ad.description %></p>
-        </div>
-      </div>
-      <span><em>Téléphone : </em><strong><%= job_ad.user.office_phone %></strong></span>
-      <span><em>Email : </em><strong><%= job_ad.user.email %></strong></span>
-      <% if job_ad.cv? %>
-        <div class="modal_phone">
-          <button type="button" class="fa fa-address-card" data-toggle="modal" data-target="myModalcv<%= job_ad.id %> "></button>
-
-          <!-- Modal telephone -->
-          <div class="modal fade" id="myModalcv<%= job_ad.id %>" role="dialog">
-            <div class="modal-dialog" id="user-modal-dialog">
-
-              <!-- Modal content -->
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body">
-                  <embed <%= cl_image_tag job_ad.cv.path, width: 1000, height: 600 %> >
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      <% end %>
+  <div class="card-job-ad">
+    <% if job_ad.profile_photo? %>
+      <%= cl_image_tag job_ad.profile_photo.path, width: 100, height: 100,crop: :thumb, gravity: :face, class: "user-avatar" %>
+    <% end %>
+    <div class="card-job-name">
+      <strong><span><%= job_ad.user.first_name %> <%= job_ad.user.last_name %></span></strong>
     </div>
-
-  <% else %>
-    <div class="card-job-ad">
-      <% if job_ad.profile_photo? %>
-        <%= cl_image_tag job_ad.profile_photo.path, width: 100, height: 100,crop: :thumb, gravity: :face, class: "user-avatar" %>
-      <% end %>
-      <div class="card-job-name">
-        <strong><span><%= job_ad.user.first_name %> <%= job_ad.user.last_name %></span></strong>
-      </div>
-      <div class="card-job-title">
-        <span>Métier :
-          <div class="yellow-job-title">
-            <strong><%= job_ad.title %> </strong>
-          </div>
-        </span>
-      </div>
-      <div class="card-job-address">
-        <span>Localisation :
-          <div class="class blue-job-adress">
-            <strong><%= job_ad.user.zip_code %> <%= job_ad.user.city %></strong>
-          </div>
-        </span>
-
-      </div>
-      <span><em>Formation : </em><strong><%= job_ad.diploma %></strong></span>
-      <span><em>Expérience : </em><strong><%= job_ad.experience %> ans</strong></span>
-      <% if job_ad.remuneration %>
-        <span><em>Rémunération : </em><strong><%= job_ad.remuneration %> euros HT / journée</strong></span>
-      <% end %>
-      <span><em>Mon entreprise : </em><strong><%= job_ad.user.company %> </strong></span>
-      <div class="presentation">
-        <span><em>Présentation : </em></span>
-        <div class="card-job-description">
-          <p><%= job_ad.description %></p>
+    <div class="card-job-title">
+      <span>Métier :
+        <div class="yellow-job-title">
+          <strong><%= job_ad.title %> </strong>
         </div>
+      </span>
+    </div>
+    <div class="card-job-address">
+      <span>Localisation :
+        <div class="class blue-job-adress">
+          <strong><%= job_ad.user.zip_code %> <%= job_ad.user.city %></strong>
+        </div>
+      </span>
+    </div>
+    <span><em>Formation : </em><strong><%= job_ad.diploma %></strong></span>
+    <span><em>Expérience : </em><strong><%= job_ad.experience %> ans</strong></span>
+    <% if job_ad.remuneration %>
+      <span><em>Rémunération : </em><strong><%= job_ad.remuneration %> euros HT / journée</strong></span>
+    <% end %>
+    <div class="presentation">
+      <span><em>Présentation : </em></span>
+      <div class="card-job-description">
+        <p><%= job_ad.description %></p>
       </div>
+    </div>
+    <% if job_ad.user.pro? %>
+      <span><em>Mon entreprise : </em><strong><%= job_ad.user.company %> </strong></span>
       <%= link_to user_path(current_user), class: "navbar-wagon-button btn-edit-profil" do %>
         <span>Voir la page de mon entreprise</span>
       <% end %>
     <% end %>
+    <span><em>Téléphone : </em><strong><%= job_ad.user.office_phone %></strong></span>
+    <span><em>Email : </em><strong><%= job_ad.user.email %></strong></span>
+    <% if job_ad.cv? %>
+      <div class="modal_phone">
+        <button type="button" class="fa fa-address-card" data-toggle="modal" data-target="myModalcv<%= job_ad.id %> "></button>
 
-      <% if job_ad.cv? %>
-        <div class="modal_phone">
-          <button type="button" class="fa fa-address-card" data-toggle="modal" data-target="myModalcv<%= job_ad.id %> "></button>
+        <!-- Modal telephone -->
+        <div class="modal fade" id="myModalcv<%= job_ad.id %>" role="dialog">
+          <div class="modal-dialog" id="user-modal-dialog">
 
-          <!-- Modal telephone -->
-          <div class="modal fade" id="myModalcv<%= job_ad.id %>" role="dialog">
-            <div class="modal-dialog" id="user-modal-dialog">
-
-              <!-- Modal content -->
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body">
-                  <embed <%= cl_image_tag job_ad.cv.path, width: 1000, height: 600 %> >
-                </div>
+            <!-- Modal content -->
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+              </div>
+              <div class="modal-body">
+                <embed <%= cl_image_tag job_ad.cv.path, width: 1000, height: 600 %> >
               </div>
             </div>
           </div>
         </div>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
+  </div>
 </div>
 

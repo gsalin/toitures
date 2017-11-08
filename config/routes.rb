@@ -6,7 +6,7 @@
   devise_for :users, :controllers => {:registrations => 'registrations'}
   root to: 'pages#home'
   resources :users, only: [:index, :show, :edit, :update], path: 'annuaire' do
-    get 'espace-emplois', on: :collection, controller: "users", action: "espace_emplois"
+    get 'espace-emploi', on: :collection, controller: "users", action: "espace_emploi"
   end
   resources :projects
   resources :job_ads, path: 'recherche-emploi' do

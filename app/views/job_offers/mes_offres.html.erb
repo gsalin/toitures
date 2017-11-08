@@ -7,20 +7,25 @@
       <%= link_to new_job_offer_path, class: "navbar-wagon-button btn" do %>
         <span>Créer une nouvelle offre</span>
       <% end %>
-      <%= link_to espace_emplois_users_path, class: "navbar-wagon-button btn" do %>
+      <%= link_to espace_emploi_users_path, class: "navbar-wagon-button btn" do %>
         <span>Revenir à l'espace emploi</span>
       <% end %>
       </div>
     </div>
 
     <% @job_offers.each do |job_offer| %>
-    <div class="col-xs-12 col-md-4">
-      <%= render "shared/card_job_offer", job_offer: job_offer %>
-      <%= link_to edit_job_offer_path(job_offer), class: "small-yellow-link" do %>
-        <span> Modifier cette offre d'emploi </span>
-      <% end %>
-    </div>
-
+      <div class="col-xs-12 col-md-4">
+        <%= render "shared/card_job_offer", job_offer: job_offer %>
+        <%= link_to edit_job_offer_path(job_offer), class: "small-yellow-link" do %>
+          <p style = "padding-left: 15px"> Modifier cette offre d'emploi </p>
+        <% end %>
+        <%= link_to job_offer_path(job_offer),
+          method: :delete,
+          data: {confirm: "Etes vous sûr de vouloir supprimer cette offre d'emploi ?"},
+          class: "small-yellow-link" do %>
+          <p style = "padding-left: 15px"> Supprimer cette offre d'emploi </p>
+        <% end %>
+      </div>
     <% end %>
   </div>
 </div>
