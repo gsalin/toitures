@@ -1,39 +1,66 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-xs-12">
-      <h1 class="text-center">Offre d'emploi</h1>
-      <h2 class="text-center"><%= @job_offer.title %> - <%= @job_offer.job_type %> - H/F</h2>
+    <div class="col-xs-12 col-sm-offset-3 col-sm-6 col-profile-submit">
+      <%= link_to espace_emploi_users_path, class: "navbar-wagon-button btn" do %>
+        <span>Revenir à l'espace emploi</span>
+      <% end %>
 
-      <p class="text-center">Détails de l'offre</p>
-      <div class="offer-company">
-        <h3>Recruteur : <%= @job_offer.user.company %></h3>
-        <h3>Contact : <%= @job_offer.contact_name %></h3>
-        <h3>Téléphone : <%= @job_offer.contact_phone_number %></h3>
-      </div>
-      <div class="offer-detail">
-        <p>Description du poste</p>
+      <%= link_to mes_offres_job_offers_path(current_user), class: "navbar-wagon-button btn-edit-profil" do %>
+        <span>Gérer mes offres</span>
+      <% end %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="job-offer-container">
+        <div class="job-offer-introduction">
+          <h2 class="text-center">Offre d'emploi</h2>
+          <h1 class="text-center"><%= @job_offer.title %> - <%= @job_offer.job_type %> - H/F</h1>
+          <p class="text-center">Détails de l'offre</p>
+        </div>
+
+        <h3>Description de l'entreprise <%= @job_offer.user.company %></h3>
+        <p><%= kramdown(@job_offer.user.description) %></p>
+        <%= link_to user_path(current_user), target: "_blank", class: "navbar-wagon-button btn-edit-profil" do %>
+        <span>Voir la page de l'entreprise</span>
+        <% end %>
+
+        <h3>Localisation</h3>
+        <p><%= @job_offer.user.zip_code %> <%= @job_offer.user.city %> </p>
+        <h3>Début de la mission</h3>
+        <p> <%= (I18n.localize @job_offer.job_start_date_time.to_date, formats: :classical).capitalize  %> </p>
+
+        <h3>Description du poste</h3>
         <p><%= kramdown(@job_offer.description) %></p>
-      </div>
-      <div class="offer-detail">
-        <p>Votre mission</p>
+
+        <h3>Votre mission</h3>
         <p><%= kramdown(@job_offer.mission) %></p>
-      </div>
-      <div class="offer-detail">
-        <p>Votre profil</p>
-        <p><%= @job_offer.profile %></p>
-      </div>
-      <div class="offer-detail">
-        <p>Votre formation</p>
+
+        <h3>Votre profil</h3>
+        <p><%= kramdown(@job_offer.profile) %></p>
+
+        <h3>Formation souhaitée</h3>
         <p><%= @job_offer.diploma %></p>
-      </div>
-      <div class="offer-detail">
-        <p>Expérience en nombres d'années</p>
+
+        <h3>Expérience en nombres d'années</h3>
         <p><%= @job_offer.experience %></p>
-      </div>
-      <div class="offer-detail">
-        <p>Rémunération brute</p>
-        <p><%= @job_offer.diploma %></p>
+
+        <h3>Rémunération brute</h3>
+        <p><%= @job_offer.remuneration %> € mensuel brut </p>
+
+        <h3>Coordonnées</h3>
+        <% if @job_offer.contact_name != nil %>
+          <p>Contact : <%= @job_offer.contact_name %></p>
+        <% else %>
+          <p>Contact : <%= @job_offer.user.first_name %> <%= @job_offer.user.last_name %></p>
+        <% end %>
+        <% if @job_offer.contact_phone_number != nil %>
+          <p><%= @job_offer.contact_phone_number %></p>
+        <% else %>
+          <p><%= @job_offer.user.office_phone %></p>
+        <% end %>
+        <p><%= @job_offer.user.email %></p>
       </div>
     </div>
   </div>

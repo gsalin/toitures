@@ -1,0 +1,18 @@
+.job-offer-container {
+  margin-top: 10px;
+  padding: 30px;
+  border-radius: 5px;
+  align-items: left;
+  align-content: stretch;
+  background-color: white;
+  border: $green-worker solid 0.5px;
+
+  .job-offer-introduction {
+  background-color: #ed2374;
+  border: $green-worker solid 0.5px;
+  border-radius: 5px;
+  h1 {
+    color: white;
+  }
+  }
+}

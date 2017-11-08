@@ -4,6 +4,10 @@ class JobAdsController < ApplicationController
   def index
     @need = Need.new
     @job_ads = JobAd.all
+    @hash = Gmaps4rails.build_markers(@job_ads) do |job_ad, marker|
+      marker.lat job_ad.user.latitude
+      marker.lng job_ad.user.longitude
+    end
   end
 
 

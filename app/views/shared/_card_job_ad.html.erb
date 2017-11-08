@@ -34,7 +34,7 @@
     </div>
     <% if job_ad.user.pro? %>
       <span><em>Mon entreprise : </em><strong><%= job_ad.user.company %> </strong></span>
-      <%= link_to user_path(current_user), class: "navbar-wagon-button btn-edit-profil" do %>
+      <%= link_to user_path(current_user), target: "_blank", class: "navbar-wagon-button btn-edit-profil" do %>
         <span>Voir la page de mon entreprise</span>
       <% end %>
     <% end %>

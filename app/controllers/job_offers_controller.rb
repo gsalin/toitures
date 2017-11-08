@@ -3,6 +3,10 @@ class JobOffersController < ApplicationController
 
   def index
     @job_offers = JobOffer.all
+    @hash = Gmaps4rails.build_markers(@job_offers) do |job_offer, marker|
+      marker.lat job_offer.user.latitude
+      marker.lng job_offer.user.longitude
+    end
   end
 
   def show
