@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: [:index, :index_asso, :show]
   before_action :set_user, only: [:show]
 
 
@@ -137,6 +137,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def index_asso
+    @client = Client.new(client_params)
+    @users = User.institution
+  end
 
   def show
     @client = Client.new
