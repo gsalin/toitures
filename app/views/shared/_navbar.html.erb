@@ -3,7 +3,7 @@
   <div class="navbar-wagon-brand">
   <%= link_to root_path, class: "navbar-wagon-brand navbar-wagon-item navbar-wagon-link" do %>
     <%= image_tag "logonavbar2.png" %>
-    <p class="hidden-sm hidden-xs">L'annuaire des professionnels de la toiture</p>
+    <p class="hidden-sm hidden-xs">Le portail de la toiture</p>
     <% if user_signed_in? == false %>
     <div class="navbar-wagon-item hidden-md hidden-lg">
       <%= link_to "Inscription", new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link inscription-btn" %>
@@ -23,21 +23,34 @@
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-  <%= link_to t(".top_call_to_action", default: "Annuaire"), users_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
+    <!-- Bouton annuaire -->
+    <div class="navbar-wagon-item">
+        <div class="dropdown">
+          <button type="button" class="navbar-wagon-item navbar-wagon-button btn" data-toggle="dropdown">Annuaire</button>
+          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+            <li>
+            <%= link_to "Annuaires des professionnels", users_path, class: "navbar-wagon-item navbar-wagon-link" %>
+            </li>
+            <li>
+            <%= link_to "Annuaire des associations", associations_users_path, class: "navbar-wagon-item navbar-wagon-link" %>
+            </li>
+          </ul>
+        </div>
+    </div>
 
+    <!-- lien guide -->
+    <div class="navbar-wagon-item">
+      <%= link_to "Guides", guides_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    </div>
 
-<!-- lien guide -->
-  <div class="navbar-wagon-item">
-    <%= link_to "Guides", guides_path, class: "navbar-wagon-item navbar-wagon-link" %>
-  </div>
+    <!-- lien magazine -->
+    <div class="navbar-wagon-item">
+      <%= link_to "Magazine", articles_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    </div>
 
-<!-- lien magazine -->
+    <!-- Different navigation if log in or inscription -->
 
-  <div class="navbar-wagon-item">
-    <%= link_to "Magazine", articles_path, class: "navbar-wagon-item navbar-wagon-link" %>
-  </div>
-
-    <!-- Different navigation if login or not -->
+    <!-- if user sign in -->
     <% if user_signed_in? %>
         <div class="navbar-wagon-item">
           <div class="dropdown">
@@ -95,23 +108,24 @@
 
     <% else %>
 
-    <div class="navbar-wagon-item">
-      <div class="dropdown">
-        <button type="button" class="navbar-wagon-item navbar-wagon-link connect-btn-navbar inscription-btn-navbar" data-toggle="dropdown">Inscription</button>
-        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-          <li>
-          <%= link_to "Professionnel", new_user_registration_path(status: :pro), class: "navbar-wagon-item navbar-wagon-link" %>
-          </li>
-          <li>
-          <%= link_to "Association", new_user_registration_path(status: :institution), class: "navbar-wagon-item navbar-wagon-link" %>
-          </li>
-          <li>
-          <%= link_to "Candidat", new_user_registration_path(status: :worker), class: "navbar-wagon-item navbar-wagon-link" %>
-          </li>
-        </ul>
+      <div class="navbar-wagon-item">
+        <div class="dropdown">
+          <button type="button" class="navbar-wagon-item navbar-wagon-link connect-btn-navbar inscription-btn-navbar" data-toggle="dropdown">Inscription</button>
+          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+            <li>
+            <%= link_to "Professionnel", new_user_registration_path(status: :pro), class: "navbar-wagon-item navbar-wagon-link" %>
+            </li>
+            <li>
+            <%= link_to "Association", new_user_registration_path(status: :institution), class: "navbar-wagon-item navbar-wagon-link" %>
+            </li>
+            <li>
+            <%= link_to "Candidat", new_user_registration_path(status: :worker), class: "navbar-wagon-item navbar-wagon-link" %>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-      <!-- Login text link -->
+
+        <!-- Login text link -->
 
         <button type="button" class="navbar-wagon-item navbar-wagon-link connect-btn-navbar" id="worker-btn-navbar" data-toggle="modal" data-target="#signin_modal_worker">Connexion</button>
         <!-- Modal telephone -->
@@ -131,6 +145,7 @@
         </div>
 
     <% end %>
+
   </div>
 
   <!-- Dropdown list appearing on mobile only -->
