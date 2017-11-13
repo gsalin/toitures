@@ -106,7 +106,11 @@
     <div class="col-xs-12 col-sm-3 card_skills">
       <!-- btn découvre notre société -->
       <%= link_to user_path(user), class: "btn-societe text-center" do %>
-        <span>Découvrez notre société</span>
+        <% if user.pro? %>
+          <span>Découvrez l'entreprise</span>
+        <% else %>
+          <span>Découvrez l'institution</span>
+        <% end %>
       <% end %>
       <div class="modals_position">
         <!-- Modal Phone -->
