@@ -247,7 +247,7 @@
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  justify-content: center;
+  justify-content: top;
   align-items: left;
   align-content: stretch;
   min-height: 310px;
@@ -258,8 +258,19 @@
   min-width: 332px;
   margin-top: 30px;
   box-shadow: 0 15px 35px rgba(50,50,93,0.1), 0 5px 15px rgba(0,0,0,0.07);
+  h3 {
+    font-size: 1.3em;
+    margin-top: 0px;
+    margin-bottom: 20px;
+  }
   p {
     font-size: 0.94em;
+  }
+  li {
+    margin-bottom: 10px;
+  }
+  span {
+    font-size: 1,1em;
   }
 }
 

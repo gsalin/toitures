@@ -33,10 +33,23 @@
   margin-bottom: 20px;
 }
 
-.description-col {
-  #user_description {
-    height: 170px
+.institution-specialites {
+  h4 {
+    margin-bottom: 15px;
   }
+
+}
+
+.description-col {
+  padding-top: 20px;
+  #user_description {
+    height: 380px;
+  }
+}
+
+.input-photos {
+  padding-top: 20px;
+  padding-left: 20px;
 }
 
 .btn-edit-profil {
@@ -46,7 +59,7 @@
 .underline-title-container-edit-user {
   border-bottom: solid 2px $dark-grey;
   margin-bottom: 20px;
-  margin-top: 60px;
+  margin-top: 10px;
 }
 
 .link-press-md {
