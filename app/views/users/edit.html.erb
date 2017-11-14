@@ -21,7 +21,7 @@
   </div>
 
   <h4 class="text-center">Les champs marqués d'une * sont obligatoires.</h4>
-  <h5 class="text-center">Prenez les 5 minutes nécessaires pour remplir au mieux votre profil, plus celui-ci sera riche en contenu plus il sera visible sur internet.</h5>
+  <h5 class="text-center">Merci de compléter votre profil.</h5>
 
   <%= simple_form_for(@user, url: user_path(@user.id)) do |f| %>
 
@@ -39,7 +39,11 @@
       <div class="container">
         <div class="row">
           <div class="col-xs-12 col-md-3">
-            <%= f.input :company, required: true %>
+            <% if @user.pro? %>
+              <%= f.input :company, required: true %>
+            <% else %>
+              <%= f.input :company, required: true, label: "Le nom de votre association" %>
+            <% end %>
             <%= f.input :first_name, required: true %>
             <%= f.input :last_name, required: true %>
           </div>
@@ -268,17 +272,51 @@
       </div>
       <div class="container">
         <div class="row">
-          <div class="col-xs-12 col-md-7 description-col">
-            <%= f.input :description, placeholder: "Décrivez votre société, depuis quand existe t'elle, qu'elles sont vos spécialités, vos plus belles rélisations, le nombre de salariés etc...", required: true, hint:"Entre 200 et 600 charactères" %>
+          <div class="institution-specialites">
+            <% if @user.institution? %>
+              <h4>Vos principales actions et domaines d'interventions auprès des particuliers</h4>
+              <div class="col-xs-12 col-md-4">
+                <%= f.input :specialite1, label: "Action n°1", required: true, placeholder: "ex : conseils techniques"  %>
+              </div>
+              <div class="col-xs-12 col-md-4">
+                <%= f.input :specialite2, label: "Action n°2", required: true, placeholder: "ex : mise en relation avec des membres du réseaux" %>
+              </div>
+              <div class="col-xs-12 col-md-4">
+                <%= f.input :specialite3, label: "Action n°3", required: true, placeholder: "ex: Site d'informations" %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+        <div class="row">
+          <!-- description -->
+          <div class="col-xs-12 col-md-8 description-col">
+            <% if @user.pro? %>
+
+              <%= f.input :description, placeholder: "Décrivez votre société, depuis quand existe t'elle, qu'elles sont vos spécialités, vos plus belles rélisations, le nombre de salariés etc...", required: true, hint:"Entre 200 et 600 charactères" %>
+            <% else %>
+              <%= f.input :description, label: "Présentez votre association", placeholder: "Décrivez votre association, depuis quand existe t'elle, qu'elles sont vos expertises, vos actions, le nombre de membres, etc...", required: true, hint:"Entre 200 et 600 charactères" %>
+            <% end %>
             <div class="text-right counter-style">
               <span id="description-count"><strong></strong></span><span> charactères </span>
             </div>
           </div>
-          <div class="col-xs-12 col-md-3 col-md-offset-1">
-            <%= f.input :photo_presentation, as: :attachinary, required: true, hint: "Une belle photo d'un chantier ou d'une réalisation" %>
+          <div class="col-xs-12 col-md-4">
+            <div class="input-photos">
+            <% if @user.pro? %>
+              <%= f.input :photo_presentation, as: :attachinary, required: true, label: "Photo de fond d'écran", hint: "Une belle photo d'un chantier ou d'une réalisation" %>
+            <% else %>
+              <%= f.input :photo_presentation, as: :attachinary, required: true, label: "Photo de fond d'écran", hint: "Une photo représentative de vos activités" %>
+            <% end %>
+            </div>
           </div>
-          <div class="col-xs-12 col-md-3 col-md-offset-1">
-            <%= f.input :photo_company_logo, as: :attachinary, required: true, hint: "Si vous n'avez pas de logo, vous pouvez aussi mettre votre photo" %>
+          <div class="col-xs-12 col-md-4">
+            <div class="input-photos">
+              <% if @user.pro? %>
+                <%= f.input :photo_company_logo, as: :attachinary, required: true, label: "Logo de l'entreprise ou photo de l'équipe", hint: "Si vous n'avez pas de logo, vous pouvez mettre une photo de l'équipe" %>
+              <% else %>
+                <%= f.input :photo_company_logo, as: :attachinary, required: true, label: "Logo de votre association ou photo de l'équipe", hint: "Si vous n'avez pas de logo, vous pouvez mettre une photo de l'équipe" %>
+              <% end %>
+            </div>
           </div>
         </div>
       </div>

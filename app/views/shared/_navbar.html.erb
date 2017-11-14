@@ -58,8 +58,9 @@
               <%= cl_image_tag current_user.photo.path, width: 50, height: 50, crop: :fill, class: "worker-avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown", style: "border-radius:50%;" %>
             <% elsif current_user.photo_company_logo != nil %>
               <%= cl_image_tag current_user.photo_company_logo.path, width: 50, height: 50, crop: :fill, class: "worker-avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown", style: "border-radius:50%;" %>
-            <% elsif current_user.job_ad != nil && current_user.job_ad.profile_photo != nil %>
-              <%= cl_image_tag current_user.job_ad.profile_photo.path, width: 50, height: 50, crop: :fill, class: "worker-avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown", style: "border-radius:50%;" %>
+
+            <!-- <#% elsif current_user.job_ad != nil && current_user.job_ad.profile_photo != nil %>
+              <#%= cl_image_tag current_user.job_ad.profile_photo.path, width: 50, height: 50, crop: :fill, class: "worker-avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown", style: "border-radius:50%;" %> -->
 
             <% else %>
               <button type="button" class="navbar-wagon-item navbar-wagon-link connect-btn-navbar" id="worker-btn-navbar" data-toggle="dropdown">Mon compte</button>
@@ -76,11 +77,13 @@
                     <i class="fa fa-pencil"></i> <%= t(".profile", default: "Modifier mon profil") %>
                   <% end %>
                 </li>
-                <li>
-                  <%= link_to espace_emploi_users_path do %>
-                    <i class="fa fa-users"></i> <%= t(".profile", default: "Espace Emploi") %>
-                  <% end %>
-                </li>
+                <% if current_user.status == "pro" %>
+                  <li>
+                    <%= link_to espace_emploi_users_path do %>
+                      <i class="fa fa-users"></i> <%= t(".profile", default: "Espace Emploi") %>
+                    <% end %>
+                  </li>
+                <% end %>
                 <li>
                   <%= link_to destroy_user_session_path, method: :delete do %>
                     <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Me déconnecter") %>

@@ -333,7 +333,16 @@
             </div>
           </div>
         <% else %>
-          <div class="col-xs-12 col-md-3 col-md-offset-1"></div>
+          <div class="col-xs-12 col-md-6">
+            <div class="user-description">
+              <h3>Principales actions et domaines d'interventions auprès des particuliers</h3>
+              <ul>
+                <li><span><%= @user.specialite1 %></span></li>
+                <li><span><%= @user.specialite2 %></span></li>
+                <li><span><%= @user.specialite3 %></span></li>
+              </ul>
+            </div>
+          </div>
         <% end %>
       </div>
     </div>
