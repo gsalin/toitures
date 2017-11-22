@@ -140,6 +140,10 @@ class UsersController < ApplicationController
   def index_asso
     @client = Client.new(client_params)
     @users = User.institution
+    @hash = Gmaps4rails.build_markers(@users) do |user, marker|
+      marker.lat user.latitude
+      marker.lng user.longitude
+    end
   end
 
   def show
